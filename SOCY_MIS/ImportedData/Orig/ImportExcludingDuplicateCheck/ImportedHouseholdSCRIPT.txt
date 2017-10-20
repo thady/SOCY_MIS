@@ -1,0 +1,30 @@
+SELECT COUNT(*), dst.dst_id, dst.dst_name 
+FROM hh_household hh 
+LEFT JOIN [SOCY_MIS_2].[dbo].lst_ward wrd ON hh.wrd_id = wrd.wrd_id
+LEFT JOIN [SOCY_MIS_2].[dbo].lst_sub_county sct ON wrd.sct_id = sct.sct_id
+LEFT JOIN [SOCY_MIS_2].[dbo].lst_district dst ON sct.dst_id = dst.dst_id
+GROUP BY dst.dst_id, dst.dst_name
+ORDER BY dst.dst_name
+
+SELECT 'SELECT N''' + dt.hh_id + ''', ' + 
+'N''' + dt.hh_code + ''', ' + 
+'N''' + dt.hh_status_reason + ''', ' + 
+'N''' + dt.hh_tel + ''', ' + 
+'N''' + dt.hh_village + ''', ' + 
+'N''' + dt.hhs_id + ''', ' + 
+'N''' + dt.hhsr_id + ''', ' + 
+'N''' + dt.swk_id + ''', ' + 
+'N''' + dt.wrd_id + ''', ' + 
+'N''' + dt.usr_id_create + ''', ' + 
+'N''' + dt.usr_id_update + ''', GETDATE(), GETDATE(), ' + 
+'N''' + dt.ofc_id + ''' UNION ALL ' 
+FROM hh_household dt 
+LEFT JOIN [SOCY_MIS_2].[dbo].lst_ward wrd ON dt.wrd_id = wrd.wrd_id
+LEFT JOIN [SOCY_MIS_2].[dbo].lst_sub_county sct ON wrd.sct_id = sct.sct_id
+LEFT JOIN [SOCY_MIS_2].[dbo].lst_district dst ON sct.dst_id = dst.dst_id
+WHERE dst.dst_id = '1'
+
+ALTER TABLE hh_household DISABLE TRIGGER hh_household_insert 
+INSERT INTO hh_household (hh_id, hh_code, hh_status_reason, hh_tel, hh_village, hhs_id, hhsr_id, swk_id, wrd_id, usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id) 
+
+ALTER TABLE hh_household ENABLE TRIGGER hh_household_insert 

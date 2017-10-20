@@ -1,0 +1,4 @@
+ALTER TABLE hh_household_assessment DISABLE TRIGGER hh_household_assessment_insert 
+INSERT INTO hh_household_assessment (hha_id, hha_comments, hha_date, hha_num_of_meals, hh_id, hhm_id, icc_id, ics_id, osn_id_disagreement, swk_id, yn_id_child_separation, yn_id_financial_savings, yn_id_food_body_building, yn_id_food_energy, yn_id_food_protective, yn_id_water, ynna_id_expenses_food, ynna_id_expenses_health, ynna_id_expenses_school, ynns_id_assets, yns_id_latrine, usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id) 
+
+ALTER TABLE hh_household_assessment ENABLE TRIGGER hh_household_assessment_insert 

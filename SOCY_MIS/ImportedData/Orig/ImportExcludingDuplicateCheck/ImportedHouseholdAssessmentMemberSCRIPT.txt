@@ -1,0 +1,47 @@
+SELECT COUNT(*), dst.dst_id, dst.dst_name, sct.sct_id, sct.sct_name, dst.dst_id +'_'+ sct.sct_id
+FROM hh_household_assessment_member ham 
+INNER JOIN hh_household_assessment ha ON ham.hha_id = ha.hha_id
+INNER JOIN hh_household hh ON ha.hh_id = hh.hh_id
+LEFT JOIN [SOCY_MIS_2].[dbo].lst_ward wrd ON hh.wrd_id = wrd.wrd_id
+LEFT JOIN [SOCY_MIS_2].[dbo].lst_sub_county sct ON wrd.sct_id = sct.sct_id
+LEFT JOIN [SOCY_MIS_2].[dbo].lst_district dst ON sct.dst_id = dst.dst_id
+GROUP BY dst.dst_id, dst.dst_name, sct.sct_id, sct.sct_name
+ORDER BY CAST(dst.dst_id AS INT), CAST(sct.sct_id AS INT)
+
+SELECT 'SELECT N''' + dt.ham_id + ''', ' + 
+'N''' + dt.ham_first_name + ''', ' + 
+'N''' + dt.ham_last_name + ''', ' + 
+'N''' + dt.ham_year_of_birth + ''', ' + 
+'N''' + dt.dtp_id + ''', ' + 
+'N''' + dt.edu_id + ''', ' + 
+'N''' + dt.gnd_id + ''', ' + 
+'N''' + dt.hha_id + ''', ' + 
+'N''' + dt.hhm_id + ''', ' + 
+'N''' + dt.hst_id + ''', ' + 
+'N''' + dt.mst_id + ''', ' + 
+'N''' + dt.prf_id + ''', ' + 
+'N''' + dt.prt_id + ''', ' + 
+'N''' + dt.yn_id_art + ''', ' + 
+'N''' + dt.yn_id_birth_registration + ''', ' + 
+'N''' + dt.yn_id_caregiver + ''', ' + 
+'N''' + dt.yn_id_disability + ''', ' + 
+'N''' + dt.yn_id_given_birth + ''', ' + 
+'N''' + dt.yn_id_hoh + ''', ' + 
+'N''' + dt.yn_id_immun + ''', ' + 
+'N''' + dt.yn_id_pregnant + ''', ' + 
+'N''' + dt.yn_id_school + ''', ' + 
+'N''' + dt.usr_id_create + ''', ' + 
+'N''' + dt.usr_id_update + ''', GETDATE(), GETDATE(), ' + 
+'N''' + dt.ofc_id + ''' UNION ALL ' 
+FROM hh_household_assessment_member dt 
+INNER JOIN hh_household_assessment ha ON dt.hha_id = ha.hha_id
+INNER JOIN hh_household hh ON ha.hh_id = hh.hh_id
+LEFT JOIN [SOCY_MIS_2].[dbo].lst_ward wrd ON hh.wrd_id = wrd.wrd_id
+LEFT JOIN [SOCY_MIS_2].[dbo].lst_sub_county sct ON wrd.sct_id = sct.sct_id
+LEFT JOIN [SOCY_MIS_2].[dbo].lst_district dst ON sct.dst_id = dst.dst_id
+WHERE dst.dst_id +'_'+ sct.sct_id = '1_59'
+
+ALTER TABLE hh_household_assessment_member DISABLE TRIGGER hh_household_assessment_member_insert 
+INSERT INTO hh_household_assessment_member (ham_id, ham_first_name, ham_last_name, ham_year_of_birth, dtp_id, edu_id, gnd_id, hha_id, hhm_id, hst_id, mst_id, prf_id, prt_id, yn_id_art, yn_id_birth_registration, yn_id_caregiver, yn_id_disability, yn_id_given_birth, yn_id_hoh, yn_id_immun, yn_id_pregnant, yn_id_school, usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id) 
+
+ALTER TABLE hh_household_assessment_member ENABLE TRIGGER hh_household_assessment_member_insert 

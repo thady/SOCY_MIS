@@ -1,0 +1,12 @@
+DECLARE @temp TABLE ([hha_id] [varchar](50), [hha_comments] [varchar](max), [hha_date] [datetime], [hha_num_of_meals] [int], 
+[hh_id] [varchar](50), [hhm_id] [varchar](50), [icc_id] [varchar](50), [ics_id] [varchar](50), [osn_id_disagreement] [varchar](50), [swk_id] [varchar](50), 
+[yn_id_child_separation] [varchar](50), [yn_id_financial_savings] [varchar](50), [yn_id_food_body_building] [varchar](50), [yn_id_food_energy] [varchar](50), 
+[yn_id_food_protective] [varchar](50), [yn_id_water] [varchar](50), [ynna_id_expenses_food] [varchar](50), [ynna_id_expenses_health] [varchar](50), 
+[ynna_id_expenses_school] [varchar](50), [ynns_id_assets] [varchar](50), [yns_id_latrine] [varchar](50), 
+[usr_id_create] [varchar](50), [usr_id_update] [varchar](50), [usr_date_create] [datetime], [usr_date_update] [datetime], [ofc_id] [varchar](50))
+INSERT INTO @temp (hha_id, hha_comments, hha_date, hha_num_of_meals, hh_id, hhm_id, icc_id, ics_id, osn_id_disagreement, swk_id, yn_id_child_separation, yn_id_financial_savings, yn_id_food_body_building, yn_id_food_energy, yn_id_food_protective, yn_id_water, ynna_id_expenses_food, ynna_id_expenses_health, ynna_id_expenses_school, ynns_id_assets, yns_id_latrine, usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id) 
+
+ALTER TABLE hh_household_assessment DISABLE TRIGGER hh_household_assessment_insert 
+INSERT INTO hh_household_assessment (hha_id, hha_comments, hha_date, hha_num_of_meals, hh_id, hhm_id, icc_id, ics_id, osn_id_disagreement, swk_id, yn_id_child_separation, yn_id_financial_savings, yn_id_food_body_building, yn_id_food_energy, yn_id_food_protective, yn_id_water, ynna_id_expenses_food, ynna_id_expenses_health, ynna_id_expenses_school, ynns_id_assets, yns_id_latrine, usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id)
+SELECT temp.* FROM @temp temp LEFT JOIN hh_household_assessment hha ON temp.hha_id = hha.hha_id WHERE hha.hha_id IS NULL
+ALTER TABLE hh_household_assessment ENABLE TRIGGER hh_household_assessment_insert 

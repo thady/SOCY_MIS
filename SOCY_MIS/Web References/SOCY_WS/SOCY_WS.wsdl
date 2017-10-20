@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="OnlineCheck">
+        <s:complexType />
+      </s:element>
+      <s:element name="OnlineCheckResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OnlineCheckResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OnlineMessageCheck">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strOfcId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strVersion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OnlineMessageCheckResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OnlineMessageCheckResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSsnId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLDImpSid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLDTable" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLDObjId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="district_list" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownloadDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OfficeStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strOfcId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OfficeStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OfficeStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OfficeValidation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strOfcId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOfficeDataXML" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strContactDataXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OfficeValidationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OfficeValidationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Download_Office_group">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSsnId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ofc_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Download_Office_groupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Download_Office_groupResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSsnId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProcessRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadTotal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strOfcId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadTotalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DownloadTotalResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="OnlineCheckSoapIn">
+    <wsdl:part name="parameters" element="tns:OnlineCheck" />
+  </wsdl:message>
+  <wsdl:message name="OnlineCheckSoapOut">
+    <wsdl:part name="parameters" element="tns:OnlineCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="OnlineMessageCheckSoapIn">
+    <wsdl:part name="parameters" element="tns:OnlineMessageCheck" />
+  </wsdl:message>
+  <wsdl:message name="OnlineMessageCheckSoapOut">
+    <wsdl:part name="parameters" element="tns:OnlineMessageCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadDataSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadData" />
+  </wsdl:message>
+  <wsdl:message name="DownloadDataSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="OfficeStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:OfficeStatus" />
+  </wsdl:message>
+  <wsdl:message name="OfficeStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:OfficeStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="OfficeValidationSoapIn">
+    <wsdl:part name="parameters" element="tns:OfficeValidation" />
+  </wsdl:message>
+  <wsdl:message name="OfficeValidationSoapOut">
+    <wsdl:part name="parameters" element="tns:OfficeValidationResponse" />
+  </wsdl:message>
+  <wsdl:message name="Download_Office_groupSoapIn">
+    <wsdl:part name="parameters" element="tns:Download_Office_group" />
+  </wsdl:message>
+  <wsdl:message name="Download_Office_groupSoapOut">
+    <wsdl:part name="parameters" element="tns:Download_Office_groupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProcessRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcessRecord" />
+  </wsdl:message>
+  <wsdl:message name="ProcessRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcessRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadTotalSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadTotal" />
+  </wsdl:message>
+  <wsdl:message name="DownloadTotalSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadTotalResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SOCY_WSSoap">
+    <wsdl:operation name="OnlineCheck">
+      <wsdl:input message="tns:OnlineCheckSoapIn" />
+      <wsdl:output message="tns:OnlineCheckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OnlineMessageCheck">
+      <wsdl:input message="tns:OnlineMessageCheckSoapIn" />
+      <wsdl:output message="tns:OnlineMessageCheckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadData">
+      <wsdl:input message="tns:DownloadDataSoapIn" />
+      <wsdl:output message="tns:DownloadDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OfficeStatus">
+      <wsdl:input message="tns:OfficeStatusSoapIn" />
+      <wsdl:output message="tns:OfficeStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OfficeValidation">
+      <wsdl:input message="tns:OfficeValidationSoapIn" />
+      <wsdl:output message="tns:OfficeValidationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Download_Office_group">
+      <wsdl:input message="tns:Download_Office_groupSoapIn" />
+      <wsdl:output message="tns:Download_Office_groupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessRecord">
+      <wsdl:input message="tns:ProcessRecordSoapIn" />
+      <wsdl:output message="tns:ProcessRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadTotal">
+      <wsdl:input message="tns:DownloadTotalSoapIn" />
+      <wsdl:output message="tns:DownloadTotalSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SOCY_WSSoap" type="tns:SOCY_WSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OnlineCheck">
+      <soap:operation soapAction="http://tempuri.org/OnlineCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnlineMessageCheck">
+      <soap:operation soapAction="http://tempuri.org/OnlineMessageCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadData">
+      <soap:operation soapAction="http://tempuri.org/DownloadData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OfficeStatus">
+      <soap:operation soapAction="http://tempuri.org/OfficeStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OfficeValidation">
+      <soap:operation soapAction="http://tempuri.org/OfficeValidation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Download_Office_group">
+      <soap:operation soapAction="http://tempuri.org/Download_Office_group" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessRecord">
+      <soap:operation soapAction="http://tempuri.org/ProcessRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadTotal">
+      <soap:operation soapAction="http://tempuri.org/DownloadTotal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SOCY_WSSoap12" type="tns:SOCY_WSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OnlineCheck">
+      <soap12:operation soapAction="http://tempuri.org/OnlineCheck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnlineMessageCheck">
+      <soap12:operation soapAction="http://tempuri.org/OnlineMessageCheck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadData">
+      <soap12:operation soapAction="http://tempuri.org/DownloadData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OfficeStatus">
+      <soap12:operation soapAction="http://tempuri.org/OfficeStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OfficeValidation">
+      <soap12:operation soapAction="http://tempuri.org/OfficeValidation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Download_Office_group">
+      <soap12:operation soapAction="http://tempuri.org/Download_Office_group" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessRecord">
+      <soap12:operation soapAction="http://tempuri.org/ProcessRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadTotal">
+      <soap12:operation soapAction="http://tempuri.org/DownloadTotal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SOCY_WS">
+    <wsdl:port name="SOCY_WSSoap" binding="tns:SOCY_WSSoap">
+      <soap:address location="http://localhost:58042/SOCY_WS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SOCY_WSSoap12" binding="tns:SOCY_WSSoap12">
+      <soap12:address location="http://localhost:58042/SOCY_WS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

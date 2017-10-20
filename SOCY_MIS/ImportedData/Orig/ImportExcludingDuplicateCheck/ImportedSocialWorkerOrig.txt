@@ -1,0 +1,4 @@
+ALTER TABLE swm_social_worker DISABLE TRIGGER swm_social_worker_insert 
+INSERT INTO swm_social_worker (swk_id, swk_first_name, swk_last_name, swk_email, swk_phone, swk_phone_other, swk_status_reason, swk_village, cso_id, hnr_id, swk_id_manager, sws_id, swt_id, wrd_id, usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id) 
+
+ALTER TABLE swm_social_worker ENABLE TRIGGER swm_social_worker_insert 

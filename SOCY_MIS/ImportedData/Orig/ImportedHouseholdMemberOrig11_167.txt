@@ -1,0 +1,12 @@
+DECLARE @temp TABLE ([hhm_id] [varchar](50), [hhm_first_name] [varchar](500), [hhm_last_name] [varchar](500), [hhm_number] [varchar](2), [hhm_year_of_birth] [varchar](4), 
+[dtp_id] [varchar](50), [edu_id] [varchar](50), [gnd_id] [varchar](50), [hh_id] [varchar](50), [hst_id] [varchar](50), [mst_id] [varchar](50), 
+[prf_id] [varchar](50), [prt_id] [varchar](50), [yn_id_art] [varchar](50), 
+[yn_id_birth_registration] [varchar](50), [yn_id_caregiver] [varchar](50), [yn_id_disability] [varchar](50), [yn_id_given_birth] [varchar](50), 
+[yn_id_hoh] [varchar](50), [yn_id_immun] [varchar](50), [yn_id_pregnant] [varchar](50), [yn_id_school] [varchar](50), 
+[usr_id_create] [varchar](50), [usr_id_update] [varchar](50), [usr_date_create] [datetime], [usr_date_update] [datetime], [ofc_id] [varchar](50))
+INSERT INTO @temp (hhm_id, hhm_first_name, hhm_last_name, hhm_number, hhm_year_of_birth, dtp_id, edu_id, gnd_id, hh_id, hst_id, mst_id, prf_id, prt_id, yn_id_art, yn_id_birth_registration, yn_id_caregiver, yn_id_disability, yn_id_given_birth, yn_id_hoh, yn_id_immun, yn_id_pregnant, yn_id_school, usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id) 
+SELECT N'IMPORT17561-1', N'Frank', N'Brugahare', N'1', N'-1', N'-1', N'-1', N'-1', N'17561', N'-1', N'-1', N'-1', N'-1', N'-1', N'-1', N'0', N'-1', N'-1', N'1', N'-1', N'-1', N'-1', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' 
+ALTER TABLE hh_household_member DISABLE TRIGGER hh_household_member_insert 
+INSERT INTO hh_household_member (hhm_id, hhm_first_name, hhm_last_name, hhm_number, hhm_year_of_birth, dtp_id, edu_id, gnd_id, hh_id, hst_id, mst_id, prf_id, prt_id, yn_id_art, yn_id_birth_registration, yn_id_caregiver, yn_id_disability, yn_id_given_birth, yn_id_hoh, yn_id_immun, yn_id_pregnant, yn_id_school, usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id) 
+SELECT temp.* FROM @temp temp LEFT JOIN hh_household_member hhm ON temp.hhm_id = hhm.hhm_id WHERE hhm.hhm_id IS NULL
+ALTER TABLE hh_household_member ENABLE TRIGGER hh_household_member_insert 

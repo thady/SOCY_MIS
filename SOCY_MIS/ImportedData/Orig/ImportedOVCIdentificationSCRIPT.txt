@@ -1,0 +1,82 @@
+SELECT COUNT(*), dst.dst_id, dst.dst_name, sct.sct_id, sct.sct_name, dst.dst_id +'_'+ sct.sct_id
+FROM hh_ovc_identification_prioritization dt 
+INNER JOIN hh_household hh ON dt.hh_id = hh.hh_id
+LEFT JOIN [SOCY_MIS_2].[dbo].lst_ward wrd ON hh.wrd_id = wrd.wrd_id
+LEFT JOIN [SOCY_MIS_2].[dbo].lst_sub_county sct ON wrd.sct_id = sct.sct_id
+LEFT JOIN [SOCY_MIS_2].[dbo].lst_district dst ON sct.dst_id = dst.dst_id
+GROUP BY dst.dst_id, dst.dst_name, sct.sct_id, sct.sct_name
+ORDER BY CAST(dst.dst_id AS INT), CAST(sct.sct_id AS INT)
+
+SELECT 'SELECT N''' + dt.oip_id + ''', ' + 
+'N''' + REPLACE(dt.oip_comments, '''', '''''') + ''', ' + 
+'N''' + CONVERT(VARCHAR(24),dt.oip_date,113) + ''', ' + 
+CAST(dt.oip_18_above_female AS VARCHAR(50)) + ', ' + 
+CAST(dt.oip_18_above_male AS VARCHAR(50)) + ', ' + 
+CAST(dt.oip_18_below_female AS VARCHAR(50)) + ', ' + 
+CAST(dt.oip_18_below_male AS VARCHAR(50)) + ', ' + 
+CAST(dt.oip_hiv_adult AS VARCHAR(50)) + ', ' + 
+CAST(dt.oip_hiv_children AS VARCHAR(50)) + ', ' + 
+'N''' + dt.oip_cp_month + ''', ' + 
+'N''' + dt.oip_interviewer_tel + ''', ' + 
+'N''' + dt.cso_id + ''', ' + 
+'N''' + dt.hh_id + ''', ' + 
+'N''' + dt.hhm_id + ''', ' + 
+'N''' + dt.swk_id + ''', ' + 
+'N''' + dt.yn_id_children + ''', ' + 
+'N''' + dt.yn_id_cp_abuse + ''', ' + 
+'N''' + dt.yn_id_cp_abuse_physical + ''', ' + 
+'N''' + dt.yn_id_cp_abuse_sexual + ''', ' + 
+'N''' + dt.yn_id_cp_marriage_teen_parent + ''', ' + 
+'N''' + dt.yn_id_cp_neglected + ''', ' + 
+'N''' + dt.yn_id_cp_no_birth_register + ''', ' + 
+'N''' + dt.yn_id_cp_orphan + ''', ' + 
+'N''' + dt.yn_id_cp_pregnancy + ''', ' + 
+'N''' + dt.yn_id_cp_referred + ''', ' + 
+'N''' + dt.yn_id_edu_referred + ''', ' + 
+'N''' + dt.yn_id_es_child_headed + ''', ' + 
+'N''' + dt.yn_id_es_disability + ''', ' + 
+'N''' + dt.yn_id_es_employment + ''', ' + 
+'N''' + dt.yn_id_es_expense + ''', ' + 
+'N''' + dt.yn_id_es_referred + ''', ' + 
+'N''' + dt.yn_id_fsn_meals + ''', ' + 
+'N''' + dt.yn_id_fsn_malnourished + ''', ' + 
+'N''' + dt.yn_id_fsn_referred + ''', ' + 
+'N''' + dt.yn_id_hwss_hiv_positive + ''', ' + 
+'N''' + dt.yn_id_hwss_hiv_status + ''', ' + 
+'N''' + dt.yn_id_hwss_referred + ''', ' + 
+'N''' + dt.yn_id_hwss_shelter + ''', ' + 
+'N''' + dt.yn_id_hwss_water + ''', ' + 
+'N''' + dt.yn_id_psbc_referred + ''', ' + 
+'N''' + dt.yn_id_psbc_stigmatized + ''', ' + 
+'N''' + dt.ynna_id_edu_missed_school + ''', ' + 
+'N''' + dt.ynna_id_edu_not_enrolled + ''', ' + 
+'N''' + dt.usr_id_create + ''', ' + 
+'N''' + dt.usr_id_update + ''', GETDATE(), GETDATE(), ' + 
+'N''' + dt.ofc_id + ''' UNION ALL ' 
+FROM hh_ovc_identification_prioritization dt 
+INNER JOIN hh_household hh ON dt.hh_id = hh.hh_id
+LEFT JOIN [SOCY_MIS_2].[dbo].lst_ward wrd ON hh.wrd_id = wrd.wrd_id
+LEFT JOIN [SOCY_MIS_2].[dbo].lst_sub_county sct ON wrd.sct_id = sct.sct_id
+LEFT JOIN [SOCY_MIS_2].[dbo].lst_district dst ON sct.dst_id = dst.dst_id
+WHERE dst.dst_id +'_'+ sct.sct_id = '1_59'
+
+
+DECLARE @temp TABLE ([oip_id] [varchar](50), [oip_comments] [varchar](max), [oip_date] [datetime], 
+[oip_18_above_female] [int], [oip_18_above_male] [int], [oip_18_below_female] [int], [oip_18_below_male] [int], 
+[oip_hiv_adult] [int], [oip_hiv_children] [int], [oip_cp_month] [varchar](2), [oip_interviewer_tel] [varchar](50), 
+[cso_id] [varchar](50), [hh_id] [varchar](50), [hhm_id] [varchar](50), [swk_id] [varchar](50), 
+[yn_id_children] [varchar](50), [yn_id_cp_abuse] [varchar](50), [yn_id_cp_abuse_physical] [varchar](50), [yn_id_cp_abuse_sexual] [varchar](50), 
+[yn_id_cp_marriage_teen_parent] [varchar](50), [yn_id_cp_neglected] [varchar](50), [yn_id_cp_no_birth_register] [varchar](50), 
+[yn_id_cp_orphan] [varchar](50), [yn_id_cp_pregnancy] [varchar](50), [yn_id_cp_referred] [varchar](50), [yn_id_edu_referred] [varchar](50), 
+[yn_id_es_child_headed] [varchar](50), [yn_id_es_disability] [varchar](50), [yn_id_es_employment] [varchar](50), [yn_id_es_expense] [varchar](50), 
+[yn_id_es_referred] [varchar](50), [yn_id_fsn_meals] [varchar](50), [yn_id_fsn_malnourished] [varchar](50), [yn_id_fsn_referred] [varchar](50), 
+[yn_id_hwss_hiv_positive] [varchar](50), [yn_id_hwss_hiv_status] [varchar](50), [yn_id_hwss_referred] [varchar](50), [yn_id_hwss_shelter] [varchar](50), 
+[yn_id_hwss_water] [varchar](50), [yn_id_psbc_referred] [varchar](50), [yn_id_psbc_stigmatized] [varchar](50), 
+[ynna_id_edu_missed_school] [varchar](50), [ynna_id_edu_not_enrolled] [varchar](50), 
+[usr_id_create] [varchar](50), [usr_id_update] [varchar](50), [usr_date_create] [datetime], [usr_date_update] [datetime], [ofc_id] [varchar](50))
+INSERT INTO @temp (oip_id, oip_comments, oip_date, oip_18_above_female, oip_18_above_male, oip_18_below_female, oip_18_below_male, oip_hiv_adult, oip_hiv_children, oip_cp_month, oip_interviewer_tel, cso_id, hh_id, hhm_id, swk_id, yn_id_children, yn_id_cp_abuse, yn_id_cp_abuse_physical, yn_id_cp_abuse_sexual, yn_id_cp_marriage_teen_parent, yn_id_cp_neglected, yn_id_cp_no_birth_register, yn_id_cp_orphan, yn_id_cp_pregnancy, yn_id_cp_referred, yn_id_edu_referred, yn_id_es_child_headed, yn_id_es_disability, yn_id_es_employment, yn_id_es_expense, yn_id_es_referred, yn_id_fsn_meals, yn_id_fsn_malnourished, yn_id_fsn_referred, yn_id_hwss_hiv_positive, yn_id_hwss_hiv_status, yn_id_hwss_referred, yn_id_hwss_shelter, yn_id_hwss_water, yn_id_psbc_referred, yn_id_psbc_stigmatized, ynna_id_edu_missed_school, ynna_id_edu_not_enrolled, usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id) 
+
+ALTER TABLE hh_ovc_identification_prioritization DISABLE TRIGGER hh_ovc_identification_prioritization_insert 
+INSERT INTO hh_ovc_identification_prioritization (oip_id, oip_comments, oip_date, oip_18_above_female, oip_18_above_male, oip_18_below_female, oip_18_below_male, oip_hiv_adult, oip_hiv_children, oip_cp_month, oip_interviewer_tel, cso_id, hh_id, hhm_id, swk_id, yn_id_children, yn_id_cp_abuse, yn_id_cp_abuse_physical, yn_id_cp_abuse_sexual, yn_id_cp_marriage_teen_parent, yn_id_cp_neglected, yn_id_cp_no_birth_register, yn_id_cp_orphan, yn_id_cp_pregnancy, yn_id_cp_referred, yn_id_edu_referred, yn_id_es_child_headed, yn_id_es_disability, yn_id_es_employment, yn_id_es_expense, yn_id_es_referred, yn_id_fsn_meals, yn_id_fsn_malnourished, yn_id_fsn_referred, yn_id_hwss_hiv_positive, yn_id_hwss_hiv_status, yn_id_hwss_referred, yn_id_hwss_shelter, yn_id_hwss_water, yn_id_psbc_referred, yn_id_psbc_stigmatized, ynna_id_edu_missed_school, ynna_id_edu_not_enrolled, usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id)
+SELECT temp.* FROM @temp temp LEFT JOIN hh_ovc_identification_prioritization oip ON temp.oip_id = oip.oip_id WHERE oip.oip_id IS NULL 
+ALTER TABLE hh_ovc_identification_prioritization ENABLE TRIGGER hh_ovc_identification_prioritization_insert 

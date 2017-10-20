@@ -1,0 +1,4 @@
+ALTER TABLE hh_household DISABLE TRIGGER hh_household_insert 
+INSERT INTO hh_household (hh_id, hh_code, hh_status_reason, hh_tel, hh_village, hhs_id, hhsr_id, swk_id, wrd_id, usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id) 
+
+ALTER TABLE hh_household ENABLE TRIGGER hh_household_insert 

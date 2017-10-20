@@ -1,0 +1,10 @@
+DECLARE @temp TABLE ([swk_id] [varchar](50), [swk_first_name] [varchar](250), [swk_last_name] [varchar](250), [swk_email] [varchar](250), 
+[swk_phone] [varchar](250), [swk_phone_other] [varchar](250), [swk_status_reason] [varchar](500), [swk_village] [varchar](250), 
+[cso_id] [varchar](50), [hnr_id] [varchar](50), [swk_id_manager] [varchar](50), [sws_id] [varchar](50), [swt_id] [varchar](50), [wrd_id] [varchar](50), 
+[usr_id_create] [varchar](50), [usr_id_update] [varchar](50), [usr_date_create] [datetime], [usr_date_update] [datetime], [ofc_id] [varchar](50))
+INSERT INTO @temp (swk_id, swk_first_name, swk_last_name, swk_email, swk_phone, swk_phone_other, swk_status_reason, swk_village, cso_id, hnr_id, swk_id_manager, sws_id, swt_id, wrd_id, usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id)  
+
+ALTER TABLE swm_social_worker DISABLE TRIGGER swm_social_worker_insert 
+INSERT INTO swm_social_worker (swk_id, swk_first_name, swk_last_name, swk_email, swk_phone, swk_phone_other, swk_status_reason, swk_village, cso_id, hnr_id, swk_id_manager, sws_id, swt_id, wrd_id, usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id) 
+SELECT temp.* FROM @temp temp LEFT JOIN swm_social_worker swk ON temp.swk_id = swk.swk_id WHERE swk.swk_id IS NULL 
+ALTER TABLE swm_social_worker ENABLE TRIGGER swm_social_worker_insert 

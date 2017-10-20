@@ -1,0 +1,9 @@
+DECLARE @temp TABLE ([hh_id] [varchar](50), [hh_code] [varchar](250), [hh_status_reason] [varchar](5000), [hh_tel] [varchar](50), [hh_village] [varchar](500), 
+[hhs_id] [varchar](50), [hhsr_id] [varchar](50), [swk_id] [varchar](50), [wrd_id] [varchar](50), 
+[usr_id_create] [varchar](50), [usr_id_update] [varchar](50), [usr_date_create] [datetime], [usr_date_update] [datetime], [ofc_id] [varchar](50) )
+INSERT INTO @temp (hh_id, hh_code, hh_status_reason, hh_tel, hh_village, hhs_id, hhsr_id, swk_id, wrd_id, usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id) 
+
+ALTER TABLE hh_household DISABLE TRIGGER hh_household_insert 
+INSERT INTO hh_household (hh_id, hh_code, hh_status_reason, hh_tel, hh_village, hhs_id, hhsr_id, swk_id, wrd_id, usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id) 
+SELECT temp.* FROM @temp temp LEFT JOIN hh_household hh ON temp.hh_id = hh.hh_id WHERE hh.hh_id IS NULL 
+ALTER TABLE hh_household ENABLE TRIGGER hh_household_insert 

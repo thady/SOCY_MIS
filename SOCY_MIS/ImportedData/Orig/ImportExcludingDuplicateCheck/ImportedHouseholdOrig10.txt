@@ -1,0 +1,823 @@
+ALTER TABLE hh_household DISABLE TRIGGER hh_household_insert 
+INSERT INTO hh_household (hh_id, hh_code, hh_status_reason, hh_tel, hh_village, hhs_id, hhsr_id, swk_id, wrd_id, usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id) 
+SELECT N'10', N'TP/ICOBI/0602', N'', N'', N'Ntambazi 11', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1000', N'TP/ICOBI/ 5620', N'', N'', N'Mirama', N'1', N'-1', N'30e6521b-ed46-45d3-b024-f0edaabfae95', N'1376', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1011', N'TP/ICOBI/ 5621', N'', N'', N'Kyeju', N'1', N'-1', N'30e6521b-ed46-45d3-b024-f0edaabfae95', N'1376', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1020', N'TP/ICOBI/5519', N'', N'', N'Ntambazi I', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1034', N'TP/ICOBI/5520', N'', N'', N'Ntambazi I', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1036', N'TP/ICOBI/ 5622', N'', N'', N'Kyeju', N'1', N'-1', N'30e6521b-ed46-45d3-b024-f0edaabfae95', N'1376', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1042', N'TP/ICOBI/5521', N'', N'', N'Ntambazi I', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1045', N'TP/ICOBI/ 5623', N'', N'', N'Rwamuranga', N'1', N'-1', N'30e6521b-ed46-45d3-b024-f0edaabfae95', N'1376', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1054', N'TP/ICOBI/5522', N'', N'', N'Ntambazi I', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1059', N'TP/ICOBI/ 5624', N'', N'', N'Buhenda', N'1', N'-1', N'30e6521b-ed46-45d3-b024-f0edaabfae95', N'1376', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1069', N'TP/ICOBI/5523', N'', N'', N'Ntambazi I', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1073', N'TP/ICOBI/ 5625', N'', N'', N'Mirama', N'1', N'-1', N'30e6521b-ed46-45d3-b024-f0edaabfae95', N'1376', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1079', N'TP/ICOBI/5524', N'', N'', N'Ntambazi I', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1089', N'TP/ICOBI/ 5537', N'', N'', N'Nyakinombe', N'1', N'-1', N'-1', N'978', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1094', N'TP/ICOBI/5525', N'', N'', N'Ntambazi I', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1100', N'TP/ICOBI/ 5538', N'', N'', N'Nyakinombe', N'1', N'-1', N'-1', N'978', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1110', N'TP/ICOBI/5526', N'', N'', N'Ntambazi I', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1111', N'TP/ICOBI/ 5539', N'', N'', N'Nyakinombe', N'1', N'-1', N'-1', N'978', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'11215', N'TP/ICOBI/5626', N'', N'', N'Kyenshebashebe', N'1', N'-1', N'5f9661ee-f13b-4a06-b67a-2cfc22096f1b', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'11220', N'TP/ICOBI/5627', N'', N'', N'Kyenshebashebe', N'1', N'-1', N'5f9661ee-f13b-4a06-b67a-2cfc22096f1b', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'11224', N'TP/ICOBI/5628', N'', N'', N'Kyenshebashebe', N'1', N'-1', N'5f9661ee-f13b-4a06-b67a-2cfc22096f1b', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1123', N'TP/ICOBI/ 5540', N'', N'', N'Nyakinombe', N'1', N'-1', N'-1', N'978', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'11232', N'TP/ICOBI/5629', N'', N'', N'Kyenshebashebe', N'1', N'-1', N'5f9661ee-f13b-4a06-b67a-2cfc22096f1b', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'11235', N'TP/ICOBI/5630', N'', N'', N'Kyenshebashebe', N'1', N'-1', N'5f9661ee-f13b-4a06-b67a-2cfc22096f1b', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1124', N'TP/ICOBI/5527', N'', N'', N'Ntambazi I', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'11251', N'TP/ICOBI/5632', N'', N'', N'Kyenshebashebe', N'1', N'-1', N'5f9661ee-f13b-4a06-b67a-2cfc22096f1b', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'11258', N'TP/ICOBI/5633', N'', N'', N'Kyenshebashebe', N'1', N'-1', N'5f9661ee-f13b-4a06-b67a-2cfc22096f1b', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'11265', N'TP/ICOBI/5634', N'', N'', N'Kyenshebashebe', N'1', N'-1', N'5f9661ee-f13b-4a06-b67a-2cfc22096f1b', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'11270', N'TP/ICOBI/5635', N'', N'', N'Kyenshebashebe', N'1', N'-1', N'5f9661ee-f13b-4a06-b67a-2cfc22096f1b', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'11281', N'TP/ICOBI/5636', N'', N'', N'Kyenshebashebe', N'1', N'-1', N'5f9661ee-f13b-4a06-b67a-2cfc22096f1b', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'11288', N'TP/ICOBI/5637', N'', N'', N'Kyenshebashebe', N'1', N'-1', N'5f9661ee-f13b-4a06-b67a-2cfc22096f1b', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'11292', N'TP/ICOBI/5638', N'', N'', N'Kyenshebashebe', N'1', N'-1', N'5f9661ee-f13b-4a06-b67a-2cfc22096f1b', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'11296', N'TP/ICOBI/5639', N'', N'', N'Kyenshebashebe', N'1', N'-1', N'5f9661ee-f13b-4a06-b67a-2cfc22096f1b', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'11303', N'TP/ICOBI/5640', N'', N'', N'Kyenshebashebe', N'1', N'-1', N'5f9661ee-f13b-4a06-b67a-2cfc22096f1b', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'11307', N'TP/ICOBI/5641', N'', N'', N'Kyenshebashebe', N'1', N'-1', N'5f9661ee-f13b-4a06-b67a-2cfc22096f1b', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'11313', N'TP/ICOBI/5642', N'', N'', N'Kyenshebashebe', N'1', N'-1', N'5f9661ee-f13b-4a06-b67a-2cfc22096f1b', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'11318', N'TP/ICOBI/5643', N'', N'', N'Kyenshebashebe', N'1', N'-1', N'5f9661ee-f13b-4a06-b67a-2cfc22096f1b', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1154', N'TP/ICOBI/5528', N'', N'', N'Ntambazi I', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1166', N'TP/ICOBI/5529', N'', N'', N'Ntambazi I', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1169', N'TP/ICOBI/ 5541', N'', N'', N'Kensinga', N'1', N'-1', N'-1', N'978', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1180', N'TP/ICOBI/5530', N'', N'', N'Ntambazi I', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1185', N'TP/ICOBI/ 5542', N'', N'', N'Kensinga', N'1', N'-1', N'-1', N'978', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1198', N'TP/ICOBI/5531', N'', N'', N'Ntambazi I', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1202', N'TP/ICOBI/ 5543', N'', N'', N'Kensinga', N'1', N'-1', N'-1', N'978', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1219', N'TP/ICOBI/5532', N'', N'', N'Ntambazi I', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'14', N'TP/ICOBI/0601', N'', N'', N'Ntambazi 11', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1431', N'TP/ICOBI/5533', N'', N'', N'Ntambazi I', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1444', N'TP/ICOBI/5534', N'', N'', N'Ntambazi I', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1458', N'TP/ICOBI/5535', N'', N'', N'Ntambazi I', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1474', N'TP/ICOBI/5536', N'', N'', N'Ntambazi I', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1493', N'TP/ICOBI/5698', N'', N'', N'Byeshembe Ward', N'1', N'-1', N'-1', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1501', N'TP/ICOBI/5699', N'', N'', N'Kanyarugyendo', N'1', N'-1', N'-1', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1514', N'TP/ICOBI/5700', N'', N'', N'Kanyarugyendo Kazo Town Council', N'1', N'-1', N'-1', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1522', N'TP/ICOBI/5701', N'', N'', N'Kanyarugyendo Kazo Town Council', N'1', N'-1', N'-1', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1534', N'TP/ICOBI/5702', N'', N'', N'Kanyarugyendo Kazo Town Council', N'1', N'-1', N'-1', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1540', N'TP/ICOBI/5703', N'', N'', N'Kanyarugyendo Kazo Town Council', N'1', N'-1', N'60ff6a1a-4c51-47b4-9610-5a234fdc5fea', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1542', N'TP/ICOBI/ 5544', N'', N'', N'Kemizo', N'1', N'-1', N'-1', N'978', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1553', N'TP/ICOBI/6152', N'', N'', N'Kanyarugyendo Kazo Town Council', N'1', N'-1', N'-1', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1554', N'TP/ICOBI/ 5545', N'', N'', N'Kemizo', N'1', N'-1', N'-1', N'978', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1563', N'TP/ICOBI/5704', N'', N'', N'Kanyarugyendo Kazo Town Council', N'1', N'-1', N'-1', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1570', N'TP/ICOBI/5705', N'', N'', N'Kanyarugyendo Kazo Town Council', N'1', N'-1', N'-1', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1579', N'TP/ICOBI/5706', N'', N'', N'Kanyarugyendo Kazo Town Council', N'1', N'-1', N'-1', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1590', N'TP/ICOBI/ 5546', N'', N'', N'Kabatanagi', N'1', N'-1', N'-1', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'16', N'TP/ICOBI/0599', N'', N'', N'Ntambazi II', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1613', N'TP/ICOBI/5547', N'', N'', N'Kabatanagi', N'1', N'-1', N'-1', N'978', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1614', N'TP/ICOBI/5707', N'', N'', N'Kanyarugyendo Kazo Town Council', N'1', N'-1', N'-1', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1626', N'TP/ICOBI/5708', N'', N'', N'Kanyarugyendo Kazo Town Council', N'1', N'-1', N'-1', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1633', N'TP/ICOBI/ 5548', N'', N'', N'Kabatanagi', N'1', N'-1', N'-1', N'978', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1634', N'TP/ICOBI/5709', N'', N'', N'Byeshembe Ward', N'1', N'-1', N'-1', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1646', N'TP/ICOBI/5710', N'', N'', N'Byeshembe Ward', N'1', N'-1', N'-1', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1649', N'TP/ICOBI/ 5549', N'', N'', N'Buteraniro', N'1', N'-1', N'-1', N'978', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1655', N'TP/ICOBI/5711', N'', N'', N'Byeshembe Ward', N'1', N'-1', N'-1', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1658', N'TP/ICOBI/ 5550', N'', N'', N'Buteraniro', N'1', N'-1', N'-1', N'978', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1669', N'TP/ICOBI/5712', N'', N'', N'Byeshembe Ward', N'1', N'-1', N'-1', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1672', N'TP/ICOBI/ 5551', N'', N'', N'Buteraniro', N'1', N'-1', N'-1', N'978', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1678', N'TP/ICOBI/5713', N'', N'', N'Byeshembe Ward', N'1', N'-1', N'-1', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1687', N'TP/ICOBI/ 5552', N'', N'', N'Mbaba', N'1', N'-1', N'-1', N'978', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1690', N'TP/ICOBI/5714', N'', N'', N'Kazo I', N'1', N'-1', N'-1', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1703', N'TP/ICOBI/ 5553', N'', N'', N'Mbaba', N'1', N'-1', N'-1', N'978', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1705', N'TP/ICOBI/5680', N'', N'', N'Nyamambo', N'1', N'-1', N'1d41f312-f16c-445e-ae35-a2f785314e32', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1710', N'TP/ICOBI/ 5554', N'', N'', N'Mbaba', N'1', N'-1', N'-1', N'978', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1715', N'TP/ICOBI/5681', N'', N'', N'Nyamambo', N'1', N'-1', N'1d41f312-f16c-445e-ae35-a2f785314e32', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1726', N'TP/ICOBI/5682', N'', N'', N'Nyamambo', N'1', N'-1', N'1d41f312-f16c-445e-ae35-a2f785314e32', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1734', N'TP/ICOBI/5683', N'', N'', N'Nyamambo', N'1', N'-1', N'1d41f312-f16c-445e-ae35-a2f785314e32', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1748', N'TP/ICOBI/5684', N'', N'', N'Nyamambo', N'1', N'-1', N'1d41f312-f16c-445e-ae35-a2f785314e32', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1754', N'TP/ICOBI/5685', N'', N'', N'Nyamambo', N'1', N'-1', N'1d41f312-f16c-445e-ae35-a2f785314e32', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1770', N'TP/ICOBI/ 5663', N'', N'', N'Kayanga II', N'1', N'-1', N'-1', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1773', N'TP/ICOBI/5686', N'', N'', N'Nyamambo', N'1', N'-1', N'1d41f312-f16c-445e-ae35-a2f785314e32', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1776', N'TP/ICOBI/5687', N'', N'', N'Nyamambo', N'1', N'-1', N'1d41f312-f16c-445e-ae35-a2f785314e32', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1779', N'TP/ICOBI/ 5664', N'', N'', N'Kayanga II', N'1', N'-1', N'-1', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1788', N'TP/ICOBI/5688', N'', N'', N'Nyamambo', N'1', N'-1', N'1d41f312-f16c-445e-ae35-a2f785314e32', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1790', N'TP/ICOBI/ 5665', N'', N'', N'Kayanga II', N'1', N'-1', N'-1', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1797', N'TP/ICOBI/5689', N'', N'', N'Kashenyi', N'1', N'-1', N'1d41f312-f16c-445e-ae35-a2f785314e32', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1799', N'TP/ICOBI/ 5666', N'', N'', N'Kayanga II', N'1', N'-1', N'-1', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'18', N'TP/ICOBI/0597', N'', N'', N'Ntambazi II', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1805', N'TP/ICOBI/5690', N'', N'', N'Kashenyi', N'1', N'-1', N'1d41f312-f16c-445e-ae35-a2f785314e32', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1810', N'TP/ICOBI/ 5667', N'', N'', N'Kayanga II', N'1', N'-1', N'-1', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1815', N'TP/ICOBI/5691', N'', N'', N'Kashenyi', N'1', N'-1', N'1d41f312-f16c-445e-ae35-a2f785314e32', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1826', N'TP/ICOBI/ 5668', N'', N'', N'Kayanga II', N'1', N'-1', N'-1', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1827', N'TP/ICOBI/5692', N'', N'', N'Kashenyi', N'1', N'-1', N'1d41f312-f16c-445e-ae35-a2f785314e32', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1834', N'TP/ICOBI/5693', N'', N'', N'Kitengyeto', N'1', N'-1', N'1d41f312-f16c-445e-ae35-a2f785314e32', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1838', N'TP/ICOBI/ 5669', N'', N'', N'Kayanga II', N'1', N'-1', N'-1', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1843', N'TP/ICOBI/5694', N'', N'', N'Kitengyeto', N'1', N'-1', N'1d41f312-f16c-445e-ae35-a2f785314e32', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1853', N'TP/ICOBI/ 5670', N'', N'', N'Kayanga II', N'1', N'-1', N'-1', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1856', N'TP/ICOBI/5695', N'', N'', N'Kitengyeto', N'1', N'-1', N'1d41f312-f16c-445e-ae35-a2f785314e32', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1863', N'TP/ICOBI/5696', N'', N'', N'Kitengyeto', N'1', N'-1', N'1d41f312-f16c-445e-ae35-a2f785314e32', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1870', N'TP/ICOBI/ 5671', N'', N'', N'Kayanga II', N'1', N'-1', N'-1', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1877', N'TP/ICOBI/5697', N'', N'', N'Kitengyeto', N'1', N'-1', N'1d41f312-f16c-445e-ae35-a2f785314e32', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1883', N'TP/ICOBI/ 5672', N'', N'', N'Kayanga II', N'1', N'-1', N'-1', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1887', N'TP/ICOBI/ 5674', N'', N'', N'Kayanga II', N'1', N'-1', N'f5b6ad0c-0109-42e5-b81e-a41beace222c', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1890', N'TP/ICOBI/5675', N'', N'', N'Kitengyero', N'1', N'-1', N'-1', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1897', N'TP/ICOBI/ 5676', N'', N'', N'Kitengyeto', N'1', N'-1', N'-1', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'19', N'TP/ICOBI/0603', N'', N'', N'Ntambazi II', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1900', N'TP/ICOBI/ 5677', N'', N'', N'Kayanga I', N'1', N'-1', N'-1', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1908', N'TP/ICOBI/ 5678', N'', N'', N'Kayanga I', N'1', N'-1', N'-1', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1913', N'TP/ICOBI/ 5679', N'', N'', N'Kayanga I', N'1', N'-1', N'-1', N'525', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1974', N'TP/ICOBI/ 5644', N'', N'', N'Mushabwa II', N'1', N'-1', N'-1', N'842', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1988', N'TP/ICOBI/ 5646', N'', N'', N'Mushabwa II', N'1', N'-1', N'-1', N'842', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'1993', N'TP/ICOBI/ 5647', N'', N'', N'Kyampangara I', N'1', N'-1', N'-1', N'842', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'20', N'TP/ICOBI/0600', N'', N'', N'Ntambazi 11', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2005', N'TP/ICOBI/ 5648', N'', N'', N'Kyampangara I', N'1', N'-1', N'-1', N'842', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2014', N'TP/ICOBI/5590', N'', N'', N'Rwamanuma', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2022', N'TP/ICOBI/ 5649', N'', N'', N'Kyampangara I', N'1', N'-1', N'-1', N'842', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2029', N'TP/ICOBI/5591', N'', N'', N'Rwamanuma', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2032', N'TP/ICOBI/ 5650', N'', N'', N'Mushabwa I', N'1', N'-1', N'-1', N'842', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2038', N'TP/ICOBI/5592', N'', N'', N'Rwamanuma', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2043', N'TP/ICOBI/ 5651', N'', N'', N'Mushabwa II', N'1', N'-1', N'-1', N'842', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2046', N'TP/ICOBI/5593', N'', N'', N'Rwamanuma', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2051', N'TP/ICOBI/ 5652', N'', N'', N'Kyampangara II', N'1', N'-1', N'-1', N'842', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2056', N'TP/ICOBI/5594', N'', N'', N'Rwamanuma', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2059', N'TP/ICOBI/ 5653', N'', N'', N'Kyampangara I', N'1', N'-1', N'-1', N'842', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2063', N'TP/ICOBI/5595', N'', N'', N'Rwamanuma', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2069', N'TP/ICOBI/5596', N'', N'', N'Rwamanuma', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2076', N'TP/ICOBI/ 5654', N'', N'', N'Kyampangara I', N'1', N'-1', N'-1', N'842', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2083', N'TP/ICOBI/5597', N'', N'', N'Obwengara', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2087', N'TP/ICOBI/ 5655', N'', N'', N'Kyampangara II', N'1', N'-1', N'-1', N'842', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2089', N'TP/ICOBI/5598', N'', N'', N'Rwamanuma', N'1', N'-1', N'-1', N'1298', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2093', N'TP/ICOBI/ 5656', N'', N'', N'Ibaare II', N'1', N'-1', N'-1', N'842', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2097', N'TP/ICOBI/5599', N'', N'', N'Obwengara', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2100', N'TP/ICOBI/ 5657', N'', N'', N'Ibaare II', N'1', N'-1', N'-1', N'842', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2177', N'TP/ICOBI/ 5658', N'', N'', N'Ibaare II', N'1', N'-1', N'-1', N'842', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2178', N'TP/ICOBI/5601', N'', N'', N'Obwengara', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2190', N'TP/ICOBI/5602', N'', N'', N'Obwengara', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2192', N'TP/ICOBI/ 5659', N'', N'', N'Ibaare II', N'1', N'-1', N'-1', N'842', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2200', N'TP/ICOBI/5603', N'', N'', N'Obwengara', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2203', N'TP/ICOBI/ 5660', N'', N'', N'Obuzinga I', N'1', N'-1', N'-1', N'842', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2211', N'TP/ICOBI/5604', N'', N'', N'Obwengara', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2223', N'TP/ICOBI/5606', N'', N'', N'Obwengara', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2224', N'TP/ICOBI/ 5661', N'', N'', N'Obuzinga I', N'1', N'-1', N'-1', N'842', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2237', N'TP/ICOBI/5605', N'', N'', N'Rwamanuma', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2243', N'TP/ICOBI/ 5607', N'', N'', N'Obwengambe', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2463', N'TP/ICOBI/5501', N'', N'', N'Byeshembe Ward', N'1', N'-1', N'-1', N'1509', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2473', N'TP/ICOBI/5502', N'', N'', N'Byeshembe Ward', N'1', N'-1', N'-1', N'1509', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2479', N'TP/ICOBI/5503', N'', N'', N'Kyarugyendo', N'1', N'-1', N'-1', N'1509', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2489', N'TP/ICOBI/5504', N'', N'', N'Byeshembe Ward', N'1', N'-1', N'-1', N'1509', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2496', N'TP/ICOBI/5505', N'', N'', N'Kyarugyendo', N'1', N'-1', N'-1', N'1509', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2503', N'TP/ICOBI/5506', N'', N'', N'Kyarugyendo', N'1', N'-1', N'-1', N'1509', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2516', N'TP/ICOBI/5507', N'', N'', N'Byeshembe Ward', N'1', N'-1', N'-1', N'1509', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2528', N'TP/ICOBI/5508', N'', N'', N'Byeshembe Ward', N'1', N'-1', N'-1', N'1509', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2539', N'TP/ICOBI/5509', N'', N'', N'Byeshembe Ward', N'1', N'-1', N'-1', N'1509', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2553', N'TP/ICOBI/5510', N'', N'', N'Byeshembe Ward', N'1', N'-1', N'-1', N'1509', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2565', N'TP/ICOBI/5511', N'', N'', N'Byeshembe Ward', N'1', N'-1', N'-1', N'1509', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2576', N'TP/ICOBI/5512', N'', N'', N'Byeshembe Ward', N'1', N'-1', N'-1', N'1509', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2585', N'TP/ICOBI/5513', N'', N'', N'Byeshembe Ward', N'1', N'-1', N'-1', N'1509', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2598', N'TP/ICOBI/5514', N'', N'', N'Byeshembe Ward', N'1', N'-1', N'-1', N'1509', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'26', N'TP/ICOBI/0596', N'', N'', N'Ntambazi II', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2608', N'TP/ICOBI/5515', N'', N'', N'Byeshembe Ward', N'1', N'-1', N'-1', N'1509', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2624', N'TP/ICOBI/5516', N'', N'', N'Byeshembe Ward', N'1', N'-1', N'-1', N'1509', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2634', N'TP/ICOBI/5517', N'', N'', N'Byeshembe Ward', N'1', N'-1', N'-1', N'1509', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2648', N'TP/ICOBI/5518', N'', N'', N'Byeshembe Ward', N'1', N'-1', N'-1', N'1509', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2693', N'TP/ICOBI/5572', N'', N'', N'Gabarungi', N'1', N'-1', N'-1', N'1512', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2702', N'TP/ICOBI/5573', N'', N'', N'Gabarungi', N'1', N'-1', N'-1', N'1512', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2722', N'TP/ICOBI/5574', N'', N'', N'Rwamuyeye', N'1', N'-1', N'-1', N'1512', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2733', N'TP/ICOBI/5575', N'', N'', N'Gabarungi', N'1', N'-1', N'-1', N'1512', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2734', N'TP/ICOBI/ 5555', N'', N'', N'Rweminyafu', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2743', N'TP/ICOBI/5576', N'', N'', N'Rwamuyeye', N'1', N'-1', N'-1', N'1512', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2751', N'TP/ICOBI/ 5556', N'', N'', N'Rweminyafu', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2756', N'TP/ICOBI/5577', N'', N'', N'Gabarungi', N'1', N'-1', N'-1', N'1512', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2763', N'TP/ICOBI/ 5557', N'', N'', N'Rweminyafu', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2765', N'TP/ICOBI/5578', N'', N'', N'Rwamuyeye', N'1', N'-1', N'-1', N'1512', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2777', N'TP/ICOBI/5579', N'', N'', N'Gabarungi', N'1', N'-1', N'-1', N'1512', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2782', N'TP/ICOBI/ 5558', N'', N'', N'Rweminyafu', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2790', N'TP/ICOBI/5580', N'', N'', N'Gabarungi', N'1', N'-1', N'-1', N'1512', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2797', N'TP/ICOBI/ 5559', N'', N'', N'Rweminyafu', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2800', N'TP/ICOBI/5581', N'', N'', N'Gabarungi', N'1', N'-1', N'-1', N'1512', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2807', N'TP/ICOBI/5582', N'', N'', N'Gabarungi', N'1', N'-1', N'-1', N'1512', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2820', N'TP/ICOBI/ 5560', N'', N'', N'Rweminyafu', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2821', N'TP/ICOBI/5583', N'', N'', N'Gabarungi', N'1', N'-1', N'-1', N'1512', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2828', N'TP/ICOBI/5584', N'', N'', N'Gabarungi', N'1', N'-1', N'-1', N'1512', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2833', N'TP/ICOBI/ 5561', N'', N'', N'Rweminyafu', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2837', N'TP/ICOBI/5585', N'', N'', N'Rwamuyeye', N'1', N'-1', N'-1', N'1512', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2846', N'TP/ICOBI/ 5562', N'', N'', N'Rweminyafu', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2847', N'TP/ICOBI/5586', N'', N'', N'Rwamuyeye', N'1', N'-1', N'-1', N'1512', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2853', N'TP/ICOBI/5587', N'', N'', N'Gabarungi', N'1', N'-1', N'-1', N'1512', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2856', N'TP/ICOBI/ 5563', N'', N'', N'Rweminyafu', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2866', N'TP/ICOBI/5588', N'', N'', N'Gabarungi', N'1', N'-1', N'-1', N'1512', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2870', N'TP/ICOBI/ 5564', N'', N'', N'Rweminyafu', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2872', N'TP/ICOBI/5589', N'', N'', N'Gabarungi', N'1', N'-1', N'-1', N'1512', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2884', N'TP/ICOBI/ 5565', N'', N'', N'Rweminyafu', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2889', N'TP/ICOBI/5973', N'', N'', N'Kyeitagi', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2898', N'TP/ICOBI/5974', N'', N'', N'Kyeitagi', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2905', N'TP/ICOBI/ 5566', N'', N'', N'Rweminyafu', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2906', N'TP/ICOBI/5975', N'', N'', N'Kyeitagi', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2916', N'TP/ICOBI/5976', N'', N'', N'Kyeitagi', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2932', N'TP/ICOBI/ 5567', N'', N'', N'Kigorogoro', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2944', N'TP/ICOBI/ 5568', N'', N'', N'Kigorogoro', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2953', N'TP/ICOBI/ 5569', N'', N'', N'Rweminyafu', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29570', N'TP/ICOBI/', N'', N'', N'EKYAMBU 2', N'1', N'-1', N'23884687-512e-4bae-82b1-174509a73f5b', N'1498', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29573', N'TP/ICOBI/', N'', N'', N'Kashenyi LC ', N'1', N'-1', N'f59e7767-6443-47ab-a805-56d8d23f4039', N'1495', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29576', N'TP/ICOBI/10078', N'', N'', N'Kashenyi LC I', N'1', N'-1', N'f59e7767-6443-47ab-a805-56d8d23f4039', N'1495', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29578', N'TP/ICOBI/10102', N'', N'', N'ENTUNGA 2', N'1', N'-1', N'23884687-512e-4bae-82b1-174509a73f5b', N'1498', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29579', N'TP/ICOBI/10089', N'', N'', N'Sya', N'1', N'-1', N'e4ad777d-a031-4cd7-b7ef-6a48a1bb513a', N'1492', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29581', N'TP/ICOBI/10079', N'', N'', N'Kashenyi LC I', N'1', N'-1', N'f59e7767-6443-47ab-a805-56d8d23f4039', N'1495', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29583', N'TP/ICOBI/10103', N'', N'', N'EKYAMBU 1', N'1', N'-1', N'23884687-512e-4bae-82b1-174509a73f5b', N'1498', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29584', N'TP/ICOBI/', N'', N'', N'Sya', N'1', N'-1', N'e4ad777d-a031-4cd7-b7ef-6a48a1bb513a', N'1492', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29585', N'TP/ICOBI/10080', N'', N'', N'Kashenyi LC I', N'1', N'-1', N'f59e7767-6443-47ab-a805-56d8d23f4039', N'1495', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29589', N'TP/ICOBI/10081', N'', N'', N'Kashenyi LC I', N'1', N'-1', N'f59e7767-6443-47ab-a805-56d8d23f4039', N'1495', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29590', N'TP/ICOBI/10104', N'', N'', N'EKYAMBU 1', N'1', N'-1', N'23884687-512e-4bae-82b1-174509a73f5b', N'1498', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29594', N'TP/ICOBI/10090', N'', N'', N'Sya', N'1', N'-1', N'e4ad777d-a031-4cd7-b7ef-6a48a1bb513a', N'1492', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29595', N'TP/ICOBI/10082', N'', N'', N'Kihumuro LC I', N'1', N'-1', N'f59e7767-6443-47ab-a805-56d8d23f4039', N'1495', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29598', N'TP/ICOBI/10105', N'', N'', N'EKYAMBU 2', N'1', N'-1', N'23884687-512e-4bae-82b1-174509a73f5b', N'1498', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29601', N'TP/ICOBI/10083', N'', N'', N'Kihumuro LC I', N'1', N'-1', N'f59e7767-6443-47ab-a805-56d8d23f4039', N'1495', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29602', N'TP/ICOBI/', N'', N'', N'Engari I', N'1', N'-1', N'e4ad777d-a031-4cd7-b7ef-6a48a1bb513a', N'1494', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29603', N'TP/ICOBI/', N'', N'', N'Bishozi II', N'1', N'-1', N'-1', N'1494', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29606', N'TP/ICOBI/10106', N'', N'', N'EKYAMBU 1', N'1', N'-1', N'23884687-512e-4bae-82b1-174509a73f5b', N'1498', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29607', N'TP/ICOBI/10084', N'', N'', N'Ntugamo LC I', N'1', N'-1', N'f59e7767-6443-47ab-a805-56d8d23f4039', N'1495', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29609', N'TP/ICOBI/10115', N'', N'', N'Bishozi II', N'1', N'-1', N'-1', N'1494', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29610', N'TP/ICOBI/10126', N'', N'', N'Nsheshe', N'1', N'-1', N'-1', N'1498', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29612', N'TP/ICOBI/10085', N'', N'', N'Rupyani LC I', N'1', N'-1', N'f59e7767-6443-47ab-a805-56d8d23f4039', N'1495', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29615', N'TP/ICOBI/10086', N'', N'', N'Kitongore LC I', N'1', N'-1', N'f59e7767-6443-47ab-a805-56d8d23f4039', N'1495', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29618', N'TP/ICOBI/10107', N'', N'', N'ENTUNGA 2', N'1', N'-1', N'23884687-512e-4bae-82b1-174509a73f5b', N'1498', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29619', N'TP/ICOBI/10116', N'', N'', N'Karututsi', N'1', N'-1', N'-1', N'1494', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29620', N'TP/ICOBI/10087', N'', N'', N'Rupyani LC I', N'1', N'-1', N'f59e7767-6443-47ab-a805-56d8d23f4039', N'1495', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29623', N'TP/ICOBI/10092', N'', N'', N'Engari II', N'1', N'-1', N'e4ad777d-a031-4cd7-b7ef-6a48a1bb513a', N'1492', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29624', N'TP/ICOBI/10108', N'', N'', N'EKYAMBU 1', N'1', N'-1', N'23884687-512e-4bae-82b1-174509a73f5b', N'1498', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29626', N'TP/ICOBI/10127', N'', N'', N'Entunga', N'1', N'-1', N'-1', N'1498', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29627', N'TP/ICOBI/10117', N'', N'', N'Bishozi II', N'1', N'-1', N'-1', N'1494', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29628', N'TP/ICOBI/', N'', N'', N'Akengoma', N'1', N'-1', N'1c4a1382-a27d-49c7-82b8-bbb1ce2f0199', N'1496', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29631', N'TP/ICOBI/10088', N'', N'', N'Kihumuro LC I', N'1', N'-1', N'f59e7767-6443-47ab-a805-56d8d23f4039', N'1495', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29634', N'TP/ICOBI/10109', N'', N'', N'ENTUNGA 2', N'1', N'-1', N'23884687-512e-4bae-82b1-174509a73f5b', N'1498', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29635', N'TP/ICOBI/10139', N'', N'', N'Akengoma', N'1', N'-1', N'1c4a1382-a27d-49c7-82b8-bbb1ce2f0199', N'1496', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29637', N'TP/ICOBI/10128', N'', N'', N'Nsheshe I', N'1', N'-1', N'4d94561a-52a8-44ea-8ad8-fe8672fec272', N'1498', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29639', N'TP/ICOBI/', N'', N'', N'Engari II', N'1', N'-1', N'e4ad777d-a031-4cd7-b7ef-6a48a1bb513a', N'1492', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29643', N'TP/ICOBI/10093', N'', N'', N'Engari II', N'1', N'-1', N'e4ad777d-a031-4cd7-b7ef-6a48a1bb513a', N'1492', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29644', N'TP/ICOBI/10110', N'', N'', N'EKYAMBU 1', N'1', N'-1', N'23884687-512e-4bae-82b1-174509a73f5b', N'1498', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29648', N'TP/ICOBI/10094', N'', N'', N'Engari II', N'1', N'-1', N'e4ad777d-a031-4cd7-b7ef-6a48a1bb513a', N'1492', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29650', N'TP/ICOBI/', N'', N'', N'Akabare', N'1', N'-1', N'1c4a1382-a27d-49c7-82b8-bbb1ce2f0199', N'1496', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29651', N'TP/ICOBI/', N'', N'', N'ENTUNGA 2', N'1', N'-1', N'23884687-512e-4bae-82b1-174509a73f5b', N'1498', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29654', N'TP/ICOBI/10095', N'', N'', N'Kijoronga', N'1', N'-1', N'e4ad777d-a031-4cd7-b7ef-6a48a1bb513a', N'1492', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29656', N'TP/ICOBI/10112', N'', N'', N'ENTUNGA 2', N'1', N'-1', N'23884687-512e-4bae-82b1-174509a73f5b', N'1498', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29658', N'TP/ICOBI/10141', N'', N'', N'Kaicumu 1', N'1', N'-1', N'1c4a1382-a27d-49c7-82b8-bbb1ce2f0199', N'1496', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29660', N'TP/ICOBI/10118', N'', N'', N'Akati', N'1', N'-1', N'-1', N'1494', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29662', N'TP/ICOBI/10142', N'', N'', N'Ekigaaga', N'1', N'-1', N'1c4a1382-a27d-49c7-82b8-bbb1ce2f0199', N'1496', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29663', N'TP/ICOBI/10113', N'', N'', N'EKYAMBU 2', N'1', N'-1', N'23884687-512e-4bae-82b1-174509a73f5b', N'1498', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29665', N'TP/ICOBI/10130', N'', N'', N'Nsheshe', N'1', N'-1', N'4d94561a-52a8-44ea-8ad8-fe8672fec272', N'1498', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29666', N'TP/ICOBI/10077', N'', N'', N'Kashenyi LC I', N'1', N'-1', N'f59e7767-6443-47ab-a805-56d8d23f4039', N'1495', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29667', N'TP/ICOBI/10119', N'', N'', N'Bishozi I', N'1', N'-1', N'-1', N'1494', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29669', N'TP/ICOBI/10096', N'', N'', N'Kijoronga', N'1', N'-1', N'e4ad777d-a031-4cd7-b7ef-6a48a1bb513a', N'1492', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29671', N'TP/ICOBI/10143', N'', N'', N'kaicumu 11', N'1', N'-1', N'1c4a1382-a27d-49c7-82b8-bbb1ce2f0199', N'1496', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29672', N'TP/ICOBI/', N'', N'', N'Imiramiringa', N'1', N'-1', N'-1', N'1493', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29673', N'TP/ICOBI/10164', N'', N'', N'NTUNGAMO', N'1', N'-1', N'3de7ad48-9436-4271-94d5-4b9a4ad42a01', N'1495', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29674', N'TP/ICOBI/', N'', N'', N'Kaaro', N'1', N'-1', N'4d94561a-52a8-44ea-8ad8-fe8672fec272', N'1497', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29676', N'TP/ICOBI/10120', N'', N'', N'Akati', N'1', N'-1', N'-1', N'1494', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29677', N'TP/ICOBI/10097', N'', N'', N'Engari I', N'1', N'-1', N'e4ad777d-a031-4cd7-b7ef-6a48a1bb513a', N'1492', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29678', N'TP/ICOBI/10150', N'', N'', N'Kaaro', N'1', N'-1', N'4d94561a-52a8-44ea-8ad8-fe8672fec272', N'1497', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29680', N'TP/ICOBI/10144', N'', N'', N'Kaicumu 1', N'1', N'-1', N'1c4a1382-a27d-49c7-82b8-bbb1ce2f0199', N'1496', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29681', N'TP/ICOBI/10177', N'', N'', N'Orushango', N'1', N'-1', N'-1', N'1493', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29684', N'TP/ICOBI/10176', N'', N'', N'Imiramiringa', N'1', N'-1', N'-1', N'1493', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29685', N'TP/ICOBI/10098', N'', N'', N'Rwenyawera', N'1', N'-1', N'e4ad777d-a031-4cd7-b7ef-6a48a1bb513a', N'1492', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29686', N'TP/ICOBI/10121', N'', N'', N'Karututsi', N'1', N'-1', N'-1', N'1494', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29687', N'TP/ICOBI/10165', N'', N'', N'KASHENYI', N'1', N'-1', N'3de7ad48-9436-4271-94d5-4b9a4ad42a01', N'1495', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29688', N'TP/ICOBI/10132', N'', N'', N'Maizimeru', N'1', N'-1', N'-1', N'1498', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29689', N'TP/ICOBI/10145', N'', N'', N'kaicumu 11', N'1', N'-1', N'1c4a1382-a27d-49c7-82b8-bbb1ce2f0199', N'1496', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2969', N'TP/ICOBI/ 5570', N'', N'', N'Kigorogoro', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29691', N'TP/ICOBI/', N'', N'', N'Kyengando ii', N'1', N'-1', N'4d94561a-52a8-44ea-8ad8-fe8672fec272', N'1497', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29692', N'TP/ICOBI/10151', N'', N'', N'Kyengando ii', N'1', N'-1', N'4d94561a-52a8-44ea-8ad8-fe8672fec272', N'1497', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29693', N'TP/ICOBI/10178', N'', N'', N'Imiramiringa', N'1', N'-1', N'-1', N'1493', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29696', N'TP/ICOBI/10122', N'', N'', N'Nyakatete', N'1', N'-1', N'-1', N'1494', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29697', N'TP/ICOBI/10166', N'', N'', N'KITONGORE', N'1', N'-1', N'3de7ad48-9436-4271-94d5-4b9a4ad42a01', N'1495', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29698', N'TP/ICOBI/10099', N'', N'', N'Sya', N'1', N'-1', N'e4ad777d-a031-4cd7-b7ef-6a48a1bb513a', N'1492', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29699', N'TP/ICOBI/10179', N'', N'', N'Bwera', N'1', N'-1', N'-1', N'1493', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29700', N'TP/ICOBI/10146', N'', N'', N'Rugando', N'1', N'-1', N'1c4a1382-a27d-49c7-82b8-bbb1ce2f0199', N'1496', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29703', N'TP/ICOBI/10133', N'', N'', N'Maizimeru', N'1', N'-1', N'-1', N'1498', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29704', N'TP/ICOBI/10123', N'', N'', N'Bishozi II', N'1', N'-1', N'-1', N'1494', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29705', N'TP/ICOBI/10180', N'', N'', N'Orushango', N'1', N'-1', N'-1', N'1493', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29706', N'TP/ICOBI/10167', N'', N'', N'NTUNGAMO', N'1', N'-1', N'3de7ad48-9436-4271-94d5-4b9a4ad42a01', N'1495', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29707', N'TP/ICOBI/10152', N'', N'', N'Kaaro', N'1', N'-1', N'4d94561a-52a8-44ea-8ad8-fe8672fec272', N'1497', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29708', N'TP/ICOBI/10147', N'', N'', N'Ekigongi', N'1', N'-1', N'1c4a1382-a27d-49c7-82b8-bbb1ce2f0199', N'1496', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29709', N'TP/ICOBI/10100', N'', N'', N'Sya', N'1', N'-1', N'e4ad777d-a031-4cd7-b7ef-6a48a1bb513a', N'1492', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29711', N'TP/ICOBI/10124', N'', N'', N'Karututsi', N'1', N'-1', N'b6d20c64-a8e1-44bc-8014-a6f130c115dd', N'1494', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29712', N'TP/ICOBI/10181', N'', N'', N'Kakiindo', N'1', N'-1', N'-1', N'1493', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29713', N'TP/ICOBI/10168', N'', N'', N'KATOMA', N'1', N'-1', N'3de7ad48-9436-4271-94d5-4b9a4ad42a01', N'1497', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29714', N'TP/ICOBI/10148', N'', N'', N'Meru-meru', N'1', N'-1', N'1c4a1382-a27d-49c7-82b8-bbb1ce2f0199', N'1496', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29715', N'TP/ICOBI/10182', N'', N'', N'Imiramiringa', N'1', N'-1', N'-1', N'1493', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29716', N'TP/ICOBI/10134', N'', N'', N'Maizimeru', N'1', N'-1', N'-1', N'1498', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29718', N'TP/ICOBI/10169', N'', N'', N'KITONGORE', N'1', N'-1', N'3de7ad48-9436-4271-94d5-4b9a4ad42a01', N'1495', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29719', N'TP/ICOBI/10125', N'', N'', N'Nyakatete', N'1', N'-1', N'-1', N'1494', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29720', N'TP/ICOBI/10149', N'', N'', N'keicumu t\c', N'1', N'-1', N'1c4a1382-a27d-49c7-82b8-bbb1ce2f0199', N'1496', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29721', N'TP/ICOBI/10183', N'', N'', N'Kakiindo', N'1', N'-1', N'-1', N'1493', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29723', N'TP/ICOBI/10153', N'', N'', N'Kyengando ii', N'1', N'-1', N'4d94561a-52a8-44ea-8ad8-fe8672fec272', N'1497', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29726', N'TP/ICOBI/10170', N'', N'', N'NTUNGAMO', N'1', N'-1', N'3de7ad48-9436-4271-94d5-4b9a4ad42a01', N'1495', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29727', N'TP/ICOBI/10184', N'', N'', N'Akarama', N'1', N'-1', N'-1', N'1493', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29731', N'TP/ICOBI/10188', N'', N'', N'Bukiiro11', N'1', N'-1', N'43131548-d19f-4b06-aa80-1c753b901f1e', N'1492', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29732', N'TP/ICOBI/10135', N'', N'', N'Maizimeru', N'1', N'-1', N'-1', N'1498', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29734', N'TP/ICOBI/10154', N'', N'', N'Kyengando i', N'1', N'-1', N'4d94561a-52a8-44ea-8ad8-fe8672fec272', N'1497', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29736', N'TP/ICOBI/10171', N'', N'', N'KASHENYI', N'1', N'-1', N'3de7ad48-9436-4271-94d5-4b9a4ad42a01', N'1495', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29737', N'TP/ICOBI/10185', N'', N'', N'Akarama', N'1', N'-1', N'-1', N'1493', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29738', N'TP/ICOBI/10189', N'', N'', N'Bukiiro11', N'1', N'-1', N'43131548-d19f-4b06-aa80-1c753b901f1e', N'1492', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29743', N'TP/ICOBI/10190', N'', N'', N'Bukiiro11', N'1', N'-1', N'43131548-d19f-4b06-aa80-1c753b901f1e', N'1492', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29744', N'TP/ICOBI/10172', N'', N'', N'KITONGORE', N'1', N'-1', N'3de7ad48-9436-4271-94d5-4b9a4ad42a01', N'1495', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29745', N'TP/ICOBI/10186', N'', N'', N'Orushango', N'1', N'-1', N'-1', N'1493', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29747', N'TP/ICOBI/10155', N'', N'', N'Kaaro', N'1', N'-1', N'4d94561a-52a8-44ea-8ad8-fe8672fec272', N'1497', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29750', N'TP/ICOBI/10191', N'', N'', N'Bukiiro11', N'1', N'-1', N'43131548-d19f-4b06-aa80-1c753b901f1e', N'1492', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29751', N'TP/ICOBI/10173', N'', N'', N'KITOMA', N'1', N'-1', N'3de7ad48-9436-4271-94d5-4b9a4ad42a01', N'1495', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29752', N'TP/ICOBI/10174', N'', N'', N'NTUNGAMO', N'1', N'-1', N'3de7ad48-9436-4271-94d5-4b9a4ad42a01', N'1495', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29753', N'TP/ICOBI/10156', N'', N'', N'Kyengando iii', N'1', N'-1', N'4d94561a-52a8-44ea-8ad8-fe8672fec272', N'1497', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29755', N'TP/ICOBI/10187', N'', N'', N'Bugarama', N'1', N'-1', N'-1', N'1492', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29757', N'TP/ICOBI/10175', N'', N'', N'NTUNGAMO', N'1', N'-1', N'3de7ad48-9436-4271-94d5-4b9a4ad42a01', N'1495', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29758', N'TP/ICOBI/10136', N'', N'', N'Entunga', N'1', N'-1', N'-1', N'1498', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29759', N'TP/ICOBI/10192', N'', N'', N'Bukiiro11', N'1', N'-1', N'43131548-d19f-4b06-aa80-1c753b901f1e', N'1492', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2976', N'TP/ICOBI/ 5571', N'', N'', N'Kigorogoro', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29760', N'TP/ICOBI/10157', N'', N'', N'Kyengando (i)', N'1', N'-1', N'4d94561a-52a8-44ea-8ad8-fe8672fec272', N'1497', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29764', N'TP/ICOBI/10193', N'', N'', N'Bukiiro11', N'1', N'-1', N'43131548-d19f-4b06-aa80-1c753b901f1e', N'1492', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29766', N'TP/ICOBI/10137', N'', N'', N'Maizimeru', N'1', N'-1', N'-1', N'1498', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29768', N'TP/ICOBI/10158', N'', N'', N'Kaaro', N'1', N'-1', N'4d94561a-52a8-44ea-8ad8-fe8672fec272', N'1497', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29769', N'TP/ICOBI/10194', N'', N'', N'Bukiiro11', N'1', N'-1', N'43131548-d19f-4b06-aa80-1c753b901f1e', N'1492', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29772', N'TP/ICOBI/10195', N'', N'', N'Bukiiro11', N'1', N'-1', N'43131548-d19f-4b06-aa80-1c753b901f1e', N'1492', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29774', N'TP/ICOBI/10159', N'', N'', N'Nyamuhirwa Cell', N'1', N'-1', N'4d94561a-52a8-44ea-8ad8-fe8672fec272', N'1497', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29775', N'TP/ICOBI/10196', N'', N'', N'Bukiiro11', N'1', N'-1', N'43131548-d19f-4b06-aa80-1c753b901f1e', N'1492', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29778', N'TP/ICOBI/10160', N'', N'', N'Kyengando iii', N'1', N'-1', N'4d94561a-52a8-44ea-8ad8-fe8672fec272', N'1497', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29783', N'TP/ICOBI/10161', N'', N'', N'Kaaro', N'1', N'-1', N'4d94561a-52a8-44ea-8ad8-fe8672fec272', N'1497', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29784', N'TP/ICOBI/10197', N'', N'', N'Bukiiro11', N'1', N'-1', N'43131548-d19f-4b06-aa80-1c753b901f1e', N'1492', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29791', N'TP/ICOBI/10162', N'', N'', N'Kyengando iii', N'1', N'-1', N'4d94561a-52a8-44ea-8ad8-fe8672fec272', N'1497', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'29811', N'TP/ICOBI/10163', N'', N'', N'Kyengando iii cell', N'1', N'-1', N'4d94561a-52a8-44ea-8ad8-fe8672fec272', N'1497', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'2989', N'TP/ICOBI/5907', N'', N'', N'Rweminyafu', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'30', N'TP/ICOBI/0595', N'', N'', N'Ntambazi II', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3001', N'TP/ICOBI/ 5991', N'', N'', N'Magyegye', N'1', N'-1', N'8f65a023-78f8-4594-a8f2-a988e902f344', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3018', N'TP/ICOBI/ 5992', N'', N'', N'Buzooba', N'1', N'-1', N'8f65a023-78f8-4594-a8f2-a988e902f344', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3030', N'TP/ICOBI/ 5993', N'', N'', N'Buzooba', N'1', N'-1', N'8f65a023-78f8-4594-a8f2-a988e902f344', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3051', N'TP/ICOBI/ 5994', N'', N'', N'Magyegye', N'1', N'-1', N'8f65a023-78f8-4594-a8f2-a988e902f344', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3066', N'TP/ICOBI/ 5995', N'', N'', N'Buzooba', N'1', N'-1', N'8f65a023-78f8-4594-a8f2-a988e902f344', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3075', N'TP/ICOBI/ 5996', N'', N'', N'Magyegye', N'1', N'-1', N'8f65a023-78f8-4594-a8f2-a988e902f344', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3087', N'TP/ICOBI/ 5997', N'', N'', N'Magyegye', N'1', N'-1', N'8f65a023-78f8-4594-a8f2-a988e902f344', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3095', N'TP/ICOBI/ 5998', N'', N'', N'Magyegye', N'1', N'-1', N'8f65a023-78f8-4594-a8f2-a988e902f344', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3104', N'TP/ICOBI/ 5999', N'', N'', N'Magyegye', N'1', N'-1', N'8f65a023-78f8-4594-a8f2-a988e902f344', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3116', N'TP/ICOBI/ 6000', N'', N'', N'Magyegye', N'1', N'-1', N'8f65a023-78f8-4594-a8f2-a988e902f344', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3127', N'TP/ICOBI/ 6001', N'', N'', N'Magyegye', N'1', N'-1', N'8f65a023-78f8-4594-a8f2-a988e902f344', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3140', N'TP/ICOBI/ 6002', N'', N'', N'Magyegye', N'1', N'-1', N'8f65a023-78f8-4594-a8f2-a988e902f344', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3149', N'TP/ICOBI/ 6003', N'', N'', N'Magyegye', N'1', N'-1', N'8f65a023-78f8-4594-a8f2-a988e902f344', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3158', N'TP/ICOBI/ 6004', N'', N'', N'Magyegye', N'1', N'-1', N'8f65a023-78f8-4594-a8f2-a988e902f344', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'316', N'TP/ICOBI/5471', N'', N'', N'Ruzinga Cell', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3167', N'TP/ICOBI/ 6005', N'', N'', N'Magyegye', N'1', N'-1', N'8f65a023-78f8-4594-a8f2-a988e902f344', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3179', N'TP/ICOBI/ 6006', N'', N'', N'Buzooba', N'1', N'-1', N'8f65a023-78f8-4594-a8f2-a988e902f344', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3188', N'TP/ICOBI/ 6007', N'', N'', N'Buzooba', N'1', N'-1', N'8f65a023-78f8-4594-a8f2-a988e902f344', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3200', N'TP/ICOBI/ 6008', N'', N'', N'Buzooba', N'1', N'-1', N'8f65a023-78f8-4594-a8f2-a988e902f344', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3214', N'TP/ICOBI/ 5977', N'', N'', N'Kyeitagi', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3227', N'TP/ICOBI/ 5978', N'', N'', N'Kyeitagi', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3242', N'TP/ICOBI/ 5979', N'', N'', N'Kyeitagi', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3270', N'TP/ICOBI/TP5955', N'', N'', N'Rwamuti', N'1', N'-1', N'adaa6c4f-afd3-4813-af27-39d7d11d7e80', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3289', N'TP/ICOBI/5981', N'', N'', N'Kyeitagi', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3294', N'TP/ICOBI/5956', N'', N'', N'Rwomuti I', N'1', N'-1', N'adaa6c4f-afd3-4813-af27-39d7d11d7e80', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3305', N'TP/ICOBI/5957', N'', N'', N'Kakira', N'1', N'-1', N'-1', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3313', N'TP/ICOBI/5980', N'', N'', N'Kyeitagi', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3318', N'TP/ICOBI/5958', N'', N'', N'Kakira', N'1', N'-1', N'-1', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3320', N'TP/ICOBI/5982', N'', N'', N'Kyeitagi', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3339', N'TP/ICOBI/5959', N'', N'', N'Kakira', N'1', N'-1', N'adaa6c4f-afd3-4813-af27-39d7d11d7e80', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'334', N'TP/ICOBI/5472', N'', N'', N'Ruzinga Cell', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3348', N'TP/ICOBI/5960', N'', N'', N'Kakira', N'1', N'-1', N'adaa6c4f-afd3-4813-af27-39d7d11d7e80', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3356', N'TP/ICOBI/ 5983', N'', N'', N'Kyeitagi', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3372', N'TP/ICOBI/ 5984', N'', N'', N'Kyeitagi', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3373', N'TP/ICOBI/5961', N'', N'', N'Rwomuti I', N'1', N'-1', N'adaa6c4f-afd3-4813-af27-39d7d11d7e80', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3399', N'TP/ICOBI/5962', N'', N'', N'Rwomuti I', N'1', N'-1', N'adaa6c4f-afd3-4813-af27-39d7d11d7e80', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3419', N'TP/ICOBI/5963', N'', N'', N'Rwomuti I', N'1', N'-1', N'-1', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3435', N'TP/ICOBI/5964', N'', N'', N'Kakira', N'1', N'-1', N'-1', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3437', N'TP/ICOBI/ 5985', N'', N'', N'Kyeitagi', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3448', N'TP/ICOBI/5965', N'', N'', N'Kakira', N'1', N'-1', N'adaa6c4f-afd3-4813-af27-39d7d11d7e80', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3451', N'TP/ICOBI/ 5986', N'', N'', N'Kyeitagi', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3461', N'TP/ICOBI/5966', N'', N'', N'Rwomuti I', N'1', N'-1', N'-1', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3464', N'TP/ICOBI/ 5987', N'', N'', N'Kyeitagi', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3474', N'TP/ICOBI/5967', N'', N'', N'Kakira', N'1', N'-1', N'adaa6c4f-afd3-4813-af27-39d7d11d7e80', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3476', N'TP/ICOBI/ 5988', N'', N'', N'Kyeitagi', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3483', N'TP/ICOBI/5968', N'', N'', N'Rwomuti I', N'1', N'-1', N'-1', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3487', N'TP/ICOBI/ 5989', N'', N'', N'Kyeitagi', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3496', N'TP/ICOBI/5969', N'', N'', N'Kakira', N'1', N'-1', N'-1', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3500', N'TP/ICOBI/ 5990', N'', N'', N'Kyeitagi', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3511', N'TP/ICOBI/5970', N'', N'', N'Kakira', N'1', N'-1', N'adaa6c4f-afd3-4813-af27-39d7d11d7e80', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3517', N'TP/ICOBI/5971', N'', N'', N'Rwomuti I', N'1', N'-1', N'-1', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3527', N'TP/ICOBI/ 5937', N'', N'', N'Kayanga', N'1', N'-1', N'-1', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3548', N'TP/ICOBI/5972', N'', N'', N'Kakira', N'1', N'-1', N'adaa6c4f-afd3-4813-af27-39d7d11d7e80', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3554', N'TP/ICOBI/ 5953', N'', N'', N'Kayanga', N'1', N'-1', N'adaa6c4f-afd3-4813-af27-39d7d11d7e80', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3555', N'TP/ICOBI/5918', N'', N'', N'Mirama', N'1', N'-1', N'923b1fe6-064d-4dbe-9a77-4e31f8f73e59', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3560', N'TP/ICOBI/5919', N'', N'', N'Mirama', N'1', N'-1', N'923b1fe6-064d-4dbe-9a77-4e31f8f73e59', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3564', N'TP/ICOBI/ 5938', N'', N'', N'Kayanga', N'1', N'-1', N'-1', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3567', N'TP/ICOBI/5920', N'', N'', N'Mirama', N'1', N'-1', N'923b1fe6-064d-4dbe-9a77-4e31f8f73e59', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3569', N'TP/ICOBI/ 5939', N'', N'', N'Kayanga', N'1', N'-1', N'adaa6c4f-afd3-4813-af27-39d7d11d7e80', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3574', N'TP/ICOBI/5921', N'', N'', N'Mirama', N'1', N'-1', N'923b1fe6-064d-4dbe-9a77-4e31f8f73e59', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'358', N'TP/ICOBI/5473', N'', N'', N'Ruzinga Cell', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3580', N'TP/ICOBI/5922', N'', N'', N'Mirama', N'1', N'-1', N'923b1fe6-064d-4dbe-9a77-4e31f8f73e59', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3582', N'TP/ICOBI/ 5940', N'', N'', N'Kayanga', N'1', N'-1', N'adaa6c4f-afd3-4813-af27-39d7d11d7e80', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3587', N'TP/ICOBI/5923', N'', N'', N'Mirama', N'1', N'-1', N'923b1fe6-064d-4dbe-9a77-4e31f8f73e59', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3593', N'TP/ICOBI/ 5941', N'', N'', N'Kayanga', N'1', N'-1', N'adaa6c4f-afd3-4813-af27-39d7d11d7e80', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3597', N'TP/ICOBI/5924', N'', N'', N'Mirama', N'1', N'-1', N'923b1fe6-064d-4dbe-9a77-4e31f8f73e59', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3606', N'TP/ICOBI/5925', N'', N'', N'Mirama', N'1', N'-1', N'923b1fe6-064d-4dbe-9a77-4e31f8f73e59', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3609', N'TP/ICOBI/ 5942', N'', N'', N'Kayanga', N'1', N'-1', N'adaa6c4f-afd3-4813-af27-39d7d11d7e80', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3620', N'TP/ICOBI/5926', N'', N'', N'Mirama', N'1', N'-1', N'923b1fe6-064d-4dbe-9a77-4e31f8f73e59', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3629', N'TP/ICOBI/5927', N'', N'', N'Mirama', N'1', N'-1', N'923b1fe6-064d-4dbe-9a77-4e31f8f73e59', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3632', N'TP/ICOBI/ 5943', N'', N'', N'Kayanga', N'1', N'-1', N'adaa6c4f-afd3-4813-af27-39d7d11d7e80', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3647', N'TP/ICOBI/ 5944', N'', N'', N'Kayanga', N'1', N'-1', N'adaa6c4f-afd3-4813-af27-39d7d11d7e80', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3657', N'TP/ICOBI/ 5945', N'', N'', N'Kayanga', N'1', N'-1', N'-1', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3667', N'TP/ICOBI/ 5946', N'', N'', N'Kayanga', N'1', N'-1', N'8f65a023-78f8-4594-a8f2-a988e902f344', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3682', N'TP/ICOBI/ 5947', N'', N'', N'Kayanga', N'1', N'-1', N'-1', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3692', N'TP/ICOBI/ 5948', N'', N'', N'Kayanga', N'1', N'-1', N'-1', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3693', N'TP/ICOBI/5928', N'', N'', N'Mirama', N'1', N'-1', N'923b1fe6-064d-4dbe-9a77-4e31f8f73e59', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3701', N'TP/ICOBI/5929', N'', N'', N'Mirama', N'1', N'-1', N'923b1fe6-064d-4dbe-9a77-4e31f8f73e59', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3709', N'TP/ICOBI/ 5949', N'', N'', N'Kayanga', N'1', N'-1', N'adaa6c4f-afd3-4813-af27-39d7d11d7e80', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3717', N'TP/ICOBI/5930', N'', N'', N'Mirama', N'1', N'-1', N'923b1fe6-064d-4dbe-9a77-4e31f8f73e59', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3723', N'TP/ICOBI/ 5950', N'', N'', N'Kayanga', N'1', N'-1', N'adaa6c4f-afd3-4813-af27-39d7d11d7e80', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3726', N'TP/ICOBI/5931', N'', N'', N'Mirama', N'1', N'-1', N'923b1fe6-064d-4dbe-9a77-4e31f8f73e59', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3735', N'TP/ICOBI/5932', N'', N'', N'Mirama', N'1', N'-1', N'923b1fe6-064d-4dbe-9a77-4e31f8f73e59', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3736', N'TP/ICOBI/ 5951', N'', N'', N'Kayanga', N'1', N'-1', N'adaa6c4f-afd3-4813-af27-39d7d11d7e80', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'374', N'TP/ICOBI/5474', N'', N'', N'Ruzinga Cell', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3752', N'TP/ICOBI/5933', N'', N'', N'Mirama', N'1', N'-1', N'923b1fe6-064d-4dbe-9a77-4e31f8f73e59', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3753', N'TP/ICOBI/ 5952', N'', N'', N'Kayanga', N'1', N'-1', N'-1', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3764', N'TP/ICOBI/5934', N'', N'', N'Mirama', N'1', N'-1', N'923b1fe6-064d-4dbe-9a77-4e31f8f73e59', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3765', N'TP/ICOBI/ 5954', N'', N'', N'Kayanga', N'1', N'-1', N'adaa6c4f-afd3-4813-af27-39d7d11d7e80', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3778', N'TP/ICOBI/5935', N'', N'', N'Mirama', N'1', N'-1', N'923b1fe6-064d-4dbe-9a77-4e31f8f73e59', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3790', N'TP/ICOBI/ 5900', N'', N'', N'Kyabagyenyi', N'1', N'-1', N'-1', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3792', N'TP/ICOBI/5936', N'', N'', N'Mirama', N'1', N'-1', N'923b1fe6-064d-4dbe-9a77-4e31f8f73e59', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'380', N'TP/ICOBI/5484', N'', N'', N'Rwemirondo I', N'1', N'-1', N'-1', N'1510', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3803', N'TP/ICOBI/ 5901', N'', N'', N'Rwengwe', N'1', N'-1', N'-1', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3805', N'TP/ICOBI/5882', N'', N'', N'Nshwere II', N'1', N'-1', N'3e21bfc1-f785-47b2-896a-4394a83e47c0', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3819', N'TP/ICOBI/5883', N'', N'', N'Nshwere II', N'1', N'-1', N'3e21bfc1-f785-47b2-896a-4394a83e47c0', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3820', N'TP/ICOBI/ 5902', N'', N'', N'Rwengwe', N'1', N'-1', N'-1', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3827', N'TP/ICOBI/5884', N'', N'', N'Nshwere II', N'1', N'-1', N'3e21bfc1-f785-47b2-896a-4394a83e47c0', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3830', N'TP/ICOBI/ 5903', N'', N'', N'Kyabagyenyi', N'1', N'-1', N'-1', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3842', N'TP/ICOBI/ 5904', N'', N'', N'Kyabagyenyi', N'1', N'-1', N'-1', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3846', N'TP/ICOBI/5885', N'', N'', N'Nshwere II', N'1', N'-1', N'3e21bfc1-f785-47b2-896a-4394a83e47c0', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3853', N'TP/ICOBI/ 5905', N'', N'', N'Kyabagyenyi', N'1', N'-1', N'-1', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3855', N'TP/ICOBI/5886', N'', N'', N'Nshwere II', N'1', N'-1', N'3e21bfc1-f785-47b2-896a-4394a83e47c0', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3868', N'TP/ICOBI/5887', N'', N'', N'Nshwere II', N'1', N'-1', N'3e21bfc1-f785-47b2-896a-4394a83e47c0', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3869', N'TP/ICOBI/ 5906', N'', N'', N'Kyabagyenyi', N'1', N'-1', N'-1', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3879', N'TP/ICOBI/5888', N'', N'', N'Nshwere II', N'1', N'-1', N'3e21bfc1-f785-47b2-896a-4394a83e47c0', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3890', N'TP/ICOBI/5889', N'', N'', N'Nshwere II', N'1', N'-1', N'3e21bfc1-f785-47b2-896a-4394a83e47c0', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3893', N'TP/ICOBI/ 6151', N'', N'', N'Kyabagyenyi', N'1', N'-1', N'-1', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3903', N'TP/ICOBI/5890', N'', N'', N'Nshwere II', N'1', N'-1', N'3e21bfc1-f785-47b2-896a-4394a83e47c0', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3907', N'TP/ICOBI/ 5908', N'', N'', N'Kyabagyenyi', N'1', N'-1', N'-1', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3915', N'TP/ICOBI/5891', N'', N'', N'Nshwere II', N'1', N'-1', N'3e21bfc1-f785-47b2-896a-4394a83e47c0', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3921', N'TP/ICOBI/ 5909', N'', N'', N'Kyabagyenyi', N'1', N'-1', N'-1', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3924', N'TP/ICOBI/5892', N'', N'', N'Nshwere II', N'1', N'-1', N'3e21bfc1-f785-47b2-896a-4394a83e47c0', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3939', N'TP/ICOBI/5893', N'', N'', N'Nshwere II', N'1', N'-1', N'3e21bfc1-f785-47b2-896a-4394a83e47c0', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3949', N'TP/ICOBI/5894', N'', N'', N'Nshwere II', N'1', N'-1', N'3e21bfc1-f785-47b2-896a-4394a83e47c0', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'396', N'TP/ICOBI/5475', N'', N'', N'Rwempiri', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3964', N'TP/ICOBI/5895', N'', N'', N'Rwakitura', N'1', N'-1', N'3e21bfc1-f785-47b2-896a-4394a83e47c0', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3975', N'TP/ICOBI/5910', N'', N'', N'Kyabagyenyi', N'1', N'-1', N'-1', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3981', N'TP/ICOBI/5896', N'', N'', N'Rwakitura', N'1', N'-1', N'3e21bfc1-f785-47b2-896a-4394a83e47c0', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3991', N'TP/ICOBI/5897', N'', N'', N'Nshwere II', N'1', N'-1', N'3e21bfc1-f785-47b2-896a-4394a83e47c0', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'3999', N'TP/ICOBI/5898', N'', N'', N'Nshwere II', N'1', N'-1', N'3e21bfc1-f785-47b2-896a-4394a83e47c0', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4012', N'TP/ICOBI/5911', N'', N'', N'Kyabagyenyi', N'1', N'-1', N'452c5a10-18c6-4b28-8b94-01ef3de9361f', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4017', N'TP/ICOBI/5899', N'', N'', N'Nshwere II', N'1', N'-1', N'3e21bfc1-f785-47b2-896a-4394a83e47c0', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4033', N'TP/ICOBI/ 5912', N'', N'', N'Kyabagyenyi', N'1', N'-1', N'-1', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4047', N'TP/ICOBI/ 5913', N'', N'', N'Rwengwe', N'1', N'-1', N'-1', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4059', N'TP/ICOBI/ 5914', N'', N'', N'Rwengwe', N'1', N'-1', N'-1', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4061', N'TP/ICOBI/5787', N'', N'', N'Burimbi', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4071', N'TP/ICOBI/5788', N'', N'', N'Komugina', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4086', N'TP/ICOBI/5789', N'', N'', N'Kacumbiro', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4089', N'TP/ICOBI/ 5915', N'', N'', N'Rwengwe', N'1', N'-1', N'-1', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4096', N'TP/ICOBI/5790', N'', N'', N'Kacumbiro', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4107', N'TP/ICOBI/  5916', N'', N'', N'Nyanga', N'1', N'-1', N'-1', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4114', N'TP/ICOBI/5791', N'', N'', N'Komugina', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4120', N'TP/ICOBI/ 5917', N'', N'', N'Kyabagyenyi', N'1', N'-1', N'-1', N'1168', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4127', N'TP/ICOBI/5792', N'', N'', N'Komugina', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'413', N'TP/ICOBI/5485', N'', N'', N'Rwemirondo I', N'1', N'-1', N'-1', N'1510', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4136', N'TP/ICOBI/5793', N'', N'', N'Komugina', N'1', N'-1', N'1f73cb42-e56b-453b-afe1-bf3c88bd9e71', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4143', N'TP/ICOBI/ 5809', N'', N'', N'Akatongore', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4148', N'TP/ICOBI/5794', N'', N'', N'Komugina', N'1', N'-1', N'1f73cb42-e56b-453b-afe1-bf3c88bd9e71', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4154', N'TP/ICOBI/ 5810', N'', N'', N'Akatongore', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4155', N'TP/ICOBI/5795', N'', N'', N'Burimbi', N'1', N'-1', N'1f73cb42-e56b-453b-afe1-bf3c88bd9e71', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4168', N'TP/ICOBI/5796', N'', N'', N'Burimbi', N'1', N'-1', N'1f73cb42-e56b-453b-afe1-bf3c88bd9e71', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4178', N'TP/ICOBI/ 5811', N'', N'', N'Akatongore', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4179', N'TP/ICOBI/5797', N'', N'', N'Burimbi', N'1', N'-1', N'1f73cb42-e56b-453b-afe1-bf3c88bd9e71', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4185', N'TP/ICOBI/5798', N'', N'', N'Burimbi', N'1', N'-1', N'1f73cb42-e56b-453b-afe1-bf3c88bd9e71', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4197', N'TP/ICOBI/5799', N'', N'', N'Burimbi', N'1', N'-1', N'1f73cb42-e56b-453b-afe1-bf3c88bd9e71', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4198', N'TP/ICOBI/ 5812', N'', N'', N'Akatongore', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4205', N'TP/ICOBI/5800', N'', N'', N'Burimbi', N'1', N'-1', N'1f73cb42-e56b-453b-afe1-bf3c88bd9e71', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4210', N'TP/ICOBI/ 5813', N'', N'', N'Akatongore', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4212', N'TP/ICOBI/5801', N'', N'', N'Burimbi', N'1', N'-1', N'1f73cb42-e56b-453b-afe1-bf3c88bd9e71', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4228', N'TP/ICOBI/5802', N'', N'', N'Komugina', N'1', N'-1', N'1f73cb42-e56b-453b-afe1-bf3c88bd9e71', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4236', N'TP/ICOBI/5803', N'', N'', N'Burimbi', N'1', N'-1', N'1f73cb42-e56b-453b-afe1-bf3c88bd9e71', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4244', N'TP/ICOBI/ 5814', N'', N'', N'Akatongore', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4253', N'TP/ICOBI/5804', N'', N'', N'Burimbi', N'1', N'-1', N'1f73cb42-e56b-453b-afe1-bf3c88bd9e71', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4259', N'TP/ICOBI/ 5815', N'', N'', N'Akatongore', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4262', N'TP/ICOBI/5805', N'', N'', N'Burimbi', N'1', N'-1', N'1f73cb42-e56b-453b-afe1-bf3c88bd9e71', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4271', N'TP/ICOBI/5806', N'', N'', N'Burimbi', N'1', N'-1', N'1f73cb42-e56b-453b-afe1-bf3c88bd9e71', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4276', N'TP/ICOBI/ 5816', N'', N'', N'Nhwere Empango', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4283', N'TP/ICOBI/5807', N'', N'', N'Burimbi', N'1', N'-1', N'1f73cb42-e56b-453b-afe1-bf3c88bd9e71', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4290', N'TP/ICOBI/5808', N'', N'', N'Burimbi', N'1', N'-1', N'1f73cb42-e56b-453b-afe1-bf3c88bd9e71', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'442', N'TP/ICOBI/5486', N'', N'', N'Rwemirondo I', N'1', N'-1', N'-1', N'1510', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'443', N'TP/ICOBI/5476', N'', N'', N'Ruzinga Cell', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4437', N'TP/ICOBI/5827', N'', N'', N'Hospital Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4448', N'TP/ICOBI/5828', N'', N'', N'Hospital Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4457', N'TP/ICOBI/5829', N'', N'', N'Hospital Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4464', N'TP/ICOBI/5830', N'', N'', N'Hospital Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4467', N'TP/ICOBI/5855', N'', N'', N'Market Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4475', N'TP/ICOBI/5831', N'', N'', N'Hospital Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4484', N'TP/ICOBI/5832', N'', N'', N'Hospital Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4493', N'TP/ICOBI/5856', N'', N'', N'Market Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4494', N'TP/ICOBI/5833', N'', N'', N'Hospital Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4504', N'TP/ICOBI/5834', N'', N'', N'Hospital Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4515', N'TP/ICOBI/5835', N'', N'', N'Hospital Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4521', N'TP/ICOBI/ 5817', N'', N'', N'Nshwere Empango', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4523', N'TP/ICOBI/5836', N'', N'', N'Hospital Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4535', N'TP/ICOBI/5857', N'', N'', N'Market Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4537', N'TP/ICOBI/5837', N'', N'', N'Hospital Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4544', N'TP/ICOBI/5838', N'', N'', N'Police Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4557', N'TP/ICOBI/5839', N'', N'', N'Police Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4564', N'TP/ICOBI/5858', N'', N'', N'Market Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4567', N'TP/ICOBI/5840', N'', N'', N'Police Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4573', N'TP/ICOBI/ 5818', N'', N'', N'Nshwere Empango', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4579', N'TP/ICOBI/5841', N'', N'', N'Police Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4587', N'TP/ICOBI/5842', N'', N'', N'Police Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4588', N'TP/ICOBI/ 5819', N'', N'', N'Nshwere Empango', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4589', N'TP/ICOBI/5859', N'', N'', N'Central Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4597', N'TP/ICOBI/5843', N'', N'', N'Police Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4599', N'TP/ICOBI/ 5820', N'', N'', N'Nshwere Empango', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4607', N'TP/ICOBI/5844', N'', N'', N'Hospital Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4608', N'TP/ICOBI/5860', N'', N'', N'Market Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4617', N'TP/ICOBI/5845', N'', N'', N'Hospital Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4639', N'TP/ICOBI/5861', N'', N'', N'Market Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'466', N'TP/ICOBI/5477', N'', N'', N'Ruzinga Cell', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4669', N'TP/ICOBI/5847', N'', N'', N'Police Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4675', N'TP/ICOBI/5862', N'', N'', N'Market Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4687', N'TP/ICOBI/5848', N'', N'', N'Police Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4699', N'TP/ICOBI/5849', N'', N'', N'Police Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4708', N'TP/ICOBI/5850', N'', N'', N'Market Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4716', N'TP/ICOBI/5851', N'', N'', N'Market Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4727', N'TP/ICOBI/5852', N'', N'', N'Police Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4731', N'TP/ICOBI/ 5821', N'', N'', N'Akatongore', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4739', N'TP/ICOBI/5853', N'', N'', N'Hospital Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4751', N'TP/ICOBI/5854', N'', N'', N'Hospital Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4760', N'TP/ICOBI/ 5822', N'', N'', N'Akatongore', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4769', N'TP/ICOBI/5863', N'', N'', N'Market Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4771', N'TP/ICOBI/ 5823', N'', N'', N'Akatongore', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'478', N'TP/ICOBI/5487', N'', N'', N'Rwemirondo I', N'1', N'-1', N'-1', N'1510', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4781', N'TP/ICOBI/5864', N'', N'', N'Market Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4786', N'TP/ICOBI/ 5824', N'', N'', N'Akatongore', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4794', N'TP/ICOBI/5865', N'', N'', N'Market Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4804', N'TP/ICOBI/ 5825', N'', N'', N'Nshwere Empango', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4805', N'TP/ICOBI/5866', N'', N'', N'Market Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4816', N'TP/ICOBI/5867', N'', N'', N'Market Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4822', N'TP/ICOBI/ 5826', N'', N'', N'Akatongore', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4830', N'TP/ICOBI/5868', N'', N'', N'Market Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4839', N'TP/ICOBI/5869', N'', N'', N'Market Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4844', N'TP/ICOBI/ 5715', N'', N'', N'Kazo I', N'1', N'-1', N'414a2413-44de-4e80-aec8-13c30d6dbd8b', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4852', N'TP/ICOBI/5870', N'', N'', N'Market Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4856', N'TP/ICOBI/5871', N'', N'', N'Market Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4859', N'TP/ICOBI/ 5716', N'', N'', N'Kazo I', N'1', N'-1', N'414a2413-44de-4e80-aec8-13c30d6dbd8b', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'486', N'TP/ICOBI/5478', N'', N'', N'Ruzinga Cell', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4863', N'TP/ICOBI/5872', N'', N'', N'Market Zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4870', N'TP/ICOBI/5873', N'', N'', N'Central zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4871', N'TP/ICOBI/ 5717', N'', N'', N'Kazo II', N'1', N'-1', N'414a2413-44de-4e80-aec8-13c30d6dbd8b', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4882', N'TP/ICOBI/5874', N'', N'', N'Central zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4893', N'TP/ICOBI/ 5718', N'', N'', N'Kazo II', N'1', N'-1', N'414a2413-44de-4e80-aec8-13c30d6dbd8b', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4896', N'TP/ICOBI/5875', N'', N'', N'Central zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4908', N'TP/ICOBI/5876', N'', N'', N'Central zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4914', N'TP/ICOBI/ 5719', N'', N'', N'Kazo II', N'1', N'-1', N'414a2413-44de-4e80-aec8-13c30d6dbd8b', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4917', N'TP/ICOBI/6118', N'', N'', N'Katete I', N'1', N'-1', N'a350b0dd-9ddf-420f-94fa-ab2bbdfb7a0c', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4921', N'TP/ICOBI/5877', N'', N'', N'Central zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4928', N'TP/ICOBI/ 5720', N'', N'', N'Kazo II', N'1', N'-1', N'414a2413-44de-4e80-aec8-13c30d6dbd8b', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4932', N'TP/ICOBI/5878', N'', N'', N'Central zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4943', N'TP/ICOBI/ 5721', N'', N'', N'Kazo II', N'1', N'-1', N'414a2413-44de-4e80-aec8-13c30d6dbd8b', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4948', N'TP/ICOBI/5879', N'', N'', N'Central zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4952', N'TP/ICOBI/6119', N'', N'', N'Katete I', N'1', N'-1', N'a350b0dd-9ddf-420f-94fa-ab2bbdfb7a0c', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4959', N'TP/ICOBI/ 5722', N'', N'', N'Kazo II', N'1', N'-1', N'414a2413-44de-4e80-aec8-13c30d6dbd8b', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4961', N'TP/ICOBI/5880', N'', N'', N'Central zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4974', N'TP/ICOBI/5881', N'', N'', N'Central zone', N'1', N'-1', N'-1', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4975', N'TP/ICOBI/ 5723', N'', N'', N'Kazo II', N'1', N'-1', N'414a2413-44de-4e80-aec8-13c30d6dbd8b', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4979', N'TP/ICOBI/6120', N'', N'', N'Katete I', N'1', N'-1', N'a350b0dd-9ddf-420f-94fa-ab2bbdfb7a0c', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'4995', N'TP/ICOBI/ 5724', N'', N'', N'Kazo II', N'1', N'-1', N'414a2413-44de-4e80-aec8-13c30d6dbd8b', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5006', N'TP/ICOBI/6121', N'', N'', N'Katete I', N'1', N'-1', N'a350b0dd-9ddf-420f-94fa-ab2bbdfb7a0c', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5013', N'TP/ICOBI/ 5725', N'', N'', N'Kazo II', N'1', N'-1', N'414a2413-44de-4e80-aec8-13c30d6dbd8b', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5014', N'TP/ICOBI/6100', N'', N'', N'Mwaka I', N'1', N'-1', N'85d62003-6cef-4a8e-8958-7f636d0479c6', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5026', N'TP/ICOBI/6101', N'', N'', N'Mwaka I', N'1', N'-1', N'85d62003-6cef-4a8e-8958-7f636d0479c6', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5029', N'TP/ICOBI/ 5726', N'', N'', N'Kazo II', N'1', N'-1', N'414a2413-44de-4e80-aec8-13c30d6dbd8b', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5031', N'TP/ICOBI/6122', N'', N'', N'Katete I', N'1', N'-1', N'a350b0dd-9ddf-420f-94fa-ab2bbdfb7a0c', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5037', N'TP/ICOBI/6102', N'', N'', N'Mwaka I', N'1', N'-1', N'85d62003-6cef-4a8e-8958-7f636d0479c6', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5047', N'TP/ICOBI/ 5727', N'', N'', N'Kazo II', N'1', N'-1', N'414a2413-44de-4e80-aec8-13c30d6dbd8b', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5055', N'TP/ICOBI/6103', N'', N'', N'Mwaka I', N'1', N'-1', N'85d62003-6cef-4a8e-8958-7f636d0479c6', N'1351', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5062', N'TP/ICOBI/6123', N'', N'', N'Katete I', N'1', N'-1', N'a350b0dd-9ddf-420f-94fa-ab2bbdfb7a0c', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5066', N'TP/ICOBI/ 5728', N'', N'', N'Kazo II', N'1', N'-1', N'414a2413-44de-4e80-aec8-13c30d6dbd8b', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5068', N'TP/ICOBI/6104', N'', N'', N'Mwaka I', N'1', N'-1', N'85d62003-6cef-4a8e-8958-7f636d0479c6', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5080', N'TP/ICOBI/6105', N'', N'', N'Mwaka I', N'1', N'-1', N'85d62003-6cef-4a8e-8958-7f636d0479c6', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5085', N'TP/ICOBI/6106', N'', N'', N'Mwaka I', N'1', N'-1', N'85d62003-6cef-4a8e-8958-7f636d0479c6', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5089', N'TP/ICOBI/ 5729', N'', N'', N'Kazo II', N'1', N'-1', N'414a2413-44de-4e80-aec8-13c30d6dbd8b', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5097', N'TP/ICOBI/6107', N'', N'', N'Mwaka I', N'1', N'-1', N'85d62003-6cef-4a8e-8958-7f636d0479c6', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'510', N'TP/ICOBI/5488', N'', N'', N'Rwemirondo I', N'1', N'-1', N'-1', N'1510', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5107', N'TP/ICOBI/ 5730', N'', N'', N'Kazo II', N'1', N'-1', N'414a2413-44de-4e80-aec8-13c30d6dbd8b', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5111', N'TP/ICOBI/6108', N'', N'', N'Mwaka I', N'1', N'-1', N'85d62003-6cef-4a8e-8958-7f636d0479c6', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5127', N'TP/ICOBI/6109', N'', N'', N'Mwaka I', N'1', N'-1', N'85d62003-6cef-4a8e-8958-7f636d0479c6', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5129', N'TP/ICOBI/ 5731', N'', N'', N'Kazo II', N'1', N'-1', N'414a2413-44de-4e80-aec8-13c30d6dbd8b', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5130', N'TP/ICOBI/6124', N'', N'', N'Katete I', N'1', N'-1', N'a350b0dd-9ddf-420f-94fa-ab2bbdfb7a0c', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5136', N'TP/ICOBI/6110', N'', N'', N'Mwaka I', N'1', N'-1', N'85d62003-6cef-4a8e-8958-7f636d0479c6', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5149', N'TP/ICOBI/ 5732', N'', N'', N'Kazo II', N'1', N'-1', N'414a2413-44de-4e80-aec8-13c30d6dbd8b', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5152', N'TP/ICOBI/6111', N'', N'', N'Mwaka I', N'1', N'-1', N'85d62003-6cef-4a8e-8958-7f636d0479c6', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5162', N'TP/ICOBI/6112', N'', N'', N'Mwaka I', N'1', N'-1', N'85d62003-6cef-4a8e-8958-7f636d0479c6', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5170', N'TP/ICOBI/ 6009', N'', N'', N'Migamba', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5174', N'TP/ICOBI/6125', N'', N'', N'Katete I', N'1', N'-1', N'a350b0dd-9ddf-420f-94fa-ab2bbdfb7a0c', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5178', N'TP/ICOBI/6113', N'', N'', N'Mwaka I', N'1', N'-1', N'85d62003-6cef-4a8e-8958-7f636d0479c6', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'518', N'TP/ICOBI/5479', N'', N'', N'Ruzinga Cell', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5188', N'TP/ICOBI/6114', N'', N'', N'Mwaka I', N'1', N'-1', N'85d62003-6cef-4a8e-8958-7f636d0479c6', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5191', N'TP/ICOBI/ 6010', N'', N'', N'Migamba', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5199', N'TP/ICOBI/6128', N'', N'', N'Katete I', N'1', N'-1', N'a350b0dd-9ddf-420f-94fa-ab2bbdfb7a0c', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5206', N'TP/ICOBI/6115', N'', N'', N'Mwaka I', N'1', N'-1', N'85d62003-6cef-4a8e-8958-7f636d0479c6', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5211', N'TP/ICOBI/ 6011', N'', N'', N'Migamba', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5219', N'TP/ICOBI/6116', N'', N'', N'Mwaka I', N'1', N'-1', N'85d62003-6cef-4a8e-8958-7f636d0479c6', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5227', N'TP/ICOBI/6129', N'', N'', N'Katete I', N'1', N'-1', N'a350b0dd-9ddf-420f-94fa-ab2bbdfb7a0c', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5231', N'TP/ICOBI/ 6012', N'', N'', N'Migamba', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5232', N'TP/ICOBI/6117', N'', N'', N'Mwaka I', N'1', N'-1', N'85d62003-6cef-4a8e-8958-7f636d0479c6', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5249', N'TP/ICOBI/ 6013', N'', N'', N'Migamba', N'1', N'-1', N'-1', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5254', N'TP/ICOBI/6130', N'', N'', N'Katete I', N'1', N'-1', N'a350b0dd-9ddf-420f-94fa-ab2bbdfb7a0c', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5256', N'TP/ICOBI/6028', N'', N'', N'Kibingo ', N'1', N'-1', N'8702aab1-9ce6-4736-a279-42193c16ce90', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5267', N'TP/ICOBI/ 6014', N'', N'', N'Migamba', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5272', N'TP/ICOBI/6029', N'', N'', N'Kibingo', N'1', N'-1', N'8702aab1-9ce6-4736-a279-42193c16ce90', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5281', N'TP/ICOBI/ 6015', N'', N'', N'Migamba', N'1', N'-1', N'-1', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5289', N'TP/ICOBI/6030', N'', N'', N'Kibingo', N'1', N'-1', N'8702aab1-9ce6-4736-a279-42193c16ce90', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5301', N'TP/ICOBI/6031', N'', N'', N'Kibingo', N'1', N'-1', N'8702aab1-9ce6-4736-a279-42193c16ce90', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5302', N'TP/ICOBI/ 6016', N'', N'', N'Migamba', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5315', N'TP/ICOBI/6032', N'', N'', N'Kibingo', N'1', N'-1', N'8702aab1-9ce6-4736-a279-42193c16ce90', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5320', N'TP/ICOBI/ 6017', N'', N'', N'Migamba', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5330', N'TP/ICOBI/6131', N'', N'', N'Katete I', N'1', N'-1', N'a350b0dd-9ddf-420f-94fa-ab2bbdfb7a0c', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5336', N'TP/ICOBI/ 6018', N'', N'', N'Migamba', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5345', N'TP/ICOBI/6033', N'', N'', N'Kibingo', N'1', N'-1', N'8702aab1-9ce6-4736-a279-42193c16ce90', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'535', N'TP/ICOBI/5489', N'', N'', N'Rwemirondo I', N'1', N'-1', N'-1', N'1510', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5350', N'TP/ICOBI/ 6019', N'', N'', N'Migamba', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5361', N'TP/ICOBI/6034', N'', N'', N'Rwomuti II', N'1', N'-1', N'8702aab1-9ce6-4736-a279-42193c16ce90', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5372', N'TP/ICOBI/ 6020', N'', N'', N'Migamba', N'1', N'-1', N'-1', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5383', N'TP/ICOBI/6035', N'', N'', N'Rwomuti II', N'1', N'-1', N'8702aab1-9ce6-4736-a279-42193c16ce90', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5390', N'TP/ICOBI/ 6021', N'', N'', N'Migamba', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5396', N'TP/ICOBI/6036', N'', N'', N'Rwomuti II', N'1', N'-1', N'8702aab1-9ce6-4736-a279-42193c16ce90', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5402', N'TP/ICOBI/ 6022', N'', N'', N'Migamba', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5406', N'TP/ICOBI/6037', N'', N'', N'Rwomuti II', N'1', N'-1', N'8702aab1-9ce6-4736-a279-42193c16ce90', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'541', N'TP/ICOBI/5480', N'', N'', N'Rwempiri Cell', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5418', N'TP/ICOBI/6132', N'', N'', N'Katete I', N'1', N'-1', N'a350b0dd-9ddf-420f-94fa-ab2bbdfb7a0c', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5424', N'TP/ICOBI/ 6023', N'', N'', N'Migamba', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5429', N'TP/ICOBI/6038', N'', N'', N'Rwomuti II', N'1', N'-1', N'8702aab1-9ce6-4736-a279-42193c16ce90', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5440', N'TP/ICOBI/ 6024', N'', N'', N'Migamba', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5446', N'TP/ICOBI/6039', N'', N'', N'Rwomuti II', N'1', N'-1', N'8702aab1-9ce6-4736-a279-42193c16ce90', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5457', N'TP/ICOBI/ 6025', N'', N'', N'Migamba', N'1', N'-1', N'-1', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5458', N'TP/ICOBI/6040', N'', N'', N'Rwomuti II', N'1', N'-1', N'8702aab1-9ce6-4736-a279-42193c16ce90', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5466', N'TP/ICOBI/6133', N'', N'', N'Katete I', N'1', N'-1', N'a350b0dd-9ddf-420f-94fa-ab2bbdfb7a0c', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5473', N'TP/ICOBI/ 6026', N'', N'', N'Migamba', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5474', N'TP/ICOBI/6041', N'', N'', N'Kibingo', N'1', N'-1', N'8702aab1-9ce6-4736-a279-42193c16ce90', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5487', N'TP/ICOBI/ 6027', N'', N'', N'Migamba', N'1', N'-1', N'f3e867e4-d42c-4a89-9745-f61b4cfbb193', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5490', N'TP/ICOBI/6042', N'', N'', N'Kibingo', N'1', N'-1', N'8702aab1-9ce6-4736-a279-42193c16ce90', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5491', N'TP/ICOBI/6134', N'', N'', N'Katete I', N'1', N'-1', N'a350b0dd-9ddf-420f-94fa-ab2bbdfb7a0c', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5505', N'TP/ICOBI/6043', N'', N'', N'Kibingo', N'1', N'-1', N'8702aab1-9ce6-4736-a279-42193c16ce90', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5512', N'TP/ICOBI/ 6046', N'', N'', N'Muzaire', N'1', N'-1', N'8f65a023-78f8-4594-a8f2-a988e902f344', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5513', N'TP/ICOBI/TP6135', N'', N'', N'Katete I', N'1', N'-1', N'a350b0dd-9ddf-420f-94fa-ab2bbdfb7a0c', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5522', N'TP/ICOBI/6044', N'', N'', N'Kibingo', N'1', N'-1', N'8702aab1-9ce6-4736-a279-42193c16ce90', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5529', N'TP/ICOBI/ 6047', N'', N'', N'Muzaire', N'1', N'-1', N'-1', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'553', N'TP/ICOBI/5490', N'', N'', N'Rwemirondo I', N'1', N'-1', N'-1', N'1510', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5534', N'TP/ICOBI/6045', N'', N'', N'Kibingo', N'1', N'-1', N'8702aab1-9ce6-4736-a279-42193c16ce90', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5548', N'TP/ICOBI/ 6048', N'', N'', N'Muzaire', N'1', N'-1', N'-1', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5551', N'TP/ICOBI/6136', N'', N'', N'Katete I', N'1', N'-1', N'a350b0dd-9ddf-420f-94fa-ab2bbdfb7a0c', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5558', N'TP/ICOBI/6064', N'', N'', N'Rwabigyemano', N'1', N'-1', N'-1', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5564', N'TP/ICOBI/ 6049', N'', N'', N'Muzaire', N'1', N'-1', N'8f65a023-78f8-4594-a8f2-a988e902f344', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5568', N'TP/ICOBI/6137', N'', N'', N'Katete I', N'1', N'-1', N'a350b0dd-9ddf-420f-94fa-ab2bbdfb7a0c', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'557', N'TP/ICOBI/5481', N'', N'', N'Rwempiri Cell', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5573', N'TP/ICOBI/6065', N'', N'', N'Rwabigyemano', N'1', N'-1', N'-1', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5602', N'TP/ICOBI/6066', N'', N'', N'Rwabigyemano', N'1', N'-1', N'-1', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5603', N'TP/ICOBI/ 6051', N'', N'', N'Muzaire', N'1', N'-1', N'-1', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5613', N'TP/ICOBI/6067', N'', N'', N'Rwabigyemano', N'1', N'-1', N'-1', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5619', N'TP/ICOBI/ 6052', N'', N'', N'Muzaire', N'1', N'-1', N'-1', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5620', N'TP/ICOBI/6082', N'', N'', N'Butemberwa', N'1', N'-1', N'452c5a10-18c6-4b28-8b94-01ef3de9361f', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5638', N'TP/ICOBI/6068', N'', N'', N'Rwabigyemano', N'1', N'-1', N'-1', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5642', N'TP/ICOBI/ 6053', N'', N'', N'Muzaire', N'1', N'-1', N'-1', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5647', N'TP/ICOBI/6069', N'', N'', N'Rwabigyemano', N'1', N'-1', N'-1', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5651', N'TP/ICOBI/ 6054', N'', N'', N'Muzaire', N'1', N'-1', N'-1', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5656', N'TP/ICOBI/6070', N'', N'', N'Rwabigyemano', N'1', N'-1', N'-1', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5660', N'TP/ICOBI/6083', N'', N'', N'Katete I', N'1', N'-1', N'452c5a10-18c6-4b28-8b94-01ef3de9361f', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5664', N'TP/ICOBI/6071', N'', N'', N'Rwabigyemano', N'1', N'-1', N'-1', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'569', N'TP/ICOBI/5482', N'', N'', N'Rwempiri Cell', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5712', N'TP/ICOBI/6084', N'', N'', N'Butemberwa', N'1', N'-1', N'452c5a10-18c6-4b28-8b94-01ef3de9361f', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5715', N'TP/ICOBI/ 6055', N'', N'', N'Muzaire', N'1', N'-1', N'-1', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5724', N'TP/ICOBI/6085', N'', N'', N'Butemberwa', N'1', N'-1', N'452c5a10-18c6-4b28-8b94-01ef3de9361f', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5727', N'TP/ICOBI/ 6056', N'', N'', N'Muzaire', N'1', N'-1', N'-1', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5736', N'TP/ICOBI/ 6057', N'', N'', N'Muzaire', N'1', N'-1', N'-1', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5742', N'TP/ICOBI/6086', N'', N'', N'Butemberwa', N'1', N'-1', N'452c5a10-18c6-4b28-8b94-01ef3de9361f', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5748', N'TP/ICOBI/ 6058', N'', N'', N'Muzaire', N'1', N'-1', N'8f65a023-78f8-4594-a8f2-a988e902f344', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5760', N'TP/ICOBI/ 6059', N'', N'', N'Mitooma Central', N'1', N'-1', N'8f65a023-78f8-4594-a8f2-a988e902f344', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5762', N'TP/ICOBI/6087', N'', N'', N'Butemberwa', N'1', N'-1', N'452c5a10-18c6-4b28-8b94-01ef3de9361f', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5772', N'TP/ICOBI/ 6060', N'', N'', N'Mitooma Central', N'1', N'-1', N'-1', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'578', N'TP/ICOBI/5491', N'', N'', N'Rwemirondo II', N'1', N'-1', N'-1', N'1510', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5786', N'TP/ICOBI/6088', N'', N'', N'Butemberwa', N'1', N'-1', N'452c5a10-18c6-4b28-8b94-01ef3de9361f', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5787', N'TP/ICOBI/ 6061', N'', N'', N'Mitooma Central', N'1', N'-1', N'-1', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5808', N'TP/ICOBI/ 6062', N'', N'', N'Mitooma Central', N'1', N'-1', N'-1', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5819', N'TP/ICOBI/6089', N'', N'', N'Butemberwa', N'1', N'-1', N'452c5a10-18c6-4b28-8b94-01ef3de9361f', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'582', N'TP/ICOBI/5483', N'', N'', N'Rwempiri Cell', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5826', N'TP/ICOBI/ 6063', N'', N'', N'Mitooma Central', N'1', N'-1', N'8f65a023-78f8-4594-a8f2-a988e902f344', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5851', N'TP/ICOBI/6090', N'', N'', N'Butemberwa', N'1', N'-1', N'452c5a10-18c6-4b28-8b94-01ef3de9361f', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5861', N'TP/ICOBI/ 6072', N'', N'', N'Rwabigyemano', N'1', N'-1', N'-1', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5879', N'TP/ICOBI/ 6073', N'', N'', N'Rwabigyemano', N'1', N'-1', N'-1', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5880', N'TP/ICOBI/6091', N'', N'', N'Butemberwa', N'1', N'-1', N'452c5a10-18c6-4b28-8b94-01ef3de9361f', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5890', N'TP/ICOBI/6092', N'', N'', N'Butemberwa', N'1', N'-1', N'452c5a10-18c6-4b28-8b94-01ef3de9361f', N'1316', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5896', N'TP/ICOBI/ 6074', N'', N'', N'Rwabigyemano', N'1', N'-1', N'-1', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5918', N'TP/ICOBI/ 6075', N'', N'', N'Rwabigyemano', N'1', N'-1', N'-1', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5927', N'TP/ICOBI/ 6076', N'', N'', N'Rwabigyemano', N'1', N'-1', N'-1', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5941', N'TP/ICOBI/ 6077', N'', N'', N'Rwabigyemano', N'1', N'-1', N'-1', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5955', N'TP/ICOBI/ 6078', N'', N'', N'Rwabigyemano', N'1', N'-1', N'-1', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5962', N'TP/ICOBI/6093', N'', N'', N'Butembererwa', N'1', N'-1', N'452c5a10-18c6-4b28-8b94-01ef3de9361f', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5974', N'TP/ICOBI/ 6079', N'', N'', N'Rwabigyemano', N'1', N'-1', N'-1', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5979', N'TP/ICOBI/6094', N'', N'', N'Butembererwa', N'1', N'-1', N'452c5a10-18c6-4b28-8b94-01ef3de9361f', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5991', N'TP/ICOBI/6095', N'', N'', N'Butembererwa', N'1', N'-1', N'452c5a10-18c6-4b28-8b94-01ef3de9361f', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'5998', N'TP/ICOBI/ 6080', N'', N'', N'Rwabigyemano', N'1', N'-1', N'-1', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6011', N'TP/ICOBI/6096', N'', N'', N'Butembererwa', N'1', N'-1', N'452c5a10-18c6-4b28-8b94-01ef3de9361f', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6022', N'TP/ICOBI/ 6081', N'', N'', N'Rwabigyemano', N'1', N'-1', N'-1', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6023', N'TP/ICOBI/6097', N'', N'', N'Butembererwa', N'1', N'-1', N'452c5a10-18c6-4b28-8b94-01ef3de9361f', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6038', N'TP/ICOBI/6098', N'', N'', N'Butembererwa', N'1', N'-1', N'452c5a10-18c6-4b28-8b94-01ef3de9361f', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6050', N'TP/ICOBI/6099', N'', N'', N'Butembererwa', N'1', N'-1', N'452c5a10-18c6-4b28-8b94-01ef3de9361f', N'1231', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6065', N'TP/ICOBI/5769', N'', N'', N'Bwensirabo', N'1', N'-1', N'd7991b4b-20f5-406a-b68b-89b3a584c87c', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6076', N'TP/ICOBI/ 5733', N'', N'', N'Rwanyamuzura', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6077', N'TP/ICOBI/5770', N'', N'', N'Bwensirabo', N'1', N'-1', N'd7991b4b-20f5-406a-b68b-89b3a584c87c', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6086', N'TP/ICOBI/5771', N'', N'', N'Bwensirabo', N'1', N'-1', N'd7991b4b-20f5-406a-b68b-89b3a584c87c', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6099', N'TP/ICOBI/ 5734', N'', N'', N'Rwanyamuzura', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6101', N'TP/ICOBI/5772', N'', N'', N'Bwensirabo', N'1', N'-1', N'd7991b4b-20f5-406a-b68b-89b3a584c87c', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6108', N'TP/ICOBI/5773', N'', N'', N'Bwensirabo', N'1', N'-1', N'd7991b4b-20f5-406a-b68b-89b3a584c87c', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'611', N'TP/ICOBI/5492', N'', N'', N'Rwemirondo II', N'1', N'-1', N'-1', N'1510', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6117', N'TP/ICOBI/ 5735', N'', N'', N'Rwanyamuzura', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6121', N'TP/ICOBI/5774', N'', N'', N'Bwensirabo', N'1', N'-1', N'd7991b4b-20f5-406a-b68b-89b3a584c87c', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6134', N'TP/ICOBI/5775', N'', N'', N'Bwensirabo', N'1', N'-1', N'd7991b4b-20f5-406a-b68b-89b3a584c87c', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6135', N'TP/ICOBI/ 5736', N'', N'', N'Rwanyamuzura', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6147', N'TP/ICOBI/5776', N'', N'', N'Bwensirabo', N'1', N'-1', N'-1', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6160', N'TP/ICOBI/5777', N'', N'', N'Bwensirabo', N'1', N'-1', N'd7991b4b-20f5-406a-b68b-89b3a584c87c', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6165', N'TP/ICOBI/ 5737', N'', N'', N'Rwanyamuzura', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6170', N'TP/ICOBI/5778', N'', N'', N'Bwensirabo', N'1', N'-1', N'd7991b4b-20f5-406a-b68b-89b3a584c87c', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6182', N'TP/ICOBI/5779', N'', N'', N'Bwensirabo', N'1', N'-1', N'-1', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6202', N'TP/ICOBI/5780', N'', N'', N'Bwensirabo', N'1', N'-1', N'd7991b4b-20f5-406a-b68b-89b3a584c87c', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6213', N'TP/ICOBI/ 5738', N'', N'', N'Rwanyamuzura', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6216', N'TP/ICOBI/5781', N'', N'', N'Bwensirabo', N'1', N'-1', N'd7991b4b-20f5-406a-b68b-89b3a584c87c', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6227', N'TP/ICOBI/5782', N'', N'', N'Bwensirabo', N'1', N'-1', N'd7991b4b-20f5-406a-b68b-89b3a584c87c', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6231', N'TP/ICOBI/ 5739', N'', N'', N'Rwanyamuzura', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6242', N'TP/ICOBI/5783', N'', N'', N'Bwensirabo', N'1', N'-1', N'd7991b4b-20f5-406a-b68b-89b3a584c87c', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6254', N'TP/ICOBI/ 5740', N'', N'', N'Rwanyamuzura', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6256', N'TP/ICOBI/5784', N'', N'', N'Bwensirabo', N'1', N'-1', N'd7991b4b-20f5-406a-b68b-89b3a584c87c', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6275', N'TP/ICOBI/5785', N'', N'', N'Bwensirabo', N'1', N'-1', N'-1', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6289', N'TP/ICOBI/5786', N'', N'', N'Bwensirabo', N'1', N'-1', N'd7991b4b-20f5-406a-b68b-89b3a584c87c', N'536', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6295', N'TP/ICOBI/ 5742', N'', N'', N'Rwanyamuzura', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'633', N'TP/ICOBI/5493', N'', N'', N'Rwemirondo II', N'1', N'-1', N'-1', N'1510', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6358', N'TP/ICOBI/ 5743', N'', N'', N'Rwanyamuzura', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'636', N'TP/ICOBI/6160', N'', N'', N'Rwempiri Cell', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6374', N'TP/ICOBI/ 5749', N'', N'', N'Rwanyamuzura', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6392', N'TP/ICOBI/ 5750', N'', N'', N'Rwanyamuzura', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6404', N'TP/ICOBI/5744', N'', N'', N'Rwanyamuzira', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6409', N'TP/ICOBI/ 5741', N'', N'', N'Rwanyamuzura', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6444', N'TP/ICOBI/5745', N'', N'', N'RWANYAMUZIRA', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6484', N'TP/ICOBI/5746', N'', N'', N'Rwanyamuzira', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6507', N'TP/ICOBI/5747', N'', N'', N'Rwanyamuzira', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'6534', N'TP/ICOBI/5748', N'', N'', N'Rwanyamuzira', N'1', N'-1', N'-1', N'1513', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'67', N'TP/ICOBI/003', N'', N'', N'Rwemirondo II', N'1', N'-1', N'-1', N'1510', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'681', N'TP/ICOBI/6159', N'', N'', N'Kigorogoro', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'701', N'TP/ICOBI/6158', N'', N'', N'Kigorogoro', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'708', N'TP/ICOBI/5494', N'', N'', N'Rwemirondo II', N'1', N'-1', N'-1', N'1510', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'71', N'TP/ICOBI/0592', N'', N'', N'Ntambazi 1', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'7149', N'TP/ICOBI/ 5751', N'', N'', N'Ibaare I', N'1', N'-1', N'fccdce86-43d7-4cb2-ad32-1f7c8a3235d3', N'1298', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'7166', N'TP/ICOBI/ 5752', N'', N'', N'Ibaare I', N'1', N'-1', N'fccdce86-43d7-4cb2-ad32-1f7c8a3235d3', N'1298', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'7182', N'TP/ICOBI/ 5753', N'', N'', N'Ryakahabwa', N'1', N'-1', N'fccdce86-43d7-4cb2-ad32-1f7c8a3235d3', N'1298', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'7187', N'TP/ICOBI/ 5754', N'', N'', N'Ibaare II', N'1', N'-1', N'fccdce86-43d7-4cb2-ad32-1f7c8a3235d3', N'842', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'7195', N'TP/ICOBI/ 5755', N'', N'', N'Ibaare II', N'1', N'-1', N'fccdce86-43d7-4cb2-ad32-1f7c8a3235d3', N'842', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'7198', N'TP/ICOBI/ 5756', N'', N'', N'Ibaare II', N'1', N'-1', N'fccdce86-43d7-4cb2-ad32-1f7c8a3235d3', N'842', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'7205', N'TP/ICOBI/ 5757', N'', N'', N'Ibaare I', N'1', N'-1', N'fccdce86-43d7-4cb2-ad32-1f7c8a3235d3', N'1298', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'7217', N'TP/ICOBI/ 5758', N'', N'', N'Ibaare I', N'1', N'-1', N'fccdce86-43d7-4cb2-ad32-1f7c8a3235d3', N'1298', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'722', N'TP/ICOBI/6157', N'', N'', N'Ruzinga Cell', N'1', N'-1', N'-1', N'1511', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'7230', N'TP/ICOBI/ 5759', N'', N'', N'Ibaare I', N'1', N'-1', N'fccdce86-43d7-4cb2-ad32-1f7c8a3235d3', N'1298', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'7238', N'TP/ICOBI/ 5760', N'', N'', N'Akashayi', N'1', N'-1', N'fccdce86-43d7-4cb2-ad32-1f7c8a3235d3', N'1298', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'7264', N'TP/ICOBI/ 5761', N'', N'', N'Akashayi', N'1', N'-1', N'fccdce86-43d7-4cb2-ad32-1f7c8a3235d3', N'1298', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'7274', N'TP/ICOBI/6146', N'', N'', N'Nshwere II', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'7290', N'TP/ICOBI/ 5762', N'', N'', N'Aketengyeya', N'1', N'-1', N'fccdce86-43d7-4cb2-ad32-1f7c8a3235d3', N'1298', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'7293', N'TP/ICOBI/6145', N'', N'', N'Rwemirondo II', N'1', N'-1', N'-1', N'1510', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'7304', N'TP/ICOBI/ 5763', N'', N'', N'Akashayi', N'1', N'-1', N'fccdce86-43d7-4cb2-ad32-1f7c8a3235d3', N'1298', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'7312', N'TP/ICOBI/6144', N'', N'', N'Ntambazi II', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'7319', N'TP/ICOBI/ 5764', N'', N'', N'Ryakahabwa', N'1', N'-1', N'fccdce86-43d7-4cb2-ad32-1f7c8a3235d3', N'1298', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'732', N'TP/ICOBI/5495', N'', N'', N'Rwemirondo II', N'1', N'-1', N'-1', N'1510', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'7333', N'TP/ICOBI/6143', N'', N'', N'Ntambazi II', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'7335', N'TP/ICOBI/ 5765', N'', N'', N'Akashayi', N'1', N'-1', N'fccdce86-43d7-4cb2-ad32-1f7c8a3235d3', N'1298', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'7344', N'TP/ICOBI/6142', N'', N'', N'Ntambazi II', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'7346', N'TP/ICOBI/ 5766', N'', N'', N'Akashayi', N'1', N'-1', N'fccdce86-43d7-4cb2-ad32-1f7c8a3235d3', N'1298', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'7362', N'TP/ICOBI/ 5767', N'', N'', N'Rwamanuuma', N'1', N'-1', N'fccdce86-43d7-4cb2-ad32-1f7c8a3235d3', N'1298', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'7363', N'TP/ICOBI/6141', N'', N'', N'Ntambazi II', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'7376', N'TP/ICOBI/6140', N'', N'', N'Ntambazi II', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'7384', N'TP/ICOBI/ 5768', N'', N'', N'Obwengara', N'1', N'-1', N'fccdce86-43d7-4cb2-ad32-1f7c8a3235d3', N'1298', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'7393', N'TP/ICOBI/6139', N'', N'', N'Ntambazi II', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'7409', N'TP/ICOBI/6138', N'', N'', N'Ntambazi II', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'7428', N'TP/ICOBI/ 6148', N'', N'', N'Ntambazi II', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'7453', N'TP/ICOBI/ 6147', N'', N'', N'Ntambazi II', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'7463', N'TP/ICOBI/ 6155', N'', N'', N'Ntambazi II', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'748', N'TP/ICOBI/5496', N'', N'', N'Rwemirondo II', N'1', N'-1', N'-1', N'1510', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'7511', N'TP/ICOBI/ 6150', N'', N'', N'Ntambazi II', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'7524', N'TP/ICOBI/ 6149', N'', N'', N'Ntambazi II', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'755', N'TP/ICOBI/5497', N'', N'', N'Rwemirondo II', N'1', N'-1', N'-1', N'1510', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'765', N'TP/ICOBI/5608', N'', N'', N'Kyeju', N'1', N'-1', N'30e6521b-ed46-45d3-b024-f0edaabfae95', N'1376', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'775', N'TP/ICOBI/5609', N'', N'', N'Buhenda', N'1', N'-1', N'30e6521b-ed46-45d3-b024-f0edaabfae95', N'1376', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'782', N'TP/ICOBI/5498', N'', N'', N'Rwemirondo II', N'1', N'-1', N'-1', N'1510', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'797', N'TP/ICOBI/5610', N'', N'', N'Rwamuranga', N'1', N'-1', N'30e6521b-ed46-45d3-b024-f0edaabfae95', N'1376', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'8', N'TP/ICOBI/0598', N'', N'', N'Ntambazi II', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'803', N'TP/ICOBI/5499', N'', N'', N'Rwemirondo II', N'1', N'-1', N'-1', N'1510', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'814', N'TP/ICOBI/5611', N'', N'', N'Rwamuranga', N'1', N'-1', N'30e6521b-ed46-45d3-b024-f0edaabfae95', N'1376', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'822', N'TP/ICOBI/5500', N'', N'', N'Rwemirondo II', N'1', N'-1', N'-1', N'1510', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'830', N'TP/ICOBI/5612', N'', N'', N'Buhenda', N'1', N'-1', N'30e6521b-ed46-45d3-b024-f0edaabfae95', N'1376', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'849', N'TP/ICOBI/5613', N'', N'', N'Rwamuranga', N'1', N'-1', N'30e6521b-ed46-45d3-b024-f0edaabfae95', N'1376', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'863', N'TP/ICOBI/6156', N'', N'', N'Ntambazi II', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'865', N'TP/ICOBI/5614', N'', N'', N'Nyabuhama', N'1', N'-1', N'30e6521b-ed46-45d3-b024-f0edaabfae95', N'1376', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'891', N'TP/ICOBI/5615', N'', N'', N'Kanyanya', N'1', N'-1', N'30e6521b-ed46-45d3-b024-f0edaabfae95', N'1376', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'9', N'TP/ICOBI/0594', N'', N'', N'Ntambazi II', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'901', N'TP/ICOBI/6154', N'', N'', N'Ntambazi II', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'906', N'TP/ICOBI/5616', N'', N'', N'Nyabuhama', N'1', N'-1', N'30e6521b-ed46-45d3-b024-f0edaabfae95', N'1376', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'922', N'TP/ICOBI/6126', N'', N'', N'Ntambazi II', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'938', N'TP/ICOBI/ 6153', N'', N'', N'Ntambazi II', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'939', N'TP/ICOBI/5617', N'', N'', N'Kanyanya', N'1', N'-1', N'30e6521b-ed46-45d3-b024-f0edaabfae95', N'1376', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'953', N'TP/ICOBI/5618', N'', N'', N'Kanyanya', N'1', N'-1', N'30e6521b-ed46-45d3-b024-f0edaabfae95', N'1376', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'956', N'TP/ICOBI/6127', N'', N'', N'Ntambazi II', N'1', N'-1', N'-1', N'1170', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' UNION ALL 
+SELECT N'990', N'TP/ICOBI/5619', N'', N'', N'Rwamuranga', N'1', N'-1', N'30e6521b-ed46-45d3-b024-f0edaabfae95', N'1376', N'1', N'1', GETDATE(), GETDATE(), N'IMPORT' 
+ALTER TABLE hh_household ENABLE TRIGGER hh_household_insert 
