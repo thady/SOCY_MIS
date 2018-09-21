@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_um_office_district_download));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.gdv_districts = new System.Windows.Forms.DataGridView();
@@ -58,7 +59,7 @@
             this.panel3.Controls.Add(this.gdv_districts);
             this.panel3.Location = new System.Drawing.Point(6, 89);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(692, 372);
+            this.panel3.Size = new System.Drawing.Size(692, 393);
             this.panel3.TabIndex = 1;
             // 
             // gdv_districts
@@ -72,7 +73,7 @@
             this.gdv_districts.Location = new System.Drawing.Point(3, 3);
             this.gdv_districts.Name = "gdv_districts";
             this.gdv_districts.RowTemplate.Height = 24;
-            this.gdv_districts.Size = new System.Drawing.Size(686, 366);
+            this.gdv_districts.Size = new System.Drawing.Size(686, 387);
             this.gdv_districts.TabIndex = 0;
             this.gdv_districts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdv_districts_CellClick);
             // 
@@ -111,6 +112,7 @@
             // 
             // cbo_district
             // 
+            this.cbo_district.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_district.FormattingEnabled = true;
             this.cbo_district.Location = new System.Drawing.Point(8, 29);
             this.cbo_district.Name = "cbo_district";
@@ -120,11 +122,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Blue;
             this.label2.Location = new System.Drawing.Point(5, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 17);
+            this.label2.Size = new System.Drawing.Size(106, 17);
             this.label2.TabIndex = 0;
-            this.label2.Text = "District Name";
+            this.label2.Text = "Select a District";
             // 
             // label1
             // 
@@ -145,6 +148,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frm_um_office_district_download";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

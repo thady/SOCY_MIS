@@ -4,6 +4,7 @@ using System.Data;
 using System.Text;
 
 using PSAUtils;
+using System.Data.SqlClient;
 
 namespace SOCY_MIS.DataAccessLayer
 {
@@ -42,8 +43,17 @@ namespace SOCY_MIS.DataAccessLayer
         public string usr_id_update = string.Empty;
         public string ofc_id = string.Empty;
         public int district_id = Convert.ToInt32(static_variables.district_id);
-
+        public string yn_id_es_caregiver_group = string.Empty;
+        public string ynna_id_edu_attend_school_regularly = string.Empty;
+        public string ynna_id_es_other_lending_group = string.Empty;
         #endregion Public
+
+        #region dbconnection
+        static DataAccessLayer.DBConnection dbCon = new DataAccessLayer.DBConnection(utilConstants.cACKConnection);
+        static string SQLConnection = dbCon.SQLDBConnection(utilConstants.cACKConnection);
+        static SqlConnection conn = null;
+
+        #endregion dbconnection
         #endregion Variables
 
         #region Constractor Methods
@@ -163,7 +173,7 @@ namespace SOCY_MIS.DataAccessLayer
                 "ynna_id_pro_birth_certificate, ynna_id_pro_birth_registration, ynna_id_pro_child_abuse, " + 
                 "ynna_id_pro_child_labour, ynna_id_pro_reintegrated, " +
                 "ynna_id_ps_parenting, ynna_id_ps_support, ynna_id_ps_violence, " +
-                "usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id,district_id) " +
+                "usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id,district_id,ynna_id_edu_attend_school_regularly,yn_id_es_caregiver_group,ynna_id_es_other_lending_group) " +
                 "VALUES ('{0}', '{1}', '{2}', '{3}', " +
                 "'{4}', " +
                 "'{5}', '{6}', '{7}', '{8}', '{9}', " +
@@ -173,7 +183,7 @@ namespace SOCY_MIS.DataAccessLayer
                 "'{20}', '{21}', '{22}', " + 
                 "'{23}', '{24}', " +
                 "'{25}', '{26}', '{27}', " +
-                "'{28}', '{28}', GETDATE(), GETDATE(), '{29}','{30}') ";
+                "'{28}', '{28}', GETDATE(), GETDATE(), '{29}','{30}','{31}','{32}','{33}') ";
             strSQL = string.Format(strSQL, hhvm_id, hhm_id, hhv_id, hst_id,
                 yn_id_hhm_active,
                 yn_id_edu_sensitised, yn_id_es_aflateen, yn_id_es_agro, yn_id_es_apprenticeship, yn_id_es_silc,
@@ -183,7 +193,7 @@ namespace SOCY_MIS.DataAccessLayer
                 ynna_id_pro_birth_certificate, ynna_id_pro_birth_registration, 
                 ynna_id_pro_child_abuse, ynna_id_pro_child_labour, ynna_id_pro_reintegrated,
                 ynna_id_ps_parenting, ynna_id_ps_support, ynna_id_ps_violence,
-                usr_id_update, ofc_id,district_id);
+                usr_id_update, ofc_id,district_id, ynna_id_edu_attend_school_regularly, yn_id_es_caregiver_group, ynna_id_es_other_lending_group);
 
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
@@ -231,6 +241,9 @@ namespace SOCY_MIS.DataAccessLayer
                 ynna_id_ps_parenting = dr["ynna_id_ps_parenting"].ToString();
                 ynna_id_ps_support = dr["ynna_id_ps_support"].ToString();
                 ynna_id_ps_violence = dr["ynna_id_ps_violence"].ToString();
+                ynna_id_es_other_lending_group = dr["ynna_id_es_other_lending_group"].ToString();
+                ynna_id_edu_attend_school_regularly = dr["ynna_id_edu_attend_school_regularly"].ToString();
+                yn_id_es_caregiver_group = dr["yn_id_es_caregiver_group"].ToString();
                 usr_id_update = dr["usr_id_update"].ToString();
                 ofc_id = dr["ofc_id"].ToString();
                 #endregion Load Values
@@ -254,7 +267,8 @@ namespace SOCY_MIS.DataAccessLayer
                 "ynna_id_pro_birth_certificate = '{20}', ynna_id_pro_birth_registration = '{21}', ynna_id_pro_child_abuse = '{22}', " + 
                 "ynna_id_pro_child_labour = '{23}', ynna_id_pro_reintegrated = '{24}', " +
                 "ynna_id_ps_parenting = '{25}', ynna_id_ps_support = '{26}', ynna_id_ps_violence = '{27}', " +
-                "usr_id_update = '{28}', usr_date_update = GETDATE(),district_id = '{29}' " +
+                "usr_id_update = '{28}', usr_date_update = GETDATE(),district_id = '{29}',ynna_id_edu_attend_school_regularly = '{30}',yn_id_es_caregiver_group = '{31}', " +
+                "ynna_id_es_other_lending_group = '{32}' " + 
                 "WHERE hhvm_id = '{0}' ";
             strSQL = string.Format(strSQL, hhvm_id, hhm_id, hhv_id, hst_id,
                 yn_id_hhm_active,
@@ -265,7 +279,7 @@ namespace SOCY_MIS.DataAccessLayer
                 ynna_id_pro_birth_certificate, ynna_id_pro_birth_registration,
                 ynna_id_pro_child_abuse, ynna_id_pro_child_labour, ynna_id_pro_reintegrated,
                 ynna_id_ps_parenting, ynna_id_ps_support, ynna_id_ps_violence,
-                usr_id_update,district_id);
+                usr_id_update,district_id, ynna_id_edu_attend_school_regularly, yn_id_es_caregiver_group, ynna_id_es_other_lending_group);
 
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
@@ -296,5 +310,57 @@ namespace SOCY_MIS.DataAccessLayer
         }
         #endregion Private
         #endregion Get Methods
+
+        public static string LoadBenHIVStatus(string hhm_id)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter Adapt;
+            string hst_id = string.Empty;
+            string SQL = @"SELECT hst_id FROM hh_household_member WHERE hhm_id = '{0}'";
+
+            SQL = string.Format(SQL, hhm_id);
+            try
+            {
+                string strConn = dbCon.ToString();
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(SQL, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    Adapt = new SqlDataAdapter(cmd);
+                    Adapt.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        DataRow dtRow = dt.Rows[0];
+                        hst_id = dtRow["hst_id"].ToString();
+                    }
+
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            finally
+            {
+                if (conn.State == ConnectionState.Open) { conn.Close(); }
+            }
+
+            return hst_id;
+        }
     }
 }

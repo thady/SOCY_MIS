@@ -82,7 +82,15 @@ namespace SOCY_MIS
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Save();
+            if (SystemConstants.ValidateDistrictID())
+            {
+                Save();
+            }
+            else
+            {
+                MessageBox.Show("No district set for this office,please set the office district under office information screen", "SOCY MIS Message Centre", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
 
         private void cbDistrict_SelectionChangeCommitted(object sender, EventArgs e)
@@ -152,6 +160,7 @@ namespace SOCY_MIS
                     cbWard.SelectedIndex = 0;
                     cbTitle.SelectedIndex = 0;
                     cbStatus.SelectedValue = utilConstants.cDFStatus;
+                    numTarget.Value = 0;
                 }
                 else
                 {
@@ -193,7 +202,8 @@ namespace SOCY_MIS
                         txtPhone.Text = dalSwk.swk_phone;
                         txtStatusReason.Text = dalSwk.swk_status_reason;
                         txtVillage.Text = dalSwk.swk_village;
-                        btnSave.Enabled = pblnManage && (FormMaster.OfficeId.Equals(dalSwk.ofc_id) || SystemConstants.Validate_Office_group_access(FormMaster.OfficeId, dalSwk.ofc_id));
+                        numTarget.Value = dalSwk.swk_hh_target != string.Empty? Convert.ToInt32(dalSwk.swk_hh_target) : 0;
+                        //btnSave.Enabled = pblnManage && (FormMaster.OfficeId.Equals(dalSwk.ofc_id) || SystemConstants.Validate_Office_group_access(FormMaster.OfficeId, dalSwk.ofc_id));
 
                         LoadLists(dalSwk.hnr_id, dalSwk.swk_id_manager, dalSwk.sws_id, dalSwk.wrd_id, dbCon);
                     }
@@ -366,6 +376,7 @@ namespace SOCY_MIS
                         dalSwk.wrd_id = cbWard.SelectedValue.ToString();
                         dalSwk.district_id = static_variables.district_id;
                         dalSwk.usr_id_update = FormMaster.UserId;
+                        dalSwk.swk_hh_target = numTarget.Value.ToString();
 
                         dalSwk.Save(dbCon);
 
@@ -401,7 +412,7 @@ namespace SOCY_MIS
             #endregion Variables
 
             #region Required Fields
-            if (txtFirstName.Text.Trim().Length == 0 || txtLastName.Text.Trim().Length == 0 || txtPhone.Text.Trim().Length == 0 || cbWard.SelectedIndex == 0)
+            if (txtFirstName.Text.Trim().Length == 0 || txtLastName.Text.Trim().Length == 0 || txtPhone.Text.Trim().Length == 0 || cbWard.SelectedIndex == 0 || numTarget.Value == 0)
                 strMessage = strMessage + "," + utilConstants.cMIDRequiredFields;
             #endregion Required Fields
 

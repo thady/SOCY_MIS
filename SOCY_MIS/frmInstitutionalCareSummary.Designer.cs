@@ -30,6 +30,10 @@
         {
             this.gbInstitutionalCareSummaryTitle = new System.Windows.Forms.GroupBox();
             this.gbRecordsTitle = new System.Windows.Forms.GroupBox();
+            this.tbLayoutTemp = new System.Windows.Forms.TableLayoutPanel();
+            this.txtParish = new System.Windows.Forms.TextBox();
+            this.txtSubCounty = new System.Windows.Forms.TextBox();
+            this.txtDistrict = new System.Windows.Forms.TextBox();
             this.dgvLine = new System.Windows.Forms.DataGridView();
             this.gclID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gclInstitution = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,15 +42,21 @@
             this.gclDelete = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.gclOfcId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tplDisplay09 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblVillage = new System.Windows.Forms.Label();
-            this.lblSubCounty = new System.Windows.Forms.Label();
-            this.lblTelNo = new System.Windows.Forms.Label();
-            this.lblWard = new System.Windows.Forms.Label();
-            this.cbSubCounty = new System.Windows.Forms.ComboBox();
-            this.cbWard = new System.Windows.Forms.ComboBox();
-            this.txtTelNo = new System.Windows.Forms.TextBox();
-            this.txtVillage = new System.Windows.Forms.TextBox();
+            this.pnlMeetingsHeld = new System.Windows.Forms.Panel();
+            this.rbtnSOCYDistrictNo = new System.Windows.Forms.RadioButton();
+            this.rbtnSOCYDistrictYes = new System.Windows.Forms.RadioButton();
             this.lblWardVal = new System.Windows.Forms.Label();
+            this.lblVillage = new System.Windows.Forms.Label();
+            this.txtVillage = new System.Windows.Forms.TextBox();
+            this.lblTelNo = new System.Windows.Forms.Label();
+            this.txtTelNo = new System.Windows.Forms.TextBox();
+            this.lblWard = new System.Windows.Forms.Label();
+            this.cbWard = new System.Windows.Forms.ComboBox();
+            this.cbSubCounty = new System.Windows.Forms.ComboBox();
+            this.lblSubCounty = new System.Windows.Forms.Label();
+            this.cbDistrict = new System.Windows.Forms.ComboBox();
+            this.lblDistrict = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.tplDisplay07 = new System.Windows.Forms.TableLayoutPanel();
             this.lblCGAge = new System.Windows.Forms.Label();
             this.lblCGName = new System.Windows.Forms.Label();
@@ -88,24 +98,27 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.tlpDisplay01 = new System.Windows.Forms.TableLayoutPanel();
-            this.dtpDate = new System.Windows.Forms.DateTimePicker();
-            this.lblDate = new System.Windows.Forms.Label();
             this.lblDateVal = new System.Windows.Forms.Label();
-            this.lblDistrictVal = new System.Windows.Forms.Label();
-            this.cbDistrict = new System.Windows.Forms.ComboBox();
-            this.lblDistrict = new System.Windows.Forms.Label();
+            this.lblFinancialYearVal = new System.Windows.Forms.Label();
             this.lblQuarter = new System.Windows.Forms.Label();
             this.cbQuarter = new System.Windows.Forms.ComboBox();
-            this.lblQuarterVal = new System.Windows.Forms.Label();
             this.lblFinancialYear = new System.Windows.Forms.Label();
+            this.lblQuarterVal = new System.Windows.Forms.Label();
             this.cbFinancialYear = new System.Windows.Forms.ComboBox();
-            this.lblFinancialYearVal = new System.Windows.Forms.Label();
-            this.lblDistrictMain = new System.Windows.Forms.Label();
             this.cbDistrictMain = new System.Windows.Forms.ComboBox();
+            this.lblDistrictVal = new System.Windows.Forms.Label();
+            this.lblDistrictMain = new System.Windows.Forms.Label();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.lblPartner = new System.Windows.Forms.Label();
+            this.cboPartner = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.gbInstitutionalCareSummaryTitle.SuspendLayout();
             this.gbRecordsTitle.SuspendLayout();
+            this.tbLayoutTemp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLine)).BeginInit();
             this.tplDisplay09.SuspendLayout();
+            this.pnlMeetingsHeld.SuspendLayout();
             this.tplDisplay07.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCGAge)).BeginInit();
             this.tplDisplay08.SuspendLayout();
@@ -132,16 +145,17 @@
             this.gbInstitutionalCareSummaryTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbInstitutionalCareSummaryTitle.Location = new System.Drawing.Point(3, 6);
             this.gbInstitutionalCareSummaryTitle.Name = "gbInstitutionalCareSummaryTitle";
-            this.gbInstitutionalCareSummaryTitle.Size = new System.Drawing.Size(714, 771);
+            this.gbInstitutionalCareSummaryTitle.Size = new System.Drawing.Size(714, 923);
             this.gbInstitutionalCareSummaryTitle.TabIndex = 5;
             this.gbInstitutionalCareSummaryTitle.TabStop = false;
-            this.gbInstitutionalCareSummaryTitle.Text = "Institutional Care Summary";
+            this.gbInstitutionalCareSummaryTitle.Text = "Re-Intergration Summary Tool";
             // 
             // gbRecordsTitle
             // 
             this.gbRecordsTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbRecordsTitle.Controls.Add(this.tbLayoutTemp);
             this.gbRecordsTitle.Controls.Add(this.dgvLine);
             this.gbRecordsTitle.Controls.Add(this.tplDisplay09);
             this.gbRecordsTitle.Controls.Add(this.tplDisplay07);
@@ -156,12 +170,56 @@
             this.gbRecordsTitle.Controls.Add(this.lblTotal);
             this.gbRecordsTitle.Controls.Add(this.btnLineDelete);
             this.gbRecordsTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbRecordsTitle.Location = new System.Drawing.Point(6, 139);
+            this.gbRecordsTitle.Location = new System.Drawing.Point(6, 170);
             this.gbRecordsTitle.Name = "gbRecordsTitle";
-            this.gbRecordsTitle.Size = new System.Drawing.Size(702, 627);
+            this.gbRecordsTitle.Size = new System.Drawing.Size(702, 717);
             this.gbRecordsTitle.TabIndex = 55;
             this.gbRecordsTitle.TabStop = false;
             this.gbRecordsTitle.Text = "Records";
+            // 
+            // tbLayoutTemp
+            // 
+            this.tbLayoutTemp.ColumnCount = 1;
+            this.tbLayoutTemp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tbLayoutTemp.Controls.Add(this.txtParish, 0, 2);
+            this.tbLayoutTemp.Controls.Add(this.txtSubCounty, 0, 1);
+            this.tbLayoutTemp.Controls.Add(this.txtDistrict, 0, 0);
+            this.tbLayoutTemp.Location = new System.Drawing.Point(0, 284);
+            this.tbLayoutTemp.Name = "tbLayoutTemp";
+            this.tbLayoutTemp.RowCount = 3;
+            this.tbLayoutTemp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tbLayoutTemp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tbLayoutTemp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tbLayoutTemp.Size = new System.Drawing.Size(22, 100);
+            this.tbLayoutTemp.TabIndex = 56;
+            this.tbLayoutTemp.Visible = false;
+            // 
+            // txtParish
+            // 
+            this.txtParish.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtParish.Location = new System.Drawing.Point(3, 77);
+            this.txtParish.Name = "txtParish";
+            this.txtParish.Size = new System.Drawing.Size(16, 20);
+            this.txtParish.TabIndex = 55;
+            // 
+            // txtSubCounty
+            // 
+            this.txtSubCounty.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSubCounty.Location = new System.Drawing.Point(3, 40);
+            this.txtSubCounty.Name = "txtSubCounty";
+            this.txtSubCounty.Size = new System.Drawing.Size(16, 20);
+            this.txtSubCounty.TabIndex = 54;
+            // 
+            // txtDistrict
+            // 
+            this.txtDistrict.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDistrict.Location = new System.Drawing.Point(3, 3);
+            this.txtDistrict.Name = "txtDistrict";
+            this.txtDistrict.Size = new System.Drawing.Size(16, 20);
+            this.txtDistrict.TabIndex = 53;
             // 
             // dgvLine
             // 
@@ -178,10 +236,10 @@
             this.gclCGName,
             this.gclDelete,
             this.gclOfcId});
-            this.dgvLine.Location = new System.Drawing.Point(7, 418);
+            this.dgvLine.Location = new System.Drawing.Point(6, 481);
             this.dgvLine.MultiSelect = false;
             this.dgvLine.Name = "dgvLine";
-            this.dgvLine.Size = new System.Drawing.Size(690, 172);
+            this.dgvLine.Size = new System.Drawing.Size(690, 138);
             this.dgvLine.TabIndex = 52;
             this.dgvLine.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLine_CellDoubleClick);
             this.dgvLine.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvLine_RowPostPaint);
@@ -241,114 +299,183 @@
             this.tplDisplay09.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tplDisplay09.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tplDisplay09.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tplDisplay09.Controls.Add(this.lblVillage, 0, 2);
-            this.tplDisplay09.Controls.Add(this.txtVillage, 1, 2);
-            this.tplDisplay09.Controls.Add(this.lblTelNo, 3, 2);
-            this.tplDisplay09.Controls.Add(this.txtTelNo, 4, 2);
-            this.tplDisplay09.Controls.Add(this.cbDistrict, 1, 0);
-            this.tplDisplay09.Controls.Add(this.lblWard, 0, 1);
-            this.tplDisplay09.Controls.Add(this.cbWard, 1, 1);
+            this.tplDisplay09.Controls.Add(this.pnlMeetingsHeld, 1, 0);
             this.tplDisplay09.Controls.Add(this.lblWardVal, 2, 1);
-            this.tplDisplay09.Controls.Add(this.cbSubCounty, 4, 0);
-            this.tplDisplay09.Controls.Add(this.lblSubCounty, 3, 0);
-            this.tplDisplay09.Controls.Add(this.lblDistrict, 0, 0);
+            this.tplDisplay09.Controls.Add(this.lblVillage, 0, 3);
+            this.tplDisplay09.Controls.Add(this.txtVillage, 1, 3);
+            this.tplDisplay09.Controls.Add(this.lblTelNo, 3, 3);
+            this.tplDisplay09.Controls.Add(this.txtTelNo, 4, 3);
+            this.tplDisplay09.Controls.Add(this.lblWard, 0, 2);
+            this.tplDisplay09.Controls.Add(this.cbWard, 1, 2);
+            this.tplDisplay09.Controls.Add(this.cbSubCounty, 4, 1);
+            this.tplDisplay09.Controls.Add(this.lblSubCounty, 3, 1);
+            this.tplDisplay09.Controls.Add(this.cbDistrict, 1, 1);
+            this.tplDisplay09.Controls.Add(this.lblDistrict, 0, 1);
+            this.tplDisplay09.Controls.Add(this.label1, 0, 0);
             this.tplDisplay09.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tplDisplay09.Location = new System.Drawing.Point(24, 284);
             this.tplDisplay09.Name = "tplDisplay09";
-            this.tplDisplay09.RowCount = 3;
+            this.tplDisplay09.RowCount = 4;
+            this.tplDisplay09.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.48387F));
+            this.tplDisplay09.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.1828F));
             this.tplDisplay09.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tplDisplay09.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tplDisplay09.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tplDisplay09.Size = new System.Drawing.Size(654, 90);
+            this.tplDisplay09.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tplDisplay09.Size = new System.Drawing.Size(654, 145);
             this.tplDisplay09.TabIndex = 48;
             // 
-            // lblVillage
+            // pnlMeetingsHeld
             // 
-            this.lblVillage.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblVillage.AutoSize = true;
-            this.lblVillage.Location = new System.Drawing.Point(3, 67);
-            this.lblVillage.Name = "lblVillage";
-            this.lblVillage.Size = new System.Drawing.Size(41, 13);
-            this.lblVillage.TabIndex = 39;
-            this.lblVillage.Text = "Village:";
+            this.pnlMeetingsHeld.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pnlMeetingsHeld.Controls.Add(this.rbtnSOCYDistrictNo);
+            this.pnlMeetingsHeld.Controls.Add(this.rbtnSOCYDistrictYes);
+            this.pnlMeetingsHeld.Location = new System.Drawing.Point(153, 9);
+            this.pnlMeetingsHeld.Name = "pnlMeetingsHeld";
+            this.pnlMeetingsHeld.Size = new System.Drawing.Size(151, 19);
+            this.pnlMeetingsHeld.TabIndex = 99;
             // 
-            // lblSubCounty
+            // rbtnSOCYDistrictNo
             // 
-            this.lblSubCounty.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblSubCounty.AutoSize = true;
-            this.lblSubCounty.Location = new System.Drawing.Point(330, 8);
-            this.lblSubCounty.Name = "lblSubCounty";
-            this.lblSubCounty.Size = new System.Drawing.Size(64, 13);
-            this.lblSubCounty.TabIndex = 38;
-            this.lblSubCounty.Text = "Sub-county:";
+            this.rbtnSOCYDistrictNo.AutoSize = true;
+            this.rbtnSOCYDistrictNo.Location = new System.Drawing.Point(52, 1);
+            this.rbtnSOCYDistrictNo.Name = "rbtnSOCYDistrictNo";
+            this.rbtnSOCYDistrictNo.Size = new System.Drawing.Size(39, 17);
+            this.rbtnSOCYDistrictNo.TabIndex = 2;
+            this.rbtnSOCYDistrictNo.TabStop = true;
+            this.rbtnSOCYDistrictNo.Text = "No";
+            this.rbtnSOCYDistrictNo.UseVisualStyleBackColor = true;
+            this.rbtnSOCYDistrictNo.CheckedChanged += new System.EventHandler(this.rbtnSOCYDistrictNo_CheckedChanged);
             // 
-            // lblTelNo
+            // rbtnSOCYDistrictYes
             // 
-            this.lblTelNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblTelNo.AutoSize = true;
-            this.lblTelNo.Location = new System.Drawing.Point(330, 67);
-            this.lblTelNo.Name = "lblTelNo";
-            this.lblTelNo.Size = new System.Drawing.Size(48, 13);
-            this.lblTelNo.TabIndex = 40;
-            this.lblTelNo.Text = "Tel. No.:";
-            // 
-            // lblWard
-            // 
-            this.lblWard.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblWard.AutoSize = true;
-            this.lblWard.Location = new System.Drawing.Point(3, 37);
-            this.lblWard.Name = "lblWard";
-            this.lblWard.Size = new System.Drawing.Size(39, 13);
-            this.lblWard.TabIndex = 41;
-            this.lblWard.Text = "Parish:";
-            // 
-            // cbSubCounty
-            // 
-            this.cbSubCounty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbSubCounty.FormattingEnabled = true;
-            this.cbSubCounty.Location = new System.Drawing.Point(480, 4);
-            this.cbSubCounty.Name = "cbSubCounty";
-            this.cbSubCounty.Size = new System.Drawing.Size(151, 21);
-            this.cbSubCounty.TabIndex = 87;
-            this.cbSubCounty.SelectionChangeCommitted += new System.EventHandler(this.cbSubCounty_SelectionChangeCommitted);
-            // 
-            // cbWard
-            // 
-            this.cbWard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbWard.FormattingEnabled = true;
-            this.cbWard.Location = new System.Drawing.Point(153, 33);
-            this.cbWard.Name = "cbWard";
-            this.cbWard.Size = new System.Drawing.Size(151, 21);
-            this.cbWard.TabIndex = 88;
-            this.cbWard.SelectionChangeCommitted += new System.EventHandler(this.cbWard_SelectionChangeCommitted);
-            // 
-            // txtTelNo
-            // 
-            this.txtTelNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTelNo.Location = new System.Drawing.Point(480, 64);
-            this.txtTelNo.Name = "txtTelNo";
-            this.txtTelNo.Size = new System.Drawing.Size(151, 20);
-            this.txtTelNo.TabIndex = 89;
-            // 
-            // txtVillage
-            // 
-            this.txtVillage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtVillage.Location = new System.Drawing.Point(153, 64);
-            this.txtVillage.Name = "txtVillage";
-            this.txtVillage.Size = new System.Drawing.Size(151, 20);
-            this.txtVillage.TabIndex = 90;
+            this.rbtnSOCYDistrictYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.rbtnSOCYDistrictYes.AutoSize = true;
+            this.rbtnSOCYDistrictYes.Location = new System.Drawing.Point(3, 1);
+            this.rbtnSOCYDistrictYes.Name = "rbtnSOCYDistrictYes";
+            this.rbtnSOCYDistrictYes.Size = new System.Drawing.Size(43, 17);
+            this.rbtnSOCYDistrictYes.TabIndex = 0;
+            this.rbtnSOCYDistrictYes.TabStop = true;
+            this.rbtnSOCYDistrictYes.Text = "Yes";
+            this.rbtnSOCYDistrictYes.UseVisualStyleBackColor = true;
+            this.rbtnSOCYDistrictYes.CheckedChanged += new System.EventHandler(this.rbtnSOCYDistrictYes_CheckedChanged);
             // 
             // lblWardVal
             // 
             this.lblWardVal.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblWardVal.AutoSize = true;
             this.lblWardVal.ForeColor = System.Drawing.Color.Red;
-            this.lblWardVal.Location = new System.Drawing.Point(310, 37);
+            this.lblWardVal.Location = new System.Drawing.Point(310, 46);
             this.lblWardVal.Name = "lblWardVal";
             this.lblWardVal.Size = new System.Drawing.Size(11, 13);
             this.lblWardVal.TabIndex = 91;
             this.lblWardVal.Text = "*";
             this.lblWardVal.Visible = false;
+            // 
+            // lblVillage
+            // 
+            this.lblVillage.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblVillage.AutoSize = true;
+            this.lblVillage.Location = new System.Drawing.Point(3, 117);
+            this.lblVillage.Name = "lblVillage";
+            this.lblVillage.Size = new System.Drawing.Size(41, 13);
+            this.lblVillage.TabIndex = 39;
+            this.lblVillage.Text = "Village:";
+            // 
+            // txtVillage
+            // 
+            this.txtVillage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtVillage.Location = new System.Drawing.Point(153, 114);
+            this.txtVillage.Name = "txtVillage";
+            this.txtVillage.Size = new System.Drawing.Size(151, 20);
+            this.txtVillage.TabIndex = 90;
+            // 
+            // lblTelNo
+            // 
+            this.lblTelNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblTelNo.AutoSize = true;
+            this.lblTelNo.Location = new System.Drawing.Point(330, 117);
+            this.lblTelNo.Name = "lblTelNo";
+            this.lblTelNo.Size = new System.Drawing.Size(48, 13);
+            this.lblTelNo.TabIndex = 40;
+            this.lblTelNo.Text = "Tel. No.:";
+            // 
+            // txtTelNo
+            // 
+            this.txtTelNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTelNo.Location = new System.Drawing.Point(480, 114);
+            this.txtTelNo.Name = "txtTelNo";
+            this.txtTelNo.Size = new System.Drawing.Size(151, 20);
+            this.txtTelNo.TabIndex = 89;
+            // 
+            // lblWard
+            // 
+            this.lblWard.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblWard.AutoSize = true;
+            this.lblWard.Location = new System.Drawing.Point(3, 79);
+            this.lblWard.Name = "lblWard";
+            this.lblWard.Size = new System.Drawing.Size(39, 13);
+            this.lblWard.TabIndex = 41;
+            this.lblWard.Text = "Parish:";
+            // 
+            // cbWard
+            // 
+            this.cbWard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbWard.FormattingEnabled = true;
+            this.cbWard.Location = new System.Drawing.Point(153, 75);
+            this.cbWard.Name = "cbWard";
+            this.cbWard.Size = new System.Drawing.Size(151, 21);
+            this.cbWard.TabIndex = 88;
+            this.cbWard.SelectionChangeCommitted += new System.EventHandler(this.cbWard_SelectionChangeCommitted);
+            // 
+            // cbSubCounty
+            // 
+            this.cbSubCounty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbSubCounty.FormattingEnabled = true;
+            this.cbSubCounty.Location = new System.Drawing.Point(480, 42);
+            this.cbSubCounty.Name = "cbSubCounty";
+            this.cbSubCounty.Size = new System.Drawing.Size(151, 21);
+            this.cbSubCounty.TabIndex = 87;
+            this.cbSubCounty.SelectionChangeCommitted += new System.EventHandler(this.cbSubCounty_SelectionChangeCommitted);
+            // 
+            // lblSubCounty
+            // 
+            this.lblSubCounty.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblSubCounty.AutoSize = true;
+            this.lblSubCounty.Location = new System.Drawing.Point(330, 46);
+            this.lblSubCounty.Name = "lblSubCounty";
+            this.lblSubCounty.Size = new System.Drawing.Size(64, 13);
+            this.lblSubCounty.TabIndex = 38;
+            this.lblSubCounty.Text = "Sub-county:";
+            // 
+            // cbDistrict
+            // 
+            this.cbDistrict.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbDistrict.FormattingEnabled = true;
+            this.cbDistrict.Location = new System.Drawing.Point(153, 42);
+            this.cbDistrict.Name = "cbDistrict";
+            this.cbDistrict.Size = new System.Drawing.Size(151, 21);
+            this.cbDistrict.TabIndex = 14;
+            this.cbDistrict.SelectionChangeCommitted += new System.EventHandler(this.cbDistrict_SelectionChangeCommitted);
+            // 
+            // lblDistrict
+            // 
+            this.lblDistrict.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblDistrict.AutoSize = true;
+            this.lblDistrict.Location = new System.Drawing.Point(3, 46);
+            this.lblDistrict.Name = "lblDistrict";
+            this.lblDistrict.Size = new System.Drawing.Size(42, 13);
+            this.lblDistrict.TabIndex = 10;
+            this.lblDistrict.Text = "District:";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Blue;
+            this.label1.Location = new System.Drawing.Point(3, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(127, 26);
+            this.label1.TabIndex = 92;
+            this.label1.Text = "Is Re-Intergration district under SOCY programme?";
             // 
             // tplDisplay07
             // 
@@ -679,7 +806,7 @@
             this.tplButton02.Controls.Add(this.btnLineSave, 1, 0);
             this.tplButton02.Controls.Add(this.llblBackBottom, 4, 0);
             this.tplButton02.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tplButton02.Location = new System.Drawing.Point(24, 373);
+            this.tplButton02.Location = new System.Drawing.Point(9, 435);
             this.tplButton02.Name = "tplButton02";
             this.tplButton02.RowCount = 1;
             this.tplButton02.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -782,7 +909,7 @@
             this.lblTotalNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblTotalNumber.AutoSize = true;
             this.lblTotalNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalNumber.Location = new System.Drawing.Point(46, 601);
+            this.lblTotalNumber.Location = new System.Drawing.Point(46, 691);
             this.lblTotalNumber.Name = "lblTotalNumber";
             this.lblTotalNumber.Size = new System.Drawing.Size(10, 13);
             this.lblTotalNumber.TabIndex = 29;
@@ -793,7 +920,7 @@
             this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(6, 601);
+            this.lblTotal.Location = new System.Drawing.Point(6, 691);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(34, 13);
             this.lblTotal.TabIndex = 28;
@@ -804,7 +931,7 @@
             this.btnLineDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLineDelete.Enabled = false;
             this.btnLineDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLineDelete.Location = new System.Drawing.Point(621, 596);
+            this.btnLineDelete.Location = new System.Drawing.Point(621, 686);
             this.btnLineDelete.Name = "btnLineDelete";
             this.btnLineDelete.Size = new System.Drawing.Size(75, 23);
             this.btnLineDelete.TabIndex = 21;
@@ -836,7 +963,7 @@
             this.tplButton01.Controls.Add(this.btnCancel, 2, 0);
             this.tplButton01.Controls.Add(this.btnSave, 0, 0);
             this.tplButton01.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tplButton01.Location = new System.Drawing.Point(30, 89);
+            this.tplButton01.Location = new System.Drawing.Point(36, 126);
             this.tplButton01.Name = "tplButton01";
             this.tplButton01.RowCount = 1;
             this.tplButton01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -876,46 +1003,31 @@
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpDisplay01.Controls.Add(this.cbDistrictMain, 1, 0);
-            this.tlpDisplay01.Controls.Add(this.lblDistrictMain, 0, 0);
-            this.tlpDisplay01.Controls.Add(this.dtpDate, 4, 0);
-            this.tlpDisplay01.Controls.Add(this.lblDate, 3, 0);
             this.tlpDisplay01.Controls.Add(this.lblDateVal, 5, 0);
-            this.tlpDisplay01.Controls.Add(this.lblDistrictVal, 2, 0);
-            this.tlpDisplay01.Controls.Add(this.lblQuarter, 0, 1);
-            this.tlpDisplay01.Controls.Add(this.cbQuarter, 1, 1);
-            this.tlpDisplay01.Controls.Add(this.lblQuarterVal, 2, 1);
-            this.tlpDisplay01.Controls.Add(this.lblFinancialYear, 3, 1);
-            this.tlpDisplay01.Controls.Add(this.cbFinancialYear, 4, 1);
             this.tlpDisplay01.Controls.Add(this.lblFinancialYearVal, 5, 1);
+            this.tlpDisplay01.Controls.Add(this.lblQuarter, 0, 2);
+            this.tlpDisplay01.Controls.Add(this.cbQuarter, 1, 2);
+            this.tlpDisplay01.Controls.Add(this.lblFinancialYear, 3, 2);
+            this.tlpDisplay01.Controls.Add(this.lblQuarterVal, 2, 2);
+            this.tlpDisplay01.Controls.Add(this.cbFinancialYear, 4, 2);
+            this.tlpDisplay01.Controls.Add(this.cbDistrictMain, 1, 1);
+            this.tlpDisplay01.Controls.Add(this.lblDistrictVal, 2, 1);
+            this.tlpDisplay01.Controls.Add(this.lblDistrictMain, 0, 1);
+            this.tlpDisplay01.Controls.Add(this.dtpDate, 4, 1);
+            this.tlpDisplay01.Controls.Add(this.lblDate, 3, 1);
+            this.tlpDisplay01.Controls.Add(this.lblPartner, 0, 0);
+            this.tlpDisplay01.Controls.Add(this.cboPartner, 1, 0);
+            this.tlpDisplay01.Controls.Add(this.label2, 2, 0);
             this.tlpDisplay01.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpDisplay01.Location = new System.Drawing.Point(30, 30);
             this.tlpDisplay01.Name = "tlpDisplay01";
-            this.tlpDisplay01.RowCount = 2;
+            this.tlpDisplay01.RowCount = 3;
             this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpDisplay01.Size = new System.Drawing.Size(654, 60);
+            this.tlpDisplay01.Size = new System.Drawing.Size(654, 90);
             this.tlpDisplay01.TabIndex = 3;
-            // 
-            // dtpDate
-            // 
-            this.dtpDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDate.Location = new System.Drawing.Point(480, 5);
-            this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(124, 20);
-            this.dtpDate.TabIndex = 53;
-            // 
-            // lblDate
-            // 
-            this.lblDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(330, 8);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(33, 13);
-            this.lblDate.TabIndex = 10;
-            this.lblDate.Text = "Date:";
             // 
             // lblDateVal
             // 
@@ -923,49 +1035,29 @@
             this.lblDateVal.AutoSize = true;
             this.lblDateVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateVal.ForeColor = System.Drawing.Color.Red;
-            this.lblDateVal.Location = new System.Drawing.Point(637, 8);
+            this.lblDateVal.Location = new System.Drawing.Point(637, 9);
             this.lblDateVal.Name = "lblDateVal";
             this.lblDateVal.Size = new System.Drawing.Size(11, 13);
             this.lblDateVal.TabIndex = 53;
             this.lblDateVal.Text = "*";
             // 
-            // lblDistrictVal
+            // lblFinancialYearVal
             // 
-            this.lblDistrictVal.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblDistrictVal.AutoSize = true;
-            this.lblDistrictVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDistrictVal.ForeColor = System.Drawing.Color.Red;
-            this.lblDistrictVal.Location = new System.Drawing.Point(310, 8);
-            this.lblDistrictVal.Name = "lblDistrictVal";
-            this.lblDistrictVal.Size = new System.Drawing.Size(11, 13);
-            this.lblDistrictVal.TabIndex = 54;
-            this.lblDistrictVal.Text = "*";
-            // 
-            // cbDistrict
-            // 
-            this.cbDistrict.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbDistrict.FormattingEnabled = true;
-            this.cbDistrict.Location = new System.Drawing.Point(153, 4);
-            this.cbDistrict.Name = "cbDistrict";
-            this.cbDistrict.Size = new System.Drawing.Size(151, 21);
-            this.cbDistrict.TabIndex = 14;
-            this.cbDistrict.SelectionChangeCommitted += new System.EventHandler(this.cbDistrict_SelectionChangeCommitted);
-            // 
-            // lblDistrict
-            // 
-            this.lblDistrict.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblDistrict.AutoSize = true;
-            this.lblDistrict.Location = new System.Drawing.Point(3, 8);
-            this.lblDistrict.Name = "lblDistrict";
-            this.lblDistrict.Size = new System.Drawing.Size(42, 13);
-            this.lblDistrict.TabIndex = 10;
-            this.lblDistrict.Text = "District:";
+            this.lblFinancialYearVal.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblFinancialYearVal.AutoSize = true;
+            this.lblFinancialYearVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFinancialYearVal.ForeColor = System.Drawing.Color.Red;
+            this.lblFinancialYearVal.Location = new System.Drawing.Point(637, 41);
+            this.lblFinancialYearVal.Name = "lblFinancialYearVal";
+            this.lblFinancialYearVal.Size = new System.Drawing.Size(11, 13);
+            this.lblFinancialYearVal.TabIndex = 57;
+            this.lblFinancialYearVal.Text = "*";
             // 
             // lblQuarter
             // 
             this.lblQuarter.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblQuarter.AutoSize = true;
-            this.lblQuarter.Location = new System.Drawing.Point(3, 38);
+            this.lblQuarter.Location = new System.Drawing.Point(3, 70);
             this.lblQuarter.Name = "lblQuarter";
             this.lblQuarter.Size = new System.Drawing.Size(45, 13);
             this.lblQuarter.TabIndex = 11;
@@ -975,10 +1067,20 @@
             // 
             this.cbQuarter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbQuarter.FormattingEnabled = true;
-            this.cbQuarter.Location = new System.Drawing.Point(153, 34);
+            this.cbQuarter.Location = new System.Drawing.Point(153, 67);
             this.cbQuarter.Name = "cbQuarter";
             this.cbQuarter.Size = new System.Drawing.Size(151, 21);
             this.cbQuarter.TabIndex = 13;
+            // 
+            // lblFinancialYear
+            // 
+            this.lblFinancialYear.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblFinancialYear.AutoSize = true;
+            this.lblFinancialYear.Location = new System.Drawing.Point(330, 70);
+            this.lblFinancialYear.Name = "lblFinancialYear";
+            this.lblFinancialYear.Size = new System.Drawing.Size(23, 13);
+            this.lblFinancialYear.TabIndex = 55;
+            this.lblFinancialYear.Text = "FY:";
             // 
             // lblQuarterVal
             // 
@@ -986,62 +1088,102 @@
             this.lblQuarterVal.AutoSize = true;
             this.lblQuarterVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuarterVal.ForeColor = System.Drawing.Color.Red;
-            this.lblQuarterVal.Location = new System.Drawing.Point(310, 38);
+            this.lblQuarterVal.Location = new System.Drawing.Point(310, 70);
             this.lblQuarterVal.Name = "lblQuarterVal";
             this.lblQuarterVal.Size = new System.Drawing.Size(11, 13);
             this.lblQuarterVal.TabIndex = 24;
             this.lblQuarterVal.Text = "*";
             // 
-            // lblFinancialYear
-            // 
-            this.lblFinancialYear.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblFinancialYear.AutoSize = true;
-            this.lblFinancialYear.Location = new System.Drawing.Point(330, 38);
-            this.lblFinancialYear.Name = "lblFinancialYear";
-            this.lblFinancialYear.Size = new System.Drawing.Size(23, 13);
-            this.lblFinancialYear.TabIndex = 55;
-            this.lblFinancialYear.Text = "FY:";
-            // 
             // cbFinancialYear
             // 
             this.cbFinancialYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbFinancialYear.FormattingEnabled = true;
-            this.cbFinancialYear.Location = new System.Drawing.Point(480, 34);
+            this.cbFinancialYear.Location = new System.Drawing.Point(480, 67);
             this.cbFinancialYear.Name = "cbFinancialYear";
             this.cbFinancialYear.Size = new System.Drawing.Size(151, 21);
             this.cbFinancialYear.TabIndex = 56;
-            // 
-            // lblFinancialYearVal
-            // 
-            this.lblFinancialYearVal.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblFinancialYearVal.AutoSize = true;
-            this.lblFinancialYearVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFinancialYearVal.ForeColor = System.Drawing.Color.Red;
-            this.lblFinancialYearVal.Location = new System.Drawing.Point(637, 38);
-            this.lblFinancialYearVal.Name = "lblFinancialYearVal";
-            this.lblFinancialYearVal.Size = new System.Drawing.Size(11, 13);
-            this.lblFinancialYearVal.TabIndex = 57;
-            this.lblFinancialYearVal.Text = "*";
-            // 
-            // lblDistrictMain
-            // 
-            this.lblDistrictMain.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblDistrictMain.AutoSize = true;
-            this.lblDistrictMain.Location = new System.Drawing.Point(3, 8);
-            this.lblDistrictMain.Name = "lblDistrictMain";
-            this.lblDistrictMain.Size = new System.Drawing.Size(42, 13);
-            this.lblDistrictMain.TabIndex = 58;
-            this.lblDistrictMain.Text = "District:";
             // 
             // cbDistrictMain
             // 
             this.cbDistrictMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbDistrictMain.FormattingEnabled = true;
-            this.cbDistrictMain.Location = new System.Drawing.Point(153, 4);
+            this.cbDistrictMain.Location = new System.Drawing.Point(153, 37);
             this.cbDistrictMain.Name = "cbDistrictMain";
             this.cbDistrictMain.Size = new System.Drawing.Size(151, 21);
             this.cbDistrictMain.TabIndex = 59;
             this.cbDistrictMain.SelectionChangeCommitted += new System.EventHandler(this.cbDistrictMain_SelectionChangeCommitted);
+            // 
+            // lblDistrictVal
+            // 
+            this.lblDistrictVal.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblDistrictVal.AutoSize = true;
+            this.lblDistrictVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDistrictVal.ForeColor = System.Drawing.Color.Red;
+            this.lblDistrictVal.Location = new System.Drawing.Point(310, 41);
+            this.lblDistrictVal.Name = "lblDistrictVal";
+            this.lblDistrictVal.Size = new System.Drawing.Size(11, 13);
+            this.lblDistrictVal.TabIndex = 54;
+            this.lblDistrictVal.Text = "*";
+            // 
+            // lblDistrictMain
+            // 
+            this.lblDistrictMain.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblDistrictMain.AutoSize = true;
+            this.lblDistrictMain.Location = new System.Drawing.Point(3, 41);
+            this.lblDistrictMain.Name = "lblDistrictMain";
+            this.lblDistrictMain.Size = new System.Drawing.Size(42, 13);
+            this.lblDistrictMain.TabIndex = 58;
+            this.lblDistrictMain.Text = "District:";
+            // 
+            // dtpDate
+            // 
+            this.dtpDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDate.Location = new System.Drawing.Point(480, 38);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(124, 20);
+            this.dtpDate.TabIndex = 53;
+            // 
+            // lblDate
+            // 
+            this.lblDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblDate.AutoSize = true;
+            this.lblDate.Location = new System.Drawing.Point(330, 41);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(33, 13);
+            this.lblDate.TabIndex = 10;
+            this.lblDate.Text = "Date:";
+            // 
+            // lblPartner
+            // 
+            this.lblPartner.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblPartner.AutoSize = true;
+            this.lblPartner.Location = new System.Drawing.Point(3, 9);
+            this.lblPartner.Name = "lblPartner";
+            this.lblPartner.Size = new System.Drawing.Size(44, 13);
+            this.lblPartner.TabIndex = 60;
+            this.lblPartner.Text = "Partner:";
+            // 
+            // cboPartner
+            // 
+            this.cboPartner.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboPartner.FormattingEnabled = true;
+            this.cboPartner.Location = new System.Drawing.Point(153, 5);
+            this.cboPartner.Name = "cboPartner";
+            this.cboPartner.Size = new System.Drawing.Size(151, 21);
+            this.cboPartner.TabIndex = 61;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(310, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(11, 13);
+            this.label2.TabIndex = 62;
+            this.label2.Text = "*";
             // 
             // frmInstitutionalCareSummary
             // 
@@ -1050,16 +1192,20 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.gbInstitutionalCareSummaryTitle);
             this.Name = "frmInstitutionalCareSummary";
-            this.Size = new System.Drawing.Size(720, 780);
+            this.Size = new System.Drawing.Size(720, 932);
             this.Load += new System.EventHandler(this.frmInstitutionalCareSummary_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmInstitutionalCareSummary_Paint);
             this.gbInstitutionalCareSummaryTitle.ResumeLayout(false);
             this.gbInstitutionalCareSummaryTitle.PerformLayout();
             this.gbRecordsTitle.ResumeLayout(false);
             this.gbRecordsTitle.PerformLayout();
+            this.tbLayoutTemp.ResumeLayout(false);
+            this.tbLayoutTemp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLine)).EndInit();
             this.tplDisplay09.ResumeLayout(false);
             this.tplDisplay09.PerformLayout();
+            this.pnlMeetingsHeld.ResumeLayout(false);
+            this.pnlMeetingsHeld.PerformLayout();
             this.tplDisplay07.ResumeLayout(false);
             this.tplDisplay07.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCGAge)).EndInit();
@@ -1161,5 +1307,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gclOfcId;
         private System.Windows.Forms.ComboBox cbDistrictMain;
         private System.Windows.Forms.Label lblDistrictMain;
+        private System.Windows.Forms.TextBox txtDistrict;
+        private System.Windows.Forms.TableLayoutPanel tbLayoutTemp;
+        private System.Windows.Forms.TextBox txtSubCounty;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel pnlMeetingsHeld;
+        private System.Windows.Forms.RadioButton rbtnSOCYDistrictNo;
+        private System.Windows.Forms.RadioButton rbtnSOCYDistrictYes;
+        private System.Windows.Forms.TextBox txtParish;
+        private System.Windows.Forms.Label lblPartner;
+        private System.Windows.Forms.ComboBox cboPartner;
+        private System.Windows.Forms.Label label2;
     }
 }

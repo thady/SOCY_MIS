@@ -36,6 +36,7 @@
             this.llblCBSDStaffAppraisalTracking = new System.Windows.Forms.LinkLabel();
             this.llblOVCChecklist = new System.Windows.Forms.LinkLabel();
             this.llblInstitutionalCareSummary = new System.Windows.Forms.LinkLabel();
+            this.llblSOVCChecklist = new System.Windows.Forms.LinkLabel();
             this.gbArea.SuspendLayout();
             this.tlpDisplay01.SuspendLayout();
             this.SuspendLayout();
@@ -67,11 +68,12 @@
             // 
             this.tlpDisplay01.ColumnCount = 1;
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpDisplay01.Controls.Add(this.llblSOVCChecklist, 0, 4);
             this.tlpDisplay01.Controls.Add(this.llblCBSDResourceAllocation, 0, 1);
             this.tlpDisplay01.Controls.Add(this.llblAlternativeCare, 0, 0);
             this.tlpDisplay01.Controls.Add(this.llblCBSDStaffAppraisalTracking, 0, 2);
             this.tlpDisplay01.Controls.Add(this.llblOVCChecklist, 0, 3);
-            this.tlpDisplay01.Controls.Add(this.llblInstitutionalCareSummary, 0, 4);
+            this.tlpDisplay01.Controls.Add(this.llblInstitutionalCareSummary, 0, 5);
             this.tlpDisplay01.Location = new System.Drawing.Point(6, 19);
             this.tlpDisplay01.Name = "tlpDisplay01";
             this.tlpDisplay01.RowCount = 6;
@@ -81,6 +83,7 @@
             this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpDisplay01.Size = new System.Drawing.Size(156, 180);
             this.tlpDisplay01.TabIndex = 3;
             // 
@@ -141,13 +144,26 @@
             this.llblInstitutionalCareSummary.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.llblInstitutionalCareSummary.AutoSize = true;
             this.llblInstitutionalCareSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblInstitutionalCareSummary.Location = new System.Drawing.Point(3, 124);
+            this.llblInstitutionalCareSummary.Location = new System.Drawing.Point(3, 156);
             this.llblInstitutionalCareSummary.Name = "llblInstitutionalCareSummary";
-            this.llblInstitutionalCareSummary.Size = new System.Drawing.Size(131, 13);
+            this.llblInstitutionalCareSummary.Size = new System.Drawing.Size(147, 13);
             this.llblInstitutionalCareSummary.TabIndex = 4;
             this.llblInstitutionalCareSummary.TabStop = true;
-            this.llblInstitutionalCareSummary.Text = "Institutional Care Summary";
+            this.llblInstitutionalCareSummary.Text = "Re-Intergration Summary Tool";
             this.llblInstitutionalCareSummary.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblInstitutionalCareSummary_LinkClicked);
+            // 
+            // llblSOVCChecklist
+            // 
+            this.llblSOVCChecklist.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.llblSOVCChecklist.AutoSize = true;
+            this.llblSOVCChecklist.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llblSOVCChecklist.Location = new System.Drawing.Point(3, 117);
+            this.llblSOVCChecklist.Name = "llblSOVCChecklist";
+            this.llblSOVCChecklist.Size = new System.Drawing.Size(149, 26);
+            this.llblSOVCChecklist.TabIndex = 5;
+            this.llblSOVCChecklist.TabStop = true;
+            this.llblSOVCChecklist.Text = "Sub County OVC Coordination OVC Data Usage Checklist";
+            this.llblSOVCChecklist.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblSOVCChecklist_LinkClicked);
             // 
             // frmResultArea02
             // 
@@ -176,5 +192,6 @@
         private System.Windows.Forms.LinkLabel llblCBSDStaffAppraisalTracking;
         private System.Windows.Forms.LinkLabel llblOVCChecklist;
         private System.Windows.Forms.LinkLabel llblInstitutionalCareSummary;
+        private System.Windows.Forms.LinkLabel llblSOVCChecklist;
     }
 }

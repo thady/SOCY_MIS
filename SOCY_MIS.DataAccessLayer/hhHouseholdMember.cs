@@ -36,6 +36,8 @@ namespace SOCY_MIS.DataAccessLayer
         public string usr_id_update = string.Empty;
         public string ofc_id = string.Empty;
         public string district_id = string.Empty;
+        
+        public string yn_attained_vocational_skill = utilConstants.cDFEmptyListValue;
         #endregion Public
         #endregion Variables
 

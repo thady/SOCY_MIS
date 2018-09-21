@@ -4,6 +4,7 @@ using System.Data;
 using System.Text;
 
 using PSAUtils;
+using System.Data.SqlClient;
 
 namespace SOCY_MIS.DataAccessLayer
 {
@@ -63,16 +64,53 @@ namespace SOCY_MIS.DataAccessLayer
             string strSQL = string.Empty;
             #endregion Variables
 
+            //#region SQL
+            //strSQL = string.Format("SELECT ISNULL((SELECT prt_other FROM lst_partner WHERE prt_id = '{0}'), '-') + '/' + " +
+            //    "ISNULL((SELECT cso_other FROM lst_cso WHERE cso_id = '{1}'), '-') + '/' + " +
+            //    "ISNULL((SELECT ( sct_id +'-'+ SUBSTRING(ISNULL(sct_name, ''), 1, 3)) FROM lst_sub_county WHERE sct_id = '{2}'), '-') + '/' + " + //combine sub county code with first three characters of sub county name
+            //    "RIGHT('0000' + CAST(ISNULL(MAX(CAST(RIGHT(REPLACE(hh.hh_code, ' ', ''), 4) AS INT)), 0) + 1 AS VARCHAR(4)), 4) " +
+            //    "FROM hh_household hh " +
+            //    "INNER JOIN hh_ovc_identification_prioritization oip ON hh.hh_id = oip.hh_id " +
+            //    "INNER JOIN lst_ward wrd ON hh.wrd_id = wrd.wrd_id " +
+            //    "WHERE wrd.sct_id = '{2}' AND oip.cso_id = '{1}' AND " + 
+            //    "RIGHT(REPLACE(hh.hh_code, ' ', ''), 4) < '9999' AND RIGHT(REPLACE(hh.hh_code, ' ', ''), 4) >= '0000' ", 
+            //strPrtId, strCsoId, strSctId);
+            //strResult = dbCon.ExecuteScalar(strSQL);
+            //#endregion SQL
+
             #region SQL
-            strSQL = string.Format("SELECT ISNULL((SELECT prt_other FROM lst_partner WHERE prt_id = '{0}'), '-') + '/' + " +
+            strSQL = string.Format("SELECT ISNULL((SELECT (SUBSTRING(ISNULL(dst_name, ''), 1, 3)) FROM lst_district WHERE dst_id = '{0}'), '-') + '/' + " +
+                "ISNULL((SELECT ( RIGHT('000'+ CONVERT(VARCHAR, sct_id), 3) +'-'+ SUBSTRING(ISNULL(sct_name, ''), 1, 3)) FROM lst_sub_county WHERE sct_id = '{2}'), '-') + '/' + " + //combine sub county code with first three characters of sub county name
+                "RIGHT('0000' + CAST(ISNULL(MAX(CAST(RIGHT(REPLACE(hh.hh_code, ' ', ''), 4) AS INT)), 0) + 1 AS VARCHAR(4)), 4) " +
+                "FROM hh_household hh " +
+                "INNER JOIN hh_ovc_identification_prioritization oip ON hh.hh_id = oip.hh_id " +
+                "INNER JOIN lst_ward wrd ON hh.wrd_id = wrd.wrd_id " +
+                "WHERE wrd.sct_id = '{2}' AND oip.cso_id = '{1}' AND " +
+                "RIGHT(REPLACE(hh.hh_code, ' ', ''), 4) < '9999' AND RIGHT(REPLACE(hh.hh_code, ' ', ''), 4) >= '0000' ",
+            strPrtId, strCsoId, strSctId);
+            strResult = dbCon.ExecuteScalar(strSQL);
+            #endregion SQL
+
+            return strResult;
+        }
+
+        public string NextHHouseholdCode(string strPrtId, string strCsoId, string strSctId, DBConnection dbCon)
+        {
+            #region Variables
+            string strResult = string.Empty;
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            #region SQL
+            strSQL = string.Format("SELECT ISNULL((SELECT (SUBSTRING(ISNULL(dst_name, ''), 1, 3)) FROM lst_district WHERE dst_id = '{0}'), '-') + '/' + " +
                 "ISNULL((SELECT cso_other FROM lst_cso WHERE cso_id = '{1}'), '-') + '/' + " +
                 "ISNULL((SELECT ( sct_id +'-'+ SUBSTRING(ISNULL(sct_name, ''), 1, 3)) FROM lst_sub_county WHERE sct_id = '{2}'), '-') + '/' + " + //combine sub county code with first three characters of sub county name
                 "RIGHT('0000' + CAST(ISNULL(MAX(CAST(RIGHT(REPLACE(hh.hh_code, ' ', ''), 4) AS INT)), 0) + 1 AS VARCHAR(4)), 4) " +
                 "FROM hh_household hh " +
                 "INNER JOIN hh_ovc_identification_prioritization oip ON hh.hh_id = oip.hh_id " +
                 "INNER JOIN lst_ward wrd ON hh.wrd_id = wrd.wrd_id " +
-                "WHERE wrd.sct_id = '{2}' AND oip.cso_id = '{1}' AND " + 
-                "RIGHT(REPLACE(hh.hh_code, ' ', ''), 4) < '9999' AND RIGHT(REPLACE(hh.hh_code, ' ', ''), 4) >= '0000' ", 
+                "WHERE wrd.sct_id = '{2}' AND oip.cso_id = '{1}' AND " +
+                "RIGHT(REPLACE(hh.hh_code, ' ', ''), 4) < '9999' AND RIGHT(REPLACE(hh.hh_code, ' ', ''), 4) >= '0000' ",
             strPrtId, strCsoId, strSctId);
             strResult = dbCon.ExecuteScalar(strSQL);
             #endregion SQL
@@ -113,6 +151,7 @@ namespace SOCY_MIS.DataAccessLayer
                 Insert(dbCon);
             #endregion Save
         }
+
         #endregion Public
 
         #region Private
@@ -263,9 +302,9 @@ namespace SOCY_MIS.DataAccessLayer
                 "INNER JOIN lst_ward wrd On hh.wrd_id = wrd.wrd_id AND wrd.lng_id = '{0}' " +
                 "INNER JOIN lst_sub_county sct ON wrd.sct_id = sct.sct_id AND sct.lng_id = '{0}' " +
                 "INNER JOIN lst_district dst ON sct.dst_id = dst.dst_id AND dst.lng_id = '{0}' " +
-                "LEFT JOIN swm_social_worker swk ON hh.swk_id = swk.swk_id " + 
-                strWHERE + 
-                "ORDER BY hh.hh_code ";
+                "LEFT JOIN swm_social_worker swk ON hh.swk_id = swk.swk_id " +
+                strWHERE + " ORDER BY hh.hh_code ";
+        
             strSQL = string.Format(strSQL, strLngId);
             dt = dbCon.ExecuteQueryDataTable(strSQL);
             #endregion SQL
@@ -476,6 +515,34 @@ namespace SOCY_MIS.DataAccessLayer
                             "FROM hh_referral rfr " +
                             "INNER JOIN hh_household_member hhm ON rfr.hhm_id = hhm.hhm_id " +
                             "WHERE hhm.hh_id = '{0}' ";
+                        break;
+
+                    case utilConstants.cRTHIP:
+                        strSQLTemp = "SELECT '" + dr["rtp_id"].ToString() + "' AS rtp_id, " +
+                            "'" + dr["rtp_name"].ToString() + "' AS rtp_name, " +
+                            dr["rtp_order"].ToString() + " AS rtp_order, " +
+                            "RTRIM(LTRIM(CONVERT(CHAR(15), hip.visit_date, 106))) AS the_date_display, " +
+                            "hip.visit_date AS the_date, hip.hip_id AS rcd_id " +
+                            "FROM hh_household_improvement_plan hip " +
+                            "WHERE hip.hh_id = '{0}' ";
+                        break;
+                    case utilConstants.cRTOVCViralLoad:
+                        strSQLTemp = "SELECT '" + dr["rtp_id"].ToString() + "' AS rtp_id, " +
+                            "'" + dr["rtp_name"].ToString() + "' AS rtp_name, " +
+                            dr["rtp_order"].ToString() + " AS rtp_order, " +
+                            "RTRIM(LTRIM(CONVERT(CHAR(15), V.usr_date_create, 106))) AS the_date_display, " +
+                            "V.usr_date_create AS the_date, v.vl_id AS rcd_id " +
+                            "FROM ben_ovc_viral_load V " +
+                            "WHERE V.hh_id = '{0}' ";
+                        break;
+                    case utilConstants.cRTRiskAssessment:
+                        strSQLTemp = "SELECT '" + dr["rtp_id"].ToString() + "' AS rtp_id, " +
+                            "'" + dr["rtp_name"].ToString() + "' AS rtp_name, " +
+                            dr["rtp_order"].ToString() + " AS rtp_order, " +
+                            "RTRIM(LTRIM(CONVERT(CHAR(15), V.date_of_visit, 106))) AS the_date_display, " +
+                            "V.date_of_visit AS the_date, v.ras_id AS rcd_id " +
+                            "FROM hh_household_risk_assessment_header V " +
+                            "WHERE V.hh_id = '{0}' ";
                         break;
                 }
 

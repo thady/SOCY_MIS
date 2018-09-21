@@ -56,6 +56,17 @@ namespace SOCY_MIS
                     strMessage = utilLT.GetMessageTranslation(utilConstants.cMIDMessageWelcome, dbCon.dbCon);
                     if (strMessage.Length != 0)
                         lblMessageWelcome.Text = strMessage;
+
+                    static_variables.district_id = SystemConstants.Return_office_district();
+                    //check if the user has updated the office district
+                    if (static_variables.district_id == string.Empty || static_variables.district_id == "-999")
+                    {
+                        MessageBox.Show("Please make sure you update the office district before entering any more data", "Update office district", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                        frmOffice frmNew = new frmOffice();
+                        frmNew.Show();
+
+                    }
                 }
                 finally
                 {

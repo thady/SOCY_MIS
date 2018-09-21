@@ -82,7 +82,15 @@ namespace SOCY_MIS
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Save();
+            if (SystemConstants.ValidateDistrictID())
+            {
+                Save();
+            }
+            else
+            {
+                MessageBox.Show("No district set for this office,please set the office district under office information screen", "SOCY MIS Message Centre", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void btnLineCancel_Click(object sender, EventArgs e)
@@ -97,7 +105,15 @@ namespace SOCY_MIS
 
         private void btnLineSave_Click(object sender, EventArgs e)
         {
-            SaveLine();
+            if (SystemConstants.ValidateDistrictID())
+            {
+                SaveLine();
+            }
+            else
+            {
+                MessageBox.Show("No district set for this office,please set the office district under office information screen", "SOCY MIS Message Centre", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
 
         private void cbRegion_SelectionChangeCommitted(object sender, EventArgs e)
@@ -421,6 +437,7 @@ namespace SOCY_MIS
                 txtDistrictGrantBudget.Text = dalCRAD.crad_district_grant_budget.ToString();
                 txtProbationRealization.Text = dalCRAD.crad_probation_realization.ToString();
                 txtProbationShare.Text = dalCRAD.crad_probation_share.ToString();
+                txtPartnerFunding.Text = dalCRAD.crad_partner_funding.ToString();
 
                 LoadListsLine(dalCRAD.dst_id, cbRegion.SelectedValue.ToString(), dbCon);
                 btnLineSave.Enabled = pblnManage && (FormParent.FormMaster.OfficeId.Equals(dalCRAD.ofc_id) || SystemConstants.Validate_Office_group_access(FormParent.FormMaster.OfficeId, dalCRAD.ofc_id));
@@ -690,6 +707,10 @@ namespace SOCY_MIS
                             dalCRAD.crad_probation_share = Convert.ToDecimal(txtProbationShare.Text.Trim());
                         else
                             dalCRAD.crad_probation_share = 0;
+                        if (utilFormatting.IsDecimal(txtPartnerFunding.Text.Trim()))
+                            dalCRAD.crad_partner_funding = Convert.ToDecimal(txtPartnerFunding.Text.Trim());
+                        else
+                            dalCRAD.crad_partner_funding = 0;
 
                         dalCRAD.cra_id = ObjectId;
                         dalCRAD.usr_id_update = FormParent.FormMaster.UserId;

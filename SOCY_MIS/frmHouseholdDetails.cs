@@ -82,7 +82,15 @@ namespace SOCY_MIS
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Save();
+            if (SystemConstants.ValidateDistrictID())
+            {
+                Save();
+            }
+            else
+            {
+                MessageBox.Show("No district set for this office,please set the office district under office information screen", "SOCY MIS Message Centre", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
 
         private void cbDistrict_SelectionChangeCommitted(object sender, EventArgs e)
@@ -161,7 +169,7 @@ namespace SOCY_MIS
                         txtPhone.Text = dalHH.hh_tel;
                         txtVillage.Text = dalHH.hh_village;
                         txtStatusReasonOther.Text = dalHH.hh_status_reason;
-                        btnSave.Enabled = pblnManage && (FormMaster.OfficeId.Equals(dalHH.ofc_id) || utilConstants.cDFImportOffice.Equals(dalHH.ofc_id) || SystemConstants.Validate_Office_group_access(FormMaster.OfficeId, dalHH.ofc_id));
+                        //btnSave.Enabled = pblnManage && (FormMaster.OfficeId.Equals(dalHH.ofc_id) || utilConstants.cDFImportOffice.Equals(dalHH.ofc_id) || SystemConstants.Validate_Office_group_access(FormMaster.OfficeId, dalHH.ofc_id));
                         #endregion Household
 
                         LoadLists(dalHH.hhs_id, dalHH.hhsr_id, dalHH.swk_id, dalHH.wrd_id, dbCon);

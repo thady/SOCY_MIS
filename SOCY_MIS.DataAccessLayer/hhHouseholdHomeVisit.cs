@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
+using System.Data.SqlClient;
 
 using PSAUtils;
 
@@ -36,6 +37,13 @@ namespace SOCY_MIS.DataAccessLayer
 
         public string usr_id_update = string.Empty;
         public string ofc_id = string.Empty;
+
+        #region dbconnection
+        static DataAccessLayer.DBConnection dbCon = new DataAccessLayer.DBConnection(utilConstants.cACKConnection);
+        static string SQLConnection = dbCon.SQLDBConnection(utilConstants.cACKConnection);
+        static SqlConnection conn = null;
+
+        #endregion dbconnection
         #endregion Public
         #endregion Variables
 
@@ -86,7 +94,7 @@ namespace SOCY_MIS.DataAccessLayer
             #endregion Set HomeVisit
         }
 
-        public void Save(DBConnection dbCon)
+        public void Save(DBConnection dbCon, string hh_id, string hhs_id)
         {
             #region Variables
             DataTable dt = null;
@@ -95,10 +103,61 @@ namespace SOCY_MIS.DataAccessLayer
             #region Save
             dt = GetObject(hhv_id, dbCon);
             if (utilCollections.HasRows(dt))
+            {
                 Update(dbCon);
+                update_hh_status(hh_id, hhs_id);
+            }
             else
+            {
                 Insert(dbCon);
+                update_hh_status(hh_id, hhs_id);
+            }
+                
             #endregion Save
+        }
+
+        public void update_hh_status(string hh_id,string hhs_id)
+        {
+            string crop_name = string.Empty;
+
+            string SQL = "UPDATE hh_household SET hhs_id = '{0}',district_id = '{2}' WHERE hh_id = '{1}'";
+            SQL = string.Format(SQL, hh_id,hhs_id,SystemConstants.Return_office_district());
+            try
+            {
+                string strConn = dbCon.ToString();
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(SQL, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+
+                    cmd.ExecuteNonQuery();
+
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            finally
+            {
+                if (conn.State == ConnectionState.Open) { conn.Close(); }
+            }
+
         }
         #endregion Public
 

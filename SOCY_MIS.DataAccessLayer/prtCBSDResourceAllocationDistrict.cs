@@ -17,6 +17,7 @@ namespace SOCY_MIS.DataAccessLayer
         public decimal crad_district_grant_budget = 0;
         public decimal crad_probation_realization = 0;
         public decimal crad_probation_share = 0;
+        public decimal crad_partner_funding = 0;
         public string cra_id = utilConstants.cDFEmptyListValue;
         public string dst_id = utilConstants.cDFEmptyListValue;
         public string usr_id_update = string.Empty;
@@ -116,17 +117,17 @@ namespace SOCY_MIS.DataAccessLayer
                 "crad_cbsd_budget, crad_cbsd_realization, " +
                 "crad_district_grant_budget, crad_probation_realization, crad_probation_share, " +
                 "cra_id, dst_id, " +
-                "usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id,district_id) " +
+                "usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id,district_id,crad_partner_funding) " +
                 "VALUES ('{0}', " +
                 "{1}, {2}, " +
                 "{3}, {4}, {5}, " +
                 "'{6}', '{7}', " +
-                "'{8}', '{8}', GETDATE(), GETDATE(), '{9}','{10}') ";
+                "'{8}', '{8}', GETDATE(), GETDATE(), '{9}','{10}',{11}) ";
             strSQL = string.Format(strSQL, crad_id,
                 crad_cbsd_budget, crad_cbsd_realization,
                 crad_district_grant_budget, crad_probation_realization, crad_probation_share, 
                 cra_id, dst_id, 
-                usr_id_update, ofc_id, district_id);
+                usr_id_update, ofc_id, district_id, crad_partner_funding);
 
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
@@ -152,6 +153,7 @@ namespace SOCY_MIS.DataAccessLayer
                 crad_district_grant_budget = Convert.ToDecimal(dr["crad_district_grant_budget"]);
                 crad_probation_realization = Convert.ToDecimal(dr["crad_probation_realization"]);
                 crad_probation_share = Convert.ToDecimal(dr["crad_probation_share"]);
+                crad_partner_funding = Convert.ToDecimal(dr["crad_partner_funding"]);
                 cra_id = dr["cra_id"].ToString();
                 dst_id = dr["dst_id"].ToString();
                 usr_id_update = dr["usr_id_update"].ToString();
@@ -171,13 +173,13 @@ namespace SOCY_MIS.DataAccessLayer
                 "SET crad_cbsd_budget = {1}, crad_cbsd_realization = {2}, " +
                 "crad_district_grant_budget = {3}, crad_probation_realization = {4}, crad_probation_share = {5}, " +
                 "cra_id = '{6}', dst_id = '{7}',  " +
-                "usr_id_update = '{8}', usr_date_update = GETDATE(),district_id = '{9}' " +
+                "usr_id_update = '{8}', usr_date_update = GETDATE(),district_id = '{9}',crad_partner_funding = {10} " +
                 "WHERE crad_id = '{0}' ";
             strSQL = string.Format(strSQL, crad_id,
                 crad_cbsd_budget, crad_cbsd_realization,
                 crad_district_grant_budget, crad_probation_realization, crad_probation_share, 
                 cra_id, dst_id, 
-                usr_id_update, district_id);
+                usr_id_update, district_id, crad_partner_funding);
 
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL

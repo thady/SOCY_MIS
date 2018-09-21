@@ -86,7 +86,7 @@ namespace SOCY_MIS.DataAccessLayer
             #region SQL
             strSQL = "SELECT DISTINCT dst.dst_id AS lt_id, dst.dst_name AS lt_name " +
                 "FROM lst_district dst " +
-                "WHERE dst.lng_id = '{0}' ";
+                "WHERE dst.lng_id = '{0}' AND dst_active = 1 ";
             if (strRgnId.Length != 0)
                 strSQL = strSQL + "AND dst.rgn_id = '" + strRgnId + "' ";
             strSQL = strSQL + "ORDER BY lt_name ";
@@ -108,7 +108,7 @@ namespace SOCY_MIS.DataAccessLayer
             strSQL = "SELECT DISTINCT sct.dst_id, dst.rgn_id " +
                 "FROM lst_sub_county sct " +
                 "INNER JOIN lst_district dst ON sct.dst_id = dst.dst_id " +
-                "WHERE sct.sct_id = '{0}' ";
+                "WHERE sct.sct_id = '{0}' AND sct_active = 1 ";
             strSQL = string.Format(strSQL, strId);
             dt = dbCon.ExecuteQueryDataTable(strSQL);
             #endregion SQL
@@ -129,7 +129,7 @@ namespace SOCY_MIS.DataAccessLayer
                 "INNER JOIN lst_district dst ON sct.dst_id = dst.dst_id " +
                 "INNER JOIN lst_region rgn ON dst.rgn_id = rgn.rgn_id " +
                 "WHERE sct.sct_id = '{0}' " +
-                "AND sct.lng_id = '{1}' AND dst.lng_id = '{1}' AND rgn.lng_id = '{1}' ";
+                "AND sct.lng_id = '{1}' AND dst.lng_id = '{1}' AND rgn.lng_id = '{1}' AND sct_active = 1 ";
             strSQL = string.Format(strSQL, strId, strLngId);
             dt = dbCon.ExecuteQueryDataTable(strSQL);
             #endregion SQL
@@ -148,7 +148,7 @@ namespace SOCY_MIS.DataAccessLayer
             strSQL = "SELECT DISTINCT sct.sct_id AS lt_id, sct.sct_name AS lt_name " +
                 "FROM lst_sub_county sct " +
                 "INNER JOIN lst_district dst ON sct.dst_id = dst.dst_id " +
-                "WHERE sct.lng_id = '{0}' ";
+                "WHERE sct.lng_id = '{0}' AND sct_active = 1 ";
             if (strDstId.Length != 0)
                 strSQL = strSQL + "AND sct.dst_id = '" + strDstId + "' ";
             if (strRgnId.Length != 0)
@@ -173,7 +173,7 @@ namespace SOCY_MIS.DataAccessLayer
                 "FROM lst_ward wrd " +
                 "INNER JOIN lst_sub_county sct ON wrd.sct_id = sct.sct_id " +
                 "INNER JOIN lst_district dst ON sct.dst_id = dst.dst_id " +
-                "WHERE wrd.wrd_id = '{0}' ";
+                "WHERE wrd.wrd_id = '{0}' AND wrd_active = 1 ";
             strSQL = string.Format(strSQL, strId);
             dt = dbCon.ExecuteQueryDataTable(strSQL);
             #endregion SQL
@@ -195,7 +195,7 @@ namespace SOCY_MIS.DataAccessLayer
                 "INNER JOIN lst_district dst ON sct.dst_id = dst.dst_id " +
                 "INNER JOIN lst_region rgn ON dst.rgn_id = rgn.rgn_id " +
                 "WHERE wrd.wrd_id = '{0}' " +
-                "AND wrd.lng_id = '{1}' AND sct.lng_id = '{1}' AND dst.lng_id = '{1}' AND rgn.lng_id = '{1}' ";
+                "AND wrd.lng_id = '{1}' AND sct.lng_id = '{1}' AND dst.lng_id = '{1}' AND rgn.lng_id = '{1}' AND wrd_active = 1 ";
             strSQL = string.Format(strSQL, strId, strLngId);
             dt = dbCon.ExecuteQueryDataTable(strSQL);
             #endregion SQL
@@ -215,7 +215,7 @@ namespace SOCY_MIS.DataAccessLayer
                 "FROM lst_ward wrd " +
                 "INNER JOIN lst_sub_county sct ON wrd.sct_id = sct.sct_id " +
                 "INNER JOIN lst_district dst ON sct.dst_id = dst.dst_id " +
-                "WHERE wrd.lng_id = '{0}' ";
+                "WHERE wrd.lng_id = '{0}' AND wrd_active = 1 ";
             if (strDstId.Length != 0)
                 strSQL = strSQL + "AND sct.dst_id = '" + strDstId + "' ";
             if (strSctId.Length != 0)

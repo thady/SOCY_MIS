@@ -139,5 +139,16 @@ namespace SOCY_MIS
             #endregion Set Permissions
         }
         #endregion Permissions
+
+        private void llblSOVCChecklist_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            #region Set Selected
+            frmSubCountyOVCChecklistSearch frmNew = new frmSubCountyOVCChecklistSearch();
+            frmNew.FormParent = this;
+            LoadControl(frmNew, this.Name);
+
+            SystemConstants.dovicc_tool_type = "DOVCC";
+            #endregion
+        }
     }
 }

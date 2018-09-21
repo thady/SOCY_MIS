@@ -140,5 +140,116 @@ namespace SOCY_MIS
             #endregion Set Permissions
         }
         #endregion Permissions
+
+        private void llblCommunityTrainingRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+         
+            #region Set Selected
+            frmCommunityTraining_registerSearch frmNew = new frmCommunityTraining_registerSearch();
+            frmNew.FormParent = this;
+            LoadControl(frmNew, this.Name);
+            #endregion
+        }
+
+        private void llblYouthTrainingInventory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            #region Set Selected
+            frmYouthTrainingInventory frmNew = new frmYouthTrainingInventory();
+            frmNew.FormParent = this;
+            LoadControl(frmNew, this.Name);
+            #endregion
+        }
+
+        private void llblYouthRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            #region Set Selected
+            frmYouthSavingsRegisterSearch frmNew = new frmYouthSavingsRegisterSearch();
+            frmNew.FormParent = this;
+            LoadControl(frmNew, this.Name);
+            #endregion
+        }
+
+        private void llblSILCGroup_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //#region Set Selected
+            //frmSILCGroupSearch frmNew = new frmSILCGroupSearch();
+            //frmNew.FormParent = this;
+            //LoadControl(frmNew, this.Name);
+            //#endregion
+        }
+
+        private void llblAgroEnterprise_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            #region Set Selected
+            AgroEnterpriseRankingMatrix.type = "crop";
+            frmAgroEnterpriseRankingMatrixSearch frmNew = new frmAgroEnterpriseRankingMatrixSearch();
+            frmNew.FormParent = this;
+            LoadControl(frmNew, this.Name);
+            #endregion
+        }
+
+        private void llblCommunityTrainingRegisterSILC_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            #region Set Selected
+            frmCommunityTraining_registerSearch frmNew = new frmCommunityTraining_registerSearch();
+            frmNew.FormParent = this;
+            LoadControl(frmNew, this.Name);
+            #endregion
+        }
+
+        private void llblSILCGroup_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //#region Set Selected
+            //frmSILCGroupSearch frmNew = new frmSILCGroupSearch();
+            //frmNew.FormParent = this;
+            //LoadControl(frmNew, this.Name);
+            //#endregion
+        }
+
+        private void llblYouthskillAquisition_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            #region Set Selected
+            frm_apprenticeship_skill_acquision_tracking_search frmNew = new frm_apprenticeship_skill_acquision_tracking_search();
+            frmNew.FormParent = this;
+            LoadControl(frmNew, this.Name);
+            #endregion
+        }
+
+        private void llblCottageEnterprize_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            #region Set Selected
+            AgroEnterpriseRankingMatrix.type = "cottage";
+            frmAgroEnterpriseRankingMatrixSearch frmNew = new frmAgroEnterpriseRankingMatrixSearch();
+            frmNew.FormParent = this;
+            LoadControl(frmNew, this.Name);
+            #endregion
+        }
+
+        private void llblYouthTrainingCompletion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            #region Set Selected
+            frmYouthTrainingCompletionSearch frmNew = new frmYouthTrainingCompletionSearch();
+            frmNew.FormParent = this;
+            LoadControl(frmNew, this.Name);
+            #endregion
+        }
+
+        private void llblYouthAssessmentScoringSheet_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            #region Set Selected
+            frmYouthAssessmentScoringToolSearch frmNew = new frmYouthAssessmentScoringToolSearch();
+            frmNew.FormParent = this;
+            LoadControl(frmNew, this.Name);
+            #endregion
+        }
+
+        private void llblYouthTracer_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            #region Set Selected
+            frmYouthTracerSearch frmNew = new frmYouthTracerSearch();
+            frmNew.FormParent = this;
+            LoadControl(frmNew, this.Name);
+            #endregion
+        }
     }
 }

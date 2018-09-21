@@ -125,5 +125,11 @@ namespace SOCY_MIS
             frm_um_office_district_download district_down = new frm_um_office_district_download();
             district_down.ShowDialog();
         }
+
+        private void llblDownload_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmUploadTables download = new frmUploadTables();
+            download.Show();
+        }
     }
 }

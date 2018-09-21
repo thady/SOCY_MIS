@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             this.gbSocialWorkerManagement = new System.Windows.Forms.GroupBox();
-            this.txtStatusReason = new System.Windows.Forms.RichTextBox();
             this.tplDisplay02 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtStatusReason = new System.Windows.Forms.RichTextBox();
             this.cbStatus = new System.Windows.Forms.ComboBox();
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblStatusReason = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.numTarget = new System.Windows.Forms.NumericUpDown();
             this.tplButton01 = new System.Windows.Forms.TableLayoutPanel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -65,9 +67,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblCSO = new System.Windows.Forms.Label();
             this.cbCSO = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.llblBackTop = new System.Windows.Forms.LinkLabel();
             this.gbSocialWorkerManagement.SuspendLayout();
             this.tplDisplay02.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numTarget)).BeginInit();
             this.tplButton01.SuspendLayout();
             this.tplDisplay01.SuspendLayout();
             this.SuspendLayout();
@@ -88,17 +92,6 @@
             this.gbSocialWorkerManagement.TabStop = false;
             this.gbSocialWorkerManagement.Text = "Social Worker Management";
             // 
-            // txtStatusReason
-            // 
-            this.txtStatusReason.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtStatusReason.Location = new System.Drawing.Point(580, 33);
-            this.txtStatusReason.Name = "txtStatusReason";
-            this.txtStatusReason.Size = new System.Drawing.Size(231, 84);
-            this.txtStatusReason.TabIndex = 51;
-            this.txtStatusReason.Text = "";
-            // 
             // tplDisplay02
             // 
             this.tplDisplay02.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -110,24 +103,38 @@
             this.tplDisplay02.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tplDisplay02.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tplDisplay02.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tplDisplay02.Controls.Add(this.txtStatusReason, 4, 1);
+            this.tplDisplay02.Controls.Add(this.txtStatusReason, 4, 2);
             this.tplDisplay02.Controls.Add(this.cbStatus, 1, 0);
             this.tplDisplay02.Controls.Add(this.lblStatus, 0, 0);
-            this.tplDisplay02.Controls.Add(this.lblStatusReason, 4, 0);
+            this.tplDisplay02.Controls.Add(this.lblStatusReason, 4, 1);
+            this.tplDisplay02.Controls.Add(this.label7, 0, 1);
+            this.tplDisplay02.Controls.Add(this.numTarget, 1, 1);
             this.tplDisplay02.Location = new System.Drawing.Point(30, 239);
             this.tplDisplay02.Name = "tplDisplay02";
-            this.tplDisplay02.RowCount = 2;
+            this.tplDisplay02.RowCount = 3;
             this.tplDisplay02.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tplDisplay02.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tplDisplay02.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tplDisplay02.Size = new System.Drawing.Size(854, 120);
+            this.tplDisplay02.Size = new System.Drawing.Size(854, 128);
             this.tplDisplay02.TabIndex = 63;
+            // 
+            // txtStatusReason
+            // 
+            this.txtStatusReason.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtStatusReason.Location = new System.Drawing.Point(580, 56);
+            this.txtStatusReason.Name = "txtStatusReason";
+            this.txtStatusReason.Size = new System.Drawing.Size(231, 69);
+            this.txtStatusReason.TabIndex = 51;
+            this.txtStatusReason.Text = "";
             // 
             // cbStatus
             // 
             this.cbStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbStatus.FormattingEnabled = true;
-            this.cbStatus.Location = new System.Drawing.Point(153, 4);
+            this.cbStatus.Location = new System.Drawing.Point(153, 3);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(231, 21);
             this.cbStatus.TabIndex = 48;
@@ -137,7 +144,7 @@
             this.lblStatus.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.Location = new System.Drawing.Point(3, 8);
+            this.lblStatus.Location = new System.Drawing.Point(3, 6);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(40, 13);
             this.lblStatus.TabIndex = 49;
@@ -148,11 +155,30 @@
             this.lblStatusReason.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblStatusReason.AutoSize = true;
             this.lblStatusReason.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatusReason.Location = new System.Drawing.Point(657, 8);
+            this.lblStatusReason.Location = new System.Drawing.Point(657, 32);
             this.lblStatusReason.Name = "lblStatusReason";
             this.lblStatusReason.Size = new System.Drawing.Size(77, 13);
             this.lblStatusReason.TabIndex = 50;
             this.lblStatusReason.Text = "Status Reason";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(3, 26);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(139, 26);
+            this.label7.TabIndex = 52;
+            this.label7.Text = "Total Households Assigned to this sociall worker";
+            // 
+            // numTarget
+            // 
+            this.numTarget.Location = new System.Drawing.Point(153, 28);
+            this.numTarget.Name = "numTarget";
+            this.numTarget.Size = new System.Drawing.Size(120, 20);
+            this.numTarget.TabIndex = 53;
             // 
             // tplButton01
             // 
@@ -163,11 +189,11 @@
             this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
             this.tplButton01.Controls.Add(this.btnCancel, 3, 0);
             this.tplButton01.Controls.Add(this.btnSave, 1, 0);
             this.tplButton01.Controls.Add(this.llblBackBottom, 4, 0);
-            this.tplButton01.Location = new System.Drawing.Point(30, 358);
+            this.tplButton01.Location = new System.Drawing.Point(30, 367);
             this.tplButton01.Name = "tplButton01";
             this.tplButton01.RowCount = 1;
             this.tplButton01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -178,7 +204,7 @@
             // 
             this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(460, 8);
+            this.btnCancel.Location = new System.Drawing.Point(459, 8);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 22;
@@ -189,8 +215,9 @@
             // btnSave
             // 
             this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnSave.Enabled = false;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(319, 8);
+            this.btnSave.Location = new System.Drawing.Point(318, 8);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 21;
@@ -248,6 +275,7 @@
             this.tplDisplay01.Controls.Add(this.label2, 5, 4);
             this.tplDisplay01.Controls.Add(this.lblCSO, 0, 2);
             this.tplDisplay01.Controls.Add(this.cbCSO, 1, 2);
+            this.tplDisplay01.Controls.Add(this.label6, 2, 2);
             this.tplDisplay01.Location = new System.Drawing.Point(30, 30);
             this.tplDisplay01.Name = "tplDisplay01";
             this.tplDisplay01.RowCount = 7;
@@ -538,6 +566,18 @@
             this.cbCSO.Size = new System.Drawing.Size(231, 21);
             this.cbCSO.TabIndex = 67;
             // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(390, 66);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(11, 13);
+            this.label6.TabIndex = 68;
+            this.label6.Text = "*";
+            // 
             // llblBackTop
             // 
             this.llblBackTop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -565,6 +605,7 @@
             this.gbSocialWorkerManagement.PerformLayout();
             this.tplDisplay02.ResumeLayout(false);
             this.tplDisplay02.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numTarget)).EndInit();
             this.tplButton01.ResumeLayout(false);
             this.tplButton01.PerformLayout();
             this.tplDisplay01.ResumeLayout(false);
@@ -613,5 +654,8 @@
         private System.Windows.Forms.Label lblWardVal;
         private System.Windows.Forms.Label lblCSO;
         private System.Windows.Forms.ComboBox cbCSO;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown numTarget;
     }
 }

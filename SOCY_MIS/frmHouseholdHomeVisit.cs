@@ -86,7 +86,15 @@ namespace SOCY_MIS
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Save();
+            if (SystemConstants.ValidateDistrictID())
+            {
+                Save();
+            }
+            else
+            {
+                MessageBox.Show("No district set for this office,please set the office district under office information screen", "SOCY MIS Message Centre", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
 
         private void cbHomeVisitor_SelectionChangeCommitted(object sender, EventArgs e)
@@ -191,7 +199,7 @@ namespace SOCY_MIS
                         txtNextSteps.Text = dalHHV.hhv_next_steps;
                         txtHomeVisitorTel.Text = dalHHV.hhv_visitor_tel;
 
-                        btnSave.Enabled = pblnManage && (FormMaster.OfficeId.Equals(dalHHV.ofc_id) || SystemConstants.Validate_Office_group_access(FormMaster.OfficeId, dalHHV.ofc_id));
+                        //btnSave.Enabled = pblnManage && (FormMaster.OfficeId.Equals(dalHHV.ofc_id) || SystemConstants.Validate_Office_group_access(FormMaster.OfficeId, dalHHV.ofc_id));
                         #endregion Visit
 
                         LoadLists(dalHHV.am_id,dalHHV.hvhs_id, dalHHV.hvr_id, dalHHV.swk_id, dalHHV.swk_id_visitor, dalHHV.hnr_id_visitor, dbCon);
@@ -286,7 +294,7 @@ namespace SOCY_MIS
                     {
                         lblDistrictDisplay.Text = dt.Rows[0]["dst_name"].ToString();
                         lblSubCountyDisplay.Text = dt.Rows[0]["sct_name"].ToString();
-                        lblVillageDisplay.Text = dt.Rows[0]["hh_village"].ToString();
+                        lblVillageDisplay.Text =  dt.Rows[0]["hh_village"].ToString().ToUpper();
                         lblWardDisplay.Text = dt.Rows[0]["wrd_name"].ToString();
 
                         utilLT = new utilLanguageTranslation();
@@ -481,7 +489,7 @@ namespace SOCY_MIS
                         dalHHV.swk_id_visitor = cbHomeVisitor.SelectedValue.ToString();
                         dalHHV.usr_id_update = FormMaster.UserId;
 
-                        dalHHV.Save(dbCon);
+                        dalHHV.Save(dbCon, cbHomeVisitHouseholdStatus.SelectedValue.ToString(), HouseholdId);
 
                         if (FormCalling.ObjectId.Length == 0)
                         {
@@ -506,7 +514,8 @@ namespace SOCY_MIS
             }
             catch (Exception exc)
             {
-                FormMaster.ShowMessage(utilConstants.cPTError, this.Name, "Save", exc);
+                //FormMaster.ShowMessage(utilConstants.cPTError, this.Name, "Save", exc);
+                throw (exc);
             }
         }
 
@@ -531,6 +540,8 @@ namespace SOCY_MIS
                 strMessage = strMessage + "," + utilConstants.cMIDRequiredFields;
             else if (cbHomeVisitor.SelectedIndex == 0)
                 strMessage = strMessage + "," + utilConstants.cMIDRequiredFields;
+            else if (dtpDateOfVisit.Value.Date >= DateTime.Today)
+                strMessage = "Home Visit date cannot be greater or equal to current date";
             #endregion Required Fields
 
             #region Get Messages

@@ -78,8 +78,15 @@ namespace SOCY_MIS
         }
 
         private void btnSave_Click(object sender, EventArgs e)
-        {
-            Save();
+        { 
+            if (SystemConstants.ValidateDistrictID())
+            {
+                Save();
+            }
+            else
+            {
+                MessageBox.Show("No district set for this office,please set the office district under office information screen", "SOCY MIS Message Centre", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void cbRegion_SelectionChangeCommitted(object sender, EventArgs e)
@@ -112,8 +119,8 @@ namespace SOCY_MIS
 
         private void txtPostsApprovedACDO_TextChanged(object sender, EventArgs e)
         {
-            SetProportion(txtPostsApprovedACDO, txtPostsFilledACDO, lblPostsProportionACDO, lblStaffingGapACDO);
-            SetTotal(txtPostsApprovedACDO, txtPostsApprovedCDO, txtPostsApprovedDCDO, txtPostsApprovedSPSWO, txtPostsApprovedSCDO, lblPostsApprovedTotal);
+            SetProportion(txtPostsApprovedPCDO, txtPostsFilledPCDO, lblPostsProportionPCDO, lblStaffingGapPCDO);
+            SetTotal(txtPostsApprovedPCDO, txtPostsApprovedCDO, txtPostsApprovedDCDO, txtPostsApprovedSPSWO, txtPostsApprovedSCDO, txtPostsApprovedPSWO, lblPostsApprovedTotal);
         }
 
         private void txtPostsApprovedCDO_KeyPress(object sender, KeyPressEventArgs e)
@@ -124,7 +131,7 @@ namespace SOCY_MIS
         private void txtPostsApprovedCDO_TextChanged(object sender, EventArgs e)
         {
             SetProportion(txtPostsApprovedCDO, txtPostsFilledCDO, lblPostsProportionCDO, lblStaffingGapCDO);
-            SetTotal(txtPostsApprovedACDO, txtPostsApprovedCDO, txtPostsApprovedDCDO, txtPostsApprovedSPSWO, txtPostsApprovedSCDO, lblPostsApprovedTotal);
+            SetTotal(txtPostsApprovedPCDO, txtPostsApprovedCDO, txtPostsApprovedDCDO, txtPostsApprovedSPSWO, txtPostsApprovedSCDO, txtPostsApprovedPSWO, lblPostsApprovedTotal);
         }
 
         private void txtPostsApprovedDCDO_KeyPress(object sender, KeyPressEventArgs e)
@@ -135,7 +142,7 @@ namespace SOCY_MIS
         private void txtPostsApprovedDCDO_TextChanged(object sender, EventArgs e)
         {
             SetProportion(txtPostsApprovedDCDO, txtPostsFilledDCDO, lblPostsProportionDCDO, lblStaffingGapDCDO);
-            SetTotal(txtPostsApprovedACDO, txtPostsApprovedCDO, txtPostsApprovedDCDO, txtPostsApprovedSPSWO, txtPostsApprovedSCDO, lblPostsApprovedTotal);
+            SetTotal(txtPostsApprovedPCDO, txtPostsApprovedCDO, txtPostsApprovedDCDO, txtPostsApprovedSPSWO, txtPostsApprovedSCDO, txtPostsApprovedPSWO, lblPostsApprovedTotal);
         }
 
         private void txtPostsApprovedSPSWO_KeyPress(object sender, KeyPressEventArgs e)
@@ -146,7 +153,7 @@ namespace SOCY_MIS
         private void txtPostsApprovedSPSWO_TextChanged(object sender, EventArgs e)
         {
             SetProportion(txtPostsApprovedSPSWO, txtPostsFilledSPSWO, lblPostsProportionSPSWO, lblStaffingGapSPSWO);
-            SetTotal(txtPostsApprovedACDO, txtPostsApprovedCDO, txtPostsApprovedDCDO, txtPostsApprovedSPSWO, txtPostsApprovedSCDO, lblPostsApprovedTotal);
+            SetTotal(txtPostsApprovedPCDO, txtPostsApprovedCDO, txtPostsApprovedDCDO, txtPostsApprovedSPSWO, txtPostsApprovedSCDO, txtPostsApprovedPSWO, lblPostsApprovedTotal);
         }
 
         private void txtPostsApprovedSCDO_KeyPress(object sender, KeyPressEventArgs e)
@@ -157,7 +164,7 @@ namespace SOCY_MIS
         private void txtPostsApprovedSCDO_TextChanged(object sender, EventArgs e)
         {
             SetProportion(txtPostsApprovedSCDO, txtPostsFilledSCDO, lblPostsProportionSCDO, lblStaffingGapSCDO);
-            SetTotal(txtPostsApprovedACDO, txtPostsApprovedCDO, txtPostsApprovedDCDO, txtPostsApprovedSPSWO, txtPostsApprovedSCDO, lblPostsApprovedTotal);
+            SetTotal(txtPostsApprovedPCDO, txtPostsApprovedCDO, txtPostsApprovedDCDO, txtPostsApprovedSPSWO, txtPostsApprovedSCDO, txtPostsApprovedPSWO, lblPostsApprovedTotal);
         }
 
         private void txtPostsFilledACDO_KeyPress(object sender, KeyPressEventArgs e)
@@ -167,8 +174,8 @@ namespace SOCY_MIS
 
         private void txtPostsFilledACDO_TextChanged(object sender, EventArgs e)
         {
-            SetProportion(txtPostsApprovedACDO, txtPostsFilledACDO, lblPostsProportionACDO, lblStaffingGapACDO);
-            SetTotal(txtPostsFilledACDO, txtPostsFilledCDO, txtPostsFilledDCDO, txtPostsFilledSPSWO, txtPostsFilledSCDO, lblPostsFilledTotal);
+            SetProportion(txtPostsApprovedPCDO, txtPostsFilledPCDO, lblPostsProportionPCDO, lblStaffingGapPCDO);
+            SetTotal(txtPostsApprovedPCDO, txtPostsApprovedCDO, txtPostsApprovedDCDO, txtPostsApprovedSPSWO, txtPostsApprovedSCDO, txtPostsApprovedPSWO, lblPostsApprovedTotal);
         }
 
         private void txtPostsFilledCDO_KeyPress(object sender, KeyPressEventArgs e)
@@ -179,7 +186,7 @@ namespace SOCY_MIS
         private void txtPostsFilledCDO_TextChanged(object sender, EventArgs e)
         {
             SetProportion(txtPostsApprovedCDO, txtPostsFilledCDO, lblPostsProportionCDO, lblStaffingGapCDO);
-            SetTotal(txtPostsFilledACDO, txtPostsFilledCDO, txtPostsFilledDCDO, txtPostsFilledSPSWO, txtPostsFilledSCDO, lblPostsFilledTotal);
+            SetTotal(txtPostsApprovedPCDO, txtPostsApprovedCDO, txtPostsApprovedDCDO, txtPostsApprovedSPSWO, txtPostsApprovedSCDO, txtPostsApprovedPSWO, lblPostsApprovedTotal);
         }
 
         private void txtPostsFilledDCDO_KeyPress(object sender, KeyPressEventArgs e)
@@ -190,7 +197,7 @@ namespace SOCY_MIS
         private void txtPostsFilledDCDO_TextChanged(object sender, EventArgs e)
         {
             SetProportion(txtPostsApprovedDCDO, txtPostsFilledDCDO, lblPostsProportionDCDO, lblStaffingGapDCDO);
-            SetTotal(txtPostsFilledACDO, txtPostsFilledCDO, txtPostsFilledDCDO, txtPostsFilledSPSWO, txtPostsFilledSCDO, lblPostsFilledTotal);
+            SetTotal(txtPostsApprovedPCDO, txtPostsApprovedCDO, txtPostsApprovedDCDO, txtPostsApprovedSPSWO, txtPostsApprovedSCDO, txtPostsApprovedPSWO, lblPostsApprovedTotal);
         }
 
         private void txtPostsFilledSPSWO_KeyPress(object sender, KeyPressEventArgs e)
@@ -201,7 +208,7 @@ namespace SOCY_MIS
         private void txtPostsFilledSPSWO_TextChanged(object sender, EventArgs e)
         {
             SetProportion(txtPostsApprovedSPSWO, txtPostsFilledSPSWO, lblPostsProportionSPSWO, lblStaffingGapSPSWO);
-            SetTotal(txtPostsFilledACDO, txtPostsFilledCDO, txtPostsFilledDCDO, txtPostsFilledSPSWO, txtPostsFilledSCDO, lblPostsFilledTotal);
+            SetTotal(txtPostsApprovedPCDO, txtPostsApprovedCDO, txtPostsApprovedDCDO, txtPostsApprovedSPSWO, txtPostsApprovedSCDO, txtPostsApprovedPSWO, lblPostsApprovedTotal);
         }
 
         private void txtPostsFilledSCDO_KeyPress(object sender, KeyPressEventArgs e)
@@ -212,32 +219,32 @@ namespace SOCY_MIS
         private void txtPostsFilledSCDO_TextChanged(object sender, EventArgs e)
         {
             SetProportion(txtPostsApprovedSCDO, txtPostsFilledSCDO, lblPostsProportionSCDO, lblStaffingGapSCDO);
-            SetTotal(txtPostsFilledACDO, txtPostsFilledCDO, txtPostsFilledDCDO, txtPostsFilledSPSWO, txtPostsFilledSCDO, lblPostsFilledTotal);
+            SetTotal(txtPostsApprovedPCDO, txtPostsApprovedCDO, txtPostsApprovedDCDO, txtPostsApprovedSPSWO, txtPostsApprovedSCDO, txtPostsApprovedPSWO, lblPostsApprovedTotal);
         }
 
         private void lblStaffingGapACDO_TextChanged(object sender, EventArgs e)
         {
-            SetTotal(lblStaffingGapACDO, lblStaffingGapCDO, lblStaffingGapDCDO, lblStaffingGapSPSWO, lblStaffingGapSCDO, lblStaffingGapTotal);
+            SetTotal(lblStaffingGapPCDO, lblStaffingGapCDO, lblStaffingGapDCDO, lblStaffingGapSPSWO, lblStaffingGapSCDO, lblStaffingGapTotal);
         }
 
         private void lblStaffingGapCDO_TextChanged(object sender, EventArgs e)
         {
-            SetTotal(lblStaffingGapACDO, lblStaffingGapCDO, lblStaffingGapDCDO, lblStaffingGapSPSWO, lblStaffingGapSCDO, lblStaffingGapTotal);
+            SetTotal(lblStaffingGapPCDO, lblStaffingGapCDO, lblStaffingGapDCDO, lblStaffingGapSPSWO, lblStaffingGapSCDO, lblStaffingGapTotal);
         }
 
         private void lblStaffingGapDCDO_TextChanged(object sender, EventArgs e)
         {
-            SetTotal(lblStaffingGapACDO, lblStaffingGapCDO, lblStaffingGapDCDO, lblStaffingGapSPSWO, lblStaffingGapSCDO, lblStaffingGapTotal);
+            SetTotal(lblStaffingGapPCDO, lblStaffingGapCDO, lblStaffingGapDCDO, lblStaffingGapSPSWO, lblStaffingGapSCDO, lblStaffingGapTotal);
         }
 
         private void lblStaffingGapSPSWO_TextChanged(object sender, EventArgs e)
         {
-            SetTotal(lblStaffingGapACDO, lblStaffingGapCDO, lblStaffingGapDCDO, lblStaffingGapSPSWO, lblStaffingGapSCDO, lblStaffingGapTotal);
+            SetTotal(lblStaffingGapPCDO, lblStaffingGapCDO, lblStaffingGapDCDO, lblStaffingGapSPSWO, lblStaffingGapSCDO, lblStaffingGapTotal);
         }
 
         private void lblStaffingGapSCDO_TextChanged(object sender, EventArgs e)
         {
-            SetTotal(lblStaffingGapACDO, lblStaffingGapCDO, lblStaffingGapDCDO, lblStaffingGapSPSWO, lblStaffingGapSCDO, lblStaffingGapTotal);
+            SetTotal(lblStaffingGapPCDO, lblStaffingGapCDO, lblStaffingGapDCDO, lblStaffingGapSPSWO, lblStaffingGapSCDO, lblStaffingGapTotal);
         }
         #endregion TextBoxes
         #endregion Control Methods
@@ -263,11 +270,11 @@ namespace SOCY_MIS
                     dtpDate.Value = DateTime.Now;
                     txtComments.Text = string.Empty;
 
-                    txtPostsApprovedACDO.Text = "0";
+                    txtPostsApprovedPCDO.Text = "0";
                     txtPostsApprovedCDO.Text = "0";
                     txtPostsApprovedDCDO.Text = "1";
                     txtPostsApprovedSPSWO.Text = "1";
-                    txtPostsFilledACDO.Text = "0";
+                    txtPostsFilledPCDO.Text = "0";
                     txtPostsFilledCDO.Text = "0";
                     txtPostsFilledDCDO.Text = "0";
                     txtPostsFilledSPSWO.Text = "0";
@@ -323,35 +330,68 @@ namespace SOCY_MIS
                                 dalCSATL = new prtCBSDStaffAppraisalTrackingLine(dt.Rows[intCount]["csatl_id"].ToString(), dbCon);
                                 switch (dalCSATL.ss_id)
                                 {
-                                    case utilConstants.cSSACDO:
-                                        lblACDOId.Text = dalCSATL.csatl_id;
-                                        txtPostsApprovedACDO.Text = dalCSATL.csatl_posts_approved.ToString();
-                                        txtPostsFilledACDO.Text = dalCSATL.csatl_posts_filled.ToString();
-                                        utilControls.RadioButtonSetSelection(rbtnAppraisalStatusACDOYes, rbtnAppraisalStatusACDONo, dalCSATL.yn_id_conducted);
+                                    case utilConstants.cSSPCDO:
+                                        lblPCDOId.Text = dalCSATL.csatl_id;
+                                        txtPostsApprovedPCDO.Text = dalCSATL.csatl_posts_approved.ToString();
+                                        txtPostsFilledPCDO.Text = dalCSATL.csatl_posts_filled.ToString();
+                                        int numcSSPCDO;
+                                        bool isNumeric = int.TryParse(dalCSATL.yn_id_conducted, out numcSSPCDO);
+                                        if (isNumeric == true && numcSSPCDO != -1)
+                                        {
+                                            nudAppraisedPCDO.Value = Convert.ToInt32(dalCSATL.yn_id_conducted);
+                                        }
+
                                         break;
                                     case utilConstants.cSSCDO:
                                         lblCDOId.Text = dalCSATL.csatl_id;
                                         txtPostsApprovedCDO.Text = dalCSATL.csatl_posts_approved.ToString();
                                         txtPostsFilledCDO.Text = dalCSATL.csatl_posts_filled.ToString();
-                                        utilControls.RadioButtonSetSelection(rbtnAppraisalStatusCDOYes, rbtnAppraisalStatusCDONo, dalCSATL.yn_id_conducted);
+
+                                        int numcSSCDO;
+                                        bool isNumericcSSCDO = int.TryParse(dalCSATL.yn_id_conducted, out numcSSCDO);
+                                        if (isNumericcSSCDO == true && numcSSCDO != -1)
+                                        {
+                                            nudAppraisedCDO.Value = Convert.ToInt32(dalCSATL.yn_id_conducted);
+                                        }
                                         break;
                                     case utilConstants.cSSDCDO:
                                         lblDCDOId.Text = dalCSATL.csatl_id;
                                         txtPostsApprovedDCDO.Text = dalCSATL.csatl_posts_approved.ToString();
                                         txtPostsFilledDCDO.Text = dalCSATL.csatl_posts_filled.ToString();
-                                        utilControls.RadioButtonSetSelection(rbtnAppraisalStatusDCDOYes, rbtnAppraisalStatusDCDONo, dalCSATL.yn_id_conducted);
+
+                                        int numcSSDCDO;
+                                        bool isNumericcSSDCDO = int.TryParse(dalCSATL.yn_id_conducted, out numcSSDCDO);
+                                        if (isNumericcSSDCDO == true && numcSSDCDO != -1)
+                                        {
+                                            nudAppraisedDCDO.Value = Convert.ToInt32(dalCSATL.yn_id_conducted);
+                                        }
+
                                         break;
                                     case utilConstants.cSSSPSWO:
                                         lblSPSWOId.Text = dalCSATL.csatl_id;
                                         txtPostsApprovedSPSWO.Text = dalCSATL.csatl_posts_approved.ToString();
                                         txtPostsFilledSPSWO.Text = dalCSATL.csatl_posts_filled.ToString();
-                                        utilControls.RadioButtonSetSelection(rbtnAppraisalStatusSPSWOYes, rbtnAppraisalStatusSPSWONo, dalCSATL.yn_id_conducted);
+
+                                        int numcSSSPSWO;
+                                        bool isNumericcSSSPSWO = int.TryParse(dalCSATL.yn_id_conducted, out numcSSSPSWO);
+                                        if (isNumericcSSSPSWO == true && numcSSSPSWO != -1)
+                                        {
+                                            nudAppraisedSPSWO.Value = Convert.ToInt32(dalCSATL.yn_id_conducted);
+                                        }
+
                                         break;
                                     case utilConstants.cSSSCDO:
                                         lblSCDOId.Text = dalCSATL.csatl_id;
                                         txtPostsApprovedSCDO.Text = dalCSATL.csatl_posts_approved.ToString();
                                         txtPostsFilledSCDO.Text = dalCSATL.csatl_posts_filled.ToString();
-                                        utilControls.RadioButtonSetSelection(rbtnAppraisalStatusSCDOYes, rbtnAppraisalStatusSCDONo, dalCSATL.yn_id_conducted);
+
+                                        int numccSSSCDO;
+                                        bool isNumericcSSSCDO = int.TryParse(dalCSATL.yn_id_conducted, out numccSSSCDO);
+                                        if (isNumericcSSSCDO == true && numccSSSCDO != -1)
+                                        {
+                                            nudAppraisedSCDO.Value = Convert.ToInt32(dalCSATL.yn_id_conducted);
+                                        }
+
                                         break;
                                 }
                             }
@@ -553,32 +593,32 @@ namespace SOCY_MIS
 
                         dalCSATL = new prtCBSDStaffAppraisalTrackingLine();
 
-                        #region ACDO
-                        if (lblACDOId.Text.Trim().Length == 0 || lblACDOId.Text.Trim().Equals("-"))
+                        #region PCDO
+                        if (lblPCDOId.Text.Trim().Length == 0 || lblPCDOId.Text.Trim().Equals("-"))
                         {
                             dalCSATL.Default();
-                            lblACDOId.Text = Guid.NewGuid().ToString();
-                            dalCSATL.csatl_id = lblACDOId.Text;
+                            lblPCDOId.Text = Guid.NewGuid().ToString();
+                            dalCSATL.csatl_id = lblPCDOId.Text;
                             dalCSATL.ofc_id = FormParent.FormMaster.OfficeId;
                         }
                         else
-                            dalCSATL.Load(lblACDOId.Text, dbCon);
+                            dalCSATL.Load(lblPCDOId.Text, dbCon);
 
                         dalCSATL.csat_id = ObjectId;
 
-                        if (txtPostsApprovedACDO.Text.Trim().Length == 0)
+                        if (txtPostsApprovedPCDO.Text.Trim().Length == 0)
                             dalCSATL.csatl_posts_approved = 0;
                         else
-                            dalCSATL.csatl_posts_approved = Convert.ToInt32(txtPostsApprovedACDO.Text.Trim());
-                        if (txtPostsFilledACDO.Text.Trim().Length == 0)
+                            dalCSATL.csatl_posts_approved = Convert.ToInt32(txtPostsApprovedPCDO.Text.Trim());
+                        if (txtPostsFilledPCDO.Text.Trim().Length == 0)
                             dalCSATL.csatl_posts_filled = 0;
                         else
-                            dalCSATL.csatl_posts_filled = Convert.ToInt32(txtPostsFilledACDO.Text.Trim());
+                            dalCSATL.csatl_posts_filled = Convert.ToInt32(txtPostsFilledPCDO.Text.Trim());
 
-                        dalCSATL.ss_id = utilConstants.cSSACDO;
-                        dalCSATL.yn_id_conducted = utilControls.RadioButtonGetSelection(rbtnAppraisalStatusACDOYes, rbtnAppraisalStatusACDONo);
+                        dalCSATL.ss_id = utilConstants.cSSPCDO;
+                        dalCSATL.yn_id_conducted = Convert.ToInt32(nudAppraisedPCDO.Value).ToString();
                         dalCSATL.Save(dbCon);
-                        #endregion ACDO
+                        #endregion PCDO
 
                         #region CDO
                         if (lblCDOId.Text.Trim().Length == 0 || lblCDOId.Text.Trim().Equals("-"))
@@ -603,7 +643,7 @@ namespace SOCY_MIS
                             dalCSATL.csatl_posts_filled = Convert.ToInt32(txtPostsFilledCDO.Text.Trim());
 
                         dalCSATL.ss_id = utilConstants.cSSCDO;
-                        dalCSATL.yn_id_conducted = utilControls.RadioButtonGetSelection(rbtnAppraisalStatusCDOYes, rbtnAppraisalStatusCDONo);
+                        dalCSATL.yn_id_conducted = Convert.ToInt32(nudAppraisedCDO.Value).ToString();
                         dalCSATL.Save(dbCon);
                         #endregion CDO
 
@@ -630,7 +670,7 @@ namespace SOCY_MIS
                             dalCSATL.csatl_posts_filled = Convert.ToInt32(txtPostsFilledDCDO.Text.Trim());
 
                         dalCSATL.ss_id = utilConstants.cSSDCDO;
-                        dalCSATL.yn_id_conducted = utilControls.RadioButtonGetSelection(rbtnAppraisalStatusDCDOYes, rbtnAppraisalStatusDCDONo);
+                        dalCSATL.yn_id_conducted = Convert.ToInt32(nudAppraisedDCDO.Value).ToString();
                         dalCSATL.Save(dbCon);
                         #endregion DCDO
 
@@ -657,9 +697,36 @@ namespace SOCY_MIS
                             dalCSATL.csatl_posts_filled = Convert.ToInt32(txtPostsFilledSPSWO.Text.Trim());
 
                         dalCSATL.ss_id = utilConstants.cSSSPSWO;
-                        dalCSATL.yn_id_conducted = utilControls.RadioButtonGetSelection(rbtnAppraisalStatusSPSWOYes, rbtnAppraisalStatusSPSWONo);
+                        dalCSATL.yn_id_conducted = Convert.ToInt32(nudAppraisedSPSWO.Value).ToString();
                         dalCSATL.Save(dbCon);
                         #endregion SPSWO
+
+                        #region PSWO
+                        if (lblPSWOId.Text.Trim().Length == 0 || lblPSWOId.Text.Trim().Equals("-"))
+                        {
+                            dalCSATL.Default();
+                            lblPSWOId.Text = Guid.NewGuid().ToString();
+                            dalCSATL.csatl_id = lblPSWOId.Text;
+                            dalCSATL.ofc_id = FormParent.FormMaster.OfficeId;
+                        }
+                        else
+                            dalCSATL.Load(lblPSWOId.Text, dbCon);
+
+                        dalCSATL.csat_id = ObjectId;
+
+                        if (txtPostsApprovedSPSWO.Text.Trim().Length == 0)
+                            dalCSATL.csatl_posts_approved = 0;
+                        else
+                            dalCSATL.csatl_posts_approved = Convert.ToInt32(txtPostsApprovedSPSWO.Text.Trim());
+                        if (txtPostsFilledSPSWO.Text.Trim().Length == 0)
+                            dalCSATL.csatl_posts_filled = 0;
+                        else
+                            dalCSATL.csatl_posts_filled = Convert.ToInt32(txtPostsFilledSPSWO.Text.Trim());
+
+                        dalCSATL.ss_id = utilConstants.cSSPSWO;
+                        dalCSATL.yn_id_conducted = Convert.ToInt32(nudAppraisedPSWO.Value).ToString();
+                        dalCSATL.Save(dbCon);
+                        #endregion PSWO
 
                         #region SCDO
                         if (lblSCDOId.Text.Trim().Length == 0 || lblSCDOId.Text.Trim().Equals("-"))
@@ -684,7 +751,7 @@ namespace SOCY_MIS
                             dalCSATL.csatl_posts_filled = Convert.ToInt32(txtPostsFilledSCDO.Text.Trim());
 
                         dalCSATL.ss_id = utilConstants.cSSSCDO;
-                        dalCSATL.yn_id_conducted = utilControls.RadioButtonGetSelection(rbtnAppraisalStatusSCDOYes, rbtnAppraisalStatusSCDONo);
+                        dalCSATL.yn_id_conducted = Convert.ToInt32(nudAppraisedSCDO.Value).ToString();
                         dalCSATL.Save(dbCon);
                         #endregion SCDO
 
@@ -767,7 +834,7 @@ namespace SOCY_MIS
             #endregion Set Value
         }
 
-        private void SetTotal(TextBox txtACDO, TextBox txtCDO, TextBox txtDCDO, TextBox txtSPSWO, TextBox txtSCDO, Label lblTotal)
+        private void SetTotal(TextBox txtACDO, TextBox txtCDO, TextBox txtDCDO, TextBox txtSPSWO, TextBox txtSCDO,TextBox txtPSWO, Label lblTotal)
         {
             #region Varaibles
             bool blnValue = false;
@@ -799,6 +866,11 @@ namespace SOCY_MIS
             {
                 blnValue = true;
                 intTotal += Convert.ToInt32(txtSCDO.Text.Trim());
+            }
+            if (utilFormatting.IsInt(txtPSWO.Text.Trim()))
+            {
+                blnValue = true;
+                intTotal += Convert.ToInt32(txtPSWO.Text.Trim());
             }
             #endregion Get Value
 
@@ -922,5 +994,17 @@ namespace SOCY_MIS
             #endregion Set Permissions
         }
         #endregion Permissions
+
+        private void txtPostsApprovedPSWO_TextChanged(object sender, EventArgs e)
+        {
+            SetProportion(txtPostsApprovedPSWO, txtPostsFilledPSWO, lblPostsProportionPSWO, lblStaffingGapPSWO);
+            SetTotal(txtPostsApprovedPCDO, txtPostsApprovedCDO, txtPostsApprovedDCDO, txtPostsApprovedSPSWO, txtPostsApprovedSCDO, txtPostsApprovedPSWO, lblPostsApprovedTotal);
+        }
+
+        private void txtPostsFilledPSWO_TextChanged(object sender, EventArgs e)
+        {
+            SetProportion(txtPostsApprovedPSWO, txtPostsFilledPSWO, lblPostsProportionPSWO, lblStaffingGapPSWO);
+            SetTotal(txtPostsApprovedPCDO, txtPostsApprovedCDO, txtPostsApprovedDCDO, txtPostsApprovedSPSWO, txtPostsApprovedSCDO, txtPostsApprovedPSWO, lblPostsApprovedTotal);
+        }
     }
 }

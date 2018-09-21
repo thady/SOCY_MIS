@@ -78,7 +78,15 @@ namespace SOCY_MIS
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Save();
+            if (SystemConstants.ValidateDistrictID())
+            {
+                Save();
+            }
+            else
+            {
+                MessageBox.Show("No district set for this office,please set the office district under office information screen", "SOCY MIS Message Centre", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
 
         private void llblBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -89,72 +97,72 @@ namespace SOCY_MIS
         #region Display Controls
         private void lblSubCountyPercentDisplay_TextChanged(object sender, EventArgs e)
         {
-            DisplayQn10();
+            //DisplayQn10();
         }
 
         private void nudCSOReport_ValueChanged(object sender, EventArgs e)
         {
-            DisplayQn12();
+           // DisplayQn12();
         }
 
         private void nudCSOTotal_ValueChanged(object sender, EventArgs e)
         {
-            DisplayQn12();
+           // DisplayQn12();
         }
 
         private void nudlSubCountyReviewed_ValueChanged(object sender, EventArgs e)
         {
-            DisplayQn09();
+           // DisplayQn09();
         }
 
         private void nudSubCountyTotal_ValueChanged(object sender, EventArgs e)
         {
-            DisplayQn09();
+            //DisplayQn09();
         }
 
         private void rbtnDOVCCActionsTakenYes_CheckedChanged(object sender, EventArgs e)
         {
-            DisplayQn12();
+           // DisplayQn12();
         }
 
         private void rbtnDOVCCMinutesAvailableYes_CheckedChanged(object sender, EventArgs e)
         {
-            DisplayQn12();
+           // DisplayQn12();
         }
 
         private void rbtnDOVCCMinutesYes_CheckedChanged(object sender, EventArgs e)
         {
-            DisplayQn10();
+           // DisplayQn10();
         }
 
         private void rbtnMeetingsHeldYes_CheckedChanged(object sender, EventArgs e)
         {
-            DisplayQn10();
+            //DisplayQn10();
         }
 
         private void rbtnMembershipConstitutedYes_CheckedChanged(object sender, EventArgs e)
         {
-            DisplayQn10();
+           // DisplayQn10();
         }
 
         private void rbtnOVCMISDistrictYes_CheckedChanged(object sender, EventArgs e)
         {
-            DisplayQn12();
+           // DisplayQn12();
         }
 
         private void rbtnQn11No_CheckedChanged(object sender, EventArgs e)
         {
-            DisplayQn12();
+           // DisplayQn12();
         }
 
         private void rbtnQn11Yes_CheckedChanged(object sender, EventArgs e)
         {
-            DisplayQn12();
+            //DisplayQn12();
         }
 
         private void rbtnSupervisionReportsYes_CheckedChanged(object sender, EventArgs e)
         {
-            DisplayQn10();
+            //DisplayQn10();
         }
         #endregion Display Controls
         #endregion Control Methods
@@ -453,49 +461,49 @@ namespace SOCY_MIS
             return strMessage;
         }
 
-        #region Display Settings
-        private void DisplayQn09()
-        {
-            if (nudSubCountyTotal.Value > 0)
-                lblSubCountyPercentDisplay.Text = Convert.ToInt32(nudSubCountyReviewed.Value * 100 / nudSubCountyTotal.Value).ToString();
-            else
-                lblSubCountyPercentDisplay.Text = "-";
-        }
+        //#region Display Settings
+        //private void DisplayQn09()
+        //{
+        //    if (nudSubCountyTotal.Value > 0)
+        //        lblSubCountyPercentDisplay.Text = Convert.ToInt32(nudSubCountyReviewed.Value * 100 / nudSubCountyTotal.Value).ToString();
+        //    else
+        //        lblSubCountyPercentDisplay.Text = "-";
+        //}
 
-        private void DisplayQn10()
-        {
-            if (rbtnDOVCCMinutesYes.Checked && rbtnMeetingsHeldYes.Checked && rbtnMembershipConstitutedYes.Checked && rbtnSupervisionReportsYes.Checked &&
-                utilFormatting.IsDecimal(lblSubCountyPercentDisplay.Text) && Convert.ToDecimal(lblSubCountyPercentDisplay.Text.Trim()) >= 80)
-            {
-                rbtnQn10No.Checked = false;
-                rbtnQn10Yes.Checked = true;
-                rbtnQn11No.Checked = false;
-                rbtnQn11Yes.Checked = true;
-            }
-            else
-            {
-                rbtnQn10No.Checked = true;
-                rbtnQn10Yes.Checked = false;
-                rbtnQn11No.Checked = true;
-                rbtnQn11Yes.Checked = false;
-            }
-        }
+        //private void DisplayQn10()
+        //{
+        //    if (rbtnDOVCCMinutesYes.Checked && rbtnMeetingsHeldYes.Checked && rbtnMembershipConstitutedYes.Checked && rbtnSupervisionReportsYes.Checked &&
+        //        utilFormatting.IsDecimal(lblSubCountyPercentDisplay.Text) && Convert.ToDecimal(lblSubCountyPercentDisplay.Text.Trim()) >= 80)
+        //    {
+        //        rbtnQn10No.Checked = false;
+        //        rbtnQn10Yes.Checked = true;
+        //        rbtnQn11No.Checked = false;
+        //        rbtnQn11Yes.Checked = true;
+        //    }
+        //    else
+        //    {
+        //        rbtnQn10No.Checked = true;
+        //        rbtnQn10Yes.Checked = false;
+        //        rbtnQn11No.Checked = true;
+        //        rbtnQn11Yes.Checked = false;
+        //    }
+        //}
 
-        private void DisplayQn12()
-        {
-            if (rbtnDOVCCActionsTakenYes.Checked && rbtnDOVCCMinutesAvailableYes.Checked && rbtnOVCMISDistrictYes.Checked && rbtnQn11Yes.Checked &&
-                nudCSOTotal.Value > 0 && (nudCSOReport.Value * 100 / nudCSOTotal.Value) >= 80)
-            {
-                rbtnQn12No.Checked = false;
-                rbtnQn12Yes.Checked = true;
-            }
-            else
-            {
-                rbtnQn12No.Checked = true;
-                rbtnQn12Yes.Checked = false;
-            }
-        }
-        #endregion Display Settings
+        //private void DisplayQn12()
+        //{
+        //    if (rbtnDOVCCActionsTakenYes.Checked && rbtnDOVCCMinutesAvailableYes.Checked && rbtnOVCMISDistrictYes.Checked && rbtnQn11Yes.Checked &&
+        //        nudCSOTotal.Value > 0 && (nudCSOReport.Value * 100 / nudCSOTotal.Value) >= 80)
+        //    {
+        //        rbtnQn12No.Checked = false;
+        //        rbtnQn12Yes.Checked = true;
+        //    }
+        //    else
+        //    {
+        //        rbtnQn12No.Checked = true;
+        //        rbtnQn12Yes.Checked = false;
+        //    }
+        //}
+        //#endregion Display Settings
         #endregion Private Methods
 
         #region Permissions
@@ -524,5 +532,10 @@ namespace SOCY_MIS
             #endregion Set Permissions
         }
         #endregion Permissions
+
+        private void gbDistrictOVCChecklistTitle_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

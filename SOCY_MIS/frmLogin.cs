@@ -194,8 +194,6 @@ namespace SOCY_MIS
 
                     if (strMessage.Length == 0)
                     {
-                        //set the district id for the office
-                        static_variables.district_id = SystemConstants.Return_office_district();
 
                         fcOpen = Application.OpenForms;
                         frmMST = (Master)fcOpen["Master"];

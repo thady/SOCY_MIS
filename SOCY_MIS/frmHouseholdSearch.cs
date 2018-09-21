@@ -125,6 +125,7 @@ namespace SOCY_MIS
 
                     frmNew = new frmHousehold();
                     frmNew.ObjectId = strID;
+                    SystemConstants.hh_record_guid = strID; // edited by thadeous..set the hh_id in my constants
                     frmNew.FormCalling = this;
                     frmNew.FormMaster = FormMaster;
                     FormMaster.LoadControl(frmNew, this.Name, false);
@@ -362,5 +363,11 @@ namespace SOCY_MIS
             }
         }
         #endregion Private Methods
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            frmUploadTables table = new frmUploadTables();
+            table.Show();
+        }
     }
 }

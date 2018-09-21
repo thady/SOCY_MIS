@@ -12,11 +12,20 @@ namespace SOCY_MIS.DataAccessLayer
 {
   public static class SystemConstants
     {
+        public static string hh_record_guid = string.Empty;
+        public static string ofc_id = string.Empty;
+        public static string user_id = string.Empty;
+        public static string dovicc_tool_type = string.Empty;
 
        static DataAccessLayer.DBConnection dbCon = new DataAccessLayer.DBConnection(utilConstants.cACKConnection);
        static string SQLConnection = dbCon.SQLDBConnection(utilConstants.cACKConnection);
 
        static SqlConnection conn = null;
+        #region ConstantVariables
+        public const string ExcellentlyAcquired = "1";
+        public const string AveragelyAcquired = "2";
+        public const string NotAcquired = "3";
+        #endregion ConstantVariables
 
         public static DataTable Return_list_of_districts()
         {
@@ -111,9 +120,9 @@ namespace SOCY_MIS.DataAccessLayer
         public static string Return_office_district()
         {
             DataTable dt = new DataTable();
-            string district_id = String.Empty;
+            string district_id = "-999";
             SqlDataAdapter Adapt;
-            string SQL = "SELECT district_id FROM um_office";
+            string SQL = @"SELECT district_id FROM um_office";
             try
             {
                 string strConn = dbCon.ToString();
@@ -135,7 +144,7 @@ namespace SOCY_MIS.DataAccessLayer
                     if (dt.Rows.Count > 0)
                     {
                         DataRow dtRow = dt.Rows[0];
-                        district_id = !dtRow.IsNull("district_id") ? Convert.ToInt32(dtRow["district_id"].ToString()).ToString() : "-999";
+                        district_id = dtRow["district_id"].ToString();
                     }
                    
                     cmd.Parameters.Clear();
@@ -309,12 +318,12 @@ namespace SOCY_MIS.DataAccessLayer
         //save downloaded office groups
         public static void save_downloaded_office_group(string office_grp_record_guid,string ofc_id,bool active)
         {
-            string Query = "IF NOT EXISTS(SELECT ofc_id FROM um_office_group_details WHERE ofc_id = '{1}')" +
+            string Query = "IF NOT EXISTS(SELECT ofc_id FROM um_office_group_details WHERE ofc_id = '{1}' AND office_grp_record_guid = '{0}')" +
                  "BEGIN " +
                  "INSERT INTO um_office_group_details(office_grp_record_guid,ofc_id,active) " +
                  "VALUES('{0}','{1}','{2}') " +
                  "END ELSE BEGIN " +
-                 "UPDATE um_office_group_details SET active = '{2}' WHERE ofc_id = '{1}' " +
+                 "UPDATE um_office_group_details SET active = '{2}' WHERE ofc_id = '{1}' AND office_grp_record_guid = '{0}' " +
                  "END";
 
             string SQL = string.Empty;
@@ -453,6 +462,96 @@ namespace SOCY_MIS.DataAccessLayer
             }
 
             return is_same_office_group;
+        }
+
+        public static bool ValidateDistrictID()
+        {
+            bool isValid = false;
+            int count = 0;
+            string SQL = "SELECT COUNT(*) FROM um_office WHERE district_id <> ''";
+            try
+            {
+                string strConn = dbCon.ToString();
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(SQL, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    count = (int)cmd.ExecuteScalar();
+                    if (count > 0) { isValid = true; }
+                    else { isValid = false; }
+
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            finally
+            {
+                if (conn.State == ConnectionState.Open) { conn.Close(); }
+            }
+
+            return isValid;
+        }
+
+        public static DataTable Return_lst_hh_identification_source()
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter Adapt;
+            string SQL = @"SELECT ids_id,ids_name FROM lst_hh_identification_source
+                            WHERE ids_active = 1";
+            try
+            {
+                string strConn = dbCon.ToString();
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(SQL, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    Adapt = new SqlDataAdapter(cmd);
+                    Adapt.Fill(dt);
+
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            finally
+            {
+                if (conn.State == ConnectionState.Open) { conn.Close(); }
+            }
+
+            return dt;
         }
     }
 }

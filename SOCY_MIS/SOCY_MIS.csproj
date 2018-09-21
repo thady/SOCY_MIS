@@ -12,6 +12,10 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
     <PublishUrl>C:\Users\Ryan\Documents\Visual Studio 2012\Projects_NEW\SOCY\SOCY_MIS_Publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -27,10 +31,6 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -43,7 +43,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -64,6 +64,14 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LarcomAndYoung.Windows.Forms.ReSize">
+      <HintPath>..\ReSize.NET.4.1\LarcomAndYoung.Windows.Forms.ReSize.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PSAUtils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\PSAUtils\PSAUtils\bin\Debug\PSAUtils.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -100,6 +108,18 @@
     <Compile Include="frmAdmin.Designer.cs">
       <DependentUpon>frmAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAgroEnterpriseRankingMatrix.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmAgroEnterpriseRankingMatrix.Designer.cs">
+      <DependentUpon>frmAgroEnterpriseRankingMatrix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAgroEnterpriseRankingMatrixSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmAgroEnterpriseRankingMatrixSearch.Designer.cs">
+      <DependentUpon>frmAgroEnterpriseRankingMatrixSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAlternativeCarePanelSummary.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -124,6 +144,18 @@
     <Compile Include="frmApprenticeshipSearch.Designer.cs">
       <DependentUpon>frmApprenticeshipSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBenSchoolReadinessTool.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmBenSchoolReadinessTool.Designer.cs">
+      <DependentUpon>frmBenSchoolReadinessTool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBenSchoolReadinessToolMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmBenSchoolReadinessToolMain.Designer.cs">
+      <DependentUpon>frmBenSchoolReadinessToolMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCBSDResourceAllocation.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -147,6 +179,24 @@
     </Compile>
     <Compile Include="frmCBSDStaffAppraisalTrackingSearch.Designer.cs">
       <DependentUpon>frmCBSDStaffAppraisalTrackingSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCommunityTrainingRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCommunityTrainingRegister.Designer.cs">
+      <DependentUpon>frmCommunityTrainingRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCommunityTraining_register.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmCommunityTraining_register.Designer.cs">
+      <DependentUpon>frmCommunityTraining_register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCommunityTraining_registerSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmCommunityTraining_registerSearch.Designer.cs">
+      <DependentUpon>frmCommunityTraining_registerSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDataTransfer.cs">
       <SubType>UserControl</SubType>
@@ -268,6 +318,24 @@
     <Compile Include="frmDREAMSSteppingStonesMissedSessions.Designer.cs">
       <DependentUpon>frmDREAMSSteppingStonesMissedSessions.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEducationSubsidy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmEducationSubsidy.Designer.cs">
+      <DependentUpon>frmEducationSubsidy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEducationSubsidyMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmEducationSubsidyMain.Designer.cs">
+      <DependentUpon>frmEducationSubsidyMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEducationSubsidySearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmEducationSubsidySearch.Designer.cs">
+      <DependentUpon>frmEducationSubsidySearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGirlChildEducation.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -346,11 +414,23 @@
     <Compile Include="frmHouseholdHomeVisitMember.Designer.cs">
       <DependentUpon>frmHouseholdHomeVisitMember.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHouseholdImprovementPlan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmHouseholdImprovementPlan.Designer.cs">
+      <DependentUpon>frmHouseholdImprovementPlan.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHouseholdMembers.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="frmHouseholdMembers.Designer.cs">
       <DependentUpon>frmHouseholdMembers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHouseholdRiskAssessmentRegister.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmHouseholdRiskAssessmentRegister.Designer.cs">
+      <DependentUpon>frmHouseholdRiskAssessmentRegister.cs</DependentUpon>
     </Compile>
     <Compile Include="frmHouseholdSearch.cs">
       <SubType>UserControl</SubType>
@@ -387,6 +467,12 @@
     </Compile>
     <Compile Include="frmOVCIdentificationPrioritizationSearch.Designer.cs">
       <DependentUpon>frmOVCIdentificationPrioritizationSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOVC_Viral_load.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmOVC_Viral_load.Designer.cs">
+      <DependentUpon>frmOVC_Viral_load.cs</DependentUpon>
     </Compile>
     <Compile Include="frmParaSocialWorkercs.cs">
       <SubType>UserControl</SubType>
@@ -502,6 +588,30 @@
     <Compile Include="frmSocialWorkerSearch.Designer.cs">
       <DependentUpon>frmSocialWorkerSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSocialWorkerTarget.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSocialWorkerTarget.Designer.cs">
+      <DependentUpon>frmSocialWorkerTarget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSubcountyOVCChecklist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmSubcountyOVCChecklist.Designer.cs">
+      <DependentUpon>frmSubcountyOVCChecklist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSubCountyOVCChecklistSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmSubCountyOVCChecklistSearch.Designer.cs">
+      <DependentUpon>frmSubCountyOVCChecklistSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUploadTables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUploadTables.Designer.cs">
+      <DependentUpon>frmUploadTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -531,6 +641,90 @@
     </Compile>
     <Compile Include="frmValueChainActorRegisterSearch.Designer.cs">
       <DependentUpon>frmValueChainActorRegisterSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmYouthAssessmentScoringTool.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmYouthAssessmentScoringTool.Designer.cs">
+      <DependentUpon>frmYouthAssessmentScoringTool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmYouthAssessmentScoringToolSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmYouthAssessmentScoringToolSearch.Designer.cs">
+      <DependentUpon>frmYouthAssessmentScoringToolSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmYouthSavingsRegister.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmYouthSavingsRegister.Designer.cs">
+      <DependentUpon>frmYouthSavingsRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmYouthSavingsRegisterSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmYouthSavingsRegisterSearch.Designer.cs">
+      <DependentUpon>frmYouthSavingsRegisterSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmYouthTracer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmYouthTracer.Designer.cs">
+      <DependentUpon>frmYouthTracer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmYouthTracerSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmYouthTracerSearch.Designer.cs">
+      <DependentUpon>frmYouthTracerSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmYouthTrainingCompletion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmYouthTrainingCompletion.Designer.cs">
+      <DependentUpon>frmYouthTrainingCompletion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmYouthTrainingCompletionSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmYouthTrainingCompletionSearch.Designer.cs">
+      <DependentUpon>frmYouthTrainingCompletionSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmYouthTrainingInventory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmYouthTrainingInventory.Designer.cs">
+      <DependentUpon>frmYouthTrainingInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_apprenticeship_skill_acquision_tracking.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frm_apprenticeship_skill_acquision_tracking.Designer.cs">
+      <DependentUpon>frm_apprenticeship_skill_acquision_tracking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_apprenticeship_skill_acquision_tracking_search.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frm_apprenticeship_skill_acquision_tracking_search.Designer.cs">
+      <DependentUpon>frm_apprenticeship_skill_acquision_tracking_search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_hh_household_improvement_plan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_hh_household_improvement_plan.Designer.cs">
+      <DependentUpon>frm_hh_household_improvement_plan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_hh_household_risk_assessment_register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_hh_household_risk_assessment_register.Designer.cs">
+      <DependentUpon>frm_hh_household_risk_assessment_register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_linkages_register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_linkages_register.Designer.cs">
+      <DependentUpon>frm_linkages_register.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_um_office_district_download.cs">
       <SubType>Form</SubType>
@@ -572,6 +766,12 @@
     <EmbeddedResource Include="frmAdmin.resx">
       <DependentUpon>frmAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAgroEnterpriseRankingMatrix.resx">
+      <DependentUpon>frmAgroEnterpriseRankingMatrix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgroEnterpriseRankingMatrixSearch.resx">
+      <DependentUpon>frmAgroEnterpriseRankingMatrixSearch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAlternativeCarePanelSummary.resx">
       <DependentUpon>frmAlternativeCarePanelSummary.cs</DependentUpon>
     </EmbeddedResource>
@@ -584,6 +784,12 @@
     <EmbeddedResource Include="frmApprenticeshipSearch.resx">
       <DependentUpon>frmApprenticeshipSearch.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmBenSchoolReadinessTool.resx">
+      <DependentUpon>frmBenSchoolReadinessTool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBenSchoolReadinessToolMain.resx">
+      <DependentUpon>frmBenSchoolReadinessToolMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCBSDResourceAllocation.resx">
       <DependentUpon>frmCBSDResourceAllocation.cs</DependentUpon>
     </EmbeddedResource>
@@ -595,6 +801,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCBSDStaffAppraisalTrackingSearch.resx">
       <DependentUpon>frmCBSDStaffAppraisalTrackingSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCommunityTrainingRegister.resx">
+      <DependentUpon>frmCommunityTrainingRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCommunityTraining_register.resx">
+      <DependentUpon>frmCommunityTraining_register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCommunityTraining_registerSearch.resx">
+      <DependentUpon>frmCommunityTraining_registerSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDataTransfer.resx">
       <DependentUpon>frmDataTransfer.cs</DependentUpon>
@@ -653,6 +868,15 @@
     <EmbeddedResource Include="frmDREAMSSteppingStonesMissedSessions.resx">
       <DependentUpon>frmDREAMSSteppingStonesMissedSessions.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEducationSubsidy.resx">
+      <DependentUpon>frmEducationSubsidy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEducationSubsidyMain.resx">
+      <DependentUpon>frmEducationSubsidyMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEducationSubsidySearch.resx">
+      <DependentUpon>frmEducationSubsidySearch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGirlChildEducation.resx">
       <DependentUpon>frmGirlChildEducation.cs</DependentUpon>
     </EmbeddedResource>
@@ -692,8 +916,14 @@
     <EmbeddedResource Include="frmHouseholdHomeVisitMember.resx">
       <DependentUpon>frmHouseholdHomeVisitMember.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmHouseholdImprovementPlan.resx">
+      <DependentUpon>frmHouseholdImprovementPlan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmHouseholdMembers.resx">
       <DependentUpon>frmHouseholdMembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHouseholdRiskAssessmentRegister.resx">
+      <DependentUpon>frmHouseholdRiskAssessmentRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHouseholdSearch.resx">
       <DependentUpon>frmHouseholdSearch.cs</DependentUpon>
@@ -712,6 +942,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmOVCIdentificationPrioritizationSearch.resx">
       <DependentUpon>frmOVCIdentificationPrioritizationSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOVC_Viral_load.resx">
+      <DependentUpon>frmOVC_Viral_load.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmParaSocialWorkercs.resx">
       <DependentUpon>frmParaSocialWorkercs.cs</DependentUpon>
@@ -770,6 +1003,18 @@
     <EmbeddedResource Include="frmSocialWorkerSearch.resx">
       <DependentUpon>frmSocialWorkerSearch.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSocialWorkerTarget.resx">
+      <DependentUpon>frmSocialWorkerTarget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSubcountyOVCChecklist.resx">
+      <DependentUpon>frmSubcountyOVCChecklist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSubCountyOVCChecklistSearch.resx">
+      <DependentUpon>frmSubCountyOVCChecklistSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUploadTables.resx">
+      <DependentUpon>frmUploadTables.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmUser.resx">
       <DependentUpon>frmUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -785,6 +1030,48 @@
     <EmbeddedResource Include="frmValueChainActorRegisterSearch.resx">
       <DependentUpon>frmValueChainActorRegisterSearch.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmYouthAssessmentScoringTool.resx">
+      <DependentUpon>frmYouthAssessmentScoringTool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmYouthAssessmentScoringToolSearch.resx">
+      <DependentUpon>frmYouthAssessmentScoringToolSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmYouthSavingsRegister.resx">
+      <DependentUpon>frmYouthSavingsRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmYouthSavingsRegisterSearch.resx">
+      <DependentUpon>frmYouthSavingsRegisterSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmYouthTracer.resx">
+      <DependentUpon>frmYouthTracer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmYouthTracerSearch.resx">
+      <DependentUpon>frmYouthTracerSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmYouthTrainingCompletion.resx">
+      <DependentUpon>frmYouthTrainingCompletion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmYouthTrainingCompletionSearch.resx">
+      <DependentUpon>frmYouthTrainingCompletionSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmYouthTrainingInventory.resx">
+      <DependentUpon>frmYouthTrainingInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_apprenticeship_skill_acquision_tracking.resx">
+      <DependentUpon>frm_apprenticeship_skill_acquision_tracking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_apprenticeship_skill_acquision_tracking_search.resx">
+      <DependentUpon>frm_apprenticeship_skill_acquision_tracking_search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_hh_household_improvement_plan.resx">
+      <DependentUpon>frm_hh_household_improvement_plan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_hh_household_risk_assessment_register.resx">
+      <DependentUpon>frm_hh_household_risk_assessment_register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_linkages_register.resx">
+      <DependentUpon>frm_linkages_register.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_um_office_district_download.resx">
       <DependentUpon>frm_um_office_district_download.cs</DependentUpon>
     </EmbeddedResource>
@@ -794,6 +1081,7 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -833,10 +1121,6 @@
     <ProjectReference Include="..\..\PSAUtilsWin32\PSAUtilsWin32\PSAUtilsWin32.csproj">
       <Project>{85401351-6520-4473-b2bd-4b6ae83a9368}</Project>
       <Name>PSAUtilsWin32</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\PSAUtils\PSAUtils\PSAUtils.csproj">
-      <Project>{3fb567b3-4c9f-4859-b325-f1408b075f12}</Project>
-      <Name>PSAUtils</Name>
     </ProjectReference>
     <ProjectReference Include="..\SOCY_MIS.DataAccessLayer\SOCY_MIS.DataAccessLayer.csproj">
       <Project>{2dbe9e3a-8f2c-4c0e-a8fa-042a5f79188d}</Project>
@@ -1489,10 +1773,10 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://localhost:58042/SOCY_WS.asmx">
+    <WebReferenceUrl Include="http://localhost:61866/SOCY_WS.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\SOCY_WS\</RelPath>
-      <UpdateFromURL>http://localhost:58042/SOCY_WS.asmx</UpdateFromURL>
+      <UpdateFromURL>http://localhost:61866/SOCY_WS.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>

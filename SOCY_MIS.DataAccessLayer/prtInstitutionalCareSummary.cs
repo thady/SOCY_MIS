@@ -17,8 +17,9 @@ namespace SOCY_MIS.DataAccessLayer
         public string fy_id = utilConstants.cDFEmptyListValue;
         public string qy_id = utilConstants.cDFEmptyListValue;
         public string usr_id_update = string.Empty;
-        public string ofc_id = string.Empty;
+        public string ofc_id = utilConstants.cDFEmptyListValue;
         public int district_id = Convert.ToInt32(static_variables.district_id);
+        public string prt_id = string.Empty;
         #endregion Public
         #endregion Variables
 
@@ -122,13 +123,13 @@ namespace SOCY_MIS.DataAccessLayer
             strSQL = "INSERT INTO prt_institutional_care_summary " +
                 "(ics_id, ics_date, " +
                 "dst_id, fy_id, qy_id, " +
-                "usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id,district_id) " +
+                "usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id,district_id,prt_id) " +
                 "VALUES ('{0}', '{1}', " +
                 "'{2}', '{3}', '{4}', " +
-                "'{5}', '{5}', GETDATE(), GETDATE(), '{6}','{7}') ";
+                "'{5}', '{5}', GETDATE(), GETDATE(), '{6}','{7}','{8}') ";
             strSQL = string.Format(strSQL, ics_id, ics_date.ToString("dd MMM yyyy HH:mm:ss"), 
                 dst_id, fy_id, qy_id,
-                usr_id_update, ofc_id, district_id);
+                usr_id_update, ofc_id, district_id, prt_id);
 
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
@@ -153,6 +154,7 @@ namespace SOCY_MIS.DataAccessLayer
                 dst_id = dr["dst_id"].ToString();
                 fy_id = dr["fy_id"].ToString();
                 qy_id = dr["qy_id"].ToString();
+                prt_id = dr["prt_id"].ToString();
                 usr_id_update = dr["usr_id_update"].ToString();
                 ofc_id = dr["ofc_id"].ToString();
                 #endregion Load Values
@@ -169,11 +171,11 @@ namespace SOCY_MIS.DataAccessLayer
             strSQL = "UPDATE prt_institutional_care_summary " +
                 "SET ics_date = '{1}', " +
                 "dst_id = '{2}', fy_id = '{3}', qy_id = '{4}', " +
-                "usr_id_update = '{5}', usr_date_update = GETDATE(),district_id = '{6}' " +
+                "usr_id_update = '{5}', usr_date_update = GETDATE(),district_id = '{6}',prt_id = '{7}' " +
                 "WHERE ics_id = '{0}' ";
             strSQL = string.Format(strSQL, ics_id, ics_date.ToString("dd MMM yyyy HH:mm:ss"), 
                 dst_id, fy_id, qy_id,
-                usr_id_update,district_id);
+                usr_id_update,district_id, prt_id);
 
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL

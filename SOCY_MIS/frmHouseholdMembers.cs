@@ -105,7 +105,15 @@ namespace SOCY_MIS
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Save();
+            if (SystemConstants.ValidateDistrictID())
+            {
+                Save();
+            }
+            else
+            {
+                MessageBox.Show("No district set for this office,please set the office district under office information screen", "SOCY MIS Message Centre", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
 
         private void cbDisability_SelectionChangeCommitted(object sender, EventArgs e)
@@ -414,7 +422,7 @@ namespace SOCY_MIS
                         cbDisabilityType.Enabled = dalHHM.yn_id_disability.Equals(utilConstants.cDFListValueYes);
                         cbGivenBirth.Enabled = !dalHHM.gnd_id.Equals(utilConstants.cGNDMale);
                         cbPregnant.Enabled = !dalHHM.gnd_id.Equals(utilConstants.cGNDMale);
-                        btnSave.Enabled = pblnManage && (FormMaster.OfficeId.Equals(dalHHM.ofc_id) || utilConstants.cDFImportOffice.Equals(dalHHM.ofc_id) || SystemConstants.Validate_Office_group_access(FormMaster.OfficeId, dalHHM.ofc_id));
+                        //btnSave.Enabled = pblnManage && (FormMaster.OfficeId.Equals(dalHHM.ofc_id) || utilConstants.cDFImportOffice.Equals(dalHHM.ofc_id) || SystemConstants.Validate_Office_group_access(FormMaster.OfficeId, dalHHM.ofc_id));
                         #endregion Household Member
 
                         #region Allow Flags
@@ -749,6 +757,7 @@ namespace SOCY_MIS
                         dalHHM.yn_id_pregnant = cbPregnant.SelectedValue.ToString();
                         dalHHM.yn_id_school = cbSchool.SelectedValue.ToString();
                         dalHHM.usr_id_update = FormMaster.UserId;
+                        dalHHM.district_id = SystemConstants.Return_office_district();
                         dalHHM.Save(dbCon);
                         #endregion Household
 
@@ -787,7 +796,9 @@ namespace SOCY_MIS
 
             #region Required Fields
             if (txtFirstName.Text.Trim().Length == 0 || txtLastName.Text.Trim().Length == 0 ||
-                cbGender.SelectedIndex == 0 || cbYearOfBirth.SelectedIndex == 0)
+                cbGender.SelectedIndex == 0 || cbYearOfBirth.SelectedIndex == 0 || cbDisability.SelectedIndex == 0 || (cbDisability.Text == "Yes" && cbDisabilityType.SelectedIndex == 0)
+                || (cbDisabilityType.SelectedIndex != 0 && (cbDisability.SelectedIndex == 0 || cbDisability.Text == "No")) || cbHIVStatus.SelectedIndex == 0 || cbProfession.SelectedIndex == 0 || cbSchool.SelectedIndex == 0
+                || cbProtection.SelectedIndex == 0 || cbMaritalStatus.SelectedIndex == 0 || cbEducation.SelectedIndex == 0 || (cbGender.Text == "Female" && cbGivenBirth.SelectedIndex == 0) || (cbHIVStatus.Text == "Positive" && cbART.SelectedIndex == 0))
                 strMessage = strMessage + "," + utilConstants.cMIDRequiredFields;
             #endregion Required Fields
 
@@ -845,5 +856,23 @@ namespace SOCY_MIS
             #endregion Set Permissions
         }
         #endregion Permissions
+
+        private void cbGender_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbGender.Text == "Female") { lblGivenBirth.ForeColor = Color.Red; }
+            else { lblGivenBirth.ForeColor = Color.Black; }
+        }
+
+        private void cbDisability_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbDisability.Text == "Yes") { lblDisabilityType.ForeColor = Color.Red; }
+            else { lblDisabilityType.ForeColor = Color.Black; }
+        }
+
+        private void cbHIVStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbHIVStatus.Text == "Positive") { lblART.ForeColor = Color.Red; }
+            else { lblART.ForeColor = Color.Black; }
+        }
     }
 }

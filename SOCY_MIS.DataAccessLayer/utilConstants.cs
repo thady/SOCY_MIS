@@ -55,6 +55,7 @@ namespace SOCY_MIS.DataAccessLayer
         public const string cHSTPositive = "1";
         public const string cHSTNegative = "2";
         public const string cHSTUnKnown = "3";
+        public const string cHSTUnDisclosed = "4";
         #endregion HIV Status
 
         #region Member Type
@@ -189,6 +190,9 @@ namespace SOCY_MIS.DataAccessLayer
         public const string cRTHomeVisit = "2";
         public const string cRTOVCIdentificationPrioritization = "4";
         public const string cRTReferral = "3";
+        public const string cRTHIP = "6";
+        public const string cRTRiskAssessment = "7";
+        public const string cRTOVCViralLoad = "8";
         #endregion PopUp Types
 
         #region Social Worker Type
@@ -200,8 +204,9 @@ namespace SOCY_MIS.DataAccessLayer
         public const string cSSDCDO = "1";
         public const string cSSSPSWO = "2";
         public const string cSSCDO = "3";
-        public const string cSSACDO = "4";
+        public const string cSSPCDO = "4";
         public const string cSSSCDO = "5";
+        public const string cSSPSWO = "6";
         #endregion Staff Structure
 
         #region Trigger Action

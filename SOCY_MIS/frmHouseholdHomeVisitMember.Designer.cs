@@ -40,9 +40,8 @@
             this.gclDelete = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.gclOfcId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpDisplay01 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblHHMemberStatusVal = new System.Windows.Forms.Label();
             this.lblMemberActive = new System.Windows.Forms.Label();
-            this.lblYearOfBirthDisplay = new System.Windows.Forms.Label();
-            this.lblYearOfBirth = new System.Windows.Forms.Label();
             this.lblHHVMId = new System.Windows.Forms.Label();
             this.lblGender = new System.Windows.Forms.Label();
             this.lblGenderDisplay = new System.Windows.Forms.Label();
@@ -56,6 +55,8 @@
             this.pnlMemberActive = new System.Windows.Forms.Panel();
             this.rbtnMemberActiveYes = new System.Windows.Forms.RadioButton();
             this.rbtnMemberActiveNo = new System.Windows.Forms.RadioButton();
+            this.lblYearOfBirthDisplay = new System.Windows.Forms.Label();
+            this.lblYearOfBirth = new System.Windows.Forms.Label();
             this.tplButton01 = new System.Windows.Forms.TableLayoutPanel();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -74,23 +75,32 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.lblES = new System.Windows.Forms.Label();
             this.tlpDisplay07 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.rbtnLendingGroupNA = new System.Windows.Forms.RadioButton();
+            this.rbtnLendingGroupYes = new System.Windows.Forms.RadioButton();
+            this.rbtnLendingGroupNo = new System.Windows.Forms.RadioButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.rbtnCaregiverGroupYes = new System.Windows.Forms.RadioButton();
+            this.rbtnCaregiverGroupNo = new System.Windows.Forms.RadioButton();
+            this.lblCaregiverGroup = new System.Windows.Forms.Label();
             this.lblESSilc = new System.Windows.Forms.Label();
-            this.lblESAflateen = new System.Windows.Forms.Label();
             this.pnlESSilc = new System.Windows.Forms.Panel();
             this.rbtnESSilcYes = new System.Windows.Forms.RadioButton();
             this.rbtnESSilcNo = new System.Windows.Forms.RadioButton();
-            this.pnlESApprenticeship = new System.Windows.Forms.Panel();
-            this.rbtnESApprenticeshipYes = new System.Windows.Forms.RadioButton();
-            this.rbtnESApprenticeshipNo = new System.Windows.Forms.RadioButton();
-            this.pnlESAgro = new System.Windows.Forms.Panel();
-            this.rbtnESAgroYes = new System.Windows.Forms.RadioButton();
-            this.rbtnESAgroNo = new System.Windows.Forms.RadioButton();
+            this.lblESAflateen = new System.Windows.Forms.Label();
             this.pnlESAflateen = new System.Windows.Forms.Panel();
             this.rbtnESAflateenYes = new System.Windows.Forms.RadioButton();
             this.rbtnESAflateenNo = new System.Windows.Forms.RadioButton();
             this.lblESAgro = new System.Windows.Forms.Label();
+            this.pnlESAgro = new System.Windows.Forms.Panel();
+            this.rbtnESAgroYes = new System.Windows.Forms.RadioButton();
+            this.rbtnESAgroNo = new System.Windows.Forms.RadioButton();
             this.lblESApprenticeship = new System.Windows.Forms.Label();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlESApprenticeship = new System.Windows.Forms.Panel();
+            this.rbtnESApprenticeshipYes = new System.Windows.Forms.RadioButton();
+            this.rbtnESApprenticeshipNo = new System.Windows.Forms.RadioButton();
+            this.lblLendingGroup = new System.Windows.Forms.Label();
+            this.tlpDisplay06 = new System.Windows.Forms.TableLayoutPanel();
             this.lblFSNEducation = new System.Windows.Forms.Label();
             this.lblFSNNutrition = new System.Windows.Forms.Label();
             this.lblFSNWash = new System.Windows.Forms.Label();
@@ -113,7 +123,7 @@
             this.pnlFSNWash = new System.Windows.Forms.Panel();
             this.rbtnFSNWashYes = new System.Windows.Forms.RadioButton();
             this.rbtnFSNWashNo = new System.Windows.Forms.RadioButton();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpDisplay05 = new System.Windows.Forms.TableLayoutPanel();
             this.lblHHPArt = new System.Windows.Forms.Label();
             this.lblHHPHiv = new System.Windows.Forms.Label();
             this.lblHHPAdhering = new System.Windows.Forms.Label();
@@ -134,7 +144,7 @@
             this.rbtnHHPHivUnknown = new System.Windows.Forms.RadioButton();
             this.rbtnHHPHivNeg = new System.Windows.Forms.RadioButton();
             this.rbtnHHPHivPos = new System.Windows.Forms.RadioButton();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpDisplay03 = new System.Windows.Forms.TableLayoutPanel();
             this.lblProChildAbuse = new System.Windows.Forms.Label();
             this.lblProReintegrated = new System.Windows.Forms.Label();
             this.lblProChildLabour = new System.Windows.Forms.Label();
@@ -160,9 +170,12 @@
             this.rbtnProBirthRegistrationNA = new System.Windows.Forms.RadioButton();
             this.rbtnProBirthRegistrationYes = new System.Windows.Forms.RadioButton();
             this.rbtnProBirthRegistrationNo = new System.Windows.Forms.RadioButton();
-            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpDisplay02 = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlAttendingSchool = new System.Windows.Forms.Panel();
+            this.rbtnEduRegularlyAttendingSchoolNA = new System.Windows.Forms.RadioButton();
+            this.rbtnEduRegularlyAttendingSchoolYes = new System.Windows.Forms.RadioButton();
+            this.rbtnEduRegularlyAttendingSchoolNo = new System.Windows.Forms.RadioButton();
             this.lblEduEnrolled = new System.Windows.Forms.Label();
-            this.lblEduSensitised = new System.Windows.Forms.Label();
             this.lblEduSupport = new System.Windows.Forms.Label();
             this.pnlEduEnrolled = new System.Windows.Forms.Panel();
             this.rbtnEduEnrolledNA = new System.Windows.Forms.RadioButton();
@@ -172,10 +185,12 @@
             this.rbtnEduSupportNA = new System.Windows.Forms.RadioButton();
             this.rbtnEduSupportYes = new System.Windows.Forms.RadioButton();
             this.rbtnEduSupportNo = new System.Windows.Forms.RadioButton();
+            this.lblEduSensitised = new System.Windows.Forms.Label();
             this.pnlEduSensitised = new System.Windows.Forms.Panel();
             this.rbtnEduSensitisedYes = new System.Windows.Forms.RadioButton();
             this.rbtnEduSensitisedNo = new System.Windows.Forms.RadioButton();
-            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.lbl_ovc_attending_school = new System.Windows.Forms.Label();
+            this.tlpDisplay08 = new System.Windows.Forms.TableLayoutPanel();
             this.lblPSSupport = new System.Windows.Forms.Label();
             this.lblPSParenting = new System.Windows.Forms.Label();
             this.lblPSViolence = new System.Windows.Forms.Label();
@@ -203,32 +218,35 @@
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tlpDisplay07.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.pnlESSilc.SuspendLayout();
-            this.pnlESApprenticeship.SuspendLayout();
-            this.pnlESAgro.SuspendLayout();
             this.pnlESAflateen.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
+            this.pnlESAgro.SuspendLayout();
+            this.pnlESApprenticeship.SuspendLayout();
+            this.tlpDisplay06.SuspendLayout();
             this.pnlFSNEducation.SuspendLayout();
             this.pnlFSNSupport.SuspendLayout();
             this.pnlFSNNutrition.SuspendLayout();
             this.pnlFSNReferred.SuspendLayout();
             this.pnlFSNWash.SuspendLayout();
-            this.tableLayoutPanel7.SuspendLayout();
+            this.tlpDisplay05.SuspendLayout();
             this.pnlHHPArt.SuspendLayout();
             this.pnlHHPAdhering.SuspendLayout();
             this.pnlHHPReferred.SuspendLayout();
             this.pnlHHPHiv.SuspendLayout();
-            this.tableLayoutPanel8.SuspendLayout();
+            this.tlpDisplay03.SuspendLayout();
             this.pnlProReintegrated.SuspendLayout();
             this.pnlProChildLabour.SuspendLayout();
             this.pnlProChildAbuse.SuspendLayout();
             this.pnlProBirthCertificate.SuspendLayout();
             this.pnlProBirthRegistration.SuspendLayout();
-            this.tableLayoutPanel9.SuspendLayout();
+            this.tlpDisplay02.SuspendLayout();
+            this.pnlAttendingSchool.SuspendLayout();
             this.pnlEduEnrolled.SuspendLayout();
             this.pnlEduSupport.SuspendLayout();
             this.pnlEduSensitised.SuspendLayout();
-            this.tableLayoutPanel10.SuspendLayout();
+            this.tlpDisplay08.SuspendLayout();
             this.pnlPSSupport.SuspendLayout();
             this.pnlPSParenting.SuspendLayout();
             this.pnlPSViolenceNA.SuspendLayout();
@@ -241,9 +259,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbMembers.Controls.Add(this.btnDelete);
             this.gbMembers.Controls.Add(this.dgvMembers);
-            this.gbMembers.Location = new System.Drawing.Point(3, 771);
+            this.gbMembers.Location = new System.Drawing.Point(3, 826);
             this.gbMembers.Name = "gbMembers";
-            this.gbMembers.Size = new System.Drawing.Size(904, 209);
+            this.gbMembers.Size = new System.Drawing.Size(904, 252);
             this.gbMembers.TabIndex = 22;
             this.gbMembers.TabStop = false;
             this.gbMembers.Text = "Members";
@@ -252,7 +270,7 @@
             // 
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(823, 180);
+            this.btnDelete.Location = new System.Drawing.Point(824, 223);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 22;
@@ -280,7 +298,7 @@
             this.dgvMembers.Location = new System.Drawing.Point(6, 19);
             this.dgvMembers.MultiSelect = false;
             this.dgvMembers.Name = "dgvMembers";
-            this.dgvMembers.Size = new System.Drawing.Size(892, 155);
+            this.dgvMembers.Size = new System.Drawing.Size(892, 197);
             this.dgvMembers.TabIndex = 21;
             this.dgvMembers.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMembers_CellDoubleClick);
             this.dgvMembers.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvMembers_RowPostPaint);
@@ -357,7 +375,8 @@
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+            this.tlpDisplay01.Controls.Add(this.lblHHMemberStatusVal, 2, 3);
             this.tlpDisplay01.Controls.Add(this.lblMemberActive, 0, 3);
             this.tlpDisplay01.Controls.Add(this.lblHHVMId, 2, 2);
             this.tlpDisplay01.Controls.Add(this.lblGender, 3, 2);
@@ -383,6 +402,18 @@
             this.tlpDisplay01.Size = new System.Drawing.Size(904, 120);
             this.tlpDisplay01.TabIndex = 47;
             // 
+            // lblHHMemberStatusVal
+            // 
+            this.lblHHMemberStatusVal.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblHHMemberStatusVal.AutoSize = true;
+            this.lblHHMemberStatusVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHHMemberStatusVal.ForeColor = System.Drawing.Color.Red;
+            this.lblHHMemberStatusVal.Location = new System.Drawing.Point(405, 97);
+            this.lblHHMemberStatusVal.Name = "lblHHMemberStatusVal";
+            this.lblHHMemberStatusVal.Size = new System.Drawing.Size(11, 13);
+            this.lblHHMemberStatusVal.TabIndex = 59;
+            this.lblHHMemberStatusVal.Text = "*";
+            // 
             // lblMemberActive
             // 
             this.lblMemberActive.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -393,31 +424,11 @@
             this.lblMemberActive.TabIndex = 57;
             this.lblMemberActive.Text = "Is Beneficiary Active?";
             // 
-            // lblYearOfBirthDisplay
-            // 
-            this.lblYearOfBirthDisplay.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblYearOfBirthDisplay.AutoSize = true;
-            this.lblYearOfBirthDisplay.Location = new System.Drawing.Point(205, 66);
-            this.lblYearOfBirthDisplay.Name = "lblYearOfBirthDisplay";
-            this.lblYearOfBirthDisplay.Size = new System.Drawing.Size(68, 13);
-            this.lblYearOfBirthDisplay.TabIndex = 54;
-            this.lblYearOfBirthDisplay.Text = "Year of Birth:";
-            // 
-            // lblYearOfBirth
-            // 
-            this.lblYearOfBirth.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblYearOfBirth.AutoSize = true;
-            this.lblYearOfBirth.Location = new System.Drawing.Point(4, 66);
-            this.lblYearOfBirth.Name = "lblYearOfBirth";
-            this.lblYearOfBirth.Size = new System.Drawing.Size(68, 13);
-            this.lblYearOfBirth.TabIndex = 10;
-            this.lblYearOfBirth.Text = "Year of Birth:";
-            // 
             // lblHHVMId
             // 
             this.lblHHVMId.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblHHVMId.AutoSize = true;
-            this.lblHHVMId.Location = new System.Drawing.Point(409, 66);
+            this.lblHHVMId.Location = new System.Drawing.Point(405, 66);
             this.lblHHVMId.Name = "lblHHVMId";
             this.lblHHVMId.Size = new System.Drawing.Size(10, 13);
             this.lblHHVMId.TabIndex = 52;
@@ -428,7 +439,7 @@
             // 
             this.lblGender.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblGender.AutoSize = true;
-            this.lblGender.Location = new System.Drawing.Point(450, 66);
+            this.lblGender.Location = new System.Drawing.Point(446, 66);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(28, 13);
             this.lblGender.TabIndex = 12;
@@ -438,7 +449,7 @@
             // 
             this.lblGenderDisplay.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblGenderDisplay.AutoSize = true;
-            this.lblGenderDisplay.Location = new System.Drawing.Point(651, 66);
+            this.lblGenderDisplay.Location = new System.Drawing.Point(647, 66);
             this.lblGenderDisplay.Name = "lblGenderDisplay";
             this.lblGenderDisplay.Size = new System.Drawing.Size(28, 13);
             this.lblGenderDisplay.TabIndex = 53;
@@ -448,7 +459,7 @@
             // 
             this.lblMemberNumber.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMemberNumber.AutoSize = true;
-            this.lblMemberNumber.Location = new System.Drawing.Point(450, 37);
+            this.lblMemberNumber.Location = new System.Drawing.Point(446, 37);
             this.lblMemberNumber.Name = "lblMemberNumber";
             this.lblMemberNumber.Size = new System.Drawing.Size(88, 13);
             this.lblMemberNumber.TabIndex = 4;
@@ -458,7 +469,7 @@
             // 
             this.lblMemberNumberDisplay.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMemberNumberDisplay.AutoSize = true;
-            this.lblMemberNumberDisplay.Location = new System.Drawing.Point(651, 37);
+            this.lblMemberNumberDisplay.Location = new System.Drawing.Point(647, 37);
             this.lblMemberNumberDisplay.Name = "lblMemberNumberDisplay";
             this.lblMemberNumberDisplay.Size = new System.Drawing.Size(13, 13);
             this.lblMemberNumberDisplay.TabIndex = 1;
@@ -490,7 +501,7 @@
             this.cbHHMember.FormattingEnabled = true;
             this.cbHHMember.Location = new System.Drawing.Point(205, 33);
             this.cbHHMember.Name = "cbHHMember";
-            this.cbHHMember.Size = new System.Drawing.Size(197, 21);
+            this.cbHHMember.Size = new System.Drawing.Size(193, 21);
             this.cbHHMember.TabIndex = 47;
             this.cbHHMember.SelectionChangeCommitted += new System.EventHandler(this.cbHHMember_SelectionChangeCommitted);
             // 
@@ -500,7 +511,7 @@
             this.lblHHMemberVal.AutoSize = true;
             this.lblHHMemberVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHHMemberVal.ForeColor = System.Drawing.Color.Red;
-            this.lblHHMemberVal.Location = new System.Drawing.Point(409, 37);
+            this.lblHHMemberVal.Location = new System.Drawing.Point(405, 37);
             this.lblHHMemberVal.Name = "lblHHMemberVal";
             this.lblHHMemberVal.Size = new System.Drawing.Size(11, 13);
             this.lblHHMemberVal.TabIndex = 48;
@@ -523,7 +534,7 @@
             this.pnlMemberActive.Controls.Add(this.rbtnMemberActiveNo);
             this.pnlMemberActive.Location = new System.Drawing.Point(205, 94);
             this.pnlMemberActive.Name = "pnlMemberActive";
-            this.pnlMemberActive.Size = new System.Drawing.Size(197, 19);
+            this.pnlMemberActive.Size = new System.Drawing.Size(193, 19);
             this.pnlMemberActive.TabIndex = 58;
             // 
             // rbtnMemberActiveYes
@@ -546,6 +557,27 @@
             this.rbtnMemberActiveNo.TabIndex = 0;
             this.rbtnMemberActiveNo.Text = "No";
             this.rbtnMemberActiveNo.UseVisualStyleBackColor = true;
+            this.rbtnMemberActiveNo.CheckedChanged += new System.EventHandler(this.rbtnMemberActiveNo_CheckedChanged);
+            // 
+            // lblYearOfBirthDisplay
+            // 
+            this.lblYearOfBirthDisplay.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblYearOfBirthDisplay.AutoSize = true;
+            this.lblYearOfBirthDisplay.Location = new System.Drawing.Point(205, 66);
+            this.lblYearOfBirthDisplay.Name = "lblYearOfBirthDisplay";
+            this.lblYearOfBirthDisplay.Size = new System.Drawing.Size(68, 13);
+            this.lblYearOfBirthDisplay.TabIndex = 54;
+            this.lblYearOfBirthDisplay.Text = "Year of Birth:";
+            // 
+            // lblYearOfBirth
+            // 
+            this.lblYearOfBirth.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblYearOfBirth.AutoSize = true;
+            this.lblYearOfBirth.Location = new System.Drawing.Point(4, 66);
+            this.lblYearOfBirth.Name = "lblYearOfBirth";
+            this.lblYearOfBirth.Size = new System.Drawing.Size(68, 13);
+            this.lblYearOfBirth.TabIndex = 10;
+            this.lblYearOfBirth.Text = "Year of Birth:";
             // 
             // tplButton01
             // 
@@ -560,7 +592,7 @@
             this.tplButton01.Controls.Add(this.btnCancel, 2, 0);
             this.tplButton01.Controls.Add(this.llblBackBottom, 3, 0);
             this.tplButton01.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tplButton01.Location = new System.Drawing.Point(3, 725);
+            this.tplButton01.Location = new System.Drawing.Point(3, 780);
             this.tplButton01.Name = "tplButton01";
             this.tplButton01.RowCount = 1;
             this.tplButton01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -627,7 +659,7 @@
             this.tlpDisplay04.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tlpDisplay04.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpDisplay04.Controls.Add(this.lblEdu, 1, 0);
-            this.tlpDisplay04.Location = new System.Drawing.Point(3, 549);
+            this.tlpDisplay04.Location = new System.Drawing.Point(3, 604);
             this.tlpDisplay04.Name = "tlpDisplay04";
             this.tlpDisplay04.RowCount = 1;
             this.tlpDisplay04.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -656,7 +688,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.lblPro, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 431);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 486);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -685,7 +717,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.lblPS, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 637);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 692);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -714,7 +746,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Controls.Add(this.lblHHP, 1, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 343);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 398);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -743,7 +775,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Controls.Add(this.lblFSN, 1, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 225);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 280);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -802,50 +834,129 @@
             this.tlpDisplay07.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tlpDisplay07.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tlpDisplay07.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDisplay07.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpDisplay07.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+            this.tlpDisplay07.Controls.Add(this.panel3, 1, 1);
+            this.tlpDisplay07.Controls.Add(this.panel2, 1, 2);
+            this.tlpDisplay07.Controls.Add(this.lblCaregiverGroup, 0, 2);
             this.tlpDisplay07.Controls.Add(this.lblESSilc, 0, 0);
-            this.tlpDisplay07.Controls.Add(this.lblESAflateen, 3, 1);
             this.tlpDisplay07.Controls.Add(this.pnlESSilc, 1, 0);
-            this.tlpDisplay07.Controls.Add(this.pnlESApprenticeship, 1, 1);
-            this.tlpDisplay07.Controls.Add(this.pnlESAgro, 4, 0);
-            this.tlpDisplay07.Controls.Add(this.pnlESAflateen, 4, 1);
-            this.tlpDisplay07.Controls.Add(this.lblESAgro, 3, 0);
-            this.tlpDisplay07.Controls.Add(this.lblESApprenticeship, 0, 1);
+            this.tlpDisplay07.Controls.Add(this.lblESAflateen, 3, 2);
+            this.tlpDisplay07.Controls.Add(this.pnlESAflateen, 4, 2);
+            this.tlpDisplay07.Controls.Add(this.lblESAgro, 3, 1);
+            this.tlpDisplay07.Controls.Add(this.pnlESAgro, 4, 1);
+            this.tlpDisplay07.Controls.Add(this.lblESApprenticeship, 3, 0);
+            this.tlpDisplay07.Controls.Add(this.pnlESApprenticeship, 4, 0);
+            this.tlpDisplay07.Controls.Add(this.lblLendingGroup, 0, 1);
             this.tlpDisplay07.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpDisplay07.Location = new System.Drawing.Point(3, 166);
             this.tlpDisplay07.Name = "tlpDisplay07";
-            this.tlpDisplay07.RowCount = 2;
+            this.tlpDisplay07.RowCount = 3;
             this.tlpDisplay07.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpDisplay07.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDisplay07.Size = new System.Drawing.Size(904, 60);
+            this.tlpDisplay07.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tlpDisplay07.Size = new System.Drawing.Size(904, 108);
             this.tlpDisplay07.TabIndex = 110;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panel3.Controls.Add(this.rbtnLendingGroupNA);
+            this.panel3.Controls.Add(this.rbtnLendingGroupYes);
+            this.panel3.Controls.Add(this.rbtnLendingGroupNo);
+            this.panel3.Location = new System.Drawing.Point(205, 49);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(190, 19);
+            this.panel3.TabIndex = 61;
+            // 
+            // rbtnLendingGroupNA
+            // 
+            this.rbtnLendingGroupNA.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.rbtnLendingGroupNA.AutoSize = true;
+            this.rbtnLendingGroupNA.Location = new System.Drawing.Point(117, 1);
+            this.rbtnLendingGroupNA.Name = "rbtnLendingGroupNA";
+            this.rbtnLendingGroupNA.Size = new System.Drawing.Size(40, 17);
+            this.rbtnLendingGroupNA.TabIndex = 3;
+            this.rbtnLendingGroupNA.Text = "NA";
+            this.rbtnLendingGroupNA.UseVisualStyleBackColor = true;
+            // 
+            // rbtnLendingGroupYes
+            // 
+            this.rbtnLendingGroupYes.AutoSize = true;
+            this.rbtnLendingGroupYes.Location = new System.Drawing.Point(3, 1);
+            this.rbtnLendingGroupYes.Name = "rbtnLendingGroupYes";
+            this.rbtnLendingGroupYes.Size = new System.Drawing.Size(43, 17);
+            this.rbtnLendingGroupYes.TabIndex = 2;
+            this.rbtnLendingGroupYes.Text = "Yes";
+            this.rbtnLendingGroupYes.UseVisualStyleBackColor = true;
+            // 
+            // rbtnLendingGroupNo
+            // 
+            this.rbtnLendingGroupNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.rbtnLendingGroupNo.AutoSize = true;
+            this.rbtnLendingGroupNo.Location = new System.Drawing.Point(60, 1);
+            this.rbtnLendingGroupNo.Name = "rbtnLendingGroupNo";
+            this.rbtnLendingGroupNo.Size = new System.Drawing.Size(39, 17);
+            this.rbtnLendingGroupNo.TabIndex = 0;
+            this.rbtnLendingGroupNo.Text = "No";
+            this.rbtnLendingGroupNo.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panel2.Controls.Add(this.rbtnCaregiverGroupYes);
+            this.panel2.Controls.Add(this.rbtnCaregiverGroupNo);
+            this.panel2.Location = new System.Drawing.Point(205, 83);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(148, 19);
+            this.panel2.TabIndex = 61;
+            // 
+            // rbtnCaregiverGroupYes
+            // 
+            this.rbtnCaregiverGroupYes.AutoSize = true;
+            this.rbtnCaregiverGroupYes.Location = new System.Drawing.Point(3, 1);
+            this.rbtnCaregiverGroupYes.Name = "rbtnCaregiverGroupYes";
+            this.rbtnCaregiverGroupYes.Size = new System.Drawing.Size(43, 17);
+            this.rbtnCaregiverGroupYes.TabIndex = 2;
+            this.rbtnCaregiverGroupYes.Text = "Yes";
+            this.rbtnCaregiverGroupYes.UseVisualStyleBackColor = true;
+            // 
+            // rbtnCaregiverGroupNo
+            // 
+            this.rbtnCaregiverGroupNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.rbtnCaregiverGroupNo.AutoSize = true;
+            this.rbtnCaregiverGroupNo.Location = new System.Drawing.Point(60, 1);
+            this.rbtnCaregiverGroupNo.Name = "rbtnCaregiverGroupNo";
+            this.rbtnCaregiverGroupNo.Size = new System.Drawing.Size(39, 17);
+            this.rbtnCaregiverGroupNo.TabIndex = 0;
+            this.rbtnCaregiverGroupNo.Text = "No";
+            this.rbtnCaregiverGroupNo.UseVisualStyleBackColor = true;
+            // 
+            // lblCaregiverGroup
+            // 
+            this.lblCaregiverGroup.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblCaregiverGroup.AutoSize = true;
+            this.lblCaregiverGroup.Location = new System.Drawing.Point(4, 86);
+            this.lblCaregiverGroup.Name = "lblCaregiverGroup";
+            this.lblCaregiverGroup.Size = new System.Drawing.Size(105, 13);
+            this.lblCaregiverGroup.TabIndex = 63;
+            this.lblCaregiverGroup.Text = "Caregiver Group - 1b";
             // 
             // lblESSilc
             // 
             this.lblESSilc.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblESSilc.AutoSize = true;
-            this.lblESSilc.Location = new System.Drawing.Point(4, 8);
+            this.lblESSilc.Location = new System.Drawing.Point(4, 13);
             this.lblESSilc.Name = "lblESSilc";
             this.lblESSilc.Size = new System.Drawing.Size(51, 13);
             this.lblESSilc.TabIndex = 8;
             this.lblESSilc.Text = "SILC - 1e";
-            // 
-            // lblESAflateen
-            // 
-            this.lblESAflateen.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblESAflateen.AutoSize = true;
-            this.lblESAflateen.Location = new System.Drawing.Point(450, 38);
-            this.lblESAflateen.Name = "lblESAflateen";
-            this.lblESAflateen.Size = new System.Drawing.Size(69, 13);
-            this.lblESAflateen.TabIndex = 9;
-            this.lblESAflateen.Text = "Aflateen – 1c";
             // 
             // pnlESSilc
             // 
             this.pnlESSilc.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pnlESSilc.Controls.Add(this.rbtnESSilcYes);
             this.pnlESSilc.Controls.Add(this.rbtnESSilcNo);
-            this.pnlESSilc.Location = new System.Drawing.Point(205, 5);
+            this.pnlESSilc.Location = new System.Drawing.Point(205, 10);
             this.pnlESSilc.Name = "pnlESSilc";
             this.pnlESSilc.Size = new System.Drawing.Size(148, 19);
             this.pnlESSilc.TabIndex = 59;
@@ -871,74 +982,22 @@
             this.rbtnESSilcNo.Text = "No";
             this.rbtnESSilcNo.UseVisualStyleBackColor = true;
             // 
-            // pnlESApprenticeship
+            // lblESAflateen
             // 
-            this.pnlESApprenticeship.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pnlESApprenticeship.Controls.Add(this.rbtnESApprenticeshipYes);
-            this.pnlESApprenticeship.Controls.Add(this.rbtnESApprenticeshipNo);
-            this.pnlESApprenticeship.Location = new System.Drawing.Point(205, 35);
-            this.pnlESApprenticeship.Name = "pnlESApprenticeship";
-            this.pnlESApprenticeship.Size = new System.Drawing.Size(148, 19);
-            this.pnlESApprenticeship.TabIndex = 60;
-            // 
-            // rbtnESApprenticeshipYes
-            // 
-            this.rbtnESApprenticeshipYes.AutoSize = true;
-            this.rbtnESApprenticeshipYes.Location = new System.Drawing.Point(3, 1);
-            this.rbtnESApprenticeshipYes.Name = "rbtnESApprenticeshipYes";
-            this.rbtnESApprenticeshipYes.Size = new System.Drawing.Size(43, 17);
-            this.rbtnESApprenticeshipYes.TabIndex = 2;
-            this.rbtnESApprenticeshipYes.Text = "Yes";
-            this.rbtnESApprenticeshipYes.UseVisualStyleBackColor = true;
-            // 
-            // rbtnESApprenticeshipNo
-            // 
-            this.rbtnESApprenticeshipNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.rbtnESApprenticeshipNo.AutoSize = true;
-            this.rbtnESApprenticeshipNo.Location = new System.Drawing.Point(60, 1);
-            this.rbtnESApprenticeshipNo.Name = "rbtnESApprenticeshipNo";
-            this.rbtnESApprenticeshipNo.Size = new System.Drawing.Size(39, 17);
-            this.rbtnESApprenticeshipNo.TabIndex = 0;
-            this.rbtnESApprenticeshipNo.Text = "No";
-            this.rbtnESApprenticeshipNo.UseVisualStyleBackColor = true;
-            // 
-            // pnlESAgro
-            // 
-            this.pnlESAgro.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pnlESAgro.Controls.Add(this.rbtnESAgroYes);
-            this.pnlESAgro.Controls.Add(this.rbtnESAgroNo);
-            this.pnlESAgro.Location = new System.Drawing.Point(651, 5);
-            this.pnlESAgro.Name = "pnlESAgro";
-            this.pnlESAgro.Size = new System.Drawing.Size(148, 19);
-            this.pnlESAgro.TabIndex = 61;
-            // 
-            // rbtnESAgroYes
-            // 
-            this.rbtnESAgroYes.AutoSize = true;
-            this.rbtnESAgroYes.Location = new System.Drawing.Point(3, 1);
-            this.rbtnESAgroYes.Name = "rbtnESAgroYes";
-            this.rbtnESAgroYes.Size = new System.Drawing.Size(43, 17);
-            this.rbtnESAgroYes.TabIndex = 2;
-            this.rbtnESAgroYes.Text = "Yes";
-            this.rbtnESAgroYes.UseVisualStyleBackColor = true;
-            // 
-            // rbtnESAgroNo
-            // 
-            this.rbtnESAgroNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.rbtnESAgroNo.AutoSize = true;
-            this.rbtnESAgroNo.Location = new System.Drawing.Point(60, 1);
-            this.rbtnESAgroNo.Name = "rbtnESAgroNo";
-            this.rbtnESAgroNo.Size = new System.Drawing.Size(39, 17);
-            this.rbtnESAgroNo.TabIndex = 0;
-            this.rbtnESAgroNo.Text = "No";
-            this.rbtnESAgroNo.UseVisualStyleBackColor = true;
+            this.lblESAflateen.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblESAflateen.AutoSize = true;
+            this.lblESAflateen.Location = new System.Drawing.Point(446, 86);
+            this.lblESAflateen.Name = "lblESAflateen";
+            this.lblESAflateen.Size = new System.Drawing.Size(69, 13);
+            this.lblESAflateen.TabIndex = 9;
+            this.lblESAflateen.Text = "Aflateen – 1c";
             // 
             // pnlESAflateen
             // 
             this.pnlESAflateen.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pnlESAflateen.Controls.Add(this.rbtnESAflateenYes);
             this.pnlESAflateen.Controls.Add(this.rbtnESAflateenNo);
-            this.pnlESAflateen.Location = new System.Drawing.Point(651, 35);
+            this.pnlESAflateen.Location = new System.Drawing.Point(647, 83);
             this.pnlESAflateen.Name = "pnlESAflateen";
             this.pnlESAflateen.Size = new System.Drawing.Size(148, 19);
             this.pnlESAflateen.TabIndex = 62;
@@ -968,53 +1027,125 @@
             // 
             this.lblESAgro.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblESAgro.AutoSize = true;
-            this.lblESAgro.Location = new System.Drawing.Point(450, 8);
+            this.lblESAgro.Location = new System.Drawing.Point(446, 52);
             this.lblESAgro.Name = "lblESAgro";
             this.lblESAgro.Size = new System.Drawing.Size(101, 13);
             this.lblESAgro.TabIndex = 11;
             this.lblESAgro.Text = "Agro-enterprise – 1c";
             // 
+            // pnlESAgro
+            // 
+            this.pnlESAgro.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pnlESAgro.Controls.Add(this.rbtnESAgroYes);
+            this.pnlESAgro.Controls.Add(this.rbtnESAgroNo);
+            this.pnlESAgro.Location = new System.Drawing.Point(647, 49);
+            this.pnlESAgro.Name = "pnlESAgro";
+            this.pnlESAgro.Size = new System.Drawing.Size(148, 19);
+            this.pnlESAgro.TabIndex = 61;
+            // 
+            // rbtnESAgroYes
+            // 
+            this.rbtnESAgroYes.AutoSize = true;
+            this.rbtnESAgroYes.Location = new System.Drawing.Point(3, 1);
+            this.rbtnESAgroYes.Name = "rbtnESAgroYes";
+            this.rbtnESAgroYes.Size = new System.Drawing.Size(43, 17);
+            this.rbtnESAgroYes.TabIndex = 2;
+            this.rbtnESAgroYes.Text = "Yes";
+            this.rbtnESAgroYes.UseVisualStyleBackColor = true;
+            // 
+            // rbtnESAgroNo
+            // 
+            this.rbtnESAgroNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.rbtnESAgroNo.AutoSize = true;
+            this.rbtnESAgroNo.Location = new System.Drawing.Point(60, 1);
+            this.rbtnESAgroNo.Name = "rbtnESAgroNo";
+            this.rbtnESAgroNo.Size = new System.Drawing.Size(39, 17);
+            this.rbtnESAgroNo.TabIndex = 0;
+            this.rbtnESAgroNo.Text = "No";
+            this.rbtnESAgroNo.UseVisualStyleBackColor = true;
+            // 
             // lblESApprenticeship
             // 
             this.lblESApprenticeship.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblESApprenticeship.AutoSize = true;
-            this.lblESApprenticeship.Location = new System.Drawing.Point(4, 38);
+            this.lblESApprenticeship.Location = new System.Drawing.Point(446, 13);
             this.lblESApprenticeship.Name = "lblESApprenticeship";
             this.lblESApprenticeship.Size = new System.Drawing.Size(98, 13);
             this.lblESApprenticeship.TabIndex = 10;
             this.lblESApprenticeship.Text = "Apprenticeship - 1c";
             // 
-            // tableLayoutPanel6
+            // pnlESApprenticeship
             // 
-            this.tableLayoutPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.pnlESApprenticeship.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pnlESApprenticeship.Controls.Add(this.rbtnESApprenticeshipYes);
+            this.pnlESApprenticeship.Controls.Add(this.rbtnESApprenticeshipNo);
+            this.pnlESApprenticeship.Location = new System.Drawing.Point(647, 10);
+            this.pnlESApprenticeship.Name = "pnlESApprenticeship";
+            this.pnlESApprenticeship.Size = new System.Drawing.Size(148, 19);
+            this.pnlESApprenticeship.TabIndex = 60;
+            // 
+            // rbtnESApprenticeshipYes
+            // 
+            this.rbtnESApprenticeshipYes.AutoSize = true;
+            this.rbtnESApprenticeshipYes.Location = new System.Drawing.Point(3, 1);
+            this.rbtnESApprenticeshipYes.Name = "rbtnESApprenticeshipYes";
+            this.rbtnESApprenticeshipYes.Size = new System.Drawing.Size(43, 17);
+            this.rbtnESApprenticeshipYes.TabIndex = 2;
+            this.rbtnESApprenticeshipYes.Text = "Yes";
+            this.rbtnESApprenticeshipYes.UseVisualStyleBackColor = true;
+            // 
+            // rbtnESApprenticeshipNo
+            // 
+            this.rbtnESApprenticeshipNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.rbtnESApprenticeshipNo.AutoSize = true;
+            this.rbtnESApprenticeshipNo.Location = new System.Drawing.Point(60, 1);
+            this.rbtnESApprenticeshipNo.Name = "rbtnESApprenticeshipNo";
+            this.rbtnESApprenticeshipNo.Size = new System.Drawing.Size(39, 17);
+            this.rbtnESApprenticeshipNo.TabIndex = 0;
+            this.rbtnESApprenticeshipNo.Text = "No";
+            this.rbtnESApprenticeshipNo.UseVisualStyleBackColor = true;
+            // 
+            // lblLendingGroup
+            // 
+            this.lblLendingGroup.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblLendingGroup.AutoSize = true;
+            this.lblLendingGroup.Location = new System.Drawing.Point(4, 52);
+            this.lblLendingGroup.Name = "lblLendingGroup";
+            this.lblLendingGroup.Size = new System.Drawing.Size(179, 13);
+            this.lblLendingGroup.TabIndex = 64;
+            this.lblLendingGroup.Text = "Any other savings and lending group";
+            // 
+            // tlpDisplay06
+            // 
+            this.tlpDisplay06.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel6.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel6.ColumnCount = 6;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel6.Controls.Add(this.lblFSNEducation, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.lblFSNNutrition, 0, 1);
-            this.tableLayoutPanel6.Controls.Add(this.lblFSNWash, 3, 1);
-            this.tableLayoutPanel6.Controls.Add(this.pnlFSNEducation, 1, 0);
-            this.tableLayoutPanel6.Controls.Add(this.lblFSNSupport, 3, 0);
-            this.tableLayoutPanel6.Controls.Add(this.lblFSNReferred, 0, 2);
-            this.tableLayoutPanel6.Controls.Add(this.pnlFSNSupport, 4, 0);
-            this.tableLayoutPanel6.Controls.Add(this.pnlFSNNutrition, 1, 1);
-            this.tableLayoutPanel6.Controls.Add(this.pnlFSNReferred, 1, 2);
-            this.tableLayoutPanel6.Controls.Add(this.pnlFSNWash, 4, 1);
-            this.tableLayoutPanel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 254);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 3;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(904, 90);
-            this.tableLayoutPanel6.TabIndex = 111;
+            this.tlpDisplay06.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tlpDisplay06.ColumnCount = 6;
+            this.tlpDisplay06.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tlpDisplay06.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpDisplay06.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpDisplay06.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tlpDisplay06.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpDisplay06.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+            this.tlpDisplay06.Controls.Add(this.lblFSNEducation, 0, 0);
+            this.tlpDisplay06.Controls.Add(this.lblFSNNutrition, 0, 1);
+            this.tlpDisplay06.Controls.Add(this.lblFSNWash, 3, 1);
+            this.tlpDisplay06.Controls.Add(this.pnlFSNEducation, 1, 0);
+            this.tlpDisplay06.Controls.Add(this.lblFSNSupport, 3, 0);
+            this.tlpDisplay06.Controls.Add(this.lblFSNReferred, 0, 2);
+            this.tlpDisplay06.Controls.Add(this.pnlFSNSupport, 4, 0);
+            this.tlpDisplay06.Controls.Add(this.pnlFSNNutrition, 1, 1);
+            this.tlpDisplay06.Controls.Add(this.pnlFSNReferred, 1, 2);
+            this.tlpDisplay06.Controls.Add(this.pnlFSNWash, 4, 1);
+            this.tlpDisplay06.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tlpDisplay06.Location = new System.Drawing.Point(3, 310);
+            this.tlpDisplay06.Name = "tlpDisplay06";
+            this.tlpDisplay06.RowCount = 3;
+            this.tlpDisplay06.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpDisplay06.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpDisplay06.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpDisplay06.Size = new System.Drawing.Size(904, 90);
+            this.tlpDisplay06.TabIndex = 111;
             // 
             // lblFSNEducation
             // 
@@ -1040,11 +1171,11 @@
             // 
             this.lblFSNWash.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblFSNWash.AutoSize = true;
-            this.lblFSNWash.Location = new System.Drawing.Point(450, 37);
+            this.lblFSNWash.Location = new System.Drawing.Point(446, 37);
             this.lblFSNWash.Name = "lblFSNWash";
-            this.lblFSNWash.Size = new System.Drawing.Size(82, 13);
+            this.lblFSNWash.Size = new System.Drawing.Size(117, 13);
             this.lblFSNWash.TabIndex = 12;
-            this.lblFSNWash.Text = "WASH services";
+            this.lblFSNWash.Text = "Sanitation and Hygiene";
             // 
             // pnlFSNEducation
             // 
@@ -1093,7 +1224,7 @@
             // 
             this.lblFSNSupport.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblFSNSupport.AutoSize = true;
-            this.lblFSNSupport.Location = new System.Drawing.Point(450, 8);
+            this.lblFSNSupport.Location = new System.Drawing.Point(446, 8);
             this.lblFSNSupport.Name = "lblFSNSupport";
             this.lblFSNSupport.Size = new System.Drawing.Size(101, 13);
             this.lblFSNSupport.TabIndex = 10;
@@ -1115,7 +1246,7 @@
             this.pnlFSNSupport.Controls.Add(this.rbtnFSNSupportNA);
             this.pnlFSNSupport.Controls.Add(this.rbtnFSNSupportYes);
             this.pnlFSNSupport.Controls.Add(this.rbtnFSNSupportNo);
-            this.pnlFSNSupport.Location = new System.Drawing.Point(651, 5);
+            this.pnlFSNSupport.Location = new System.Drawing.Point(647, 5);
             this.pnlFSNSupport.Name = "pnlFSNSupport";
             this.pnlFSNSupport.Size = new System.Drawing.Size(190, 19);
             this.pnlFSNSupport.TabIndex = 61;
@@ -1219,7 +1350,7 @@
             this.pnlFSNWash.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pnlFSNWash.Controls.Add(this.rbtnFSNWashYes);
             this.pnlFSNWash.Controls.Add(this.rbtnFSNWashNo);
-            this.pnlFSNWash.Location = new System.Drawing.Point(651, 34);
+            this.pnlFSNWash.Location = new System.Drawing.Point(647, 34);
             this.pnlFSNWash.Name = "pnlFSNWash";
             this.pnlFSNWash.Size = new System.Drawing.Size(148, 19);
             this.pnlFSNWash.TabIndex = 64;
@@ -1245,34 +1376,34 @@
             this.rbtnFSNWashNo.Text = "No";
             this.rbtnFSNWashNo.UseVisualStyleBackColor = true;
             // 
-            // tableLayoutPanel7
+            // tlpDisplay05
             // 
-            this.tableLayoutPanel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tlpDisplay05.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel7.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel7.ColumnCount = 6;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel7.Controls.Add(this.lblHHPArt, 0, 1);
-            this.tableLayoutPanel7.Controls.Add(this.lblHHPHiv, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.lblHHPAdhering, 3, 0);
-            this.tableLayoutPanel7.Controls.Add(this.lblHHPReferred, 3, 1);
-            this.tableLayoutPanel7.Controls.Add(this.pnlHHPArt, 1, 1);
-            this.tableLayoutPanel7.Controls.Add(this.pnlHHPAdhering, 4, 0);
-            this.tableLayoutPanel7.Controls.Add(this.pnlHHPReferred, 4, 1);
-            this.tableLayoutPanel7.Controls.Add(this.pnlHHPHiv, 1, 0);
-            this.tableLayoutPanel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 372);
-            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 2;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(904, 60);
-            this.tableLayoutPanel7.TabIndex = 112;
+            this.tlpDisplay05.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tlpDisplay05.ColumnCount = 6;
+            this.tlpDisplay05.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tlpDisplay05.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpDisplay05.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpDisplay05.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tlpDisplay05.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpDisplay05.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+            this.tlpDisplay05.Controls.Add(this.lblHHPArt, 0, 1);
+            this.tlpDisplay05.Controls.Add(this.lblHHPHiv, 0, 0);
+            this.tlpDisplay05.Controls.Add(this.lblHHPAdhering, 3, 0);
+            this.tlpDisplay05.Controls.Add(this.lblHHPReferred, 3, 1);
+            this.tlpDisplay05.Controls.Add(this.pnlHHPArt, 1, 1);
+            this.tlpDisplay05.Controls.Add(this.pnlHHPAdhering, 4, 0);
+            this.tlpDisplay05.Controls.Add(this.pnlHHPReferred, 4, 1);
+            this.tlpDisplay05.Controls.Add(this.pnlHHPHiv, 1, 0);
+            this.tlpDisplay05.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tlpDisplay05.Location = new System.Drawing.Point(3, 427);
+            this.tlpDisplay05.Name = "tlpDisplay05";
+            this.tlpDisplay05.RowCount = 2;
+            this.tlpDisplay05.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpDisplay05.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpDisplay05.Size = new System.Drawing.Size(904, 60);
+            this.tlpDisplay05.TabIndex = 112;
             // 
             // lblHHPArt
             // 
@@ -1298,7 +1429,7 @@
             // 
             this.lblHHPAdhering.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblHHPAdhering.AutoSize = true;
-            this.lblHHPAdhering.Location = new System.Drawing.Point(450, 8);
+            this.lblHHPAdhering.Location = new System.Drawing.Point(446, 8);
             this.lblHHPAdhering.Name = "lblHHPAdhering";
             this.lblHHPAdhering.Size = new System.Drawing.Size(107, 13);
             this.lblHHPAdhering.TabIndex = 11;
@@ -1308,7 +1439,7 @@
             // 
             this.lblHHPReferred.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblHHPReferred.AutoSize = true;
-            this.lblHHPReferred.Location = new System.Drawing.Point(450, 38);
+            this.lblHHPReferred.Location = new System.Drawing.Point(446, 38);
             this.lblHHPReferred.Name = "lblHHPReferred";
             this.lblHHPReferred.Size = new System.Drawing.Size(141, 13);
             this.lblHHPReferred.TabIndex = 9;
@@ -1357,6 +1488,7 @@
             this.rbtnHHPArtNo.TabIndex = 0;
             this.rbtnHHPArtNo.Text = "No";
             this.rbtnHHPArtNo.UseVisualStyleBackColor = true;
+            this.rbtnHHPArtNo.CheckedChanged += new System.EventHandler(this.rbtnHHPArtNo_CheckedChanged);
             // 
             // pnlHHPAdhering
             // 
@@ -1364,7 +1496,7 @@
             this.pnlHHPAdhering.Controls.Add(this.rbtnHHPAdheringNA);
             this.pnlHHPAdhering.Controls.Add(this.rbtnHHPAdheringYes);
             this.pnlHHPAdhering.Controls.Add(this.rbtnHHPAdheringNo);
-            this.pnlHHPAdhering.Location = new System.Drawing.Point(651, 5);
+            this.pnlHHPAdhering.Location = new System.Drawing.Point(647, 5);
             this.pnlHHPAdhering.Name = "pnlHHPAdhering";
             this.pnlHHPAdhering.Size = new System.Drawing.Size(190, 19);
             this.pnlHHPAdhering.TabIndex = 62;
@@ -1407,7 +1539,7 @@
             this.pnlHHPReferred.Controls.Add(this.rbtnHHPReferredNA);
             this.pnlHHPReferred.Controls.Add(this.rbtnHHPReferredYes);
             this.pnlHHPReferred.Controls.Add(this.rbtnHHPReferredNo);
-            this.pnlHHPReferred.Location = new System.Drawing.Point(651, 35);
+            this.pnlHHPReferred.Location = new System.Drawing.Point(647, 35);
             this.pnlHHPReferred.Name = "pnlHHPReferred";
             this.pnlHHPReferred.Size = new System.Drawing.Size(190, 19);
             this.pnlHHPReferred.TabIndex = 63;
@@ -1488,37 +1620,37 @@
             this.rbtnHHPHivPos.UseVisualStyleBackColor = true;
             this.rbtnHHPHivPos.CheckedChanged += new System.EventHandler(this.rbtnHHPHivPos_CheckedChanged);
             // 
-            // tableLayoutPanel8
+            // tlpDisplay03
             // 
-            this.tableLayoutPanel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tlpDisplay03.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel8.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel8.ColumnCount = 6;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel8.Controls.Add(this.lblProChildAbuse, 0, 2);
-            this.tableLayoutPanel8.Controls.Add(this.lblProReintegrated, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.lblProChildLabour, 0, 1);
-            this.tableLayoutPanel8.Controls.Add(this.lblProBirthRegistration, 3, 1);
-            this.tableLayoutPanel8.Controls.Add(this.lblProBirthCertificate, 3, 0);
-            this.tableLayoutPanel8.Controls.Add(this.pnlProReintegrated, 1, 0);
-            this.tableLayoutPanel8.Controls.Add(this.pnlProChildLabour, 1, 1);
-            this.tableLayoutPanel8.Controls.Add(this.pnlProChildAbuse, 1, 2);
-            this.tableLayoutPanel8.Controls.Add(this.pnlProBirthCertificate, 4, 0);
-            this.tableLayoutPanel8.Controls.Add(this.pnlProBirthRegistration, 4, 1);
-            this.tableLayoutPanel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 460);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 3;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(904, 90);
-            this.tableLayoutPanel8.TabIndex = 113;
+            this.tlpDisplay03.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tlpDisplay03.ColumnCount = 6;
+            this.tlpDisplay03.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tlpDisplay03.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpDisplay03.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpDisplay03.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tlpDisplay03.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpDisplay03.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+            this.tlpDisplay03.Controls.Add(this.lblProChildAbuse, 0, 2);
+            this.tlpDisplay03.Controls.Add(this.lblProReintegrated, 0, 0);
+            this.tlpDisplay03.Controls.Add(this.lblProChildLabour, 0, 1);
+            this.tlpDisplay03.Controls.Add(this.lblProBirthRegistration, 3, 1);
+            this.tlpDisplay03.Controls.Add(this.lblProBirthCertificate, 3, 0);
+            this.tlpDisplay03.Controls.Add(this.pnlProReintegrated, 1, 0);
+            this.tlpDisplay03.Controls.Add(this.pnlProChildLabour, 1, 1);
+            this.tlpDisplay03.Controls.Add(this.pnlProChildAbuse, 1, 2);
+            this.tlpDisplay03.Controls.Add(this.pnlProBirthCertificate, 4, 0);
+            this.tlpDisplay03.Controls.Add(this.pnlProBirthRegistration, 4, 1);
+            this.tlpDisplay03.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tlpDisplay03.Location = new System.Drawing.Point(3, 515);
+            this.tlpDisplay03.Name = "tlpDisplay03";
+            this.tlpDisplay03.RowCount = 3;
+            this.tlpDisplay03.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpDisplay03.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpDisplay03.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpDisplay03.Size = new System.Drawing.Size(904, 90);
+            this.tlpDisplay03.TabIndex = 113;
             // 
             // lblProChildAbuse
             // 
@@ -1554,7 +1686,7 @@
             // 
             this.lblProBirthRegistration.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblProBirthRegistration.AutoSize = true;
-            this.lblProBirthRegistration.Location = new System.Drawing.Point(450, 31);
+            this.lblProBirthRegistration.Location = new System.Drawing.Point(446, 31);
             this.lblProBirthRegistration.Name = "lblProBirthRegistration";
             this.lblProBirthRegistration.Size = new System.Drawing.Size(192, 26);
             this.lblProBirthRegistration.TabIndex = 11;
@@ -1564,7 +1696,7 @@
             // 
             this.lblProBirthCertificate.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblProBirthCertificate.AutoSize = true;
-            this.lblProBirthCertificate.Location = new System.Drawing.Point(450, 8);
+            this.lblProBirthCertificate.Location = new System.Drawing.Point(446, 8);
             this.lblProBirthCertificate.Name = "lblProBirthCertificate";
             this.lblProBirthCertificate.Size = new System.Drawing.Size(121, 13);
             this.lblProBirthCertificate.TabIndex = 10;
@@ -1705,7 +1837,7 @@
             this.pnlProBirthCertificate.Controls.Add(this.rbtnProBirthCertificateNA);
             this.pnlProBirthCertificate.Controls.Add(this.rbtnProBirthCertificateYes);
             this.pnlProBirthCertificate.Controls.Add(this.rbtnProBirthCertificateNo);
-            this.pnlProBirthCertificate.Location = new System.Drawing.Point(651, 5);
+            this.pnlProBirthCertificate.Location = new System.Drawing.Point(647, 5);
             this.pnlProBirthCertificate.Name = "pnlProBirthCertificate";
             this.pnlProBirthCertificate.Size = new System.Drawing.Size(190, 19);
             this.pnlProBirthCertificate.TabIndex = 64;
@@ -1748,7 +1880,7 @@
             this.pnlProBirthRegistration.Controls.Add(this.rbtnProBirthRegistrationNA);
             this.pnlProBirthRegistration.Controls.Add(this.rbtnProBirthRegistrationYes);
             this.pnlProBirthRegistration.Controls.Add(this.rbtnProBirthRegistrationNo);
-            this.pnlProBirthRegistration.Location = new System.Drawing.Point(651, 34);
+            this.pnlProBirthRegistration.Location = new System.Drawing.Point(647, 34);
             this.pnlProBirthRegistration.Name = "pnlProBirthRegistration";
             this.pnlProBirthRegistration.Size = new System.Drawing.Size(190, 19);
             this.pnlProBirthRegistration.TabIndex = 65;
@@ -1785,58 +1917,93 @@
             this.rbtnProBirthRegistrationNo.Text = "No";
             this.rbtnProBirthRegistrationNo.UseVisualStyleBackColor = true;
             // 
-            // tableLayoutPanel9
+            // tlpDisplay02
             // 
-            this.tableLayoutPanel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tlpDisplay02.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel9.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel9.ColumnCount = 6;
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel9.Controls.Add(this.lblEduEnrolled, 0, 0);
-            this.tableLayoutPanel9.Controls.Add(this.lblEduSensitised, 0, 1);
-            this.tableLayoutPanel9.Controls.Add(this.lblEduSupport, 3, 0);
-            this.tableLayoutPanel9.Controls.Add(this.pnlEduEnrolled, 1, 0);
-            this.tableLayoutPanel9.Controls.Add(this.pnlEduSupport, 4, 0);
-            this.tableLayoutPanel9.Controls.Add(this.pnlEduSensitised, 1, 1);
-            this.tableLayoutPanel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 578);
-            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
-            this.tableLayoutPanel9.RowCount = 2;
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(904, 60);
-            this.tableLayoutPanel9.TabIndex = 114;
+            this.tlpDisplay02.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tlpDisplay02.ColumnCount = 6;
+            this.tlpDisplay02.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tlpDisplay02.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpDisplay02.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpDisplay02.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tlpDisplay02.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpDisplay02.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+            this.tlpDisplay02.Controls.Add(this.pnlAttendingSchool, 1, 1);
+            this.tlpDisplay02.Controls.Add(this.lblEduEnrolled, 0, 0);
+            this.tlpDisplay02.Controls.Add(this.lblEduSupport, 3, 0);
+            this.tlpDisplay02.Controls.Add(this.pnlEduEnrolled, 1, 0);
+            this.tlpDisplay02.Controls.Add(this.pnlEduSupport, 4, 0);
+            this.tlpDisplay02.Controls.Add(this.lblEduSensitised, 3, 1);
+            this.tlpDisplay02.Controls.Add(this.pnlEduSensitised, 4, 1);
+            this.tlpDisplay02.Controls.Add(this.lbl_ovc_attending_school, 0, 1);
+            this.tlpDisplay02.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tlpDisplay02.Location = new System.Drawing.Point(3, 633);
+            this.tlpDisplay02.Name = "tlpDisplay02";
+            this.tlpDisplay02.RowCount = 2;
+            this.tlpDisplay02.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpDisplay02.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpDisplay02.Size = new System.Drawing.Size(904, 60);
+            this.tlpDisplay02.TabIndex = 114;
+            // 
+            // pnlAttendingSchool
+            // 
+            this.pnlAttendingSchool.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pnlAttendingSchool.Controls.Add(this.rbtnEduRegularlyAttendingSchoolNA);
+            this.pnlAttendingSchool.Controls.Add(this.rbtnEduRegularlyAttendingSchoolYes);
+            this.pnlAttendingSchool.Controls.Add(this.rbtnEduRegularlyAttendingSchoolNo);
+            this.pnlAttendingSchool.Location = new System.Drawing.Point(205, 35);
+            this.pnlAttendingSchool.Name = "pnlAttendingSchool";
+            this.pnlAttendingSchool.Size = new System.Drawing.Size(190, 19);
+            this.pnlAttendingSchool.TabIndex = 62;
+            // 
+            // rbtnEduRegularlyAttendingSchoolNA
+            // 
+            this.rbtnEduRegularlyAttendingSchoolNA.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.rbtnEduRegularlyAttendingSchoolNA.AutoSize = true;
+            this.rbtnEduRegularlyAttendingSchoolNA.Location = new System.Drawing.Point(117, 1);
+            this.rbtnEduRegularlyAttendingSchoolNA.Name = "rbtnEduRegularlyAttendingSchoolNA";
+            this.rbtnEduRegularlyAttendingSchoolNA.Size = new System.Drawing.Size(40, 17);
+            this.rbtnEduRegularlyAttendingSchoolNA.TabIndex = 3;
+            this.rbtnEduRegularlyAttendingSchoolNA.Text = "NA";
+            this.rbtnEduRegularlyAttendingSchoolNA.UseVisualStyleBackColor = true;
+            // 
+            // rbtnEduRegularlyAttendingSchoolYes
+            // 
+            this.rbtnEduRegularlyAttendingSchoolYes.AutoSize = true;
+            this.rbtnEduRegularlyAttendingSchoolYes.Location = new System.Drawing.Point(3, 1);
+            this.rbtnEduRegularlyAttendingSchoolYes.Name = "rbtnEduRegularlyAttendingSchoolYes";
+            this.rbtnEduRegularlyAttendingSchoolYes.Size = new System.Drawing.Size(43, 17);
+            this.rbtnEduRegularlyAttendingSchoolYes.TabIndex = 2;
+            this.rbtnEduRegularlyAttendingSchoolYes.Text = "Yes";
+            this.rbtnEduRegularlyAttendingSchoolYes.UseVisualStyleBackColor = true;
+            // 
+            // rbtnEduRegularlyAttendingSchoolNo
+            // 
+            this.rbtnEduRegularlyAttendingSchoolNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.rbtnEduRegularlyAttendingSchoolNo.AutoSize = true;
+            this.rbtnEduRegularlyAttendingSchoolNo.Location = new System.Drawing.Point(60, 1);
+            this.rbtnEduRegularlyAttendingSchoolNo.Name = "rbtnEduRegularlyAttendingSchoolNo";
+            this.rbtnEduRegularlyAttendingSchoolNo.Size = new System.Drawing.Size(39, 17);
+            this.rbtnEduRegularlyAttendingSchoolNo.TabIndex = 0;
+            this.rbtnEduRegularlyAttendingSchoolNo.Text = "No";
+            this.rbtnEduRegularlyAttendingSchoolNo.UseVisualStyleBackColor = true;
             // 
             // lblEduEnrolled
             // 
             this.lblEduEnrolled.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblEduEnrolled.AutoSize = true;
-            this.lblEduEnrolled.Location = new System.Drawing.Point(4, 2);
+            this.lblEduEnrolled.Location = new System.Drawing.Point(4, 8);
             this.lblEduEnrolled.Name = "lblEduEnrolled";
-            this.lblEduEnrolled.Size = new System.Drawing.Size(193, 26);
+            this.lblEduEnrolled.Size = new System.Drawing.Size(120, 13);
             this.lblEduEnrolled.TabIndex = 8;
-            this.lblEduEnrolled.Text = "Is OVC enrolled and regularly attending school?";
-            // 
-            // lblEduSensitised
-            // 
-            this.lblEduSensitised.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblEduSensitised.AutoSize = true;
-            this.lblEduSensitised.Location = new System.Drawing.Point(4, 31);
-            this.lblEduSensitised.Name = "lblEduSensitised";
-            this.lblEduSensitised.Size = new System.Drawing.Size(144, 26);
-            this.lblEduSensitised.TabIndex = 9;
-            this.lblEduSensitised.Text = "Caregiver sensitised on child education?";
+            this.lblEduEnrolled.Text = "Is OVC enrolled school?";
             // 
             // lblEduSupport
             // 
             this.lblEduSupport.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblEduSupport.AutoSize = true;
-            this.lblEduSupport.Location = new System.Drawing.Point(450, 2);
+            this.lblEduSupport.Location = new System.Drawing.Point(446, 2);
             this.lblEduSupport.Name = "lblEduSupport";
             this.lblEduSupport.Size = new System.Drawing.Size(180, 26);
             this.lblEduSupport.TabIndex = 10;
@@ -1891,7 +2058,7 @@
             this.pnlEduSupport.Controls.Add(this.rbtnEduSupportNA);
             this.pnlEduSupport.Controls.Add(this.rbtnEduSupportYes);
             this.pnlEduSupport.Controls.Add(this.rbtnEduSupportNo);
-            this.pnlEduSupport.Location = new System.Drawing.Point(651, 5);
+            this.pnlEduSupport.Location = new System.Drawing.Point(647, 5);
             this.pnlEduSupport.Name = "pnlEduSupport";
             this.pnlEduSupport.Size = new System.Drawing.Size(190, 19);
             this.pnlEduSupport.TabIndex = 62;
@@ -1928,14 +2095,24 @@
             this.rbtnEduSupportNo.Text = "No";
             this.rbtnEduSupportNo.UseVisualStyleBackColor = true;
             // 
+            // lblEduSensitised
+            // 
+            this.lblEduSensitised.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblEduSensitised.AutoSize = true;
+            this.lblEduSensitised.Location = new System.Drawing.Point(446, 31);
+            this.lblEduSensitised.Name = "lblEduSensitised";
+            this.lblEduSensitised.Size = new System.Drawing.Size(144, 26);
+            this.lblEduSensitised.TabIndex = 9;
+            this.lblEduSensitised.Text = "Caregiver sensitised on child education?";
+            // 
             // pnlEduSensitised
             // 
             this.pnlEduSensitised.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pnlEduSensitised.Controls.Add(this.rbtnEduSensitisedYes);
             this.pnlEduSensitised.Controls.Add(this.rbtnEduSensitisedNo);
-            this.pnlEduSensitised.Location = new System.Drawing.Point(205, 35);
+            this.pnlEduSensitised.Location = new System.Drawing.Point(647, 35);
             this.pnlEduSensitised.Name = "pnlEduSensitised";
-            this.pnlEduSensitised.Size = new System.Drawing.Size(148, 19);
+            this.pnlEduSensitised.Size = new System.Drawing.Size(190, 19);
             this.pnlEduSensitised.TabIndex = 63;
             // 
             // rbtnEduSensitisedYes
@@ -1959,32 +2136,42 @@
             this.rbtnEduSensitisedNo.Text = "No";
             this.rbtnEduSensitisedNo.UseVisualStyleBackColor = true;
             // 
-            // tableLayoutPanel10
+            // lbl_ovc_attending_school
             // 
-            this.tableLayoutPanel10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lbl_ovc_attending_school.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbl_ovc_attending_school.AutoSize = true;
+            this.lbl_ovc_attending_school.Location = new System.Drawing.Point(4, 38);
+            this.lbl_ovc_attending_school.Name = "lbl_ovc_attending_school";
+            this.lbl_ovc_attending_school.Size = new System.Drawing.Size(163, 13);
+            this.lbl_ovc_attending_school.TabIndex = 64;
+            this.lbl_ovc_attending_school.Text = "Is OVC regularly attending school";
+            // 
+            // tlpDisplay08
+            // 
+            this.tlpDisplay08.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel10.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel10.ColumnCount = 6;
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel10.Controls.Add(this.lblPSSupport, 0, 0);
-            this.tableLayoutPanel10.Controls.Add(this.lblPSParenting, 0, 1);
-            this.tableLayoutPanel10.Controls.Add(this.lblPSViolence, 3, 0);
-            this.tableLayoutPanel10.Controls.Add(this.pnlPSSupport, 1, 0);
-            this.tableLayoutPanel10.Controls.Add(this.pnlPSParenting, 1, 1);
-            this.tableLayoutPanel10.Controls.Add(this.pnlPSViolenceNA, 4, 0);
-            this.tableLayoutPanel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 666);
-            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
-            this.tableLayoutPanel10.RowCount = 2;
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(904, 60);
-            this.tableLayoutPanel10.TabIndex = 115;
+            this.tlpDisplay08.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tlpDisplay08.ColumnCount = 6;
+            this.tlpDisplay08.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tlpDisplay08.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpDisplay08.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpDisplay08.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tlpDisplay08.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpDisplay08.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+            this.tlpDisplay08.Controls.Add(this.lblPSSupport, 0, 0);
+            this.tlpDisplay08.Controls.Add(this.lblPSParenting, 0, 1);
+            this.tlpDisplay08.Controls.Add(this.lblPSViolence, 3, 0);
+            this.tlpDisplay08.Controls.Add(this.pnlPSSupport, 1, 0);
+            this.tlpDisplay08.Controls.Add(this.pnlPSParenting, 1, 1);
+            this.tlpDisplay08.Controls.Add(this.pnlPSViolenceNA, 4, 0);
+            this.tlpDisplay08.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tlpDisplay08.Location = new System.Drawing.Point(3, 722);
+            this.tlpDisplay08.Name = "tlpDisplay08";
+            this.tlpDisplay08.RowCount = 2;
+            this.tlpDisplay08.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpDisplay08.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpDisplay08.Size = new System.Drawing.Size(904, 60);
+            this.tlpDisplay08.TabIndex = 115;
             // 
             // lblPSSupport
             // 
@@ -2010,7 +2197,7 @@
             // 
             this.lblPSViolence.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblPSViolence.AutoSize = true;
-            this.lblPSViolence.Location = new System.Drawing.Point(450, 2);
+            this.lblPSViolence.Location = new System.Drawing.Point(446, 2);
             this.lblPSViolence.Name = "lblPSViolence";
             this.lblPSViolence.Size = new System.Drawing.Size(174, 26);
             this.lblPSViolence.TabIndex = 10;
@@ -2108,7 +2295,7 @@
             this.pnlPSViolenceNA.Controls.Add(this.rbtnPSViolenceNA);
             this.pnlPSViolenceNA.Controls.Add(this.rbtnPSViolenceYes);
             this.pnlPSViolenceNA.Controls.Add(this.rbtnPSViolenceNo);
-            this.pnlPSViolenceNA.Location = new System.Drawing.Point(651, 5);
+            this.pnlPSViolenceNA.Location = new System.Drawing.Point(647, 5);
             this.pnlPSViolenceNA.Name = "pnlPSViolenceNA";
             this.pnlPSViolenceNA.Size = new System.Drawing.Size(190, 19);
             this.pnlPSViolenceNA.TabIndex = 63;
@@ -2150,11 +2337,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.tableLayoutPanel10);
-            this.Controls.Add(this.tableLayoutPanel9);
-            this.Controls.Add(this.tableLayoutPanel8);
-            this.Controls.Add(this.tableLayoutPanel7);
-            this.Controls.Add(this.tableLayoutPanel6);
+            this.Controls.Add(this.tlpDisplay08);
+            this.Controls.Add(this.tlpDisplay02);
+            this.Controls.Add(this.tlpDisplay03);
+            this.Controls.Add(this.tlpDisplay05);
+            this.Controls.Add(this.tlpDisplay06);
             this.Controls.Add(this.tlpDisplay07);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tableLayoutPanel4);
@@ -2167,7 +2354,7 @@
             this.Controls.Add(this.tlpDisplay01);
             this.Controls.Add(this.gbMembers);
             this.Name = "frmHouseholdHomeVisitMember";
-            this.Size = new System.Drawing.Size(910, 980);
+            this.Size = new System.Drawing.Size(910, 1081);
             this.Load += new System.EventHandler(this.frmHouseholdHomeVisitMember_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmHouseholdHomeVisitMember_Paint);
             this.gbMembers.ResumeLayout(false);
@@ -2192,16 +2379,20 @@
             this.tableLayoutPanel5.PerformLayout();
             this.tlpDisplay07.ResumeLayout(false);
             this.tlpDisplay07.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.pnlESSilc.ResumeLayout(false);
             this.pnlESSilc.PerformLayout();
-            this.pnlESApprenticeship.ResumeLayout(false);
-            this.pnlESApprenticeship.PerformLayout();
-            this.pnlESAgro.ResumeLayout(false);
-            this.pnlESAgro.PerformLayout();
             this.pnlESAflateen.ResumeLayout(false);
             this.pnlESAflateen.PerformLayout();
-            this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel6.PerformLayout();
+            this.pnlESAgro.ResumeLayout(false);
+            this.pnlESAgro.PerformLayout();
+            this.pnlESApprenticeship.ResumeLayout(false);
+            this.pnlESApprenticeship.PerformLayout();
+            this.tlpDisplay06.ResumeLayout(false);
+            this.tlpDisplay06.PerformLayout();
             this.pnlFSNEducation.ResumeLayout(false);
             this.pnlFSNEducation.PerformLayout();
             this.pnlFSNSupport.ResumeLayout(false);
@@ -2212,8 +2403,8 @@
             this.pnlFSNReferred.PerformLayout();
             this.pnlFSNWash.ResumeLayout(false);
             this.pnlFSNWash.PerformLayout();
-            this.tableLayoutPanel7.ResumeLayout(false);
-            this.tableLayoutPanel7.PerformLayout();
+            this.tlpDisplay05.ResumeLayout(false);
+            this.tlpDisplay05.PerformLayout();
             this.pnlHHPArt.ResumeLayout(false);
             this.pnlHHPArt.PerformLayout();
             this.pnlHHPAdhering.ResumeLayout(false);
@@ -2222,8 +2413,8 @@
             this.pnlHHPReferred.PerformLayout();
             this.pnlHHPHiv.ResumeLayout(false);
             this.pnlHHPHiv.PerformLayout();
-            this.tableLayoutPanel8.ResumeLayout(false);
-            this.tableLayoutPanel8.PerformLayout();
+            this.tlpDisplay03.ResumeLayout(false);
+            this.tlpDisplay03.PerformLayout();
             this.pnlProReintegrated.ResumeLayout(false);
             this.pnlProReintegrated.PerformLayout();
             this.pnlProChildLabour.ResumeLayout(false);
@@ -2234,16 +2425,18 @@
             this.pnlProBirthCertificate.PerformLayout();
             this.pnlProBirthRegistration.ResumeLayout(false);
             this.pnlProBirthRegistration.PerformLayout();
-            this.tableLayoutPanel9.ResumeLayout(false);
-            this.tableLayoutPanel9.PerformLayout();
+            this.tlpDisplay02.ResumeLayout(false);
+            this.tlpDisplay02.PerformLayout();
+            this.pnlAttendingSchool.ResumeLayout(false);
+            this.pnlAttendingSchool.PerformLayout();
             this.pnlEduEnrolled.ResumeLayout(false);
             this.pnlEduEnrolled.PerformLayout();
             this.pnlEduSupport.ResumeLayout(false);
             this.pnlEduSupport.PerformLayout();
             this.pnlEduSensitised.ResumeLayout(false);
             this.pnlEduSensitised.PerformLayout();
-            this.tableLayoutPanel10.ResumeLayout(false);
-            this.tableLayoutPanel10.PerformLayout();
+            this.tlpDisplay08.ResumeLayout(false);
+            this.tlpDisplay08.PerformLayout();
             this.pnlPSSupport.ResumeLayout(false);
             this.pnlPSSupport.PerformLayout();
             this.pnlPSParenting.ResumeLayout(false);
@@ -2296,19 +2489,19 @@
         private System.Windows.Forms.TableLayoutPanel tlpDisplay07;
         private System.Windows.Forms.Label lblESSilc;
         private System.Windows.Forms.Label lblESAflateen;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.TableLayoutPanel tlpDisplay06;
         private System.Windows.Forms.Label lblFSNEducation;
         private System.Windows.Forms.Label lblFSNReferred;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.TableLayoutPanel tlpDisplay05;
         private System.Windows.Forms.Label lblHHPHiv;
         private System.Windows.Forms.Label lblHHPReferred;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        private System.Windows.Forms.TableLayoutPanel tlpDisplay03;
         private System.Windows.Forms.Label lblProReintegrated;
         private System.Windows.Forms.Label lblProChildLabour;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
+        private System.Windows.Forms.TableLayoutPanel tlpDisplay02;
         private System.Windows.Forms.Label lblEduEnrolled;
         private System.Windows.Forms.Label lblEduSensitised;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
+        private System.Windows.Forms.TableLayoutPanel tlpDisplay08;
         private System.Windows.Forms.Label lblPSSupport;
         private System.Windows.Forms.Label lblPSParenting;
         private System.Windows.Forms.Label lblESApprenticeship;
@@ -2420,5 +2613,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gclYearOfBirth;
         private System.Windows.Forms.DataGridViewCheckBoxColumn gclDelete;
         private System.Windows.Forms.DataGridViewTextBoxColumn gclOfcId;
+        private System.Windows.Forms.Label lbl_ovc_attending_school;
+        private System.Windows.Forms.Panel pnlAttendingSchool;
+        private System.Windows.Forms.RadioButton rbtnEduRegularlyAttendingSchoolNA;
+        private System.Windows.Forms.RadioButton rbtnEduRegularlyAttendingSchoolYes;
+        private System.Windows.Forms.RadioButton rbtnEduRegularlyAttendingSchoolNo;
+        private System.Windows.Forms.Label lblCaregiverGroup;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.RadioButton rbtnCaregiverGroupYes;
+        private System.Windows.Forms.RadioButton rbtnCaregiverGroupNo;
+        private System.Windows.Forms.Label lblLendingGroup;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.RadioButton rbtnLendingGroupNA;
+        private System.Windows.Forms.RadioButton rbtnLendingGroupYes;
+        private System.Windows.Forms.RadioButton rbtnLendingGroupNo;
+        private System.Windows.Forms.Label lblHHMemberStatusVal;
     }
 }

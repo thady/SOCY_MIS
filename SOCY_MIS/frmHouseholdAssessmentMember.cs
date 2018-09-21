@@ -89,6 +89,7 @@ namespace SOCY_MIS
             cbProtection.SelectionLength = 0;
             cbSchool.SelectionLength = 0;
             cbYearOfBirth.SelectionLength = 0;
+            cbAttainedVocationalSkill.SelectionLength = 0;
             #endregion UnHighlight Comboboxes
         }
         #endregion Form Methods
@@ -101,7 +102,15 @@ namespace SOCY_MIS
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Save();
+            if (SystemConstants.ValidateDistrictID())
+            {
+                Save();
+            }
+            else
+            {
+                MessageBox.Show("No district set for this office,please set the office district under office information screen", "SOCY MIS Message Centre", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
 
         private void cbDisability_SelectionChangeCommitted(object sender, EventArgs e)
@@ -135,7 +144,7 @@ namespace SOCY_MIS
 
         private void cbHIVStatus_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (!cbHIVStatus.SelectedValue.ToString().Equals(utilConstants.cHSTNegative))
+            if (!cbHIVStatus.SelectedValue.ToString().Equals(utilConstants.cHSTNegative) && !cbHIVStatus.SelectedValue.ToString().Equals(utilConstants.cHSTUnKnown) && !cbHIVStatus.SelectedValue.ToString().Equals(utilConstants.cHSTUnDisclosed))
             {
                 cbART.Enabled = true;
             }
@@ -143,6 +152,7 @@ namespace SOCY_MIS
             {
                 cbART.Enabled = false;
                 cbART.SelectedIndex = 0;
+                //cbART.SelectedValue = 2;
             }
         }
 
@@ -231,6 +241,7 @@ namespace SOCY_MIS
             cbProtection.SelectedIndex = 0;
             cbSchool.SelectedIndex = 0;
             cbYearOfBirth.SelectedIndex = 0;
+            cbAttainedVocationalSkill.SelectedIndex = 0;
 
             cbART.Enabled = true;
             cbGivenBirth.Enabled = true;
@@ -282,7 +293,7 @@ namespace SOCY_MIS
                         lblMemberNumberDisplay.Text = dalHHM.hhm_number;
                         txtFirstName.Text = dalHAM.ham_first_name;
                         txtLastName.Text = dalHAM.ham_last_name;
-
+                        cbAttainedVocationalSkill.SelectedValue = dalHAM.yn_attained_vocational_skill;
                         chkCaregiver.Checked = (dalHAM.yn_id_caregiver == "1");
                         chkHeadOfHousehold.Checked = (dalHAM.yn_id_hoh == "1");
 
@@ -290,7 +301,7 @@ namespace SOCY_MIS
                         cbDisabilityType.Enabled = dalHAM.yn_id_disability.Equals(utilConstants.cDFListValueYes);
                         cbGivenBirth.Enabled = !dalHAM.gnd_id.Equals(utilConstants.cGNDMale);
                         cbPregnant.Enabled = !dalHAM.gnd_id.Equals(utilConstants.cGNDMale);
-                        btnSave.Enabled = pblnManage && (FormMaster.OfficeId.Equals(dalHAM.ofc_id) || utilConstants.cDFImportOffice.Equals(dalHAM.ofc_id) || SystemConstants.Validate_Office_group_access(FormMaster.OfficeId, dalHAM.ofc_id));
+                        //btnSave.Enabled = pblnManage && (FormMaster.OfficeId.Equals(dalHAM.ofc_id) || utilConstants.cDFImportOffice.Equals(dalHAM.ofc_id) || SystemConstants.Validate_Office_group_access(FormMaster.OfficeId, dalHAM.ofc_id));
                         #endregion Household Member
 
                         LoadListsMember(dalHHM.hh_id, dalHAM.hhm_id, dbCon);
@@ -298,7 +309,7 @@ namespace SOCY_MIS
 
                         LoadLists(dalHAM.ham_year_of_birth, dalHAM.dtp_id, dalHAM.edu_id, dalHAM.gnd_id, dalHAM.hst_id, dalHAM.mst_id, dalHAM.prf_id, dalHAM.prt_id,
                             dalHAM.yn_id_art, dalHAM.yn_id_birth_registration, dalHAM.yn_id_disability, dalHAM.yn_id_given_birth,
-                            dalHAM.yn_id_immun, dalHAM.yn_id_pregnant, dalHAM.yn_id_school, dbCon);
+                            dalHAM.yn_id_immun, dalHAM.yn_id_pregnant, dalHAM.yn_id_school, dalHAM.yn_attained_vocational_skill, dbCon);
                     }
                     #endregion Load Data
                 }
@@ -345,7 +356,7 @@ namespace SOCY_MIS
 
                     LoadLists(dalHHM.hhm_year_of_birth, dalHHM.dtp_id, dalHHM.edu_id, dalHHM.gnd_id, dalHHM.hst_id, dalHHM.mst_id, dalHHM.prf_id, dalHHM.prt_id,
                         dalHHM.yn_id_art, dalHHM.yn_id_birth_registration, dalHHM.yn_id_disability, dalHHM.yn_id_given_birth,
-                        dalHHM.yn_id_immun, dalHHM.yn_id_pregnant, dalHHM.yn_id_school, dbCon);
+                        dalHHM.yn_id_immun, dalHHM.yn_id_pregnant, dalHHM.yn_id_school, dalHHM.yn_attained_vocational_skill, dbCon);
                     #endregion Load Data
                 }
                 finally
@@ -439,7 +450,7 @@ namespace SOCY_MIS
             dbCon = new DataAccessLayer.DBConnection(utilConstants.cACKConnection);
             try
             {
-                LoadLists("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", dbCon);
+                LoadLists("", "", "", "", "", "", "", "", "", "", "", "", "", "", "","", dbCon);
             }
             finally
             {
@@ -451,7 +462,7 @@ namespace SOCY_MIS
             string strHstId, string strMstId, string strPrfId, string strPrt_id,
             string strYnIdArt, string strYnIdBirthRegistration, string strYnIdDisability,
             string strYnIdGivenBirth, string strYnIdImmun, string strYnIdPregnant, 
-            string strYnIdSchool, DataAccessLayer.DBConnection dbCon)
+            string strYnIdSchool, string strYnVocationalSkill, DataAccessLayer.DBConnection dbCon)
         {
             try
             {
@@ -515,6 +526,10 @@ namespace SOCY_MIS
                 dt = uLT.GetData("lst_yes_no", true, strYnIdGivenBirth, true, FormMaster.LanguageId, dbCon.dbCon);
                 dt = utilCollections.AddEmptyItemFront(dt, "lt_id", "lt_name", utilConstants.cDFEmptyListValue, strEmptySingleSelect);
                 utilControls.ComboBoxFill(cbGivenBirth, dt, "lt_id", "lt_name");
+
+                dt = uLT.GetData("lst_yes_no", true, strYnIdGivenBirth, true, FormMaster.LanguageId, dbCon.dbCon);
+                dt = utilCollections.AddEmptyItemFront(dt, "lt_id", "lt_name", utilConstants.cDFEmptyListValue, strEmptySingleSelect);
+                utilControls.ComboBoxFill(cbAttainedVocationalSkill, dt, "lt_id", "lt_name");
 
                 dt = uLT.GetData("lst_yes_no", true, strYnIdImmun, true, FormMaster.LanguageId, dbCon.dbCon);
                 dt = utilCollections.AddEmptyItemFront(dt, "lt_id", "lt_name", utilConstants.cDFEmptyListValue, strEmptySingleSelect);
@@ -604,6 +619,12 @@ namespace SOCY_MIS
                     cbSchool.SelectedValue = strYnIdSchool;
                 else
                     cbSchool.SelectedIndex = 0;
+
+                if (strYnVocationalSkill.Length != 0)
+                    cbAttainedVocationalSkill.SelectedValue = strYnVocationalSkill;
+                else
+                    cbAttainedVocationalSkill.SelectedIndex = 0;
+
                 if (strYoB.Length != 0)
                     cbYearOfBirth.SelectedValue = strYoB;
                 else
@@ -786,6 +807,8 @@ namespace SOCY_MIS
                         dalHAM.yn_id_pregnant = cbPregnant.SelectedValue.ToString();
                         dalHAM.yn_id_school = cbSchool.SelectedValue.ToString();
                         dalHAM.usr_id_update = FormMaster.UserId;
+                        dalHAM.yn_attained_vocational_skill = cbAttainedVocationalSkill.SelectedValue.ToString();
+                        dalHAM.district_id = SystemConstants.Return_office_district();
                         dalHAM.Save(dbCon);
                         #endregion Household Assessment Member
 
@@ -835,7 +858,9 @@ namespace SOCY_MIS
             #region Required Fields
             if (txtFirstName.Text.Trim().Length == 0 || txtLastName.Text.Trim().Length == 0 ||
                 cbGender.SelectedIndex == 0 || cbYearOfBirth.SelectedIndex == 0 ||
-                (cbHHMember.SelectedIndex == 0 && lblHHMemberVal.Visible))
+                (cbHHMember.SelectedIndex == 0 && lblHHMemberVal.Visible) || cbDisability.SelectedIndex == 0 || (cbDisability.Text == "Yes" && cbDisabilityType.SelectedIndex == 0)
+                || (cbDisabilityType.SelectedIndex != 0 && (cbDisability.SelectedIndex == 0 || cbDisability.Text == "No")) || cbHIVStatus.SelectedIndex == 0 || cbProfession.SelectedIndex == 0 || cbSchool.SelectedIndex == 0
+                || cbProtection.SelectedIndex == 0 || cbMaritalStatus.SelectedIndex == 0 || cbEducation.SelectedIndex == 0 || (cbGender.Text == "Female" && cbGivenBirth.SelectedIndex == 0) || (cbHIVStatus.Text == "Positive" && cbART.SelectedIndex == 0))
                 strMessage = strMessage + "," + utilConstants.cMIDRequiredFields;
             #endregion Required Fields
 
@@ -893,5 +918,23 @@ namespace SOCY_MIS
             #endregion Set Permissions
         }
         #endregion Permissions
+
+        private void cbGender_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbGender.Text == "Female") { lblGivenBirth.ForeColor = Color.Red; }
+            else { lblGivenBirth.ForeColor = Color.Black; }
+        }
+
+        private void cbDisability_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbDisability.Text =="Yes") { lblDisabilityType.ForeColor = Color.Red; }
+            else { lblDisabilityType.ForeColor = Color.Black; }
+        }
+
+        private void cbHIVStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbHIVStatus.Text == "Positive") { lblART.ForeColor = Color.Red; }
+            else { lblART.ForeColor = Color.Black; }
+        }
     }
 }

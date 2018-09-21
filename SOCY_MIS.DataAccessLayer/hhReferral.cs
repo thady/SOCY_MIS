@@ -546,7 +546,7 @@ namespace SOCY_MIS.DataAccessLayer
             if (service_provided.Length != 0)
             {
                 strInsert = "INSERT INTO hh_referral_service_provided (rsp_id, rfr_id, svp_id, usr_id_create, usr_date_create, ofc_id,district_id) " +
-                    "SELECT LOWER(NEWID()), '{0}', '{1}', '{2}', GETDATE(), '{3}',{4}' WHERE NOT '{1}' IN " +
+                    "SELECT LOWER(NEWID()), '{0}', '{1}', '{2}', GETDATE(), '{3}','{4}' WHERE NOT '{1}' IN " +
                     "(SELECT svp_id FROM hh_referral_service_provided WHERE rfr_id = '{0}') ";
                 for (int intCount = 0; intCount < service_provided.Length; intCount++)
                 {

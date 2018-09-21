@@ -36,8 +36,8 @@ namespace SOCY_MIS.DataAccessLayer
         public string yn_id_school = utilConstants.cDFEmptyListValue;
         public string usr_id_update = string.Empty;
         public string ofc_id = string.Empty;
-        public int district_id = Convert.ToInt32(static_variables.district_id);
-
+        public string district_id = string.Empty;
+        public string yn_attained_vocational_skill = utilConstants.cDFEmptyListValue;
         #endregion Public
         #endregion Variables
 
@@ -171,7 +171,7 @@ namespace SOCY_MIS.DataAccessLayer
                 "yn_id_art, yn_id_birth_registration, yn_id_caregiver, " +
                 "yn_id_disability, yn_id_given_birth, yn_id_hoh, " +
                 "yn_id_immun, yn_id_pregnant, yn_id_school, " +
-                "usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id,district_id) " +
+                "usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id,district_id,yn_attained_vocational_skill) " +
                 "VALUES ('{0}', " +
                 "'{1}', '{2}', " +
                 "'{3}', " +
@@ -181,7 +181,7 @@ namespace SOCY_MIS.DataAccessLayer
                 "'{13}', '{14}', '{15}', " +
                 "'{16}', '{17}', '{18}', " +
                 "'{19}', '{20}', '{21}', " +
-                "'{22}', '{22}', GETDATE(), GETDATE(), '{23}','{24}') ";
+                "'{22}', '{22}', GETDATE(), GETDATE(), '{23}','{24}','{25}') ";
             strSQL = string.Format(strSQL, ham_id,
                 utilFormatting.StringForSQL(ham_first_name), utilFormatting.StringForSQL(ham_last_name),
                 utilFormatting.StringForSQL(ham_year_of_birth),  
@@ -191,7 +191,7 @@ namespace SOCY_MIS.DataAccessLayer
                 yn_id_art, yn_id_birth_registration, yn_id_caregiver, 
                 yn_id_disability, yn_id_given_birth, yn_id_hoh, 
                 yn_id_immun, yn_id_pregnant, yn_id_school, 
-                usr_id_update, ofc_id, district_id);
+                usr_id_update, ofc_id, district_id, yn_attained_vocational_skill);
 
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
@@ -235,6 +235,7 @@ namespace SOCY_MIS.DataAccessLayer
                 yn_id_school = dr["yn_id_school"].ToString();
                 usr_id_update = dr["usr_id_update"].ToString();
                 ofc_id = dr["ofc_id"].ToString();
+                yn_attained_vocational_skill = dr["yn_attained_vocational_skill"].ToString();
                 #endregion Load Values
             }
         }
@@ -255,7 +256,7 @@ namespace SOCY_MIS.DataAccessLayer
                 "yn_id_art = '{13}', yn_id_birth_registration = '{14}', yn_id_caregiver = '{15}', " +
                 "yn_id_disability = '{16}', yn_id_given_birth = '{17}', yn_id_hoh = '{18}', " +
                 "yn_id_immun = '{19}', yn_id_pregnant = '{20}', yn_id_school = '{21}', " +
-                "usr_id_update = '{22}', usr_date_update = GETDATE(),district_id = '{23}' " +
+                "usr_id_update = '{22}', usr_date_update = GETDATE(),district_id = '{23}',yn_attained_vocational_skill = '{24}' " +
                 "WHERE ham_id = '{0}' ";
             strSQL = string.Format(strSQL, ham_id,
                 utilFormatting.StringForSQL(ham_first_name), utilFormatting.StringForSQL(ham_last_name),
@@ -266,7 +267,7 @@ namespace SOCY_MIS.DataAccessLayer
                 yn_id_art, yn_id_birth_registration, yn_id_caregiver,
                 yn_id_disability, yn_id_given_birth, yn_id_hoh,
                 yn_id_immun, yn_id_pregnant, yn_id_school, 
-                usr_id_update, district_id);
+                usr_id_update, district_id, yn_attained_vocational_skill);
 
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL

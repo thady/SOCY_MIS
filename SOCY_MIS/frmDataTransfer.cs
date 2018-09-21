@@ -155,7 +155,7 @@ namespace SOCY_MIS
                         if (utilCollections.HasRows(dt))
                         {
                             #region Message
-                            dlrResult = MessageBox.Show("IMPORTANT: Process will runs again with version 3.1, even if it has already ran. \n" +
+                            dlrResult = MessageBox.Show("IMPORTANT: Process will runs again with version 3.2, even if it has already ran. \n" +
                             "Prior to downloading data from the server, initial Household data must first be inserted. \n" +
                             "This can take up to an hour. \n" +
                             "Continue?", "Import Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -368,6 +368,7 @@ namespace SOCY_MIS
 
             #region Office Validation
             wsSM = new SOCY_WS.SOCY_WS();
+            wsSM.Timeout = -1; //set time out to infinity
             try
             {
                 strSsnId = wsSM.OfficeValidation(strOfcId, strXMLOffice, strXMLContact);
@@ -388,6 +389,7 @@ namespace SOCY_MIS
                 if (utilCollections.HasRows(dtTables))
                 {
                     wsSM = new SOCY_WS.SOCY_WS();
+                    wsSM.Timeout = -1;
                     try
                     {
                         intTotal = dalDT.GetUploadTotal(dtTables, "sul_name", dbCon);  //total number of records to be uploaded in all the upload tables
@@ -410,12 +412,14 @@ namespace SOCY_MIS
                                 try
                                 {
                                     blnResult = wsSM.ProcessRecord(strSsnId, strXML);
+                                   
                                 }
                                 catch (System.Net.WebException exc)
                                 {
                                     if (exc.Message.Equals("The underlying connection was closed: An unexpected error occurred on a receive."))
                                     {
                                         wsSM = new SOCY_WS.SOCY_WS();
+                                        wsSM.Timeout = -1;
                                         blnResult = wsSM.ProcessRecord(strSsnId, strXML);
                                         intRestart++;
                                         lblConnectionRestart.Visible = true;
@@ -447,11 +451,15 @@ namespace SOCY_MIS
                 //check if user has set the district download list
                 if (SystemConstants.Return_office_district_for_download() != string.Empty)
                 {
+
                     wsSM = new SOCY_WS.SOCY_WS();
+                    wsSM.Timeout = -1; //set timeout for the web service to infinity
                     try
                     {
-                        intTotal = wsSM.DownloadTotal(FormMaster.OfficeId);
+                        intTotal = wsSM.DownloadTotal(FormMaster.OfficeId, SystemConstants.Return_office_district_for_download());
 
+                        //MessageBox.Show(intTotal.ToString());
+                        //intTotal = wsSM.ReturnOfficeDownloadTotal(FormMaster.OfficeId, SystemConstants.Return_office_district_for_download()); 
                         intRecord = 0;
                         strXML = wsSM.DownloadData(strSsnId, "", "", "", SystemConstants.Return_office_district_for_download()); //contains list of districts for download
                         while (strXML.Length != 0)
@@ -468,7 +476,7 @@ namespace SOCY_MIS
                             else
                                 strId = dalDT.ProcessDownloadDelete(strTable, dt, dbCon);
                             intRecord = intRecord + dt.Rows.Count;
-                            lblProcessing.Text = string.Format("Processing: Download {0} of {1}", intRecord, intTotal);
+                            lblProcessing.Text = string.Format("Processing: Download {0} of {1}" + " (Download Total Might be inacurate due to incoming uploads)", intRecord, intTotal);
                             lblProcessing.Update();
 
                             try
@@ -480,6 +488,7 @@ namespace SOCY_MIS
                                 if (exc.Message.Equals("The underlying connection was closed: An unexpected error occurred on a receive."))
                                 {
                                     wsSM = new SOCY_WS.SOCY_WS();
+                                    wsSM.Timeout = -1; //set timeout for the web service to infinity
                                     strXML = wsSM.DownloadData(strSsnId, strImpSid, strTable, strId, SystemConstants.Return_office_district_for_download()); //contains list of districts for download
                                     intRestart++;
                                     lblConnectionRestart.Visible = true;
@@ -497,27 +506,67 @@ namespace SOCY_MIS
                     }
 
                     //download office groups
-                    DataTable dt_offices = wsSM.Download_Office_group(strSsnId, strOfcId);
-                    DataRow dtRow_offices = null;
-                    string office_grp_id = string.Empty;
-                    string ofc_id = string.Empty;
-                    bool active = false;
+                    //try
+                    //{
+                    //    wsSM = new SOCY_WS.SOCY_WS();
+                    //    wsSM.Timeout = -1;
+                    //    DataTable dt_offices = wsSM.Download_Office_group(strOfcId);
+                    //    dt_offices.TableName = "ofcgrpTable";
+                    //    DataRow dtRow_offices = null;
+                    //    string office_grp_id = string.Empty;
+                    //    string ofc_id = string.Empty;
+                    //    bool active = false;
 
-                    //loop through datatable and insert or update into database
-                    if (dt_offices.Rows.Count > 0)
-                    {
-                        for (int intCount = 0; intCount < dt_offices.Rows.Count; intCount++)
-                        {
-                            dtRow_offices = dt_offices.Rows[intCount];
-                            office_grp_id = dtRow_offices["office_grp_record_guid"].ToString();
-                            ofc_id = dtRow_offices["ofc_id"].ToString();
-                            active = (bool)dtRow_offices["active"];
+                    //    //loop through datatable and insert or update into database
+                    //    if (dt_offices.Rows.Count > 0)
+                    //    {
+                    //        for (int intCount = 0; intCount < dt_offices.Rows.Count; intCount++)
+                    //        {
+                    //            dtRow_offices = dt_offices.Rows[intCount];
+                    //            office_grp_id = dtRow_offices["office_grp_record_guid"].ToString();
+                    //            ofc_id = dtRow_offices["ofc_id"].ToString();
+                    //            active = (bool)dtRow_offices["active"];
 
-                            SystemConstants.save_downloaded_office_group(office_grp_id, ofc_id, active);
-                        }
-                    }
+                    //            SystemConstants.save_downloaded_office_group(office_grp_id, ofc_id, active);
+                    //        }
+                    //    }
+                    //}
+                    //catch (System.Net.WebException exc)
+                    //{
+                    //    if (exc.Message.Equals("The underlying connection was closed: An unexpected error occurred on a receive."))
+                    //    {
+                    //        wsSM = new SOCY_WS.SOCY_WS();
+                    //        wsSM.Timeout = -1;
+                    //        DataTable dt_offices = wsSM.Download_Office_group(strOfcId);
+                    //        DataRow dtRow_offices = null;
+                    //        string office_grp_id = string.Empty;
+                    //        string ofc_id = string.Empty;
+                    //        bool active = false;
+
+                    //        //loop through datatable and insert or update into database
+                    //        if (dt_offices.Rows.Count > 0)
+                    //        {
+                    //            for (int intCount = 0; intCount < dt_offices.Rows.Count; intCount++)
+                    //            {
+                    //                dtRow_offices = dt_offices.Rows[intCount];
+                    //                office_grp_id = dtRow_offices["office_grp_record_guid"].ToString();
+                    //                ofc_id = dtRow_offices["ofc_id"].ToString();
+                    //                active = (bool)dtRow_offices["active"];
+
+                    //                SystemConstants.save_downloaded_office_group(office_grp_id, ofc_id, active);
+                    //            }
+                    //        }
+                    //    }
+                    //    else
+                    //        throw exc;
+                    //}
+
                 }
-                else
+                else if (static_variables.district_id == string.Empty)
+                {
+                    MessageBox.Show("Please set the district name of this office before beginning download", "Download data", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (SystemConstants.Return_office_district_for_download() == string.Empty)
                 {
                     MessageBox.Show("No district download list set yet,data download failed!!", "Download data", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

@@ -132,7 +132,7 @@ namespace SOCY_MIS
                     if (district_id != String.Empty && district_id != "-999")
                     {
                         cbo_district.SelectedValue = district_id;
-                        cbo_district.Enabled = false;
+                        //cbo_district.Enabled = false;
                     }
                     else { cbo_district.SelectedValue = "-999"; }
                     
@@ -272,6 +272,7 @@ namespace SOCY_MIS
                             static_variables.district_id = cbo_district.SelectedValue.ToString();
                             dalOfc.Save(dbCon);
                             FormMaster.OfficeId = dalOfc.ofc_id;
+
                         }
                         else
                         {

@@ -41,12 +41,14 @@
             this.miResultArea02 = new System.Windows.Forms.ToolStripMenuItem();
             this.miResultArea03 = new System.Windows.Forms.ToolStripMenuItem();
             this.miSILC = new System.Windows.Forms.ToolStripMenuItem();
+            this.miDREAMS = new System.Windows.Forms.ToolStripMenuItem();
             this.miReports = new System.Windows.Forms.ToolStripMenuItem();
             this.miAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlLinks = new System.Windows.Forms.Panel();
             this.llblLogOut = new System.Windows.Forms.LinkLabel();
             this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.miDREAMS = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.miEducationSubsidy = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMenu.SuspendLayout();
             this.mnMain.SuspendLayout();
             this.pnlLinks.SuspendLayout();
@@ -105,6 +107,7 @@
             this.miResultArea03,
             this.miSILC,
             this.miDREAMS,
+            this.miEducationSubsidy,
             this.miReports,
             this.miAdmin});
             this.mnMain.Location = new System.Drawing.Point(0, 0);
@@ -163,8 +166,17 @@
             this.miSILC.Text = "SILC Management";
             this.miSILC.Click += new System.EventHandler(this.miSILC_Click);
             // 
+            // miDREAMS
+            // 
+            this.miDREAMS.Name = "miDREAMS";
+            this.miDREAMS.Size = new System.Drawing.Size(65, 20);
+            this.miDREAMS.Text = "DREAMS";
+            this.miDREAMS.Click += new System.EventHandler(this.miDREAMS_Click);
+            // 
             // miReports
             // 
+            this.miReports.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSeparator1});
             this.miReports.Enabled = false;
             this.miReports.Name = "miReports";
             this.miReports.Size = new System.Drawing.Size(59, 20);
@@ -208,12 +220,17 @@
             this.pbLogo.TabIndex = 27;
             this.pbLogo.TabStop = false;
             // 
-            // miDREAMS
+            // toolStripSeparator1
             // 
-            this.miDREAMS.Name = "miDREAMS";
-            this.miDREAMS.Size = new System.Drawing.Size(65, 20);
-            this.miDREAMS.Text = "DREAMS";
-            this.miDREAMS.Click += new System.EventHandler(this.miDREAMS_Click);
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            // 
+            // miEducationSubsidy
+            // 
+            this.miEducationSubsidy.Name = "miEducationSubsidy";
+            this.miEducationSubsidy.Size = new System.Drawing.Size(116, 20);
+            this.miEducationSubsidy.Text = "Education Subsidy";
+            this.miEducationSubsidy.Click += new System.EventHandler(this.miEducationSubsidy_Click);
             // 
             // Master
             // 
@@ -266,7 +283,8 @@
         private System.Windows.Forms.ToolStripMenuItem miAdmin;
         private System.Windows.Forms.ToolStripMenuItem miSILC;
         private System.Windows.Forms.ToolStripMenuItem miDREAMS;
-
+        private System.Windows.Forms.ToolStripMenuItem miEducationSubsidy;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
 

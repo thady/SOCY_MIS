@@ -20,6 +20,7 @@ namespace SOCY_MIS
         private string strId = string.Empty;
         private frmInstitutionalCareSummarySearch frmCll = null;
         private frmResultArea02 frmPrt = null;
+        DataTable dt = null;  
         #endregion Variables
 
         #region Property
@@ -55,9 +56,13 @@ namespace SOCY_MIS
                 btnCancel.Enabled = !FormParent.FormMaster.NoDatabase;
                 btnSave.Enabled = !FormParent.FormMaster.NoDatabase;
                 SetLineControls(false);
+                Return_lookups();
+
             }
             else
             {
+                Return_lookups();
+
                 SetPermissions();
                 LoadDisplay();
             }
@@ -74,6 +79,7 @@ namespace SOCY_MIS
             cbQuarter.SelectionLength = 0;
             cbSubCounty.SelectionLength = 0;
             cbWard.SelectionLength = 0;
+            //cboPartner.SelectedValue = "-1";
         }
         #endregion Form Methods
 
@@ -85,7 +91,15 @@ namespace SOCY_MIS
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Save();
+            if (SystemConstants.ValidateDistrictID())
+            {
+                Save();
+            }
+            else
+            {
+                MessageBox.Show("No district set for this office,please set the office district under office information screen", "SOCY MIS Message Centre", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
 
         private void btnLineCancel_Click(object sender, EventArgs e)
@@ -100,7 +114,15 @@ namespace SOCY_MIS
 
         private void btnLineSave_Click(object sender, EventArgs e)
         {
-            SaveLine();
+            if (SystemConstants.ValidateDistrictID())
+            {
+                SaveLine();
+            }
+            else
+            {
+                MessageBox.Show("No district set for this office,please set the office district under office information screen", "SOCY MIS Message Centre", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void cbDistrictMain_SelectionChangeCommitted(object sender, EventArgs e)
@@ -206,6 +228,7 @@ namespace SOCY_MIS
                     cbDistrictMain.SelectedIndex = 0;
                     cbFinancialYear.SelectedIndex = 0;
                     cbQuarter.SelectedIndex = 0;
+                    cboPartner.SelectedValue = "-1";
                     dtpDate.Value = DateTime.Now;
                     LoadListsArea("", "", "");
                     SetLineControls(false);
@@ -237,6 +260,11 @@ namespace SOCY_MIS
                 txtChildName.Text = string.Empty;
                 txtTelNo.Text = string.Empty;
                 txtVillage.Text = string.Empty;
+                txtSubCounty.Clear();
+                txtDistrict.Clear();
+                txtParish.Clear();
+                rbtnSOCYDistrictYes.Checked = false;
+                rbtnSOCYDistrictNo.Checked = false;
                 btnLineSave.Enabled = pblnManage;
 
                 LoadListsLine("", "", "");
@@ -355,6 +383,7 @@ namespace SOCY_MIS
                         #region Load Display
                         dalICS = new prtInstitutionalCareSummary(ObjectId, dbCon);
                         dtpDate.Value = dalICS.ics_date;
+                        cboPartner.SelectedValue = dalICS.prt_id;
                         btnSave.Enabled = pblnManage && (FormParent.FormMaster.OfficeId.Equals(dalICS.ofc_id) || SystemConstants.Validate_Office_group_access(FormParent.FormMaster.OfficeId, dalICS.ofc_id));
                         #endregion Load Display
 
@@ -409,6 +438,18 @@ namespace SOCY_MIS
                 txtChildName.Text = dalICSL.icsl_child_name;
                 txtTelNo.Text = dalICSL.icsl_contact_tel;
                 txtVillage.Text = dalICSL.icsl_contact_village;
+                txtDistrict.Text = dalICSL.idst_other;
+                txtSubCounty.Text = dalICSL.isct_other;
+                txtParish.Text = dalICSL.iwrd_other;
+                #region Set Visibility of controls based on other district
+                if (dalICSL.idst_other.Length != 0 || dalICSL.isct_other.Length != 0)
+                {
+                    rbtnSOCYDistrictNo.Checked = true;
+                }
+                else
+                    rbtnSOCYDistrictYes.Checked = true;
+
+                #endregion Set Visibility of controls based on other district
                 btnLineSave.Enabled = pblnManage && (FormParent.FormMaster.OfficeId.Equals(dalICSL.ofc_id) || SystemConstants.Validate_Office_group_access(FormParent.FormMaster.OfficeId, dalICSL.ofc_id));
 
                 LoadListsArea("", "", dalICSL.wrd_id, dbCon);
@@ -716,6 +757,7 @@ namespace SOCY_MIS
                         dalICS.fy_id = cbFinancialYear.SelectedValue.ToString();
                         dalICS.qy_id = cbQuarter.SelectedValue.ToString();
                         dalICS.usr_id_update = FormParent.FormMaster.UserId;
+                        dalICS.prt_id = cboPartner.SelectedValue.ToString();
 
                         dalICS.Save(dbCon);
 
@@ -782,6 +824,11 @@ namespace SOCY_MIS
                         dalICSL.ins_id = cbInstitution.SelectedValue.ToString();
                         dalICSL.wrd_id = cbWard.SelectedValue.ToString();
 
+                        //new varibales added by Tadeo
+                        dalICSL.idst_other = txtDistrict.Text;
+                        dalICSL.isct_other = txtSubCounty.Text;
+                        dalICSL.iwrd_other = txtParish.Text;
+
                         dalICSL.ics_id = ObjectId;
                         dalICSL.usr_id_update = FormParent.FormMaster.UserId;
 
@@ -827,7 +874,7 @@ namespace SOCY_MIS
             #endregion Variables
 
             #region Required Fields
-            if (cbDistrictMain.SelectedIndex == 0 || cbFinancialYear.SelectedIndex == 0 || cbQuarter.SelectedIndex == 0)
+            if (cbDistrictMain.SelectedIndex == 0 || cbFinancialYear.SelectedIndex == 0 || cbQuarter.SelectedIndex == 0 || cboPartner.SelectedValue.ToString() == "-1")
                 strMessage = strMessage + "," + utilConstants.cMIDRequiredFields;
             #endregion Required Fields
 
@@ -870,7 +917,7 @@ namespace SOCY_MIS
 
             #region Required Fields
             if (txtChildName.Text.Trim().Length == 0 || cbInstitution.SelectedIndex == 0 || cbChildGender.SelectedIndex == 0 ||
-                ((cbDistrict.SelectedIndex != 0 || cbSubCounty.SelectedIndex != 0) && cbWard.SelectedIndex == 0))
+                (((cbDistrict.SelectedIndex != 0 && txtDistrict.Text == string.Empty) || (cbSubCounty.SelectedIndex != 0 && txtSubCounty.Text == string.Empty)) && cbWard.SelectedIndex == 0))
                 strMessage = strMessage + "," + utilConstants.cMIDRequiredFields;
             #endregion Required Fields
 
@@ -930,5 +977,74 @@ namespace SOCY_MIS
             #endregion Set Permissions
         }
         #endregion Permissions
+
+        private void rbtnSOCYDistrictYes_CheckedChanged(object sender, EventArgs e)
+        {
+            ToggleReintergrationControls();
+        }
+
+        protected void ToggleReintergrationControls()
+        {
+            if (rbtnSOCYDistrictYes.Checked == true)
+            {
+                tplDisplay09.Controls.Remove(txtDistrict);
+                tbLayoutTemp.Controls.Add(txtDistrict, 1, 0);
+                tplDisplay09.Controls.Add(cbDistrict, 1, 1);
+
+                tplDisplay09.Controls.Remove(txtSubCounty);
+                tbLayoutTemp.Controls.Add(txtSubCounty, 1, 1);
+                tplDisplay09.Controls.Add(cbSubCounty, 3, 1);
+
+                tplDisplay09.Controls.Remove(txtParish);
+                tbLayoutTemp.Controls.Add(txtParish, 1, 2);
+                tplDisplay09.Controls.Add(cbWard, 1, 2);
+
+                #region Clear District and Subcounty textboxes
+                txtDistrict.Clear();
+                txtSubCounty.Clear();
+                #endregion  Clear District and Subcounty textboxes
+
+
+            }
+            else
+            {
+                tplDisplay09.Controls.Remove(cbDistrict);
+                tbLayoutTemp.Controls.Add(cbDistrict, 1, 0);
+                tplDisplay09.Controls.Add(txtDistrict, 1, 1);
+
+                tplDisplay09.Controls.Remove(cbSubCounty);
+                tbLayoutTemp.Controls.Add(cbSubCounty, 1, 1);
+                tplDisplay09.Controls.Add(txtSubCounty, 3, 1);
+
+                tplDisplay09.Controls.Remove(cbWard);
+                tbLayoutTemp.Controls.Add(cbWard, 1, 2);
+                tplDisplay09.Controls.Add(txtParish, 1, 2);
+
+                #region Clear Combo selections
+                cbDistrict.SelectedIndex = 0;
+                #endregion Clear Combo selections
+            }
+        }
+
+        private void rbtnSOCYDistrictNo_CheckedChanged(object sender, EventArgs e)
+        {
+            rbtnSOCYDistrictYes_CheckedChanged(rbtnSOCYDistrictNo, null);
+        }
+
+        protected void Return_lookups()
+        {
+            #region IP
+            dt = silcCommunityTrainingRegister.Return_lookups("IP", string.Empty, string.Empty, string.Empty,string.Empty);
+
+            DataRow ipemptyRow = dt.NewRow();
+            ipemptyRow["prt_id"] = "-1";
+            ipemptyRow["prt_name"] = "Select Partner";
+            dt.Rows.InsertAt(ipemptyRow, 0);
+
+            cboPartner.DataSource = dt;
+            cboPartner.DisplayMember = "prt_name";
+            cboPartner.ValueMember = "prt_id";
+            #endregion IP
+        }
     }
 }

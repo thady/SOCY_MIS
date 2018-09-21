@@ -24,7 +24,7 @@ namespace SOCY_MIS.SOCY_WS {
     
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="SOCY_WSSoap", Namespace="http://tempuri.org/")]
@@ -41,6 +41,12 @@ namespace SOCY_MIS.SOCY_WS {
         private System.Threading.SendOrPostCallback OfficeValidationOperationCompleted;
         
         private System.Threading.SendOrPostCallback Download_Office_groupOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Download_DataOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback CheckOfficeValidationOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback DownLoadHomeVisitOperationCompleted;
         
         private System.Threading.SendOrPostCallback ProcessRecordOperationCompleted;
         
@@ -101,6 +107,15 @@ namespace SOCY_MIS.SOCY_WS {
         
         /// <remarks/>
         public event Download_Office_groupCompletedEventHandler Download_Office_groupCompleted;
+        
+        /// <remarks/>
+        public event Download_DataCompletedEventHandler Download_DataCompleted;
+        
+        /// <remarks/>
+        public event CheckOfficeValidationCompletedEventHandler CheckOfficeValidationCompleted;
+        
+        /// <remarks/>
+        public event DownLoadHomeVisitCompletedEventHandler DownLoadHomeVisitCompleted;
         
         /// <remarks/>
         public event ProcessRecordCompletedEventHandler ProcessRecordCompleted;
@@ -267,25 +282,23 @@ namespace SOCY_MIS.SOCY_WS {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Download_Office_group", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.Data.DataTable Download_Office_group(string strSsnId, string ofc_id) {
+        public System.Data.DataTable Download_Office_group(string ofc_id) {
             object[] results = this.Invoke("Download_Office_group", new object[] {
-                        strSsnId,
                         ofc_id});
             return ((System.Data.DataTable)(results[0]));
         }
         
         /// <remarks/>
-        public void Download_Office_groupAsync(string strSsnId, string ofc_id) {
-            this.Download_Office_groupAsync(strSsnId, ofc_id, null);
+        public void Download_Office_groupAsync(string ofc_id) {
+            this.Download_Office_groupAsync(ofc_id, null);
         }
         
         /// <remarks/>
-        public void Download_Office_groupAsync(string strSsnId, string ofc_id, object userState) {
+        public void Download_Office_groupAsync(string ofc_id, object userState) {
             if ((this.Download_Office_groupOperationCompleted == null)) {
                 this.Download_Office_groupOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDownload_Office_groupOperationCompleted);
             }
             this.InvokeAsync("Download_Office_group", new object[] {
-                        strSsnId,
                         ofc_id}, this.Download_Office_groupOperationCompleted, userState);
         }
         
@@ -293,6 +306,99 @@ namespace SOCY_MIS.SOCY_WS {
             if ((this.Download_Office_groupCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.Download_Office_groupCompleted(this, new Download_Office_groupCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Download_Data", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable Download_Data(string dst_id, System.DateTime startDate, System.DateTime endDate, string DownLoadTable) {
+            object[] results = this.Invoke("Download_Data", new object[] {
+                        dst_id,
+                        startDate,
+                        endDate,
+                        DownLoadTable});
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Download_DataAsync(string dst_id, System.DateTime startDate, System.DateTime endDate, string DownLoadTable) {
+            this.Download_DataAsync(dst_id, startDate, endDate, DownLoadTable, null);
+        }
+        
+        /// <remarks/>
+        public void Download_DataAsync(string dst_id, System.DateTime startDate, System.DateTime endDate, string DownLoadTable, object userState) {
+            if ((this.Download_DataOperationCompleted == null)) {
+                this.Download_DataOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDownload_DataOperationCompleted);
+            }
+            this.InvokeAsync("Download_Data", new object[] {
+                        dst_id,
+                        startDate,
+                        endDate,
+                        DownLoadTable}, this.Download_DataOperationCompleted, userState);
+        }
+        
+        private void OnDownload_DataOperationCompleted(object arg) {
+            if ((this.Download_DataCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Download_DataCompleted(this, new Download_DataCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/CheckOfficeValidation", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool CheckOfficeValidation(string strOfcID) {
+            object[] results = this.Invoke("CheckOfficeValidation", new object[] {
+                        strOfcID});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void CheckOfficeValidationAsync(string strOfcID) {
+            this.CheckOfficeValidationAsync(strOfcID, null);
+        }
+        
+        /// <remarks/>
+        public void CheckOfficeValidationAsync(string strOfcID, object userState) {
+            if ((this.CheckOfficeValidationOperationCompleted == null)) {
+                this.CheckOfficeValidationOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCheckOfficeValidationOperationCompleted);
+            }
+            this.InvokeAsync("CheckOfficeValidation", new object[] {
+                        strOfcID}, this.CheckOfficeValidationOperationCompleted, userState);
+        }
+        
+        private void OnCheckOfficeValidationOperationCompleted(object arg) {
+            if ((this.CheckOfficeValidationCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.CheckOfficeValidationCompleted(this, new CheckOfficeValidationCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/DownLoadHomeVisit", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable DownLoadHomeVisit(string name) {
+            object[] results = this.Invoke("DownLoadHomeVisit", new object[] {
+                        name});
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void DownLoadHomeVisitAsync(string name) {
+            this.DownLoadHomeVisitAsync(name, null);
+        }
+        
+        /// <remarks/>
+        public void DownLoadHomeVisitAsync(string name, object userState) {
+            if ((this.DownLoadHomeVisitOperationCompleted == null)) {
+                this.DownLoadHomeVisitOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDownLoadHomeVisitOperationCompleted);
+            }
+            this.InvokeAsync("DownLoadHomeVisit", new object[] {
+                        name}, this.DownLoadHomeVisitOperationCompleted, userState);
+        }
+        
+        private void OnDownLoadHomeVisitOperationCompleted(object arg) {
+            if ((this.DownLoadHomeVisitCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.DownLoadHomeVisitCompleted(this, new DownLoadHomeVisitCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -329,24 +435,26 @@ namespace SOCY_MIS.SOCY_WS {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/DownloadTotal", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int DownloadTotal(string strOfcId) {
+        public int DownloadTotal(string strOfcId, string district_list) {
             object[] results = this.Invoke("DownloadTotal", new object[] {
-                        strOfcId});
+                        strOfcId,
+                        district_list});
             return ((int)(results[0]));
         }
         
         /// <remarks/>
-        public void DownloadTotalAsync(string strOfcId) {
-            this.DownloadTotalAsync(strOfcId, null);
+        public void DownloadTotalAsync(string strOfcId, string district_list) {
+            this.DownloadTotalAsync(strOfcId, district_list, null);
         }
         
         /// <remarks/>
-        public void DownloadTotalAsync(string strOfcId, object userState) {
+        public void DownloadTotalAsync(string strOfcId, string district_list, object userState) {
             if ((this.DownloadTotalOperationCompleted == null)) {
                 this.DownloadTotalOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDownloadTotalOperationCompleted);
             }
             this.InvokeAsync("DownloadTotal", new object[] {
-                        strOfcId}, this.DownloadTotalOperationCompleted, userState);
+                        strOfcId,
+                        district_list}, this.DownloadTotalOperationCompleted, userState);
         }
         
         private void OnDownloadTotalOperationCompleted(object arg) {
@@ -376,11 +484,11 @@ namespace SOCY_MIS.SOCY_WS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
     public delegate void OnlineCheckCompletedEventHandler(object sender, OnlineCheckCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class OnlineCheckCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -402,11 +510,11 @@ namespace SOCY_MIS.SOCY_WS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
     public delegate void OnlineMessageCheckCompletedEventHandler(object sender, OnlineMessageCheckCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class OnlineMessageCheckCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -428,11 +536,11 @@ namespace SOCY_MIS.SOCY_WS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
     public delegate void DownloadDataCompletedEventHandler(object sender, DownloadDataCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class DownloadDataCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -454,11 +562,11 @@ namespace SOCY_MIS.SOCY_WS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
     public delegate void OfficeStatusCompletedEventHandler(object sender, OfficeStatusCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class OfficeStatusCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -480,11 +588,11 @@ namespace SOCY_MIS.SOCY_WS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
     public delegate void OfficeValidationCompletedEventHandler(object sender, OfficeValidationCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class OfficeValidationCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -506,11 +614,11 @@ namespace SOCY_MIS.SOCY_WS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
     public delegate void Download_Office_groupCompletedEventHandler(object sender, Download_Office_groupCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class Download_Office_groupCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -532,11 +640,89 @@ namespace SOCY_MIS.SOCY_WS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    public delegate void Download_DataCompletedEventHandler(object sender, Download_DataCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Download_DataCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Download_DataCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    public delegate void CheckOfficeValidationCompletedEventHandler(object sender, CheckOfficeValidationCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CheckOfficeValidationCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CheckOfficeValidationCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    public delegate void DownLoadHomeVisitCompletedEventHandler(object sender, DownLoadHomeVisitCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class DownLoadHomeVisitCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal DownLoadHomeVisitCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
     public delegate void ProcessRecordCompletedEventHandler(object sender, ProcessRecordCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class ProcessRecordCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -558,11 +744,11 @@ namespace SOCY_MIS.SOCY_WS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
     public delegate void DownloadTotalCompletedEventHandler(object sender, DownloadTotalCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class DownloadTotalCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {

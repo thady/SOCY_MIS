@@ -25,8 +25,17 @@ namespace SOCY_MIS.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:61866/SOCY_WS.asmx")]
+        public string SOCY_MIS {
+            get {
+                return ((string)(this["SOCY_MIS"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:58042/SOCY_WS.asmx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:61866/SOCY_WS.asmx")]
         public string SOCY_MIS_SOCY_WS_SOCY_WS {
             get {
                 return ((string)(this["SOCY_MIS_SOCY_WS_SOCY_WS"]));

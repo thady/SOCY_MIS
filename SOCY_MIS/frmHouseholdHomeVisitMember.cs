@@ -81,11 +81,22 @@ namespace SOCY_MIS
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Save();
+            if (SystemConstants.ValidateDistrictID())
+            {
+                Save();
+            }
+            else
+            {
+                MessageBox.Show("No district set for this office,please set the office district under office information screen", "SOCY MIS Message Centre", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void cbHHMember_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            #region Clear
+            ClearMemberSelection();
+            #endregion Clear
             LoadHouseholdMember(cbHHMember.SelectedValue.ToString());
         }
 
@@ -146,11 +157,27 @@ namespace SOCY_MIS
         private void rbtnHHPArtYes_CheckedChanged(object sender, EventArgs e)
         {
             SetHIV(rbtnHHPHivPos.Checked, rbtnHHPArtYes.Checked);
+
+            //edited by Tadeo
+            if (rbtnHHPArtYes.Checked == true)
+            {
+                rbtnHHPAdheringNA.Checked = false;
+                rbtnHHPAdheringNA.Enabled = false;
+            }
+
+
         }
 
         private void rbtnHHPHivPos_CheckedChanged(object sender, EventArgs e)
         {
             SetHIV(rbtnHHPHivPos.Checked, rbtnHHPArtYes.Checked);
+
+            //edited by Tadeo
+            if (rbtnHHPHivPos.Checked == true)
+            {
+                rbtnHHPArtNA.Checked = false;
+                rbtnHHPArtNA.Enabled = false;
+            }
         }
         #endregion Control Methods
 
@@ -163,7 +190,7 @@ namespace SOCY_MIS
         private void Clear()
         {
             #region Clear
-            cbHHMember.Enabled = true;
+            //cbHHMember.Enabled = true;
             lblHHVMId.Text = string.Empty;
 
             rbtnEduEnrolledNA.Checked = false;
@@ -228,7 +255,208 @@ namespace SOCY_MIS
             rbtnPSViolenceYes.Checked = false;
             btnSave.Enabled = pblnManage;
             SetHIV(rbtnHHPHivPos.Checked, rbtnHHPArtYes.Checked);
+            rbtnHHPArtNA.Checked = false;
+            rbtnHHPAdheringNA.Checked = false;
+            rbtnLendingGroupYes.Checked = false;
+            rbtnLendingGroupNo.Checked = false;
+            rbtnLendingGroupNA.Checked = false;
+            rbtnCaregiverGroupYes.Checked = false;
+            rbtnCaregiverGroupNo.Checked = false;
+            rbtnEduRegularlyAttendingSchoolYes.Checked = false;
+            rbtnEduRegularlyAttendingSchoolNo.Checked = false;
+            rbtnEduRegularlyAttendingSchoolNA.Checked = false;
+
+            pnlEduEnrolled.Enabled = true;
+            pnlAttendingSchool.Enabled = true;
+            pnlEduSupport.Enabled = true;
+            pnlEduSensitised.Enabled = true;
+            pnlProReintegrated.Enabled = true;
+            pnlProChildLabour.Enabled = true;
+            pnlProChildAbuse.Enabled = true;
+            pnlProBirthCertificate.Enabled = true;
             LoadHouseholdMembers("");
+            #endregion Clear
+        }
+
+        private void ClearMemberSelection()
+        {
+            #region Clear
+            //cbHHMember.Enabled = true;
+            lblHHVMId.Text = string.Empty;
+
+            rbtnEduEnrolledNA.Checked = false;
+            rbtnEduEnrolledNo.Checked = false;
+            rbtnEduEnrolledYes.Checked = false;
+            rbtnEduSensitisedNo.Checked = false;
+            rbtnEduSensitisedYes.Checked = false;
+            rbtnEduSupportNA.Checked = false;
+            rbtnEduSupportNo.Checked = false;
+            rbtnEduSupportYes.Checked = false;
+            rbtnESAflateenNo.Checked = false;
+            rbtnESAflateenYes.Checked = false;
+            rbtnESAgroNo.Checked = false;
+            rbtnESAgroYes.Checked = false;
+            rbtnESApprenticeshipNo.Checked = false;
+            rbtnESApprenticeshipYes.Checked = false;
+            rbtnESSilcNo.Checked = false;
+            rbtnESSilcYes.Checked = false;
+            rbtnFSNEducationNA.Checked = false;
+            rbtnFSNEducationNo.Checked = false;
+            rbtnFSNEducationYes.Checked = false;
+            rbtnFSNSupportNA.Checked = false;
+            rbtnFSNSupportNo.Checked = false;
+            rbtnFSNSupportYes.Checked = false;
+            rbtnFSNNutritionNo.Checked = false;
+            rbtnFSNNutritionYes.Checked = false;
+            rbtnFSNReferredNo.Checked = false;
+            rbtnHHPHivPos.Checked = false;
+            rbtnFSNReferredYes.Checked = false;
+            rbtnFSNWashNo.Checked = false;
+            rbtnHHPHivNeg.Checked = false;
+            rbtnHHPHivPos.Checked = false;
+            rbtnHHPHivUnknown.Checked = false;
+            rbtnHHPReferredNA.Checked = false;
+            rbtnHHPReferredNo.Checked = false;
+            rbtnHHPReferredYes.Checked = false;
+            rbtnMemberActiveNo.Checked = false;
+            rbtnMemberActiveYes.Checked = false;
+            rbtnProBirthCertificateNA.Checked = false;
+            rbtnProBirthCertificateNo.Checked = false;
+            rbtnProBirthCertificateYes.Checked = false;
+            rbtnProBirthRegistrationNA.Checked = false;
+            rbtnProBirthRegistrationNo.Checked = false;
+            rbtnProBirthRegistrationYes.Checked = false;
+            rbtnProChildAbuseNA.Checked = false;
+            rbtnProChildAbuseNo.Checked = false;
+            rbtnProChildAbuseYes.Checked = false;
+            rbtnProChildLabourNA.Checked = false;
+            rbtnProChildLabourNo.Checked = false;
+            rbtnProChildLabourYes.Checked = false;
+            rbtnProReintegratedNA.Checked = false;
+            rbtnProReintegratedNo.Checked = false;
+            rbtnProReintegratedYes.Checked = false;
+            rbtnPSParentingNA.Checked = false;
+            rbtnPSParentingNo.Checked = false;
+            rbtnPSParentingYes.Checked = false;
+            rbtnPSSupportNA.Checked = false;
+            rbtnPSSupportNo.Checked = false;
+            rbtnPSSupportYes.Checked = false;
+            rbtnPSViolenceNA.Checked = false;
+            rbtnPSViolenceNo.Checked = false;
+            rbtnPSViolenceYes.Checked = false;
+            btnSave.Enabled = pblnManage;
+            SetHIV(rbtnHHPHivPos.Checked, rbtnHHPArtYes.Checked);
+            rbtnHHPArtNA.Checked = false;
+            rbtnHHPAdheringNA.Checked = false;
+            rbtnLendingGroupYes.Checked = false;
+            rbtnLendingGroupNo.Checked = false;
+            rbtnLendingGroupNA.Checked = false;
+            rbtnCaregiverGroupYes.Checked = false;
+            rbtnCaregiverGroupNo.Checked = false;
+            rbtnEduRegularlyAttendingSchoolYes.Checked = false;
+            rbtnEduRegularlyAttendingSchoolNo.Checked = false;
+            rbtnEduRegularlyAttendingSchoolNA.Checked = false;
+
+            pnlEduEnrolled.Enabled = true;
+            pnlAttendingSchool.Enabled = true;
+            pnlEduSupport.Enabled = true;
+            pnlEduSensitised.Enabled = true;
+            pnlProReintegrated.Enabled = true;
+            pnlProChildLabour.Enabled = true;
+            pnlProChildAbuse.Enabled = true;
+            pnlProBirthCertificate.Enabled = true;
+            #endregion Clear
+        }
+
+        private void ClearInactiveHHMember()
+        {
+            #region Clear
+            //cbHHMember.Enabled = true;
+            lblHHVMId.Text = string.Empty;
+
+            rbtnEduEnrolledNA.Checked = false;
+            rbtnEduEnrolledNo.Checked = false;
+            rbtnEduEnrolledYes.Checked = false;
+            rbtnEduSensitisedNo.Checked = false;
+            rbtnEduSensitisedYes.Checked = false;
+            rbtnEduSupportNA.Checked = false;
+            rbtnEduSupportNo.Checked = false;
+            rbtnEduSupportYes.Checked = false;
+            rbtnESAflateenNo.Checked = false;
+            rbtnESAflateenYes.Checked = false;
+            rbtnESAgroNo.Checked = false;
+            rbtnESAgroYes.Checked = false;
+            rbtnESApprenticeshipNo.Checked = false;
+            rbtnESApprenticeshipYes.Checked = false;
+            rbtnESSilcNo.Checked = false;
+            rbtnESSilcYes.Checked = false;
+            rbtnFSNEducationNA.Checked = false;
+            rbtnFSNEducationNo.Checked = false;
+            rbtnFSNEducationYes.Checked = false;
+            rbtnFSNSupportNA.Checked = false;
+            rbtnFSNSupportNo.Checked = false;
+            rbtnFSNSupportYes.Checked = false;
+            rbtnFSNNutritionNo.Checked = false;
+            rbtnFSNNutritionYes.Checked = false;
+            rbtnFSNReferredNo.Checked = false;
+            //rbtnHHPHivPos.Checked = false;
+            rbtnFSNReferredYes.Checked = false;
+            rbtnFSNWashNo.Checked = false;
+            rbtnHHPReferredNA.Checked = false;
+            rbtnHHPReferredNo.Checked = false;
+            rbtnHHPReferredYes.Checked = false;
+            rbtnProBirthCertificateNA.Checked = false;
+            rbtnProBirthCertificateNo.Checked = false;
+            rbtnProBirthCertificateYes.Checked = false;
+            rbtnProBirthRegistrationNA.Checked = false;
+            rbtnProBirthRegistrationNo.Checked = false;
+            rbtnProBirthRegistrationYes.Checked = false;
+            rbtnProChildAbuseNA.Checked = false;
+            rbtnProChildAbuseNo.Checked = false;
+            rbtnProChildAbuseYes.Checked = false;
+            rbtnProChildLabourNA.Checked = false;
+            rbtnProChildLabourNo.Checked = false;
+            rbtnProChildLabourYes.Checked = false;
+            rbtnProReintegratedNA.Checked = false;
+            rbtnProReintegratedNo.Checked = false;
+            rbtnProReintegratedYes.Checked = false;
+            rbtnPSParentingNA.Checked = false;
+            rbtnPSParentingNo.Checked = false;
+            rbtnPSParentingYes.Checked = false;
+            rbtnPSSupportNA.Checked = false;
+            rbtnPSSupportNo.Checked = false;
+            rbtnPSSupportYes.Checked = false;
+            rbtnPSViolenceNA.Checked = false;
+            rbtnPSViolenceNo.Checked = false;
+            rbtnPSViolenceYes.Checked = false;
+            btnSave.Enabled = pblnManage;
+            SetHIV(rbtnHHPHivPos.Checked, rbtnHHPArtYes.Checked);
+            //rbtnHHPArtNA.Checked = false;
+            rbtnHHPAdheringNA.Checked = false;
+            rbtnLendingGroupYes.Checked = false;
+            rbtnLendingGroupNo.Checked = false;
+            rbtnLendingGroupNA.Checked = false;
+            rbtnCaregiverGroupYes.Checked = false;
+            rbtnCaregiverGroupNo.Checked = false;
+            rbtnEduRegularlyAttendingSchoolYes.Checked = false;
+            rbtnEduRegularlyAttendingSchoolNo.Checked = false;
+            rbtnEduRegularlyAttendingSchoolNA.Checked = false;
+
+            pnlEduEnrolled.Enabled = true;
+            pnlAttendingSchool.Enabled = true;
+            pnlEduSupport.Enabled = true;
+            pnlEduSensitised.Enabled = true;
+            pnlProReintegrated.Enabled = true;
+            pnlProChildLabour.Enabled = true;
+            pnlProChildAbuse.Enabled = true;
+            pnlProBirthCertificate.Enabled = true;
+
+            tlpDisplay07.Enabled = false;
+            tlpDisplay06.Enabled = false;
+            tlpDisplay05.Enabled = false;
+            tlpDisplay03.Enabled = false;
+            tlpDisplay02.Enabled = false;
+            tlpDisplay08.Enabled = false;
             #endregion Clear
         }
 
@@ -375,6 +603,7 @@ namespace SOCY_MIS
                         utilControls.RadioButtonSetSelection(rbtnFSNReferredYes, rbtnFSNReferredNo, dalHHVM.yn_id_fsn_referred);
                         utilControls.RadioButtonSetSelection(rbtnFSNWashYes, rbtnFSNWashNo, dalHHVM.yn_id_fsn_wash);
                         utilControls.RadioButtonSetSelection(rbtnMemberActiveYes, rbtnMemberActiveNo, dalHHVM.yn_id_hhm_active);
+                        utilControls.RadioButtonSetSelection(rbtnCaregiverGroupYes, rbtnCaregiverGroupNo, dalHHVM.yn_id_es_caregiver_group);
 
                         utilControls.RadioButtonSetSelection(rbtnEduEnrolledYes, rbtnEduEnrolledNo, rbtnEduEnrolledNA, dalHHVM.ynna_id_edu_enrolled);
                         utilControls.RadioButtonSetSelection(rbtnEduSupportYes, rbtnEduSupportNo, rbtnEduSupportNA, dalHHVM.ynna_id_edu_support);
@@ -391,8 +620,10 @@ namespace SOCY_MIS
                         utilControls.RadioButtonSetSelection(rbtnPSParentingYes, rbtnPSParentingNo, rbtnPSParentingNA, dalHHVM.ynna_id_ps_parenting);
                         utilControls.RadioButtonSetSelection(rbtnPSSupportYes, rbtnPSSupportNo, rbtnPSSupportNA, dalHHVM.ynna_id_ps_support);
                         utilControls.RadioButtonSetSelection(rbtnPSViolenceYes, rbtnPSViolenceNo, rbtnPSViolenceNA, dalHHVM.ynna_id_ps_violence);
+                        utilControls.RadioButtonSetSelection(rbtnLendingGroupYes, rbtnLendingGroupNo, rbtnLendingGroupNA, dalHHVM.ynna_id_es_other_lending_group);
+                        utilControls.RadioButtonSetSelection(rbtnEduRegularlyAttendingSchoolYes, rbtnEduRegularlyAttendingSchoolNo, rbtnEduRegularlyAttendingSchoolNA, dalHHVM.ynna_id_edu_attend_school_regularly);
 
-                        btnSave.Enabled = pblnManage && (FormMaster.OfficeId.Equals(dalHHVM.ofc_id) || utilConstants.cDFImportOffice.Equals(dalHHVM.ofc_id) || SystemConstants.Validate_Office_group_access(FormMaster.OfficeId, dalHHVM.ofc_id));
+                        //btnSave.Enabled = pblnManage && (FormMaster.OfficeId.Equals(dalHHVM.ofc_id) || utilConstants.cDFImportOffice.Equals(dalHHVM.ofc_id) || SystemConstants.Validate_Office_group_access(FormMaster.OfficeId, dalHHVM.ofc_id) || FormMaster.OfficeId.Equals("9549088f-95c3-4310-aef3-ec700f9d2b8b") || FormMaster.OfficeId.Equals("7053a890-db0b-47a6-8d21-38c9f8b4f53f")); //office ids for the two new Wakiso laptops
 
                         LoadHouseholdMembers(dalHHVM.hhm_id, dbCon);
                         cbHHMember.Enabled = false;
@@ -479,7 +710,9 @@ namespace SOCY_MIS
             dbCon = new DataAccessLayer.DBConnection(utilConstants.cACKConnection);
             try
             {
+               
                 LoadHouseholdMember(strId, dbCon);
+                LoadHIVStatus(strId);
             }
             finally
             {
@@ -516,6 +749,91 @@ namespace SOCY_MIS
                     lblGenderDisplay.Text = dr["gnd_name"].ToString();
                     lblMemberNumberDisplay.Text = dr["hhm_number"].ToString();
                     lblYearOfBirthDisplay.Text = dr["hhm_year_of_birth"].ToString();
+
+                    if (lblYearOfBirthDisplay.Text != "-1")
+                    {
+                        var result = DateTime.Parse(DateTime.Today.ToString()).Year;
+                        string Age = (Convert.ToInt32(result) - Convert.ToInt32(lblYearOfBirthDisplay.Text)).ToString();
+
+                        if (Convert.ToInt32(Age) <= 15)
+                        {
+                            pnlESSilc.Enabled = false;
+                            rbtnESSilcYes.Checked = false;
+                            rbtnESSilcNo.Checked = false;
+                        }
+                        else if (Convert.ToInt32(Age) > 15)
+                        {
+                            pnlESSilc.Enabled = true;
+                        }
+
+                        if (Convert.ToInt32(Age) < 14 || Convert.ToInt32(Age) > 24)
+                        {
+                            pnlESApprenticeship.Enabled = false;
+                            pnlESAgro.Enabled = false;
+                            pnlESAflateen.Enabled = false;
+
+                            rbtnESApprenticeshipYes.Checked = false;
+                            rbtnESApprenticeshipNo.Checked = false;
+                            rbtnESAgroYes.Checked = false;
+                            rbtnESAgroNo.Checked = false;
+                            rbtnESAflateenNo.Checked = false;
+                            rbtnESAflateenNo.Checked = false;
+                        }
+
+                        if(Convert.ToInt32(Age) >= 14 && Convert.ToInt32(Age) <= 24)
+                        {
+                            pnlESApprenticeship.Enabled = true;
+                            pnlESAgro.Enabled = true;
+                            pnlESAflateen.Enabled = true;
+
+                            rbtnESApprenticeshipYes.Checked = false;
+                            rbtnESApprenticeshipNo.Checked = false;
+                            rbtnESAgroYes.Checked = false;
+                            rbtnESAgroNo.Checked = false;
+                            rbtnESAflateenNo.Checked = false;
+                            rbtnESAflateenNo.Checked = false;
+                        }
+
+                        if (Convert.ToInt32(Age) > 17)
+                        {
+                            pnlEduEnrolled.Enabled = false;
+                            pnlAttendingSchool.Enabled = false;
+                            pnlEduSupport.Enabled = false;
+                            //pnlEduSensitised.Enabled = false;
+                            pnlProReintegrated.Enabled = false;
+                            pnlProChildLabour.Enabled = false;
+                            pnlProChildAbuse.Enabled = false;
+                            pnlProBirthCertificate.Enabled = false;
+
+                            rbtnProReintegratedNA.Checked = true;
+                            rbtnProChildLabourNA.Checked = true;
+                            rbtnProChildAbuseNA.Checked = true;
+                            rbtnProBirthCertificateNA.Checked = false;
+                            rbtnEduEnrolledNA.Checked = true;
+                            rbtnEduRegularlyAttendingSchoolNA.Checked = true;
+                            rbtnEduSupportNA.Checked = true;
+                        }
+
+                        if (Convert.ToInt32(Age) >= 6 && Convert.ToInt32(Age) <=17)
+                        {
+                            pnlEduEnrolled.Enabled = true;
+                            pnlAttendingSchool.Enabled = true;
+                            pnlEduSupport.Enabled = true;
+                            pnlProReintegrated.Enabled = true;
+                            pnlProChildLabour.Enabled = true;
+                            pnlProChildAbuse.Enabled = true;
+                            pnlProBirthCertificate.Enabled = true;
+
+                            rbtnProReintegratedNA.Checked = false;
+                            rbtnProChildLabourNA.Checked = false;
+                            rbtnProChildAbuseNA.Checked = false;
+                            rbtnProBirthCertificateNA.Checked = false;
+                            rbtnEduEnrolledNA.Checked = false;
+                            rbtnEduRegularlyAttendingSchoolNA.Checked = false;
+                            rbtnEduSupportNA.Checked = false;
+                        }
+                    }
+                    
                     #endregion Load Data
                 }
             }
@@ -653,6 +971,11 @@ namespace SOCY_MIS
                         dalHHVM.ynna_id_ps_parenting = utilControls.RadioButtonGetSelection(rbtnPSParentingYes, rbtnPSParentingNo, rbtnPSParentingNA);
                         dalHHVM.ynna_id_ps_support = utilControls.RadioButtonGetSelection(rbtnPSSupportYes, rbtnPSSupportNo, rbtnPSSupportNA);
                         dalHHVM.ynna_id_ps_violence = utilControls.RadioButtonGetSelection(rbtnPSViolenceYes, rbtnPSViolenceNo, rbtnPSViolenceNA);
+                        
+                        //new columns/params added by thadeous for the new version of the HHV Tool
+                        dalHHVM.ynna_id_edu_attend_school_regularly = utilControls.RadioButtonGetSelection(rbtnEduRegularlyAttendingSchoolYes, rbtnEduRegularlyAttendingSchoolNo, rbtnEduRegularlyAttendingSchoolNA);
+                        dalHHVM.yn_id_es_caregiver_group = utilControls.RadioButtonGetSelection(rbtnCaregiverGroupYes, rbtnCaregiverGroupNo);
+                        dalHHVM.ynna_id_es_other_lending_group = utilControls.RadioButtonGetSelection(rbtnLendingGroupYes, rbtnLendingGroupNo, rbtnLendingGroupNA);
 
                         dalHHVM.usr_id_update = FormMaster.UserId;
 
@@ -719,6 +1042,10 @@ namespace SOCY_MIS
             #region Required Fields
             if (cbHHMember.SelectedIndex == 0)
                 strMessage = strMessage + "," + utilConstants.cMIDRequiredFields;
+            else if (rbtnMemberActiveYes.Checked == false && rbtnMemberActiveNo.Checked == false)
+                strMessage = "Beneficiary status cannot be empty";
+            else if(rbtnHHPHivNeg.Checked == false && rbtnHHPHivPos.Checked == false && rbtnHHPHivUnknown.Checked == false)
+                strMessage = "HIV Status cannot be empty";
             #endregion Required Fields
 
             #region Get Messages
@@ -776,5 +1103,59 @@ namespace SOCY_MIS
             #endregion Set Permissions
         }
         #endregion Permissions
+
+        private void rbtnHHPArtNo_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        protected void LoadHIVStatus(string hhm_id)
+        {
+            string hst_id = hhHouseholdHomeVisitMember.LoadBenHIVStatus(hhm_id);
+            switch (hst_id)
+            {
+                case "1":
+                    rbtnHHPHivNeg.Checked = false;
+                    rbtnHHPHivPos.Checked = true;
+                    rbtnHHPHivUnknown.Checked = false;
+                    break;
+                case "2":
+                    rbtnHHPHivNeg.Checked = true;
+                    rbtnHHPHivPos.Checked = false;
+                    rbtnHHPHivUnknown.Checked = false;
+                    break;
+                case "3":
+                    rbtnHHPHivNeg.Checked = false;
+                    rbtnHHPHivPos.Checked = false;
+                    rbtnHHPHivUnknown.Checked = true;
+                    break;
+                default:
+                    rbtnHHPHivNeg.Checked = false;
+                    rbtnHHPHivPos.Checked = false;
+                    rbtnHHPHivUnknown.Checked = false;
+                    break;
+            }
+
+            if (rbtnHHPHivPos.Checked == true) { pnlHHPHiv.Enabled = false; }
+            else { pnlHHPHiv.Enabled = true; }
+        }
+
+        private void rbtnMemberActiveNo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnMemberActiveNo.Checked == true)
+            {
+                ClearInactiveHHMember();
+            }
+            else
+            {
+                cbHHMember_SelectionChangeCommitted(cbHHMember, null);
+                tlpDisplay07.Enabled = true;
+                tlpDisplay06.Enabled = true;
+                tlpDisplay05.Enabled = true;
+                tlpDisplay03.Enabled = true;
+                tlpDisplay02.Enabled = true;
+                tlpDisplay08.Enabled = true;
+            }
+        }
     }
 }

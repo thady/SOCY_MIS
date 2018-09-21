@@ -291,6 +291,11 @@ namespace SOCY_MIS
                         LoadControl(frmHm, this.Name, false);
 
                         SetPermissions(dbCon);
+                        hhHousehold_linkages_register.user_id = UserId; //line added by thadeous
+                        hhHousehold_linkages_register.ofc_id = dalOffice.ofc_id;
+                        SystemConstants.ofc_id = dalOffice.ofc_id;
+                        SystemConstants.user_id = UserId;
+                        static_variables.district_id = SystemConstants.Return_office_district();
                     }
                 }
                 finally
@@ -332,5 +337,19 @@ namespace SOCY_MIS
             #endregion Set Permissions
         }
         #endregion Permissions
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            LogOut();
+        }
+
+        private void miEducationSubsidy_Click(object sender, EventArgs e)
+        {
+            #region Set Selected
+            frmEducationSubsidyMain frmNew = new frmEducationSubsidyMain();
+            frmNew.FormMaster = this;
+            LoadControl(frmNew, this.Name, true);
+            #endregion Set Selected
+        }
     }
 }

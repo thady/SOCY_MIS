@@ -103,7 +103,15 @@ namespace SOCY_MIS
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Save();
+            if (SystemConstants.ValidateDistrictID())
+            {
+                Save();
+            }
+            else
+            {
+                MessageBox.Show("No district set for this office,please set the office district under office information screen", "SOCY MIS Message Centre", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void btnMemberCancel_Click(object sender, EventArgs e)
@@ -118,7 +126,15 @@ namespace SOCY_MIS
 
         private void btnMemberSave_Click(object sender, EventArgs e)
         {
-            SaveLine();
+            if (SystemConstants.ValidateDistrictID())
+            {
+                SaveLine();
+            }
+            else
+            {
+                MessageBox.Show("No district set for this office,please set the office district under office information screen", "SOCY MIS Message Centre", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
 
         private void cbHHCode_SelectionChangeCommitted(object sender, EventArgs e)

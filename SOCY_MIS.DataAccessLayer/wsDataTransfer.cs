@@ -1352,7 +1352,7 @@ namespace SOCY_MIS.DataAccessLayer
                         "'{19}', '{20}', '{21}', " +
                         "'{22}', '{23}', " +
                         "'{24}', '{25}', " +
-                        "'{26}','{25}'";
+                        "'{26}','{27}'";
                     strId = dt.Rows[dt.Rows.Count - 1]["hv_id"].ToString();
                     for (int intCount = 0; intCount < dt.Rows.Count; intCount++)
                     {
@@ -1510,13 +1510,30 @@ namespace SOCY_MIS.DataAccessLayer
                         "ynns_id_assets, yns_id_latrine, " +
                         "usr_id_create, usr_id_update, " +
                         "usr_date_create, usr_date_update, " +
-                        "ofc_id,district_id) " +
+                        "ofc_id,district_id,[swk_phone],[caregiver_phone],[_18_years_male],[_18_years_female]" + 
+                      ",[below_18_male],[below_18_female],[total_hhm_male],[total_hhm_female]" + 
+                      ",[yn_child_headed],[yn_hh_disabled],[yn_hhm_sick],[yn_hhm_employed]" + 
+                      ",[yn_pay_unexpected_expense],[yn_function_tp_means],[yn_hhm_vocational_skills]" + 
+                      ",[yn_domestic_animals],[yn_hh_access_to_land],[hh_food_source]" + 
+                      ",[hhm_go_hungry_past_month],[yn_caregiver_knows_hiv_status],[yn_children_tested]" + 
+                      ",[yn_eligible_child_on_treatment],[yn_hh_access_water],[yn_hhm_mosquito_net]" + 
+                      ",[yn_hh_access_public_health_facility],[yn_ob_clean_compound],[yn_ob_drying_rack]" +
+                      ",[yn_ob_garbage_pit],[yn_ob_animal_house],[yn_ob_washing_facility],[hh_stable_shelter]" +
+                      ",[ynna_children_go_to_school],[total_hh_children_not_go_to_school],[yn_children_sad_unhappy]" +
+                      ",[yn_cp_repeated_abuse],[yn_cp_child_labour],[yn_cp_sexually_abused],[yn_cp_stigmatised]" +
+                      ",[hhs_id_visit_from_volunteer],[hhs_id_financial_support],[hhs_id_parenting_counsiling]" +
+                      ",[hhs_id_early_child_dev],[hhs_id_health_hygiene],[hhs_id_hiv_gbv_prevention],[hhs_id_nutrition_counsiling]" +
+                      ",[hhs_id_pre_post_partum],[hhs_id_hiv_testing],[hhs_id_couples_counsiling] ,[hhs_id_birth_certificate]" +
+                      ",[hhs_id_child_protection],[hhs_id_psychosocial],[hhs_id_food_security],[hhs_id_other],[hhs_id_none],[hhcs_id_savings_groups]" +
+                      ",[hhcs_id_parenting_program],[hhcs_id_govt_sage_program],[hhcs_id_other_cash_transfer],[hhcs_id_voluntary_hiv_testing]" +
+                      ",[hhcs_id_food_security_nutrition],[hhcs_id_skills_employ_training],[hhcs_id_entrepreneurship_training],[hhcs_id_other]" +
+                      ",[hhcs_id_none],[hh_child_abuse_action],[yn_cp_conflict_with_law],[yn_cp_withheld_meal],[yn_cp_abusive_language]) " +
                         "{2} " +
                         "ALTER TABLE {0} ENABLE TRIGGER {0}_delete " +
                         "ALTER TABLE {0} ENABLE TRIGGER {0}_insert " +
                         "ALTER TABLE {0} ENABLE TRIGGER {0}_update ";
                     strSQLSelect = "SELECT '{0}', '{1}', '{2}', " +
-                        "{3}, " +
+                        "'{3}', " +
                         "'{4}', '{5}', '{6}', " +
                         "'{7}', '{8}', '{9}', " +
                         "'{10}', '{11}', " +
@@ -1525,7 +1542,9 @@ namespace SOCY_MIS.DataAccessLayer
                         "'{19}', '{20}', " +
                         "'{21}', '{22}', " +
                         "'{23}', '{24}', " +
-                        "'{25}','{26}'";
+                        "'{25}','{26}','{27}','{28}','{29}','{30}','{31}','{32}','{33}','{34}','{35}','{36}','{37}','{38}','{39}','{40}','{41}','{42}','{43}','{44}','{45}','{46}','{47}','{48}'," +
+                        "'{49}','{50}','{51}','{52}','{53}','{54}','{55}','{56}','{57}','{58}','{59}','{60}','{61}','{62}','{63}','{64}','{65}','{66}','{67}','{68}','{69}','{70}','{71}','{72}','{73}'," +
+                        "'{74}','{75}','{76}','{77}','{78}','{79}','{80}','{81}','{82}','{83}','{84}','{85}','{86}','{87}','{88}','{89}','{90}','{91}','{92}','{93}','{94}'";
                     strId = dt.Rows[dt.Rows.Count - 1]["hha_id"].ToString();
                     for (int intCount = 0; intCount < dt.Rows.Count; intCount++)
                     {
@@ -1547,7 +1566,18 @@ namespace SOCY_MIS.DataAccessLayer
                         dr["ynns_id_assets"].ToString(), dr["yns_id_latrine"].ToString(),
                         dr["usr_id_create"].ToString(), dr["usr_id_update"].ToString(),
                         Convert.ToDateTime(dr["usr_date_create"]).ToString("dd MMM yyyy HH:mm:ss"), Convert.ToDateTime(dr["usr_date_update"]).ToString("dd MMM yyyy HH:mm:ss"),
-                        dr["ofc_id"].ToString(), dr["district_id"].ToString());
+                        dr["ofc_id"].ToString(), dr["district_id"].ToString(),
+
+                        dr["swk_phone"].ToString(), dr["caregiver_phone"].ToString(), dr["_18_years_male"].ToString(), dr["_18_years_female"].ToString(), dr["below_18_male"].ToString(), dr["below_18_female"].ToString(), dr["total_hhm_male"].ToString(),
+                        dr["total_hhm_female"].ToString(), dr["yn_child_headed"].ToString(), dr["yn_hh_disabled"].ToString(), dr["yn_hhm_sick"].ToString(), dr["yn_hhm_employed"].ToString(), dr["yn_pay_unexpected_expense"].ToString(), dr["yn_function_tp_means"].ToString(),
+                        dr["yn_hhm_vocational_skills"].ToString(), dr["yn_domestic_animals"].ToString(), dr["yn_hh_access_to_land"].ToString(), dr["hh_food_source"].ToString(), dr["hhm_go_hungry_past_month"].ToString(), dr["yn_caregiver_knows_hiv_status"].ToString(), dr["yn_children_tested"].ToString(),
+                        dr["yn_eligible_child_on_treatment"].ToString(), dr["yn_hh_access_water"].ToString(), dr["yn_hhm_mosquito_net"].ToString(), dr["yn_hh_access_public_health_facility"].ToString(), dr["yn_ob_clean_compound"].ToString(), dr["yn_ob_drying_rack"].ToString(), dr["yn_ob_garbage_pit"].ToString(),
+                        dr["yn_ob_animal_house"].ToString(), dr["yn_ob_washing_facility"].ToString(), dr["hh_stable_shelter"].ToString(), dr["ynna_children_go_to_school"].ToString(), dr["total_hh_children_not_go_to_school"].ToString(), dr["yn_children_sad_unhappy"].ToString(), dr["yn_cp_repeated_abuse"].ToString(), dr["yn_cp_child_labour"].ToString(),
+                        dr["yn_cp_sexually_abused"].ToString(), dr["yn_cp_stigmatised"].ToString(), dr["hhs_id_visit_from_volunteer"].ToString(), dr["hhs_id_financial_support"].ToString(), dr["hhs_id_parenting_counsiling"].ToString(), dr["hhs_id_early_child_dev"].ToString(), dr["hhs_id_health_hygiene"].ToString(),
+                        dr["hhs_id_hiv_gbv_prevention"].ToString(), dr["hhs_id_nutrition_counsiling"].ToString(), dr["hhs_id_pre_post_partum"].ToString(), dr["hhs_id_hiv_testing"].ToString(), dr["hhs_id_couples_counsiling"].ToString(), dr["hhs_id_birth_certificate"].ToString(), dr["hhs_id_child_protection"].ToString(),
+                        dr["hhs_id_psychosocial"].ToString(), dr["hhs_id_food_security"].ToString(), dr["hhs_id_other"].ToString(), dr["hhs_id_none"].ToString(), dr["hhcs_id_savings_groups"].ToString(), dr["hhcs_id_parenting_program"].ToString(), dr["hhcs_id_govt_sage_program"].ToString(),
+                        dr["hhcs_id_other_cash_transfer"].ToString(), dr["hhcs_id_voluntary_hiv_testing"].ToString(), dr["hhcs_id_food_security_nutrition"].ToString(), dr["hhcs_id_skills_employ_training"].ToString(), dr["hhcs_id_entrepreneurship_training"].ToString(), dr["hhcs_id_other"].ToString(), dr["hhcs_id_none"].ToString(),
+                        dr["hh_child_abuse_action"].ToString(), dr["yn_cp_conflict_with_law"].ToString(), dr["yn_cp_withheld_meal"].ToString(), dr["yn_cp_abusive_language"].ToString());
                     }
                     break;
                 #endregion hh_household_assessment
@@ -1570,7 +1600,7 @@ namespace SOCY_MIS.DataAccessLayer
                         "yn_id_immun, yn_id_pregnant, yn_id_school, " +
                         "usr_id_create, usr_id_update, " +
                         "usr_date_create, usr_date_update, " +
-                        "ofc_id,district_id) " +
+                        "ofc_id,district_id,yn_attained_vocational_skill) " +
                         "{2} " +
                         "ALTER TABLE {0} ENABLE TRIGGER {0}_delete " +
                         "ALTER TABLE {0} ENABLE TRIGGER {0}_insert " +
@@ -1586,7 +1616,7 @@ namespace SOCY_MIS.DataAccessLayer
                         "'{19}', '{20}', '{21}', " +
                         "'{22}', '{23}', " +
                         "'{24}', '{25}', " +
-                        "'{26}','{27}'";
+                        "'{26}','{27}','{28}'";
                     strId = dt.Rows[dt.Rows.Count - 1]["ham_id"].ToString();
                     for (int intCount = 0; intCount < dt.Rows.Count; intCount++)
                     {
@@ -1608,7 +1638,7 @@ namespace SOCY_MIS.DataAccessLayer
                         dr["yn_id_immun"].ToString(), dr["yn_id_pregnant"].ToString(), dr["yn_id_school"].ToString(),
                         dr["usr_id_create"].ToString(), dr["usr_id_update"].ToString(),
                         Convert.ToDateTime(dr["usr_date_create"]).ToString("dd MMM yyyy HH:mm:ss"), Convert.ToDateTime(dr["usr_date_update"]).ToString("dd MMM yyyy HH:mm:ss"),
-                        dr["ofc_id"].ToString(), dr["district_id"].ToString());
+                        dr["ofc_id"].ToString(), dr["district_id"].ToString(), dr["yn_attained_vocational_skill"].ToString());
                     }
                     break;
                 #endregion hh_household_assessment_member
@@ -1746,7 +1776,7 @@ namespace SOCY_MIS.DataAccessLayer
                         "ynna_id_ps_parenting, ynna_id_ps_support, ynna_id_ps_violence, " +
                         "usr_id_create, usr_id_update, " +
                         "usr_date_create, usr_date_update, " +
-                        "ofc_id,district_id) " +
+                        "ofc_id,district_id,yn_id_es_caregiver_group,ynna_id_edu_attend_school_regularly,ynna_id_es_other_lending_group) " +
                         "{2} " +
                         "ALTER TABLE {0} ENABLE TRIGGER {0}_delete " +
                         "ALTER TABLE {0} ENABLE TRIGGER {0}_insert " +
@@ -1762,7 +1792,7 @@ namespace SOCY_MIS.DataAccessLayer
                         "'{25}', '{26}', '{27}', " +
                         "'{28}', '{29}', " +
                         "'{30}', '{31}', " +
-                        "'{32}','{33}'";
+                        "'{32}','{33}','{34}','{35}','{36}'";
                     strId = dt.Rows[dt.Rows.Count - 1]["hhvm_id"].ToString();
                     for (int intCount = 0; intCount < dt.Rows.Count; intCount++)
                     {
@@ -1785,7 +1815,7 @@ namespace SOCY_MIS.DataAccessLayer
                         dr["ynna_id_ps_parenting"].ToString(), dr["ynna_id_ps_support"].ToString(), dr["ynna_id_ps_violence"].ToString(), 
                         dr["usr_id_create"].ToString(), dr["usr_id_update"].ToString(),
                         Convert.ToDateTime(dr["usr_date_create"]).ToString("dd MMM yyyy HH:mm:ss"), Convert.ToDateTime(dr["usr_date_update"]).ToString("dd MMM yyyy HH:mm:ss"),
-                        dr["ofc_id"].ToString(), dr["district_id"].ToString());
+                        dr["ofc_id"].ToString(), dr["district_id"].ToString(), dr["yn_id_es_caregiver_group"].ToString(), dr["ynna_id_edu_attend_school_regularly"].ToString(), dr["ynna_id_es_other_lending_group"].ToString());
                     }
                     break;
                 #endregion hh_household_home_visit_member
@@ -1816,7 +1846,7 @@ namespace SOCY_MIS.DataAccessLayer
                         "ynna_id_edu_missed_school, ynna_id_edu_not_enrolled, " +
                         "usr_id_create, usr_id_update, " +
                         "usr_date_create, usr_date_update, " +
-                        "ofc_id,district_id) " +
+                        "ofc_id,district_id,ids_id) " +
                         "{2} " +
                         "ALTER TABLE {0} ENABLE TRIGGER {0}_delete " +
                         "ALTER TABLE {0} ENABLE TRIGGER {0}_insert " +
@@ -1840,7 +1870,7 @@ namespace SOCY_MIS.DataAccessLayer
                         "'{41}', '{42}', " +
                         "'{43}', '{44}', " +
                         "'{45}', '{46}', " +
-                        "'{47}','{48}'";
+                        "'{47}','{48}','{49}'";
                     strId = dt.Rows[dt.Rows.Count - 1]["oip_id"].ToString();
                     for (int intCount = 0; intCount < dt.Rows.Count; intCount++)
                     {
@@ -1870,7 +1900,7 @@ namespace SOCY_MIS.DataAccessLayer
                         dr["ynna_id_edu_missed_school"].ToString(), dr["ynna_id_edu_not_enrolled"].ToString(),
                         dr["usr_id_create"].ToString(), dr["usr_id_update"].ToString(),
                         Convert.ToDateTime(dr["usr_date_create"]).ToString("dd MMM yyyy HH:mm:ss"), Convert.ToDateTime(dr["usr_date_update"]).ToString("dd MMM yyyy HH:mm:ss"),
-                        dr["ofc_id"].ToString(), dr["district_id"].ToString());
+                        dr["ofc_id"].ToString(), dr["district_id"].ToString(), dr["ids_id"].ToString());
                     }
                     break;
                 #endregion hh_ovc_identification_prioritization
@@ -2175,7 +2205,7 @@ namespace SOCY_MIS.DataAccessLayer
                         "cra_id, dst_id, " +
                         "usr_id_create, usr_id_update, " +
                         "usr_date_create, usr_date_update, " +
-                        "ofc_id,district_id) " +
+                        "ofc_id,district_id,crad_partner_funding) " +
                         "{2} " +
                         "ALTER TABLE {0} ENABLE TRIGGER {0}_delete " +
                         "ALTER TABLE {0} ENABLE TRIGGER {0}_insert " +
@@ -2186,7 +2216,7 @@ namespace SOCY_MIS.DataAccessLayer
                         "'{6}', '{7}', " +
                         "'{8}', '{9}', " +
                         "'{10}', '{11}', " +
-                        "'{12}','{13}'";
+                        "'{12}','{13}',{14}";
                     strId = dt.Rows[dt.Rows.Count - 1]["crad_id"].ToString();
                     for (int intCount = 0; intCount < dt.Rows.Count; intCount++)
                     {
@@ -2203,7 +2233,7 @@ namespace SOCY_MIS.DataAccessLayer
                         dr["cra_id"].ToString(), dr["dst_id"].ToString(),
                         dr["usr_id_create"].ToString(), dr["usr_id_update"].ToString(),
                         Convert.ToDateTime(dr["usr_date_create"]).ToString("dd MMM yyyy HH:mm:ss"), Convert.ToDateTime(dr["usr_date_update"]).ToString("dd MMM yyyy HH:mm:ss"),
-                        dr["ofc_id"].ToString(), dr["district_id"].ToString());
+                        dr["ofc_id"].ToString(), dr["district_id"].ToString(), Convert.ToDecimal(dr["crad_partner_funding"].ToString()));
                     }
                     break;
                 #endregion prt_cbsd_resource_allocation_district
@@ -2356,7 +2386,7 @@ namespace SOCY_MIS.DataAccessLayer
                         "dst_id, fy_id, qy_id, " +
                         "usr_id_create, usr_id_update, " +
                         "usr_date_create, usr_date_update, " +
-                        "ofc_id,district_id) " +
+                        "ofc_id,district_id,prt_id) " +
                         "{2} " +
                         "ALTER TABLE {0} ENABLE TRIGGER {0}_delete " +
                         "ALTER TABLE {0} ENABLE TRIGGER {0}_insert " +
@@ -2365,7 +2395,7 @@ namespace SOCY_MIS.DataAccessLayer
                         "'{2}', '{3}', '{4}', " +
                         "'{5}', '{6}', " +
                         "'{7}', '{8}', " +
-                        "'{9}','{10}'";
+                        "'{9}','{10}','{11}'";
                     strId = dt.Rows[dt.Rows.Count - 1]["ics_id"].ToString();
                     for (int intCount = 0; intCount < dt.Rows.Count; intCount++)
                     {
@@ -2380,7 +2410,7 @@ namespace SOCY_MIS.DataAccessLayer
                         dr["dst_id"].ToString(), dr["fy_id"].ToString(), dr["qy_id"].ToString(),
                         dr["usr_id_create"].ToString(), dr["usr_id_update"].ToString(),
                         Convert.ToDateTime(dr["usr_date_create"]).ToString("dd MMM yyyy HH:mm:ss"), Convert.ToDateTime(dr["usr_date_update"]).ToString("dd MMM yyyy HH:mm:ss"),
-                        dr["ofc_id"].ToString(), dr["district_id"].ToString());
+                        dr["ofc_id"].ToString(), dr["district_id"].ToString(), dr["prt_id"].ToString());
                     }
                     break;
                 #endregion prt_institutional_care_summary
@@ -2399,7 +2429,7 @@ namespace SOCY_MIS.DataAccessLayer
                         "gnd_id_caregiver, gnd_id_child, ics_id, ins_id, wrd_id, " +
                         "usr_id_create, usr_id_update, " +
                         "usr_date_create, usr_date_update, " +
-                        "ofc_id,district_id) " +
+                        "ofc_id,district_id,idst_other,isct_other,iwrd_other) " +
                         "{2} " +
                         "ALTER TABLE {0} ENABLE TRIGGER {0}_delete " +
                         "ALTER TABLE {0} ENABLE TRIGGER {0}_insert " +
@@ -2411,7 +2441,7 @@ namespace SOCY_MIS.DataAccessLayer
                         "'{7}', '{8}', '{9}', '{10}', '{11}', " +
                         "'{12}', '{13}', " +
                         "'{14}', '{15}', " +
-                        "'{16}','{17}'";
+                        "'{16}','{17}','{18}','{19}','{20}'";
                     strId = dt.Rows[dt.Rows.Count - 1]["icsl_id"].ToString();
                     for (int intCount = 0; intCount < dt.Rows.Count; intCount++)
                     {
@@ -2429,7 +2459,7 @@ namespace SOCY_MIS.DataAccessLayer
                         dr["gnd_id_caregiver"].ToString(), dr["gnd_id_child"].ToString(), dr["ics_id"].ToString(), dr["ins_id"].ToString(), dr["wrd_id"].ToString(),
                         dr["usr_id_create"].ToString(), dr["usr_id_update"].ToString(),
                         Convert.ToDateTime(dr["usr_date_create"]).ToString("dd MMM yyyy HH:mm:ss"), Convert.ToDateTime(dr["usr_date_update"]).ToString("dd MMM yyyy HH:mm:ss"),
-                        dr["ofc_id"].ToString(), dr["district_id"].ToString());
+                        dr["ofc_id"].ToString(), dr["district_id"].ToString(), dr["idst_other"].ToString(), dr["isct_other"].ToString(), dr["iwrd_other"].ToString());
                     }
                     break;
                 #endregion prt_institutional_care_summary_line
@@ -2734,6 +2764,778 @@ namespace SOCY_MIS.DataAccessLayer
                     }
                     break;
                 #endregion swm_social_worker
+
+                #region hh_household_linkages_tracking
+                case "hh_household_linkages_tracking":
+                    strSQL = "ALTER TABLE {0} DISABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_update " +
+                        "DELETE FROM {0} WHERE hhm_linkages_record_guid IN ({1}) " +
+                        "INSERT INTO {0} " +
+                        "(hhm_linkages_record_guid, partner_id, hhm_district_id, " +
+                        "subcounty_id, parish_id, village, " +
+                        "hhm_id, service_provider_id, " +
+                        "usr_id_create, usr_id_update, usr_date_create, " +
+                        "usr_date_update, ofc_id, district_id) " +
+                        "{2} " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_update ";
+                    strSQLSelect = "SELECT '{0}', '{1}', '{2}', " +
+                        "'{3}', '{4}', " +
+                        "'{5}', '{6}', '{7}', " +
+                        "'{8}', '{9}', '{10}', " +
+                        "'{11}', '{12}', '{13}'";
+                    strId = dt.Rows[dt.Rows.Count - 1]["hhm_linkages_record_guid"].ToString();
+                    for (int intCount = 0; intCount < dt.Rows.Count; intCount++)
+                    {
+                        dr = dt.Rows[intCount];
+                        if (intCount != 0)
+                        {
+                            strSQLData = strSQLData + "UNION ALL ";
+                            strSQLDelete = strSQLDelete + ", ";
+                        }
+                        strSQLDelete = strSQLDelete + string.Format("'{0}'", dr["hhm_linkages_record_guid"].ToString());
+                        strSQLData = strSQLData + string.Format(strSQLSelect, dr["hhm_linkages_record_guid"].ToString(), utilFormatting.StringForSQL(dr["partner_id"].ToString()), utilFormatting.StringForSQL(dr["hhm_district_id"].ToString()),
+                        utilFormatting.StringForSQL(dr["subcounty_id"].ToString()), utilFormatting.StringForSQL(dr["parish_id"].ToString()), utilFormatting.StringForSQL(dr["village"].ToString()),
+                        utilFormatting.StringForSQL(dr["hhm_id"].ToString()), utilFormatting.StringForSQL(dr["service_provider_id"].ToString()),
+                        dr["usr_id_create"].ToString(), dr["usr_id_update"].ToString(),
+                        Convert.ToDateTime(dr["usr_date_create"]).ToString("dd MMM yyyy HH:mm:ss"), Convert.ToDateTime(dr["usr_date_update"]).ToString("dd MMM yyyy HH:mm:ss"),
+                        dr["ofc_id"].ToString(), dr["district_id"].ToString());
+                    }
+                    break;
+
+                #endregion hh_household_linkages_tracking
+
+                #region hh_household_linkages_services_required
+                case "hh_household_linkages_services_required":
+                    strSQL = "ALTER TABLE {0} DISABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_update " +
+                        "DELETE FROM {0} WHERE lsr_id IN ({1}) " +
+                        "INSERT INTO {0} " +
+                        "(record_guid,hhm_linkages_record_guid, lsr_id, " +
+                        "usr_id_create, usr_id_update, usr_date_create, " +
+                        "usr_date_update, ofc_id, district_id) " +
+                        "{2} " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_update ";
+                    strSQLSelect = "SELECT '{0}', '{1}', '{2}', " +
+                        "'{3}', '{4}', " +
+                        "'{5}', '{6}', '{7}'," +
+                        "'{8}'";
+
+                    strId = dt.Rows[dt.Rows.Count - 1]["record_guid"].ToString();
+                    for (int intCount = 0; intCount < dt.Rows.Count; intCount++)
+                    {
+                        dr = dt.Rows[intCount];
+                        if (intCount != 0)
+                        {
+                            strSQLData = strSQLData + "UNION ALL ";
+                            strSQLDelete = strSQLDelete + ", ";
+                        }
+                        strSQLDelete = strSQLDelete + string.Format("'{0}'", dr["record_guid"].ToString());
+                        strSQLData = strSQLData + string.Format(strSQLSelect, dr["record_guid"].ToString(), dr["hhm_linkages_record_guid"].ToString(), utilFormatting.StringForSQL(dr["lsr_id"].ToString()),
+                        dr["usr_id_create"].ToString(), dr["usr_id_update"].ToString(),
+                        Convert.ToDateTime(dr["usr_date_create"]).ToString("dd MMM yyyy HH:mm:ss"), Convert.ToDateTime(dr["usr_date_update"]).ToString("dd MMM yyyy HH:mm:ss"),
+                        dr["ofc_id"].ToString(), dr["district_id"].ToString());
+                    }
+                    break;
+
+                #endregion hh_household_linkages_services_required
+
+                #region hh_household_linkages_services_provided
+                case "hh_household_linkages_services_provided":
+                    strSQL = "ALTER TABLE {0} DISABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_update " +
+                        "DELETE FROM {0} WHERE lsp_id IN ({1}) " +
+                        "INSERT INTO {0} " +
+                        "(record_guid,lsp_id, hhm_linkages_record_guid, " +
+                        "usr_id_create, usr_date_create, " +
+                        "ofc_id, district_id) " +
+                        "{2} " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_update ";
+                    strSQLSelect = "SELECT '{0}', '{1}', '{2}', " +
+                        "'{3}', '{4}', " +
+                        "'{5}','{6}'";
+
+                    strId = dt.Rows[dt.Rows.Count - 1]["record_guid"].ToString();
+                    for (int intCount = 0; intCount < dt.Rows.Count; intCount++)
+                    {
+                        dr = dt.Rows[intCount];
+                        if (intCount != 0)
+                        {
+                            strSQLData = strSQLData + "UNION ALL ";
+                            strSQLDelete = strSQLDelete + ", ";
+                        }
+                        strSQLDelete = strSQLDelete + string.Format("'{0}'", dr["record_guid"].ToString());
+                        strSQLData = strSQLData + string.Format(strSQLSelect, dr["record_guid"].ToString(), dr["lsp_id"].ToString(), utilFormatting.StringForSQL(dr["hhm_linkages_record_guid"].ToString()),
+                        dr["usr_id_create"].ToString(), Convert.ToDateTime(dr["usr_date_create"]).ToString("dd MMM yyyy HH:mm:ss"),
+                        dr["ofc_id"].ToString(), dr["district_id"].ToString());
+                    }
+                    break;
+
+                #endregion hh_household_linkages_services_provided
+
+                #region hh_household_risk_assessment_header
+                case "hh_household_risk_assessment_header":
+                    strSQL = "ALTER TABLE {0} DISABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_update " +
+                        "DELETE FROM {0} WHERE ras_id IN ({1}) " +
+                        "INSERT INTO {0} " +
+                        "([ras_id],[hh_code],[hh_id],[interviewed_member_id],[date_of_visit] ,[usr_id_create]" + 
+                        ",[usr_id_update] ,[usr_date_create],[usr_date_update],[ofc_id],[district_id]) " +
+                        "{2} " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_update ";
+                    strSQLSelect = "SELECT '{0}', '{1}', '{2}', " +
+                        "'{3}', '{4}', " +
+                        "'{5}','{6}','{7}','{8}','{9}','{10}'";
+
+                    strId = dt.Rows[dt.Rows.Count - 1]["ras_id"].ToString();
+                    for (int intCount = 0; intCount < dt.Rows.Count; intCount++)
+                    {
+                        dr = dt.Rows[intCount];
+                        if (intCount != 0)
+                        {
+                            strSQLData = strSQLData + "UNION ALL ";
+                            strSQLDelete = strSQLDelete + ", ";
+                        }
+                        strSQLDelete = strSQLDelete + string.Format("'{0}'", dr["ras_id"].ToString());
+                        strSQLData = strSQLData + string.Format(strSQLSelect, dr["ras_id"].ToString(), dr["hh_code"].ToString(), utilFormatting.StringForSQL(dr["hh_id"].ToString()),
+                        dr["interviewed_member_id"].ToString(), Convert.ToDateTime(dr["date_of_visit"]).ToString("dd MMM yyyy HH:mm:ss"), dr["usr_id_create"].ToString(),
+                        dr["usr_id_update"].ToString(), Convert.ToDateTime(dr["usr_date_create"]).ToString("dd MMM yyyy HH:mm:ss"), Convert.ToDateTime(dr["usr_date_update"]).ToString("dd MMM yyyy HH:mm:ss"),
+                        dr["ofc_id"].ToString(), dr["district_id"].ToString());
+                    }
+                    break;
+                #endregion hh_household_risk_assessment_header
+
+                #region hh_household_risk_assessment_beneficiaries
+                case "hh_household_risk_assessment_beneficiaries":
+                    strSQL = "ALTER TABLE {0} DISABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_update " +
+                        "DELETE FROM {0} WHERE rasm_id IN ({1}) " +
+                        "INSERT INTO {0} " +
+                        "([ras_id],[rasm_id],[hh_member_id],[hh_member_code] ,[current_hiv_status_id] ,[is_on_art],[screen_hospital_last_six_months]" +
+                         ",[screen_either_parents_deceased],[screen_either_siblings_deceased] ,[screen_poor_health_last_three_months],[screen_adult_child_with_hiv_or_tb]" +
+                          ",[screen_below_relative_grade],[child_eligible_for_test_refferal],[care_giver_accepted_to_test_child],[test_result],[usr_id_create]" + 
+                          ",[usr_id_update],[usr_date_create],[usr_date_update],[ofc_id] ,[district_id]) " +
+                        "{2} " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_update ";
+                    strSQLSelect = "SELECT '{0}', '{1}', '{2}', " +
+                        "'{3}', '{4}', " +
+                        "'{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}','{16}','{17}','{18}','{19}','{20}'";
+
+                    strId = dt.Rows[dt.Rows.Count - 1]["rasm_id"].ToString();
+                    for (int intCount = 0; intCount < dt.Rows.Count; intCount++)
+                    {
+                        dr = dt.Rows[intCount];
+                        if (intCount != 0)
+                        {
+                            strSQLData = strSQLData + "UNION ALL ";
+                            strSQLDelete = strSQLDelete + ", ";
+                        }
+                        strSQLDelete = strSQLDelete + string.Format("'{0}'", dr["rasm_id"].ToString());
+                        strSQLData = strSQLData + string.Format(strSQLSelect, dr["ras_id"].ToString(), dr["rasm_id"].ToString(), utilFormatting.StringForSQL(dr["hh_member_id"].ToString()),
+                        dr["hh_member_code"].ToString(), dr["current_hiv_status_id"].ToString(), dr["is_on_art"].ToString(), dr["screen_hospital_last_six_months"].ToString(),
+                        dr["screen_either_parents_deceased"].ToString(), dr["screen_either_siblings_deceased"].ToString(), dr["screen_poor_health_last_three_months"].ToString(),
+                        dr["screen_adult_child_with_hiv_or_tb"].ToString(), dr["screen_below_relative_grade"].ToString(), dr["child_eligible_for_test_refferal"].ToString(),
+                        dr["care_giver_accepted_to_test_child"].ToString(), dr["test_result"].ToString(), dr["usr_id_create"].ToString(), dr["usr_id_update"].ToString(),
+                         Convert.ToDateTime(dr["usr_date_create"]).ToString("dd MMM yyyy HH:mm:ss"), Convert.ToDateTime(dr["usr_date_update"]).ToString("dd MMM yyyy HH:mm:ss"),
+                         dr["ofc_id"].ToString(), dr["district_id"].ToString());
+                    }
+                    break;
+                #endregion hh_household_risk_assessment_beneficiaries
+
+                #region hh_household_improvement_plan
+                case "hh_household_improvement_plan":
+                    strSQL = "ALTER TABLE {0} DISABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_update " +
+                        "DELETE FROM {0} WHERE hip_id IN ({1}) " +
+                        "INSERT INTO {0} " +
+                        "([hip_id],[hh_code],[hh_id],[visit_date] ,[ov_below_seventeen_yrs_male],[ov_below_seventeen_yrs_female]" + 
+                       ",[ov_above_eighteen_yrs_male],[ov_above_eighteen_yrs_female],[health_knows_status_of_children] ,[health_enrolled_on_art],[health_action_plan] " + 
+                       ",[health_follow_up_date],[household_is_healthy],[safe_has_birth_certificates],[safe_no_child_abuse],[safe_action_plan],[safe_follow_up_date] " +
+                      " ,[household_is_safe],[stable_source_of_income],[stable_financial_services],[stable_two_or_more_meals],[stable_action_plan],[stable_follow_up_date] " + 
+                      " ,[household_is_stable],[schooled_all_attending_school],[schooled_attained_techinical_skill],[schooled_others],[schooled_action_plan],[schooled_follow_up_date] " + 
+                      " ,[household_is_schooled],[sw_id],[sw_comment],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update],[ofc_id],[district_id]) " +
+                        "{2} " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_update ";
+                    strSQLSelect = "SELECT '{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}','{16}','{17}','{18}','{19}','{20}','{21}','{22}','{23}','{24}'," +
+                    "'{25}','{26}','{27}','{28}','{29}','{30}','{31}','{32}','{33}','{34}','{35}','{36}','{37}'";
+
+                    strId = dt.Rows[dt.Rows.Count - 1]["hip_id"].ToString();
+                    for (int intCount = 0; intCount < dt.Rows.Count; intCount++)
+                    {
+                        dr = dt.Rows[intCount];
+                        if (intCount != 0)
+                        {
+                            strSQLData = strSQLData + "UNION ALL ";
+                            strSQLDelete = strSQLDelete + ", ";
+                        }
+                        strSQLDelete = strSQLDelete + string.Format("'{0}'", dr["hip_id"].ToString());
+                        strSQLData = strSQLData + string.Format(strSQLSelect, dr["hip_id"].ToString(), dr["hh_code"].ToString(), utilFormatting.StringForSQL(dr["hh_id"].ToString()),
+                        Convert.ToDateTime(dr["visit_date"]).ToString("dd MMM yyyy HH:mm:ss"), Convert.ToInt32( dr["ov_below_seventeen_yrs_male"].ToString()),Convert.ToInt32( dr["ov_below_seventeen_yrs_female"].ToString())
+                        ,Convert.ToInt32( dr["ov_above_eighteen_yrs_male"].ToString()), Convert.ToInt32(dr["ov_above_eighteen_yrs_female"].ToString()),
+
+                        dr["health_knows_status_of_children"].ToString(), dr["health_enrolled_on_art"].ToString(), dr["health_action_plan"].ToString(),
+                        dr["health_follow_up_date"].ToString(), dr["household_is_healthy"].ToString(), dr["safe_has_birth_certificates"].ToString(),
+                        dr["safe_no_child_abuse"].ToString(), dr["safe_action_plan"].ToString(), dr["safe_follow_up_date"].ToString(), dr["household_is_safe"].ToString(),
+                        dr["stable_source_of_income"].ToString(), dr["stable_financial_services"].ToString(), dr["stable_two_or_more_meals"].ToString(), dr["stable_action_plan"].ToString(), dr["stable_follow_up_date"].ToString(),
+                        dr["household_is_stable"].ToString(), dr["schooled_all_attending_school"].ToString(), dr["schooled_attained_techinical_skill"].ToString(), dr["schooled_others"].ToString(),
+                        dr["schooled_action_plan"].ToString(), dr["schooled_follow_up_date"].ToString(), dr["household_is_schooled"].ToString(), dr["sw_id"].ToString(), dr["sw_comment"].ToString(),
+                        dr["usr_id_create"].ToString(), dr["usr_id_update"].ToString(), Convert.ToDateTime(dr["usr_date_create"]).ToString("dd MMM yyyy HH:mm:ss"), Convert.ToDateTime(dr["usr_date_update"]).ToString("dd MMM yyyy HH:mm:ss"),
+                        dr["ofc_id"].ToString(), dr["district_id"].ToString());
+                    }
+                    break;
+                #endregion hh_household_improvement_plan
+
+                #region silc_community_training_register
+                case "silc_community_training_register":
+                    strSQL = "ALTER TABLE {0} DISABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_update " +
+                        "DELETE FROM {0} WHERE ctr_id IN ({1}) " +
+                        "INSERT INTO {0} " +
+                        "([ctr_id],[prt_id],[cso_id],[dst_id] ,[sct_id],[tr_name],[module_name],[tr_total_days] ,[tr_date_from] " +
+                         ",[tr_date_to] ,[module_desc],[tr_venue] ,[trainer_type],[artisan_name],[facilitator_trainer_name] " +
+                          ",[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update],[ofc_id],[district_id]) " +
+                        "{2} " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_update ";
+                    strSQLSelect = "SELECT '{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}','{16}','{17}','{18}','{19}','{20}'";
+
+                    strId = dt.Rows[dt.Rows.Count - 1]["ctr_id"].ToString();
+                    for (int intCount = 0; intCount < dt.Rows.Count; intCount++)
+                    {
+                        dr = dt.Rows[intCount];
+                        if (intCount != 0)
+                        {
+                            strSQLData = strSQLData + "UNION ALL ";
+                            strSQLDelete = strSQLDelete + ", ";
+                        }
+                        strSQLDelete = strSQLDelete + string.Format("'{0}'", dr["ctr_id"].ToString());
+                        strSQLData = strSQLData + string.Format(strSQLSelect, dr["ctr_id"].ToString(), dr["prt_id"].ToString(), utilFormatting.StringForSQL(dr["cso_id"].ToString()),
+                        utilFormatting.StringForSQL(dr["dst_id"].ToString()), utilFormatting.StringForSQL(dr["sct_id"].ToString()), utilFormatting.StringForSQL(dr["tr_name"].ToString()),
+                        utilFormatting.StringForSQL(dr["module_name"].ToString()), utilFormatting.StringForSQL(dr["tr_total_days"].ToString()), Convert.ToDateTime(dr["tr_date_from"]).ToString("dd MMM yyyy HH:mm:ss"),
+                        Convert.ToDateTime(dr["tr_date_to"]).ToString("dd MMM yyyy HH:mm:ss"), utilFormatting.StringForSQL(dr["module_desc"].ToString()), utilFormatting.StringForSQL(dr["tr_venue"].ToString()),
+                        utilFormatting.StringForSQL(dr["trainer_type"].ToString()), utilFormatting.StringForSQL(dr["artisan_name"].ToString()), utilFormatting.StringForSQL(dr["facilitator_trainer_name"].ToString()),
+                        utilFormatting.StringForSQL(dr["usr_id_create"].ToString()), utilFormatting.StringForSQL(dr["usr_id_update"].ToString()),
+                        Convert.ToDateTime(dr["usr_date_create"]).ToString("dd MMM yyyy HH:mm:ss"), Convert.ToDateTime(dr["usr_date_update"]).ToString("dd MMM yyyy HH:mm:ss"),
+                        dr["ofc_id"].ToString(), dr["district_id"].ToString());
+                    }
+                    break;
+                #endregion silc_community_training_register
+
+                #region silc_community_training_register_member
+                case "silc_community_training_register_member":
+                    strSQL = "ALTER TABLE {0} DISABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_update " +
+                        "DELETE FROM {0} WHERE ctrm_id IN ({1}) " +
+                        "INSERT INTO {0} " +
+                        "([ctrm_id] ,[ctr_id],[ben_type] ,[hhm_code],[parcipant_name],[gnd_id],[age] " +
+                         ",[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update],[ofc_id],[district_id] ) " +
+                        "{2} " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_update ";
+                    strSQLSelect = "SELECT '{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}'";
+
+                    strId = dt.Rows[dt.Rows.Count - 1]["ctrm_id"].ToString();
+                    for (int intCount = 0; intCount < dt.Rows.Count; intCount++)
+                    {
+                        dr = dt.Rows[intCount];
+                        if (intCount != 0)
+                        {
+                            strSQLData = strSQLData + "UNION ALL ";
+                            strSQLDelete = strSQLDelete + ", ";
+                        }
+                        strSQLDelete = strSQLDelete + string.Format("'{0}'", dr["ctrm_id"].ToString());
+                        strSQLData = strSQLData + string.Format(strSQLSelect, dr["ctrm_id"].ToString(), dr["ctr_id"].ToString(), utilFormatting.StringForSQL(dr["ben_type"].ToString()),
+                        utilFormatting.StringForSQL(dr["hhm_code"].ToString()), utilFormatting.StringForSQL(dr["parcipant_name"].ToString()), utilFormatting.StringForSQL(dr["gnd_id"].ToString()),
+                        utilFormatting.StringForSQL(dr["age"].ToString()), utilFormatting.StringForSQL(dr["usr_id_create"].ToString()), utilFormatting.StringForSQL(dr["usr_id_update"].ToString()),
+                        Convert.ToDateTime(dr["usr_date_create"]).ToString("dd MMM yyyy HH:mm:ss"), Convert.ToDateTime(dr["usr_date_update"]).ToString("dd MMM yyyy HH:mm:ss"),
+                        dr["ofc_id"].ToString(), dr["district_id"].ToString());
+                    }
+                    break;
+                #endregion silc_community_training_register_member
+
+                #region silc_community_training_register_member_attendance_dates
+                case "silc_community_training_register_member_attendance_dates":
+                    strSQL = "ALTER TABLE {0} DISABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_update " +
+                        "DELETE FROM {0} WHERE ctrmD_id IN ({1}) " +
+                        "INSERT INTO {0} " +
+                        "([ctrmD_id],[ctrm_id],[date],[ofc_id],[district_id]) " +
+                        "{2} " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_update ";
+                    strSQLSelect = "SELECT '{0}','{1}','{2}','{3}','{4}'";
+
+                    strId = dt.Rows[dt.Rows.Count - 1]["ctrmD_id"].ToString();
+                    for (int intCount = 0; intCount < dt.Rows.Count; intCount++)
+                    {
+                        dr = dt.Rows[intCount];
+                        if (intCount != 0)
+                        {
+                            strSQLData = strSQLData + "UNION ALL ";
+                            strSQLDelete = strSQLDelete + ", ";
+                        }
+                        strSQLDelete = strSQLDelete + string.Format("'{0}'", dr["ctrmD_id"].ToString());
+                        strSQLData = strSQLData + string.Format(strSQLSelect, dr["ctrmD_id"].ToString(), dr["ctrm_id"].ToString(),
+                        Convert.ToDateTime(dr["date"]).ToString("dd MMM yyyy HH:mm:ss"),
+                        dr["ofc_id"].ToString(), dr["district_id"].ToString());
+                    }
+                    break;
+                #endregion silc_community_training_register_member_attendance_dates
+
+                #region ben_youth_training_inventory
+                case "ben_youth_training_inventory":
+                    strSQL = "ALTER TABLE {0} DISABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_update " +
+                        "DELETE FROM {0} WHERE yti_id IN ({1}) " +
+                        "INSERT INTO {0} " +
+                        "([yti_id],[prt_id],[cso_id] ,[dst_id] ,[sct_id] ,[wrd_id] ,[begin_date],[hhm_code] " +
+                       ",[hhm_name] ,[grp_name] ,[age],[gnd_id],[training_type],[trainer_name],[exp_date_completion] " + 
+                       ",[actual_date_completion],[usr_id_create] ,[usr_id_update],[usr_date_create] ,[usr_date_update] " + 
+                       ",[ofc_id],[district_id]) " +
+                        "{2} " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_update ";
+                    strSQLSelect = @"SELECT '{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}','{16}','{17}','{18}','{19}'
+                        ,'{20}','{21}'";
+
+                    strId = dt.Rows[dt.Rows.Count - 1]["yti_id"].ToString();
+                    for (int intCount = 0; intCount < dt.Rows.Count; intCount++)
+                    {
+                        dr = dt.Rows[intCount];
+                        if (intCount != 0)
+                        {
+                            strSQLData = strSQLData + "UNION ALL ";
+                            strSQLDelete = strSQLDelete + ", ";
+                        }
+                        strSQLDelete = strSQLDelete + string.Format("'{0}'", dr["yti_id"].ToString());
+                        strSQLData = strSQLData + string.Format(strSQLSelect, dr["yti_id"].ToString(), dr["prt_id"].ToString(), utilFormatting.StringForSQL(dr["cso_id"].ToString()),
+                        utilFormatting.StringForSQL(dr["dst_id"].ToString()), utilFormatting.StringForSQL(dr["sct_id"].ToString()), utilFormatting.StringForSQL(dr["wrd_id"].ToString()),
+                        Convert.ToDateTime(dr["begin_date"]).ToString("dd MMM yyyy HH:mm:ss"), utilFormatting.StringForSQL(dr["hhm_code"].ToString()), utilFormatting.StringForSQL(dr["hhm_name"].ToString()),
+                        utilFormatting.StringForSQL(dr["grp_name"].ToString()), utilFormatting.StringForSQL(dr["age"].ToString()), utilFormatting.StringForSQL(dr["gnd_id"].ToString()),
+                        utilFormatting.StringForSQL(dr["training_type"].ToString()), utilFormatting.StringForSQL(dr["trainer_name"].ToString()), Convert.ToDateTime(dr["exp_date_completion"]).ToString("dd MMM yyyy HH:mm:ss"),
+                        Convert.ToDateTime(dr["actual_date_completion"]).ToString("dd MMM yyyy HH:mm:ss"),
+                        utilFormatting.StringForSQL(dr["usr_id_create"].ToString()), utilFormatting.StringForSQL(dr["usr_id_update"].ToString()),
+                        Convert.ToDateTime(dr["usr_date_create"]).ToString("dd MMM yyyy HH:mm:ss"), Convert.ToDateTime(dr["usr_date_update"]).ToString("dd MMM yyyy HH:mm:ss"),
+                        dr["ofc_id"].ToString(), dr["district_id"].ToString());
+                    }
+                    break;
+                #endregion ben_youth_training_inventory
+
+                #region ben_youthgroup_savings_register
+                case "ben_youthgroup_savings_register":
+                    strSQL = "ALTER TABLE {0} DISABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_update " +
+                        "DELETE FROM {0} WHERE ysr_id IN ({1}) " +
+                        "INSERT INTO {0} " +
+                        "([ysr_id],[prt_id] ,[cso_id],[dst_id],[sct_id] ,[wrd_id],[village] " +
+                       ",[month] ,[year],[ygrp_name] ,[ygrp_chairperson_name],[ygrp_chairperson_name_phone] " +
+                       ",[youth_field_assisstant_name],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update] " +
+                       ",[ofc_id] ,[district_id]) " +
+                        "{2} " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_update ";
+                    strSQLSelect = @"SELECT '{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}','{16}','{17}','{18}'";
+
+                    strId = dt.Rows[dt.Rows.Count - 1]["ysr_id"].ToString();
+                    for (int intCount = 0; intCount < dt.Rows.Count; intCount++)
+                    {
+                        dr = dt.Rows[intCount];
+                        if (intCount != 0)
+                        {
+                            strSQLData = strSQLData + "UNION ALL ";
+                            strSQLDelete = strSQLDelete + ", ";
+                        }
+                        strSQLDelete = strSQLDelete + string.Format("'{0}'", dr["ysr_id"].ToString());
+                        strSQLData = strSQLData + string.Format(strSQLSelect, dr["ysr_id"].ToString(), dr["prt_id"].ToString(), utilFormatting.StringForSQL(dr["cso_id"].ToString()),
+                        utilFormatting.StringForSQL(dr["dst_id"].ToString()), utilFormatting.StringForSQL(dr["sct_id"].ToString()), utilFormatting.StringForSQL(dr["wrd_id"].ToString()),
+                        utilFormatting.StringForSQL(dr["village"].ToString()), utilFormatting.StringForSQL(dr["month"].ToString()), utilFormatting.StringForSQL(dr["year"].ToString()),
+                        utilFormatting.StringForSQL(dr["ygrp_name"].ToString()), utilFormatting.StringForSQL(dr["ygrp_chairperson_name"].ToString()), utilFormatting.StringForSQL(dr["ygrp_chairperson_name_phone"].ToString()),
+                        utilFormatting.StringForSQL(dr["youth_field_assisstant_name"].ToString()),
+                        utilFormatting.StringForSQL(dr["usr_id_create"].ToString()), utilFormatting.StringForSQL(dr["usr_id_update"].ToString()),
+                        Convert.ToDateTime(dr["usr_date_create"]).ToString("dd MMM yyyy HH:mm:ss"), Convert.ToDateTime(dr["usr_date_update"]).ToString("dd MMM yyyy HH:mm:ss"),
+                        dr["ofc_id"].ToString(), dr["district_id"].ToString());
+                    }
+                    break;
+                #endregion ben_youthgroup_savings_register
+
+                #region ben_youthgroup_savings_register_member
+                case "ben_youthgroup_savings_register_member":
+                    strSQL = "ALTER TABLE {0} DISABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_update " +
+                        "DELETE FROM {0} WHERE ysrm_id IN ({1}) " +
+                        "INSERT INTO {0} " +
+                        "([ysrm_id],[ysr_id],[hhm_code] ,[hhm_name],[usr_id_create],[usr_id_update],[usr_date_create] " +
+                        ",[usr_date_update],[ofc_id],[district_id]) " +
+                        "{2} " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_update ";
+                    strSQLSelect = @"SELECT '{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}'";
+
+                    strId = dt.Rows[dt.Rows.Count - 1]["ysrm_id"].ToString();
+                    for (int intCount = 0; intCount < dt.Rows.Count; intCount++)
+                    {
+                        dr = dt.Rows[intCount];
+                        if (intCount != 0)
+                        {
+                            strSQLData = strSQLData + "UNION ALL ";
+                            strSQLDelete = strSQLDelete + ", ";
+                        }
+                        strSQLDelete = strSQLDelete + string.Format("'{0}'", dr["ysrm_id"].ToString());
+                        strSQLData = strSQLData + string.Format(strSQLSelect, dr["ysrm_id"].ToString(), dr["ysr_id"].ToString(), utilFormatting.StringForSQL(dr["hhm_code"].ToString()),
+                        utilFormatting.StringForSQL(dr["hhm_name"].ToString()), utilFormatting.StringForSQL(dr["usr_id_create"].ToString()), utilFormatting.StringForSQL(dr["usr_id_update"].ToString()),
+                        Convert.ToDateTime(dr["usr_date_create"]).ToString("dd MMM yyyy HH:mm:ss"), Convert.ToDateTime(dr["usr_date_update"]).ToString("dd MMM yyyy HH:mm:ss"),
+                        dr["ofc_id"].ToString(), dr["district_id"].ToString());
+                    }
+                    break;
+                #endregion ben_youthgroup_savings_register_member
+
+                #region ben_youthgroup_savings_register_member_amount
+                case "ben_youthgroup_savings_register_member_amount":
+                    strSQL = "ALTER TABLE {0} DISABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_update " +
+                        "DELETE FROM {0} WHERE ysrms_id IN ({1}) " +
+                        "INSERT INTO {0} " +
+                        "([ysrm_id],[ysrms_id] ,[total_savings],[amout_borrowed],[loan_purpose],[loan_purpose_other],[district_id]) " +
+                        "{2} " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_update ";
+                    strSQLSelect = @"SELECT '{0}','{1}','{2}','{3}','{4}','{5}','{6}'";
+
+                    strId = dt.Rows[dt.Rows.Count - 1]["ysrms_id"].ToString();
+                    for (int intCount = 0; intCount < dt.Rows.Count; intCount++)
+                    {
+                        dr = dt.Rows[intCount];
+                        if (intCount != 0)
+                        {
+                            strSQLData = strSQLData + "UNION ALL ";
+                            strSQLDelete = strSQLDelete + ", ";
+                        }
+                        strSQLDelete = strSQLDelete + string.Format("'{0}'", dr["ysrms_id"].ToString());
+                        strSQLData = strSQLData + string.Format(strSQLSelect, dr["ysrm_id"].ToString(), dr["ysrms_id"].ToString(), utilFormatting.StringForSQL(dr["total_savings"].ToString()),
+                        utilFormatting.StringForSQL(dr["amout_borrowed"].ToString()), utilFormatting.StringForSQL(dr["loan_purpose"].ToString()), utilFormatting.StringForSQL(dr["loan_purpose_other"].ToString()),
+                        utilFormatting.StringForSQL(dr["district_id"].ToString()));
+                    }
+                    break;
+                #endregion ben_youthgroup_savings_register_member_amount
+
+                #region ben_education_subsidy_assessment
+                case "ben_education_subsidy_assessment":
+                    strSQL = "ALTER TABLE {0} DISABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_update " +
+                        "DELETE FROM {0} WHERE ed_sub_id IN ({1}) " +
+                        "INSERT INTO {0} " +
+                        "([ed_sub_id],[prt_id],[cso_id],[dst_id],[sct_id],[wrd_id],[village],[assessment_date],[hhm_id_caregiver],[caregiver_phone],[hh_id],[usr_id_create] " +
+                        ",[usr_id_update],[usr_date_create],[usr_date_update],[ofc_id],[district_id]) " +
+                        "{2} " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_update ";
+                    strSQLSelect = @"SELECT '{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}','{16}'";
+
+                    strId = dt.Rows[dt.Rows.Count - 1]["ed_sub_id"].ToString();
+                    for (int intCount = 0; intCount < dt.Rows.Count; intCount++)
+                    {
+                        dr = dt.Rows[intCount];
+                        if (intCount != 0)
+                        {
+                            strSQLData = strSQLData + "UNION ALL ";
+                            strSQLDelete = strSQLDelete + ", ";
+                        }
+                        strSQLDelete = strSQLDelete + string.Format("'{0}'", dr["ed_sub_id"].ToString());
+                        strSQLData = strSQLData + string.Format(strSQLSelect, dr["ed_sub_id"].ToString(), dr["prt_id"].ToString(), utilFormatting.StringForSQL(dr["cso_id"].ToString()),
+                        utilFormatting.StringForSQL(dr["dst_id"].ToString()), utilFormatting.StringForSQL(dr["sct_id"].ToString()), utilFormatting.StringForSQL(dr["wrd_id"].ToString()),
+                        utilFormatting.StringForSQL(dr["village"].ToString()), Convert.ToDateTime(dr["assessment_date"]).ToString("dd MMM yyyy HH:mm:ss"), utilFormatting.StringForSQL(dr["hhm_id_caregiver"].ToString()),
+                        utilFormatting.StringForSQL(dr["caregiver_phone"].ToString()), utilFormatting.StringForSQL(dr["hh_id"].ToString()), utilFormatting.StringForSQL(dr["usr_id_create"].ToString()),
+                        utilFormatting.StringForSQL(dr["usr_id_update"].ToString()), Convert.ToDateTime(dr["usr_date_create"]).ToString("dd MMM yyyy HH:mm:ss"), Convert.ToDateTime(dr["usr_date_update"]).ToString("dd MMM yyyy HH:mm:ss"),
+                        utilFormatting.StringForSQL(dr["ofc_id"].ToString()), utilFormatting.StringForSQL(dr["district_id"].ToString()));
+                    }
+                    break;
+                #endregion ben_education_subsidy_assessment
+
+                #region ben_education_subsidy_assessment_member
+                case "ben_education_subsidy_assessment_member":
+                    strSQL = "ALTER TABLE {0} DISABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_update " +
+                        "DELETE FROM {0} WHERE ed_subm_id IN ({1}) " +
+                        "INSERT INTO {0} " +
+                        "([ed_subm_id],[ed_sub_id],[hhm_id],[last_class_completed],[prev_school],[drop_out_year],[dropout_reason],[yn_id_willing_to_study] " +
+
+                       ",[enrollment_class],[ttps_id],[preffered_school],[caregiver_contribution],[yn_id_hh_head_in_silc_grp] " +
+
+                       ",[yn_id_caregiver_commit_sch_attendance],[yn_id_caregiver_commit_pta_meeting],[yn_id_caregiver_commit_acad_performance] " +
+
+                       ",[yn_id_caregiver_commit_project_interventions],[yn_id_caregiver_commit_contribute_fee],[yn_id_caregiver_commit_keep_child_in_sch] " +
+
+                       ",[swk_id],[swk_phone],[psw_id],[psw_phone],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update],[ofc_id],[district_id]) " +
+
+                        "{2} " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_update ";
+                    strSQLSelect = @"SELECT '{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}','{16}',
+                                    '{17}','{18}','{19}','{20}','{21}','{22}','{23}','{24}','{25}','{26}','{27}','{28}'";
+
+                    strId = dt.Rows[dt.Rows.Count - 1]["ed_subm_id"].ToString();
+                    for (int intCount = 0; intCount < dt.Rows.Count; intCount++)
+                    {
+                        dr = dt.Rows[intCount];
+                        if (intCount != 0)
+                        {
+                            strSQLData = strSQLData + "UNION ALL ";
+                            strSQLDelete = strSQLDelete + ", ";
+                        }
+                        strSQLDelete = strSQLDelete + string.Format("'{0}'", dr["ed_subm_id"].ToString());
+
+                        strSQLData = strSQLData + string.Format(strSQLSelect, dr["ed_subm_id"].ToString(), dr["ed_sub_id"].ToString(), dr["hhm_id"].ToString(), utilFormatting.StringForSQL(dr["last_class_completed"].ToString()),
+                        utilFormatting.StringForSQL(dr["prev_school"].ToString()), utilFormatting.StringForSQL(dr["drop_out_year"].ToString()), utilFormatting.StringForSQL(dr["dropout_reason"].ToString()),
+                        utilFormatting.StringForSQL(dr["yn_id_willing_to_study"].ToString()), utilFormatting.StringForSQL(dr["enrollment_class"].ToString()), utilFormatting.StringForSQL(dr["ttps_id"].ToString()),
+                        utilFormatting.StringForSQL(dr["preffered_school"].ToString()), utilFormatting.StringForSQL(dr["caregiver_contribution"].ToString()), utilFormatting.StringForSQL(dr["yn_id_hh_head_in_silc_grp"].ToString()),
+                        utilFormatting.StringForSQL(dr["yn_id_caregiver_commit_sch_attendance"].ToString()), utilFormatting.StringForSQL(dr["yn_id_caregiver_commit_pta_meeting"].ToString()),
+                        utilFormatting.StringForSQL(dr["yn_id_caregiver_commit_acad_performance"].ToString()),
+                        utilFormatting.StringForSQL(dr["yn_id_caregiver_commit_project_interventions"].ToString()), utilFormatting.StringForSQL(dr["yn_id_caregiver_commit_contribute_fee"].ToString()),
+                        utilFormatting.StringForSQL(dr["yn_id_caregiver_commit_keep_child_in_sch"].ToString()), utilFormatting.StringForSQL(dr["swk_id"].ToString()), utilFormatting.StringForSQL(dr["swk_phone"].ToString()),
+                        utilFormatting.StringForSQL(dr["psw_id"].ToString()), utilFormatting.StringForSQL(dr["psw_phone"].ToString()), utilFormatting.StringForSQL(dr["usr_id_create"].ToString()),
+                        utilFormatting.StringForSQL(dr["usr_id_update"].ToString()), Convert.ToDateTime(dr["usr_date_create"]).ToString("dd MMM yyyy HH:mm:ss"),
+                        Convert.ToDateTime(dr["usr_date_update"]).ToString("dd MMM yyyy HH:mm:ss"), utilFormatting.StringForSQL(dr["ofc_id"].ToString()), utilFormatting.StringForSQL(dr["district_id"].ToString()));
+                    }
+                    break;
+                #endregion ben_education_subsidy_assessment
+
+                #region prt_subcounty_ovc_checklist
+                case "prt_subcounty_ovc_checklist":
+                    strSQL = "ALTER TABLE {0} DISABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_update " +
+                        "DELETE FROM {0} WHERE soc_id IN ({1}) " +
+                        "INSERT INTO {0} " +
+                        "([soc_id],[soc_date],[soc_cso_report],[soc_cso_total],[soc_action_points_implemented],[soc_action_points_total_identified],[dst_id] " + 
+				       ",[fy_id],[qy_id],[yn_id_meetings_held],[yn_id_membership_constituted],[yn_id_cdo_supervision],[yn_signed_minutes_available] " +
+				       ",[yn_id_sovcc_discussed_minutes_available],[yn_id_ovcmis_district],[usr_id_create] ,[usr_id_update],[usr_date_create],[usr_date_update] " + 
+				       ",[ofc_id],[district_id],[sct_id]) " +
+                        "{2} " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_update ";
+                    strSQLSelect = @"SELECT '{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}','{16}',
+                                    '{17}','{18}','{19}','{20}','{21}'";
+
+                    strId = dt.Rows[dt.Rows.Count - 1]["soc_id"].ToString();
+                    for (int intCount = 0; intCount < dt.Rows.Count; intCount++)
+                    {
+                        dr = dt.Rows[intCount];
+                        if (intCount != 0)
+                        {
+                            strSQLData = strSQLData + "UNION ALL ";
+                            strSQLDelete = strSQLDelete + ", ";
+                        }
+                        strSQLDelete = strSQLDelete + string.Format("'{0}'", dr["soc_id"].ToString());
+
+                        strSQLData = strSQLData + string.Format(strSQLSelect, dr["soc_id"].ToString(), Convert.ToDateTime(dr["soc_date"]).ToString("dd MMM yyyy HH:mm:ss"), Convert.ToInt32(dr["soc_cso_report"].ToString()),
+                            Convert.ToInt32(dr["soc_cso_total"].ToString()), Convert.ToInt32(dr["soc_action_points_implemented"].ToString()), Convert.ToInt32(dr["soc_action_points_total_identified"].ToString()),
+                            dr["dst_id"].ToString(), dr["fy_id"].ToString(), dr["qy_id"].ToString(), dr["yn_id_meetings_held"].ToString(), dr["yn_id_membership_constituted"].ToString(), dr["yn_id_cdo_supervision"].ToString(),
+                            dr["yn_signed_minutes_available"].ToString(), dr["yn_id_sovcc_discussed_minutes_available"].ToString(), dr["yn_id_ovcmis_district"].ToString(),
+                            dr["usr_id_create"].ToString(), dr["usr_id_update"].ToString(), Convert.ToDateTime(dr["usr_date_create"]).ToString("dd MMM yyyy HH:mm:ss"),
+                            Convert.ToDateTime(dr["usr_date_update"]).ToString("dd MMM yyyy HH:mm:ss"), dr["ofc_id"].ToString(),
+                             dr["district_id"].ToString(), dr["sct_id"].ToString());
+                    }
+                    break;
+                #endregion prt_subcounty_ovc_checklist
+
+
+                #region ben_agro_enterprise_ranking_matrix
+                case "ben_agro_enterprise_ranking_matrix":
+                    strSQL = "ALTER TABLE {0} DISABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_update " +
+                        "DELETE FROM {0} WHERE agro_ent_id IN ({1}) " +
+                        "INSERT INTO {0} " +
+                        "([agro_ent_id] ,[prt_id],[cso_id],[wrd_id],[date],[hhm_id] " +
+                         ",[fa_name],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update],[ofc_id],[district_id]) " +
+                        "{2} " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_update ";
+                    strSQLSelect = @"SELECT '{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}'";
+
+                    strId = dt.Rows[dt.Rows.Count - 1]["agro_ent_id"].ToString();
+                    for (int intCount = 0; intCount < dt.Rows.Count; intCount++)
+                    {
+                        dr = dt.Rows[intCount];
+                        if (intCount != 0)
+                        {
+                            strSQLData = strSQLData + "UNION ALL ";
+                            strSQLDelete = strSQLDelete + ", ";
+                        }
+                        strSQLDelete = strSQLDelete + string.Format("'{0}'", dr["agro_ent_id"].ToString());
+
+                        strSQLData = strSQLData + string.Format(strSQLSelect, dr["agro_ent_id"].ToString(), dr["prt_id"].ToString(), dr["cso_id"].ToString(), dr["wrd_id"].ToString(), Convert.ToDateTime(dr["date"]).ToString("dd MMM yyyy HH:mm:ss"), dr["hhm_id"].ToString(),
+                            dr["fa_name"].ToString(),
+                            dr["usr_id_create"].ToString(), dr["usr_id_update"].ToString(), Convert.ToDateTime(dr["usr_date_create"]).ToString("dd MMM yyyy HH:mm:ss"),
+                            Convert.ToDateTime(dr["usr_date_update"]).ToString("dd MMM yyyy HH:mm:ss"), dr["ofc_id"].ToString(),
+                             dr["district_id"].ToString());
+                    }
+                    break;
+                #endregion ben_agro_enterprise_ranking_matrix
+
+                #region ben_agro_enterprise_ranking_matrix_crop_ranking
+                case "ben_agro_enterprise_ranking_matrix_crop_ranking":
+                    strSQL = "ALTER TABLE {0} DISABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_update " +
+                        "DELETE FROM {0} WHERE agro_entm_id IN ({1}) " +
+                        "INSERT INTO {0} " +
+                        "([agro_entm_id],[agro_ent_id],[crop_1_id],[crop_1_param1_score],[crop_1_param2_score],[crop_1_param3_score],[crop_1_param4_score],[crop_1_param5_score]" +
+                       ",[crop_1_param6_score],[crop_1_param7_score],[crop_1_param8_score],[crop_1_total_score],[crop_1_rank]" +
+                       ",[crop_2_id],[crop_2_param1_score],[crop_2_param2_score],[crop_2_param3_score],[crop_2_param4_score],[crop_2_param5_score],[crop_2_param6_score]" +
+                       ",[crop_2_param7_score],[crop_2_param8_score],[crop_2_total_score],[crop_2_rank]" +
+                       ",[crop3_id],[crop_3_param1_score],[crop_3_param2_score],[crop_3_param3_score],[crop_3_param4_score],[crop_3_param5_score],[crop_3_param6_score],[crop_3_param7_score]" +
+                       ",[crop_3_param8_score],[crop_3_total_score],[crop_3_rank]" +
+                       ",[crop_4_id],[crop_4_param1_score],[crop_4_param2_score],[crop_4_param3_score],[crop_4_param4_score],[crop_4_param5_score],[crop_4_param6_score],[crop_4_param7_score]" +
+                       ",[crop_4_param8_score],[crop_4_total_score],[crop_4_rank]" +
+		               ",[crop_5_id],[crop_5_param1_score],[crop_5_param2_score],[crop_5_param3_score],[crop_5_param4_score],[crop_5_param5_score],[crop_5_param6_score],[crop_5_param7_score]" +
+                       ",[crop_5_param8_score],[crop_5_total_score],[crop_5_rank],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update],[ofc_id],[district_id]) " +
+                        "{2} " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_update ";
+                    strSQLSelect = @"SELECT '{0}','{1}','{2}',{3},{4},{5},{6},{7},{8},{9},{10},{11},{12},'{13}',{14},{15},{16},{17},{18},{19},{20},{21},{22},{23},'{24}',{25},{26},{27},{28},{29},{30},{31},
+                    {32},{33},{34},'{35}',{36},{37},{38},{39},{40},{41},{42},{43},{44},{45},'{46}',{47},{48},{49},{50},{51},{52},{53},{54},{55},{56},'{57}','{58}','{59}','{60}','{61}','{62}'";
+
+                    strId = dt.Rows[dt.Rows.Count - 1]["agro_entm_id"].ToString();
+                    for (int intCount = 0; intCount < dt.Rows.Count; intCount++)
+                    {
+                        dr = dt.Rows[intCount];
+                        if (intCount != 0)
+                        {
+                            strSQLData = strSQLData + "UNION ALL ";
+                            strSQLDelete = strSQLDelete + ", ";
+                        }
+                        strSQLDelete = strSQLDelete + string.Format("'{0}'", dr["agro_entm_id"].ToString());
+
+                        strSQLData = strSQLData + string.Format(strSQLSelect, dr["agro_entm_id"].ToString(), dr["agro_ent_id"].ToString(), dr["crop_1_id"].ToString(), Convert.ToInt32(dr["crop_1_param1_score"].ToString()), Convert.ToInt32(dr["crop_1_param2_score"].ToString()),
+                            Convert.ToInt32(dr["crop_1_param3_score"].ToString()), Convert.ToInt32(dr["crop_1_param4_score"].ToString()), Convert.ToInt32(dr["crop_1_param5_score"].ToString()), Convert.ToInt32(dr["crop_1_param6_score"].ToString()), Convert.ToInt32(dr["crop_1_param7_score"].ToString()),
+                            Convert.ToInt32(dr["crop_1_param8_score"].ToString()), Convert.ToInt32(dr["crop_1_total_score"].ToString()), Convert.ToInt32(dr["crop_1_rank"].ToString()), dr["crop_2_id"].ToString(), Convert.ToInt32(dr["crop_2_param1_score"].ToString()), Convert.ToInt32(dr["crop_2_param2_score"].ToString()),
+                            Convert.ToInt32(dr["crop_2_param3_score"].ToString()), Convert.ToInt32(dr["crop_2_param4_score"].ToString()), Convert.ToInt32(dr["crop_2_param5_score"].ToString()), Convert.ToInt32(dr["crop_2_param6_score"].ToString()), Convert.ToInt32(dr["crop_2_param7_score"].ToString()),
+                            Convert.ToInt32(dr["crop_2_param8_score"].ToString()), Convert.ToInt32(dr["crop_2_total_score"].ToString()), Convert.ToInt32(dr["crop_2_rank"].ToString()), dr["crop3_id"].ToString(), Convert.ToInt32(dr["crop_3_param1_score"].ToString()), Convert.ToInt32(dr["crop_3_param2_score"].ToString()),
+                            Convert.ToInt32(dr["crop_3_param3_score"].ToString()), Convert.ToInt32(dr["crop_3_param4_score"].ToString()), Convert.ToInt32(dr["crop_3_param5_score"].ToString()), Convert.ToInt32(dr["crop_3_param6_score"].ToString()), Convert.ToInt32(dr["crop_3_param7_score"].ToString()),
+                            Convert.ToInt32(dr["crop_3_param8_score"].ToString()), Convert.ToInt32(dr["crop_3_total_score"].ToString()), Convert.ToInt32(dr["crop_3_rank"].ToString()), dr["crop_4_id"].ToString(), Convert.ToInt32(dr["crop_4_param1_score"].ToString()), Convert.ToInt32(dr["crop_4_param2_score"].ToString()),
+                            Convert.ToInt32(dr["crop_4_param3_score"].ToString()), Convert.ToInt32(dr["crop_4_param4_score"].ToString()), Convert.ToInt32(dr["crop_4_param5_score"].ToString()), Convert.ToInt32(dr["crop_4_param6_score"].ToString()), Convert.ToInt32(dr["crop_4_param7_score"].ToString()),
+                            Convert.ToInt32(dr["crop_4_param8_score"].ToString()), Convert.ToInt32(dr["crop_4_total_score"].ToString()), Convert.ToInt32(dr["crop_4_rank"].ToString()), dr["crop_5_id"].ToString(), Convert.ToInt32(dr["crop_5_param1_score"].ToString()), Convert.ToInt32(dr["crop_5_param2_score"].ToString()),
+                            Convert.ToInt32(dr["crop_5_param3_score"].ToString()), Convert.ToInt32(dr["crop_5_param4_score"].ToString()), Convert.ToInt32(dr["crop_5_param5_score"].ToString()), Convert.ToInt32(dr["crop_5_param6_score"].ToString()), Convert.ToInt32(dr["crop_5_param7_score"].ToString()),
+                            Convert.ToInt32(dr["crop_5_param8_score"].ToString()), Convert.ToInt32(dr["crop_5_total_score"].ToString()), Convert.ToInt32(dr["crop_5_rank"].ToString()),
+                            dr["usr_id_create"].ToString(), dr["usr_id_update"].ToString(), Convert.ToDateTime(dr["usr_date_create"]).ToString("dd MMM yyyy HH:mm:ss"),
+                            Convert.ToDateTime(dr["usr_date_update"]).ToString("dd MMM yyyy HH:mm:ss"), dr["ofc_id"].ToString(),
+                             dr["district_id"].ToString());
+                    }
+                    break;
+                #endregion ben_agro_enterprise_ranking_matrix_crop_ranking
+
+                #region ben_apprenticeship_skill_acquisition_tracking
+                case "ben_apprenticeship_skill_acquisition_tracking":
+                    strSQL = "ALTER TABLE {0} DISABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_update " +
+                        "DELETE FROM {0} WHERE asat_id IN ({1}) " +
+                        "INSERT INTO {0} " +
+                        "([asat_id],[review_date_from],[review_date_to],[wrd_id],[hhm_id],[trade_id],[module_id],[youth_acquire_not_acquire_skill_reason]" +
+                        ",[recommended_steps],[artisan_name],[artisan_report_date],[youth_skills_acquired],[yn_skill_not_acquired_well],[skill_not_acquired_well],[skill_not_acquired_well_reason]," +
+                        "[youth_report_date],[dyo_name],[dyo_review_date],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update],[ofc_id],[district_id]) " +
+                        "{2} " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_update ";
+                    strSQLSelect = @"SELECT '{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}','{16}','{17}'
+                                    ,'{18}','{19}','{20}','{21}','{22}','{23}'";
+
+                    strId = dt.Rows[dt.Rows.Count - 1]["asat_id"].ToString();
+                    for (int intCount = 0; intCount < dt.Rows.Count; intCount++)
+                    {
+                        dr = dt.Rows[intCount];
+                        if (intCount != 0)
+                        {
+                            strSQLData = strSQLData + "UNION ALL ";
+                            strSQLDelete = strSQLDelete + ", ";
+                        }
+                        strSQLDelete = strSQLDelete + string.Format("'{0}'", dr["asat_id"].ToString());
+
+                        strSQLData = strSQLData + string.Format(strSQLSelect, dr["asat_id"].ToString(), Convert.ToDateTime(dr["review_date_from"]).ToString("dd MMM yyyy HH:mm:ss"),
+                            Convert.ToDateTime(dr["review_date_to"]).ToString("dd MMM yyyy HH:mm:ss"), dr["wrd_id"].ToString(), dr["hhm_id"].ToString(), dr["trade_id"].ToString(),
+                            dr["module_id"].ToString(), dr["youth_acquire_not_acquire_skill_reason"].ToString(), dr["recommended_steps"].ToString(), dr["artisan_name"].ToString(),
+                            Convert.ToDateTime(dr["artisan_report_date"]).ToString("dd MMM yyyy HH:mm:ss"), dr["youth_skills_acquired"].ToString(), dr["yn_skill_not_acquired_well"].ToString(),
+                            dr["skill_not_acquired_well"].ToString(), dr["skill_not_acquired_well_reason"].ToString(), Convert.ToDateTime(dr["youth_report_date"]).ToString("dd MMM yyyy HH:mm:ss"),
+                            dr["dyo_name"].ToString(), Convert.ToDateTime(dr["dyo_review_date"]).ToString("dd MMM yyyy HH:mm:ss"),
+                            dr["usr_id_create"].ToString(), dr["usr_id_update"].ToString(), Convert.ToDateTime(dr["usr_date_create"]).ToString("dd MMM yyyy HH:mm:ss"),
+                            Convert.ToDateTime(dr["usr_date_update"]).ToString("dd MMM yyyy HH:mm:ss"), dr["ofc_id"].ToString(),dr["district_id"].ToString());
+                    }
+                    break;
+                #endregion ben_apprenticeship_skill_acquisition_tracking
+
+                #region ben_apprenticeship_skill_acquisition_tracking_skill
+                case "ben_apprenticeship_skill_acquisition_tracking_skill":
+                    strSQL = "ALTER TABLE {0} DISABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} DISABLE TRIGGER {0}_update " +
+                        "DELETE FROM {0} WHERE asatskill_id IN ({1}) " +
+                        "INSERT INTO {0} " +
+                        "([asatskill_id],[asat_id],[module_id],[skill_id],[excellent_acquired_skr_id],[average_acquired_skr_id],[not_acquired_skr_id],[usr_id_create],[usr_id_update]" + 
+                         ",[usr_date_create],[usr_date_update],[ofc_id],[district_id]) " +
+                        "{2} " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_delete " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_insert " +
+                        "ALTER TABLE {0} ENABLE TRIGGER {0}_update ";
+                    strSQLSelect = @"SELECT '{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}'";
+
+                    strId = dt.Rows[dt.Rows.Count - 1]["asatskill_id"].ToString();
+                    for (int intCount = 0; intCount < dt.Rows.Count; intCount++)
+                    {
+                        dr = dt.Rows[intCount];
+                        if (intCount != 0)
+                        {
+                            strSQLData = strSQLData + "UNION ALL ";
+                            strSQLDelete = strSQLDelete + ", ";
+                        }
+                        strSQLDelete = strSQLDelete + string.Format("'{0}'", dr["asatskill_id"].ToString());
+
+                        strSQLData = strSQLData + string.Format(strSQLSelect, dr["asatskill_id"].ToString(), dr["asat_id"].ToString(), dr["module_id"].ToString(), dr["skill_id"].ToString(),
+                            dr["excellent_acquired_skr_id"].ToString(), dr["average_acquired_skr_id"].ToString(), dr["not_acquired_skr_id"].ToString(),
+                            dr["usr_id_create"].ToString(), dr["usr_id_update"].ToString(), Convert.ToDateTime(dr["usr_date_create"]).ToString("dd MMM yyyy HH:mm:ss"),
+                            Convert.ToDateTime(dr["usr_date_update"]).ToString("dd MMM yyyy HH:mm:ss"), dr["ofc_id"].ToString(),dr["district_id"].ToString());
+                    }
+                    break;
+                    #endregion ben_apprenticeship_skill_acquisition_tracking_skill
             }
 
             if (strSQL.Length != 0)

@@ -78,7 +78,6 @@
       <s:element name="Download_Office_group">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="strSsnId" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="ofc_id" type="s:string" />
           </s:sequence>
         </s:complexType>
@@ -87,6 +86,65 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="Download_Office_groupResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Download_Data">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dst_id" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="startDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="DownLoadTable" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Download_DataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Download_DataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckOfficeValidation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strOfcID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckOfficeValidationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckOfficeValidationResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownLoadHomeVisit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownLoadHomeVisitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownLoadHomeVisitResult">
               <s:complexType>
                 <s:sequence>
                   <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
@@ -116,6 +174,7 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="strOfcId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="district_list" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -164,6 +223,24 @@
   <wsdl:message name="Download_Office_groupSoapOut">
     <wsdl:part name="parameters" element="tns:Download_Office_groupResponse" />
   </wsdl:message>
+  <wsdl:message name="Download_DataSoapIn">
+    <wsdl:part name="parameters" element="tns:Download_Data" />
+  </wsdl:message>
+  <wsdl:message name="Download_DataSoapOut">
+    <wsdl:part name="parameters" element="tns:Download_DataResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckOfficeValidationSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckOfficeValidation" />
+  </wsdl:message>
+  <wsdl:message name="CheckOfficeValidationSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckOfficeValidationResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownLoadHomeVisitSoapIn">
+    <wsdl:part name="parameters" element="tns:DownLoadHomeVisit" />
+  </wsdl:message>
+  <wsdl:message name="DownLoadHomeVisitSoapOut">
+    <wsdl:part name="parameters" element="tns:DownLoadHomeVisitResponse" />
+  </wsdl:message>
   <wsdl:message name="ProcessRecordSoapIn">
     <wsdl:part name="parameters" element="tns:ProcessRecord" />
   </wsdl:message>
@@ -200,6 +277,18 @@
     <wsdl:operation name="Download_Office_group">
       <wsdl:input message="tns:Download_Office_groupSoapIn" />
       <wsdl:output message="tns:Download_Office_groupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Download_Data">
+      <wsdl:input message="tns:Download_DataSoapIn" />
+      <wsdl:output message="tns:Download_DataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckOfficeValidation">
+      <wsdl:input message="tns:CheckOfficeValidationSoapIn" />
+      <wsdl:output message="tns:CheckOfficeValidationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownLoadHomeVisit">
+      <wsdl:input message="tns:DownLoadHomeVisitSoapIn" />
+      <wsdl:output message="tns:DownLoadHomeVisitSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="ProcessRecord">
       <wsdl:input message="tns:ProcessRecordSoapIn" />
@@ -259,6 +348,33 @@
     </wsdl:operation>
     <wsdl:operation name="Download_Office_group">
       <soap:operation soapAction="http://tempuri.org/Download_Office_group" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Download_Data">
+      <soap:operation soapAction="http://tempuri.org/Download_Data" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckOfficeValidation">
+      <soap:operation soapAction="http://tempuri.org/CheckOfficeValidation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownLoadHomeVisit">
+      <soap:operation soapAction="http://tempuri.org/DownLoadHomeVisit" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -341,6 +457,33 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Download_Data">
+      <soap12:operation soapAction="http://tempuri.org/Download_Data" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckOfficeValidation">
+      <soap12:operation soapAction="http://tempuri.org/CheckOfficeValidation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownLoadHomeVisit">
+      <soap12:operation soapAction="http://tempuri.org/DownLoadHomeVisit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ProcessRecord">
       <soap12:operation soapAction="http://tempuri.org/ProcessRecord" style="document" />
       <wsdl:input>
@@ -362,10 +505,10 @@
   </wsdl:binding>
   <wsdl:service name="SOCY_WS">
     <wsdl:port name="SOCY_WSSoap" binding="tns:SOCY_WSSoap">
-      <soap:address location="http://localhost:58042/SOCY_WS.asmx" />
+      <soap:address location="http://localhost:61866/SOCY_WS.asmx" />
     </wsdl:port>
     <wsdl:port name="SOCY_WSSoap12" binding="tns:SOCY_WSSoap12">
-      <soap12:address location="http://localhost:58042/SOCY_WS.asmx" />
+      <soap12:address location="http://localhost:61866/SOCY_WS.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

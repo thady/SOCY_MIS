@@ -1,0 +1,85 @@
+This is a legal agreement between you (either an individual or a single entity)
+and Larcom and Young for the use of the ReSize product and may include 
+associated media, printed materials, and "online" or electronic documentation 
+or other other electronically distributed code and information ("ReSize Product"). 
+You should carefully read the following terms and conditions before using this 
+software.
+
+BY INSTALLING, COPYING, DISTRIBUTING OR OTHERWISEUSING THE RESIZE PRODUCT, 
+YOU AGREE TO BE BOUND BY THE TERMS AND CONDITIONS OF THIS LICENSE AGREEMENT. 
+IF YOU DO NOT AGREE TO THESE TERMS AND CONDITIONS, DO NOT INSTALL, COPY, 
+DISTRUBUTE OR USE THE RESIZE PRODUCT.
+
+If you do not agree to these terms and conditions you should delete the ReSize 
+product and/or the setup program for the ReSize product from your computer, 
+cease use of the product, destroy all electronically downloaded portions of 
+the product and promptly return any and all physical materials supplied with 
+or as part of the product to the place you obtained them for a full refund.
+
+The ReSize product is owned by Larcom and Young and is protected by copyright 
+laws and international copyright treaties, as well as other intellectual 
+property laws and treaties. The ReSize product is licensed, not sold. 
+
+Under the terms of this license agreement:
+
+1. You are granted a license to use one copy of the ReSize product for the 
+purpose of software development per each valid serial number that you 
+purchased or otherwise legally obtained. Each copy of ReSize may be used by 
+one and only one software developer for the purpose of developing software 
+applications. Said software developer may develop an unlimited number of 
+programs utilizing the ReSize product.  
+
+2. Programs that utilize the ReSize product may be distributed to an unlimited 
+number of end users provided that the end users are not given the means to 
+develop programs of their own with the ReSize product. There are no runtime 
+royalties associated with the ReSize product.  
+
+3. Backup copies may be made of the ReSize product provided that they are solely 
+for backup purposes.  Backup copies or other copies of ReSize may not be used 
+to give additional software developers access to the ReSize product except as 
+provided in item 1 above.
+
+4. You may not reverse engineer, decompile, or disassemble the ReSize product, 
+except and only to the extent that such activity is expressly permitted by 
+applicable law notwithstanding this limitation. 
+
+5. You may not rent, lease, or lend the ReSize product.
+
+6. You may permanently transfer all of your rights under this License 
+Agreement, provided you retain no copies of the ReSize product , you transfer 
+all of the ReSize product (including all files, media and printed materials, 
+any upgrades) and the recipient agrees to the terms of this License Agreement. 
+If the ReSize product is an upgrade, any transfer must include all prior versions 
+of the the ReSize product.
+
+7. Without prejudice to any other rights, Larcom and Young may terminate 
+this License Agreement if you fail to comply with the terms and conditions set 
+forth in this agreement. In such event, you must destroy all copies of the 
+ReSize product and all of its component parts including any and all media 
+and physical documentation that were supplied as part of the product.
+
+8. You may not copy any printed materials that may accompany the ReSize product.
+
+9. You may not develop a software application that utilizes the ReSize product 
+in a way that is in direct competition to the ReSize product or that provides 
+no significant additional value.
+
+
+LIMITED WARRANTY
+================
+
+LARCOM AND YOUNG DOES NOT WARRANT THE RESIZE PRODUCT AND DISCLAIMS ALL 
+WARRANTIES, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED 
+WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT; 
+THIS PRODUCT IS DISTRIBUTED "AS-IS". LARCOM AND YOUNG SHALL NOT BE LIABLE FOR 
+ANY INDIRECT, INCIDENTAL, SPECIAL OR CONSEQUENTIAL DAMAGES, OR DAMAGES FOR LOSS 
+OF PROFITS, REVENUE, DATA OR DATA USE, INCURRED BY YOU OR ANY THIRD PARTY, WHETHER 
+IN AN ACTION IN CONTRACT OR TORT, EVEN IF YOU OR ANY OTHER PERSON HAS BEEN ADVISED 
+OF THE POSSIBILITY OF SUCH DAMAGES. IN ADDITION, IN NO EVENT DOES LARCOM AND YOUNG 
+AUTHORIZE YOU TO USE THE RESIZE PRODUCT IN APPLICATIONSOR SYSTEMS WHERE THE PRODUCT'S 
+FAILURE TO PERFORM CAN REASONABLY BE EXPECTED TO RESULT IN A SIGNIFICANT PHYSICAL 
+INJURY, OR IN LOSS OF LIFE.  ANY SUCH USEBY YOU IS ENTIRELY AT YOUR OWN RISK, AND YOU 
+AGREE TO HOLD LARCOM AND YOUNG HARMLESS FROM ANY CLAIMS OR LOSSES RELATING TO SUCH 
+UNAUTHORIZED USE.LARCOM AND YOUNG'S LIABILITY FOR DAMAGES SHALL IN NO EVENT 
+EXCEED THE COST YOU PAID FOR THE RESIZE PRODUCT UNDER THIS AGREEMENT.
+

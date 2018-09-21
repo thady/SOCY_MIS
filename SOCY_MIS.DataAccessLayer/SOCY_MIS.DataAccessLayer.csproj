@@ -24,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -34,6 +35,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PSAUtils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\PSAUtils\PSAUtils\bin\Debug\PSAUtils.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -45,15 +50,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgroEnterpriseRankingMatrix.cs" />
     <Compile Include="benActivityTraining.cs" />
     <Compile Include="benActivityTrainingParticipant.cs" />
     <Compile Include="benApprenticeshipRegisterLine.cs" />
+    <Compile Include="benApprenticeshipskillAquisitionTracking.cs" />
+    <Compile Include="benEducationSubsidy.cs" />
     <Compile Include="benGirlEducationRegister.cs" />
     <Compile Include="benGirlEducationRegisterChild.cs" />
+    <Compile Include="benOvcViralLoad.cs" />
+    <Compile Include="benSchoolReadinessTool.cs" />
     <Compile Include="benServiceRegister.cs" />
     <Compile Include="benServiceRegisterLine.cs" />
     <Compile Include="benValueChainRegister.cs" />
     <Compile Include="benValueChainRegisterActor.cs" />
+    <Compile Include="benYouthAssessmentScoring.cs" />
+    <Compile Include="benYouthSavingsRegister.cs" />
+    <Compile Include="benYouthTracer.cs" />
+    <Compile Include="benYouthTrainingInventory.cs" />
+    <Compile Include="ben_youth_training_completion.cs" />
     <Compile Include="DBAlteration .cs" />
     <Compile Include="drmEnrollment.cs" />
     <Compile Include="drmEnrollmentMember.cs" />
@@ -77,6 +92,10 @@
     <Compile Include="hhHouseholdHomeVisit.cs" />
     <Compile Include="hhHouseholdHomeVisitMember.cs" />
     <Compile Include="hhHouseholdMember.cs" />
+    <Compile Include="hhHousehold_linkages_register.cs" />
+    <Compile Include="hh_household_improvement_plan.cs" />
+    <Compile Include="hh_household_risk_assessment_beneficiaries.cs" />
+    <Compile Include="hh_household_risk_assessment_header.cs" />
     <Compile Include="hhOVCIdentificationPrioritization.cs" />
     <Compile Include="hhReferral.cs" />
     <Compile Include="prtAlternativeCarePanel.cs" />
@@ -88,6 +107,9 @@
     <Compile Include="prtDistrictOVCChecklist.cs" />
     <Compile Include="prtInstitutionalCareSummary.cs" />
     <Compile Include="prtInstitutionalCareSummaryLine.cs" />
+    <Compile Include="prtSubCountyOVCChecklist.cs" />
+    <Compile Include="silcCommunityTrainingRegister.cs" />
+    <Compile Include="silcCommunityTrainingRegisterMember.cs" />
     <Compile Include="silcFinancialRegister.cs" />
     <Compile Include="silcFinancialRegisterGroup.cs" />
     <Compile Include="silcGroup.cs" />
@@ -112,10 +134,6 @@
     <ProjectReference Include="..\..\PSAUtilsWin32\PSAUtilsWin32\PSAUtilsWin32.csproj">
       <Project>{85401351-6520-4473-b2bd-4b6ae83a9368}</Project>
       <Name>PSAUtilsWin32</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\PSAUtils\PSAUtils\PSAUtils.csproj">
-      <Project>{3fb567b3-4c9f-4859-b325-f1408b075f12}</Project>
-      <Name>PSAUtils</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

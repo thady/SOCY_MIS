@@ -26,6 +26,9 @@ namespace SOCY_MIS.DataAccessLayer
         public string usr_id_update = string.Empty;
         public string ofc_id = string.Empty;
         public int district_id = Convert.ToInt32(static_variables.district_id);
+        public string idst_other = string.Empty;
+        public string isct_other = string.Empty;
+        public string iwrd_other = string.Empty;
         #endregion Public
         #endregion Variables
 
@@ -125,19 +128,19 @@ namespace SOCY_MIS.DataAccessLayer
                 "icsl_child_age, icsl_child_name, " +
                 "icsl_contact_tel, icsl_contact_village, " + 
                 "gnd_id_caregiver, gnd_id_child, ics_id, ins_id, wrd_id, " +
-                "usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id,district_id) " +
+                "usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id,district_id,idst_other,isct_other,iwrd_other) " +
                 "VALUES ('{0}', " +
                 "{1}, '{2}', " +
                 "{3}, '{4}', " +
                 "'{5}', '{6}', " +
                 "'{7}', '{8}', '{9}', '{10}', '{11}', " +
-                "'{12}', '{12}', GETDATE(), GETDATE(), '{13}','{14}') ";
+                "'{12}', '{12}', GETDATE(), GETDATE(), '{13}','{14}','{15}','{16}','{17}') ";
             strSQL = string.Format(strSQL, icsl_id,
                 icsl_caregiver_age, utilFormatting.StringForSQL(icsl_caregiver_name),
                 icsl_child_age, utilFormatting.StringForSQL(icsl_child_name),
                 utilFormatting.StringForSQL(icsl_contact_tel), utilFormatting.StringForSQL(icsl_contact_village),
                 gnd_id_caregiver, gnd_id_child, ics_id, ins_id, wrd_id,  
-                usr_id_update, ofc_id, district_id);
+                usr_id_update, ofc_id, district_id, idst_other, isct_other, iwrd_other);
 
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
@@ -163,6 +166,9 @@ namespace SOCY_MIS.DataAccessLayer
                 icsl_child_age = Convert.ToInt32(dr["icsl_child_age"]);
                 icsl_child_name = dr["icsl_child_name"].ToString();
                 icsl_contact_tel = dr["icsl_contact_tel"].ToString();
+                idst_other = dr["idst_other"].ToString();
+                isct_other = dr["isct_other"].ToString();
+                iwrd_other = dr["iwrd_other"].ToString();
                 icsl_contact_village = dr["icsl_contact_village"].ToString();
                 gnd_id_caregiver = dr["gnd_id_caregiver"].ToString();
                 gnd_id_child = dr["gnd_id_child"].ToString();
@@ -187,14 +193,14 @@ namespace SOCY_MIS.DataAccessLayer
                 "icsl_child_age = {3}, icsl_child_name = '{4}', " +
                 "icsl_contact_tel = '{5}', icsl_contact_village = '{6}', " +
                 "gnd_id_caregiver = '{7}', gnd_id_child = '{8}', ics_id = '{9}', ins_id = '{10}', wrd_id = '{11}', " +
-                "usr_id_update = '{12}', usr_date_update = GETDATE(),district_id = '{13}' " +
+                "usr_id_update = '{12}', usr_date_update = GETDATE(),district_id = '{13}',idst_other = '{14}',isct_other = '{15}',iwrd_other = '{16}' " +
                 "WHERE icsl_id = '{0}' ";
             strSQL = string.Format(strSQL, icsl_id, 
                 icsl_caregiver_age, utilFormatting.StringForSQL(icsl_caregiver_name), 
                 icsl_child_age, utilFormatting.StringForSQL(icsl_child_name), 
                 utilFormatting.StringForSQL(icsl_contact_tel), utilFormatting.StringForSQL(icsl_contact_village), 
                 gnd_id_caregiver, gnd_id_child, ics_id, ins_id, wrd_id, 
-                usr_id_update,district_id);
+                usr_id_update,district_id, idst_other, isct_other, iwrd_other);
 
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL

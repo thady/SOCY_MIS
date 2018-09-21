@@ -156,9 +156,9 @@
             this.groupBox1.Controls.Add(this.tplButton01);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(4, 7);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Size = new System.Drawing.Size(1219, 1054);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -174,14 +174,14 @@
             this.tlpDisplay11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
             this.tlpDisplay11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tlpDisplay11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDisplay11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.tlpDisplay11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
             this.tlpDisplay11.Controls.Add(this.lblPreviousVisitServices, 0, 0);
             this.tlpDisplay11.Controls.Add(this.lblPreviousServices, 3, 0);
             this.tlpDisplay11.Controls.Add(this.clbPreviousServices, 4, 0);
             this.tlpDisplay11.Controls.Add(this.txtPreviousVisitServices, 1, 0);
             this.tlpDisplay11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpDisplay11.Location = new System.Drawing.Point(40, 293);
-            this.tlpDisplay11.Margin = new System.Windows.Forms.Padding(4);
+            this.tlpDisplay11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tlpDisplay11.Name = "tlpDisplay11";
             this.tlpDisplay11.RowCount = 1;
             this.tlpDisplay11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -218,7 +218,7 @@
             this.clbPreviousServices.Enabled = false;
             this.clbPreviousServices.FormattingEnabled = true;
             this.clbPreviousServices.Location = new System.Drawing.Point(773, 4);
-            this.clbPreviousServices.Margin = new System.Windows.Forms.Padding(4);
+            this.clbPreviousServices.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.clbPreviousServices.Name = "clbPreviousServices";
             this.clbPreviousServices.Size = new System.Drawing.Size(308, 94);
             this.clbPreviousServices.TabIndex = 24;
@@ -230,7 +230,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPreviousVisitServices.Enabled = false;
             this.txtPreviousVisitServices.Location = new System.Drawing.Point(204, 4);
-            this.txtPreviousVisitServices.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPreviousVisitServices.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPreviousVisitServices.Name = "txtPreviousVisitServices";
             this.txtPreviousVisitServices.Size = new System.Drawing.Size(308, 103);
             this.txtPreviousVisitServices.TabIndex = 24;
@@ -249,7 +249,7 @@
             this.tlpDisplay08.Controls.Add(this.tlpDisplay09, 0, 0);
             this.tlpDisplay08.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpDisplay08.Location = new System.Drawing.Point(40, 623);
-            this.tlpDisplay08.Margin = new System.Windows.Forms.Padding(4);
+            this.tlpDisplay08.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tlpDisplay08.Name = "tlpDisplay08";
             this.tlpDisplay08.RowCount = 1;
             this.tlpDisplay08.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -268,7 +268,7 @@
             this.tlpDisplay10.Controls.Add(this.clbServices, 1, 0);
             this.tlpDisplay10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpDisplay10.Location = new System.Drawing.Point(573, 4);
-            this.tlpDisplay10.Margin = new System.Windows.Forms.Padding(4);
+            this.tlpDisplay10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tlpDisplay10.Name = "tlpDisplay10";
             this.tlpDisplay10.RowCount = 1;
             this.tlpDisplay10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -293,7 +293,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.clbServices.FormattingEnabled = true;
             this.clbServices.Location = new System.Drawing.Point(267, 4);
-            this.clbServices.Margin = new System.Windows.Forms.Padding(4);
+            this.clbServices.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.clbServices.Name = "clbServices";
             this.clbServices.Size = new System.Drawing.Size(291, 130);
             this.clbServices.TabIndex = 24;
@@ -312,7 +312,7 @@
             this.tlpDisplay09.Controls.Add(this.lblImprovementPlan, 0, 0);
             this.tlpDisplay09.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpDisplay09.Location = new System.Drawing.Point(4, 4);
-            this.tlpDisplay09.Margin = new System.Windows.Forms.Padding(4);
+            this.tlpDisplay09.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tlpDisplay09.Name = "tlpDisplay09";
             this.tlpDisplay09.RowCount = 2;
             this.tlpDisplay09.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -326,7 +326,7 @@
             this.pnlConsumptionProgram.Controls.Add(this.rbtnConsumptionProgramNo);
             this.pnlConsumptionProgram.Controls.Add(this.rbtnConsumptionProgramYes);
             this.pnlConsumptionProgram.Location = new System.Drawing.Point(267, 93);
-            this.pnlConsumptionProgram.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlConsumptionProgram.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlConsumptionProgram.Name = "pnlConsumptionProgram";
             this.pnlConsumptionProgram.Size = new System.Drawing.Size(201, 23);
             this.pnlConsumptionProgram.TabIndex = 21;
@@ -335,7 +335,7 @@
             // 
             this.rbtnConsumptionProgramNo.AutoSize = true;
             this.rbtnConsumptionProgramNo.Location = new System.Drawing.Point(69, 1);
-            this.rbtnConsumptionProgramNo.Margin = new System.Windows.Forms.Padding(4);
+            this.rbtnConsumptionProgramNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbtnConsumptionProgramNo.Name = "rbtnConsumptionProgramNo";
             this.rbtnConsumptionProgramNo.Size = new System.Drawing.Size(47, 21);
             this.rbtnConsumptionProgramNo.TabIndex = 2;
@@ -348,7 +348,7 @@
             this.rbtnConsumptionProgramYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtnConsumptionProgramYes.AutoSize = true;
             this.rbtnConsumptionProgramYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnConsumptionProgramYes.Margin = new System.Windows.Forms.Padding(4);
+            this.rbtnConsumptionProgramYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbtnConsumptionProgramYes.Name = "rbtnConsumptionProgramYes";
             this.rbtnConsumptionProgramYes.Size = new System.Drawing.Size(53, 21);
             this.rbtnConsumptionProgramYes.TabIndex = 0;
@@ -373,7 +373,7 @@
             this.pnlImprovementPlan.Controls.Add(this.rbtnImprovementPlanNo);
             this.pnlImprovementPlan.Controls.Add(this.rbtnImprovementPlanYes);
             this.pnlImprovementPlan.Location = new System.Drawing.Point(267, 23);
-            this.pnlImprovementPlan.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlImprovementPlan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlImprovementPlan.Name = "pnlImprovementPlan";
             this.pnlImprovementPlan.Size = new System.Drawing.Size(201, 23);
             this.pnlImprovementPlan.TabIndex = 22;
@@ -382,7 +382,7 @@
             // 
             this.rbtnImprovementPlanNo.AutoSize = true;
             this.rbtnImprovementPlanNo.Location = new System.Drawing.Point(69, 1);
-            this.rbtnImprovementPlanNo.Margin = new System.Windows.Forms.Padding(4);
+            this.rbtnImprovementPlanNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbtnImprovementPlanNo.Name = "rbtnImprovementPlanNo";
             this.rbtnImprovementPlanNo.Size = new System.Drawing.Size(47, 21);
             this.rbtnImprovementPlanNo.TabIndex = 2;
@@ -395,7 +395,7 @@
             this.rbtnImprovementPlanYes.AutoSize = true;
             this.rbtnImprovementPlanYes.Checked = true;
             this.rbtnImprovementPlanYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnImprovementPlanYes.Margin = new System.Windows.Forms.Padding(4);
+            this.rbtnImprovementPlanYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbtnImprovementPlanYes.Name = "rbtnImprovementPlanYes";
             this.rbtnImprovementPlanYes.Size = new System.Drawing.Size(53, 21);
             this.rbtnImprovementPlanYes.TabIndex = 0;
@@ -440,7 +440,7 @@
             this.tlpDisplay07.Controls.Add(this.lblSocialWorker, 0, 0);
             this.tlpDisplay07.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpDisplay07.Location = new System.Drawing.Point(40, 950);
-            this.tlpDisplay07.Margin = new System.Windows.Forms.Padding(4);
+            this.tlpDisplay07.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tlpDisplay07.Name = "tlpDisplay07";
             this.tlpDisplay07.RowCount = 1;
             this.tlpDisplay07.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -452,7 +452,7 @@
             this.cbSocialWorker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbSocialWorker.FormattingEnabled = true;
             this.cbSocialWorker.Location = new System.Drawing.Point(404, 6);
-            this.cbSocialWorker.Margin = new System.Windows.Forms.Padding(4);
+            this.cbSocialWorker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbSocialWorker.Name = "cbSocialWorker";
             this.cbSocialWorker.Size = new System.Drawing.Size(678, 25);
             this.cbSocialWorker.TabIndex = 26;
@@ -478,7 +478,7 @@
             this.tlpDisplay06.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
             this.tlpDisplay06.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tlpDisplay06.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDisplay06.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.tlpDisplay06.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
             this.tlpDisplay06.Controls.Add(this.lblGirlEducationType, 0, 2);
             this.tlpDisplay06.Controls.Add(this.lblGirlEducationSupportIfYes, 0, 0);
             this.tlpDisplay06.Controls.Add(this.lblGirlName, 0, 1);
@@ -490,7 +490,7 @@
             this.tlpDisplay06.Controls.Add(this.cbGirlEducationLevel, 4, 2);
             this.tlpDisplay06.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpDisplay06.Location = new System.Drawing.Point(40, 841);
-            this.tlpDisplay06.Margin = new System.Windows.Forms.Padding(4);
+            this.tlpDisplay06.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tlpDisplay06.Name = "tlpDisplay06";
             this.tlpDisplay06.RowCount = 3;
             this.tlpDisplay06.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -559,7 +559,7 @@
             this.nudGirlAge.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.nudGirlAge.Enabled = false;
             this.nudGirlAge.Location = new System.Drawing.Point(773, 44);
-            this.nudGirlAge.Margin = new System.Windows.Forms.Padding(4);
+            this.nudGirlAge.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nudGirlAge.Name = "nudGirlAge";
             this.nudGirlAge.Size = new System.Drawing.Size(72, 23);
             this.nudGirlAge.TabIndex = 30;
@@ -569,7 +569,7 @@
             this.txtGirlName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtGirlName.Enabled = false;
             this.txtGirlName.Location = new System.Drawing.Point(204, 44);
-            this.txtGirlName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtGirlName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtGirlName.Name = "txtGirlName";
             this.txtGirlName.Size = new System.Drawing.Size(308, 23);
             this.txtGirlName.TabIndex = 31;
@@ -579,7 +579,7 @@
             this.txtGirlEducationType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtGirlEducationType.Enabled = false;
             this.txtGirlEducationType.Location = new System.Drawing.Point(204, 81);
-            this.txtGirlEducationType.Margin = new System.Windows.Forms.Padding(4);
+            this.txtGirlEducationType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtGirlEducationType.Name = "txtGirlEducationType";
             this.txtGirlEducationType.Size = new System.Drawing.Size(308, 23);
             this.txtGirlEducationType.TabIndex = 33;
@@ -590,7 +590,7 @@
             this.cbGirlEducationLevel.Enabled = false;
             this.cbGirlEducationLevel.FormattingEnabled = true;
             this.cbGirlEducationLevel.Location = new System.Drawing.Point(773, 80);
-            this.cbGirlEducationLevel.Margin = new System.Windows.Forms.Padding(4);
+            this.cbGirlEducationLevel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbGirlEducationLevel.Name = "cbGirlEducationLevel";
             this.cbGirlEducationLevel.Size = new System.Drawing.Size(308, 25);
             this.cbGirlEducationLevel.TabIndex = 34;
@@ -606,7 +606,7 @@
             this.tlpDisplay05.Controls.Add(this.lblGirlEducationSupport, 0, 0);
             this.tlpDisplay05.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpDisplay05.Location = new System.Drawing.Point(40, 805);
-            this.tlpDisplay05.Margin = new System.Windows.Forms.Padding(4);
+            this.tlpDisplay05.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tlpDisplay05.Name = "tlpDisplay05";
             this.tlpDisplay05.RowCount = 1;
             this.tlpDisplay05.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -619,7 +619,7 @@
             this.pnlGirlEducationSupport.Controls.Add(this.rbtnGirlEducationSupportNo);
             this.pnlGirlEducationSupport.Controls.Add(this.rbtnGirlEducationSupportYes);
             this.pnlGirlEducationSupport.Location = new System.Drawing.Point(837, 7);
-            this.pnlGirlEducationSupport.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlGirlEducationSupport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlGirlEducationSupport.Name = "pnlGirlEducationSupport";
             this.pnlGirlEducationSupport.Size = new System.Drawing.Size(201, 23);
             this.pnlGirlEducationSupport.TabIndex = 23;
@@ -628,7 +628,7 @@
             // 
             this.rbtnGirlEducationSupportNo.AutoSize = true;
             this.rbtnGirlEducationSupportNo.Location = new System.Drawing.Point(69, 1);
-            this.rbtnGirlEducationSupportNo.Margin = new System.Windows.Forms.Padding(4);
+            this.rbtnGirlEducationSupportNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbtnGirlEducationSupportNo.Name = "rbtnGirlEducationSupportNo";
             this.rbtnGirlEducationSupportNo.Size = new System.Drawing.Size(47, 21);
             this.rbtnGirlEducationSupportNo.TabIndex = 2;
@@ -641,7 +641,7 @@
             this.rbtnGirlEducationSupportYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtnGirlEducationSupportYes.AutoSize = true;
             this.rbtnGirlEducationSupportYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnGirlEducationSupportYes.Margin = new System.Windows.Forms.Padding(4);
+            this.rbtnGirlEducationSupportYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbtnGirlEducationSupportYes.Name = "rbtnGirlEducationSupportYes";
             this.rbtnGirlEducationSupportYes.Size = new System.Drawing.Size(53, 21);
             this.rbtnGirlEducationSupportYes.TabIndex = 0;
@@ -677,7 +677,7 @@
             this.tlpDisplay04.Controls.Add(this.pnlReferral, 1, 0);
             this.tlpDisplay04.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpDisplay04.Location = new System.Drawing.Point(40, 769);
-            this.tlpDisplay04.Margin = new System.Windows.Forms.Padding(4);
+            this.tlpDisplay04.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tlpDisplay04.Name = "tlpDisplay04";
             this.tlpDisplay04.RowCount = 1;
             this.tlpDisplay04.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -712,7 +712,7 @@
             this.pnlReferralCompleted.Controls.Add(this.rbtnReferralCompletedNo);
             this.pnlReferralCompleted.Controls.Add(this.rbtnReferralCompletedYes);
             this.pnlReferralCompleted.Location = new System.Drawing.Point(840, 7);
-            this.pnlReferralCompleted.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlReferralCompleted.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlReferralCompleted.Name = "pnlReferralCompleted";
             this.pnlReferralCompleted.Size = new System.Drawing.Size(201, 23);
             this.pnlReferralCompleted.TabIndex = 22;
@@ -722,7 +722,7 @@
             this.rbtnReferralCompletedNo.AutoSize = true;
             this.rbtnReferralCompletedNo.Enabled = false;
             this.rbtnReferralCompletedNo.Location = new System.Drawing.Point(69, 1);
-            this.rbtnReferralCompletedNo.Margin = new System.Windows.Forms.Padding(4);
+            this.rbtnReferralCompletedNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbtnReferralCompletedNo.Name = "rbtnReferralCompletedNo";
             this.rbtnReferralCompletedNo.Size = new System.Drawing.Size(47, 21);
             this.rbtnReferralCompletedNo.TabIndex = 2;
@@ -736,7 +736,7 @@
             this.rbtnReferralCompletedYes.AutoSize = true;
             this.rbtnReferralCompletedYes.Enabled = false;
             this.rbtnReferralCompletedYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnReferralCompletedYes.Margin = new System.Windows.Forms.Padding(4);
+            this.rbtnReferralCompletedYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbtnReferralCompletedYes.Name = "rbtnReferralCompletedYes";
             this.rbtnReferralCompletedYes.Size = new System.Drawing.Size(53, 21);
             this.rbtnReferralCompletedYes.TabIndex = 0;
@@ -750,7 +750,7 @@
             this.pnlReferral.Controls.Add(this.rbtnReferralNo);
             this.pnlReferral.Controls.Add(this.rbtnReferralYes);
             this.pnlReferral.Location = new System.Drawing.Point(271, 7);
-            this.pnlReferral.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlReferral.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlReferral.Name = "pnlReferral";
             this.pnlReferral.Size = new System.Drawing.Size(201, 23);
             this.pnlReferral.TabIndex = 23;
@@ -759,7 +759,7 @@
             // 
             this.rbtnReferralNo.AutoSize = true;
             this.rbtnReferralNo.Location = new System.Drawing.Point(69, 1);
-            this.rbtnReferralNo.Margin = new System.Windows.Forms.Padding(4);
+            this.rbtnReferralNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbtnReferralNo.Name = "rbtnReferralNo";
             this.rbtnReferralNo.Size = new System.Drawing.Size(47, 21);
             this.rbtnReferralNo.TabIndex = 2;
@@ -772,7 +772,7 @@
             this.rbtnReferralYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtnReferralYes.AutoSize = true;
             this.rbtnReferralYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnReferralYes.Margin = new System.Windows.Forms.Padding(4);
+            this.rbtnReferralYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbtnReferralYes.Name = "rbtnReferralYes";
             this.rbtnReferralYes.Size = new System.Drawing.Size(53, 21);
             this.rbtnReferralYes.TabIndex = 0;
@@ -797,7 +797,7 @@
             this.tlpDisplay03.Controls.Add(this.lblNextSteps, 2, 0);
             this.tlpDisplay03.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpDisplay03.Location = new System.Drawing.Point(40, 402);
-            this.tlpDisplay03.Margin = new System.Windows.Forms.Padding(4);
+            this.tlpDisplay03.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tlpDisplay03.Name = "tlpDisplay03";
             this.tlpDisplay03.RowCount = 2;
             this.tlpDisplay03.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -811,7 +811,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFindings.Location = new System.Drawing.Point(4, 115);
-            this.txtFindings.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFindings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtFindings.Name = "txtFindings";
             this.txtFindings.Size = new System.Drawing.Size(371, 103);
             this.txtFindings.TabIndex = 27;
@@ -823,7 +823,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtActions.Location = new System.Drawing.Point(383, 115);
-            this.txtActions.Margin = new System.Windows.Forms.Padding(4);
+            this.txtActions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtActions.Name = "txtActions";
             this.txtActions.Size = new System.Drawing.Size(371, 103);
             this.txtActions.TabIndex = 26;
@@ -835,7 +835,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNextSteps.Location = new System.Drawing.Point(762, 115);
-            this.txtNextSteps.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNextSteps.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNextSteps.Name = "txtNextSteps";
             this.txtNextSteps.Size = new System.Drawing.Size(373, 103);
             this.txtNextSteps.TabIndex = 25;
@@ -892,7 +892,7 @@
             this.tlpDisplay02.Controls.Add(this.txtPreviousVisitPurpose, 1, 2);
             this.tlpDisplay02.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpDisplay02.Location = new System.Drawing.Point(40, 183);
-            this.tlpDisplay02.Margin = new System.Windows.Forms.Padding(4);
+            this.tlpDisplay02.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tlpDisplay02.Name = "tlpDisplay02";
             this.tlpDisplay02.RowCount = 3;
             this.tlpDisplay02.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -941,7 +941,7 @@
             this.dtpPreviousVisitDate.Enabled = false;
             this.dtpPreviousVisitDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpPreviousVisitDate.Location = new System.Drawing.Point(204, 44);
-            this.dtpPreviousVisitDate.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpPreviousVisitDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpPreviousVisitDate.Name = "dtpPreviousVisitDate";
             this.dtpPreviousVisitDate.Size = new System.Drawing.Size(204, 23);
             this.dtpPreviousVisitDate.TabIndex = 18;
@@ -952,7 +952,7 @@
             this.pnlPreviousVisit.Controls.Add(this.rbtnPreviousVisitNo);
             this.pnlPreviousVisit.Controls.Add(this.rbtnPreviousVisitYes);
             this.pnlPreviousVisit.Location = new System.Drawing.Point(204, 7);
-            this.pnlPreviousVisit.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlPreviousVisit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlPreviousVisit.Name = "pnlPreviousVisit";
             this.pnlPreviousVisit.Size = new System.Drawing.Size(267, 23);
             this.pnlPreviousVisit.TabIndex = 20;
@@ -961,7 +961,7 @@
             // 
             this.rbtnPreviousVisitNo.AutoSize = true;
             this.rbtnPreviousVisitNo.Location = new System.Drawing.Point(69, 1);
-            this.rbtnPreviousVisitNo.Margin = new System.Windows.Forms.Padding(4);
+            this.rbtnPreviousVisitNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbtnPreviousVisitNo.Name = "rbtnPreviousVisitNo";
             this.rbtnPreviousVisitNo.Size = new System.Drawing.Size(47, 21);
             this.rbtnPreviousVisitNo.TabIndex = 2;
@@ -974,7 +974,7 @@
             this.rbtnPreviousVisitYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtnPreviousVisitYes.AutoSize = true;
             this.rbtnPreviousVisitYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnPreviousVisitYes.Margin = new System.Windows.Forms.Padding(4);
+            this.rbtnPreviousVisitYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbtnPreviousVisitYes.Name = "rbtnPreviousVisitYes";
             this.rbtnPreviousVisitYes.Size = new System.Drawing.Size(53, 21);
             this.rbtnPreviousVisitYes.TabIndex = 0;
@@ -988,7 +988,7 @@
             this.txtPreviousVisitPurpose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPreviousVisitPurpose.Enabled = false;
             this.txtPreviousVisitPurpose.Location = new System.Drawing.Point(204, 81);
-            this.txtPreviousVisitPurpose.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPreviousVisitPurpose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPreviousVisitPurpose.Name = "txtPreviousVisitPurpose";
             this.txtPreviousVisitPurpose.Size = new System.Drawing.Size(878, 23);
             this.txtPreviousVisitPurpose.TabIndex = 23;
@@ -1003,7 +1003,7 @@
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
             this.tlpDisplay01.Controls.Add(this.lblWard, 0, 3);
             this.tlpDisplay01.Controls.Add(this.lblHouseholdCode, 0, 0);
             this.tlpDisplay01.Controls.Add(this.lblNumOfChildren, 3, 0);
@@ -1024,7 +1024,7 @@
             this.tlpDisplay01.Controls.Add(this.cbHHMember, 1, 1);
             this.tlpDisplay01.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpDisplay01.Location = new System.Drawing.Point(40, 37);
-            this.tlpDisplay01.Margin = new System.Windows.Forms.Padding(4);
+            this.tlpDisplay01.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tlpDisplay01.Name = "tlpDisplay01";
             this.tlpDisplay01.RowCount = 4;
             this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -1127,7 +1127,7 @@
             this.cbHHCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbHHCode.FormattingEnabled = true;
             this.cbHHCode.Location = new System.Drawing.Point(204, 6);
-            this.cbHHCode.Margin = new System.Windows.Forms.Padding(4);
+            this.cbHHCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbHHCode.Name = "cbHHCode";
             this.cbHHCode.Size = new System.Drawing.Size(308, 25);
             this.cbHHCode.TabIndex = 22;
@@ -1138,7 +1138,7 @@
             this.dtpVisitDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dtpVisitDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpVisitDate.Location = new System.Drawing.Point(773, 44);
-            this.dtpVisitDate.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpVisitDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpVisitDate.Name = "dtpVisitDate";
             this.dtpVisitDate.Size = new System.Drawing.Size(200, 23);
             this.dtpVisitDate.TabIndex = 26;
@@ -1147,7 +1147,7 @@
             // 
             this.nudNumOfChildren.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.nudNumOfChildren.Location = new System.Drawing.Point(773, 7);
-            this.nudNumOfChildren.Margin = new System.Windows.Forms.Padding(4);
+            this.nudNumOfChildren.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nudNumOfChildren.Name = "nudNumOfChildren";
             this.nudNumOfChildren.Size = new System.Drawing.Size(72, 23);
             this.nudNumOfChildren.TabIndex = 29;
@@ -1225,7 +1225,7 @@
             this.cbHHMember.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbHHMember.FormattingEnabled = true;
             this.cbHHMember.Location = new System.Drawing.Point(204, 43);
-            this.cbHHMember.Margin = new System.Windows.Forms.Padding(4);
+            this.cbHHMember.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbHHMember.Name = "cbHHMember";
             this.cbHHMember.Size = new System.Drawing.Size(308, 25);
             this.cbHHMember.TabIndex = 36;
@@ -1239,13 +1239,13 @@
             this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 81F));
+            this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 83F));
             this.tplButton01.Controls.Add(this.btnCancel, 3, 0);
             this.tplButton01.Controls.Add(this.btnSave, 1, 0);
             this.tplButton01.Controls.Add(this.llblBackBottom, 4, 0);
             this.tplButton01.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tplButton01.Location = new System.Drawing.Point(40, 986);
-            this.tplButton01.Margin = new System.Windows.Forms.Padding(4);
+            this.tplButton01.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tplButton01.Name = "tplButton01";
             this.tplButton01.RowCount = 1;
             this.tplButton01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -1256,8 +1256,8 @@
             // 
             this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(613, 17);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancel.Location = new System.Drawing.Point(612, 17);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 28);
             this.btnCancel.TabIndex = 10;
@@ -1269,8 +1269,8 @@
             // 
             this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(425, 17);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSave.Location = new System.Drawing.Point(424, 17);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 28);
             this.btnSave.TabIndex = 2;
@@ -1298,7 +1298,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmHomeVisitTool";
             this.Size = new System.Drawing.Size(1227, 1065);
             this.Load += new System.EventHandler(this.frmHomeVisitTool_Load);

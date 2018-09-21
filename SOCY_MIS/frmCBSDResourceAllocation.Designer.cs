@@ -42,6 +42,8 @@
             this.lblProbationRealization = new System.Windows.Forms.Label();
             this.txtProbationShare = new System.Windows.Forms.TextBox();
             this.txtProbationRealization = new System.Windows.Forms.TextBox();
+            this.lblPercRealization = new System.Windows.Forms.Label();
+            this.lblPercRealizationDisplay = new System.Windows.Forms.Label();
             this.btnLineDelete = new System.Windows.Forms.Button();
             this.lblTotalNumber = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
@@ -77,8 +79,8 @@
             this.lblRegion = new System.Windows.Forms.Label();
             this.cbRegion = new System.Windows.Forms.ComboBox();
             this.lblRegionVal = new System.Windows.Forms.Label();
-            this.lblPercRealization = new System.Windows.Forms.Label();
-            this.lblPercRealizationDisplay = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtPartnerFunding = new System.Windows.Forms.TextBox();
             this.gbCBSDResourceAllocationTitle.SuspendLayout();
             this.gbDistrict.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -101,7 +103,7 @@
             this.gbCBSDResourceAllocationTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbCBSDResourceAllocationTitle.Location = new System.Drawing.Point(3, 6);
             this.gbCBSDResourceAllocationTitle.Name = "gbCBSDResourceAllocationTitle";
-            this.gbCBSDResourceAllocationTitle.Size = new System.Drawing.Size(714, 494);
+            this.gbCBSDResourceAllocationTitle.Size = new System.Drawing.Size(714, 638);
             this.gbCBSDResourceAllocationTitle.TabIndex = 2;
             this.gbCBSDResourceAllocationTitle.TabStop = false;
             this.gbCBSDResourceAllocationTitle.Text = "CBSD Resource Allocation";
@@ -133,7 +135,7 @@
             this.gbDistrict.Controls.Add(this.tlpDisplay02);
             this.gbDistrict.Location = new System.Drawing.Point(7, 135);
             this.gbDistrict.Name = "gbDistrict";
-            this.gbDistrict.Size = new System.Drawing.Size(701, 353);
+            this.gbDistrict.Size = new System.Drawing.Size(701, 497);
             this.gbDistrict.TabIndex = 53;
             this.gbDistrict.TabStop = false;
             this.gbDistrict.Text = "District";
@@ -149,6 +151,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblPercBudgetDisplay, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblPercBudget, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblCBSDRealization, 0, 1);
@@ -161,20 +164,22 @@
             this.tableLayoutPanel1.Controls.Add(this.txtProbationRealization, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblPercRealization, 4, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblPercRealizationDisplay, 5, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtPartnerFunding, 1, 2);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(23, 63);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(23, 66);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(654, 60);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(654, 82);
             this.tableLayoutPanel1.TabIndex = 58;
             // 
             // lblPercBudgetDisplay
             // 
             this.lblPercBudgetDisplay.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblPercBudgetDisplay.AutoSize = true;
-            this.lblPercBudgetDisplay.Location = new System.Drawing.Point(567, 8);
+            this.lblPercBudgetDisplay.Location = new System.Drawing.Point(567, 7);
             this.lblPercBudgetDisplay.Name = "lblPercBudgetDisplay";
             this.lblPercBudgetDisplay.Size = new System.Drawing.Size(10, 13);
             this.lblPercBudgetDisplay.TabIndex = 68;
@@ -184,7 +189,7 @@
             // 
             this.lblPercBudget.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblPercBudget.AutoSize = true;
-            this.lblPercBudget.Location = new System.Drawing.Point(477, 8);
+            this.lblPercBudget.Location = new System.Drawing.Point(477, 7);
             this.lblPercBudget.Name = "lblPercBudget";
             this.lblPercBudget.Size = new System.Drawing.Size(65, 13);
             this.lblPercBudget.TabIndex = 67;
@@ -194,7 +199,7 @@
             // 
             this.lblCBSDRealization.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblCBSDRealization.AutoSize = true;
-            this.lblCBSDRealization.Location = new System.Drawing.Point(3, 38);
+            this.lblCBSDRealization.Location = new System.Drawing.Point(3, 34);
             this.lblCBSDRealization.Name = "lblCBSDRealization";
             this.lblCBSDRealization.Size = new System.Drawing.Size(125, 13);
             this.lblCBSDRealization.TabIndex = 61;
@@ -203,7 +208,7 @@
             // txtCBSDRealization
             // 
             this.txtCBSDRealization.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCBSDRealization.Location = new System.Drawing.Point(153, 35);
+            this.txtCBSDRealization.Location = new System.Drawing.Point(153, 30);
             this.txtCBSDRealization.Name = "txtCBSDRealization";
             this.txtCBSDRealization.Size = new System.Drawing.Size(81, 20);
             this.txtCBSDRealization.TabIndex = 66;
@@ -214,7 +219,7 @@
             // 
             this.lblProbationShare.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblProbationShare.AutoSize = true;
-            this.lblProbationShare.Location = new System.Drawing.Point(240, 2);
+            this.lblProbationShare.Location = new System.Drawing.Point(240, 0);
             this.lblProbationShare.Name = "lblProbationShare";
             this.lblProbationShare.Size = new System.Drawing.Size(134, 26);
             this.lblProbationShare.TabIndex = 54;
@@ -224,7 +229,7 @@
             // 
             this.lblCBSDBudget.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblCBSDBudget.AutoSize = true;
-            this.lblCBSDBudget.Location = new System.Drawing.Point(3, 8);
+            this.lblCBSDBudget.Location = new System.Drawing.Point(3, 7);
             this.lblCBSDBudget.Name = "lblCBSDBudget";
             this.lblCBSDBudget.Size = new System.Drawing.Size(112, 13);
             this.lblCBSDBudget.TabIndex = 55;
@@ -233,7 +238,7 @@
             // txtCBSDBudget
             // 
             this.txtCBSDBudget.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCBSDBudget.Location = new System.Drawing.Point(153, 5);
+            this.txtCBSDBudget.Location = new System.Drawing.Point(153, 3);
             this.txtCBSDBudget.Name = "txtCBSDBudget";
             this.txtCBSDBudget.Size = new System.Drawing.Size(81, 20);
             this.txtCBSDBudget.TabIndex = 64;
@@ -244,7 +249,7 @@
             // 
             this.lblProbationRealization.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblProbationRealization.AutoSize = true;
-            this.lblProbationRealization.Location = new System.Drawing.Point(240, 38);
+            this.lblProbationRealization.Location = new System.Drawing.Point(240, 34);
             this.lblProbationRealization.Name = "lblProbationRealization";
             this.lblProbationRealization.Size = new System.Drawing.Size(141, 13);
             this.lblProbationRealization.TabIndex = 59;
@@ -253,7 +258,7 @@
             // txtProbationShare
             // 
             this.txtProbationShare.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtProbationShare.Location = new System.Drawing.Point(390, 5);
+            this.txtProbationShare.Location = new System.Drawing.Point(390, 3);
             this.txtProbationShare.Name = "txtProbationShare";
             this.txtProbationShare.Size = new System.Drawing.Size(81, 20);
             this.txtProbationShare.TabIndex = 62;
@@ -263,18 +268,38 @@
             // txtProbationRealization
             // 
             this.txtProbationRealization.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtProbationRealization.Location = new System.Drawing.Point(390, 35);
+            this.txtProbationRealization.Location = new System.Drawing.Point(390, 30);
             this.txtProbationRealization.Name = "txtProbationRealization";
             this.txtProbationRealization.Size = new System.Drawing.Size(81, 20);
             this.txtProbationRealization.TabIndex = 65;
             this.txtProbationRealization.TextChanged += new System.EventHandler(this.txtProbationRealization_TextChanged);
             this.txtProbationRealization.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProbationRealization_KeyPress);
             // 
+            // lblPercRealization
+            // 
+            this.lblPercRealization.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblPercRealization.AutoSize = true;
+            this.lblPercRealization.Location = new System.Drawing.Point(477, 34);
+            this.lblPercRealization.Name = "lblPercRealization";
+            this.lblPercRealization.Size = new System.Drawing.Size(65, 13);
+            this.lblPercRealization.TabIndex = 69;
+            this.lblPercRealization.Text = "Percentage:";
+            // 
+            // lblPercRealizationDisplay
+            // 
+            this.lblPercRealizationDisplay.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblPercRealizationDisplay.AutoSize = true;
+            this.lblPercRealizationDisplay.Location = new System.Drawing.Point(567, 34);
+            this.lblPercRealizationDisplay.Name = "lblPercRealizationDisplay";
+            this.lblPercRealizationDisplay.Size = new System.Drawing.Size(10, 13);
+            this.lblPercRealizationDisplay.TabIndex = 70;
+            this.lblPercRealizationDisplay.Text = "-";
+            // 
             // btnLineDelete
             // 
             this.btnLineDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLineDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLineDelete.Location = new System.Drawing.Point(620, 324);
+            this.btnLineDelete.Location = new System.Drawing.Point(620, 424);
             this.btnLineDelete.Name = "btnLineDelete";
             this.btnLineDelete.Size = new System.Drawing.Size(75, 23);
             this.btnLineDelete.TabIndex = 57;
@@ -287,7 +312,7 @@
             this.lblTotalNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblTotalNumber.AutoSize = true;
             this.lblTotalNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalNumber.Location = new System.Drawing.Point(46, 329);
+            this.lblTotalNumber.Location = new System.Drawing.Point(46, 473);
             this.lblTotalNumber.Name = "lblTotalNumber";
             this.lblTotalNumber.Size = new System.Drawing.Size(10, 13);
             this.lblTotalNumber.TabIndex = 56;
@@ -298,7 +323,7 @@
             this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(6, 329);
+            this.lblTotal.Location = new System.Drawing.Point(6, 473);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(34, 13);
             this.lblTotal.TabIndex = 55;
@@ -317,10 +342,10 @@
             this.gclDistrict,
             this.gclDelete,
             this.gclOfcId});
-            this.dgvLine.Location = new System.Drawing.Point(6, 169);
+            this.dgvLine.Location = new System.Drawing.Point(5, 197);
             this.dgvLine.MultiSelect = false;
             this.dgvLine.Name = "dgvLine";
-            this.dgvLine.Size = new System.Drawing.Size(690, 149);
+            this.dgvLine.Size = new System.Drawing.Size(690, 221);
             this.dgvLine.TabIndex = 54;
             this.dgvLine.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLine_CellDoubleClick);
             this.dgvLine.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvLine_RowPostPaint);
@@ -367,7 +392,7 @@
             this.tplButton02.Controls.Add(this.btnLineSave, 1, 0);
             this.tplButton02.Controls.Add(this.llblBackBottom, 4, 0);
             this.tplButton02.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tplButton02.Location = new System.Drawing.Point(23, 122);
+            this.tplButton02.Location = new System.Drawing.Point(23, 153);
             this.tplButton02.Name = "tplButton02";
             this.tplButton02.RowCount = 1;
             this.tplButton02.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -427,7 +452,7 @@
             this.tlpDisplay02.Controls.Add(this.lblDistrictGrantBudget, 3, 0);
             this.tlpDisplay02.Controls.Add(this.txtDistrictGrantBudget, 4, 0);
             this.tlpDisplay02.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tlpDisplay02.Location = new System.Drawing.Point(23, 24);
+            this.tlpDisplay02.Location = new System.Drawing.Point(23, 17);
             this.tlpDisplay02.Name = "tlpDisplay02";
             this.tlpDisplay02.RowCount = 1;
             this.tlpDisplay02.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.85714F));
@@ -697,25 +722,23 @@
             this.lblRegionVal.TabIndex = 58;
             this.lblRegionVal.Text = "*";
             // 
-            // lblPercRealization
+            // label2
             // 
-            this.lblPercRealization.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblPercRealization.AutoSize = true;
-            this.lblPercRealization.Location = new System.Drawing.Point(477, 38);
-            this.lblPercRealization.Name = "lblPercRealization";
-            this.lblPercRealization.Size = new System.Drawing.Size(65, 13);
-            this.lblPercRealization.TabIndex = 69;
-            this.lblPercRealization.Text = "Percentage:";
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 55);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(120, 26);
+            this.label2.TabIndex = 71;
+            this.label2.Text = "Additional Funding from Partners:";
             // 
-            // lblPercRealizationDisplay
+            // txtPartnerFunding
             // 
-            this.lblPercRealizationDisplay.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblPercRealizationDisplay.AutoSize = true;
-            this.lblPercRealizationDisplay.Location = new System.Drawing.Point(567, 38);
-            this.lblPercRealizationDisplay.Name = "lblPercRealizationDisplay";
-            this.lblPercRealizationDisplay.Size = new System.Drawing.Size(10, 13);
-            this.lblPercRealizationDisplay.TabIndex = 70;
-            this.lblPercRealizationDisplay.Text = "-";
+            this.txtPartnerFunding.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPartnerFunding.Location = new System.Drawing.Point(153, 58);
+            this.txtPartnerFunding.Name = "txtPartnerFunding";
+            this.txtPartnerFunding.Size = new System.Drawing.Size(81, 20);
+            this.txtPartnerFunding.TabIndex = 72;
             // 
             // frmCBSDResourceAllocation
             // 
@@ -724,7 +747,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.gbCBSDResourceAllocationTitle);
             this.Name = "frmCBSDResourceAllocation";
-            this.Size = new System.Drawing.Size(720, 503);
+            this.Size = new System.Drawing.Size(720, 647);
             this.Load += new System.EventHandler(this.frmCBSDResourceAllocation_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmCBSDResourceAllocation_Paint);
             this.gbCBSDResourceAllocationTitle.ResumeLayout(false);
@@ -798,6 +821,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gclOfcId;
         private System.Windows.Forms.Label lblPercRealization;
         private System.Windows.Forms.Label lblPercRealizationDisplay;
-
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtPartnerFunding;
     }
 }

@@ -28,6 +28,7 @@ namespace SOCY_MIS.DataAccessLayer
         public string wrd_id = utilConstants.cDFEmptyListValue;
         public string usr_id_update = string.Empty;
         public string ofc_id = string.Empty;
+        public string swk_hh_target = string.Empty;
         public string district_id = string.Empty;
         #endregion Public
 
@@ -185,6 +186,7 @@ namespace SOCY_MIS.DataAccessLayer
                 wrd_id = dr["wrd_id"].ToString();
                 usr_id_update = dr["usr_id_update"].ToString();
                 ofc_id = dr["ofc_id"].ToString();
+                //swk_hh_target = dr["swk_hh_target"].ToString();
                 #endregion Load Values
             }
         }

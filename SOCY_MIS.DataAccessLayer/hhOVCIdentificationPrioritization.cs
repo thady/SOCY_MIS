@@ -57,6 +57,7 @@ namespace SOCY_MIS.DataAccessLayer
         public string usr_id_update = string.Empty;
         public string ofc_id = string.Empty;
         public string district_id = string.Empty;
+        public string ids_id = string.Empty;
         #endregion Public
 
         #region Private
@@ -199,7 +200,7 @@ namespace SOCY_MIS.DataAccessLayer
                 "yn_id_hwss_shelter, yn_id_hwss_water, " +
                 "yn_id_psbc_referred, yn_id_psbc_stigmatized, " +
                 "ynna_id_edu_missed_school, ynna_id_edu_not_enrolled, " +
-                "usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id,district_id) " +
+                "usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id,district_id,ids_id) " +
                 "VALUES ('{0}', '{1}', '{2}', " +
                 "{3}, {4}, {5}, {6}, {7}, {8}, " +
                 "'{9}', '{10}', " +
@@ -215,7 +216,7 @@ namespace SOCY_MIS.DataAccessLayer
                 "'{37}', '{38}', " +
                 "'{39}', '{40}', " +
                 "'{41}', '{42}', " +
-                "'{43}', '{43}', GETDATE(), GETDATE(), '{44}','{45}') ";
+                "'{43}', '{43}', GETDATE(), GETDATE(), '{44}','{45}','{46}') ";
             strSQL = string.Format(strSQL, oip_id, utilFormatting.StringForSQL(oip_comments), oip_date.ToString("dd MMM yyyy HH:mm:ss"),
                 oip_18_above_female, oip_18_above_male, oip_18_below_female, oip_18_below_male, oip_hiv_adult, oip_hiv_children,
                 oip_cp_month, utilFormatting.StringForSQL(oip_interviewer_tel),
@@ -231,7 +232,7 @@ namespace SOCY_MIS.DataAccessLayer
                 yn_id_hwss_shelter, yn_id_hwss_water,
                 yn_id_psbc_referred, yn_id_psbc_stigmatized,
                 ynna_id_edu_missed_school, ynna_id_edu_not_enrolled,
-                usr_id_update, ofc_id,district_id);
+                usr_id_update, ofc_id,district_id, ids_id);
 
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
@@ -296,6 +297,7 @@ namespace SOCY_MIS.DataAccessLayer
                 ynna_id_edu_not_enrolled = dr["ynna_id_edu_not_enrolled"].ToString();
                 usr_id_update = dr["usr_id_update"].ToString();
                 ofc_id = dr["ofc_id"].ToString();
+                ids_id = dr["ids_id"].ToString();
                 #endregion Load Values
             }
         }
@@ -323,7 +325,7 @@ namespace SOCY_MIS.DataAccessLayer
                 "yn_id_hwss_shelter = '{37}', yn_id_hwss_water = '{38}', " +
                 "yn_id_psbc_referred = '{39}', yn_id_psbc_stigmatized = '{40}', " +
                 "ynna_id_edu_missed_school = '{41}', ynna_id_edu_not_enrolled = '{42}', " +
-                "usr_id_update = '{43}', usr_date_update = GETDATE(),district_id = '{44}' " +
+                "usr_id_update = '{43}', usr_date_update = GETDATE(),district_id = '{44}',ids_id = '{45}' " +
                 "WHERE oip_id = '{0}' ";
             strSQL = string.Format(strSQL, oip_id, utilFormatting.StringForSQL(oip_comments), oip_date.ToString("dd MMM yyyy HH:mm:ss"),
                 oip_18_above_female, oip_18_above_male, oip_18_below_female, oip_18_below_male, oip_hiv_adult, oip_hiv_children,
@@ -340,7 +342,7 @@ namespace SOCY_MIS.DataAccessLayer
                 yn_id_hwss_shelter, yn_id_hwss_water,
                 yn_id_psbc_referred, yn_id_psbc_stigmatized,
                 ynna_id_edu_missed_school, ynna_id_edu_not_enrolled,
-                usr_id_update,district_id);
+                usr_id_update,district_id, ids_id);
 
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL

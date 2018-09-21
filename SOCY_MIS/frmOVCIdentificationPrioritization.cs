@@ -7,9 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-using PSAUtils;
+
 using PSAUtilsWin32;
 using SOCY_MIS.DataAccessLayer;
+using PSAUtils;
 
 namespace SOCY_MIS
 {
@@ -92,8 +93,10 @@ namespace SOCY_MIS
             }
             else
             {
+                ReturnIdentificationSources();
                 SetPermissions();
                 LoadDisplay();
+                
             }
         }
 
@@ -118,9 +121,17 @@ namespace SOCY_MIS
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Save();
+            if (SystemConstants.ValidateDistrictID())
+            {
+                Save();
+            }
+            else
+            {
+                MessageBox.Show("No district set for this office,please set the office district under office information screen", "SOCY MIS Message Centre", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
-        
+
         private void cbCSO_SelectionChangeCommitted(object sender, EventArgs e)
         {
             if (cbPartner.SelectedIndex == 0)
@@ -529,7 +540,7 @@ namespace SOCY_MIS
                     rbtnPSBCStigmatizedYes.Checked = false;
                     rbtnPSBCVulnerableNo.Checked = false;
                     rbtnPSBCVulnerableYes.Checked = false;
-
+                    dtpDate.Checked = false;
                     txtComments.Text = "";
                     txtHHCode.Text = "";
                     txtHHMFirstName.Text = "";
@@ -537,6 +548,7 @@ namespace SOCY_MIS
                     txtSocialWorkerTel.Text = "";
                     txtHHTel.Text = "";
                     txtVillage.Text = "";
+                    cboIdentification_source.SelectedValue = "-1";
                     #endregion Clear
                 }
                 else
@@ -594,6 +606,7 @@ namespace SOCY_MIS
                     #region Load Data
                     if (ObjectId.Length == 0)
                     {
+
                         LoadLists("", "", dalHH.swk_id, dalHH.wrd_id, dbCon);
                         txtHHMFirstName.Enabled = true;
                         txtHHMLastName.Enabled = true;
@@ -623,6 +636,7 @@ namespace SOCY_MIS
                         chkCPMarriageTeenParent.Checked = (dalOIP.yn_id_cp_marriage_teen_parent == "1");
                         chkCPNeglected.Checked = (dalOIP.yn_id_cp_neglected == "1");
                         chkCPPregnancy.Checked = (dalOIP.yn_id_cp_pregnancy == "1");
+                        cboIdentification_source.SelectedValue = dalOIP.ids_id;
 
                         utilControls.RadioButtonSetSelection(rbtnCPAbuseYes, rbtnCPAbuseNo, dalOIP.yn_id_cp_abuse);
                         utilControls.RadioButtonSetSelection(rbtnCPNoBirthRegisterYes, rbtnCPNoBirthRegisterNo, dalOIP.yn_id_cp_no_birth_register);
@@ -645,10 +659,10 @@ namespace SOCY_MIS
                         utilControls.RadioButtonSetSelection(rbtnPSBCReferredYes, rbtnPSBCReferredNo, dalOIP.yn_id_psbc_referred);
                         utilControls.RadioButtonSetSelection(rbtnPSBCStigmatizedYes, rbtnPSBCStigmatizedNo, dalOIP.yn_id_psbc_stigmatized);
 
-                        utilControls.RadioButtonSetSelection(rbtnEDUMissedSchoolYes, rbtnEDUMissedSchoolNo,rbtnEDUMissedSchoolNA, dalOIP.ynna_id_edu_missed_school);
+                        utilControls.RadioButtonSetSelection(rbtnEDUMissedSchoolYes, rbtnEDUMissedSchoolNo, rbtnEDUMissedSchoolNA, dalOIP.ynna_id_edu_missed_school);
                         utilControls.RadioButtonSetSelection(rbtnEDUNotEnrolledYes, rbtnEDUNotEnrolledNo, rbtnEDUNotEnrolledNA, dalOIP.ynna_id_edu_not_enrolled);
 
-                        btnSave.Enabled = pblnManage && (FormMaster.OfficeId.Equals(dalOIP.ofc_id) || utilConstants.cDFImportOffice.Equals(dalOIP.ofc_id) || SystemConstants.Validate_Office_group_access(FormMaster.OfficeId, dalOIP.ofc_id));
+                        //btnSave.Enabled = pblnManage && (FormMaster.OfficeId.Equals(dalOIP.ofc_id) || utilConstants.cDFImportOffice.Equals(dalOIP.ofc_id) || SystemConstants.Validate_Office_group_access(FormMaster.OfficeId, dalOIP.ofc_id));
 
                         SetChildProtection();
                         SetChildProtection14();
@@ -661,6 +675,7 @@ namespace SOCY_MIS
 
                         LoadLists(dalOIP.oip_cp_month, dalOIP.cso_id, dalHH.swk_id, dalHH.wrd_id, dbCon);
                         LoadDisplayMember(dalOIP.hhm_id, dbCon);
+                        
                     }
                     #endregion Load Data
                 }
@@ -894,7 +909,7 @@ namespace SOCY_MIS
                             dalHHM.usr_id_update = FormMaster.UserId;
                             dalHHM.ofc_id = FormMaster.OfficeId;
                             dalHHM.district_id = static_variables.district_id;
-
+                           
                             dalHHM.Save(dbCon);
                         }
                         #endregion Household
@@ -959,6 +974,7 @@ namespace SOCY_MIS
 
                         dalOIP.usr_id_update = FormMaster.UserId;
                         dalOIP.district_id = static_variables.district_id; //edited by tadeo
+                        dalOIP.ids_id = cboIdentification_source.SelectedValue.ToString();
 
                         dalOIP.Save(dbCon);
                         #endregion Household Assessment
@@ -1005,7 +1021,8 @@ namespace SOCY_MIS
                 dalHh = new hhHousehold();
                 try
                 {
-                    txtHHCode.Text = dalHh.NextHouseholdCode(cbPartner.SelectedValue.ToString(), cbCSO.SelectedValue.ToString(), cbSubCounty.SelectedValue.ToString(), dbCon);
+                    //txtHHCode.Text = dalHh.NextHouseholdCode(cbPartner.SelectedValue.ToString(), cbCSO.SelectedValue.ToString(), cbSubCounty.SelectedValue.ToString(), dbCon);
+                    txtHHCode.Text = dalHh.NextHouseholdCode(cbDistrict.SelectedValue.ToString(), cbCSO.SelectedValue.ToString(), cbSubCounty.SelectedValue.ToString(), dbCon);
                 }
                 catch (Exception exc)
                 {
@@ -1043,7 +1060,7 @@ namespace SOCY_MIS
             #region Required Fields
             if (txtHHCode.Text.Trim().Length == 0 || txtHHMFirstName.Text.Trim().Length == 0 || txtHHMLastName.Text.Trim().Length == 0 || txtVillage.Text.Trim().Length == 0 ||
                 cbDistrict.SelectedIndex == 0 || cbHHMGender.SelectedIndex == 0 || cbSubCounty.SelectedIndex == 0 || cbWard.SelectedIndex == 0 ||
-                cbPartner.SelectedIndex == 0 || cbCSO.SelectedIndex == 0 || nudHHMAge.Value == 0)
+                cbPartner.SelectedIndex == 0 || cbCSO.SelectedIndex == 0 || nudHHMAge.Value == 0 || dtpDate.Checked == false || cboIdentification_source.SelectedValue.ToString() == "-1")
                 strMessage = strMessage + "," + utilConstants.cMIDRequiredFields;
             #endregion Required Fields
 
@@ -1209,5 +1226,21 @@ namespace SOCY_MIS
             return intCounter;
         }
         #endregion Radio Buttons
+
+        protected void ReturnIdentificationSources()
+        {
+            DataTable dt = SystemConstants.Return_lst_hh_identification_source();
+            if (dt.Rows.Count > 0)
+            {
+                DataRow csoemptyRow = dt.NewRow();
+                csoemptyRow["ids_id"] = "-1";
+                csoemptyRow["ids_name"] = "Select one";
+                dt.Rows.InsertAt(csoemptyRow, 0);
+
+                cboIdentification_source.DataSource = dt;
+                cboIdentification_source.DisplayMember = "ids_name";
+                cboIdentification_source.ValueMember = "ids_id";
+            }
+        }
     }
 }

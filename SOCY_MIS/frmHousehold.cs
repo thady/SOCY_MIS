@@ -165,6 +165,34 @@ namespace SOCY_MIS
                             frmRef.FormMaster = FormMaster;
                             FormMaster.LoadControl(frmRef, this.Name, false);
                             break;
+                        case utilConstants.cRTHIP:
+                            #region Set Selected
+                            frmHouseholdImprovementPlan frmNew = new frmHouseholdImprovementPlan();
+                            frmNew.FormCalling = this;
+                            frmNew.FormMaster = FormMaster;
+                            hh_household_improvement_plan.hip_id_display = strID;
+                            FormMaster.LoadControl(frmNew, this.Name, false);
+                            #endregion
+                            break;
+                        case utilConstants.cRTOVCViralLoad:
+                            #region Set Selected
+                            frmOVC_Viral_load frmVL = new frmOVC_Viral_load();
+                            frmVL.HouseholdId = ObjectId;
+                            frmVL.FormCalling = this;
+                            frmVL.FormMaster = FormMaster;
+                            benOvcViralLoad._vl_id = strID;
+                            FormMaster.LoadControl(frmVL, this.Name, false);
+                            #endregion
+                            break;
+                        case utilConstants.cRTRiskAssessment:
+                            #region Set Selected
+                            frmHouseholdRiskAssessmentRegister frmNewRAS = new frmHouseholdRiskAssessmentRegister();
+                            frmNewRAS.FormCalling = this;
+                            frmNewRAS.FormMaster = FormMaster;
+                            hh_household_risk_assessment_header._ras_id = strID;
+                            FormMaster.LoadControl(frmNewRAS, this.Name, false);
+                            #endregion
+                            break;
                     }
                 }
                 #endregion Display Form
@@ -290,6 +318,35 @@ namespace SOCY_MIS
                         LoadLists(dbCon);
                         LoadMembers(dbCon);
                         LoadRecords("");
+
+                        #region Set HH status forecolor
+                        if (lblStatusDisplay.Text != "Active")
+                        {
+                            lblStatusDisplay.ForeColor = Color.Red;
+                        }
+                        else
+                        {
+                            lblStatusDisplay.ForeColor = Color.Blue;
+                        }
+                        #endregion
+
+                        #region DisbaleEntryforinactiveHH
+                        if (lblStatusDisplay.Text != "Active" && lblStatusDisplay.Text != "Graduated")
+                        {
+                            tlpDisplay01.Enabled = false;
+                            tlpDisplay02.Enabled = false;
+                            gbMembers.Enabled = false;
+                            dgvRecords.Enabled = false;
+                        }
+                        else
+                        {
+                            tlpDisplay01.Enabled = true;
+                            tlpDisplay02.Enabled = true;
+                            gbMembers.Enabled = true;
+                            dgvRecords.Enabled = true;
+                        }
+                        #endregion
+
                     }
                     finally
                     {
@@ -449,6 +506,57 @@ namespace SOCY_MIS
                 FormMaster.ShowMessage(utilConstants.cPTError, this.Name, "LoadRecords", exc);
             }
         }
+
         #endregion Private Methods
+
+        private void llblLinkages_register_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frm_linkages_register register = new frm_linkages_register();
+            register.ShowDialog();
+        }
+
+        private void lbl_risk_assessment_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            #region Set Selected
+            frmHouseholdRiskAssessmentRegister frmNew = new frmHouseholdRiskAssessmentRegister();
+            frmNew.FormCalling = this;
+            frmNew.FormMaster = FormMaster;
+            FormMaster.LoadControl(frmNew, this.Name, false);
+            #endregion
+        }
+
+        private void llblHip_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //frm_hh_household_improvement_plan plan = new frm_hh_household_improvement_plan();
+            //plan.ShowDialog();
+
+            #region Set Selected
+            frmHouseholdImprovementPlan frmNew = new frmHouseholdImprovementPlan();
+            frmNew.FormCalling = this;
+            frmNew.FormMaster = FormMaster;
+            FormMaster.LoadControl(frmNew, this.Name, false);
+            #endregion
+        }
+
+        private void llblViralLoad_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            #region Set Selected
+            frmOVC_Viral_load frmNew = new frmOVC_Viral_load();
+            frmNew.HouseholdId = ObjectId;
+            frmNew.FormCalling = this;
+            frmNew.FormMaster = FormMaster;
+            FormMaster.LoadControl(frmNew, this.Name, false);
+            #endregion
+        }
+
+        private void gbDetails_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

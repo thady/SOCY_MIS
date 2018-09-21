@@ -1003,7 +1003,7 @@
             this.tplDisplay10.ColumnCount = 3;
             this.tplDisplay10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
             this.tplDisplay10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tplDisplay10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tplDisplay10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.tplDisplay10.Controls.Add(this.pnlChildHelpline, 1, 0);
             this.tplDisplay10.Controls.Add(this.lblChildHelpline, 0, 0);
             this.tplDisplay10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1020,7 +1020,7 @@
             this.pnlChildHelpline.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pnlChildHelpline.Controls.Add(this.rbtnChildHelplineNo);
             this.pnlChildHelpline.Controls.Add(this.rbtnChildHelplineYes);
-            this.pnlChildHelpline.Location = new System.Drawing.Point(540, 7);
+            this.pnlChildHelpline.Location = new System.Drawing.Point(538, 7);
             this.pnlChildHelpline.Margin = new System.Windows.Forms.Padding(4);
             this.pnlChildHelpline.Name = "pnlChildHelpline";
             this.pnlChildHelpline.Size = new System.Drawing.Size(267, 23);
@@ -1847,7 +1847,7 @@
             this.tplDisplay14.ColumnCount = 3;
             this.tplDisplay14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
             this.tplDisplay14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tplDisplay14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tplDisplay14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.tplDisplay14.Controls.Add(this.pnlServiceDiscussion, 1, 0);
             this.tplDisplay14.Controls.Add(this.lblServiceDiscussion, 0, 0);
             this.tplDisplay14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1864,7 +1864,7 @@
             this.pnlServiceDiscussion.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pnlServiceDiscussion.Controls.Add(this.rbtnServiceDiscussionNo);
             this.pnlServiceDiscussion.Controls.Add(this.rbtnServiceDiscussionYes);
-            this.pnlServiceDiscussion.Location = new System.Drawing.Point(540, 7);
+            this.pnlServiceDiscussion.Location = new System.Drawing.Point(538, 7);
             this.pnlServiceDiscussion.Margin = new System.Windows.Forms.Padding(4);
             this.pnlServiceDiscussion.Name = "pnlServiceDiscussion";
             this.pnlServiceDiscussion.Size = new System.Drawing.Size(267, 23);
