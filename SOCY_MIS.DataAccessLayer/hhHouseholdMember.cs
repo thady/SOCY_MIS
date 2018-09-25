@@ -382,15 +382,27 @@ namespace SOCY_MIS.DataAccessLayer
             string strSQL = string.Empty;
             #endregion Variables
 
+            //#region SQL
+            //strSQL = string.Format("SELECT hhm.hhm_id, RTRIM(LTRIM(hhm.hhm_number + ' - ' + hhm.hhm_first_name + ' ' + hhm.hhm_last_name)) AS hhm_name, hhm.hhm_number " +
+            //    "FROM hh_household_member hhm " +
+            //    "WHERE hhm.hh_id = '{0}' " +
+            //    "AND DATEADD(year, {2}, hhm_year_of_birth + '/01/01') > '{3}' " +
+            //    "AND hhm_year_of_birth + '/01/01' < DATEADD(year, 1, '{3}') " +
+            //    "UNION " +
+            //    "SELECT hhm.hhm_id, RTRIM(LTRIM(hhm.hhm_number + ' - ' + hhm.hhm_first_name + ' ' + hhm.hhm_last_name)) AS hhm_name, hhm.hhm_number " +
+            //    "FROM hh_household_member hhm " + 
+            //    "WHERE hhm.hhm_id = '{1}' " +
+            //    "ORDER BY hhm_number ", strHhId, strHhmId, intAge, dtmAtDate.ToString("dd MMM yyyy"));
+            //dt = dbCon.ExecuteQueryDataTable(strSQL);
+            //#endregion SQL
+
             #region SQL
             strSQL = string.Format("SELECT hhm.hhm_id, RTRIM(LTRIM(hhm.hhm_number + ' - ' + hhm.hhm_first_name + ' ' + hhm.hhm_last_name)) AS hhm_name, hhm.hhm_number " +
                 "FROM hh_household_member hhm " +
                 "WHERE hhm.hh_id = '{0}' " +
-                "AND DATEADD(year, {2}, hhm_year_of_birth + '/01/01') > '{3}' " +
-                "AND hhm_year_of_birth + '/01/01' < DATEADD(year, 1, '{3}') " +
                 "UNION " +
                 "SELECT hhm.hhm_id, RTRIM(LTRIM(hhm.hhm_number + ' - ' + hhm.hhm_first_name + ' ' + hhm.hhm_last_name)) AS hhm_name, hhm.hhm_number " +
-                "FROM hh_household_member hhm " + 
+                "FROM hh_household_member hhm " +
                 "WHERE hhm.hhm_id = '{1}' " +
                 "ORDER BY hhm_number ", strHhId, strHhmId, intAge, dtmAtDate.ToString("dd MMM yyyy"));
             dt = dbCon.ExecuteQueryDataTable(strSQL);
