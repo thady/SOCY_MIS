@@ -530,7 +530,7 @@ namespace SOCY_MIS.DataAccessLayer
                     }
                    
                 }
-
+                Version35(dbCon);
                 Updatelst_household_status(dbCon);
                 Update_es_trainingType(dbCon);
                 prt_subcounty_ovc_checklist_new_column(dbCon);
@@ -540,6 +540,7 @@ namespace SOCY_MIS.DataAccessLayer
                 Insert_new_sync_upload(dbCon);
                 UpdateHousehold_RiskAssessmentTool(dbCon);
                 Insertlst_agro_scoring_crops(dbCon);
+                CreateNewDistricts(dbCon);
                 //DropRecreateLstAgro_enterprise_ranking(dbCon); //bushenyi error..should be removed when error is rectified.Should not be in version control
 
                 dbCon.TransactionCommit();
@@ -13413,6 +13414,9 @@ namespace SOCY_MIS.DataAccessLayer
             string strSQL = string.Empty;
             #endregion Variables
 
+            strSQL = "DELETE FROM [dbo].[lst_district]";
+            dbCon.ExecuteNonQuery(strSQL);
+
             #region SQL
             strSQL = @"SET IDENTITY_INSERT [dbo].[lst_district] ON 
                     INSERT [dbo].[lst_district] ([dst_sid], [dst_id], [dst_name], [dst_order], [dst_active], [rgn_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1, N'1', N'BUSHENYI', 1, 1, N'2', N'EN', N'1', N'1', GETDATE(), GETDATE())
@@ -13436,6 +13440,9 @@ namespace SOCY_MIS.DataAccessLayer
                     INSERT [dbo].[lst_district] ([dst_sid], [dst_id], [dst_name], [dst_order], [dst_active], [rgn_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (19, N'19', N'MBARARA', 19, 1, N'1', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_district] ([dst_sid], [dst_id], [dst_name], [dst_order], [dst_active], [rgn_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (20, N'20', N'SHEEMA', 20, 1, N'1', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_district] ([dst_sid], [dst_id], [dst_name], [dst_order], [dst_active], [rgn_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (21, N'21', N'MITOOMA', 21, 1, N'1', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_district] ([dst_sid], [dst_id], [dst_name], [dst_order], [dst_active], [rgn_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (22, N'22', N'KIKUUBE', 22, 1, N'1', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_district] ([dst_sid], [dst_id], [dst_name], [dst_order], [dst_active], [rgn_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (23, N'23', N'KYOTERA', 23, 1, N'1', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_district] ([dst_sid], [dst_id], [dst_name], [dst_order], [dst_active], [rgn_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (24, N'24', N'RUKIGA', 24, 1, N'1', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     SET IDENTITY_INSERT [dbo].[lst_district] OFF ";
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
@@ -14422,6 +14429,9 @@ namespace SOCY_MIS.DataAccessLayer
             string strSQL = string.Empty;
             #endregion Variables
 
+            strSQL = "DELETE FROM [dbo].[lst_sub_county]";
+            dbCon.ExecuteNonQuery(strSQL);
+
             #region SQL
             strSQL = @"SET IDENTITY_INSERT [dbo].[lst_sub_county] ON 
                     INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1, N'1', N'BAMUNANIKA', 1, 1, N'12', N'EN', N'1', N'1', GETDATE(), GETDATE())
@@ -14769,6 +14779,8 @@ namespace SOCY_MIS.DataAccessLayer
                     INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (343, N'343', N'Bufunda', 343, 1, N'18', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (344, N'344', N'BUTUNDUUZI TOWN COUNCIL', 344, 1, N'11', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (345, N'345', N'NAMUNGO', 345, 1, N'13', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (346, N'346', N'MPARO TOWN COUNCIL', 346, 1, N'24', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (347, N'347', N'MUHANGA TOWN COUNCIL', 347, 1, N'24', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     SET IDENTITY_INSERT [dbo].[lst_sub_county] OFF ";
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
@@ -27877,6 +27889,55 @@ namespace SOCY_MIS.DataAccessLayer
             dbCon.ExecuteNonQuery(strSQL);
             #endregion Triggers
 
+        }
+
+        public static void CreateNewDistricts(DBConnection dbCon)
+        {
+            string strSQL = string.Empty;
+            InsertLstDistrict(dbCon);
+            InsertLstSubCounty(dbCon);
+
+            #region updateRukigaSubcounties
+            strSQL = "UPDATE lst_sub_county SET dst_id = '24' WHERE sct_id = '112'";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE lst_sub_county SET dst_id = '24' WHERE sct_id = '256'";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE lst_sub_county SET dst_id = '24' WHERE sct_id = '98'";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE lst_sub_county SET dst_id = '24' WHERE sct_id = '19'";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion
+
+            #region updateKikuubeSubcounties
+            strSQL = "UPDATE lst_sub_county SET dst_id = '22' WHERE sct_id = '10'";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE lst_sub_county SET dst_id = '22' WHERE sct_id = '16'";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE lst_sub_county SET dst_id = '22' WHERE sct_id = '156'";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE lst_sub_county SET dst_id = '22' WHERE sct_id = '164'";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion
+
+            #region updateKyoteraSubcounties
+            strSQL = "UPDATE lst_sub_county SET dst_id = '23' WHERE sct_id = '180'";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE lst_sub_county SET dst_id = '23' WHERE sct_id = '146'";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE lst_sub_county SET dst_id = '23' WHERE sct_id = '110'";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE lst_sub_county SET dst_id = '23' WHERE sct_id = '89'";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion
         }
     }
 }
