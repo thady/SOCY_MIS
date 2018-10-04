@@ -55,10 +55,17 @@ namespace SOCY_MIS.DataAccessLayer
             string SQL = string.Empty;
             try
             {
-              
-                    SQL = @"SELECT hhm_first_name + ' ' + hhm_last_name AS hhm_name,hhm_id
-                            FROM hh_household_member WHERE hh_id = '{0}'
-                            AND hst_id = '1'";
+
+                //SQL = @"SELECT hhm_first_name + ' ' + hhm_last_name AS hhm_name,hhm_id
+                //        FROM hh_household_member WHERE hh_id = '{0}'
+                //        AND hst_id = '1'";
+
+                SQL = @"SELECT DISTINCT(hhm.hhm_id) AS hhm_id, hhm.hhm_first_name + ' ' + hhm.hhm_last_name AS hhm_name FROM hh_household_home_visit_member hvm
+                        INNER JOIN hh_household_member hhm ON hvm.hhm_id = hhm.hhm_id
+                        INNER JOIN hh_household hh ON hhm.hh_id = hh.hh_id
+                        WHERE hh.hh_id = '{0}'
+                        AND hvm.hst_id = '1'";
+
                     SQL = string.Format(SQL, hh_id);
                 using (conn = new SqlConnection(SQLConnection))
                 using (SqlCommand cmd = new SqlCommand(SQL, conn))

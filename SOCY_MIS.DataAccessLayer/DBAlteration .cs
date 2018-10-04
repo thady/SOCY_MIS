@@ -541,6 +541,7 @@ namespace SOCY_MIS.DataAccessLayer
                 UpdateHousehold_RiskAssessmentTool(dbCon);
                 Insertlst_agro_scoring_crops(dbCon);
                 CreateNewDistricts(dbCon);
+                NewTrainingTypes(dbCon);
                 //DropRecreateLstAgro_enterprise_ranking(dbCon); //bushenyi error..should be removed when error is rectified.Should not be in version control
 
                 dbCon.TransactionCommit();
@@ -13388,7 +13389,8 @@ namespace SOCY_MIS.DataAccessLayer
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('17','Nakigudde Alice',17,'700233149','Alice2009@gmail.com','CSO018',1,'21','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('18','Kobushinge Annet',18,'89860951','kobzannet@yahoo.com','CSO018',1,'20','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('19','NATWIJUKA DIID',19,'774895026','natwijukadiidi@gmail.com','CSO004',1,'18','1','1','2018-07-19','2018-07-19')
-            INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('20','IGURU DANIEL',20,'782711572','','CSO004',1,'3','1','1','2018-07-19','2018-07-19')";
+            INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('20','IGURU DANIEL',20,'782711572','','CSO004',1,'3','1','1','2018-07-19','2018-07-19')
+            INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('21','IGURU DANIEL',21,'782711572','','CSO004',1,'22','1','1','2018-07-19','2018-07-19')";
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
         }
@@ -13437,12 +13439,13 @@ namespace SOCY_MIS.DataAccessLayer
                     INSERT [dbo].[lst_district] ([dst_sid], [dst_id], [dst_name], [dst_order], [dst_active], [rgn_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (16, N'16', N'RUKUNGIRI', 16, 1, N'2', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_district] ([dst_sid], [dst_id], [dst_name], [dst_order], [dst_active], [rgn_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (17, N'17', N'WAKISO', 17, 1, N'1', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_district] ([dst_sid], [dst_id], [dst_name], [dst_order], [dst_active], [rgn_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (18, N'18', N'IBANDA', 18, 1, N'1', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_district] ([dst_sid], [dst_id], [dst_name], [dst_order], [dst_active], [rgn_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (19, N'19', N'MBARARA', 19, 1, N'1', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_district] ([dst_sid], [dst_id], [dst_name], [dst_order], [dst_active], [rgn_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (20, N'20', N'SHEEMA', 20, 1, N'1', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_district] ([dst_sid], [dst_id], [dst_name], [dst_order], [dst_active], [rgn_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (21, N'21', N'MITOOMA', 21, 1, N'1', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_district] ([dst_sid], [dst_id], [dst_name], [dst_order], [dst_active], [rgn_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (19, N'19', N'MBARARA', 19, 1, N'2', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_district] ([dst_sid], [dst_id], [dst_name], [dst_order], [dst_active], [rgn_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (20, N'20', N'SHEEMA', 20, 1, N'2', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_district] ([dst_sid], [dst_id], [dst_name], [dst_order], [dst_active], [rgn_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (21, N'21', N'MITOOMA', 21, 1, N'2', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_district] ([dst_sid], [dst_id], [dst_name], [dst_order], [dst_active], [rgn_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (22, N'22', N'KIKUUBE', 22, 1, N'1', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_district] ([dst_sid], [dst_id], [dst_name], [dst_order], [dst_active], [rgn_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (23, N'23', N'KYOTERA', 23, 1, N'1', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_district] ([dst_sid], [dst_id], [dst_name], [dst_order], [dst_active], [rgn_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (24, N'24', N'RUKIGA', 24, 1, N'1', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_district] ([dst_sid], [dst_id], [dst_name], [dst_order], [dst_active], [rgn_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (24, N'24', N'RUKIGA', 24, 1, N'2', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_district] ([dst_sid], [dst_id], [dst_name], [dst_order], [dst_active], [rgn_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (25, N'25', N'KAGADI', 25, 1, N'3', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     SET IDENTITY_INSERT [dbo].[lst_district] OFF ";
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
@@ -27938,6 +27941,229 @@ namespace SOCY_MIS.DataAccessLayer
             strSQL = "UPDATE lst_sub_county SET dst_id = '23' WHERE sct_id = '89'";
             dbCon.ExecuteNonQuery(strSQL);
             #endregion
+
+            #region updateWakisoSubCountyNames
+            strSQL = "UPDATE lst_sub_county SET sct_name = 'WAKISO SUB COUNTY' WHERE sct_id = '266'";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE lst_sub_county SET sct_name = 'BUSSI SUB COUNTY' WHERE sct_id = '335'";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE lst_sub_county SET sct_name = 'KAJJANSI TOWN COUNCIL' WHERE sct_id = '265'";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE lst_sub_county SET sct_name = 'KATABI TOWN COUNCIL' WHERE sct_id = '115'";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE lst_sub_county SET sct_name = 'NDEJJE DIVISION' WHERE sct_id = '342'";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE lst_sub_county SET sct_name = 'KIRA DIVISION' WHERE sct_id = '143'";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE lst_sub_county SET sct_name = 'KIRA DIVISION' WHERE sct_id = '143'";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE lst_sub_county SET sct_name = 'NANSANA DIVISION' WHERE sct_id = '210'";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE lst_sub_county SET sct_name = 'NABWERU DIVISION' WHERE sct_id = '206'";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE lst_sub_county SET sct_name = 'KASANGATI TOWN COUNCIL' WHERE sct_id = '209'";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE lst_ward SET sct_id = '340' WHERE wrd_id = '1043'";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE lst_ward SET sct_id = '340' WHERE wrd_id = '1847'";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion
+        }
+
+        public static void NewTrainingTypes(DBConnection dbCon)
+        {
+            string strSQL = string.Empty;
+
+            #region TrainingTypes
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type WHERE ttp_order = 11)
+	                 INSERT INTO [dbo].[lst_es_training_type]([ttp_sid],[ttp_id],[ttp_name],[ttp_order],[ttp_active],[lng_id],[usr_id_create],[usr_id_update],[usr_date_create] ,[usr_date_update])
+                     VALUES(11,'11','Dairy Farming ',11,1,'EN',1,GETDATE(),1,GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type WHERE ttp_order = 12)
+	                 INSERT INTO [dbo].[lst_es_training_type]([ttp_sid],[ttp_id],[ttp_name],[ttp_order],[ttp_active],[lng_id],[usr_id_create],[usr_id_update],[usr_date_create] ,[usr_date_update])
+                     VALUES(12,'12','Dairy Farming ',12,1,'EN',1,GETDATE(),1,GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type WHERE ttp_order = 13)
+	                 INSERT INTO [dbo].[lst_es_training_type]([ttp_sid],[ttp_id],[ttp_name],[ttp_order],[ttp_active],[lng_id],[usr_id_create],[usr_id_update],[usr_date_create] ,[usr_date_update])
+                     VALUES(13,'13','Agronomy/Production Trainings Coffeelands',13,1,'EN',1,GETDATE(),1,GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type WHERE ttp_order = 14)
+	                 INSERT INTO [dbo].[lst_es_training_type]([ttp_sid],[ttp_id],[ttp_name],[ttp_order],[ttp_active],[lng_id],[usr_id_create],[usr_id_update],[usr_date_create] ,[usr_date_update])
+                     VALUES(14,'14','Organisation/Institution Development Coffeelands',14,1,'EN',1,GETDATE(),1,GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type WHERE ttp_order = 15)
+	                 INSERT INTO [dbo].[lst_es_training_type]([ttp_sid],[ttp_id],[ttp_name],[ttp_order],[ttp_active],[lng_id],[usr_id_create],[usr_id_update],[usr_date_create] ,[usr_date_update])
+                     VALUES(15,'15','Market Access/ Marketing Training Coffeelands',15,1,'EN',1,GETDATE(),1,GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion
+
+            #region Sessions
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 100)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (100,'100','11','Dairy entrepreneurship & Management',100,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 101)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (101,'101','11','Animal Nutrition',101,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 102)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (102,'102','11','Herd Health Management & Disease Control',102,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 103)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (103,'103','11','Life skills training',103,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 104)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (104,'104','13','FFS methodology',104,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 105)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (105,'105','13','Contact farmers training',105,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 106)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (106,'106','13','Harvest and Post-Harvest Handling practices',106,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 107)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (107,'107','13','Climate Smart Agriculture',107,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 108)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (108,'108','13','Good Agronomic Practices',108,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 109)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (109,'109','14','Producer Organization formation',109,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 110)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (110,'110','14','Leadership and management',110,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 111)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (111,'111','14','Depot Committee formation',111,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 112)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (112,'112','14','Capacity building of leaders',112,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 113)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (113,'113','14','Sensitization and mobilization',113,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 114)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (114,'114','14','Record keeping',114,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 115)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (115,'115','14','Business and financial literacy',115,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 116)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (116,'116','14','Gender equality principles and performance monitoring',116,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 117)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (117,'117','14','Review meetings at Producer organization and Depot committees',117,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 118)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (118,'118','15','Train and coach Depot committees on coffee marketing',118,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 119)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (119,'119','15','Collective marketing',119,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 120)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (120,'120','15','Value addition trainings',120,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 121)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (121,'121','15','Quality assurance trainings',121,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 122)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (122,'122','15','Market analysis',122,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 123)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (123,'123','15','Linkage trainings',123,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 124)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (124,'124','15','Strengthening the Value chain network',124,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion
+
         }
     }
 }

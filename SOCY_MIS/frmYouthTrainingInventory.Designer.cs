@@ -621,7 +621,8 @@
             "Agronomy",
             "Apprenticeship",
             "Back Yard Gardening",
-            "Cottage"});
+            "Cottage",
+            "Dairy Farming "});
             this.cboTrainingType.Location = new System.Drawing.Point(203, 92);
             this.cboTrainingType.Name = "cboTrainingType";
             this.cboTrainingType.Size = new System.Drawing.Size(103, 21);
