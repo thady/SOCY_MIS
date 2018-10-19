@@ -1046,6 +1046,8 @@ namespace SOCY_MIS
                 strMessage = "Beneficiary status cannot be empty";
             else if(rbtnHHPHivNeg.Checked == false && rbtnHHPHivPos.Checked == false && rbtnHHPHivUnknown.Checked == false)
                 strMessage = "HIV Status cannot be empty";
+            else if (rbtnHHPHivPos.Checked == true && (rbtnHHPArtYes.Checked == false   && rbtnHHPArtNo.Checked == false))
+                strMessage = "HIV ART status cannot be empty";
             #endregion Required Fields
 
             #region Get Messages
