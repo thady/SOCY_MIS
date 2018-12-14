@@ -338,7 +338,7 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 263F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112F));
             this.tableLayoutPanel6.Controls.Add(this.cboSocialWorker, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.label35, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.label37, 3, 0);
@@ -359,7 +359,7 @@
             this.cboSocialWorker.Location = new System.Drawing.Point(273, 8);
             this.cboSocialWorker.Margin = new System.Windows.Forms.Padding(4);
             this.cboSocialWorker.Name = "cboSocialWorker";
-            this.cboSocialWorker.Size = new System.Drawing.Size(590, 25);
+            this.cboSocialWorker.Size = new System.Drawing.Size(589, 25);
             this.cboSocialWorker.TabIndex = 79;
             // 
             // label35
@@ -378,7 +378,7 @@
             // 
             this.label37.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(924, 12);
+            this.label37.Location = new System.Drawing.Point(923, 12);
             this.label37.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(169, 17);
@@ -388,10 +388,10 @@
             // txtSocialWorkerComment
             // 
             this.txtSocialWorkerComment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSocialWorkerComment.Location = new System.Drawing.Point(1187, 4);
+            this.txtSocialWorkerComment.Location = new System.Drawing.Point(1186, 4);
             this.txtSocialWorkerComment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSocialWorkerComment.Name = "txtSocialWorkerComment";
-            this.txtSocialWorkerComment.Size = new System.Drawing.Size(592, 32);
+            this.txtSocialWorkerComment.Size = new System.Drawing.Size(591, 32);
             this.txtSocialWorkerComment.TabIndex = 82;
             this.txtSocialWorkerComment.Text = "";
             // 
@@ -407,7 +407,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 263F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112F));
             this.tableLayoutPanel4.Controls.Add(this.label9, 2, 0);
             this.tableLayoutPanel4.Controls.Add(this.panel10, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.label36, 2, 1);
@@ -434,7 +434,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(872, 11);
+            this.label9.Location = new System.Drawing.Point(871, 11);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(13, 17);
@@ -497,7 +497,7 @@
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label36.ForeColor = System.Drawing.Color.Red;
-            this.label36.Location = new System.Drawing.Point(872, 52);
+            this.label36.Location = new System.Drawing.Point(871, 52);
             this.label36.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(13, 17);
@@ -532,7 +532,7 @@
             // 
             this.lblSchooledActionPlan.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblSchooledActionPlan.AutoSize = true;
-            this.lblSchooledActionPlan.Location = new System.Drawing.Point(924, 11);
+            this.lblSchooledActionPlan.Location = new System.Drawing.Point(923, 11);
             this.lblSchooledActionPlan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSchooledActionPlan.Name = "lblSchooledActionPlan";
             this.lblSchooledActionPlan.Size = new System.Drawing.Size(79, 17);
@@ -579,7 +579,7 @@
             // 
             this.lblSchooledFollowupdate.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblSchooledFollowupdate.AutoSize = true;
-            this.lblSchooledFollowupdate.Location = new System.Drawing.Point(924, 52);
+            this.lblSchooledFollowupdate.Location = new System.Drawing.Point(923, 52);
             this.lblSchooledFollowupdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSchooledFollowupdate.Name = "lblSchooledFollowupdate";
             this.lblSchooledFollowupdate.Size = new System.Drawing.Size(99, 17);
@@ -588,7 +588,7 @@
             // 
             // dtSchooled
             // 
-            this.dtSchooled.Location = new System.Drawing.Point(1187, 42);
+            this.dtSchooled.Location = new System.Drawing.Point(1186, 42);
             this.dtSchooled.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtSchooled.Name = "dtSchooled";
             this.dtSchooled.ShowCheckBox = true;
@@ -598,10 +598,10 @@
             // txtActionPlanSchooled
             // 
             this.txtActionPlanSchooled.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtActionPlanSchooled.Location = new System.Drawing.Point(1187, 4);
+            this.txtActionPlanSchooled.Location = new System.Drawing.Point(1186, 4);
             this.txtActionPlanSchooled.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtActionPlanSchooled.Name = "txtActionPlanSchooled";
-            this.txtActionPlanSchooled.Size = new System.Drawing.Size(592, 32);
+            this.txtActionPlanSchooled.Size = new System.Drawing.Size(591, 32);
             this.txtActionPlanSchooled.TabIndex = 82;
             this.txtActionPlanSchooled.Text = "";
             // 
@@ -661,7 +661,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 263F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112F));
             this.tableLayoutPanel3.Controls.Add(this.label17, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.label13, 2, 2);
             this.tableLayoutPanel3.Controls.Add(this.panel9, 1, 2);
@@ -692,7 +692,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.Red;
-            this.label17.Location = new System.Drawing.Point(872, 14);
+            this.label17.Location = new System.Drawing.Point(871, 14);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(13, 17);
@@ -705,7 +705,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(872, 87);
+            this.label13.Location = new System.Drawing.Point(871, 87);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(13, 17);
@@ -821,7 +821,7 @@
             // 
             this.lblStableActionPlan.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblStableActionPlan.AutoSize = true;
-            this.lblStableActionPlan.Location = new System.Drawing.Point(924, 14);
+            this.lblStableActionPlan.Location = new System.Drawing.Point(923, 14);
             this.lblStableActionPlan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStableActionPlan.Name = "lblStableActionPlan";
             this.lblStableActionPlan.Size = new System.Drawing.Size(79, 17);
@@ -868,7 +868,7 @@
             // 
             this.lblStableFollowupdate.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblStableFollowupdate.AutoSize = true;
-            this.lblStableFollowupdate.Location = new System.Drawing.Point(924, 53);
+            this.lblStableFollowupdate.Location = new System.Drawing.Point(923, 53);
             this.lblStableFollowupdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStableFollowupdate.Name = "lblStableFollowupdate";
             this.lblStableFollowupdate.Size = new System.Drawing.Size(99, 17);
@@ -877,7 +877,7 @@
             // 
             // dtStable
             // 
-            this.dtStable.Location = new System.Drawing.Point(1187, 47);
+            this.dtStable.Location = new System.Drawing.Point(1186, 47);
             this.dtStable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtStable.Name = "dtStable";
             this.dtStable.ShowCheckBox = true;
@@ -887,10 +887,10 @@
             // txtActionPlanStable
             // 
             this.txtActionPlanStable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtActionPlanStable.Location = new System.Drawing.Point(1187, 4);
+            this.txtActionPlanStable.Location = new System.Drawing.Point(1186, 4);
             this.txtActionPlanStable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtActionPlanStable.Name = "txtActionPlanStable";
-            this.txtActionPlanStable.Size = new System.Drawing.Size(592, 36);
+            this.txtActionPlanStable.Size = new System.Drawing.Size(591, 36);
             this.txtActionPlanStable.TabIndex = 82;
             this.txtActionPlanStable.Text = "";
             // 
@@ -900,7 +900,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Red;
-            this.label16.Location = new System.Drawing.Point(872, 53);
+            this.label16.Location = new System.Drawing.Point(871, 53);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(13, 17);
@@ -930,7 +930,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 263F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112F));
             this.tableLayoutPanel1.Controls.Add(this.label33, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.label32, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 1);
@@ -957,7 +957,7 @@
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.ForeColor = System.Drawing.Color.Red;
-            this.label33.Location = new System.Drawing.Point(872, 15);
+            this.label33.Location = new System.Drawing.Point(871, 15);
             this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(13, 17);
@@ -970,7 +970,7 @@
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label32.ForeColor = System.Drawing.Color.Red;
-            this.label32.Location = new System.Drawing.Point(872, 56);
+            this.label32.Location = new System.Drawing.Point(871, 56);
             this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(13, 17);
@@ -1053,7 +1053,7 @@
             // 
             this.lblHealthActionPlan.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblHealthActionPlan.AutoSize = true;
-            this.lblHealthActionPlan.Location = new System.Drawing.Point(924, 15);
+            this.lblHealthActionPlan.Location = new System.Drawing.Point(923, 15);
             this.lblHealthActionPlan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHealthActionPlan.Name = "lblHealthActionPlan";
             this.lblHealthActionPlan.Size = new System.Drawing.Size(79, 17);
@@ -1100,7 +1100,7 @@
             // 
             this.lblHealthFollowupdate.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblHealthFollowupdate.AutoSize = true;
-            this.lblHealthFollowupdate.Location = new System.Drawing.Point(924, 56);
+            this.lblHealthFollowupdate.Location = new System.Drawing.Point(923, 56);
             this.lblHealthFollowupdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHealthFollowupdate.Name = "lblHealthFollowupdate";
             this.lblHealthFollowupdate.Size = new System.Drawing.Size(99, 17);
@@ -1109,7 +1109,7 @@
             // 
             // dtHealth
             // 
-            this.dtHealth.Location = new System.Drawing.Point(1187, 50);
+            this.dtHealth.Location = new System.Drawing.Point(1186, 50);
             this.dtHealth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtHealth.Name = "dtHealth";
             this.dtHealth.ShowCheckBox = true;
@@ -1119,10 +1119,10 @@
             // txtActionPlanHealth
             // 
             this.txtActionPlanHealth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtActionPlanHealth.Location = new System.Drawing.Point(1187, 4);
+            this.txtActionPlanHealth.Location = new System.Drawing.Point(1186, 4);
             this.txtActionPlanHealth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtActionPlanHealth.Name = "txtActionPlanHealth";
-            this.txtActionPlanHealth.Size = new System.Drawing.Size(592, 40);
+            this.txtActionPlanHealth.Size = new System.Drawing.Size(591, 40);
             this.txtActionPlanHealth.TabIndex = 82;
             this.txtActionPlanHealth.Text = "";
             // 
@@ -1149,7 +1149,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 263F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112F));
             this.tableLayoutPanel2.Controls.Add(this.label23, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.label22, 2, 1);
             this.tableLayoutPanel2.Controls.Add(this.panel3, 1, 1);
@@ -1176,7 +1176,7 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.Red;
-            this.label23.Location = new System.Drawing.Point(872, 14);
+            this.label23.Location = new System.Drawing.Point(871, 14);
             this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(13, 17);
@@ -1189,7 +1189,7 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.Red;
-            this.label22.Location = new System.Drawing.Point(872, 53);
+            this.label22.Location = new System.Drawing.Point(871, 53);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(13, 17);
@@ -1258,7 +1258,7 @@
             // 
             this.lblSafeActionPlan.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblSafeActionPlan.AutoSize = true;
-            this.lblSafeActionPlan.Location = new System.Drawing.Point(924, 14);
+            this.lblSafeActionPlan.Location = new System.Drawing.Point(923, 14);
             this.lblSafeActionPlan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSafeActionPlan.Name = "lblSafeActionPlan";
             this.lblSafeActionPlan.Size = new System.Drawing.Size(79, 17);
@@ -1305,7 +1305,7 @@
             // 
             this.lblSafetyFollowupdate.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblSafetyFollowupdate.AutoSize = true;
-            this.lblSafetyFollowupdate.Location = new System.Drawing.Point(924, 53);
+            this.lblSafetyFollowupdate.Location = new System.Drawing.Point(923, 53);
             this.lblSafetyFollowupdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSafetyFollowupdate.Name = "lblSafetyFollowupdate";
             this.lblSafetyFollowupdate.Size = new System.Drawing.Size(99, 17);
@@ -1314,7 +1314,7 @@
             // 
             // dtSafety
             // 
-            this.dtSafety.Location = new System.Drawing.Point(1187, 47);
+            this.dtSafety.Location = new System.Drawing.Point(1186, 47);
             this.dtSafety.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtSafety.Name = "dtSafety";
             this.dtSafety.ShowCheckBox = true;
@@ -1324,10 +1324,10 @@
             // txtActionPlanSafety
             // 
             this.txtActionPlanSafety.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtActionPlanSafety.Location = new System.Drawing.Point(1187, 4);
+            this.txtActionPlanSafety.Location = new System.Drawing.Point(1186, 4);
             this.txtActionPlanSafety.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtActionPlanSafety.Name = "txtActionPlanSafety";
-            this.txtActionPlanSafety.Size = new System.Drawing.Size(592, 36);
+            this.txtActionPlanSafety.Size = new System.Drawing.Size(591, 36);
             this.txtActionPlanSafety.TabIndex = 82;
             this.txtActionPlanSafety.Text = "";
             // 

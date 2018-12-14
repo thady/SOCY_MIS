@@ -254,15 +254,27 @@ namespace SOCY_MIS.DataAccessLayer
             return dt;
         }
 
-        public static DataTable Return_HHYouthMembers(string hh_id)
+        public static DataTable Return_HHYouthMembers(string hh_id,string tool_type)
         {
             DataTable dt = new DataTable();
             SqlDataAdapter Adapt;
-            string SQL = @"SELECT hhm_id,(hhm_first_name + ' ' + hhm_last_name) AS hhm_name FROM hh_household_member
+            string SQL = string.Empty;
+            switch (tool_type) {
+                case "crop":
+                     SQL = @"SELECT hhm_id,(hhm_first_name + ' ' + hhm_last_name) AS hhm_name FROM hh_household_member
                              WHERE hh_id = '{0}'
                              AND YEAR(GETDATE()) - CONVERT(INT,  hhm_year_of_birth) >=15 
                              AND YEAR(GETDATE()) - CONVERT(INT,  hhm_year_of_birth) <=24";
-            SQL = string.Format(SQL, hh_id);
+                    SQL = string.Format(SQL, hh_id);
+                    break;
+                case "cottage":
+                     SQL = @"SELECT hhm_id,(hhm_first_name + ' ' + hhm_last_name) AS hhm_name FROM hh_household_member
+                             WHERE hh_id = '{0}'
+                             AND YEAR(GETDATE()) - CONVERT(INT,  hhm_year_of_birth) >=15";
+                    SQL = string.Format(SQL, hh_id);
+                    break;
+            }
+           
             try
             {
                 string strConn = dbCon.ToString();

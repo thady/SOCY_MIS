@@ -165,7 +165,7 @@
             this.tlpDisplay01.Controls.Add(this.cboParish, 1, 2);
             this.tlpDisplay01.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpDisplay01.Location = new System.Drawing.Point(4, 25);
-            this.tlpDisplay01.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay01.Margin = new System.Windows.Forms.Padding(4);
             this.tlpDisplay01.Name = "tlpDisplay01";
             this.tlpDisplay01.RowCount = 8;
             this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.2766F));
@@ -189,7 +189,7 @@
             "Facilitator",
             "Trainer"});
             this.cboTrainerType.Location = new System.Drawing.Point(736, 204);
-            this.cboTrainerType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboTrainerType.Margin = new System.Windows.Forms.Padding(4);
             this.cboTrainerType.Name = "cboTrainerType";
             this.cboTrainerType.Size = new System.Drawing.Size(137, 25);
             this.cboTrainerType.TabIndex = 89;
@@ -279,7 +279,7 @@
             this.cboIP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboIP.FormattingEnabled = true;
             this.cboIP.Location = new System.Drawing.Point(271, 4);
-            this.cboIP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboIP.Margin = new System.Windows.Forms.Padding(4);
             this.cboIP.Name = "cboIP";
             this.cboIP.Size = new System.Drawing.Size(137, 25);
             this.cboIP.TabIndex = 79;
@@ -290,7 +290,7 @@
             this.cboSubCounty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboSubCounty.FormattingEnabled = true;
             this.cboSubCounty.Location = new System.Drawing.Point(736, 35);
-            this.cboSubCounty.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboSubCounty.Margin = new System.Windows.Forms.Padding(4);
             this.cboSubCounty.Name = "cboSubCounty";
             this.cboSubCounty.Size = new System.Drawing.Size(137, 25);
             this.cboSubCounty.TabIndex = 61;
@@ -312,7 +312,7 @@
             this.cboDistrict.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboDistrict.FormattingEnabled = true;
             this.cboDistrict.Location = new System.Drawing.Point(271, 35);
-            this.cboDistrict.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboDistrict.Margin = new System.Windows.Forms.Padding(4);
             this.cboDistrict.Name = "cboDistrict";
             this.cboDistrict.Size = new System.Drawing.Size(137, 25);
             this.cboDistrict.TabIndex = 59;
@@ -356,7 +356,7 @@
             this.cboCso.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboCso.FormattingEnabled = true;
             this.cboCso.Location = new System.Drawing.Point(736, 4);
-            this.cboCso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboCso.Margin = new System.Windows.Forms.Padding(4);
             this.cboCso.Name = "cboCso";
             this.cboCso.Size = new System.Drawing.Size(137, 25);
             this.cboCso.TabIndex = 65;
@@ -578,7 +578,7 @@
             "Joel",
             "Musiime"});
             this.cboTrainigSession.Location = new System.Drawing.Point(736, 102);
-            this.cboTrainigSession.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboTrainigSession.Margin = new System.Windows.Forms.Padding(4);
             this.cboTrainigSession.Name = "cboTrainigSession";
             this.cboTrainigSession.Size = new System.Drawing.Size(137, 25);
             this.cboTrainigSession.TabIndex = 103;
@@ -588,7 +588,7 @@
             this.cboTrainingType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboTrainingType.FormattingEnabled = true;
             this.cboTrainingType.Location = new System.Drawing.Point(271, 102);
-            this.cboTrainingType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboTrainingType.Margin = new System.Windows.Forms.Padding(4);
             this.cboTrainingType.Name = "cboTrainingType";
             this.cboTrainingType.Size = new System.Drawing.Size(137, 25);
             this.cboTrainingType.TabIndex = 102;
@@ -632,7 +632,7 @@
             this.cboParish.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboParish.FormattingEnabled = true;
             this.cboParish.Location = new System.Drawing.Point(271, 71);
-            this.cboParish.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboParish.Margin = new System.Windows.Forms.Padding(4);
             this.cboParish.Name = "cboParish";
             this.cboParish.Size = new System.Drawing.Size(137, 25);
             this.cboParish.TabIndex = 107;
@@ -664,7 +664,7 @@
             this.tlpDisplay02.Controls.Add(this.label21, 3, 0);
             this.tlpDisplay02.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpDisplay02.Location = new System.Drawing.Point(5, 363);
-            this.tlpDisplay02.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay02.Margin = new System.Windows.Forms.Padding(4);
             this.tlpDisplay02.Name = "tlpDisplay02";
             this.tlpDisplay02.RowCount = 3;
             this.tlpDisplay02.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.62687F));
@@ -690,7 +690,7 @@
             this.panel11.Controls.Add(this.rdnIndirectBen);
             this.panel11.Controls.Add(this.rdnDirectBen);
             this.panel11.Location = new System.Drawing.Point(271, 9);
-            this.panel11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel11.Margin = new System.Windows.Forms.Padding(4);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(131, 23);
             this.panel11.TabIndex = 95;
@@ -700,7 +700,7 @@
             this.rdnIndirectBen.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rdnIndirectBen.AutoSize = true;
             this.rdnIndirectBen.Location = new System.Drawing.Point(65, 1);
-            this.rdnIndirectBen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdnIndirectBen.Margin = new System.Windows.Forms.Padding(4);
             this.rdnIndirectBen.Name = "rdnIndirectBen";
             this.rdnIndirectBen.Size = new System.Drawing.Size(47, 21);
             this.rdnIndirectBen.TabIndex = 0;
@@ -714,7 +714,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rdnDirectBen.AutoSize = true;
             this.rdnDirectBen.Location = new System.Drawing.Point(4, 1);
-            this.rdnDirectBen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdnDirectBen.Margin = new System.Windows.Forms.Padding(4);
             this.rdnDirectBen.Name = "rdnDirectBen";
             this.rdnDirectBen.Size = new System.Drawing.Size(53, 21);
             this.rdnDirectBen.TabIndex = 2;
@@ -758,7 +758,7 @@
             this.cboGender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboGender.FormattingEnabled = true;
             this.cboGender.Location = new System.Drawing.Point(271, 90);
-            this.cboGender.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboGender.Margin = new System.Windows.Forms.Padding(4);
             this.cboGender.Name = "cboGender";
             this.cboGender.Size = new System.Drawing.Size(133, 25);
             this.cboGender.TabIndex = 97;
@@ -799,7 +799,7 @@
             this.cboHHCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboHHCode.FormattingEnabled = true;
             this.cboHHCode.Location = new System.Drawing.Point(271, 49);
-            this.cboHHCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboHHCode.Margin = new System.Windows.Forms.Padding(4);
             this.cboHHCode.Name = "cboHHCode";
             this.cboHHCode.Size = new System.Drawing.Size(133, 25);
             this.cboHHCode.TabIndex = 65;
@@ -810,7 +810,7 @@
             this.cboHHcCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboHHcCode.FormattingEnabled = true;
             this.cboHHcCode.Location = new System.Drawing.Point(732, 8);
-            this.cboHHcCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboHHcCode.Margin = new System.Windows.Forms.Padding(4);
             this.cboHHcCode.Name = "cboHHcCode";
             this.cboHHcCode.Size = new System.Drawing.Size(133, 25);
             this.cboHHcCode.TabIndex = 98;
@@ -844,7 +844,7 @@
             this.tableLayoutPanel5.Controls.Add(this.btnedit, 2, 0);
             this.tableLayoutPanel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel5.Location = new System.Drawing.Point(5, 302);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.28347F));

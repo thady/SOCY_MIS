@@ -603,7 +603,7 @@ namespace SOCY_MIS
         {
             if (cboHHCode.SelectedValue.ToString() != "-1")
             {
-                dt = AgroEnterpriseRankingMatrix.Return_HHYouthMembers(cboHHCode.SelectedValue.ToString());
+                dt = AgroEnterpriseRankingMatrix.Return_HHYouthMembers(cboHHCode.SelectedValue.ToString(), AgroEnterpriseRankingMatrix.type);
 
                 DataRow hhCode_emptyRow = dt.NewRow();
                 hhCode_emptyRow["hhm_id"] = "-1";
@@ -617,7 +617,7 @@ namespace SOCY_MIS
             }
             else
             {
-                dt = AgroEnterpriseRankingMatrix.Return_HHYouthMembers(cboHHCode.SelectedValue.ToString());
+                dt = AgroEnterpriseRankingMatrix.Return_HHYouthMembers(cboHHCode.SelectedValue.ToString(), AgroEnterpriseRankingMatrix.type);
 
                 DataRow hhCode_emptyRow = dt.NewRow();
                 hhCode_emptyRow["hhm_id"] = "-1";

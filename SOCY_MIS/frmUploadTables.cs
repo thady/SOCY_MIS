@@ -132,45 +132,45 @@ namespace SOCY_MIS
                 SetProgressBarMaxValue(dt.Rows.Count);
                 SetstatusText("Now running imports...please wait...");
 
-                #region DeleteHouseholdsOnLocalMachine
+                //#region DeleteHouseholdsOnLocalMachine
 
-                if (DownLoadTable == "hh_household")
-                {
-                    #region DisableDeleleTrigger
-                    strSQLTrigger = "ALTER TABLE {0} DISABLE TRIGGER {0}_delete";
-                    strSQLTrigger = string.Format(strSQLTrigger, DownLoadTable);
-                    dbCon.ExecuteNonQuery(strSQLTrigger);
-                    #endregion DisableDeleleTrigger
+                //if (DownLoadTable == "hh_household")
+                //{
+                //    #region DisableDeleleTrigger
+                //    strSQLTrigger = "ALTER TABLE {0} DISABLE TRIGGER {0}_delete";
+                //    strSQLTrigger = string.Format(strSQLTrigger, DownLoadTable);
+                //    dbCon.ExecuteNonQuery(strSQLTrigger);
+                //    #endregion DisableDeleleTrigger
 
-                    strSQLDelete = "DELETE FROM hh_household";
-                    dbCon.ExecuteNonQuery(strSQLDelete);
+                //    strSQLDelete = "DELETE FROM hh_household";
+                //    dbCon.ExecuteNonQuery(strSQLDelete);
 
-                    #region EnableDeleleTrigger
-                    strSQLTrigger = "ALTER TABLE {0} ENABLE TRIGGER {0}_delete";
-                    strSQLTrigger = string.Format(strSQLTrigger, DownLoadTable);
-                    dbCon.ExecuteNonQuery(strSQLTrigger);
-                    #endregion EnableDeleleTrigger
-                }
+                //    #region EnableDeleleTrigger
+                //    strSQLTrigger = "ALTER TABLE {0} ENABLE TRIGGER {0}_delete";
+                //    strSQLTrigger = string.Format(strSQLTrigger, DownLoadTable);
+                //    dbCon.ExecuteNonQuery(strSQLTrigger);
+                //    #endregion EnableDeleleTrigger
+                //}
 
-                if (DownLoadTable == "hh_household_member")
-                {
-                    #region DisableDeleleTrigger
-                    strSQLTrigger = "ALTER TABLE {0} DISABLE TRIGGER {0}_delete";
-                    strSQLTrigger = string.Format(strSQLTrigger, DownLoadTable);
-                    dbCon.ExecuteNonQuery(strSQLTrigger);
-                    #endregion DisableDeleleTrigger
+                //if (DownLoadTable == "hh_household_member")
+                //{
+                //    #region DisableDeleleTrigger
+                //    strSQLTrigger = "ALTER TABLE {0} DISABLE TRIGGER {0}_delete";
+                //    strSQLTrigger = string.Format(strSQLTrigger, DownLoadTable);
+                //    dbCon.ExecuteNonQuery(strSQLTrigger);
+                //    #endregion DisableDeleleTrigger
 
-                    strSQLDelete = "DELETE FROM hh_household_member";
-                    dbCon.ExecuteNonQuery(strSQLDelete);
+                //    strSQLDelete = "DELETE FROM hh_household_member";
+                //    dbCon.ExecuteNonQuery(strSQLDelete);
 
-                    #region EnableDeleleTrigger
-                    strSQLTrigger = "ALTER TABLE {0} ENABLE TRIGGER {0}_delete";
-                    strSQLTrigger = string.Format(strSQLTrigger, DownLoadTable);
-                    dbCon.ExecuteNonQuery(strSQLTrigger);
-                    #endregion EnableDeleleTrigger
-                }
+                //    #region EnableDeleleTrigger
+                //    strSQLTrigger = "ALTER TABLE {0} ENABLE TRIGGER {0}_delete";
+                //    strSQLTrigger = string.Format(strSQLTrigger, DownLoadTable);
+                //    dbCon.ExecuteNonQuery(strSQLTrigger);
+                //    #endregion EnableDeleleTrigger
+                //}
 
-                #endregion DeleteHouseholdsOnLocalMachine
+                //#endregion DeleteHouseholdsOnLocalMachine 
 
                 for (int x = 0; x < dt.Rows.Count; x++)
                 {

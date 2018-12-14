@@ -74,7 +74,7 @@ namespace SOCY_MIS
             frmNewM.FormMaster = FormMaster;
             LoadControl(frmNewM, this.Name, tpMember);
 
-            MembersTab(ObjectId.Length != 0);
+            MembersTab(ObjectId);
             #endregion Load Controls
         }
         #endregion Form Methdos
@@ -87,9 +87,17 @@ namespace SOCY_MIS
             FormMaster.LoadControl(FormCalling, this.Name, false);
         }
 
-        public void MembersTab(bool blnEnabled)
+        public void MembersTab(string object_id)
         {
-            ((Control)tcHomeVisit.TabPages[1]).Enabled = blnEnabled;
+            if (object_id.Length != 0 && (SystemConstants.household_status == "1" || SystemConstants.household_status == "2"))
+            {
+                ((Control)tcHomeVisit.TabPages[1]).Enabled = true;
+            }
+            else
+            {
+                ((Control)tcHomeVisit.TabPages[1]).Enabled = false;
+            }
+            
         }
         #endregion Public Methods
 

@@ -474,7 +474,7 @@ namespace SOCY_MIS.DataAccessLayer
             {
 
                 SQL = @"SELECT lc_name,lc_id FROM lst_linkages_coordinator
-                        WHERE dst_id = '{0}'";
+                        WHERE dst_id = '{0}' AND lc_active = 1";
 
                 SQL = string.Format(SQL, dst_id);
                 using (conn = new SqlConnection(SQLConnection))

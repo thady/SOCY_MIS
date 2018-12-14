@@ -633,8 +633,8 @@ namespace SOCY_MIS
                 panelArt.Enabled = false;
                 lblArt.ForeColor = Color.Black;
                 panelArt.ForeColor = Color.Black;
-                tlpDisplay03.Enabled = false;
-                tlpDisplay04.Enabled = false;
+                tlpDisplay03.Enabled = true;
+                tlpDisplay04.Enabled = true;
 
                 tlpDisplay03.ForeColor = Color.Black;
                 tlpDisplay04.ForeColor = Color.Black;

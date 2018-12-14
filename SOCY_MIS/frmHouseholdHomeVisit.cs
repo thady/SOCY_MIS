@@ -61,6 +61,30 @@ namespace SOCY_MIS
             SetPermissions();
             LoadHousehold(HouseholdId);
             LoadDisplay();
+            set_home_visit_reason(ObjectId);
+        }
+
+        protected void set_home_visit_reason(string object_id)
+        {
+            if (object_id.Length == 0)
+            {
+                SystemConstants._household_status = SystemConstants.Return_household_status(HouseholdId);
+                if (SystemConstants._household_status == "2") //household is graduated
+                {
+                    cbHomeVisitReason.SelectedValue = "4";
+                    cbHomeVisitHouseholdStatus.SelectedValue = "2";
+                    cbHomeVisitReason.Enabled = false;
+                    cbHomeVisitHouseholdStatus.Enabled = false;
+                }
+                else
+                {
+                    cbHomeVisitReason.SelectedValue = "-1";
+                    cbHomeVisitHouseholdStatus.SelectedValue = "-1";
+                    cbHomeVisitReason.Enabled = true;
+                    cbHomeVisitHouseholdStatus.Enabled = true;
+                }
+            }
+           
         }
 
         private void frmHouseholdHomeVisit_Paint(object sender, PaintEventArgs e)
@@ -89,6 +113,7 @@ namespace SOCY_MIS
             if (SystemConstants.ValidateDistrictID())
             {
                 Save();
+                
             }
             else
             {
@@ -198,6 +223,7 @@ namespace SOCY_MIS
                         txtComments.Text = dalHHV.hhv_comments;
                         txtNextSteps.Text = dalHHV.hhv_next_steps;
                         txtHomeVisitorTel.Text = dalHHV.hhv_visitor_tel;
+                       
 
                         //btnSave.Enabled = pblnManage && (FormMaster.OfficeId.Equals(dalHHV.ofc_id) || SystemConstants.Validate_Office_group_access(FormMaster.OfficeId, dalHHV.ofc_id));
                         #endregion Visit
@@ -491,10 +517,15 @@ namespace SOCY_MIS
 
                         dalHHV.Save(dbCon, cbHomeVisitHouseholdStatus.SelectedValue.ToString(), HouseholdId);
 
-                        if (FormCalling.ObjectId.Length == 0)
+                        SystemConstants.household_status = cbHomeVisitHouseholdStatus.SelectedValue.ToString();
+                        SystemConstants.object_id = ObjectId;
+                        FormCalling.ObjectId = ObjectId;
+                        FormCalling.MembersTab(ObjectId);
+
+                        if (SystemConstants.object_id.Length == 0)
                         {
                             FormCalling.ObjectId = ObjectId;
-                            FormCalling.MembersTab(true);
+                            FormCalling.MembersTab(ObjectId);
                         }
                         #endregion Home Visit
 
@@ -530,7 +561,7 @@ namespace SOCY_MIS
             #endregion Variables
 
             #region Required Fields
-            if (cbHHMember.SelectedIndex == 0)
+            if (cbHHMember.SelectedIndex == 0 && (cbHomeVisitHouseholdStatus.SelectedValue.ToString() == "1" || cbHomeVisitHouseholdStatus.SelectedValue.ToString() == "2" || cbHomeVisitHouseholdStatus.SelectedValue.ToString() == "4" || cbHomeVisitHouseholdStatus.Text == "Select one..."))
                 strMessage = strMessage + "," + utilConstants.cMIDRequiredFields;
             else if (cbSocialWorker.SelectedIndex == 0)
                 strMessage = strMessage + "," + utilConstants.cMIDRequiredFields;
@@ -598,5 +629,36 @@ namespace SOCY_MIS
             #endregion Set Permissions
         }
         #endregion Permissions
+
+        private void cbHomeVisitHouseholdStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbHomeVisitHouseholdStatus.SelectedValue.ToString() != "1" && cbHomeVisitHouseholdStatus.SelectedValue.ToString() != "2" && cbHomeVisitHouseholdStatus.SelectedValue.ToString() != "4" && cbHomeVisitHouseholdStatus.Text != "Select one...")
+            {
+                cbHHMember.Text = "Select one...";
+                cbHHMember.Enabled = false;
+            }
+            else
+            {
+                cbHHMember.Enabled = true;
+            }
+        }
+
+        private void cbHomeVisitHouseholdStatus_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (cbHomeVisitHouseholdStatus.SelectedValue.ToString() != "1" && cbHomeVisitHouseholdStatus.SelectedValue.ToString() != "2" && cbHomeVisitHouseholdStatus.SelectedValue.ToString() != "4" && cbHomeVisitHouseholdStatus.Text != "Select one...")
+            {
+                cbHHMember.Text = "Select one...";
+                cbHHMember.Enabled = false;
+            }
+            else
+            {
+                cbHHMember.Enabled = true;
+            }
+        }
+
+        private void cbHHMember_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            cbHomeVisitHouseholdStatus_SelectionChangeCommitted(cbHomeVisitHouseholdStatus, null);
+        }
     }
 }

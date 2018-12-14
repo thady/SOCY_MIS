@@ -542,6 +542,7 @@ namespace SOCY_MIS.DataAccessLayer
                 Insertlst_agro_scoring_crops(dbCon);
                 CreateNewDistricts(dbCon);
                 NewTrainingTypes(dbCon);
+                New_Ndeija_parishes(dbCon);
                 //DropRecreateLstAgro_enterprise_ranking(dbCon); //bushenyi error..should be removed when error is rectified.Should not be in version control
 
                 dbCon.TransactionCommit();
@@ -13359,7 +13360,8 @@ namespace SOCY_MIS.DataAccessLayer
                     INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO018', N'Community Volunteer Initiative for Development', N'COVOID', 14, 1, N'PRT001', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO019', N'Community Volunteer Initiative for Development', N'COVOID', 15, 1, N'PRT003', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO016', N'Agency for Coorperation and Research in Development', N'ACORD', 16, 1, N'PRT003', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO017', N'ROM', N'ROM', 17, 1, N'PRT001', N'1', N'1', GETDATE(), GETDATE())";
+                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO017', N'ROM', N'ROM', 17, 1, N'PRT001', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO020', N'Kibale District Civil Society Organisation (KDCS)', N'Kibale District Civil Society Organisation (KDCS)', 18, 1, N'PRT003', N'1', N'1', GETDATE(), GETDATE())";
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
         }
@@ -13376,7 +13378,7 @@ namespace SOCY_MIS.DataAccessLayer
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('3','Katungye Dennis',3,'772945977','katungyed@yahoo.com','CSO002',1,'4','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('4','Namanya Gift',4,'783909146','giftnamanya@gmail.com','CSO002',1,'5','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('5','Kembabazi Evelyn',5,'775703910','Ekembabazi.ke@gmail.com','CSO006',1,'7','1','1','2018-07-19','2018-07-19')
-            INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('6','Byamugisha Tanazio',6,'782294914','Byamugishat.kcson@gmail.com','CSO004',1,'9','1','1','2018-07-19','2018-07-19')
+            INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('6','Byamugisha Tanazio',6,'782294914','Byamugishat.kcson@gmail.com','CSO004',0,'9','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('7','Twinomujuni Aaron',7,'774113257','twinoaron@gmail.com','CSO002',1,'10','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('8','Maimuna Naluyima',8,'777059680','maimunanarwima@gmail.com','CSO004',1,'11','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('9','Akori Christine',9,'774210645','AkoriChristine@yahoo.com','CSO001',1,'13','1','1','2018-07-19','2018-07-19')
@@ -13391,7 +13393,10 @@ namespace SOCY_MIS.DataAccessLayer
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('19','NATWIJUKA DIID',19,'774895026','natwijukadiidi@gmail.com','CSO004',1,'18','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('20','IGURU DANIEL',20,'782711572','','CSO004',1,'3','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('21','IGURU DANIEL',21,'782711572','','CSO004',1,'22','1','1','2018-07-19','2018-07-19')
-            INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('22','Namanya Gift ',22,'702850352','','CSO002',1,'24','1','1','2018-07-19','2018-07-19')";
+            INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('22','Namanya Gift ',22,'702850352','','CSO002',1,'24','1','1','2018-07-19','2018-07-19')
+            INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('23','Oshabahebwa Opherous',23,'787788963','opherousone@gmail.com','CSO001',1,'23','1','1','2018-07-19','2018-07-19')
+            INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('24','Yoctan Friday',24,'783508428','fridayyoctan@gmail.com','CSO004',1,'9','1','1','2018-07-19','2018-07-19')
+            INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('25','Yoctan Friday',25,'783508428','fridayyoctan@gmail.com','CSO004',1,'26','1','1','2018-07-19','2018-07-19')";
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
         }
@@ -13447,6 +13452,8 @@ namespace SOCY_MIS.DataAccessLayer
                     INSERT [dbo].[lst_district] ([dst_sid], [dst_id], [dst_name], [dst_order], [dst_active], [rgn_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (23, N'23', N'KYOTERA', 23, 1, N'1', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_district] ([dst_sid], [dst_id], [dst_name], [dst_order], [dst_active], [rgn_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (24, N'24', N'RUKIGA', 24, 1, N'2', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_district] ([dst_sid], [dst_id], [dst_name], [dst_order], [dst_active], [rgn_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (25, N'25', N'KAGADI', 25, 1, N'3', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_district] ([dst_sid], [dst_id], [dst_name], [dst_order], [dst_active], [rgn_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (26, N'26', N'KAKUMIRO', 26, 1, N'3', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_district] ([dst_sid], [dst_id], [dst_name], [dst_order], [dst_active], [rgn_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (27, N'27', N'RUBANDA', 27, 1, N'2', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     SET IDENTITY_INSERT [dbo].[lst_district] OFF ";
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
@@ -14509,7 +14516,7 @@ namespace SOCY_MIS.DataAccessLayer
                     INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (69, N'69', N'KABAMBIRO (New, Curved out of Kamwenge)', 69, 1, N'6', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (70, N'70', N'KABEREBERE TOWN COUNCIL (curved out of Birere)', 70, 1, N'4', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (71, N'71', N'KABINGO', 71, 1, N'4', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (72, N'72', N'Kabira', 72, 1, N'15', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (72, N'72', N'Kabira', 72, 1, N'23', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (73, N'73', N'KABULASOKE', 73, 1, N'2', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (74, N'74', N'KABUYANDA Subcounty', 74, 1, N'4', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (75, N'75', N'KABUYANDA Town Council ( curved out of Kabuyanda subcounty)', 75, 1, N'4', N'EN', N'1', N'1', GETDATE(), GETDATE())
@@ -14611,7 +14618,7 @@ namespace SOCY_MIS.DataAccessLayer
                     INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (171, N'171', N'Kyeizooba', 171, 1, N'1', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (172, N'172', N'KYENJOJO TOWN COUNCIL', 172, 1, N'11', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (173, N'173', N'KYONDO', 173, 1, N'8', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (174, N'174', N'KYOTERA Town Council', 174, 1, N'15', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (174, N'174', N'KYOTERA Town Council', 174, 1, N'23', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (175, N'175', N'LAKE KATWE', 175, 1, N'8', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (176, N'176', N'LUWEERO SUBCOUNTY', 176, 1, N'12', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (177, N'177', N'LUWERO TOWN COUNCIL', 177, 1, N'12', N'EN', N'1', N'1', GETDATE(), GETDATE())
@@ -16829,6 +16836,18 @@ namespace SOCY_MIS.DataAccessLayer
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1927, N'1927', N'Namungo', 1927, 1, N'345', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1928, N'1928', N'Kasangula ', 1928, 1, N'345', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1929, N'1929', N'Kiteete', 1929, 1, N'345', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                     
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1930, N'1930', N'NYEIHANGA', 1930, 1, N'316', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1931, N'1931', N'RWENTSINGA', 1931, 1, N'316', N'EN', N'1', N'1', GETDATE(), GETDATE())
+
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1932, N'1932', N'IHANGA', 1932, 1, N'6', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1933, N'1933', N'KITOJO', 1933, 1, N'6', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1934, N'1934', N'KIBUZIJE', 1934, 1, N'6', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1935, N'1935', N'BUSHUURA', 1935, 1, N'6', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1936, N'1936', N'KAFUNJO', 1936, 1, N'343', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1937, N'1937', N'ISHONGORORO', 1937, 1, N'283', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1938, N'1938', N'KAKIGA', 1938, 1, N'283', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1939, N'1939', N'KATENGYETO', 1939, 1, N'283', N'EN', N'1', N'1', GETDATE(), GETDATE())
 
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES ( 1557, N'1557', N'Kirasa', 1556, 1, N'168', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES ( 1558, N'1558', N'Kayanja', 1558, 1, N'168', N'EN', N'1', N'1', GETDATE(), GETDATE())
@@ -16842,6 +16861,12 @@ namespace SOCY_MIS.DataAccessLayer
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES ( 1566, N'1566', N'YORODAN', 1566, 1, N'245', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES ( 1567, N'1567', N'RUTI', 1567, 1, N'303', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     SET IDENTITY_INSERT [dbo].[lst_ward] OFF ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE lst_ward SET wrd_name = UPPER(wrd_name)";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE lst_sub_county SET sct_name = UPPER(sct_name)";
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
         }
@@ -26998,6 +27023,7 @@ namespace SOCY_MIS.DataAccessLayer
             #region Variables
             string strSQL = string.Empty;
             #endregion Variables
+
             #region Insert Record Type
             strSQL = @"INSERT INTO lst_record_type (rtp_id, rtp_name, rtp_order, rtp_active, lng_id, usr_id_create, usr_id_update, usr_date_create, usr_date_update)
                 SELECT '6', 'Household Improvement Plan', 6, 1, 'EN', '1', '1', GETDATE(), GETDATE() WHERE NOT '6' IN (SELECT rtp_id FROM lst_record_type WHERE rtp_id = '6') ";
@@ -27410,6 +27436,7 @@ namespace SOCY_MIS.DataAccessLayer
             #region Variables
             string strSQL = string.Empty;
             #endregion Variables
+
             #region Insert Record Type
             strSQL = @"INSERT INTO lst_record_type (rtp_id, rtp_name, rtp_order, rtp_active, lng_id, usr_id_create, usr_id_update, usr_date_create, usr_date_update)
                 SELECT '7', 'Risk Assessment', 7, 1, 'EN', '1', '1', GETDATE(), GETDATE() WHERE NOT '7' IN (SELECT rtp_id FROM lst_record_type WHERE rtp_id = '7') ";
@@ -27432,6 +27459,7 @@ namespace SOCY_MIS.DataAccessLayer
             EditIdentification_prioritization(dbCon);
 
             Update_kyenjojo_butunduzi_town_council(dbCon);
+
             //SetImpProcessed(dbCon);
             UpdateLstInstitution(dbCon);
             Update_es_trainingType(dbCon);
@@ -27595,6 +27623,8 @@ namespace SOCY_MIS.DataAccessLayer
             Createlst_youth_assessment_scoring_parameters(dbCon);
 
             Insertlst_youth_assessment_scoring_parameters(dbCon);
+
+            NewHomeVisitReason(dbCon);
         }
 
         public static void NewCso(DBConnection dbCon)
@@ -27607,6 +27637,22 @@ namespace SOCY_MIS.DataAccessLayer
             InsertLstCSO(dbCon);
 
             InsertTempCSOs(dbCon);
+        }
+
+        public static void NewHomeVisitReason(DBConnection dbCon)
+        {
+            string strSQL = string.Empty;
+
+            strSQL = "DELETE FROM [dbo].[lst_home_visit_reason]";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"  SET IDENTITY_INSERT [dbo].lst_home_visit_reason ON 																																																   
+	                INSERT [dbo].[lst_home_visit_reason] ([hvr_sid], [hvr_id], [hvr_name], [hvr_order], [hvr_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) SELECT 1, N'1', N'Regular monthly visit', 1, 1, N'EN', N'1', N'1', GETDATE(), GETDATE() WHERE NOT '1' IN (SELECT hvr_id FROM [lst_home_visit_reason] WHERE hvr_id = '1') 
+	                INSERT [dbo].[lst_home_visit_reason] ([hvr_sid], [hvr_id], [hvr_name], [hvr_order], [hvr_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) SELECT 2, N'2', N'Follow up', 2, 1, N'EN', N'1', N'1', GETDATE(), GETDATE() WHERE NOT '2' IN (SELECT hvr_id FROM [lst_home_visit_reason] WHERE hvr_id = '2') 
+	                INSERT [dbo].[lst_home_visit_reason] ([hvr_sid], [hvr_id], [hvr_name], [hvr_order], [hvr_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) SELECT 3, N'3', N'Mobilization of specific activities', 3, 1, N'EN', N'1', N'1', GETDATE(), GETDATE() WHERE NOT '3' IN (SELECT hvr_id FROM [lst_home_visit_reason] WHERE hvr_id = '3') 
+                    INSERT [dbo].[lst_home_visit_reason] ([hvr_sid], [hvr_id], [hvr_name], [hvr_order], [hvr_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) SELECT 4, N'4', N'Post graduation visit', 4, 1, N'EN', N'1', N'1', GETDATE(), GETDATE() WHERE NOT '4' IN (SELECT hvr_id FROM [lst_home_visit_reason] WHERE hvr_id = '4') 
+					SET IDENTITY_INSERT [dbo].[lst_home_visit_reason] OFF";
+            dbCon.ExecuteNonQuery(strSQL);
         }
 
         public static void NewLstCoordinators(DBConnection dbCon)
@@ -27757,6 +27803,8 @@ namespace SOCY_MIS.DataAccessLayer
             Version22(dbCon);
             #endregion New Wards
         }
+
+   
 
         public static void Insert_new_sync_upload(DBConnection dbCon)
         {
@@ -27980,21 +28028,29 @@ namespace SOCY_MIS.DataAccessLayer
             strSQL = "UPDATE lst_ward SET sct_id = '340' WHERE wrd_id = '1847'";
             dbCon.ExecuteNonQuery(strSQL);
             #endregion
+
+            #region updateWakisoSubCountyNames
+            strSQL = "UPDATE lst_sub_county SET dst_id = '26' WHERE sct_id = '276'";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion
+
+            #region updateWakisoSubCountyNames
+            strSQL = "UPDATE lst_sub_county SET dst_id = '27' WHERE sct_id = '6'";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion
         }
 
         public static void NewTrainingTypes(DBConnection dbCon)
         {
             string strSQL = string.Empty;
 
+            strSQL = "DELETE FROM lst_es_training_type WHERE ttp_id = '12' ";
+            dbCon.ExecuteNonQuery(strSQL);
+
             #region TrainingTypes
             strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type WHERE ttp_order = 11)
 	                 INSERT INTO [dbo].[lst_es_training_type]([ttp_sid],[ttp_id],[ttp_name],[ttp_order],[ttp_active],[lng_id],[usr_id_create],[usr_id_update],[usr_date_create] ,[usr_date_update])
                      VALUES(11,'11','Dairy Farming ',11,1,'EN',1,GETDATE(),1,GETDATE())";
-            dbCon.ExecuteNonQuery(strSQL);
-
-            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type WHERE ttp_order = 12)
-	                 INSERT INTO [dbo].[lst_es_training_type]([ttp_sid],[ttp_id],[ttp_name],[ttp_order],[ttp_active],[lng_id],[usr_id_create],[usr_id_update],[usr_date_create] ,[usr_date_update])
-                     VALUES(12,'12','Dairy Farming ',12,1,'EN',1,GETDATE(),1,GETDATE())";
             dbCon.ExecuteNonQuery(strSQL);
 
             strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type WHERE ttp_order = 13)
@@ -28163,8 +28219,44 @@ namespace SOCY_MIS.DataAccessLayer
            ,[usr_date_create] ,[usr_date_update])
      VALUES (124,'124','15','Strengthening the Value chain network',124,1 ,'EN',1,1,GETDATE(),GETDATE())";
             dbCon.ExecuteNonQuery(strSQL);
-            #endregion
 
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 125)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (125,'125','11','Dairy entrepreneurship & Management',125,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 126)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (126,'126','11','Animal Nutrition',126,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 127)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (127,'127','11','Herd Health Management & Disease Control',127,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 128)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (128,'128','11','Life skills training',128,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion 
+
+        }
+
+        public static void New_Ndeija_parishes(DBConnection dbCon)
+        {
+            string strSQL = string.Empty;
+
+            #region New Wards
+            strSQL = @"DELETE FROM lst_ward";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            InsertLstWard(dbCon);
+            #endregion New Wards
         }
     }
 }

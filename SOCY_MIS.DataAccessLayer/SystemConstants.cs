@@ -16,8 +16,11 @@ namespace SOCY_MIS.DataAccessLayer
         public static string ofc_id = string.Empty;
         public static string user_id = string.Empty;
         public static string dovicc_tool_type = string.Empty;
+        public static string household_status = string.Empty;
+        public static string _household_status = string.Empty; 
+        public static string object_id = string.Empty;
 
-       static DataAccessLayer.DBConnection dbCon = new DataAccessLayer.DBConnection(utilConstants.cACKConnection);
+        static DataAccessLayer.DBConnection dbCon = new DataAccessLayer.DBConnection(utilConstants.cACKConnection);
        static string SQLConnection = dbCon.SQLDBConnection(utilConstants.cACKConnection);
 
        static SqlConnection conn = null;
@@ -166,6 +169,58 @@ namespace SOCY_MIS.DataAccessLayer
             }
 
             return district_id;
+        }
+
+        public static string Return_household_status(string hh_id) 
+        {
+            DataTable dt = new DataTable();
+            string hhs_id = string.Empty;
+            SqlDataAdapter Adapt;
+            string SQL = @"SELECT hhs_id FROM hh_household WHERE hh_id = '{0}'";
+            SQL = string.Format(SQL, hh_id);
+            try
+            {
+                string strConn = dbCon.ToString();
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(SQL, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    Adapt = new SqlDataAdapter(cmd);
+                    Adapt.Fill(dt);
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        DataRow dtRow = dt.Rows[0];
+                        hhs_id = dtRow["hhs_id"].ToString();
+                    }
+
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            finally
+            {
+                if (conn.State == ConnectionState.Open) { conn.Close(); }
+            }
+
+            return hhs_id;
         }
 
         //save districts for download

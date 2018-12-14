@@ -100,12 +100,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpDisplay01.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpDisplay01.ColumnCount = 6;
-            this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 175F));
+            this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 233F));
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 175F));
+            this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 233F));
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+            this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tlpDisplay01.Controls.Add(this.lblInterviewee, 0, 3);
             this.tlpDisplay01.Controls.Add(this.lblDistrict, 0, 0);
             this.tlpDisplay01.Controls.Add(this.dtpDateOfVisit, 4, 2);
@@ -133,7 +133,8 @@
             this.tlpDisplay01.Controls.Add(this.lblHomeVisitReasonVal, 2, 5);
             this.tlpDisplay01.Controls.Add(this.lblHomeVisitHouseholdStatusVal, 5, 5);
             this.tlpDisplay01.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tlpDisplay01.Location = new System.Drawing.Point(3, 18);
+            this.tlpDisplay01.Location = new System.Drawing.Point(4, 22);
+            this.tlpDisplay01.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tlpDisplay01.Name = "tlpDisplay01";
             this.tlpDisplay01.RowCount = 6;
             this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
@@ -142,17 +143,18 @@
             this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
-            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpDisplay01.Size = new System.Drawing.Size(904, 180);
+            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tlpDisplay01.Size = new System.Drawing.Size(1205, 222);
             this.tlpDisplay01.TabIndex = 100;
             // 
             // lblInterviewee
             // 
             this.lblInterviewee.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblInterviewee.AutoSize = true;
-            this.lblInterviewee.Location = new System.Drawing.Point(4, 95);
+            this.lblInterviewee.Location = new System.Drawing.Point(5, 118);
+            this.lblInterviewee.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblInterviewee.Name = "lblInterviewee";
-            this.lblInterviewee.Size = new System.Drawing.Size(147, 13);
+            this.lblInterviewee.Size = new System.Drawing.Size(195, 17);
             this.lblInterviewee.TabIndex = 11;
             this.lblInterviewee.Text = "Name of the person talked to:";
             // 
@@ -160,27 +162,30 @@
             // 
             this.lblDistrict.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblDistrict.AutoSize = true;
-            this.lblDistrict.Location = new System.Drawing.Point(4, 8);
+            this.lblDistrict.Location = new System.Drawing.Point(5, 10);
+            this.lblDistrict.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDistrict.Name = "lblDistrict";
-            this.lblDistrict.Size = new System.Drawing.Size(42, 13);
+            this.lblDistrict.Size = new System.Drawing.Size(55, 17);
             this.lblDistrict.TabIndex = 8;
             this.lblDistrict.Text = "District:";
             // 
             // dtpDateOfVisit
             // 
             this.dtpDateOfVisit.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateOfVisit.Location = new System.Drawing.Point(622, 62);
+            this.dtpDateOfVisit.Location = new System.Drawing.Point(827, 77);
+            this.dtpDateOfVisit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpDateOfVisit.Name = "dtpDateOfVisit";
-            this.dtpDateOfVisit.Size = new System.Drawing.Size(124, 20);
+            this.dtpDateOfVisit.Size = new System.Drawing.Size(164, 23);
             this.dtpDateOfVisit.TabIndex = 6;
             // 
             // lblDateOfInterview
             // 
             this.lblDateOfInterview.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblDateOfInterview.AutoSize = true;
-            this.lblDateOfInterview.Location = new System.Drawing.Point(446, 66);
+            this.lblDateOfInterview.Location = new System.Drawing.Point(593, 82);
+            this.lblDateOfInterview.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDateOfInterview.Name = "lblDateOfInterview";
-            this.lblDateOfInterview.Size = new System.Drawing.Size(66, 13);
+            this.lblDateOfInterview.Size = new System.Drawing.Size(86, 17);
             this.lblDateOfInterview.TabIndex = 9;
             this.lblDateOfInterview.Text = "Date of visit:";
             // 
@@ -188,9 +193,10 @@
             // 
             this.lblWard.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblWard.AutoSize = true;
-            this.lblWard.Location = new System.Drawing.Point(4, 37);
+            this.lblWard.Location = new System.Drawing.Point(5, 46);
+            this.lblWard.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWard.Name = "lblWard";
-            this.lblWard.Size = new System.Drawing.Size(39, 13);
+            this.lblWard.Size = new System.Drawing.Size(52, 17);
             this.lblWard.TabIndex = 10;
             this.lblWard.Text = "Parish:";
             // 
@@ -198,9 +204,10 @@
             // 
             this.lblSubCounty.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblSubCounty.AutoSize = true;
-            this.lblSubCounty.Location = new System.Drawing.Point(446, 8);
+            this.lblSubCounty.Location = new System.Drawing.Point(593, 10);
+            this.lblSubCounty.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSubCounty.Name = "lblSubCounty";
-            this.lblSubCounty.Size = new System.Drawing.Size(64, 13);
+            this.lblSubCounty.Size = new System.Drawing.Size(84, 17);
             this.lblSubCounty.TabIndex = 9;
             this.lblSubCounty.Text = "Sub-county:";
             // 
@@ -208,9 +215,10 @@
             // 
             this.lblVillage.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblVillage.AutoSize = true;
-            this.lblVillage.Location = new System.Drawing.Point(446, 37);
+            this.lblVillage.Location = new System.Drawing.Point(593, 46);
+            this.lblVillage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVillage.Name = "lblVillage";
-            this.lblVillage.Size = new System.Drawing.Size(41, 13);
+            this.lblVillage.Size = new System.Drawing.Size(54, 17);
             this.lblVillage.TabIndex = 11;
             this.lblVillage.Text = "Village:";
             // 
@@ -220,9 +228,10 @@
             this.lblIntervieweeVal.AutoSize = true;
             this.lblIntervieweeVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIntervieweeVal.ForeColor = System.Drawing.Color.Red;
-            this.lblIntervieweeVal.Location = new System.Drawing.Point(405, 95);
+            this.lblIntervieweeVal.Location = new System.Drawing.Point(539, 118);
+            this.lblIntervieweeVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIntervieweeVal.Name = "lblIntervieweeVal";
-            this.lblIntervieweeVal.Size = new System.Drawing.Size(11, 13);
+            this.lblIntervieweeVal.Size = new System.Drawing.Size(13, 17);
             this.lblIntervieweeVal.TabIndex = 27;
             this.lblIntervieweeVal.Text = "*";
             // 
@@ -231,18 +240,21 @@
             this.cbHHMember.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbHHMember.FormattingEnabled = true;
-            this.cbHHMember.Location = new System.Drawing.Point(180, 91);
+            this.cbHHMember.Location = new System.Drawing.Point(239, 113);
+            this.cbHHMember.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbHHMember.Name = "cbHHMember";
-            this.cbHHMember.Size = new System.Drawing.Size(218, 21);
+            this.cbHHMember.Size = new System.Drawing.Size(291, 25);
             this.cbHHMember.TabIndex = 29;
+            this.cbHHMember.SelectionChangeCommitted += new System.EventHandler(this.cbHHMember_SelectionChangeCommitted);
             // 
             // lblSocialWorker
             // 
             this.lblSocialWorker.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblSocialWorker.AutoSize = true;
-            this.lblSocialWorker.Location = new System.Drawing.Point(4, 124);
+            this.lblSocialWorker.Location = new System.Drawing.Point(5, 154);
+            this.lblSocialWorker.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSocialWorker.Name = "lblSocialWorker";
-            this.lblSocialWorker.Size = new System.Drawing.Size(89, 13);
+            this.lblSocialWorker.Size = new System.Drawing.Size(110, 17);
             this.lblSocialWorker.TabIndex = 8;
             this.lblSocialWorker.Text = "PSW/SW Name:";
             // 
@@ -251,9 +263,10 @@
             this.cbSocialWorker.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbSocialWorker.FormattingEnabled = true;
-            this.cbSocialWorker.Location = new System.Drawing.Point(180, 120);
+            this.cbSocialWorker.Location = new System.Drawing.Point(239, 149);
+            this.cbSocialWorker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbSocialWorker.Name = "cbSocialWorker";
-            this.cbSocialWorker.Size = new System.Drawing.Size(218, 21);
+            this.cbSocialWorker.Size = new System.Drawing.Size(291, 25);
             this.cbSocialWorker.TabIndex = 5;
             this.cbSocialWorker.SelectionChangeCommitted += new System.EventHandler(this.cbSocialWorker_SelectionChangeCommitted);
             // 
@@ -261,9 +274,10 @@
             // 
             this.lblHouseholdCode.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblHouseholdCode.AutoSize = true;
-            this.lblHouseholdCode.Location = new System.Drawing.Point(4, 66);
+            this.lblHouseholdCode.Location = new System.Drawing.Point(5, 82);
+            this.lblHouseholdCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHouseholdCode.Name = "lblHouseholdCode";
-            this.lblHouseholdCode.Size = new System.Drawing.Size(89, 13);
+            this.lblHouseholdCode.Size = new System.Drawing.Size(117, 17);
             this.lblHouseholdCode.TabIndex = 10;
             this.lblHouseholdCode.Text = "Household Code:";
             // 
@@ -271,9 +285,10 @@
             // 
             this.lblHomeVisitHouseholdStatus.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblHomeVisitHouseholdStatus.AutoSize = true;
-            this.lblHomeVisitHouseholdStatus.Location = new System.Drawing.Point(446, 156);
+            this.lblHomeVisitHouseholdStatus.Location = new System.Drawing.Point(593, 192);
+            this.lblHomeVisitHouseholdStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHomeVisitHouseholdStatus.Name = "lblHomeVisitHouseholdStatus";
-            this.lblHomeVisitHouseholdStatus.Size = new System.Drawing.Size(92, 13);
+            this.lblHomeVisitHouseholdStatus.Size = new System.Drawing.Size(122, 17);
             this.lblHomeVisitHouseholdStatus.TabIndex = 31;
             this.lblHomeVisitHouseholdStatus.Text = "Household status:";
             // 
@@ -282,18 +297,22 @@
             this.cbHomeVisitHouseholdStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbHomeVisitHouseholdStatus.FormattingEnabled = true;
-            this.cbHomeVisitHouseholdStatus.Location = new System.Drawing.Point(622, 149);
+            this.cbHomeVisitHouseholdStatus.Location = new System.Drawing.Point(827, 185);
+            this.cbHomeVisitHouseholdStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbHomeVisitHouseholdStatus.Name = "cbHomeVisitHouseholdStatus";
-            this.cbHomeVisitHouseholdStatus.Size = new System.Drawing.Size(218, 21);
+            this.cbHomeVisitHouseholdStatus.Size = new System.Drawing.Size(291, 25);
             this.cbHomeVisitHouseholdStatus.TabIndex = 32;
+            this.cbHomeVisitHouseholdStatus.SelectedIndexChanged += new System.EventHandler(this.cbHomeVisitHouseholdStatus_SelectedIndexChanged);
+            this.cbHomeVisitHouseholdStatus.SelectionChangeCommitted += new System.EventHandler(this.cbHomeVisitHouseholdStatus_SelectionChangeCommitted);
             // 
             // lblSocialWorkerCode
             // 
             this.lblSocialWorkerCode.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblSocialWorkerCode.AutoSize = true;
-            this.lblSocialWorkerCode.Location = new System.Drawing.Point(446, 124);
+            this.lblSocialWorkerCode.Location = new System.Drawing.Point(593, 154);
+            this.lblSocialWorkerCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSocialWorkerCode.Name = "lblSocialWorkerCode";
-            this.lblSocialWorkerCode.Size = new System.Drawing.Size(86, 13);
+            this.lblSocialWorkerCode.Size = new System.Drawing.Size(106, 17);
             this.lblSocialWorkerCode.TabIndex = 34;
             this.lblSocialWorkerCode.Text = "PSW/SW Code:";
             // 
@@ -302,18 +321,20 @@
             this.cbHomeVisitReason.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbHomeVisitReason.FormattingEnabled = true;
-            this.cbHomeVisitReason.Location = new System.Drawing.Point(180, 149);
+            this.cbHomeVisitReason.Location = new System.Drawing.Point(239, 185);
+            this.cbHomeVisitReason.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbHomeVisitReason.Name = "cbHomeVisitReason";
-            this.cbHomeVisitReason.Size = new System.Drawing.Size(218, 21);
+            this.cbHomeVisitReason.Size = new System.Drawing.Size(291, 25);
             this.cbHomeVisitReason.TabIndex = 33;
             // 
             // lblHomeVisitReason
             // 
             this.lblHomeVisitReason.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblHomeVisitReason.AutoSize = true;
-            this.lblHomeVisitReason.Location = new System.Drawing.Point(4, 156);
+            this.lblHomeVisitReason.Location = new System.Drawing.Point(5, 192);
+            this.lblHomeVisitReason.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHomeVisitReason.Name = "lblHomeVisitReason";
-            this.lblHomeVisitReason.Size = new System.Drawing.Size(102, 13);
+            this.lblHomeVisitReason.Size = new System.Drawing.Size(136, 17);
             this.lblHomeVisitReason.TabIndex = 30;
             this.lblHomeVisitReason.Text = "Reason for the Visit:";
             // 
@@ -321,9 +342,10 @@
             // 
             this.lblDistrictDisplay.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblDistrictDisplay.AutoSize = true;
-            this.lblDistrictDisplay.Location = new System.Drawing.Point(180, 8);
+            this.lblDistrictDisplay.Location = new System.Drawing.Point(239, 10);
+            this.lblDistrictDisplay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDistrictDisplay.Name = "lblDistrictDisplay";
-            this.lblDistrictDisplay.Size = new System.Drawing.Size(42, 13);
+            this.lblDistrictDisplay.Size = new System.Drawing.Size(55, 17);
             this.lblDistrictDisplay.TabIndex = 35;
             this.lblDistrictDisplay.Text = "District:";
             // 
@@ -331,9 +353,10 @@
             // 
             this.lblWardDisplay.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblWardDisplay.AutoSize = true;
-            this.lblWardDisplay.Location = new System.Drawing.Point(180, 37);
+            this.lblWardDisplay.Location = new System.Drawing.Point(239, 46);
+            this.lblWardDisplay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWardDisplay.Name = "lblWardDisplay";
-            this.lblWardDisplay.Size = new System.Drawing.Size(39, 13);
+            this.lblWardDisplay.Size = new System.Drawing.Size(52, 17);
             this.lblWardDisplay.TabIndex = 36;
             this.lblWardDisplay.Text = "Parish:";
             // 
@@ -341,9 +364,10 @@
             // 
             this.lblHouseholdCodeDisplay.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblHouseholdCodeDisplay.AutoSize = true;
-            this.lblHouseholdCodeDisplay.Location = new System.Drawing.Point(180, 66);
+            this.lblHouseholdCodeDisplay.Location = new System.Drawing.Point(239, 82);
+            this.lblHouseholdCodeDisplay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHouseholdCodeDisplay.Name = "lblHouseholdCodeDisplay";
-            this.lblHouseholdCodeDisplay.Size = new System.Drawing.Size(89, 13);
+            this.lblHouseholdCodeDisplay.Size = new System.Drawing.Size(117, 17);
             this.lblHouseholdCodeDisplay.TabIndex = 37;
             this.lblHouseholdCodeDisplay.Text = "Household Code:";
             // 
@@ -351,9 +375,10 @@
             // 
             this.lblSubCountyDisplay.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblSubCountyDisplay.AutoSize = true;
-            this.lblSubCountyDisplay.Location = new System.Drawing.Point(622, 8);
+            this.lblSubCountyDisplay.Location = new System.Drawing.Point(827, 10);
+            this.lblSubCountyDisplay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSubCountyDisplay.Name = "lblSubCountyDisplay";
-            this.lblSubCountyDisplay.Size = new System.Drawing.Size(64, 13);
+            this.lblSubCountyDisplay.Size = new System.Drawing.Size(84, 17);
             this.lblSubCountyDisplay.TabIndex = 38;
             this.lblSubCountyDisplay.Text = "Sub-county:";
             // 
@@ -361,9 +386,10 @@
             // 
             this.lblVillageDisplay.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblVillageDisplay.AutoSize = true;
-            this.lblVillageDisplay.Location = new System.Drawing.Point(622, 37);
+            this.lblVillageDisplay.Location = new System.Drawing.Point(827, 46);
+            this.lblVillageDisplay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVillageDisplay.Name = "lblVillageDisplay";
-            this.lblVillageDisplay.Size = new System.Drawing.Size(41, 13);
+            this.lblVillageDisplay.Size = new System.Drawing.Size(54, 17);
             this.lblVillageDisplay.TabIndex = 39;
             this.lblVillageDisplay.Text = "Village:";
             // 
@@ -371,9 +397,10 @@
             // 
             this.txtSocialWorkerCode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSocialWorkerCode.Location = new System.Drawing.Point(622, 120);
+            this.txtSocialWorkerCode.Location = new System.Drawing.Point(827, 149);
+            this.txtSocialWorkerCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSocialWorkerCode.Name = "txtSocialWorkerCode";
-            this.txtSocialWorkerCode.Size = new System.Drawing.Size(218, 20);
+            this.txtSocialWorkerCode.Size = new System.Drawing.Size(291, 23);
             this.txtSocialWorkerCode.TabIndex = 40;
             // 
             // lblSocialWorkerVal
@@ -382,9 +409,10 @@
             this.lblSocialWorkerVal.AutoSize = true;
             this.lblSocialWorkerVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSocialWorkerVal.ForeColor = System.Drawing.Color.Red;
-            this.lblSocialWorkerVal.Location = new System.Drawing.Point(405, 124);
+            this.lblSocialWorkerVal.Location = new System.Drawing.Point(539, 154);
+            this.lblSocialWorkerVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSocialWorkerVal.Name = "lblSocialWorkerVal";
-            this.lblSocialWorkerVal.Size = new System.Drawing.Size(11, 13);
+            this.lblSocialWorkerVal.Size = new System.Drawing.Size(13, 17);
             this.lblSocialWorkerVal.TabIndex = 41;
             this.lblSocialWorkerVal.Text = "*";
             // 
@@ -394,9 +422,10 @@
             this.lblHomeVisitReasonVal.AutoSize = true;
             this.lblHomeVisitReasonVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHomeVisitReasonVal.ForeColor = System.Drawing.Color.Red;
-            this.lblHomeVisitReasonVal.Location = new System.Drawing.Point(405, 156);
+            this.lblHomeVisitReasonVal.Location = new System.Drawing.Point(539, 192);
+            this.lblHomeVisitReasonVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHomeVisitReasonVal.Name = "lblHomeVisitReasonVal";
-            this.lblHomeVisitReasonVal.Size = new System.Drawing.Size(11, 13);
+            this.lblHomeVisitReasonVal.Size = new System.Drawing.Size(13, 17);
             this.lblHomeVisitReasonVal.TabIndex = 42;
             this.lblHomeVisitReasonVal.Text = "*";
             // 
@@ -406,9 +435,10 @@
             this.lblHomeVisitHouseholdStatusVal.AutoSize = true;
             this.lblHomeVisitHouseholdStatusVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHomeVisitHouseholdStatusVal.ForeColor = System.Drawing.Color.Red;
-            this.lblHomeVisitHouseholdStatusVal.Location = new System.Drawing.Point(847, 156);
+            this.lblHomeVisitHouseholdStatusVal.Location = new System.Drawing.Point(1127, 192);
+            this.lblHomeVisitHouseholdStatusVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHomeVisitHouseholdStatusVal.Name = "lblHomeVisitHouseholdStatusVal";
-            this.lblHomeVisitHouseholdStatusVal.Size = new System.Drawing.Size(11, 13);
+            this.lblHomeVisitHouseholdStatusVal.Size = new System.Drawing.Size(13, 17);
             this.lblHomeVisitHouseholdStatusVal.TabIndex = 43;
             this.lblHomeVisitHouseholdStatusVal.Text = "*";
             // 
@@ -417,9 +447,10 @@
             this.llblBackTop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.llblBackTop.AutoSize = true;
             this.llblBackTop.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblBackTop.Location = new System.Drawing.Point(869, 2);
+            this.llblBackTop.Location = new System.Drawing.Point(1159, 2);
+            this.llblBackTop.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.llblBackTop.Name = "llblBackTop";
-            this.llblBackTop.Size = new System.Drawing.Size(32, 13);
+            this.llblBackTop.Size = new System.Drawing.Size(39, 17);
             this.llblBackTop.TabIndex = 101;
             this.llblBackTop.TabStop = true;
             this.llblBackTop.Text = "Back";
@@ -429,9 +460,10 @@
             // 
             this.lblComments.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblComments.AutoSize = true;
-            this.lblComments.Location = new System.Drawing.Point(4, 38);
+            this.lblComments.Location = new System.Drawing.Point(5, 47);
+            this.lblComments.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblComments.Name = "lblComments";
-            this.lblComments.Size = new System.Drawing.Size(107, 13);
+            this.lblComments.Size = new System.Drawing.Size(143, 17);
             this.lblComments.TabIndex = 43;
             this.lblComments.Text = "Any other Comments:";
             // 
@@ -439,9 +471,10 @@
             // 
             this.lblNextSteps.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblNextSteps.AutoSize = true;
-            this.lblNextSteps.Location = new System.Drawing.Point(448, 38);
+            this.lblNextSteps.Location = new System.Drawing.Point(596, 47);
+            this.lblNextSteps.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNextSteps.Name = "lblNextSteps";
-            this.lblNextSteps.Size = new System.Drawing.Size(108, 13);
+            this.lblNextSteps.Size = new System.Drawing.Size(140, 17);
             this.lblNextSteps.TabIndex = 44;
             this.lblNextSteps.Text = "Specific next actions:";
             // 
@@ -453,29 +486,31 @@
             this.tlpDisplay07.ColumnCount = 3;
             this.tlpDisplay07.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpDisplay07.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDisplay07.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tlpDisplay07.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79F));
             this.tlpDisplay07.Controls.Add(this.lblHouseholdIncome, 0, 0);
             this.tlpDisplay07.Controls.Add(this.lblAverageMeals, 0, 1);
             this.tlpDisplay07.Controls.Add(this.nudHouseholdIncome, 1, 0);
             this.tlpDisplay07.Controls.Add(this.cbAverageMeals, 1, 1);
             this.tlpDisplay07.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tlpDisplay07.Location = new System.Drawing.Point(3, 226);
+            this.tlpDisplay07.Location = new System.Drawing.Point(4, 278);
+            this.tlpDisplay07.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tlpDisplay07.Name = "tlpDisplay07";
             this.tlpDisplay07.RowCount = 2;
             this.tlpDisplay07.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpDisplay07.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDisplay07.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpDisplay07.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpDisplay07.Size = new System.Drawing.Size(904, 60);
+            this.tlpDisplay07.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tlpDisplay07.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tlpDisplay07.Size = new System.Drawing.Size(1205, 74);
             this.tlpDisplay07.TabIndex = 102;
             // 
             // lblHouseholdIncome
             // 
             this.lblHouseholdIncome.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblHouseholdIncome.AutoSize = true;
-            this.lblHouseholdIncome.Location = new System.Drawing.Point(4, 8);
+            this.lblHouseholdIncome.Location = new System.Drawing.Point(5, 10);
+            this.lblHouseholdIncome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHouseholdIncome.Name = "lblHouseholdIncome";
-            this.lblHouseholdIncome.Size = new System.Drawing.Size(149, 13);
+            this.lblHouseholdIncome.Size = new System.Drawing.Size(198, 17);
             this.lblHouseholdIncome.TabIndex = 8;
             this.lblHouseholdIncome.Text = "Household income last month:";
             // 
@@ -483,31 +518,34 @@
             // 
             this.lblAverageMeals.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblAverageMeals.AutoSize = true;
-            this.lblAverageMeals.Location = new System.Drawing.Point(4, 38);
+            this.lblAverageMeals.Location = new System.Drawing.Point(5, 46);
+            this.lblAverageMeals.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAverageMeals.Name = "lblAverageMeals";
-            this.lblAverageMeals.Size = new System.Drawing.Size(272, 13);
+            this.lblAverageMeals.Size = new System.Drawing.Size(366, 17);
             this.lblAverageMeals.TabIndex = 9;
             this.lblAverageMeals.Text = "Average number of meals per day in the previous month:";
             // 
             // nudHouseholdIncome
             // 
             this.nudHouseholdIncome.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.nudHouseholdIncome.Location = new System.Drawing.Point(426, 5);
+            this.nudHouseholdIncome.Location = new System.Drawing.Point(567, 7);
+            this.nudHouseholdIncome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nudHouseholdIncome.Maximum = new decimal(new int[] {
             10000000,
             0,
             0,
             0});
             this.nudHouseholdIncome.Name = "nudHouseholdIncome";
-            this.nudHouseholdIncome.Size = new System.Drawing.Size(125, 20);
+            this.nudHouseholdIncome.Size = new System.Drawing.Size(167, 23);
             this.nudHouseholdIncome.TabIndex = 43;
             // 
             // cbAverageMeals
             // 
             this.cbAverageMeals.FormattingEnabled = true;
-            this.cbAverageMeals.Location = new System.Drawing.Point(426, 33);
+            this.cbAverageMeals.Location = new System.Drawing.Point(567, 41);
+            this.cbAverageMeals.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbAverageMeals.Name = "cbAverageMeals";
-            this.cbAverageMeals.Size = new System.Drawing.Size(125, 21);
+            this.cbAverageMeals.Size = new System.Drawing.Size(165, 25);
             this.cbAverageMeals.TabIndex = 44;
             // 
             // tlpDisplay04
@@ -517,14 +555,15 @@
             this.tlpDisplay04.BackColor = System.Drawing.Color.LightBlue;
             this.tlpDisplay04.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpDisplay04.ColumnCount = 2;
-            this.tlpDisplay04.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpDisplay04.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
             this.tlpDisplay04.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpDisplay04.Controls.Add(this.lblHouseholdTitle, 1, 0);
-            this.tlpDisplay04.Location = new System.Drawing.Point(3, 197);
+            this.tlpDisplay04.Location = new System.Drawing.Point(4, 242);
+            this.tlpDisplay04.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tlpDisplay04.Name = "tlpDisplay04";
             this.tlpDisplay04.RowCount = 1;
             this.tlpDisplay04.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay04.Size = new System.Drawing.Size(904, 30);
+            this.tlpDisplay04.Size = new System.Drawing.Size(1205, 37);
             this.tlpDisplay04.TabIndex = 103;
             // 
             // lblHouseholdTitle
@@ -533,9 +572,10 @@
             this.lblHouseholdTitle.AutoSize = true;
             this.lblHouseholdTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHouseholdTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblHouseholdTitle.Location = new System.Drawing.Point(45, 8);
+            this.lblHouseholdTitle.Location = new System.Drawing.Point(59, 10);
+            this.lblHouseholdTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHouseholdTitle.Name = "lblHouseholdTitle";
-            this.lblHouseholdTitle.Size = new System.Drawing.Size(67, 13);
+            this.lblHouseholdTitle.Size = new System.Drawing.Size(85, 17);
             this.lblHouseholdTitle.TabIndex = 1;
             this.lblHouseholdTitle.Text = "Household";
             // 
@@ -545,23 +585,24 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpDisplay09.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpDisplay09.ColumnCount = 6;
-            this.tlpDisplay09.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 175F));
+            this.tlpDisplay09.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 233F));
             this.tlpDisplay09.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDisplay09.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tlpDisplay09.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 175F));
+            this.tlpDisplay09.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.tlpDisplay09.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 233F));
             this.tlpDisplay09.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDisplay09.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+            this.tlpDisplay09.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tlpDisplay09.Controls.Add(this.txtComments, 1, 0);
             this.tlpDisplay09.Controls.Add(this.lblComments, 0, 0);
             this.tlpDisplay09.Controls.Add(this.lblNextSteps, 3, 0);
             this.tlpDisplay09.Controls.Add(this.txtNextSteps, 4, 0);
             this.tlpDisplay09.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tlpDisplay09.Location = new System.Drawing.Point(3, 285);
+            this.tlpDisplay09.Location = new System.Drawing.Point(4, 351);
+            this.tlpDisplay09.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tlpDisplay09.Name = "tlpDisplay09";
             this.tlpDisplay09.RowCount = 1;
             this.tlpDisplay09.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay09.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 89F));
-            this.tlpDisplay09.Size = new System.Drawing.Size(904, 90);
+            this.tlpDisplay09.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 110F));
+            this.tlpDisplay09.Size = new System.Drawing.Size(1205, 111);
             this.tlpDisplay09.TabIndex = 104;
             // 
             // txtComments
@@ -569,9 +610,10 @@
             this.txtComments.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtComments.Location = new System.Drawing.Point(180, 4);
+            this.txtComments.Location = new System.Drawing.Point(239, 5);
+            this.txtComments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtComments.Name = "txtComments";
-            this.txtComments.Size = new System.Drawing.Size(216, 82);
+            this.txtComments.Size = new System.Drawing.Size(288, 101);
             this.txtComments.TabIndex = 45;
             this.txtComments.Text = "";
             // 
@@ -580,9 +622,10 @@
             this.txtNextSteps.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNextSteps.Location = new System.Drawing.Point(624, 4);
+            this.txtNextSteps.Location = new System.Drawing.Point(830, 5);
+            this.txtNextSteps.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNextSteps.Name = "txtNextSteps";
-            this.txtNextSteps.Size = new System.Drawing.Size(216, 82);
+            this.txtNextSteps.Size = new System.Drawing.Size(288, 101);
             this.txtNextSteps.TabIndex = 46;
             this.txtNextSteps.Text = "";
             // 
@@ -593,14 +636,15 @@
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.LightBlue;
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.lblHomeVisitTitle, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 374);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 460);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(904, 30);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1205, 37);
             this.tableLayoutPanel1.TabIndex = 105;
             // 
             // lblHomeVisitTitle
@@ -609,9 +653,10 @@
             this.lblHomeVisitTitle.AutoSize = true;
             this.lblHomeVisitTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHomeVisitTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblHomeVisitTitle.Location = new System.Drawing.Point(45, 8);
+            this.lblHomeVisitTitle.Location = new System.Drawing.Point(59, 10);
+            this.lblHomeVisitTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHomeVisitTitle.Name = "lblHomeVisitTitle";
-            this.lblHomeVisitTitle.Size = new System.Drawing.Size(78, 13);
+            this.lblHomeVisitTitle.Size = new System.Drawing.Size(100, 17);
             this.lblHomeVisitTitle.TabIndex = 1;
             this.lblHomeVisitTitle.Text = "Home Visitor";
             // 
@@ -620,15 +665,15 @@
             this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.ColumnCount = 9;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33704F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33148F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33148F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
             this.tableLayoutPanel2.Controls.Add(this.lblHomeVisitor, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.lblNextVisitDate, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.cbHomeVisitor, 1, 0);
@@ -639,21 +684,23 @@
             this.tableLayoutPanel2.Controls.Add(this.lblHomeVisitorTitle, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.lblHomeVisitorVal, 2, 0);
             this.tableLayoutPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 403);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 496);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(904, 60);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1205, 74);
             this.tableLayoutPanel2.TabIndex = 106;
             // 
             // lblHomeVisitor
             // 
             this.lblHomeVisitor.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblHomeVisitor.AutoSize = true;
-            this.lblHomeVisitor.Location = new System.Drawing.Point(3, 8);
+            this.lblHomeVisitor.Location = new System.Drawing.Point(4, 10);
+            this.lblHomeVisitor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHomeVisitor.Name = "lblHomeVisitor";
-            this.lblHomeVisitor.Size = new System.Drawing.Size(112, 13);
+            this.lblHomeVisitor.Size = new System.Drawing.Size(149, 17);
             this.lblHomeVisitor.TabIndex = 44;
             this.lblHomeVisitor.Text = "Name of Home Visitor:";
             // 
@@ -661,9 +708,10 @@
             // 
             this.lblNextVisitDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblNextVisitDate.AutoSize = true;
-            this.lblNextVisitDate.Location = new System.Drawing.Point(3, 38);
+            this.lblNextVisitDate.Location = new System.Drawing.Point(4, 47);
+            this.lblNextVisitDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNextVisitDate.Name = "lblNextVisitDate";
-            this.lblNextVisitDate.Size = new System.Drawing.Size(121, 13);
+            this.lblNextVisitDate.Size = new System.Drawing.Size(160, 17);
             this.lblNextVisitDate.TabIndex = 46;
             this.lblNextVisitDate.Text = "Date for next home visit:";
             // 
@@ -672,36 +720,40 @@
             this.cbHomeVisitor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbHomeVisitor.FormattingEnabled = true;
-            this.cbHomeVisitor.Location = new System.Drawing.Point(153, 3);
+            this.cbHomeVisitor.Location = new System.Drawing.Point(204, 4);
+            this.cbHomeVisitor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbHomeVisitor.Name = "cbHomeVisitor";
-            this.cbHomeVisitor.Size = new System.Drawing.Size(160, 21);
+            this.cbHomeVisitor.Size = new System.Drawing.Size(212, 25);
             this.cbHomeVisitor.TabIndex = 49;
             this.cbHomeVisitor.SelectionChangeCommitted += new System.EventHandler(this.cbHomeVisitor_SelectionChangeCommitted);
             // 
             // dtpNextVisitDate
             // 
             this.dtpNextVisitDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNextVisitDate.Location = new System.Drawing.Point(153, 33);
+            this.dtpNextVisitDate.Location = new System.Drawing.Point(204, 41);
+            this.dtpNextVisitDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpNextVisitDate.Name = "dtpNextVisitDate";
-            this.dtpNextVisitDate.Size = new System.Drawing.Size(124, 20);
+            this.dtpNextVisitDate.Size = new System.Drawing.Size(164, 23);
             this.dtpNextVisitDate.TabIndex = 48;
             // 
             // txtHomeVisitorTel
             // 
             this.txtHomeVisitorTel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtHomeVisitorTel.Location = new System.Drawing.Point(685, 3);
+            this.txtHomeVisitorTel.Location = new System.Drawing.Point(912, 4);
+            this.txtHomeVisitorTel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtHomeVisitorTel.Name = "txtHomeVisitorTel";
-            this.txtHomeVisitorTel.Size = new System.Drawing.Size(160, 20);
+            this.txtHomeVisitorTel.Size = new System.Drawing.Size(212, 23);
             this.txtHomeVisitorTel.TabIndex = 51;
             // 
             // lblHomeVisitorTel
             // 
             this.lblHomeVisitorTel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblHomeVisitorTel.AutoSize = true;
-            this.lblHomeVisitorTel.Location = new System.Drawing.Point(635, 8);
+            this.lblHomeVisitorTel.Location = new System.Drawing.Point(845, 10);
+            this.lblHomeVisitorTel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHomeVisitorTel.Name = "lblHomeVisitorTel";
-            this.lblHomeVisitorTel.Size = new System.Drawing.Size(25, 13);
+            this.lblHomeVisitorTel.Size = new System.Drawing.Size(32, 17);
             this.lblHomeVisitorTel.TabIndex = 45;
             this.lblHomeVisitorTel.Text = "Tel:";
             // 
@@ -710,18 +762,20 @@
             this.cbHomeVisitorTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbHomeVisitorTitle.FormattingEnabled = true;
-            this.cbHomeVisitorTitle.Location = new System.Drawing.Point(419, 3);
+            this.cbHomeVisitorTitle.Location = new System.Drawing.Point(558, 4);
+            this.cbHomeVisitorTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbHomeVisitorTitle.Name = "cbHomeVisitorTitle";
-            this.cbHomeVisitorTitle.Size = new System.Drawing.Size(160, 21);
+            this.cbHomeVisitorTitle.Size = new System.Drawing.Size(212, 25);
             this.cbHomeVisitorTitle.TabIndex = 50;
             // 
             // lblHomeVisitorTitle
             // 
             this.lblHomeVisitorTitle.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblHomeVisitorTitle.AutoSize = true;
-            this.lblHomeVisitorTitle.Location = new System.Drawing.Point(369, 8);
+            this.lblHomeVisitorTitle.Location = new System.Drawing.Point(491, 10);
+            this.lblHomeVisitorTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHomeVisitorTitle.Name = "lblHomeVisitorTitle";
-            this.lblHomeVisitorTitle.Size = new System.Drawing.Size(30, 13);
+            this.lblHomeVisitorTitle.Size = new System.Drawing.Size(39, 17);
             this.lblHomeVisitorTitle.TabIndex = 47;
             this.lblHomeVisitorTitle.Text = "Title:";
             // 
@@ -731,9 +785,10 @@
             this.lblHomeVisitorVal.AutoSize = true;
             this.lblHomeVisitorVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHomeVisitorVal.ForeColor = System.Drawing.Color.Red;
-            this.lblHomeVisitorVal.Location = new System.Drawing.Point(319, 8);
+            this.lblHomeVisitorVal.Location = new System.Drawing.Point(424, 10);
+            this.lblHomeVisitorVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHomeVisitorVal.Name = "lblHomeVisitorVal";
-            this.lblHomeVisitorVal.Size = new System.Drawing.Size(11, 13);
+            this.lblHomeVisitorVal.Size = new System.Drawing.Size(13, 17);
             this.lblHomeVisitorVal.TabIndex = 52;
             this.lblHomeVisitorVal.Text = "*";
             // 
@@ -742,28 +797,30 @@
             this.tplButton01.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tplButton01.ColumnCount = 5;
-            this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tplButton01.Controls.Add(this.btnCancel, 3, 0);
             this.tplButton01.Controls.Add(this.btnSave, 1, 0);
             this.tplButton01.Controls.Add(this.llblBackBottom, 4, 0);
             this.tplButton01.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tplButton01.Location = new System.Drawing.Point(3, 462);
+            this.tplButton01.Location = new System.Drawing.Point(4, 569);
+            this.tplButton01.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tplButton01.Name = "tplButton01";
             this.tplButton01.RowCount = 1;
             this.tplButton01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tplButton01.Size = new System.Drawing.Size(904, 40);
+            this.tplButton01.Size = new System.Drawing.Size(1205, 49);
             this.tplButton01.TabIndex = 107;
             // 
             // btnCancel
             // 
             this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnCancel.Location = new System.Drawing.Point(485, 8);
+            this.btnCancel.Location = new System.Drawing.Point(646, 10);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(100, 28);
             this.btnCancel.TabIndex = 15;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -772,9 +829,10 @@
             // btnSave
             // 
             this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnSave.Location = new System.Drawing.Point(344, 8);
+            this.btnSave.Location = new System.Drawing.Point(458, 10);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(100, 28);
             this.btnSave.TabIndex = 14;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -785,9 +843,10 @@
             this.llblBackBottom.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.llblBackBottom.AutoSize = true;
             this.llblBackBottom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblBackBottom.Location = new System.Drawing.Point(869, 13);
+            this.llblBackBottom.Location = new System.Drawing.Point(1162, 16);
+            this.llblBackBottom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.llblBackBottom.Name = "llblBackBottom";
-            this.llblBackBottom.Size = new System.Drawing.Size(32, 13);
+            this.llblBackBottom.Size = new System.Drawing.Size(39, 17);
             this.llblBackBottom.TabIndex = 25;
             this.llblBackBottom.TabStop = true;
             this.llblBackBottom.Text = "Back";
@@ -795,7 +854,7 @@
             // 
             // frmHouseholdHomeVisit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.tplButton01);
@@ -806,8 +865,9 @@
             this.Controls.Add(this.tlpDisplay07);
             this.Controls.Add(this.llblBackTop);
             this.Controls.Add(this.tlpDisplay01);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmHouseholdHomeVisit";
-            this.Size = new System.Drawing.Size(910, 507);
+            this.Size = new System.Drawing.Size(1213, 624);
             this.Load += new System.EventHandler(this.frmHouseholdHomeVisit_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmHouseholdHomeVisit_Paint);
             this.tlpDisplay01.ResumeLayout(false);

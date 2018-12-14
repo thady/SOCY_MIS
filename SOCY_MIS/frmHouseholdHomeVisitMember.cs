@@ -399,7 +399,12 @@ namespace SOCY_MIS
             rbtnFSNNutritionNo.Checked = false;
             rbtnFSNNutritionYes.Checked = false;
             rbtnFSNReferredNo.Checked = false;
-            //rbtnHHPHivPos.Checked = false;
+            rbtnHHPHivPos.Checked = false;
+            rbtnHHPHivNeg.Checked = false;
+            rbtnHHPHivUnknown.Checked = false;
+            rbtnHHPArtYes.Checked = false;
+            rbtnHHPArtNo.Checked = false;
+            rbtnHHPArtNA.Checked = false;
             rbtnFSNReferredYes.Checked = false;
             rbtnFSNWashNo.Checked = false;
             rbtnHHPReferredNA.Checked = false;
@@ -429,9 +434,9 @@ namespace SOCY_MIS
             rbtnPSViolenceNA.Checked = false;
             rbtnPSViolenceNo.Checked = false;
             rbtnPSViolenceYes.Checked = false;
+            rbtnFSNWashYes.Checked = false;
             btnSave.Enabled = pblnManage;
-            SetHIV(rbtnHHPHivPos.Checked, rbtnHHPArtYes.Checked);
-            //rbtnHHPArtNA.Checked = false;
+            
             rbtnHHPAdheringNA.Checked = false;
             rbtnLendingGroupYes.Checked = false;
             rbtnLendingGroupNo.Checked = false;
@@ -563,9 +568,12 @@ namespace SOCY_MIS
                     dbCon = new DataAccessLayer.DBConnection(utilConstants.cACKConnection);
                     try
                     {
+                        
+
                         if (ObjectId.Length == 0)
                             ObjectId = FormCalling.ObjectId;
                         dalHHVM = new hhHouseholdHomeVisitMember(strId, dbCon);
+                        LoadHouseholdMembers(dalHHVM.hhm_id, dbCon);
                         lblHHVMId.Text = strId;
 
                         #region HIV Status
@@ -625,7 +633,7 @@ namespace SOCY_MIS
 
                         //btnSave.Enabled = pblnManage && (FormMaster.OfficeId.Equals(dalHHVM.ofc_id) || utilConstants.cDFImportOffice.Equals(dalHHVM.ofc_id) || SystemConstants.Validate_Office_group_access(FormMaster.OfficeId, dalHHVM.ofc_id) || FormMaster.OfficeId.Equals("9549088f-95c3-4310-aef3-ec700f9d2b8b") || FormMaster.OfficeId.Equals("7053a890-db0b-47a6-8d21-38c9f8b4f53f")); //office ids for the two new Wakiso laptops
 
-                        LoadHouseholdMembers(dalHHVM.hhm_id, dbCon);
+                        
                         cbHHMember.Enabled = false;
                     }
                     finally
@@ -986,6 +994,7 @@ namespace SOCY_MIS
                         strMessage = utilLT.GetMessageTranslation(utilConstants.cMIDSaved, dbCon.dbCon);
                         intPopUpType = utilConstants.cPTInfo;
                         Clear();
+                        //LoadHouseholdMembers(dalHHVM.hhm_id, dbCon);
                         LoadDisplayLines(dbCon);
                     }
                     finally
@@ -1044,7 +1053,7 @@ namespace SOCY_MIS
                 strMessage = strMessage + "," + utilConstants.cMIDRequiredFields;
             else if (rbtnMemberActiveYes.Checked == false && rbtnMemberActiveNo.Checked == false)
                 strMessage = "Beneficiary status cannot be empty";
-            else if(rbtnHHPHivNeg.Checked == false && rbtnHHPHivPos.Checked == false && rbtnHHPHivUnknown.Checked == false)
+            else if(rbtnMemberActiveYes.Checked == true && (rbtnHHPHivNeg.Checked == false && rbtnHHPHivPos.Checked == false && rbtnHHPHivUnknown.Checked == false))
                 strMessage = "HIV Status cannot be empty";
             else if (rbtnHHPHivPos.Checked == true && (rbtnHHPArtYes.Checked == false   && rbtnHHPArtNo.Checked == false))
                 strMessage = "HIV ART status cannot be empty";

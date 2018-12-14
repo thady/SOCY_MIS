@@ -1065,10 +1065,10 @@ namespace SOCY_MIS
             #endregion Required Fields
 
             #region Phone Number
-            if (txtHHTel.Text.Replace(" ", "").Trim().Length != 0 && txtHHTel.Text.Replace(" ", "").Trim().Length != utilConstants.cDFPhoneNumberLength)
-                strMessage = strMessage + "," + utilConstants.cMIDPhoneNumberLength;
-            else if (txtSocialWorkerTel.Text.Replace(" ", "").Trim().Length != 0 && txtSocialWorkerTel.Text.Replace(" ", "").Trim().Length != utilConstants.cDFPhoneNumberLength)
-                strMessage = strMessage + "," + utilConstants.cMIDPhoneNumberLength;
+            //if (txtHHTel.Text.Replace(" ", "").Trim().Length != 0 && txtHHTel.Text.Replace(" ", "").Trim().Length != utilConstants.cDFPhoneNumberLength)
+            //    strMessage = strMessage + "," + utilConstants.cMIDPhoneNumberLength;
+            //else if (txtSocialWorkerTel.Text.Replace(" ", "").Trim().Length != 0 && txtSocialWorkerTel.Text.Replace(" ", "").Trim().Length != utilConstants.cDFPhoneNumberLength)
+            //    strMessage = strMessage + "," + utilConstants.cMIDPhoneNumberLength;
             #endregion Phone Number
 
             #region Get Messages

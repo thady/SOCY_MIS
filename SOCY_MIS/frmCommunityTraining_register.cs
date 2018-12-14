@@ -864,6 +864,8 @@ namespace SOCY_MIS
             cboParish.DisplayMember = "wrd_name";
             cboParish.ValueMember = "wrd_id";
             #endregion Load Parishes
+
+            returnHHCodesByLocation();
         }
 
         private void cboHHcCode_SelectedIndexChanged(object sender, EventArgs e)
@@ -935,7 +937,7 @@ namespace SOCY_MIS
 
         private void cboParish_SelectedIndexChanged(object sender, EventArgs e)
         {
-            returnHHCodesByLocation();
+            //returnHHCodesByLocation();
         }
     }
 }

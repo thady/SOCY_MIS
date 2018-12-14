@@ -95,14 +95,13 @@ namespace SOCY_MIS.DataAccessLayer
                         break;
                     case "HouseHoldCode":
                         SQL = @"SELECT H.hh_code ,H.hh_id FROM hh_household H
-                                LEFT JOIN lst_ward W ON H.wrd_id = W.wrd_sid
-                                LEFT JOIN lst_sub_county S ON W.sct_id = S.sct_id
-                                LEFT JOIN lst_district D ON S.dst_id = D.dst_id
+                                INNER JOIN lst_ward W ON H.wrd_id = W.wrd_sid
+                                INNER JOIN lst_sub_county S ON W.sct_id = S.sct_id
+                                INNER JOIN lst_district D ON S.dst_id = D.dst_id
                                 WHERE D.dst_id = '{0}'
                                 AND S.sct_id = '{1}'
-                                AND W.wrd_id = '{2}'
                                 ORDER BY H.hh_code ASC";
-                        SQL = string.Format(SQL, dst_id, sct_id,wrd_id); 
+                        SQL = string.Format(SQL, dst_id, sct_id); 
                         break;
                     case "TrainingDetails":
                         SQL = @"SELECT [ctr_id],[prt_id],[cso_id],[dst_id],[sct_id],[tr_name]
