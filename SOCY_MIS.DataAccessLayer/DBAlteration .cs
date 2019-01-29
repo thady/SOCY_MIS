@@ -12725,6 +12725,32 @@ namespace SOCY_MIS.DataAccessLayer
         }
 
 
+        private static void Createlst_quarter_range(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            #region SQL
+            #region Tables
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'lst_quarter_range')
+                       CREATE TABLE [dbo].[lst_quarter_range](
+	                    [qm_id] [varchar](50) NOT NULL,
+	                    [qm_name] [varchar](50) NOT NULL,
+	                    [qm_date_begin] [date] NOT NULL,
+	                    [qm_date_end] [date] NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_date_create] [date] NOT NULL,
+	                    [usr_date_update] [date] NOT NULL
+                    ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion Tables
+
+            #endregion SQL
+        }
+
+
         private static void Createben_youth_tracer(DBConnection dbCon)
         {
             #region Variables
@@ -13396,7 +13422,8 @@ namespace SOCY_MIS.DataAccessLayer
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('22','Namanya Gift ',22,'702850352','','CSO002',1,'24','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('23','Oshabahebwa Opherous',23,'787788963','opherousone@gmail.com','CSO001',1,'23','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('24','Yoctan Friday',24,'783508428','fridayyoctan@gmail.com','CSO004',1,'9','1','1','2018-07-19','2018-07-19')
-            INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('25','Yoctan Friday',25,'783508428','fridayyoctan@gmail.com','CSO004',1,'26','1','1','2018-07-19','2018-07-19')";
+            INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('25','Yoctan Friday',25,'783508428','fridayyoctan@gmail.com','CSO004',1,'26','1','1','2018-07-19','2018-07-19')
+            INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('26','Namanya Gift',26,'702850352','','CSO002',1,'27','1','1','2018-07-19','2018-07-19')";
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
         }
@@ -16848,6 +16875,10 @@ namespace SOCY_MIS.DataAccessLayer
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1937, N'1937', N'ISHONGORORO', 1937, 1, N'283', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1938, N'1938', N'KAKIGA', 1938, 1, N'283', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1939, N'1939', N'KATENGYETO', 1939, 1, N'283', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1940, N'1940', N'NYASIBO', 1940, 1, N'283', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1941, N'1941', N'KIZAGORO', 1941, 1, N'283', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1942, N'1942', N'KINAGAMUKONO', 1942, 1, N'283', N'EN', N'1', N'1', GETDATE(), GETDATE())
+INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1943, N'1943', N'KASENGEJE', 1943, 1, N'267', N'EN', N'1', N'1', GETDATE(), GETDATE())
 
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES ( 1557, N'1557', N'Kirasa', 1556, 1, N'168', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES ( 1558, N'1558', N'Kayanja', 1558, 1, N'168', N'EN', N'1', N'1', GETDATE(), GETDATE())
