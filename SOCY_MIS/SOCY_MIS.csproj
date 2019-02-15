@@ -642,6 +642,12 @@
     <Compile Include="frmValueChainActorRegisterSearch.Designer.cs">
       <DependentUpon>frmValueChainActorRegisterSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmViralLoadCommunityIAC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmViralLoadCommunityIAC.Designer.cs">
+      <DependentUpon>frmViralLoadCommunityIAC.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmYouthAssessmentScoringTool.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1029,6 +1035,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmValueChainActorRegisterSearch.resx">
       <DependentUpon>frmValueChainActorRegisterSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViralLoadCommunityIAC.resx">
+      <DependentUpon>frmViralLoadCommunityIAC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmYouthAssessmentScoringTool.resx">
       <DependentUpon>frmYouthAssessmentScoringTool.cs</DependentUpon>

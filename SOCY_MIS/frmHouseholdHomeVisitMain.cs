@@ -123,5 +123,10 @@ namespace SOCY_MIS
             }
         }
         #endregion Private Methods
+
+        private void tpHomeVisit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

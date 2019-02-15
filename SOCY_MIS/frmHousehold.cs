@@ -558,5 +558,15 @@ namespace SOCY_MIS
         {
             
         }
+
+        private void lblAdherence_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            #region Set Selected
+            frmViralLoadCommunityIAC frmNew = new frmViralLoadCommunityIAC();
+            frmNew.FormCalling = this;
+            frmNew.FormMaster = FormMaster;
+            FormMaster.LoadControl(frmNew, this.Name, false);
+            #endregion
+        }
     }
 }

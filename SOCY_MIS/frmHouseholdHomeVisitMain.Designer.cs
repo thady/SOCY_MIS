@@ -57,6 +57,7 @@
             this.tpHomeVisit.TabIndex = 0;
             this.tpHomeVisit.Text = "Home Visit";
             this.tpHomeVisit.UseVisualStyleBackColor = true;
+            this.tpHomeVisit.Click += new System.EventHandler(this.tpHomeVisit_Click);
             // 
             // tpMember
             // 
