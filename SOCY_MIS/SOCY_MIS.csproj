@@ -336,6 +336,12 @@
     <Compile Include="frmEducationSubsidySearch.Designer.cs">
       <DependentUpon>frmEducationSubsidySearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGBV_screeningTool.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmGBV_screeningTool.Designer.cs">
+      <DependentUpon>frmGBV_screeningTool.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGirlChildEducation.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -882,6 +888,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEducationSubsidySearch.resx">
       <DependentUpon>frmEducationSubsidySearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGBV_screeningTool.resx">
+      <DependentUpon>frmGBV_screeningTool.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGirlChildEducation.resx">
       <DependentUpon>frmGirlChildEducation.cs</DependentUpon>

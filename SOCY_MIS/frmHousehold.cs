@@ -568,5 +568,16 @@ namespace SOCY_MIS
             FormMaster.LoadControl(frmNew, this.Name, false);
             #endregion
         }
+
+        private void lblGBV_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            #region Set Selected
+            frmGBV_screeningTool frmNew = new frmGBV_screeningTool();
+            frmNew.HouseholdId = ObjectId;
+            frmNew.FormCalling = this;
+            frmNew.FormMaster = FormMaster;
+            FormMaster.LoadControl(frmNew, this.Name, false);
+            #endregion
+        }
     }
 }
