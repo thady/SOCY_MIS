@@ -61,9 +61,14 @@ namespace SOCY_MIS
             Return_lookups();
             LoadHHDisplay();
 
-            if (strgbv_id != string.Empty)
+            if (GBV_screeningTool._gbv_id != string.Empty)
             {
+                strgbv_id = GBV_screeningTool._gbv_id;
                 LoadDisplay(strgbv_id);
+            }
+            else
+            {
+                strgbv_id = string.Empty;
             }
 
         }
@@ -363,6 +368,100 @@ namespace SOCY_MIS
         }
 
 
+        protected void Clear()
+        {
+            GBV_screeningTool._gbv_id = string.Empty;
+            strgbv_id = string.Empty;
+
+            cboHHMemberName.SelectedValue = "-1";
+            txtscreeningOfficer.Clear();
+            txtAge.Clear();
+            cbosex.SelectedValue = "-1";
+            dtscreenDate.Value = DateTime.Today;
+            txtPhone.Clear();
+            utilControls.RadioButtonSetSelection(rdnyn_sexual_rapeYes, rdnyn_sexual_rapeNo, string.Empty);
+            utilControls.RadioButtonSetSelection(rdnyn_sexual_defilementYes, rdnyn_sexual_defilementNo, string.Empty);
+            utilControls.RadioButtonSetSelection(rdnyn_sexual_attempt_defilementYes, rndyn_sexual_attempt_defilementNo, string.Empty);
+            utilControls.RadioButtonSetSelection(rdnyn_sexual_harrassmentYes, rdnyn_sexual_harrassmentNo, string.Empty);
+            utilControls.RadioButtonSetSelection(rdnyn_phy_threatYes, rdnyn_phy_threatNo, string.Empty);
+            utilControls.RadioButtonSetSelection(rdnyn_phy_assaultYes, rdnyn_phy_assaultNo, string.Empty);
+            utilControls.RadioButtonSetSelection(rdnyn_phy_deprived_foodYes, rdnyn_phy_deprived_foodNo, string.Empty);
+            utilControls.RadioButtonSetSelection(rdnyn_phy_child_laborYes, rdnyn_phy_child_laborNo, string.Empty);
+            utilControls.RadioButtonSetSelection(rdnyn_phy_sleepoutYes, rdnyn_phy_sleepoutNo, string.Empty);
+            utilControls.RadioButtonSetSelection(rdnyn_econ_not_spendYes, rdnyn_econ_not_spendNo, string.Empty);
+            utilControls.RadioButtonSetSelection(rdnyn_econ_denied_edu_supportYes, rdnyn_econ_denied_edu_supportNo, string.Empty);
+            utilControls.RadioButtonSetSelection(rdnyn_econ_denial_resourcesYes, rdnyn_econ_denial_resourcesNo, string.Empty);
+            utilControls.RadioButtonSetSelection(rdnyn_econ_disposed_shelterYes, rdnyn_econ_disposed_shelterNo, string.Empty);
+            utilControls.RadioButtonSetSelection(rdnyn_emo_verbal_abuseYes, rdnyn_emo_verbal_abuseNo, string.Empty);
+            utilControls.RadioButtonSetSelection(rdnyn_econ_non_verbal_abuseYes, rdnyn_econ_non_verbal_abuseNo, string.Empty);
+            utilControls.RadioButtonSetSelection(rdnyn_up_know_to_seek_helpYes, rdnyn_up_know_to_seek_helpNo, string.Empty);
+            utilControls.RadioButtonSetSelection(rdnyn_up_seek_helpYes, rdnyn_up_seek_helpNo, string.Empty);
+            cboHelpsource.SelectedValue = "-1";
+            cbostatus.SelectedValue = "-1";
+            utilControls.RadioButtonSetSelection(rdnyn_satisfied_outcomeYes, rdnyn_satisfied_outcomeNo, string.Empty);
+            utilControls.RadioButtonSetSelection(rdnyn_other_emer_supportYes, rdnyn_other_emer_supportNo, string.Empty);
+            utilControls.RadioButtonSetSelection(rdnyn_other_nutritionYes, rdnyn_other_nutritionNo, string.Empty);
+            utilControls.RadioButtonSetSelection(rdnyn_hiv_testingYes, rdnyn_hiv_testingNo, string.Empty);
+            utilControls.RadioButtonSetSelection(rdnyn_pepYes, rdnyn_pepNo, string.Empty);
+            utilControls.RadioButtonSetSelection(rdnyn_counsellingYes, rdnyn_counsellingNo, string.Empty);
+            utilControls.RadioButtonSetSelection(rdnyn_shelterYes, rdnyn_shelterNo, string.Empty);
+            utilControls.RadioButtonSetSelection(rdnyn_refferedYes, rdnyn_refferedNo, string.Empty);
+
+        }
+
+        protected bool ValidateInput()
+        {
+            bool isValid = false;
+
+            if (cboHHMemberName.SelectedValue.ToString() == "-1" || cbosex.SelectedValue.ToString() == "-1" || txtAge.Text == string.Empty || dtscreenDate.Checked == false || txtscreeningOfficer.Text == string.Empty ||
+                (rdnyn_sexual_rapeYes.Checked == false && rdnyn_sexual_rapeNo.Checked == false) ||
+                (rdnyn_sexual_defilementYes.Checked == false && rdnyn_sexual_defilementNo.Checked == false) ||
+                (rdnyn_sexual_attempt_defilementYes.Checked == false && rndyn_sexual_attempt_defilementNo.Checked == false) ||
+                (rdnyn_sexual_harrassmentYes.Checked == false && rdnyn_sexual_harrassmentNo.Checked == false) ||
+                (rdnyn_phy_threatYes.Checked == false && rdnyn_phy_threatNo.Checked == false) ||
+                (rdnyn_phy_assaultYes.Checked == false && rdnyn_phy_assaultNo.Checked == false) ||
+                (rdnyn_phy_deprived_foodYes.Checked == false && rdnyn_phy_deprived_foodNo.Checked == false) ||
+                (rdnyn_phy_child_laborYes.Checked == false && rdnyn_phy_child_laborNo.Checked == false) ||
+                (rdnyn_phy_sleepoutYes.Checked == false && rdnyn_phy_sleepoutNo.Checked == false) ||
+                (rdnyn_econ_not_spendYes.Checked == false && rdnyn_econ_not_spendNo.Checked == false) ||
+                (rdnyn_econ_denied_edu_supportYes.Checked == false && rdnyn_econ_denied_edu_supportNo.Checked == false) ||
+                (rdnyn_econ_denial_resourcesYes.Checked == false && rdnyn_econ_denial_resourcesNo.Checked == false) ||
+                (rdnyn_econ_disposed_shelterYes.Checked == false && rdnyn_econ_disposed_shelterNo.Checked == false) ||
+                (rdnyn_emo_verbal_abuseYes.Checked == false && rdnyn_emo_verbal_abuseNo.Checked == false) ||
+                (rdnyn_econ_non_verbal_abuseYes.Checked == false && rdnyn_econ_non_verbal_abuseNo.Checked == false) ||
+                (rdnyn_up_know_to_seek_helpYes.Checked == false && rdnyn_up_know_to_seek_helpNo.Checked == false) ||
+                (rdnyn_up_seek_helpYes.Checked == false && rdnyn_up_seek_helpNo.Checked == false) ||
+                (rdnyn_satisfied_outcomeYes.Checked == false && rdnyn_satisfied_outcomeNo.Checked == false) ||
+                (rdnyn_other_emer_supportYes.Checked == false && rdnyn_other_emer_supportNo.Checked == false) ||
+                (rdnyn_other_nutritionYes.Checked == false && rdnyn_other_nutritionNo.Checked == false) ||
+                (rdnyn_hiv_testingYes.Checked == false && rdnyn_hiv_testingNo.Checked == false) ||
+                (rdnyn_pepYes.Checked == false && rdnyn_pepNo.Checked == false) ||
+                (rdnyn_counsellingYes.Checked == false && rdnyn_counsellingNo.Checked == false) ||
+                (rdnyn_shelterYes.Checked == false && rdnyn_shelterNo.Checked == false) ||
+                (rdnyn_refferedYes.Checked == false && rdnyn_refferedYes.Checked == false) )
+            {
+                isValid = false;
+            }
+            else
+            {
+                isValid = true;
+            }
+
+               if (rdnyn_up_seek_helpYes.Checked == true )
+            {
+                if (cboHelpsource.SelectedValue.ToString() == "-1" || cbostatus.SelectedValue.ToString() == "-1")
+                {
+                    isValid = false;
+                }
+                else
+                {
+                    isValid = true;
+                }
+            }
+
+            return isValid;
+        }
+
         private void lblBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Back();
@@ -443,12 +542,48 @@ namespace SOCY_MIS
 
         private void cboHHMemberName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ReturnHHMDetails(cboHHMemberName.SelectedValue.ToString());
+            if (cboHHMemberName.SelectedIndex != -1)
+            {
+                ReturnHHMDetails(cboHHMemberName.SelectedValue.ToString());
+            }
+            
         }
 
         private void btnsave_Click(object sender, EventArgs e)
         {
-            save(strgbv_id);
+            if (ValidateInput() == true)
+            {
+                save(strgbv_id);
+            }
+            else
+            {
+                MessageBox.Show("Please input all required fields,save failed","SOCY MIS",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+            }
+            
+        }
+
+        private void lblNew_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Clear();
+        }
+
+        private void rdnyn_up_seek_helpYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdnyn_up_seek_helpYes.Checked == true)
+            {
+                lblHelpsource.ForeColor = Color.Red;
+                lblstatus.ForeColor = Color.Red;
+            }
+            else
+            {
+                lblHelpsource.ForeColor = Color.Black;
+                lblstatus.ForeColor = Color.Black;
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Clear();
         }
     }
 }

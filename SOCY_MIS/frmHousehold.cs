@@ -193,6 +193,17 @@ namespace SOCY_MIS
                             FormMaster.LoadControl(frmNewRAS, this.Name, false);
                             #endregion
                             break;
+                        case utilConstants.cRTGBV:
+                            #region Set Selected
+                            frmGBV_screeningTool frmNewGBV = new frmGBV_screeningTool();
+                            frmNewGBV.FormCalling = this;
+                            frmNewGBV.FormMaster = FormMaster;
+                            frmNewGBV.HouseholdId = ObjectId;
+                            GBV_screeningTool._gbv_id = strID;
+                            FormMaster.LoadControl(frmNewGBV, this.Name, false);
+                            #endregion
+                            break;
+
                     }
                 }
                 #endregion Display Form
@@ -574,6 +585,7 @@ namespace SOCY_MIS
             #region Set Selected
             frmGBV_screeningTool frmNew = new frmGBV_screeningTool();
             frmNew.HouseholdId = ObjectId;
+            GBV_screeningTool._gbv_id = string.Empty;
             frmNew.FormCalling = this;
             frmNew.FormMaster = FormMaster;
             FormMaster.LoadControl(frmNew, this.Name, false);

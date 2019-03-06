@@ -56,6 +56,7 @@
             this.gclDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbNew = new System.Windows.Forms.GroupBox();
             this.tlpDisplay01 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblGBV = new System.Windows.Forms.LinkLabel();
             this.lblAdherence = new System.Windows.Forms.LinkLabel();
             this.llblViralLoad = new System.Windows.Forms.LinkLabel();
             this.llblHouseholdAssessment = new System.Windows.Forms.LinkLabel();
@@ -78,7 +79,6 @@
             this.gbManage = new System.Windows.Forms.GroupBox();
             this.tlpDisplay02 = new System.Windows.Forms.TableLayoutPanel();
             this.lbl_risk_assessment = new System.Windows.Forms.LinkLabel();
-            this.lblGBV = new System.Windows.Forms.LinkLabel();
             this.gbDetails.SuspendLayout();
             this.tlpDisplay03.SuspendLayout();
             this.gbRecords.SuspendLayout();
@@ -458,10 +458,23 @@
             this.tlpDisplay01.Size = new System.Drawing.Size(156, 259);
             this.tlpDisplay01.TabIndex = 3;
             // 
+            // lblGBV
+            // 
+            this.lblGBV.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblGBV.AutoSize = true;
+            this.lblGBV.Location = new System.Drawing.Point(4, 225);
+            this.lblGBV.Name = "lblGBV";
+            this.lblGBV.Size = new System.Drawing.Size(122, 26);
+            this.lblGBV.TabIndex = 34;
+            this.lblGBV.TabStop = true;
+            this.lblGBV.Text = "Gender Based Violence Screening Tool";
+            this.lblGBV.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblGBV_LinkClicked);
+            // 
             // lblAdherence
             // 
             this.lblAdherence.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblAdherence.AutoSize = true;
+            this.lblAdherence.Enabled = false;
             this.lblAdherence.Location = new System.Drawing.Point(4, 172);
             this.lblAdherence.Name = "lblAdherence";
             this.lblAdherence.Size = new System.Drawing.Size(131, 13);
@@ -723,18 +736,6 @@
             this.lbl_risk_assessment.TabStop = true;
             this.lbl_risk_assessment.Text = "Risk Assessment Details";
             this.lbl_risk_assessment.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbl_risk_assessment_LinkClicked);
-            // 
-            // lblGBV
-            // 
-            this.lblGBV.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblGBV.AutoSize = true;
-            this.lblGBV.Location = new System.Drawing.Point(4, 225);
-            this.lblGBV.Name = "lblGBV";
-            this.lblGBV.Size = new System.Drawing.Size(122, 26);
-            this.lblGBV.TabIndex = 34;
-            this.lblGBV.TabStop = true;
-            this.lblGBV.Text = "Gender Based Violence Screening Tool";
-            this.lblGBV.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblGBV_LinkClicked);
             // 
             // frmHousehold
             // 

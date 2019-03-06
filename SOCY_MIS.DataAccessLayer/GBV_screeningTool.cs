@@ -20,6 +20,7 @@ namespace SOCY_MIS.DataAccessLayer
 
         #region Variables
         public static string gbv_id = string.Empty;
+        public static string _gbv_id = string.Empty;
         public static string wrd_id = string.Empty;
         public static string hhm_id = string.Empty;
         public static string gbv_screen_officer = string.Empty;

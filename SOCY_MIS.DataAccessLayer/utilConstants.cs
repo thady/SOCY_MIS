@@ -193,6 +193,8 @@ namespace SOCY_MIS.DataAccessLayer
         public const string cRTHIP = "6";
         public const string cRTRiskAssessment = "7";
         public const string cRTOVCViralLoad = "8";
+        public const string cRTGBV = "9";
+        public const string cRTAdherence = "10";
         #endregion PopUp Types
 
         #region Social Worker Type
