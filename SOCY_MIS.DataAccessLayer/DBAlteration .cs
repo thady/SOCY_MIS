@@ -548,6 +548,8 @@ namespace SOCY_MIS.DataAccessLayer
                 Createben_gbv_screening(dbCon);
                 Createlst_gbv_service(dbCon);
                 Createlst_gbv_service_status(dbCon);
+                Insertlst_gbv_service(dbCon);
+                Insertlst_gbv_service_status(dbCon);
                 //DropRecreateLstAgro_enterprise_ranking(dbCon); //bushenyi error..should be removed when error is rectified.Should not be in version control
 
                 dbCon.TransactionCommit();
@@ -13634,6 +13636,44 @@ namespace SOCY_MIS.DataAccessLayer
             #endregion SQL
         }
 
+        private static void Insertlst_gbv_service(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            strSQL = "DELETE FROM lst_gbv_service";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            #region SQL
+            strSQL = @"INSERT [dbo].[lst_gbv_service] ([gbv_sr_id], [gbv_sr_name], [gbv_sr_order], [gbv_sr_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'1', N'Police', 1, 1, N'EN', N'1', N'1', CAST(N'2019-02-20T14:54:02.073' AS DateTime), CAST(N'2019-02-20T14:54:02.073' AS DateTime))
+            INSERT [dbo].[lst_gbv_service] ([gbv_sr_id], [gbv_sr_name], [gbv_sr_order], [gbv_sr_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'2', N'Health Facility', 2, 1, N'EN', N'1', N'1', CAST(N'2019-02-20T14:54:21.333' AS DateTime), CAST(N'2019-02-20T14:54:21.333' AS DateTime))
+            INSERT [dbo].[lst_gbv_service] ([gbv_sr_id], [gbv_sr_name], [gbv_sr_order], [gbv_sr_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'3', N'Community Development Officer (CDO)', 3, 1, N'EN', N'1', N'1', CAST(N'2019-02-20T14:55:02.300' AS DateTime), CAST(N'2019-02-20T14:55:02.300' AS DateTime))
+            INSERT [dbo].[lst_gbv_service] ([gbv_sr_id], [gbv_sr_name], [gbv_sr_order], [gbv_sr_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'4', N'NGO', 4, 1, N'EN', N'1', N'1', CAST(N'2019-02-20T14:55:17.560' AS DateTime), CAST(N'2019-02-20T14:55:17.560' AS DateTime))
+            INSERT [dbo].[lst_gbv_service] ([gbv_sr_id], [gbv_sr_name], [gbv_sr_order], [gbv_sr_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'5', N'Religious leaders', 5, 1, N'EN', N'1', N'1', CAST(N'2019-02-20T14:55:35.330' AS DateTime), CAST(N'2019-02-20T14:55:35.330' AS DateTime))
+            INSERT [dbo].[lst_gbv_service] ([gbv_sr_id], [gbv_sr_name], [gbv_sr_order], [gbv_sr_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'6', N'Cultutral leader', 6, 1, N'EN', N'1', N'1', CAST(N'2019-02-20T14:55:54.317' AS DateTime), CAST(N'2019-02-20T14:55:54.317' AS DateTime))
+            INSERT [dbo].[lst_gbv_service] ([gbv_sr_id], [gbv_sr_name], [gbv_sr_order], [gbv_sr_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'7', N'Local Council ', 7, 1, N'EN', N'1', N'1', CAST(N'2019-02-20T14:56:10.130' AS DateTime), CAST(N'2019-02-20T14:56:10.130' AS DateTime))";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion SQL
+        }
+
+        private static void Insertlst_gbv_service_status(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            strSQL = "DELETE FROM lst_gbv_service_status";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            #region SQL
+            strSQL = @"INSERT [dbo].[lst_gbv_service_status] ([gbv_st_id], [gbv_st_name], [gbv_st_order], [gbv_st_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'1', N'Closed/Resolved', 1, 1, N'EN', N'1', N'1', CAST(N'2019-02-20T14:56:56.363' AS DateTime), CAST(N'2019-02-20T14:56:56.363' AS DateTime))
+                        INSERT [dbo].[lst_gbv_service_status] ([gbv_st_id], [gbv_st_name], [gbv_st_order], [gbv_st_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'2', N'Ongoing', 2, 1, N'EN', N'1', N'1', CAST(N'2019-02-20T14:57:17.850' AS DateTime), CAST(N'2019-02-20T14:57:17.850' AS DateTime))
+                        INSERT [dbo].[lst_gbv_service_status] ([gbv_st_id], [gbv_st_name], [gbv_st_order], [gbv_st_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'3', N'Nothing being done', 3, 1, N'EN', N'1', N'1', CAST(N'2019-02-20T14:57:34.890' AS DateTime), CAST(N'2019-02-20T14:57:34.890' AS DateTime))";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion SQL
+        }
+
         private static void InsertLst_linkages_coordinator(DBConnection dbCon)
         {
             #region Variables
@@ -17689,7 +17729,11 @@ namespace SOCY_MIS.DataAccessLayer
             INSERT [dbo].[lst_agro_scoring_crops] ([crop_sid], [crop_id], [crop_name], [crop_order], [crop_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update],[type_id]) VALUES (31, N'31', N'Spinach', 31, 1, N'EN', N'Mar  9 2018 11:45AM', N'1', CAST(N'1900-01-02T00:00:00.000' AS DateTime), CAST(N'2018-03-09T11:45:39.543' AS DateTime), N'1')
             INSERT [dbo].[lst_agro_scoring_crops] ([crop_sid], [crop_id], [crop_name], [crop_order], [crop_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update],[type_id]) VALUES (32, N'32', N'Collard greens(Sukumawiiki)', 32, 1, N'EN', N'Mar  9 2018 11:45AM', N'1', CAST(N'1900-01-02T00:00:00.000' AS DateTime), CAST(N'2018-03-09T11:45:39.543' AS DateTime), N'1')
             INSERT [dbo].[lst_agro_scoring_crops] ([crop_sid], [crop_id], [crop_name], [crop_order], [crop_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update],[type_id]) VALUES (33, N'33', N'Solanum macrocarpon(Nakati)', 33, 1, N'EN', N'Mar  9 2018 11:45AM', N'1', CAST(N'1900-01-02T00:00:00.000' AS DateTime), CAST(N'2018-03-09T11:45:39.543' AS DateTime), N'1')
-            INSERT [dbo].[lst_agro_scoring_crops] ([crop_sid], [crop_id], [crop_name], [crop_order], [crop_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update],[type_id]) VALUES (34, N'34', N'White Japanese egg plants(Ntula)', 34, 1, N'EN', N'Mar  9 2018 11:45AM', N'1', CAST(N'1900-01-02T00:00:00.000' AS DateTime), CAST(N'2018-03-09T11:45:39.543' AS DateTime), N'1')";
+            INSERT [dbo].[lst_agro_scoring_crops] ([crop_sid], [crop_id], [crop_name], [crop_order], [crop_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update],[type_id]) VALUES (34, N'34', N'White Japanese egg plants(Ntula)', 34, 1, N'EN', N'Mar  9 2018 11:45AM', N'1', CAST(N'1900-01-02T00:00:00.000' AS DateTime), CAST(N'2018-03-09T11:45:39.543' AS DateTime), N'1')
+
+            INSERT [dbo].[lst_agro_scoring_crops] ([crop_sid], [crop_id], [crop_name], [crop_order], [crop_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update],[type_id]) VALUES (35, N'35', N'Organic Sugar', 35, 1, N'EN', N'Mar  9 2018 11:45AM', N'1', CAST(N'1900-01-02T00:00:00.000' AS DateTime), CAST(N'2018-03-09T11:45:39.543' AS DateTime), N'2')
+            INSERT [dbo].[lst_agro_scoring_crops] ([crop_sid], [crop_id], [crop_name], [crop_order], [crop_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update],[type_id]) VALUES (36, N'36', N'Body Jelly', 36, 1, N'EN', N'Mar  9 2018 11:45AM', N'1', CAST(N'1900-01-02T00:00:00.000' AS DateTime), CAST(N'2018-03-09T11:45:39.543' AS DateTime), N'2')
+            INSERT [dbo].[lst_agro_scoring_crops] ([crop_sid], [crop_id], [crop_name], [crop_order], [crop_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update],[type_id]) VALUES (37, N'37', N'Mosquito Repellant', 37, 1, N'EN', N'Mar  9 2018 11:45AM', N'1', CAST(N'1900-01-02T00:00:00.000' AS DateTime), CAST(N'2018-03-09T11:45:39.543' AS DateTime), N'2')";
 
 
             dbCon.ExecuteNonQuery(strSQL);
@@ -27656,6 +27700,11 @@ namespace SOCY_MIS.DataAccessLayer
 	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
            ,[usr_date_create] ,[usr_date_update])
      VALUES (99,'99','9','Confectionery',99,1 ,'EN',1,1,GETDATE(),GETDATE())";
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 143)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (143,'143','9','Mosquito Repellant Jelly',143,1 ,'EN',1,1,GETDATE(),GETDATE())";
             dbCon.ExecuteNonQuery(strSQL);
 
 

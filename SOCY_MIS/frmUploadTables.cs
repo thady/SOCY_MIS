@@ -788,7 +788,7 @@ namespace SOCY_MIS
 
         private void cboDownloadList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            panelDates.Visible = cboDownloadList.SelectedValue.ToString() == "hh_household_home_visit" || cboDownloadList.SelectedValue.ToString() == "hh_household_home_visit_member" ? true : false;
+            panelDates.Visible = cboDownloadList.SelectedValue.ToString() == "hh_household_home_visit" || cboDownloadList.SelectedValue.ToString() == "hh_household_home_visit_member" || cboDownloadList.SelectedValue.ToString() == "hh_household" || cboDownloadList.SelectedValue.ToString() == "hh_household_member" ? true : false;
         }
     }
 }

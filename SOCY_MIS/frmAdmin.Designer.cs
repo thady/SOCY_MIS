@@ -30,6 +30,7 @@
         {
             this.gbAdminFunctions = new System.Windows.Forms.GroupBox();
             this.tlpDisplay01 = new System.Windows.Forms.TableLayoutPanel();
+            this.llblDownload = new System.Windows.Forms.LinkLabel();
             this.llblDataTransfer = new System.Windows.Forms.LinkLabel();
             this.llblUserManagement = new System.Windows.Forms.LinkLabel();
             this.llblRoleManagement = new System.Windows.Forms.LinkLabel();
@@ -37,7 +38,6 @@
             this.llblDCConnect = new System.Windows.Forms.LinkLabel();
             this.llbdistrict_download = new System.Windows.Forms.LinkLabel();
             this.pnlPlaceHolder = new System.Windows.Forms.Panel();
-            this.llblDownload = new System.Windows.Forms.LinkLabel();
             this.gbAdminFunctions.SuspendLayout();
             this.tlpDisplay01.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +77,19 @@
             this.tlpDisplay01.Size = new System.Drawing.Size(156, 174);
             this.tlpDisplay01.TabIndex = 2;
             // 
+            // llblDownload
+            // 
+            this.llblDownload.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.llblDownload.AutoSize = true;
+            this.llblDownload.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llblDownload.Location = new System.Drawing.Point(3, 154);
+            this.llblDownload.Name = "llblDownload";
+            this.llblDownload.Size = new System.Drawing.Size(85, 13);
+            this.llblDownload.TabIndex = 6;
+            this.llblDownload.TabStop = true;
+            this.llblDownload.Text = "DownLoad Data";
+            this.llblDownload.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblDownload_LinkClicked);
+            // 
             // llblDataTransfer
             // 
             this.llblDataTransfer.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -84,10 +97,10 @@
             this.llblDataTransfer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llblDataTransfer.Location = new System.Drawing.Point(3, 127);
             this.llblDataTransfer.Name = "llblDataTransfer";
-            this.llblDataTransfer.Size = new System.Drawing.Size(139, 13);
+            this.llblDataTransfer.Size = new System.Drawing.Size(67, 13);
             this.llblDataTransfer.TabIndex = 4;
             this.llblDataTransfer.TabStop = true;
-            this.llblDataTransfer.Text = "Data Upload and Download";
+            this.llblDataTransfer.Text = "Upload Data";
             this.llblDataTransfer.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblDataTransfer_LinkClicked);
             // 
             // llblUserManagement
@@ -166,19 +179,6 @@
             this.pnlPlaceHolder.Name = "pnlPlaceHolder";
             this.pnlPlaceHolder.Size = new System.Drawing.Size(730, 513);
             this.pnlPlaceHolder.TabIndex = 1;
-            // 
-            // llblDownload
-            // 
-            this.llblDownload.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.llblDownload.AutoSize = true;
-            this.llblDownload.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblDownload.Location = new System.Drawing.Point(3, 154);
-            this.llblDownload.Name = "llblDownload";
-            this.llblDownload.Size = new System.Drawing.Size(85, 13);
-            this.llblDownload.TabIndex = 6;
-            this.llblDownload.TabStop = true;
-            this.llblDownload.Text = "DownLoad Data";
-            this.llblDownload.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblDownload_LinkClicked);
             // 
             // frmAdmin
             // 
