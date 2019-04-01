@@ -805,6 +805,16 @@ namespace SOCY_MIS
             cboTrainigSession.ValueMember = "ttps_id";
             #endregion Training Type
 
+            if (cboTrainingType.SelectedValue.ToString() == "8")
+            {
+                rdnIndirectBen.Enabled = true;
+            }
+            else
+            {
+                rdnIndirectBen.Enabled = false;
+                rdnIndirectBen.Checked = false;
+            }
+
         }
 
         private void btnNewP_Click(object sender, EventArgs e)

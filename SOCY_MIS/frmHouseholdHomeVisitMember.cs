@@ -218,7 +218,8 @@ namespace SOCY_MIS
             rbtnFSNNutritionNo.Checked = false;
             rbtnFSNNutritionYes.Checked = false;
             rbtnFSNReferredNo.Checked = false;
-            rbtnHHPHivPos.Checked = false; 
+            rbtnHHPHivPos.Checked = false;
+            rbtnHHPHivTNR.Checked = false;
             rbtnFSNReferredYes.Checked = false;
             rbtnFSNWashNo.Checked = false;
             rbtnHHPHivNeg.Checked = false;
@@ -310,6 +311,7 @@ namespace SOCY_MIS
             rbtnFSNNutritionYes.Checked = false;
             rbtnFSNReferredNo.Checked = false;
             rbtnHHPHivPos.Checked = false;
+            rbtnHHPHivTNR.Checked = false;
             rbtnFSNReferredYes.Checked = false;
             rbtnFSNWashNo.Checked = false;
             rbtnHHPHivNeg.Checked = false;
@@ -583,21 +585,31 @@ namespace SOCY_MIS
                                 rbtnHHPHivNeg.Checked = false;
                                 rbtnHHPHivPos.Checked = true;
                                 rbtnHHPHivUnknown.Checked = false;
+                                rbtnHHPHivTNR.Checked = false;
                                 break;
                             case "2":
                                 rbtnHHPHivNeg.Checked = true;
                                 rbtnHHPHivPos.Checked = false;
                                 rbtnHHPHivUnknown.Checked = false;
+                                rbtnHHPHivTNR.Checked = false;
                                 break;
                             case "3":
                                 rbtnHHPHivNeg.Checked = false;
                                 rbtnHHPHivPos.Checked = false;
                                 rbtnHHPHivUnknown.Checked = true;
+                                rbtnHHPHivTNR.Checked = false;
+                                break;
+                            case "5":
+                                rbtnHHPHivNeg.Checked = false;
+                                rbtnHHPHivPos.Checked = false;
+                                rbtnHHPHivUnknown.Checked = false;
+                                rbtnHHPHivTNR.Checked = true;
                                 break;
                             default:
                                 rbtnHHPHivNeg.Checked = false;
                                 rbtnHHPHivPos.Checked = false;
                                 rbtnHHPHivUnknown.Checked = false;
+                                rbtnHHPHivTNR.Checked = false;
                                 break;
                         }
                         #endregion HIV Status
@@ -950,6 +962,8 @@ namespace SOCY_MIS
                             dalHHVM.hst_id = utilConstants.cHSTNegative;
                         else if (rbtnHHPHivUnknown.Checked)
                             dalHHVM.hst_id = utilConstants.cHSTUnKnown;
+                        else if (rbtnHHPHivTNR.Checked)
+                            dalHHVM.hst_id = utilConstants.cHSTNR;
                         else
                             dalHHVM.hst_id = utilConstants.cDFEmptyListValue;
                         #endregion HIS Status
@@ -1053,7 +1067,7 @@ namespace SOCY_MIS
                 strMessage = strMessage + "," + utilConstants.cMIDRequiredFields;
             else if (rbtnMemberActiveYes.Checked == false && rbtnMemberActiveNo.Checked == false)
                 strMessage = "Beneficiary status cannot be empty";
-            else if(rbtnMemberActiveYes.Checked == true && (rbtnHHPHivNeg.Checked == false && rbtnHHPHivPos.Checked == false && rbtnHHPHivUnknown.Checked == false))
+            else if(rbtnMemberActiveYes.Checked == true && (rbtnHHPHivNeg.Checked == false && rbtnHHPHivPos.Checked == false && rbtnHHPHivUnknown.Checked == false && rbtnHHPHivTNR.Checked == false))
                 strMessage = "HIV Status cannot be empty";
             else if (rbtnHHPHivPos.Checked == true && (rbtnHHPArtYes.Checked == false   && rbtnHHPArtNo.Checked == false))
                 strMessage = "HIV ART status cannot be empty";
@@ -1129,21 +1143,31 @@ namespace SOCY_MIS
                     rbtnHHPHivNeg.Checked = false;
                     rbtnHHPHivPos.Checked = true;
                     rbtnHHPHivUnknown.Checked = false;
+                    rbtnHHPHivTNR.Checked = false;
                     break;
                 case "2":
                     rbtnHHPHivNeg.Checked = true;
                     rbtnHHPHivPos.Checked = false;
                     rbtnHHPHivUnknown.Checked = false;
+                    rbtnHHPHivTNR.Checked = false;
                     break;
                 case "3":
                     rbtnHHPHivNeg.Checked = false;
                     rbtnHHPHivPos.Checked = false;
                     rbtnHHPHivUnknown.Checked = true;
+                    rbtnHHPHivTNR.Checked = false;
+                    break;
+                case "5":
+                    rbtnHHPHivNeg.Checked = false;
+                    rbtnHHPHivPos.Checked = false;
+                    rbtnHHPHivUnknown.Checked = false;
+                    rbtnHHPHivTNR.Checked = true;
                     break;
                 default:
                     rbtnHHPHivNeg.Checked = false;
                     rbtnHHPHivPos.Checked = false;
                     rbtnHHPHivUnknown.Checked = false;
+                    rbtnHHPHivTNR.Checked = false;
                     break;
             }
 

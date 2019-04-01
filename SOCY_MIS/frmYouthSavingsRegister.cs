@@ -733,5 +733,10 @@ namespace SOCY_MIS
         {
             Back();
         }
+
+        private void btnedit_Click(object sender, EventArgs e)
+        {
+            tlpDisplay01.Enabled = true;
+        }
     }
 }

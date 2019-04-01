@@ -171,7 +171,7 @@ namespace SOCY_MIS
             if (SystemConstants.ValidateDistrictID())
             {
                 save_update_hh_hip_details();
-                ClearControls();
+               
                 ReturnHipList(SystemConstants.hh_record_guid);
             }
             else
@@ -317,6 +317,7 @@ namespace SOCY_MIS
                     //save
                     hh_household_improvement_plan.save_update_hh_hip_details("insert");
                     MessageBox.Show("Success");
+                    ClearControls();
                 }
                 else
                 {
@@ -426,6 +427,7 @@ namespace SOCY_MIS
                     //save
                     hh_household_improvement_plan.save_update_hh_hip_details("update");
                     MessageBox.Show("Success");
+
                 }
             }
 

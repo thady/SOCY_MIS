@@ -56,6 +56,7 @@ namespace SOCY_MIS.DataAccessLayer
         public const string cHSTNegative = "2";
         public const string cHSTUnKnown = "3";
         public const string cHSTUnDisclosed = "4";
+        public const string cHSTNR = "5";
         #endregion HIV Status
 
         #region Member Type

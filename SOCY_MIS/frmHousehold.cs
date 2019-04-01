@@ -575,6 +575,7 @@ namespace SOCY_MIS
             #region Set Selected
             frmViralLoadCommunityIAC frmNew = new frmViralLoadCommunityIAC();
             frmNew.FormCalling = this;
+            frmNew.HouseholdId = ObjectId;
             frmNew.FormMaster = FormMaster;
             FormMaster.LoadControl(frmNew, this.Name, false);
             #endregion

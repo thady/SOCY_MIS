@@ -13689,7 +13689,7 @@ namespace SOCY_MIS.DataAccessLayer
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('6','Byamugisha Tanazio',6,'782294914','Byamugishat.kcson@gmail.com','CSO004',0,'9','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('7','Twinomujuni Aaron',7,'774113257','twinoaron@gmail.com','CSO002',1,'10','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('8','Maimuna Naluyima',8,'777059680','maimunanarwima@gmail.com','CSO004',1,'11','1','1','2018-07-19','2018-07-19')
-            INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('9','Akori Christine',9,'774210645','AkoriChristine@yahoo.com','CSO001',1,'13','1','1','2018-07-19','2018-07-19')
+            INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('9','Ayanga Tana',9,'0781001868','','CSO001',1,'13','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('10','Oshabahebwa Opherous',10,'787788963','opherousone@gmail.com','CSO001',1,'15','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('12','Mwongyera Varias',12,'783660718','Mwongyerav@gmail.com','CSO002',1,'16','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('13','Omony Emmanuel',13,'772359672','Lamobrf2016@gmail.com','CSO001',1,'17','1','1','2018-07-19','2018-07-19')
@@ -14324,7 +14324,9 @@ namespace SOCY_MIS.DataAccessLayer
                 INSERT [dbo].[lst_institution] ([ins_id], [ins_name], [ins_order], [ins_active], [dst_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'99', N'Kiwumulo Orphanage and Vocational Centre', 99, 1, N'13', N'1', N'1', GETDATE(), GETDATE()) 
                 INSERT [dbo].[lst_institution] ([ins_id], [ins_name], [ins_order], [ins_active], [dst_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'175', N'Iris Ministries', 175, 1, N'12', N'1', N'1', GETDATE(), GETDATE())
                 INSERT [dbo].[lst_institution] ([ins_id], [ins_name], [ins_order], [ins_active], [dst_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'176', N'Ewaffe project', 176, 1, N'12', N'1', N'1', GETDATE(), GETDATE())
-                INSERT [dbo].[lst_institution] ([ins_id], [ins_name], [ins_order], [ins_active], [dst_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'177', N'Peace Transitional Home', 177, 1, N'12', N'1', N'1', GETDATE(), GETDATE())";
+                INSERT [dbo].[lst_institution] ([ins_id], [ins_name], [ins_order], [ins_active], [dst_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'177', N'Peace Transitional Home', 177, 1, N'12', N'1', N'1', GETDATE(), GETDATE())
+                INSERT [dbo].[lst_institution] ([ins_id], [ins_name], [ins_order], [ins_active], [dst_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'178', N'Ibanda Babies Home', 178, 1, N'18', N'1', N'1', GETDATE(), GETDATE())
+                INSERT [dbo].[lst_institution] ([ins_id], [ins_name], [ins_order], [ins_active], [dst_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'179', N'Bright Future Transitional Home', 179, 1, N'19', N'1', N'1', GETDATE(), GETDATE())";
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
         }
@@ -25289,8 +25291,17 @@ namespace SOCY_MIS.DataAccessLayer
             strSQL = @"IF NOT EXISTS(SELECT hst_name FROM lst_hiv_status WHERE hst_name = 'Un disclosed')
                     BEGIN
                     INSERT INTO [dbo].[lst_hiv_status]([hst_id],[hst_name],[hst_order],[hst_active],[lng_id],
-                    [usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update])
-                    VALUES('4','Un disclosed',4,1,'EN' ,1,1,GETDATE(),GETDATE())
+                    [usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('4','Un disclosed',4,1,'EN' ,1,1,GETDATE(),GETDATE())
+                   
+                    END ";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion lst_hiv_status
+
+            #region lst_hiv_status
+            strSQL = @"IF NOT EXISTS(SELECT hst_name FROM lst_hiv_status WHERE hst_name = 'TNR')
+                    BEGIN
+                    INSERT INTO [dbo].[lst_hiv_status]([hst_id],[hst_name],[hst_order],[hst_active],[lng_id],
+                    [usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('5','TNR',5,1,'EN' ,1,1,GETDATE(),GETDATE())
                     END ";
             dbCon.ExecuteNonQuery(strSQL);
             #endregion lst_hiv_status
@@ -27707,6 +27718,12 @@ namespace SOCY_MIS.DataAccessLayer
      VALUES (143,'143','9','Mosquito Repellant Jelly',143,1 ,'EN',1,1,GETDATE(),GETDATE())";
             dbCon.ExecuteNonQuery(strSQL);
 
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 144)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (144,'144','9','Yoghurt making',144,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
 
 
 
@@ -27978,6 +27995,15 @@ namespace SOCY_MIS.DataAccessLayer
             Insertlst_youth_assessment_scoring_parameters(dbCon);
 
             NewHomeVisitReason(dbCon);
+
+            #region lst_hiv_status
+            strSQL = @"IF NOT EXISTS(SELECT hst_name FROM lst_hiv_status WHERE hst_name = 'TNR')
+                    BEGIN
+                    INSERT INTO [dbo].[lst_hiv_status]([hst_id],[hst_name],[hst_order],[hst_active],[lng_id],
+                    [usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('5','TNR',5,1,'EN' ,1,1,GETDATE(),GETDATE())
+                    END ";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion lst_hiv_status
         }
 
         public static void NewCso(DBConnection dbCon)

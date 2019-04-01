@@ -59,7 +59,9 @@ namespace SOCY_MIS
         private void frmGBV_screeningTool_Load(object sender, EventArgs e)
         {
             Return_lookups();
+           
             LoadHHDisplay();
+            LoadSocialWorkers();
 
             if (GBV_screeningTool._gbv_id != string.Empty)
             {
@@ -82,7 +84,7 @@ namespace SOCY_MIS
                 GBV_screeningTool.gbv_id = Guid.NewGuid().ToString();
                 GBV_screeningTool.wrd_id = cboParish.SelectedValue.ToString();
                 GBV_screeningTool.hhm_id = cboHHMemberName.SelectedValue.ToString();
-                GBV_screeningTool.gbv_screen_officer = txtscreeningOfficer.Text;
+                GBV_screeningTool.gbv_screen_officer = cboSocialWorker.SelectedValue.ToString();
                 GBV_screeningTool.gbv_screen_date = dtscreenDate.Value.Date;
                 GBV_screeningTool.hh_tel = txtPhone.Text;
                 GBV_screeningTool.yn_sexual_rape = utilControls.RadioButtonGetSelection(rdnyn_sexual_rapeYes, rdnyn_sexual_rapeNo);
@@ -127,7 +129,7 @@ namespace SOCY_MIS
                 #region setVariables
                 GBV_screeningTool.gbv_id = strgbv_id;
                 GBV_screeningTool.hhm_id = cboHHMemberName.SelectedValue.ToString();
-                GBV_screeningTool.gbv_screen_officer = txtscreeningOfficer.Text;
+                GBV_screeningTool.gbv_screen_officer = cboSocialWorker.SelectedValue.ToString();
                 GBV_screeningTool.gbv_screen_date = dtscreenDate.Value.Date;
                 GBV_screeningTool.hh_tel = txtPhone.Text;
                 GBV_screeningTool.yn_sexual_rape = utilControls.RadioButtonGetSelection(rdnyn_sexual_rapeYes, rdnyn_sexual_rapeNo);
@@ -181,7 +183,7 @@ namespace SOCY_MIS
                
 
                 cboHHMemberName.SelectedValue = dtRow["hhm_id"].ToString();
-                txtscreeningOfficer.Text = dtRow["gbv_screen_officer"].ToString();
+                cboSocialWorker.SelectedValue = dtRow["gbv_screen_officer"].ToString();
 
                 dtscreenDate.Value = Convert.ToDateTime(dtRow["gbv_screen_date"]);
                 txtPhone.Text = dtRow["hh_tel"].ToString();
@@ -368,13 +370,26 @@ namespace SOCY_MIS
         }
 
 
+        protected void LoadSocialWorkers()
+        {
+            dt = GBV_screeningTool.LoadSocialWorkers(cboDistrict.SelectedValue.ToString());
+            DataRow emptyRow = dt.NewRow();
+            emptyRow["swk_id"] = "-1";
+            emptyRow["swk_name"] = "Select one";
+            dt.Rows.InsertAt(emptyRow, 0);
+
+            cboSocialWorker.DataSource = dt;
+            cboSocialWorker.DisplayMember = "swk_name";
+            cboSocialWorker.ValueMember = "swk_id";
+        }
+
         protected void Clear()
         {
             GBV_screeningTool._gbv_id = string.Empty;
             strgbv_id = string.Empty;
 
             cboHHMemberName.SelectedValue = "-1";
-            txtscreeningOfficer.Clear();
+            cboSocialWorker.SelectedValue = "-1";
             txtAge.Clear();
             cbosex.SelectedValue = "-1";
             dtscreenDate.Value = DateTime.Today;
@@ -413,7 +428,7 @@ namespace SOCY_MIS
         {
             bool isValid = false;
 
-            if (cboHHMemberName.SelectedValue.ToString() == "-1" || cbosex.SelectedValue.ToString() == "-1" || txtAge.Text == string.Empty || dtscreenDate.Checked == false || txtscreeningOfficer.Text == string.Empty ||
+            if (cboHHMemberName.SelectedValue.ToString() == "-1" || cbosex.SelectedValue.ToString() == "-1" || txtAge.Text == string.Empty || dtscreenDate.Checked == false || cboSocialWorker.SelectedValue.ToString() == "-1" ||
                 (rdnyn_sexual_rapeYes.Checked == false && rdnyn_sexual_rapeNo.Checked == false) ||
                 (rdnyn_sexual_defilementYes.Checked == false && rdnyn_sexual_defilementNo.Checked == false) ||
                 (rdnyn_sexual_attempt_defilementYes.Checked == false && rndyn_sexual_attempt_defilementNo.Checked == false) ||
@@ -438,7 +453,7 @@ namespace SOCY_MIS
                 (rdnyn_pepYes.Checked == false && rdnyn_pepNo.Checked == false) ||
                 (rdnyn_counsellingYes.Checked == false && rdnyn_counsellingNo.Checked == false) ||
                 (rdnyn_shelterYes.Checked == false && rdnyn_shelterNo.Checked == false) ||
-                (rdnyn_refferedYes.Checked == false && rdnyn_refferedYes.Checked == false) )
+                (rdnyn_refferedYes.Checked == false && rdnyn_refferedNo.Checked == false) )
             {
                 isValid = false;
             }
@@ -573,17 +588,42 @@ namespace SOCY_MIS
             {
                 lblHelpsource.ForeColor = Color.Red;
                 lblstatus.ForeColor = Color.Red;
+                cboHelpsource.Enabled = true;
+                cbostatus.Enabled = true;
             }
             else
             {
+                cboHelpsource.Enabled = false;
+                cbostatus.Enabled = false;
                 lblHelpsource.ForeColor = Color.Black;
                 lblstatus.ForeColor = Color.Black;
+
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Clear();
+        }
+
+        private void cboSocialWorker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtPhone.Text = GBV_screeningTool.LoadSocialWorkerPhone(cboSocialWorker.SelectedValue.ToString());
+        }
+
+        private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+       (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

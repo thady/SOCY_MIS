@@ -50,19 +50,19 @@ namespace SOCY_MIS.DataAccessLayer
                 switch (lookup_type)
                 {
                     case "district":
-                        SQL = "SELECT dst_id, dst_name FROM lst_district";
+                        SQL = "SELECT dst_id, dst_name FROM lst_district ORDER BY dst_name ASC";
                         break;
                     case "subcounty":
                         if (id != string.Empty)
                         {
-                            SQL = "SELECT sct_id,sct_name FROM lst_sub_county WHERE dst_id = '" + id + "'";
+                            SQL = "SELECT sct_id,sct_name FROM lst_sub_county WHERE dst_id = '" + id + "' ORDER BY sct_name ASC";
                         }else
                         {
-                            SQL = "SELECT sct_id,sct_name FROM lst_sub_county";
+                            SQL = "SELECT sct_id,sct_name FROM lst_sub_county ORDER BY sct_name ASC";
                         }
                         break;
                     case "parish":
-                        SQL = "SELECT wrd_id,wrd_name FROM lst_ward";
+                        SQL = "SELECT wrd_id,wrd_name FROM lst_ward ORDER BY wrd_name ASC";
                         break;
                     case "IP":
                         SQL = "SELECT prt_id,prt_name FROM lst_partner";
@@ -366,7 +366,7 @@ namespace SOCY_MIS.DataAccessLayer
                          AND (@sct_id = '-1' OR R.sct_id = @sct_id)
                          AND (@prt_id = '-1' OR R.prt_id = @prt_id)
                          AND (@cso_id = '-1' OR R.cso_id = @cso_id)
-                        AND (@tr_name = '' OR tr_name LIKE '%' + @tr_name  + '%')
+                        AND (@tr_name = '' OR T.ttp_name LIKE '%' + @tr_name  + '%')
                         ";
                 using (conn = new SqlConnection(SQLConnection))
                 using (SqlCommand cmd = new SqlCommand(SQL, conn))

@@ -81,7 +81,7 @@
             this.cboIP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboIP.FormattingEnabled = true;
             this.cboIP.Location = new System.Drawing.Point(271, 9);
-            this.cboIP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboIP.Margin = new System.Windows.Forms.Padding(4);
             this.cboIP.Name = "cboIP";
             this.cboIP.Size = new System.Drawing.Size(132, 25);
             this.cboIP.TabIndex = 79;
@@ -92,7 +92,7 @@
             this.cboSubCounty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboSubCounty.FormattingEnabled = true;
             this.cboSubCounty.Location = new System.Drawing.Point(731, 60);
-            this.cboSubCounty.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboSubCounty.Margin = new System.Windows.Forms.Padding(4);
             this.cboSubCounty.Name = "cboSubCounty";
             this.cboSubCounty.Size = new System.Drawing.Size(132, 25);
             this.cboSubCounty.TabIndex = 61;
@@ -124,7 +124,7 @@
             this.tlpDisplay01.Controls.Add(this.label9, 3, 2);
             this.tlpDisplay01.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpDisplay01.Location = new System.Drawing.Point(4, 4);
-            this.tlpDisplay01.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay01.Margin = new System.Windows.Forms.Padding(4);
             this.tlpDisplay01.Name = "tlpDisplay01";
             this.tlpDisplay01.RowCount = 3;
             this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.64486F));
@@ -138,7 +138,7 @@
             this.cboParish.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboParish.FormattingEnabled = true;
             this.cboParish.Location = new System.Drawing.Point(271, 105);
-            this.cboParish.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboParish.Margin = new System.Windows.Forms.Padding(4);
             this.cboParish.Name = "cboParish";
             this.cboParish.Size = new System.Drawing.Size(132, 25);
             this.cboParish.TabIndex = 86;
@@ -170,7 +170,7 @@
             this.cboDistrict.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboDistrict.FormattingEnabled = true;
             this.cboDistrict.Location = new System.Drawing.Point(271, 60);
-            this.cboDistrict.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboDistrict.Margin = new System.Windows.Forms.Padding(4);
             this.cboDistrict.Name = "cboDistrict";
             this.cboDistrict.Size = new System.Drawing.Size(132, 25);
             this.cboDistrict.TabIndex = 59;
@@ -214,7 +214,7 @@
             this.cboCso.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboCso.FormattingEnabled = true;
             this.cboCso.Location = new System.Drawing.Point(731, 9);
-            this.cboCso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboCso.Margin = new System.Windows.Forms.Padding(4);
             this.cboCso.Name = "cboCso";
             this.cboCso.Size = new System.Drawing.Size(132, 25);
             this.cboCso.TabIndex = 65;
@@ -264,11 +264,11 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 301F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 77F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 78F));
             this.tableLayoutPanel1.Controls.Add(this.btnsearch, 2, 0);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 144);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.64486F));
@@ -328,7 +328,7 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label29);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmEducationSubsidySearch";
             this.Size = new System.Drawing.Size(960, 709);
             this.Load += new System.EventHandler(this.frmEducationSubsidySearch_Load);

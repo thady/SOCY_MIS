@@ -224,6 +224,111 @@ namespace SOCY_MIS.DataAccessLayer
             return dt;
         }
 
+        public static DataTable LoadSocialWorkers(string dst_id)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter Adapt;
+            string SQL = string.Empty;
+            try
+            {
+
+                SQL = @"SELECT swk_first_name + ' ' + swk_last_name AS swk_name,swk_id FROM swm_social_worker S
+                        INNER JOIN lst_ward W ON S.wrd_id = W.wrd_id
+                        INNER JOIN lst_sub_county sct ON W.sct_id = sct.sct_id
+                        INNER JOIN lst_district dst ON sct.dst_id = dst.dst_id
+                        WHERE dst.dst_id = '{0}' AND swt_id = '1'";
+
+                SQL = string.Format(SQL, dst_id);
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(SQL, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    Adapt = new SqlDataAdapter(cmd);
+                    Adapt.Fill(dt);
+
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            finally
+            {
+                if (conn.State == ConnectionState.Open) { conn.Close(); }
+            }
+
+            return dt;
+        }
+
+        public static string LoadSocialWorkerPhone(string swk_id)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter Adapt;
+            string SQL = string.Empty;
+            string phone = string.Empty;
+            try
+            {
+
+                SQL = @"SELECT swk_phone FROM swm_social_worker WHERE swk_id = '{0}'";
+
+                SQL = string.Format(SQL, swk_id);
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(SQL, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    Adapt = new SqlDataAdapter(cmd);
+                    Adapt.Fill(dt);
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        DataRow dtRow = dt.Rows[0];
+                        phone = dtRow["swk_phone"].ToString();
+                    }
+
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            finally
+            {
+                if (conn.State == ConnectionState.Open) { conn.Close(); }
+            }
+
+            return phone;
+        }
+
         public static DataTable ReturnLists(string Table,string id)
         {
             DataTable dt = new DataTable();
