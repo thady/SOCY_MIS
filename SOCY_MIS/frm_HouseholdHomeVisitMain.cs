@@ -13,8 +13,9 @@ using SOCY_MIS.DataAccessLayer;
 
 namespace SOCY_MIS
 {
-    public partial class frmHouseholdAssessmentMain : UserControl
+    public partial class frm_HouseholdHomeVisitMain : UserControl
     {
+
         #region Variables
         private string strHHId = string.Empty;
         private string strId = string.Empty;
@@ -48,50 +49,15 @@ namespace SOCY_MIS
         }
         #endregion Property
 
-        #region Form Methods
-        public frmHouseholdAssessmentMain()
+        public frm_HouseholdHomeVisitMain()
         {
             InitializeComponent();
         }
 
-        private void frmHouseholdAssessmentMain_Load(object sender, EventArgs e)
+        private void tpHomeVisit_Click(object sender, EventArgs e)
         {
-            #region Variables
-            frmHouseholdAssessment frmNewA = new frmHouseholdAssessment();
-            frmHouseholdAssessmentMember frmNewM = new frmHouseholdAssessmentMember();
-            #endregion Variables
 
-            #region Load Controls
-            frmNewA.HouseholdId = HouseholdId;
-            frmNewA.ObjectId = ObjectId;
-            frmNewA.FormCalling = this;
-            frmNewA.FormMaster = FormMaster;
-            LoadControl(frmNewA, this.Name, tpAssessment);
-
-            frmNewM.HouseholdId = HouseholdId;
-            frmNewM.ObjectId = ObjectId;
-            frmNewM.FormCalling = this;
-            frmNewM.FormMaster = FormMaster;
-            LoadControl(frmNewM, this.Name, tpMember);
-
-            MembersTab(ObjectId.Length != 0);
-            #endregion Load Controls
         }
-        #endregion Form Methdos
-
-        #region Public Methods
-        public void Back()
-        {
-            FormCalling.LoadMembers();
-            FormCalling.LoadRecords();
-            FormMaster.LoadControl(FormCalling, this.Name, false);
-        }
-
-        public void MembersTab(bool blnEnabled)
-        {
-            ((Control)tcHouseholdAssessment.TabPages[1]).Enabled = blnEnabled;
-        }
-        #endregion Public Methods
 
         #region Private Methods
         private void LoadControl(Control ctlUC, string strCallingForm, TabPage tpContainer)
@@ -116,9 +82,49 @@ namespace SOCY_MIS
         }
         #endregion Private Methods
 
-        private void tpAssessment_Click(object sender, EventArgs e)
+        private void frm_HouseholdHomeVisitMain_Load(object sender, EventArgs e)
         {
+            #region Variables
+            frm_HouseholdHomeVisit frmNewV = new frm_HouseholdHomeVisit();
+            frm_HouseholdHomevisitMember frmNewMM = new frm_HouseholdHomevisitMember();
+            #endregion Variables
 
+            #region Load Controls
+            frmNewV.HouseholdId = HouseholdId;
+            frmNewV.ObjectId = ObjectId;
+            frmNewV.FormCalling = this;
+            frmNewV.FormMaster = FormMaster;
+            LoadControl(frmNewV, this.Name, tpHomeVisit);
+
+
+            frmNewMM.HouseholdId = HouseholdId;
+            frmNewMM.ObjectId = ObjectId;
+            frmNewMM.FormCalling = this;
+            frmNewMM.FormMaster = FormMaster;
+            LoadControl(frmNewMM, this.Name, tpMember);
+
+           MembersTab(ObjectId);
+            #endregion Load Controls
+        }
+
+        public void MembersTab(string object_id)
+        {
+            if (object_id.Length != 0 && (SystemConstants.household_status == "1" || SystemConstants.household_status == "2"))
+            {
+                ((Control)tcHomeVisit.TabPages[1]).Enabled = true;
+            }
+            else
+            {
+                ((Control)tcHomeVisit.TabPages[1]).Enabled = false;
+            }
+
+        }
+
+        public void Back()
+        {
+            FormCalling.LoadMembers();
+            FormCalling.LoadRecords();
+            FormMaster.LoadControl(FormCalling, this.Name, false);
         }
     }
 }

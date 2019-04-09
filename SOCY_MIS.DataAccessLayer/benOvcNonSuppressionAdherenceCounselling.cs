@@ -22,6 +22,7 @@ namespace SOCY_MIS.DataAccessLayer
         #region Variables
 
         #region ben_adherence_counselling
+        public static string _iac_id = string.Empty;
         public static string iac_id = string.Empty;
         public static string hhm_id = string.Empty;
         public static string health_fac_name = string.Empty;
@@ -369,7 +370,7 @@ namespace SOCY_MIS.DataAccessLayer
                  VALUES ('{0}' ,'{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}' ,'{11}','{12}')
 	            END ELSE BEGIN
 	            UPDATE ben_adherence_counselling_non_supress_household_action SET nsp_action_timeline = '{4}',nsp_action_progress = '{5}',nsp_action_person_responsible = '{6}',
-	            usr_id_update = '{8}',usr_date_update = GETDATE()
+	            usr_id_update = '{8}',usr_date_update = GETDATE() WHERE iac_id = '{1}' AND iacr_id = '{2}' AND nsp_action_id = '{3}'
 	            END";
 
             SQL = string.Format(SQL, iacrs_id, iac_id, iacr_id, nsp_action_id, nsp_action_timeline, nsp_action_progress, nsp_action_person_responsible, usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id, district_id);
@@ -410,5 +411,116 @@ namespace SOCY_MIS.DataAccessLayer
                 if (conn.State == ConnectionState.Open) { conn.Close(); }
             }
         }
+
+        #region LoadDisplay
+        public static DataTable LoadDisplay(string iac_id,string returnType)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter Adapt;
+            string SQL = string.Empty;
+            switch (returnType)
+            {
+                case "ben_adherence_counselling":
+                    SQL = "SELECT* FROM ben_adherence_counselling WHERE iac_id = '{0}'";
+                    SQL = string.Format(SQL, iac_id);
+                    break;
+                case "ben_adherence_counselling_non_supress_health_facility":
+                    SQL = @"SELECT nspfac_id,L.nsp_name FROM ben_adherence_counselling_non_supress_health_facility F
+                            INNER JOIN lst_non_supress_health_facility L ON F.nspfac_id = L.nsp_id WHERE iac_id = '{0}'";
+
+                    SQL = string.Format(SQL, iac_id);
+                    break;
+            }
+            try
+            {
+                string strConn = dbCon.ToString();
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(SQL, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    Adapt = new SqlDataAdapter(cmd);
+                    Adapt.Fill(dt);
+
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            finally
+            {
+                if (conn.State == ConnectionState.Open) { conn.Close(); }
+            }
+
+            return dt;
+        }
+
+
+        public static DataTable LoadDisplayLine(string iac_id, string iacr_id)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter Adapt;
+            string SQL = string.Empty;
+
+            SQL = @"SELECT hh.nsp_name AS [Reason for non suppression],AA.nspa_name AS [Action Taken],A.nsp_action_timeline AS [Agreed Timeline],A.nsp_action_progress AS [Action Progress],A.nsp_action_person_responsible AS [Person Responsible] FROM ben_adherence_counselling_non_supress_household_action A
+                    INNER JOIN lst_non_supress_household hh ON A.iacr_id = hh.nsp_id
+                    INNER JOIN lst_non_supress_action AA ON A.nsp_action_id = AA.nspa_id
+                    WHERE A.iac_id = '{0}' AND iacr_id = '{1}'";
+
+            SQL = string.Format(SQL,iac_id, iacr_id);
+            try
+            {
+                string strConn = dbCon.ToString();
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(SQL, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    Adapt = new SqlDataAdapter(cmd);
+                    Adapt.Fill(dt);
+
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            finally
+            {
+                if (conn.State == ConnectionState.Open) { conn.Close(); }
+            }
+
+            return dt;
+        }
+        #endregion
     }
 }

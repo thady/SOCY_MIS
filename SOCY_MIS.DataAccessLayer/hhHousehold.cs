@@ -555,6 +555,17 @@ namespace SOCY_MIS.DataAccessLayer
                             "INNER JOIN hh_household hh ON hhm.hh_id = hh.hh_id " + 
                             "WHERE hh.hh_id = '{0}' ";
                         break;
+                    case utilConstants.cRTAdherence:
+                        strSQLTemp = "SELECT '" + dr["rtp_id"].ToString() + "' AS rtp_id, " +
+                            "'" + dr["rtp_name"].ToString() + "' AS rtp_name, " +
+                            dr["rtp_order"].ToString() + " AS rtp_order, " +
+                            "RTRIM(LTRIM(CONVERT(CHAR(15), V.visit_date, 106))) AS the_date_display, " +
+                            "V.visit_date AS the_date, v.iac_id AS rcd_id " +
+                            "FROM ben_adherence_counselling V " +
+                            "INNER JOIN hh_household_member hhm ON V.hhm_id = hhm.hhm_id " +
+                            "INNER JOIN hh_household hh ON hhm.hh_id = hh.hh_id " +
+                            "WHERE hh.hh_id = '{0}' ";
+                        break;
                 }
 
                 if (strSQLTemp.Length != 0)

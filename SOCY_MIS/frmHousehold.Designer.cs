@@ -79,6 +79,7 @@
             this.gbManage = new System.Windows.Forms.GroupBox();
             this.tlpDisplay02 = new System.Windows.Forms.TableLayoutPanel();
             this.lbl_risk_assessment = new System.Windows.Forms.LinkLabel();
+            this.lblHomevisitNew = new System.Windows.Forms.LinkLabel();
             this.gbDetails.SuspendLayout();
             this.tlpDisplay03.SuspendLayout();
             this.gbRecords.SuspendLayout();
@@ -100,9 +101,9 @@
             this.gbDetails.Controls.Add(this.llblBack);
             this.gbDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbDetails.Location = new System.Drawing.Point(236, 7);
-            this.gbDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbDetails.Margin = new System.Windows.Forms.Padding(4);
             this.gbDetails.Name = "gbDetails";
-            this.gbDetails.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbDetails.Padding = new System.Windows.Forms.Padding(4);
             this.gbDetails.Size = new System.Drawing.Size(973, 215);
             this.gbDetails.TabIndex = 0;
             this.gbDetails.TabStop = false;
@@ -119,7 +120,7 @@
             this.tlpDisplay03.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tlpDisplay03.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tlpDisplay03.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDisplay03.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 77F));
+            this.tlpDisplay03.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 78F));
             this.tlpDisplay03.Controls.Add(this.lblWardDisplay, 0, 3);
             this.tlpDisplay03.Controls.Add(this.label8, 0, 3);
             this.tlpDisplay03.Controls.Add(this.lblStatus, 3, 0);
@@ -135,7 +136,7 @@
             this.tlpDisplay03.Controls.Add(this.lblVillageDisplay, 4, 3);
             this.tlpDisplay03.Controls.Add(this.lblVillage, 3, 3);
             this.tlpDisplay03.Location = new System.Drawing.Point(40, 37);
-            this.tlpDisplay03.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay03.Margin = new System.Windows.Forms.Padding(4);
             this.tlpDisplay03.Name = "tlpDisplay03";
             this.tlpDisplay03.RowCount = 4;
             this.tlpDisplay03.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -336,9 +337,9 @@
             this.gbRecords.Controls.Add(this.dgvRecords);
             this.gbRecords.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbRecords.Location = new System.Drawing.Point(4, 580);
-            this.gbRecords.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbRecords.Margin = new System.Windows.Forms.Padding(4);
             this.gbRecords.Name = "gbRecords";
-            this.gbRecords.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbRecords.Padding = new System.Windows.Forms.Padding(4);
             this.gbRecords.Size = new System.Drawing.Size(1205, 348);
             this.gbRecords.TabIndex = 1;
             this.gbRecords.TabStop = false;
@@ -354,11 +355,11 @@
             this.tlpDisplay04.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
             this.tlpDisplay04.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tlpDisplay04.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDisplay04.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tlpDisplay04.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 54F));
             this.tlpDisplay04.Controls.Add(this.lblRecordType, 0, 0);
             this.tlpDisplay04.Controls.Add(this.cbRecordType, 1, 0);
             this.tlpDisplay04.Location = new System.Drawing.Point(43, 82);
-            this.tlpDisplay04.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay04.Margin = new System.Windows.Forms.Padding(4);
             this.tlpDisplay04.Name = "tlpDisplay04";
             this.tlpDisplay04.RowCount = 1;
             this.tlpDisplay04.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -384,7 +385,7 @@
             this.cbRecordType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbRecordType.FormattingEnabled = true;
             this.cbRecordType.Location = new System.Drawing.Point(204, 6);
-            this.cbRecordType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbRecordType.Margin = new System.Windows.Forms.Padding(4);
             this.cbRecordType.Name = "cbRecordType";
             this.cbRecordType.Size = new System.Drawing.Size(308, 25);
             this.cbRecordType.TabIndex = 3;
@@ -404,7 +405,7 @@
             this.gclRtpName,
             this.gclDate});
             this.dgvRecords.Location = new System.Drawing.Point(8, 128);
-            this.dgvRecords.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvRecords.Margin = new System.Windows.Forms.Padding(4);
             this.dgvRecords.MultiSelect = false;
             this.dgvRecords.Name = "dgvRecords";
             this.dgvRecords.Size = new System.Drawing.Size(1189, 213);
@@ -447,9 +448,9 @@
             this.gbNew.Controls.Add(this.tlpDisplay01);
             this.gbNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbNew.Location = new System.Drawing.Point(4, 7);
-            this.gbNew.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbNew.Margin = new System.Windows.Forms.Padding(4);
             this.gbNew.Name = "gbNew";
-            this.gbNew.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbNew.Padding = new System.Windows.Forms.Padding(4);
             this.gbNew.Size = new System.Drawing.Size(224, 342);
             this.gbNew.TabIndex = 2;
             this.gbNew.TabStop = false;
@@ -460,7 +461,7 @@
             this.tlpDisplay01.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpDisplay01.ColumnCount = 1;
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay01.Controls.Add(this.lblGBV, 0, 7);
+            this.tlpDisplay01.Controls.Add(this.lblHomevisitNew, 0, 8);
             this.tlpDisplay01.Controls.Add(this.lblAdherence, 0, 5);
             this.tlpDisplay01.Controls.Add(this.llblViralLoad, 0, 4);
             this.tlpDisplay01.Controls.Add(this.llblHouseholdAssessment, 0, 0);
@@ -468,20 +469,21 @@
             this.tlpDisplay01.Controls.Add(this.llblHomeVisit, 0, 2);
             this.tlpDisplay01.Controls.Add(this.llblHip, 0, 1);
             this.tlpDisplay01.Controls.Add(this.llblHomeVisitArchive, 0, 5);
+            this.tlpDisplay01.Controls.Add(this.lblGBV, 0, 7);
             this.tlpDisplay01.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpDisplay01.Location = new System.Drawing.Point(8, 23);
-            this.tlpDisplay01.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay01.Margin = new System.Windows.Forms.Padding(4);
             this.tlpDisplay01.Name = "tlpDisplay01";
-            this.tlpDisplay01.RowCount = 8;
-            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.66667F));
-            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.66667F));
-            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.92135F));
-            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.96629F));
-            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpDisplay01.RowCount = 9;
+            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.36536F));
+            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.15157F));
+            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.041279F));
+            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.434378F));
+            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.18607F));
+            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.61368F));
+            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.00677F));
+            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.20045F));
+            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.00044F));
             this.tlpDisplay01.Size = new System.Drawing.Size(208, 319);
             this.tlpDisplay01.TabIndex = 3;
             // 
@@ -489,20 +491,20 @@
             // 
             this.lblGBV.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblGBV.AutoSize = true;
-            this.lblGBV.Location = new System.Drawing.Point(5, 277);
+            this.lblGBV.Location = new System.Drawing.Point(5, 258);
             this.lblGBV.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGBV.Name = "lblGBV";
-            this.lblGBV.Size = new System.Drawing.Size(162, 34);
+            this.lblGBV.Size = new System.Drawing.Size(137, 17);
             this.lblGBV.TabIndex = 34;
             this.lblGBV.TabStop = true;
-            this.lblGBV.Text = "Gender Based Violence Screening Tool";
+            this.lblGBV.Text = "GBV Screening Tool";
             this.lblGBV.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblGBV_LinkClicked);
             // 
             // lblAdherence
             // 
             this.lblAdherence.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblAdherence.AutoSize = true;
-            this.lblAdherence.Location = new System.Drawing.Point(5, 213);
+            this.lblAdherence.Location = new System.Drawing.Point(5, 224);
             this.lblAdherence.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAdherence.Name = "lblAdherence";
             this.lblAdherence.Size = new System.Drawing.Size(174, 17);
@@ -515,12 +517,12 @@
             // 
             this.llblViralLoad.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.llblViralLoad.AutoSize = true;
-            this.llblViralLoad.Location = new System.Drawing.Point(4, 160);
+            this.llblViralLoad.Location = new System.Drawing.Point(4, 155);
             this.llblViralLoad.Name = "llblViralLoad";
-            this.llblViralLoad.Size = new System.Drawing.Size(190, 34);
+            this.llblViralLoad.Size = new System.Drawing.Size(174, 17);
             this.llblViralLoad.TabIndex = 32;
             this.llblViralLoad.TabStop = true;
-            this.llblViralLoad.Text = "Viral Load Status Monitoring Tool";
+            this.llblViralLoad.Text = "Viral Load Monitoring Tool";
             this.llblViralLoad.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblViralLoad_LinkClicked);
             // 
             // llblHouseholdAssessment
@@ -540,7 +542,7 @@
             // 
             this.llblReferral.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.llblReferral.AutoSize = true;
-            this.llblReferral.Location = new System.Drawing.Point(5, 127);
+            this.llblReferral.Location = new System.Drawing.Point(5, 121);
             this.llblReferral.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.llblReferral.Name = "llblReferral";
             this.llblReferral.Size = new System.Drawing.Size(59, 17);
@@ -553,7 +555,7 @@
             // 
             this.llblHomeVisit.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.llblHomeVisit.AutoSize = true;
-            this.llblHomeVisit.Location = new System.Drawing.Point(5, 97);
+            this.llblHomeVisit.Location = new System.Drawing.Point(5, 92);
             this.llblHomeVisit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.llblHomeVisit.Name = "llblHomeVisit";
             this.llblHomeVisit.Size = new System.Drawing.Size(75, 17);
@@ -566,7 +568,7 @@
             // 
             this.llblHip.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.llblHip.AutoSize = true;
-            this.llblHip.Location = new System.Drawing.Point(4, 57);
+            this.llblHip.Location = new System.Drawing.Point(4, 56);
             this.llblHip.Name = "llblHip";
             this.llblHip.Size = new System.Drawing.Size(193, 17);
             this.llblHip.TabIndex = 32;
@@ -578,7 +580,7 @@
             // 
             this.llblHomeVisitArchive.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.llblHomeVisitArchive.AutoSize = true;
-            this.llblHomeVisitArchive.Location = new System.Drawing.Point(5, 246);
+            this.llblHomeVisitArchive.Location = new System.Drawing.Point(5, 190);
             this.llblHomeVisitArchive.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.llblHomeVisitArchive.Name = "llblHomeVisitArchive";
             this.llblHomeVisitArchive.Size = new System.Drawing.Size(136, 17);
@@ -649,9 +651,9 @@
             this.gbMembers.Controls.Add(this.dgvMembers);
             this.gbMembers.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbMembers.Location = new System.Drawing.Point(228, 272);
-            this.gbMembers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbMembers.Margin = new System.Windows.Forms.Padding(4);
             this.gbMembers.Name = "gbMembers";
-            this.gbMembers.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbMembers.Padding = new System.Windows.Forms.Padding(4);
             this.gbMembers.Size = new System.Drawing.Size(973, 272);
             this.gbMembers.TabIndex = 3;
             this.gbMembers.TabStop = false;
@@ -673,7 +675,7 @@
             this.gclGender,
             this.gclYearOfBirth});
             this.dgvMembers.Location = new System.Drawing.Point(8, 23);
-            this.dgvMembers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvMembers.Margin = new System.Windows.Forms.Padding(4);
             this.dgvMembers.MultiSelect = false;
             this.dgvMembers.Name = "dgvMembers";
             this.dgvMembers.Size = new System.Drawing.Size(957, 242);
@@ -733,9 +735,9 @@
             this.gbManage.Controls.Add(this.tlpDisplay02);
             this.gbManage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbManage.Location = new System.Drawing.Point(4, 357);
-            this.gbManage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbManage.Margin = new System.Windows.Forms.Padding(4);
             this.gbManage.Name = "gbManage";
-            this.gbManage.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbManage.Padding = new System.Windows.Forms.Padding(4);
             this.gbManage.Size = new System.Drawing.Size(224, 215);
             this.gbManage.TabIndex = 4;
             this.gbManage.TabStop = false;
@@ -753,7 +755,7 @@
             this.tlpDisplay02.Controls.Add(this.lbl_risk_assessment, 0, 3);
             this.tlpDisplay02.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpDisplay02.Location = new System.Drawing.Point(8, 23);
-            this.tlpDisplay02.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay02.Margin = new System.Windows.Forms.Padding(4);
             this.tlpDisplay02.Name = "tlpDisplay02";
             this.tlpDisplay02.RowCount = 6;
             this.tlpDisplay02.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -778,6 +780,19 @@
             this.lbl_risk_assessment.Text = "Risk Assessment Details";
             this.lbl_risk_assessment.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbl_risk_assessment_LinkClicked);
             // 
+            // lblHomevisitNew
+            // 
+            this.lblHomevisitNew.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblHomevisitNew.AutoSize = true;
+            this.lblHomevisitNew.Location = new System.Drawing.Point(5, 292);
+            this.lblHomevisitNew.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHomevisitNew.Name = "lblHomevisitNew";
+            this.lblHomevisitNew.Size = new System.Drawing.Size(132, 17);
+            this.lblHomevisitNew.TabIndex = 35;
+            this.lblHomevisitNew.TabStop = true;
+            this.lblHomevisitNew.Text = "New Homevisit Tool";
+            this.lblHomevisitNew.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblHomevisitNew_LinkClicked);
+            // 
             // frmHousehold
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -788,7 +803,7 @@
             this.Controls.Add(this.gbNew);
             this.Controls.Add(this.gbRecords);
             this.Controls.Add(this.gbDetails);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmHousehold";
             this.Size = new System.Drawing.Size(1213, 930);
             this.Load += new System.EventHandler(this.frmHousehold_Load);
@@ -866,5 +881,6 @@
         private System.Windows.Forms.LinkLabel llblViralLoad;
         private System.Windows.Forms.LinkLabel lblAdherence;
         private System.Windows.Forms.LinkLabel lblGBV;
+        private System.Windows.Forms.LinkLabel lblHomevisitNew;
     }
 }

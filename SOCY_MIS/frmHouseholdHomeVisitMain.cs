@@ -59,6 +59,7 @@ namespace SOCY_MIS
             #region Variables
             frmHouseholdHomeVisit frmNewV = new frmHouseholdHomeVisit();
             frmHouseholdHomeVisitMember frmNewM = new frmHouseholdHomeVisitMember();
+            frm_HouseholdHomevisitMember frmNewMM = new frm_HouseholdHomevisitMember();
             #endregion Variables
 
             #region Load Controls
@@ -73,6 +74,13 @@ namespace SOCY_MIS
             frmNewM.FormCalling = this;
             frmNewM.FormMaster = FormMaster;
             LoadControl(frmNewM, this.Name, tpMember);
+
+
+            frmNewM.HouseholdId = HouseholdId;
+            frmNewM.ObjectId = ObjectId;
+            frmNewM.FormCalling = this;
+            frmNewM.FormMaster = FormMaster;
+            LoadControl(frmNewMM, this.Name, tpHomevisitMember);
 
             MembersTab(ObjectId);
             #endregion Load Controls
@@ -125,6 +133,11 @@ namespace SOCY_MIS
         #endregion Private Methods
 
         private void tpHomeVisit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbHomevisitMember_Click(object sender, EventArgs e)
         {
 
         }

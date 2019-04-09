@@ -1,6 +1,6 @@
 ﻿namespace SOCY_MIS
 {
-    partial class frmHouseholdHomeVisitMain
+    partial class frm_HouseholdHomeVisitMain
     {
         /// <summary> 
         /// Required designer variable.
@@ -31,7 +31,6 @@
             this.tcHomeVisit = new System.Windows.Forms.TabControl();
             this.tpHomeVisit = new System.Windows.Forms.TabPage();
             this.tpMember = new System.Windows.Forms.TabPage();
-            this.tpHomevisitMember = new System.Windows.Forms.TabPage();
             this.tcHomeVisit.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,21 +41,20 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tcHomeVisit.Controls.Add(this.tpHomeVisit);
             this.tcHomeVisit.Controls.Add(this.tpMember);
-            this.tcHomeVisit.Controls.Add(this.tpHomevisitMember);
-            this.tcHomeVisit.Location = new System.Drawing.Point(0, 4);
-            this.tcHomeVisit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tcHomeVisit.Location = new System.Drawing.Point(8, 8);
+            this.tcHomeVisit.Margin = new System.Windows.Forms.Padding(4);
             this.tcHomeVisit.Name = "tcHomeVisit";
             this.tcHomeVisit.SelectedIndex = 0;
             this.tcHomeVisit.Size = new System.Drawing.Size(1209, 608);
-            this.tcHomeVisit.TabIndex = 1;
+            this.tcHomeVisit.TabIndex = 2;
             // 
             // tpHomeVisit
             // 
             this.tpHomeVisit.AutoScroll = true;
             this.tpHomeVisit.Location = new System.Drawing.Point(4, 25);
-            this.tpHomeVisit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpHomeVisit.Margin = new System.Windows.Forms.Padding(4);
             this.tpHomeVisit.Name = "tpHomeVisit";
-            this.tpHomeVisit.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpHomeVisit.Padding = new System.Windows.Forms.Padding(4);
             this.tpHomeVisit.Size = new System.Drawing.Size(1201, 579);
             this.tpHomeVisit.TabIndex = 0;
             this.tpHomeVisit.Text = "Home Visit";
@@ -67,35 +65,22 @@
             // 
             this.tpMember.AutoScroll = true;
             this.tpMember.Location = new System.Drawing.Point(4, 25);
-            this.tpMember.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpMember.Margin = new System.Windows.Forms.Padding(4);
             this.tpMember.Name = "tpMember";
-            this.tpMember.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpMember.Padding = new System.Windows.Forms.Padding(4);
             this.tpMember.Size = new System.Drawing.Size(1201, 579);
             this.tpMember.TabIndex = 1;
             this.tpMember.Text = "Household Members";
             this.tpMember.UseVisualStyleBackColor = true;
             // 
-            // tpHomevisitMember
-            // 
-            this.tpHomevisitMember.AutoScroll = true;
-            this.tpHomevisitMember.Location = new System.Drawing.Point(4, 25);
-            this.tpHomevisitMember.Name = "tpHomevisitMember";
-            this.tpHomevisitMember.Size = new System.Drawing.Size(1201, 579);
-            this.tpHomevisitMember.TabIndex = 2;
-            this.tpHomevisitMember.Text = "Home Visit Member Services";
-            this.tpHomevisitMember.UseVisualStyleBackColor = true;
-            this.tpHomevisitMember.Click += new System.EventHandler(this.tbHomevisitMember_Click);
-            // 
-            // frmHouseholdHomeVisitMain
+            // frm_HouseholdHomeVisitMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.tcHomeVisit);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "frmHouseholdHomeVisitMain";
-            this.Size = new System.Drawing.Size(1213, 615);
-            this.Load += new System.EventHandler(this.frmHouseholdHomeVisitMain_Load);
+            this.Name = "frm_HouseholdHomeVisitMain";
+            this.Size = new System.Drawing.Size(1209, 608);
+            this.Load += new System.EventHandler(this.frm_HouseholdHomeVisitMain_Load);
             this.tcHomeVisit.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -106,6 +91,5 @@
         private System.Windows.Forms.TabControl tcHomeVisit;
         private System.Windows.Forms.TabPage tpHomeVisit;
         private System.Windows.Forms.TabPage tpMember;
-        private System.Windows.Forms.TabPage tpHomevisitMember;
     }
 }

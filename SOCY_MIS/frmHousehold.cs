@@ -203,6 +203,16 @@ namespace SOCY_MIS
                             FormMaster.LoadControl(frmNewGBV, this.Name, false);
                             #endregion
                             break;
+                        case utilConstants.cRTAdherence:
+                            #region Set Selected
+                            frmViralLoadCommunityIAC frmViralLoadCommunity = new frmViralLoadCommunityIAC();
+                            frmViralLoadCommunity.FormCalling = this;
+                            frmViralLoadCommunity.FormMaster = FormMaster;
+                            frmViralLoadCommunity.HouseholdId = ObjectId;
+                            benOvcNonSuppressionAdherenceCounselling._iac_id = strID;
+                            FormMaster.LoadControl(frmViralLoadCommunity, this.Name, false);
+                            #endregion
+                            break;
 
                     }
                 }
@@ -577,6 +587,7 @@ namespace SOCY_MIS
             frmNew.FormCalling = this;
             frmNew.HouseholdId = ObjectId;
             frmNew.FormMaster = FormMaster;
+            benOvcNonSuppressionAdherenceCounselling._iac_id = string.Empty;
             FormMaster.LoadControl(frmNew, this.Name, false);
             #endregion
         }
@@ -590,6 +601,17 @@ namespace SOCY_MIS
             frmNew.FormCalling = this;
             frmNew.FormMaster = FormMaster;
             FormMaster.LoadControl(frmNew, this.Name, false);
+            #endregion
+        }
+
+        private void lblHomevisitNew_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            #region Set Selected
+            frm_HouseholdHomeVisitMain frmNew = new frm_HouseholdHomeVisitMain();
+            frmNew.HouseholdId = ObjectId;
+            frmNew.FormCalling = this;
+            frmNew.FormMaster = FormMaster;
+            FormMaster.LoadControl(frmNew, this.Name, true);
             #endregion
         }
     }

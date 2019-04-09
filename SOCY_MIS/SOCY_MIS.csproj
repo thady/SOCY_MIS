@@ -732,6 +732,24 @@
     <Compile Include="frm_hh_household_risk_assessment_register.Designer.cs">
       <DependentUpon>frm_hh_household_risk_assessment_register.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_HouseholdHomeVisit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frm_HouseholdHomeVisit.Designer.cs">
+      <DependentUpon>frm_HouseholdHomeVisit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_HouseholdHomeVisitMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frm_HouseholdHomeVisitMain.Designer.cs">
+      <DependentUpon>frm_HouseholdHomeVisitMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_HouseholdHomevisitMember.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frm_HouseholdHomevisitMember.Designer.cs">
+      <DependentUpon>frm_HouseholdHomevisitMember.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_linkages_register.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1086,6 +1104,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_hh_household_risk_assessment_register.resx">
       <DependentUpon>frm_hh_household_risk_assessment_register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_HouseholdHomeVisit.resx">
+      <DependentUpon>frm_HouseholdHomeVisit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_HouseholdHomeVisitMain.resx">
+      <DependentUpon>frm_HouseholdHomeVisitMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_HouseholdHomevisitMember.resx">
+      <DependentUpon>frm_HouseholdHomevisitMember.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_linkages_register.resx">
       <DependentUpon>frm_linkages_register.cs</DependentUpon>

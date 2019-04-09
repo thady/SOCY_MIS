@@ -18,6 +18,7 @@ namespace SOCY_MIS
         private string strHHId = string.Empty;
         private string strId = string.Empty;
         private frmHousehold frmCll = null;
+        private frmHousehold frmPrt = null;
         private Master frmMST = null;
         DataTable dt = null;
         DateTimePicker oDateTimePicker;
@@ -47,12 +48,24 @@ namespace SOCY_MIS
             Return_lookups();
             LoadLists();
             LoadHHDisplay();
+
+            if (benOvcNonSuppressionAdherenceCounselling._iac_id != string.Empty)
+            {
+                LoadDisplay(benOvcNonSuppressionAdherenceCounselling._iac_id);
+                lblguid.Text = benOvcNonSuppressionAdherenceCounselling._iac_id;
+            }
         }
 
         public string HouseholdId
         {
             get { return strHHId; }
             set { strHHId = value; }
+        }
+
+        public frmHousehold FormParent
+        {
+            get { return frmPrt; }
+            set { frmPrt = value; }
         }
 
         protected void Return_lookups()
@@ -147,6 +160,83 @@ namespace SOCY_MIS
             }
         }
 
+        protected void LoadDisplay(string iac_id)
+        {
+            dt = benOvcNonSuppressionAdherenceCounselling.LoadDisplay(iac_id, "ben_adherence_counselling");
+            if (dt.Rows.Count > 0)
+            {
+                DataRow dtRow = dt.Rows[0];
+                cboHHMemberName.SelectedValue = dtRow["hhm_id"].ToString();
+                txtARTNumber.Text = dtRow["art_number"].ToString();
+                txtHealthFacility.Text = dtRow["health_fac_name"].ToString();
+                dtDate.Value = Convert.ToDateTime(dtRow["visit_date"].ToString());
+                cboSocialWorker.SelectedValue = dtRow["swk_id"].ToString();
+                cboLinkagesOfficer.SelectedValue = dtRow["lnk_id"].ToString();
+                cboVisit.Text = dtRow["visit_name"].ToString();
+                utilControls.RadioButtonSetSelection(rdnsupressYes, rdnsupressNo, dtRow["yn_ben_supress"].ToString());
+
+            }
+
+            dt = benOvcNonSuppressionAdherenceCounselling.LoadDisplay(iac_id, "ben_adherence_counselling_non_supress_health_facility");
+            if (dt.Rows.Count > 0)
+            {
+                string reason = string.Empty;
+                string nsp_id = string.Empty;
+                DataRow dtRow;
+                for (int count = 0; count < dt.Rows.Count; count++)
+                {
+                    dtRow = dt.Rows[count];
+                    reason = dtRow["nsp_name"].ToString();
+                    nsp_id = dtRow["nspfac_id"].ToString();
+
+                    for (int x = 0; x < chkNonsupressHealthFacility.Items.Count; x++)
+                    {
+                        DataRowView drv = (DataRowView)chkNonsupressHealthFacility.Items[x];
+                        string nsp_id_item = drv["nsp_id"].ToString();
+                        if (nsp_id == nsp_id_item)
+                        {
+                            chkNonsupressHealthFacility.SetItemChecked(x, true);
+                        }
+                    }
+
+                }
+            }
+        }
+
+
+        protected void LoadDisplayLine(string iac_id,string iacr_id)
+        {
+            dt = benOvcNonSuppressionAdherenceCounselling.LoadDisplayLine(iac_id,iacr_id);
+            if (dt.Rows.Count > 0)
+            {
+                gdvActionsTaken.DataSource = dt;
+
+                this.gdvActionsTaken.DefaultCellStyle.SelectionBackColor = Color.White;
+                this.gdvActionsTaken.DefaultCellStyle.SelectionForeColor = Color.Black;
+                this.gdvActionsTaken.RowsDefaultCellStyle.BackColor = Color.LightGray;
+                this.gdvActionsTaken.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
+                this.gdvActionsTaken.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                this.gdvActionsTaken.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;
+                this.gdvActionsTaken.RowHeadersDefaultCellStyle.BackColor = Color.Black;
+                this.gdvActionsTaken.DefaultCellStyle.SelectionBackColor = Color.Cyan;
+                this.gdvActionsTaken.DefaultCellStyle.SelectionForeColor = Color.Black;
+            }
+            else
+            {
+                gdvActionsTaken.DataSource = dt;
+
+                this.gdvActionsTaken.DefaultCellStyle.SelectionBackColor = Color.White;
+                this.gdvActionsTaken.DefaultCellStyle.SelectionForeColor = Color.Black;
+                this.gdvActionsTaken.RowsDefaultCellStyle.BackColor = Color.LightGray;
+                this.gdvActionsTaken.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
+                this.gdvActionsTaken.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                this.gdvActionsTaken.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;
+                this.gdvActionsTaken.RowHeadersDefaultCellStyle.BackColor = Color.Black;
+                this.gdvActionsTaken.DefaultCellStyle.SelectionBackColor = Color.Cyan;
+                this.gdvActionsTaken.DefaultCellStyle.SelectionForeColor = Color.Black;
+            }
+        }
+
 
         protected void returnHHCodesByLocation()
         {
@@ -193,7 +283,7 @@ namespace SOCY_MIS
             #region  lst_non_supress_household_action
             dt = benOvcNonSuppressionAdherenceCounselling.ReturnLists("lst_non_supress_action");
             gdvNonsupressAction.DataSource = dt;
-            gdvNonsupressAction.Columns["nspa_id"].Visible = false;
+           gdvNonsupressAction.Columns["nspa_id"].Visible = false;
             gdvNonsupressAction.Columns["nspa_name"].HeaderText = "Actions Taken";
             gdvNonsupressAction.Columns["nspa_name"].ReadOnly = true;
 
@@ -252,6 +342,58 @@ namespace SOCY_MIS
 
         private void btnsaveLine_Click(object sender, EventArgs e)
         {
+            if (lblguid.Text == "guid")
+            {
+                MessageBox.Show("No beneficiary adherance monitoring tool selected,make sure to save or select one first", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                ResetGridviewColor();
+
+                #region save_ben_adherence_counselling_non_supress_health_household
+                save_ben_adherence_counselling_non_supress_health_household();
+                #endregion save_ben_adherence_counselling_non_supress_health_household
+
+                for (int i = 0; i < this.gdvNonsupressAction.Rows.Count; i++)
+                {
+                    if (Convert.ToBoolean(this.gdvNonsupressAction.Rows[i].Cells[0].Value))
+                    {
+                        string iacr_id = cboNonsupressHousehold.SelectedValue.ToString();
+                        string nsp_action_id = this.gdvNonsupressAction.Rows[i].Cells[3].Value.ToString();
+                        DateTime nsp_action_timeline = Convert.ToDateTime(this.gdvNonsupressAction.Rows[i].Cells[5].Value.ToString());
+                        string nsp_action_progress = this.gdvNonsupressAction.Rows[i].Cells[1].Value != null ? this.gdvNonsupressAction.Rows[i].Cells[1].Value.ToString() : string.Empty;
+                        string nsp_action_person_responsible = this.gdvNonsupressAction.Rows[i].Cells[2].Value != null ? this.gdvNonsupressAction.Rows[i].Cells[2].Value.ToString() : string.Empty;
+
+                        if (cboNonsupressHousehold.SelectedValue.ToString() == "-1" || nsp_action_timeline == DateTime.Now || nsp_action_progress == null || nsp_action_progress == "" || nsp_action_person_responsible == null || nsp_action_person_responsible == "")
+                        {
+                            MessageBox.Show("Please fill in all fields for actions", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            gdvNonsupressAction.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                        }
+                        else
+                        {
+                            save_ben_adherence_counselling_non_supress_household_action(iacr_id, nsp_action_id, nsp_action_timeline, nsp_action_progress, nsp_action_person_responsible);
+                            gdvNonsupressAction.Rows[i].DefaultCellStyle.BackColor = Color.LightGray;
+
+                            cboNonsupressHousehold_SelectionChangeCommitted(cboNonsupressHousehold,null);
+                        }
+                    }
+                }
+
+                MessageBox.Show("Success", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }  
+        }
+
+        protected void ResetGridviewColor()
+        {
+            this.gdvNonsupressAction.DefaultCellStyle.SelectionBackColor = Color.White;
+            this.gdvNonsupressAction.DefaultCellStyle.SelectionForeColor = Color.Black;
+            this.gdvNonsupressAction.RowsDefaultCellStyle.BackColor = Color.LightGray;
+            this.gdvNonsupressAction.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
+            this.gdvNonsupressAction.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            this.gdvNonsupressAction.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;
+            this.gdvNonsupressAction.RowHeadersDefaultCellStyle.BackColor = Color.Black;
+            this.gdvNonsupressAction.DefaultCellStyle.SelectionBackColor = Color.Cyan;
+            this.gdvNonsupressAction.DefaultCellStyle.SelectionForeColor = Color.Black;
 
         }
 
@@ -304,7 +446,7 @@ namespace SOCY_MIS
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            lblguid.Text = "2533912d-b82f-461f-8254-44161431cddb";
+           
             save();
         }
 
@@ -332,16 +474,37 @@ namespace SOCY_MIS
                 benOvcNonSuppressionAdherenceCounselling.iac_id = Guid.NewGuid().ToString();
                 lblguid.Text = benOvcNonSuppressionAdherenceCounselling.iac_id;
                 benOvcNonSuppressionAdherenceCounselling.save_ben_adherence_counselling("insert");
+
+                #region save_ben_non_supress_reason_health_facility
+                foreach (object itemChecked in chkNonsupressHealthFacility.CheckedItems)
+                {
+                    DataRowView checkeditem = itemChecked as DataRowView;
+                    string nsp_id = checkeditem["nsp_id"].ToString();
+
+                    save_ben_non_supress_reason_health_facility(nsp_id);
+                }
+                #endregion save_ben_non_supress_reason_health_facility
+
                 MessageBox.Show("Success", "SOCY MIS Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 benOvcNonSuppressionAdherenceCounselling.iac_id = lblguid.Text;
                 benOvcNonSuppressionAdherenceCounselling.save_ben_adherence_counselling("update");
-                
+
+                #region save_ben_non_supress_reason_health_facility
+                foreach (object itemChecked in chkNonsupressHealthFacility.CheckedItems)
+                {
+                    DataRowView checkeditem = itemChecked as DataRowView;
+                    string nsp_id = checkeditem["nsp_id"].ToString();
+
+                    save_ben_non_supress_reason_health_facility(nsp_id);
+                }
+                #endregion save_ben_non_supress_reason_health_facility
+
+
                 MessageBox.Show("Success", "SOCY MIS Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            
         }
 
         protected void save_ben_non_supress_reason_health_facility(string nspfac_id)
@@ -363,7 +526,7 @@ namespace SOCY_MIS
 
         protected void save_ben_adherence_counselling_non_supress_health_household()
         {
-            //SQL = string.Format(SQL, iacr_id, iac_id, nsphh_id, usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id, district_id);
+           
             benOvcNonSuppressionAdherenceCounselling.iacr_id = Guid.NewGuid().ToString();
             benOvcNonSuppressionAdherenceCounselling.iac_id = lblguid.Text;
             benOvcNonSuppressionAdherenceCounselling.nsphh_id = cboNonsupressHousehold.SelectedValue.ToString();
@@ -469,7 +632,6 @@ namespace SOCY_MIS
             if (dt.Rows.Count > 0)
             {
                 DataRow dtRow = dt.Rows[0];
-                //cbosex.SelectedValue = dtRow["gnd_id"].ToString();
                 string YOB = dtRow["hhm_year_of_birth"].ToString();
                 #region Age
                 if (YOB != string.Empty)
@@ -484,6 +646,71 @@ namespace SOCY_MIS
                 }
                 #endregion Age
             }
+        }
+
+        private void cboNonsupressHousehold_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cboNonsupressHousehold_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (cboNonsupressHousehold.SelectedValue.ToString() != "-1")
+            {
+                LoadDisplayLine(benOvcNonSuppressionAdherenceCounselling._iac_id, cboNonsupressHousehold.SelectedValue.ToString());
+            }
+        }
+
+        protected void Clear()
+        {
+            cboHHMemberName.SelectedValue = "-1";
+            txtARTNumber.Clear();
+            txtHealthFacility.Clear();
+            dtDate.Value = DateTime.Today;
+            cboSocialWorker.SelectedValue = "-1";
+            cboLinkagesOfficer.SelectedValue = "-1";
+            cboVisit.Text = string.Empty;
+            utilControls.RadioButtonSetSelection(rdnsupressYes, rdnsupressNo, string.Empty);
+
+            dt = null;
+            gdvActionsTaken.DataSource = dt;
+            cboNonsupressHousehold.SelectedValue = "-1";
+            lblguid.Text = "guid";
+
+            dt = null;
+            gdvNonsupressAction.DataSource = dt;
+            gdvNonsupressAction.Columns.Clear();
+            LoadLists();
+        }
+
+        private void lblNew_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Clear();
+        }
+
+        private void Back()
+        {
+            if (FormCalling != null)
+            {
+
+                FormCalling.LoadRecords();
+                FormMaster.LoadControl(FormCalling, this.Name, false);
+            }
+            else if (FormParent != null)
+            {
+                benOvcNonSuppressionAdherenceCounselling._iac_id = string.Empty;
+                benOvcNonSuppressionAdherenceCounselling.iac_id = string.Empty;
+            }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Back();
+        }
+
+        private void llblBackBottom_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Back();
         }
     }
 }
