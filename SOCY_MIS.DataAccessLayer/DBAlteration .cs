@@ -17926,13 +17926,37 @@ namespace SOCY_MIS.DataAccessLayer
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
 
+            #region DisableTriggers
+            strSQL = "ALTER TABLE hh_ovc_identification_prioritization DISABLE TRIGGER hh_ovc_identification_prioritization_delete";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = "ALTER TABLE hh_ovc_identification_prioritization DISABLE TRIGGER hh_ovc_identification_prioritization_insert";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = "ALTER TABLE hh_ovc_identification_prioritization DISABLE TRIGGER hh_ovc_identification_prioritization_update";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion DisableTriggers
+
             #region RemoveNulls
             strSQL = "UPDATE hh_ovc_identification_prioritization SET ids_id = '' WHERE ids_id IS NULL";
             dbCon.ExecuteNonQuery(strSQL);
 
+            strSQL = "UPDATE hh_ovc_identification_prioritization SET hh_enroll_reason = '' WHERE hh_enroll_reason IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
             strSQL = "UPDATE hh_ovc_identification_prioritization_upload SET ids_id = '' WHERE ids_id IS NULL";
             dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_ovc_identification_prioritization_upload SET hh_enroll_reason = '' WHERE hh_enroll_reason IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
             #endregion RemoveNulls
+
+            #region EnableTriggers
+            strSQL = "ALTER TABLE hh_ovc_identification_prioritization ENABLE TRIGGER hh_ovc_identification_prioritization_delete";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = "ALTER TABLE hh_ovc_identification_prioritization ENABLE TRIGGER hh_ovc_identification_prioritization_insert";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = "ALTER TABLE hh_ovc_identification_prioritization ENABLE TRIGGER hh_ovc_identification_prioritization_update";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion EnableTriggers
         }
 
         private static void Insertlst_youth_assessment_scoring_parameters(DBConnection dbCon)
@@ -27396,10 +27420,24 @@ namespace SOCY_MIS.DataAccessLayer
             dbCon.ExecuteNonQuery(strSQL);
 
             strSQL = "IF NOT EXISTS(SELECT * FROM sys.columns " +
+                   "WHERE[name] = N'hh_enroll_reason' AND[object_id] = OBJECT_ID(N'hh_ovc_identification_prioritization')) " +
+           "BEGIN " +
+               "ALTER TABLE hh_ovc_identification_prioritization ADD hh_enroll_reason Nvarchar(100) NULL " +
+           "END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "IF NOT EXISTS(SELECT * FROM sys.columns " +
                     "WHERE[name] = N'ids_id' AND[object_id] = OBJECT_ID(N'hh_ovc_identification_prioritization_upload')) " +
             "BEGIN " +
                 "ALTER TABLE hh_ovc_identification_prioritization_upload ADD ids_id Nvarchar(50) NULL " +
             "END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "IF NOT EXISTS(SELECT * FROM sys.columns " +
+                   "WHERE[name] = N'hh_enroll_reason' AND[object_id] = OBJECT_ID(N'hh_ovc_identification_prioritization_upload')) " +
+           "BEGIN " +
+               "ALTER TABLE hh_ovc_identification_prioritization_upload ADD hh_enroll_reason Nvarchar(100) NULL " +
+           "END";
             dbCon.ExecuteNonQuery(strSQL);
 
             #region Triggers
@@ -27412,9 +27450,9 @@ namespace SOCY_MIS.DataAccessLayer
                 BEGIN
 	                INSERT INTO [dbo].[hh_ovc_identification_prioritization_upload]
                         ([oip_id], [oip_comments], [oip_date], [oip_18_above_female], [oip_18_above_male], [oip_18_below_female], [oip_18_below_male], [oip_hiv_adult], [oip_hiv_children], [oip_cp_month], [oip_interviewer_tel], [cso_id], [hh_id], [hhm_id], [swk_id], [yn_id_children], [yn_id_cp_abuse], [yn_id_cp_abuse_physical], [yn_id_cp_abuse_sexual], [yn_id_cp_marriage_teen_parent], [yn_id_cp_neglected], [yn_id_cp_no_birth_register], [yn_id_cp_orphan], [yn_id_cp_pregnancy], [yn_id_cp_referred], [yn_id_edu_referred], [yn_id_es_child_headed], [yn_id_es_disability], [yn_id_es_employment], [yn_id_es_expense], [yn_id_es_referred], [yn_id_fsn_meals], [yn_id_fsn_malnourished], [yn_id_fsn_referred], [yn_id_hwss_hiv_positive], [yn_id_hwss_hiv_status], [yn_id_hwss_referred], [yn_id_hwss_shelter], [yn_id_hwss_water], [yn_id_psbc_referred], [yn_id_psbc_stigmatized], [ynna_id_edu_missed_school], [ynna_id_edu_not_enrolled], 
-		                [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], [trg_action],[district_id],ids_id)
+		                [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], [trg_action],[district_id],ids_id,hh_enroll_reason)
 	                SELECT [oip_id], [oip_comments], [oip_date], [oip_18_above_female], [oip_18_above_male], [oip_18_below_female], [oip_18_below_male], [oip_hiv_adult], [oip_hiv_children], [oip_cp_month], [oip_interviewer_tel], [cso_id], [hh_id], [hhm_id], [swk_id], [yn_id_children], [yn_id_cp_abuse], [yn_id_cp_abuse_physical], [yn_id_cp_abuse_sexual], [yn_id_cp_marriage_teen_parent], [yn_id_cp_neglected], [yn_id_cp_no_birth_register], [yn_id_cp_orphan], [yn_id_cp_pregnancy], [yn_id_cp_referred], [yn_id_edu_referred], [yn_id_es_child_headed], [yn_id_es_disability], [yn_id_es_employment], [yn_id_es_expense], [yn_id_es_referred], [yn_id_fsn_meals], [yn_id_fsn_malnourished], [yn_id_fsn_referred], [yn_id_hwss_hiv_positive], [yn_id_hwss_hiv_status], [yn_id_hwss_referred], [yn_id_hwss_shelter], [yn_id_hwss_water], [yn_id_psbc_referred], [yn_id_psbc_stigmatized], [ynna_id_edu_missed_school], [ynna_id_edu_not_enrolled], 
-		                [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], 1,[district_id],[ids_id]
+		                [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], 1,[district_id],[ids_id],[hh_enroll_reason]
                   FROM inserted
                 END ";
             dbCon.ExecuteNonQuery(strSQL);
@@ -27429,9 +27467,9 @@ namespace SOCY_MIS.DataAccessLayer
 	                BEGIN
 		                INSERT INTO [dbo].[hh_ovc_identification_prioritization_upload]
 							([oip_id], [oip_comments], [oip_date], [oip_18_above_female], [oip_18_above_male], [oip_18_below_female], [oip_18_below_male], [oip_hiv_adult], [oip_hiv_children], [oip_cp_month], [oip_interviewer_tel], [cso_id], [hh_id], [hhm_id], [swk_id], [yn_id_children], [yn_id_cp_abuse], [yn_id_cp_abuse_physical], [yn_id_cp_abuse_sexual], [yn_id_cp_marriage_teen_parent], [yn_id_cp_neglected], [yn_id_cp_no_birth_register], [yn_id_cp_orphan], [yn_id_cp_pregnancy], [yn_id_cp_referred], [yn_id_edu_referred], [yn_id_es_child_headed], [yn_id_es_disability], [yn_id_es_employment], [yn_id_es_expense], [yn_id_es_referred], [yn_id_fsn_meals], [yn_id_fsn_malnourished], [yn_id_fsn_referred], [yn_id_hwss_hiv_positive], [yn_id_hwss_hiv_status], [yn_id_hwss_referred], [yn_id_hwss_shelter], [yn_id_hwss_water], [yn_id_psbc_referred], [yn_id_psbc_stigmatized], [ynna_id_edu_missed_school], [ynna_id_edu_not_enrolled], 
-							[usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], [trg_action],[district_id],ids_id)
+							[usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], [trg_action],[district_id],ids_id,hh_enroll_reason)
 						SELECT [oip_id], [oip_comments], [oip_date], [oip_18_above_female], [oip_18_above_male], [oip_18_below_female], [oip_18_below_male], [oip_hiv_adult], [oip_hiv_children], [oip_cp_month], [oip_interviewer_tel], [cso_id], [hh_id], [hhm_id], [swk_id], [yn_id_children], [yn_id_cp_abuse], [yn_id_cp_abuse_physical], [yn_id_cp_abuse_sexual], [yn_id_cp_marriage_teen_parent], [yn_id_cp_neglected], [yn_id_cp_no_birth_register], [yn_id_cp_orphan], [yn_id_cp_pregnancy], [yn_id_cp_referred], [yn_id_edu_referred], [yn_id_es_child_headed], [yn_id_es_disability], [yn_id_es_employment], [yn_id_es_expense], [yn_id_es_referred], [yn_id_fsn_meals], [yn_id_fsn_malnourished], [yn_id_fsn_referred], [yn_id_hwss_hiv_positive], [yn_id_hwss_hiv_status], [yn_id_hwss_referred], [yn_id_hwss_shelter], [yn_id_hwss_water], [yn_id_psbc_referred], [yn_id_psbc_stigmatized], [ynna_id_edu_missed_school], [ynna_id_edu_not_enrolled], 
-							[usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], 2,[district_id],[ids_id]
+							[usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], 2,[district_id],[ids_id],[hh_enroll_reason]
 	                  FROM inserted
 	                END
                 END ";
@@ -27445,9 +27483,9 @@ namespace SOCY_MIS.DataAccessLayer
                 BEGIN
 	                INSERT INTO [dbo].[hh_ovc_identification_prioritization_upload]
                         ([oip_id], [oip_comments], [oip_date], [oip_18_above_female], [oip_18_above_male], [oip_18_below_female], [oip_18_below_male], [oip_hiv_adult], [oip_hiv_children], [oip_cp_month], [oip_interviewer_tel], [cso_id], [hh_id], [hhm_id], [swk_id], [yn_id_children], [yn_id_cp_abuse], [yn_id_cp_abuse_physical], [yn_id_cp_abuse_sexual], [yn_id_cp_marriage_teen_parent], [yn_id_cp_neglected], [yn_id_cp_no_birth_register], [yn_id_cp_orphan], [yn_id_cp_pregnancy], [yn_id_cp_referred], [yn_id_edu_referred], [yn_id_es_child_headed], [yn_id_es_disability], [yn_id_es_employment], [yn_id_es_expense], [yn_id_es_referred], [yn_id_fsn_meals], [yn_id_fsn_malnourished], [yn_id_fsn_referred], [yn_id_hwss_hiv_positive], [yn_id_hwss_hiv_status], [yn_id_hwss_referred], [yn_id_hwss_shelter], [yn_id_hwss_water], [yn_id_psbc_referred], [yn_id_psbc_stigmatized], [ynna_id_edu_missed_school], [ynna_id_edu_not_enrolled], 
-		                [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], [trg_action],[district_id],ids_id)
+		                [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], [trg_action],[district_id],ids_id,hh_enroll_reason)
 	                SELECT [oip_id], [oip_comments], [oip_date], [oip_18_above_female], [oip_18_above_male], [oip_18_below_female], [oip_18_below_male], [oip_hiv_adult], [oip_hiv_children], [oip_cp_month], [oip_interviewer_tel], [cso_id], [hh_id], [hhm_id], [swk_id], [yn_id_children], [yn_id_cp_abuse], [yn_id_cp_abuse_physical], [yn_id_cp_abuse_sexual], [yn_id_cp_marriage_teen_parent], [yn_id_cp_neglected], [yn_id_cp_no_birth_register], [yn_id_cp_orphan], [yn_id_cp_pregnancy], [yn_id_cp_referred], [yn_id_edu_referred], [yn_id_es_child_headed], [yn_id_es_disability], [yn_id_es_employment], [yn_id_es_expense], [yn_id_es_referred], [yn_id_fsn_meals], [yn_id_fsn_malnourished], [yn_id_fsn_referred], [yn_id_hwss_hiv_positive], [yn_id_hwss_hiv_status], [yn_id_hwss_referred], [yn_id_hwss_shelter], [yn_id_hwss_water], [yn_id_psbc_referred], [yn_id_psbc_stigmatized], [ynna_id_edu_missed_school], [ynna_id_edu_not_enrolled], 
-		                [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], 3,[district_id],[ids_id]
+		                [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], 3,[district_id],[ids_id],[hh_enroll_reason]
                   FROM deleted
                 END ";
             dbCon.ExecuteNonQuery(strSQL);

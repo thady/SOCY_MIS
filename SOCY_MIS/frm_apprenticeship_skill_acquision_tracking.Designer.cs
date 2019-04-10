@@ -140,7 +140,7 @@
             // 
             this.dtReviewDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtReviewDateTo.Location = new System.Drawing.Point(548, 120);
-            this.dtReviewDateTo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtReviewDateTo.Margin = new System.Windows.Forms.Padding(2);
             this.dtReviewDateTo.Name = "dtReviewDateTo";
             this.dtReviewDateTo.ShowCheckBox = true;
             this.dtReviewDateTo.Size = new System.Drawing.Size(105, 20);
@@ -172,7 +172,7 @@
             // 
             this.dtDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtDate.Location = new System.Drawing.Point(548, 32);
-            this.dtDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtDate.Name = "dtDate";
             this.dtDate.ShowCheckBox = true;
             this.dtDate.Size = new System.Drawing.Size(105, 20);
@@ -206,7 +206,7 @@
             // 
             this.txtMemberCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMemberCode.Location = new System.Drawing.Point(202, 95);
-            this.txtMemberCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMemberCode.Margin = new System.Windows.Forms.Padding(2);
             this.txtMemberCode.Name = "txtMemberCode";
             this.txtMemberCode.ReadOnly = true;
             this.txtMemberCode.Size = new System.Drawing.Size(106, 20);
@@ -410,7 +410,7 @@
             // 
             this.dtReviewDatefrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtReviewDatefrom.Location = new System.Drawing.Point(202, 120);
-            this.dtReviewDatefrom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtReviewDatefrom.Margin = new System.Windows.Forms.Padding(2);
             this.dtReviewDatefrom.Name = "dtReviewDatefrom";
             this.dtReviewDatefrom.ShowCheckBox = true;
             this.dtReviewDatefrom.Size = new System.Drawing.Size(105, 20);
@@ -655,7 +655,7 @@
             // 
             this.dtArtisanReportDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtArtisanReportDate.Location = new System.Drawing.Point(309, 85);
-            this.dtArtisanReportDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtArtisanReportDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtArtisanReportDate.Name = "dtArtisanReportDate";
             this.dtArtisanReportDate.ShowCheckBox = true;
             this.dtArtisanReportDate.Size = new System.Drawing.Size(105, 20);
@@ -665,7 +665,7 @@
             // 
             this.txtArtisanName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtArtisanName.Location = new System.Drawing.Point(309, 58);
-            this.txtArtisanName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtArtisanName.Margin = new System.Windows.Forms.Padding(2);
             this.txtArtisanName.Name = "txtArtisanName";
             this.txtArtisanName.Size = new System.Drawing.Size(402, 20);
             this.txtArtisanName.TabIndex = 120;
@@ -674,7 +674,7 @@
             // 
             this.txtSteps.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSteps.Location = new System.Drawing.Point(309, 31);
-            this.txtSteps.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSteps.Margin = new System.Windows.Forms.Padding(2);
             this.txtSteps.Name = "txtSteps";
             this.txtSteps.Size = new System.Drawing.Size(402, 20);
             this.txtSteps.TabIndex = 119;
@@ -683,7 +683,7 @@
             // 
             this.txtnotAcquireReason.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtnotAcquireReason.Location = new System.Drawing.Point(309, 4);
-            this.txtnotAcquireReason.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtnotAcquireReason.Margin = new System.Windows.Forms.Padding(2);
             this.txtnotAcquireReason.Name = "txtnotAcquireReason";
             this.txtnotAcquireReason.Size = new System.Drawing.Size(402, 20);
             this.txtnotAcquireReason.TabIndex = 118;
@@ -782,7 +782,7 @@
             // 
             this.dtYouthReportDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtYouthReportDate.Location = new System.Drawing.Point(309, 121);
-            this.dtYouthReportDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtYouthReportDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtYouthReportDate.Name = "dtYouthReportDate";
             this.dtYouthReportDate.ShowCheckBox = true;
             this.dtYouthReportDate.Size = new System.Drawing.Size(105, 20);
@@ -825,7 +825,7 @@
             // 
             this.dtDYOAppraisalDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtDYOAppraisalDate.Location = new System.Drawing.Point(309, 173);
-            this.dtDYOAppraisalDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtDYOAppraisalDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtDYOAppraisalDate.Name = "dtDYOAppraisalDate";
             this.dtDYOAppraisalDate.ShowCheckBox = true;
             this.dtDYOAppraisalDate.Size = new System.Drawing.Size(105, 20);
@@ -835,7 +835,7 @@
             // 
             this.txtDYOName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDYOName.Location = new System.Drawing.Point(309, 148);
-            this.txtDYOName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDYOName.Margin = new System.Windows.Forms.Padding(2);
             this.txtDYOName.Name = "txtDYOName";
             this.txtDYOName.Size = new System.Drawing.Size(399, 20);
             this.txtDYOName.TabIndex = 127;
@@ -844,7 +844,7 @@
             // 
             this.txtSkillNotMasterReason.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSkillNotMasterReason.Location = new System.Drawing.Point(309, 96);
-            this.txtSkillNotMasterReason.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSkillNotMasterReason.Margin = new System.Windows.Forms.Padding(2);
             this.txtSkillNotMasterReason.Name = "txtSkillNotMasterReason";
             this.txtSkillNotMasterReason.Size = new System.Drawing.Size(399, 20);
             this.txtSkillNotMasterReason.TabIndex = 125;
@@ -853,7 +853,7 @@
             // 
             this.txtYouthSkillsNotMasteredText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtYouthSkillsNotMasteredText.Location = new System.Drawing.Point(309, 70);
-            this.txtYouthSkillsNotMasteredText.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtYouthSkillsNotMasteredText.Margin = new System.Windows.Forms.Padding(2);
             this.txtYouthSkillsNotMasteredText.Name = "txtYouthSkillsNotMasteredText";
             this.txtYouthSkillsNotMasteredText.Size = new System.Drawing.Size(399, 20);
             this.txtYouthSkillsNotMasteredText.TabIndex = 124;
@@ -862,7 +862,7 @@
             // 
             this.txtYouthAcquiredSkills.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtYouthAcquiredSkills.Location = new System.Drawing.Point(309, 9);
-            this.txtYouthAcquiredSkills.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtYouthAcquiredSkills.Margin = new System.Windows.Forms.Padding(2);
             this.txtYouthAcquiredSkills.Name = "txtYouthAcquiredSkills";
             this.txtYouthAcquiredSkills.Size = new System.Drawing.Size(399, 20);
             this.txtYouthAcquiredSkills.TabIndex = 122;
@@ -950,7 +950,7 @@
             this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 88F));
+            this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
             this.tplButton01.Controls.Add(this.btnSave, 1, 0);
             this.tplButton01.Controls.Add(this.llblBackBottom, 4, 0);
             this.tplButton01.Controls.Add(this.btnedit, 2, 0);
@@ -966,7 +966,7 @@
             // btnSave
             // 
             this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnSave.Location = new System.Drawing.Point(232, 8);
+            this.btnSave.Location = new System.Drawing.Point(231, 8);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 14;
@@ -990,7 +990,7 @@
             // btnedit
             // 
             this.btnedit.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnedit.Location = new System.Drawing.Point(314, 8);
+            this.btnedit.Location = new System.Drawing.Point(313, 8);
             this.btnedit.Name = "btnedit";
             this.btnedit.Size = new System.Drawing.Size(54, 23);
             this.btnedit.TabIndex = 26;
@@ -1001,7 +1001,7 @@
             // btnCancel
             // 
             this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnCancel.Location = new System.Drawing.Point(375, 8);
+            this.btnCancel.Location = new System.Drawing.Point(374, 8);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 15;

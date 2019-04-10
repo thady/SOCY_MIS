@@ -442,7 +442,7 @@ namespace SOCY_MIS
                                                 "yn_id_hwss_shelter, yn_id_hwss_water, " +
                                                 "yn_id_psbc_referred, yn_id_psbc_stigmatized, " +
                                                 "ynna_id_edu_missed_school, ynna_id_edu_not_enrolled, " +
-                                                "usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id,district_id,ids_id) " +
+                                                "usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id,district_id,ids_id,hh_enroll_reason) " +
                                                 "VALUES ('{0}', '{1}', '{2}', " +
                                                 "{3}, {4}, {5}, {6}, {7}, {8}, " +
                                                 "'{9}', '{10}', " +
@@ -458,7 +458,7 @@ namespace SOCY_MIS
                                                 "'{37}', '{38}', " +
                                                 "'{39}', '{40}', " +
                                                 "'{41}', '{42}', " +
-                                                "'{43}', '{44}','{45}','{46}', '{47}','{48}','{49}')";
+                                                "'{43}', '{44}','{45}','{46}', '{47}','{48}','{49}','{50}')";
 
                                 strSQLInsert = string.Format(strSQLInsert, dtRow["oip_id"].ToString(), dtRow["oip_comments"].ToString(), Convert.ToDateTime(dtRow["oip_date"]),
                                             dtRow["oip_18_above_female"].ToString(), dtRow["oip_18_above_male"].ToString() , dtRow["oip_18_below_female"].ToString() , dtRow["oip_18_below_male"].ToString() , dtRow["oip_hiv_adult"].ToString(), dtRow["oip_hiv_children"].ToString(),
@@ -475,7 +475,7 @@ namespace SOCY_MIS
                                             dtRow["yn_id_hwss_shelter"].ToString(), dtRow["yn_id_hwss_water"].ToString() ,
                                             dtRow["yn_id_psbc_referred"].ToString() , dtRow["yn_id_psbc_stigmatized"].ToString()  ,
                                             dtRow["ynna_id_edu_missed_school"].ToString(), dtRow["ynna_id_edu_not_enrolled"].ToString() ,
-                                            dtRow["usr_id_create"].ToString(), dtRow["usr_id_update"].ToString(), Convert.ToDateTime(dtRow["usr_date_create"]), Convert.ToDateTime(dtRow["usr_date_update"]), dtRow["ofc_id"].ToString(), dtRow["district_id"].ToString() , dtRow["ids_id"].ToString());
+                                            dtRow["usr_id_create"].ToString(), dtRow["usr_id_update"].ToString(), Convert.ToDateTime(dtRow["usr_date_create"]), Convert.ToDateTime(dtRow["usr_date_update"]), dtRow["ofc_id"].ToString(), dtRow["district_id"].ToString() , dtRow["ids_id"].ToString(), dtRow["hh_enroll_reason"].ToString());
 
                                 break;
                             #endregion hh_ovc_identification_prioritization

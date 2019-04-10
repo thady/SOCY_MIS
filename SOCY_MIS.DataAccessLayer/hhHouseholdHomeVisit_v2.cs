@@ -397,11 +397,114 @@ namespace SOCY_MIS.DataAccessLayer
             SqlDataAdapter Adapt;
             string strSQL = string.Empty;
 
-            strSQL = @"SELECT hhm.hhm_year_of_birth,hhm.hhm_number,gnd.gnd_name FROM hh_household_member hhm
+            strSQL = @"SELECT hhm.hhm_year_of_birth,hhm.hhm_number,gnd.gnd_name,hhm.hst_id FROM hh_household_member hhm
                       INNER JOIN lst_gender gnd ON hhm.gnd_id = gnd.gnd_id
                        WHERE hhm.hhm_id = '{0}'";
 
             strSQL = string.Format(strSQL, hhm_id);
+
+            try
+            {
+                string strConn = dbCon.ToString();
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(strSQL, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    Adapt = new SqlDataAdapter(cmd);
+                    Adapt.Fill(dt);
+
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            finally
+            {
+                if (conn.State == ConnectionState.Open) { conn.Close(); }
+            }
+
+            return dt;
+        }
+
+
+        public static DataTable LoadHomeVisitMembers(string hhv_id)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter Adapt;
+            string strSQL = string.Empty;
+
+            strSQL = @"SELECT hhm.hhm_number,hhm.hhm_first_name,hhm.hhm_last_name,hhvm.gnd_name,hhm.hhm_year_of_birth,hhvm.hhvm_id
+                        FROM hh_household_home_visit_member_v_2 hhvm
+                        INNER JOIN hh_household_member hhm ON hhvm.hhm_id = hhm.hhm_id
+                        WHERE hhv_id = '{0}'";
+
+            strSQL = string.Format(strSQL, hhv_id);
+
+            try
+            {
+                string strConn = dbCon.ToString();
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(strSQL, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    Adapt = new SqlDataAdapter(cmd);
+                    Adapt.Fill(dt);
+
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            finally
+            {
+                if (conn.State == ConnectionState.Open) { conn.Close(); }
+            }
+
+            return dt;
+        }
+
+
+        public static DataTable LoadHomeVisitMemberDetails(string hhvm_id)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter Adapt;
+            string strSQL = string.Empty;
+
+            strSQL = @"SELECT* FROM hh_household_home_visit_member_v_2 WHERE hhvm_id = '{0}'";
+
+            strSQL = string.Format(strSQL, hhvm_id);
 
             try
             {

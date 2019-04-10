@@ -549,6 +549,7 @@ namespace SOCY_MIS
                     txtHHTel.Text = "";
                     txtVillage.Text = "";
                     cboIdentification_source.SelectedValue = "-1";
+                    cboHHEnrollReason.Text = string.Empty;
                     #endregion Clear
                 }
                 else
@@ -637,6 +638,7 @@ namespace SOCY_MIS
                         chkCPNeglected.Checked = (dalOIP.yn_id_cp_neglected == "1");
                         chkCPPregnancy.Checked = (dalOIP.yn_id_cp_pregnancy == "1");
                         cboIdentification_source.SelectedValue = dalOIP.ids_id;
+                        cboHHEnrollReason.Text = dalOIP.hh_enroll_reason;
 
                         utilControls.RadioButtonSetSelection(rbtnCPAbuseYes, rbtnCPAbuseNo, dalOIP.yn_id_cp_abuse);
                         utilControls.RadioButtonSetSelection(rbtnCPNoBirthRegisterYes, rbtnCPNoBirthRegisterNo, dalOIP.yn_id_cp_no_birth_register);
@@ -975,6 +977,7 @@ namespace SOCY_MIS
                         dalOIP.usr_id_update = FormMaster.UserId;
                         dalOIP.district_id = static_variables.district_id; //edited by tadeo
                         dalOIP.ids_id = cboIdentification_source.SelectedValue.ToString();
+                        dalOIP.hh_enroll_reason = cboHHEnrollReason.Text;
 
                         dalOIP.Save(dbCon);
                         #endregion Household Assessment
