@@ -80,6 +80,10 @@
             this.lblHomeVisitReasonVal = new System.Windows.Forms.Label();
             this.lblHomeVisitHouseholdStatusVal = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.rbtnOldReferalNA = new System.Windows.Forms.RadioButton();
+            this.rbtnOldReferalYes = new System.Windows.Forms.RadioButton();
+            this.rbtnOldReferalNo = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -88,17 +92,13 @@
             this.rbtnRiskAssNA = new System.Windows.Forms.RadioButton();
             this.rbtnRiskAssYes = new System.Windows.Forms.RadioButton();
             this.rbtnRiskAssNo = new System.Windows.Forms.RadioButton();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.rbtnHipYes = new System.Windows.Forms.RadioButton();
-            this.rbtnHipNo = new System.Windows.Forms.RadioButton();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.rbtnOldReferalNA = new System.Windows.Forms.RadioButton();
-            this.rbtnOldReferalYes = new System.Windows.Forms.RadioButton();
-            this.rbtnOldReferalNo = new System.Windows.Forms.RadioButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.rbtnReferalMadeNA = new System.Windows.Forms.RadioButton();
             this.rbtnReferalMadeYes = new System.Windows.Forms.RadioButton();
             this.rbtnReferalMadeNo = new System.Windows.Forms.RadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.rbtnHipYes = new System.Windows.Forms.RadioButton();
+            this.rbtnHipNo = new System.Windows.Forms.RadioButton();
             this.tlpDisplay04.SuspendLayout();
             this.tlpDisplay09.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -106,10 +106,10 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.tlpDisplay01.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            this.pnlProReintegrated.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.pnlProReintegrated.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblComments
@@ -162,7 +162,7 @@
             this.tlpDisplay09.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44F));
             this.tlpDisplay09.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 175F));
             this.tlpDisplay09.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDisplay09.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.tlpDisplay09.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
             this.tlpDisplay09.Controls.Add(this.txtComments, 1, 0);
             this.tlpDisplay09.Controls.Add(this.lblComments, 0, 0);
             this.tlpDisplay09.Controls.Add(this.lblNextSteps, 3, 0);
@@ -183,7 +183,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtComments.Location = new System.Drawing.Point(180, 4);
             this.txtComments.Name = "txtComments";
-            this.txtComments.Size = new System.Drawing.Size(214, 82);
+            this.txtComments.Size = new System.Drawing.Size(213, 82);
             this.txtComments.TabIndex = 45;
             this.txtComments.Text = "";
             // 
@@ -191,7 +191,7 @@
             // 
             this.lblNextSteps.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblNextSteps.AutoSize = true;
-            this.lblNextSteps.Location = new System.Drawing.Point(446, 38);
+            this.lblNextSteps.Location = new System.Drawing.Point(445, 38);
             this.lblNextSteps.Name = "lblNextSteps";
             this.lblNextSteps.Size = new System.Drawing.Size(108, 13);
             this.lblNextSteps.TabIndex = 44;
@@ -202,9 +202,9 @@
             this.txtNextSteps.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNextSteps.Location = new System.Drawing.Point(622, 4);
+            this.txtNextSteps.Location = new System.Drawing.Point(621, 4);
             this.txtNextSteps.Name = "txtNextSteps";
-            this.txtNextSteps.Size = new System.Drawing.Size(214, 82);
+            this.txtNextSteps.Size = new System.Drawing.Size(213, 82);
             this.txtNextSteps.TabIndex = 46;
             this.txtNextSteps.Text = "";
             // 
@@ -280,16 +280,16 @@
             // 
             this.txtHomeVisitorTel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtHomeVisitorTel.Location = new System.Drawing.Point(683, 3);
+            this.txtHomeVisitorTel.Location = new System.Drawing.Point(682, 3);
             this.txtHomeVisitorTel.Name = "txtHomeVisitorTel";
-            this.txtHomeVisitorTel.Size = new System.Drawing.Size(159, 20);
+            this.txtHomeVisitorTel.Size = new System.Drawing.Size(158, 20);
             this.txtHomeVisitorTel.TabIndex = 51;
             // 
             // lblHomeVisitorTel
             // 
             this.lblHomeVisitorTel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblHomeVisitorTel.AutoSize = true;
-            this.lblHomeVisitorTel.Location = new System.Drawing.Point(633, 8);
+            this.lblHomeVisitorTel.Location = new System.Drawing.Point(632, 8);
             this.lblHomeVisitorTel.Name = "lblHomeVisitorTel";
             this.lblHomeVisitorTel.Size = new System.Drawing.Size(25, 13);
             this.lblHomeVisitorTel.TabIndex = 45;
@@ -302,7 +302,7 @@
             this.cbHomeVisitorTitle.FormattingEnabled = true;
             this.cbHomeVisitorTitle.Location = new System.Drawing.Point(418, 3);
             this.cbHomeVisitorTitle.Name = "cbHomeVisitorTitle";
-            this.cbHomeVisitorTitle.Size = new System.Drawing.Size(159, 21);
+            this.cbHomeVisitorTitle.Size = new System.Drawing.Size(158, 21);
             this.cbHomeVisitorTitle.TabIndex = 50;
             // 
             // lblHomeVisitorTitle
@@ -336,7 +336,7 @@
             this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 61F));
+            this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
             this.tplButton01.Controls.Add(this.btnCancel, 3, 0);
             this.tplButton01.Controls.Add(this.btnSave, 1, 0);
             this.tplButton01.Controls.Add(this.llblBackBottom, 4, 0);
@@ -380,6 +380,7 @@
             this.llblBackBottom.TabIndex = 25;
             this.llblBackBottom.TabStop = true;
             this.llblBackBottom.Text = "Back";
+            this.llblBackBottom.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblBackBottom_LinkClicked);
             // 
             // tableLayoutPanel2
             // 
@@ -394,7 +395,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33148F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
             this.tableLayoutPanel2.Controls.Add(this.lblHomeVisitor, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.lblNextVisitDate, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.cbHomeVisitor, 1, 0);
@@ -424,6 +425,7 @@
             this.llblBackTop.TabIndex = 109;
             this.llblBackTop.TabStop = true;
             this.llblBackTop.Text = "Back";
+            this.llblBackTop.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblBackTop_LinkClicked);
             // 
             // tlpDisplay01
             // 
@@ -436,7 +438,7 @@
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 175F));
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
             this.tlpDisplay01.Controls.Add(this.lblInterviewee, 0, 3);
             this.tlpDisplay01.Controls.Add(this.lblDistrict, 0, 0);
             this.tlpDisplay01.Controls.Add(this.dtpDateOfVisit, 4, 2);
@@ -500,7 +502,7 @@
             // dtpDateOfVisit
             // 
             this.dtpDateOfVisit.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateOfVisit.Location = new System.Drawing.Point(620, 62);
+            this.dtpDateOfVisit.Location = new System.Drawing.Point(619, 62);
             this.dtpDateOfVisit.Name = "dtpDateOfVisit";
             this.dtpDateOfVisit.Size = new System.Drawing.Size(124, 20);
             this.dtpDateOfVisit.TabIndex = 6;
@@ -509,7 +511,7 @@
             // 
             this.lblDateOfInterview.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblDateOfInterview.AutoSize = true;
-            this.lblDateOfInterview.Location = new System.Drawing.Point(444, 66);
+            this.lblDateOfInterview.Location = new System.Drawing.Point(443, 66);
             this.lblDateOfInterview.Name = "lblDateOfInterview";
             this.lblDateOfInterview.Size = new System.Drawing.Size(66, 13);
             this.lblDateOfInterview.TabIndex = 9;
@@ -529,7 +531,7 @@
             // 
             this.lblSubCounty.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblSubCounty.AutoSize = true;
-            this.lblSubCounty.Location = new System.Drawing.Point(444, 8);
+            this.lblSubCounty.Location = new System.Drawing.Point(443, 8);
             this.lblSubCounty.Name = "lblSubCounty";
             this.lblSubCounty.Size = new System.Drawing.Size(64, 13);
             this.lblSubCounty.TabIndex = 9;
@@ -539,7 +541,7 @@
             // 
             this.lblVillage.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblVillage.AutoSize = true;
-            this.lblVillage.Location = new System.Drawing.Point(444, 37);
+            this.lblVillage.Location = new System.Drawing.Point(443, 37);
             this.lblVillage.Name = "lblVillage";
             this.lblVillage.Size = new System.Drawing.Size(41, 13);
             this.lblVillage.TabIndex = 11;
@@ -551,7 +553,7 @@
             this.lblIntervieweeVal.AutoSize = true;
             this.lblIntervieweeVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIntervieweeVal.ForeColor = System.Drawing.Color.Red;
-            this.lblIntervieweeVal.Location = new System.Drawing.Point(403, 95);
+            this.lblIntervieweeVal.Location = new System.Drawing.Point(402, 95);
             this.lblIntervieweeVal.Name = "lblIntervieweeVal";
             this.lblIntervieweeVal.Size = new System.Drawing.Size(11, 13);
             this.lblIntervieweeVal.TabIndex = 27;
@@ -564,7 +566,7 @@
             this.cbHHMember.FormattingEnabled = true;
             this.cbHHMember.Location = new System.Drawing.Point(180, 91);
             this.cbHHMember.Name = "cbHHMember";
-            this.cbHHMember.Size = new System.Drawing.Size(216, 21);
+            this.cbHHMember.Size = new System.Drawing.Size(215, 21);
             this.cbHHMember.TabIndex = 29;
             // 
             // lblSocialWorker
@@ -584,7 +586,7 @@
             this.cbSocialWorker.FormattingEnabled = true;
             this.cbSocialWorker.Location = new System.Drawing.Point(180, 120);
             this.cbSocialWorker.Name = "cbSocialWorker";
-            this.cbSocialWorker.Size = new System.Drawing.Size(216, 21);
+            this.cbSocialWorker.Size = new System.Drawing.Size(215, 21);
             this.cbSocialWorker.TabIndex = 5;
             this.cbSocialWorker.SelectionChangeCommitted += new System.EventHandler(this.cbSocialWorker_SelectionChangeCommitted);
             // 
@@ -602,7 +604,7 @@
             // 
             this.lblHomeVisitHouseholdStatus.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblHomeVisitHouseholdStatus.AutoSize = true;
-            this.lblHomeVisitHouseholdStatus.Location = new System.Drawing.Point(444, 156);
+            this.lblHomeVisitHouseholdStatus.Location = new System.Drawing.Point(443, 156);
             this.lblHomeVisitHouseholdStatus.Name = "lblHomeVisitHouseholdStatus";
             this.lblHomeVisitHouseholdStatus.Size = new System.Drawing.Size(92, 13);
             this.lblHomeVisitHouseholdStatus.TabIndex = 31;
@@ -613,16 +615,16 @@
             this.cbHomeVisitHouseholdStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbHomeVisitHouseholdStatus.FormattingEnabled = true;
-            this.cbHomeVisitHouseholdStatus.Location = new System.Drawing.Point(620, 149);
+            this.cbHomeVisitHouseholdStatus.Location = new System.Drawing.Point(619, 149);
             this.cbHomeVisitHouseholdStatus.Name = "cbHomeVisitHouseholdStatus";
-            this.cbHomeVisitHouseholdStatus.Size = new System.Drawing.Size(216, 21);
+            this.cbHomeVisitHouseholdStatus.Size = new System.Drawing.Size(215, 21);
             this.cbHomeVisitHouseholdStatus.TabIndex = 32;
             // 
             // lblSocialWorkerCode
             // 
             this.lblSocialWorkerCode.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblSocialWorkerCode.AutoSize = true;
-            this.lblSocialWorkerCode.Location = new System.Drawing.Point(444, 124);
+            this.lblSocialWorkerCode.Location = new System.Drawing.Point(443, 124);
             this.lblSocialWorkerCode.Name = "lblSocialWorkerCode";
             this.lblSocialWorkerCode.Size = new System.Drawing.Size(86, 13);
             this.lblSocialWorkerCode.TabIndex = 34;
@@ -635,7 +637,7 @@
             this.cbHomeVisitReason.FormattingEnabled = true;
             this.cbHomeVisitReason.Location = new System.Drawing.Point(180, 149);
             this.cbHomeVisitReason.Name = "cbHomeVisitReason";
-            this.cbHomeVisitReason.Size = new System.Drawing.Size(216, 21);
+            this.cbHomeVisitReason.Size = new System.Drawing.Size(215, 21);
             this.cbHomeVisitReason.TabIndex = 33;
             // 
             // lblHomeVisitReason
@@ -682,7 +684,7 @@
             // 
             this.lblSubCountyDisplay.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblSubCountyDisplay.AutoSize = true;
-            this.lblSubCountyDisplay.Location = new System.Drawing.Point(620, 8);
+            this.lblSubCountyDisplay.Location = new System.Drawing.Point(619, 8);
             this.lblSubCountyDisplay.Name = "lblSubCountyDisplay";
             this.lblSubCountyDisplay.Size = new System.Drawing.Size(64, 13);
             this.lblSubCountyDisplay.TabIndex = 38;
@@ -692,7 +694,7 @@
             // 
             this.lblVillageDisplay.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblVillageDisplay.AutoSize = true;
-            this.lblVillageDisplay.Location = new System.Drawing.Point(620, 37);
+            this.lblVillageDisplay.Location = new System.Drawing.Point(619, 37);
             this.lblVillageDisplay.Name = "lblVillageDisplay";
             this.lblVillageDisplay.Size = new System.Drawing.Size(41, 13);
             this.lblVillageDisplay.TabIndex = 39;
@@ -702,10 +704,11 @@
             // 
             this.txtSocialWorkerCode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSocialWorkerCode.Location = new System.Drawing.Point(620, 120);
+            this.txtSocialWorkerCode.Location = new System.Drawing.Point(619, 120);
             this.txtSocialWorkerCode.Name = "txtSocialWorkerCode";
-            this.txtSocialWorkerCode.Size = new System.Drawing.Size(216, 20);
+            this.txtSocialWorkerCode.Size = new System.Drawing.Size(215, 20);
             this.txtSocialWorkerCode.TabIndex = 40;
+            this.txtSocialWorkerCode.Visible = false;
             // 
             // lblSocialWorkerVal
             // 
@@ -713,7 +716,7 @@
             this.lblSocialWorkerVal.AutoSize = true;
             this.lblSocialWorkerVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSocialWorkerVal.ForeColor = System.Drawing.Color.Red;
-            this.lblSocialWorkerVal.Location = new System.Drawing.Point(403, 124);
+            this.lblSocialWorkerVal.Location = new System.Drawing.Point(402, 124);
             this.lblSocialWorkerVal.Name = "lblSocialWorkerVal";
             this.lblSocialWorkerVal.Size = new System.Drawing.Size(11, 13);
             this.lblSocialWorkerVal.TabIndex = 41;
@@ -725,7 +728,7 @@
             this.lblHomeVisitReasonVal.AutoSize = true;
             this.lblHomeVisitReasonVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHomeVisitReasonVal.ForeColor = System.Drawing.Color.Red;
-            this.lblHomeVisitReasonVal.Location = new System.Drawing.Point(403, 156);
+            this.lblHomeVisitReasonVal.Location = new System.Drawing.Point(402, 156);
             this.lblHomeVisitReasonVal.Name = "lblHomeVisitReasonVal";
             this.lblHomeVisitReasonVal.Size = new System.Drawing.Size(11, 13);
             this.lblHomeVisitReasonVal.TabIndex = 42;
@@ -737,7 +740,7 @@
             this.lblHomeVisitHouseholdStatusVal.AutoSize = true;
             this.lblHomeVisitHouseholdStatusVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHomeVisitHouseholdStatusVal.ForeColor = System.Drawing.Color.Red;
-            this.lblHomeVisitHouseholdStatusVal.Location = new System.Drawing.Point(843, 156);
+            this.lblHomeVisitHouseholdStatusVal.Location = new System.Drawing.Point(841, 156);
             this.lblHomeVisitHouseholdStatusVal.Name = "lblHomeVisitHouseholdStatusVal";
             this.lblHomeVisitHouseholdStatusVal.Size = new System.Drawing.Size(11, 13);
             this.lblHomeVisitHouseholdStatusVal.TabIndex = 43;
@@ -754,7 +757,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 175F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
             this.tableLayoutPanel3.Controls.Add(this.panel2, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.label4, 0, 1);
@@ -771,6 +774,49 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.00002F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(904, 71);
             this.tableLayoutPanel3.TabIndex = 116;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panel2.Controls.Add(this.rbtnOldReferalNA);
+            this.panel2.Controls.Add(this.rbtnOldReferalYes);
+            this.panel2.Controls.Add(this.rbtnOldReferalNo);
+            this.panel2.Location = new System.Drawing.Point(180, 43);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(190, 19);
+            this.panel2.TabIndex = 64;
+            // 
+            // rbtnOldReferalNA
+            // 
+            this.rbtnOldReferalNA.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.rbtnOldReferalNA.AutoSize = true;
+            this.rbtnOldReferalNA.Location = new System.Drawing.Point(117, 1);
+            this.rbtnOldReferalNA.Name = "rbtnOldReferalNA";
+            this.rbtnOldReferalNA.Size = new System.Drawing.Size(40, 17);
+            this.rbtnOldReferalNA.TabIndex = 3;
+            this.rbtnOldReferalNA.Text = "NA";
+            this.rbtnOldReferalNA.UseVisualStyleBackColor = true;
+            // 
+            // rbtnOldReferalYes
+            // 
+            this.rbtnOldReferalYes.AutoSize = true;
+            this.rbtnOldReferalYes.Location = new System.Drawing.Point(3, 1);
+            this.rbtnOldReferalYes.Name = "rbtnOldReferalYes";
+            this.rbtnOldReferalYes.Size = new System.Drawing.Size(43, 17);
+            this.rbtnOldReferalYes.TabIndex = 2;
+            this.rbtnOldReferalYes.Text = "Yes";
+            this.rbtnOldReferalYes.UseVisualStyleBackColor = true;
+            // 
+            // rbtnOldReferalNo
+            // 
+            this.rbtnOldReferalNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.rbtnOldReferalNo.AutoSize = true;
+            this.rbtnOldReferalNo.Location = new System.Drawing.Point(60, 1);
+            this.rbtnOldReferalNo.Name = "rbtnOldReferalNo";
+            this.rbtnOldReferalNo.Size = new System.Drawing.Size(39, 17);
+            this.rbtnOldReferalNo.TabIndex = 0;
+            this.rbtnOldReferalNo.Text = "No";
+            this.rbtnOldReferalNo.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -796,7 +842,7 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(444, 11);
+            this.label5.Location = new System.Drawing.Point(443, 11);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 13);
             this.label5.TabIndex = 9;
@@ -806,7 +852,7 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(444, 39);
+            this.label6.Location = new System.Drawing.Point(443, 39);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(147, 26);
             this.label6.TabIndex = 11;
@@ -855,87 +901,13 @@
             this.rbtnRiskAssNo.Text = "No";
             this.rbtnRiskAssNo.UseVisualStyleBackColor = true;
             // 
-            // panel1
-            // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.panel1.Controls.Add(this.rbtnHipYes);
-            this.panel1.Controls.Add(this.rbtnHipNo);
-            this.panel1.Location = new System.Drawing.Point(620, 43);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(190, 19);
-            this.panel1.TabIndex = 63;
-            // 
-            // rbtnHipYes
-            // 
-            this.rbtnHipYes.AutoSize = true;
-            this.rbtnHipYes.Location = new System.Drawing.Point(3, 1);
-            this.rbtnHipYes.Name = "rbtnHipYes";
-            this.rbtnHipYes.Size = new System.Drawing.Size(43, 17);
-            this.rbtnHipYes.TabIndex = 2;
-            this.rbtnHipYes.Text = "Yes";
-            this.rbtnHipYes.UseVisualStyleBackColor = true;
-            // 
-            // rbtnHipNo
-            // 
-            this.rbtnHipNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.rbtnHipNo.AutoSize = true;
-            this.rbtnHipNo.Location = new System.Drawing.Point(60, 1);
-            this.rbtnHipNo.Name = "rbtnHipNo";
-            this.rbtnHipNo.Size = new System.Drawing.Size(39, 17);
-            this.rbtnHipNo.TabIndex = 0;
-            this.rbtnHipNo.Text = "No";
-            this.rbtnHipNo.UseVisualStyleBackColor = true;
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.panel2.Controls.Add(this.rbtnOldReferalNA);
-            this.panel2.Controls.Add(this.rbtnOldReferalYes);
-            this.panel2.Controls.Add(this.rbtnOldReferalNo);
-            this.panel2.Location = new System.Drawing.Point(180, 43);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(190, 19);
-            this.panel2.TabIndex = 64;
-            // 
-            // rbtnOldReferalNA
-            // 
-            this.rbtnOldReferalNA.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.rbtnOldReferalNA.AutoSize = true;
-            this.rbtnOldReferalNA.Location = new System.Drawing.Point(117, 1);
-            this.rbtnOldReferalNA.Name = "rbtnOldReferalNA";
-            this.rbtnOldReferalNA.Size = new System.Drawing.Size(40, 17);
-            this.rbtnOldReferalNA.TabIndex = 3;
-            this.rbtnOldReferalNA.Text = "NA";
-            this.rbtnOldReferalNA.UseVisualStyleBackColor = true;
-            // 
-            // rbtnOldReferalYes
-            // 
-            this.rbtnOldReferalYes.AutoSize = true;
-            this.rbtnOldReferalYes.Location = new System.Drawing.Point(3, 1);
-            this.rbtnOldReferalYes.Name = "rbtnOldReferalYes";
-            this.rbtnOldReferalYes.Size = new System.Drawing.Size(43, 17);
-            this.rbtnOldReferalYes.TabIndex = 2;
-            this.rbtnOldReferalYes.Text = "Yes";
-            this.rbtnOldReferalYes.UseVisualStyleBackColor = true;
-            // 
-            // rbtnOldReferalNo
-            // 
-            this.rbtnOldReferalNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.rbtnOldReferalNo.AutoSize = true;
-            this.rbtnOldReferalNo.Location = new System.Drawing.Point(60, 1);
-            this.rbtnOldReferalNo.Name = "rbtnOldReferalNo";
-            this.rbtnOldReferalNo.Size = new System.Drawing.Size(39, 17);
-            this.rbtnOldReferalNo.TabIndex = 0;
-            this.rbtnOldReferalNo.Text = "No";
-            this.rbtnOldReferalNo.UseVisualStyleBackColor = true;
-            // 
             // panel3
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel3.Controls.Add(this.rbtnReferalMadeNA);
             this.panel3.Controls.Add(this.rbtnReferalMadeYes);
             this.panel3.Controls.Add(this.rbtnReferalMadeNo);
-            this.panel3.Location = new System.Drawing.Point(620, 8);
+            this.panel3.Location = new System.Drawing.Point(619, 8);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(190, 19);
             this.panel3.TabIndex = 65;
@@ -972,6 +944,37 @@
             this.rbtnReferalMadeNo.Text = "No";
             this.rbtnReferalMadeNo.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panel1.Controls.Add(this.rbtnHipYes);
+            this.panel1.Controls.Add(this.rbtnHipNo);
+            this.panel1.Location = new System.Drawing.Point(619, 43);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(190, 19);
+            this.panel1.TabIndex = 63;
+            // 
+            // rbtnHipYes
+            // 
+            this.rbtnHipYes.AutoSize = true;
+            this.rbtnHipYes.Location = new System.Drawing.Point(3, 1);
+            this.rbtnHipYes.Name = "rbtnHipYes";
+            this.rbtnHipYes.Size = new System.Drawing.Size(43, 17);
+            this.rbtnHipYes.TabIndex = 2;
+            this.rbtnHipYes.Text = "Yes";
+            this.rbtnHipYes.UseVisualStyleBackColor = true;
+            // 
+            // rbtnHipNo
+            // 
+            this.rbtnHipNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.rbtnHipNo.AutoSize = true;
+            this.rbtnHipNo.Location = new System.Drawing.Point(60, 1);
+            this.rbtnHipNo.Name = "rbtnHipNo";
+            this.rbtnHipNo.Size = new System.Drawing.Size(39, 17);
+            this.rbtnHipNo.TabIndex = 0;
+            this.rbtnHipNo.Text = "No";
+            this.rbtnHipNo.UseVisualStyleBackColor = true;
+            // 
             // frm_HouseholdHomeVisit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1001,14 +1004,14 @@
             this.tlpDisplay01.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            this.pnlProReintegrated.ResumeLayout(false);
-            this.pnlProReintegrated.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.pnlProReintegrated.ResumeLayout(false);
+            this.pnlProReintegrated.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rbtnHHPHivUnknown = new System.Windows.Forms.RadioButton();
-            this.rbtnHHPHivNeg = new System.Windows.Forms.RadioButton();
-            this.rbtnHHPHivPos = new System.Windows.Forms.RadioButton();
             this.tlpDisplay03 = new System.Windows.Forms.TableLayoutPanel();
             this.pnlSchoolProgress = new System.Windows.Forms.Panel();
             this.rbtnProgressedNA = new System.Windows.Forms.RadioButton();
@@ -62,8 +59,6 @@
             this.rbtnUniformYes = new System.Windows.Forms.RadioButton();
             this.rbtnUniformNo = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
-            this.rbtnHHPHivTNR = new System.Windows.Forms.RadioButton();
-            this.pnlHHPHiv = new System.Windows.Forms.Panel();
             this.rbtnMemberActiveYes = new System.Windows.Forms.RadioButton();
             this.lblHHMemberStatusVal = new System.Windows.Forms.Label();
             this.lblMemberActive = new System.Windows.Forms.Label();
@@ -175,16 +170,16 @@
             this.rbtninnitiateImmunizaRefferalNA = new System.Windows.Forms.RadioButton();
             this.rbtninnitiateImmunizaRefferalYes = new System.Windows.Forms.RadioButton();
             this.rbtninnitiateImmunizaRefferalNo = new System.Windows.Forms.RadioButton();
-            this.panel19 = new System.Windows.Forms.Panel();
+            this.pnlCompleteARTReferal = new System.Windows.Forms.Panel();
             this.rbtnCompleteARTRefferalYes = new System.Windows.Forms.RadioButton();
             this.rbtnCompleteARTRefferalNo = new System.Windows.Forms.RadioButton();
-            this.panel16 = new System.Windows.Forms.Panel();
+            this.pnlInnitiateARTReferal = new System.Windows.Forms.Panel();
             this.rbtnInniateARTRefferalYes = new System.Windows.Forms.RadioButton();
             this.rbtnInniateARTRefferalNo = new System.Windows.Forms.RadioButton();
-            this.panel14 = new System.Windows.Forms.Panel();
+            this.pnlHTSCompleteReferal = new System.Windows.Forms.Panel();
             this.rbtnCompletedHtsRefferalYes = new System.Windows.Forms.RadioButton();
             this.rbtnCompletedHtsRefferalNo = new System.Windows.Forms.RadioButton();
-            this.panel9 = new System.Windows.Forms.Panel();
+            this.pnlHTSInnitiateReferal = new System.Windows.Forms.Panel();
             this.rbtnHstRefferalInitiateYes = new System.Windows.Forms.RadioButton();
             this.rbtnHstRefferalInitiateNo = new System.Windows.Forms.RadioButton();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -281,6 +276,8 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label38 = new System.Windows.Forms.Label();
             this.lblguid = new System.Windows.Forms.Label();
+            this.lblhhm_id = new System.Windows.Forms.Label();
+            this.cboHivstatus = new System.Windows.Forms.ComboBox();
             this.tlpDisplay03.SuspendLayout();
             this.pnlSchoolProgress.SuspendLayout();
             this.pnlEnrolledInSchool.SuspendLayout();
@@ -288,7 +285,6 @@
             this.pnlEduSubsidy.SuspendLayout();
             this.pnlEnrollmentAssistance.SuspendLayout();
             this.pnlSchoolUniform.SuspendLayout();
-            this.pnlHHPHiv.SuspendLayout();
             this.tplButton01.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.gbMembers.SuspendLayout();
@@ -316,10 +312,10 @@
             this.pnlTBscreen.SuspendLayout();
             this.panel21.SuspendLayout();
             this.pnlImmunization.SuspendLayout();
-            this.panel19.SuspendLayout();
-            this.panel16.SuspendLayout();
-            this.panel14.SuspendLayout();
-            this.panel9.SuspendLayout();
+            this.pnlCompleteARTReferal.SuspendLayout();
+            this.pnlInnitiateARTReferal.SuspendLayout();
+            this.pnlHTSCompleteReferal.SuspendLayout();
+            this.pnlHTSInnitiateReferal.SuspendLayout();
             this.panel10.SuspendLayout();
             this.pnlHIVPreventionSupport.SuspendLayout();
             this.pnlAherencesupport.SuspendLayout();
@@ -339,39 +335,6 @@
             this.tableLayoutPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
-            // rbtnHHPHivUnknown
-            // 
-            this.rbtnHHPHivUnknown.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.rbtnHHPHivUnknown.AutoSize = true;
-            this.rbtnHHPHivUnknown.Location = new System.Drawing.Point(88, 2);
-            this.rbtnHHPHivUnknown.Name = "rbtnHHPHivUnknown";
-            this.rbtnHHPHivUnknown.Size = new System.Drawing.Size(71, 17);
-            this.rbtnHHPHivUnknown.TabIndex = 3;
-            this.rbtnHHPHivUnknown.Text = "Unknown";
-            this.rbtnHHPHivUnknown.UseVisualStyleBackColor = true;
-            // 
-            // rbtnHHPHivNeg
-            // 
-            this.rbtnHHPHivNeg.AutoSize = true;
-            this.rbtnHHPHivNeg.Location = new System.Drawing.Point(3, 1);
-            this.rbtnHHPHivNeg.Name = "rbtnHHPHivNeg";
-            this.rbtnHHPHivNeg.Size = new System.Drawing.Size(45, 17);
-            this.rbtnHHPHivNeg.TabIndex = 2;
-            this.rbtnHHPHivNeg.Text = "Neg";
-            this.rbtnHHPHivNeg.UseVisualStyleBackColor = true;
-            // 
-            // rbtnHHPHivPos
-            // 
-            this.rbtnHHPHivPos.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.rbtnHHPHivPos.AutoSize = true;
-            this.rbtnHHPHivPos.Location = new System.Drawing.Point(48, 2);
-            this.rbtnHHPHivPos.Name = "rbtnHHPHivPos";
-            this.rbtnHHPHivPos.Size = new System.Drawing.Size(43, 17);
-            this.rbtnHHPHivPos.TabIndex = 0;
-            this.rbtnHHPHivPos.Text = "Pos";
-            this.rbtnHHPHivPos.UseVisualStyleBackColor = true;
-            this.rbtnHHPHivPos.CheckedChanged += new System.EventHandler(this.rbtnHHPHivPos_CheckedChanged);
-            // 
             // tlpDisplay03
             // 
             this.tlpDisplay03.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -383,7 +346,7 @@
             this.tlpDisplay03.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tlpDisplay03.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tlpDisplay03.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDisplay03.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
+            this.tlpDisplay03.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
             this.tlpDisplay03.Controls.Add(this.pnlSchoolProgress, 4, 2);
             this.tlpDisplay03.Controls.Add(this.lblProChildAbuse, 0, 2);
             this.tlpDisplay03.Controls.Add(this.lblProReintegrated, 0, 0);
@@ -412,9 +375,9 @@
             this.pnlSchoolProgress.Controls.Add(this.rbtnProgressedNA);
             this.pnlSchoolProgress.Controls.Add(this.rbtnProgressedYes);
             this.pnlSchoolProgress.Controls.Add(this.rbtnProgressedNo);
-            this.pnlSchoolProgress.Location = new System.Drawing.Point(644, 64);
+            this.pnlSchoolProgress.Location = new System.Drawing.Point(643, 64);
             this.pnlSchoolProgress.Name = "pnlSchoolProgress";
-            this.pnlSchoolProgress.Size = new System.Drawing.Size(190, 19);
+            this.pnlSchoolProgress.Size = new System.Drawing.Size(189, 19);
             this.pnlSchoolProgress.TabIndex = 66;
             // 
             // rbtnProgressedNA
@@ -483,7 +446,7 @@
             // 
             this.lblProBirthRegistration.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblProBirthRegistration.AutoSize = true;
-            this.lblProBirthRegistration.Location = new System.Drawing.Point(443, 31);
+            this.lblProBirthRegistration.Location = new System.Drawing.Point(442, 31);
             this.lblProBirthRegistration.Name = "lblProBirthRegistration";
             this.lblProBirthRegistration.Size = new System.Drawing.Size(179, 26);
             this.lblProBirthRegistration.TabIndex = 11;
@@ -493,7 +456,7 @@
             // 
             this.lblProBirthCertificate.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblProBirthCertificate.AutoSize = true;
-            this.lblProBirthCertificate.Location = new System.Drawing.Point(443, 8);
+            this.lblProBirthCertificate.Location = new System.Drawing.Point(442, 8);
             this.lblProBirthCertificate.Name = "lblProBirthCertificate";
             this.lblProBirthCertificate.Size = new System.Drawing.Size(184, 13);
             this.lblProBirthCertificate.TabIndex = 10;
@@ -507,7 +470,7 @@
             this.pnlEnrolledInSchool.Controls.Add(this.rbtnOvcEduEnrolledNo);
             this.pnlEnrolledInSchool.Location = new System.Drawing.Point(205, 5);
             this.pnlEnrolledInSchool.Name = "pnlEnrolledInSchool";
-            this.pnlEnrolledInSchool.Size = new System.Drawing.Size(190, 19);
+            this.pnlEnrolledInSchool.Size = new System.Drawing.Size(189, 19);
             this.pnlEnrolledInSchool.TabIndex = 61;
             // 
             // rbtnOvcEduEnrolledNA
@@ -550,7 +513,7 @@
             this.pnlRegularlyAttendSchool.Controls.Add(this.rbtnRegularAttendschoolNo);
             this.pnlRegularlyAttendSchool.Location = new System.Drawing.Point(205, 34);
             this.pnlRegularlyAttendSchool.Name = "pnlRegularlyAttendSchool";
-            this.pnlRegularlyAttendSchool.Size = new System.Drawing.Size(190, 19);
+            this.pnlRegularlyAttendSchool.Size = new System.Drawing.Size(189, 19);
             this.pnlRegularlyAttendSchool.TabIndex = 62;
             // 
             // rbtnRegularAttendschoolNA
@@ -593,7 +556,7 @@
             this.pnlEduSubsidy.Controls.Add(this.rbtnEduSubsidyNo);
             this.pnlEduSubsidy.Location = new System.Drawing.Point(205, 64);
             this.pnlEduSubsidy.Name = "pnlEduSubsidy";
-            this.pnlEduSubsidy.Size = new System.Drawing.Size(190, 19);
+            this.pnlEduSubsidy.Size = new System.Drawing.Size(189, 19);
             this.pnlEduSubsidy.TabIndex = 63;
             // 
             // rbtnEduSubsidyNA
@@ -634,9 +597,9 @@
             this.pnlEnrollmentAssistance.Controls.Add(this.rbtnAssReEnrollmentNA);
             this.pnlEnrollmentAssistance.Controls.Add(this.rbtnAssReEnrollmentYes);
             this.pnlEnrollmentAssistance.Controls.Add(this.rbtnAssReEnrollmentNo);
-            this.pnlEnrollmentAssistance.Location = new System.Drawing.Point(644, 5);
+            this.pnlEnrollmentAssistance.Location = new System.Drawing.Point(643, 5);
             this.pnlEnrollmentAssistance.Name = "pnlEnrollmentAssistance";
-            this.pnlEnrollmentAssistance.Size = new System.Drawing.Size(190, 19);
+            this.pnlEnrollmentAssistance.Size = new System.Drawing.Size(189, 19);
             this.pnlEnrollmentAssistance.TabIndex = 64;
             // 
             // rbtnAssReEnrollmentNA
@@ -677,9 +640,9 @@
             this.pnlSchoolUniform.Controls.Add(this.rbtnUniformNA);
             this.pnlSchoolUniform.Controls.Add(this.rbtnUniformYes);
             this.pnlSchoolUniform.Controls.Add(this.rbtnUniformNo);
-            this.pnlSchoolUniform.Location = new System.Drawing.Point(644, 34);
+            this.pnlSchoolUniform.Location = new System.Drawing.Point(643, 34);
             this.pnlSchoolUniform.Name = "pnlSchoolUniform";
-            this.pnlSchoolUniform.Size = new System.Drawing.Size(190, 19);
+            this.pnlSchoolUniform.Size = new System.Drawing.Size(189, 19);
             this.pnlSchoolUniform.TabIndex = 65;
             // 
             // rbtnUniformNA
@@ -718,34 +681,11 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(443, 61);
+            this.label6.Location = new System.Drawing.Point(442, 61);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(170, 26);
             this.label6.TabIndex = 66;
             this.label6.Text = "OVC progressed from one class to another";
-            // 
-            // rbtnHHPHivTNR
-            // 
-            this.rbtnHHPHivTNR.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.rbtnHHPHivTNR.AutoSize = true;
-            this.rbtnHHPHivTNR.Location = new System.Drawing.Point(161, 2);
-            this.rbtnHHPHivTNR.Name = "rbtnHHPHivTNR";
-            this.rbtnHHPHivTNR.Size = new System.Drawing.Size(48, 17);
-            this.rbtnHHPHivTNR.TabIndex = 4;
-            this.rbtnHHPHivTNR.Text = "TNR";
-            this.rbtnHHPHivTNR.UseVisualStyleBackColor = true;
-            // 
-            // pnlHHPHiv
-            // 
-            this.pnlHHPHiv.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pnlHHPHiv.Controls.Add(this.rbtnHHPHivTNR);
-            this.pnlHHPHiv.Controls.Add(this.rbtnHHPHivUnknown);
-            this.pnlHHPHiv.Controls.Add(this.rbtnHHPHivNeg);
-            this.pnlHHPHiv.Controls.Add(this.rbtnHHPHivPos);
-            this.pnlHHPHiv.Location = new System.Drawing.Point(204, 4);
-            this.pnlHHPHiv.Name = "pnlHHPHiv";
-            this.pnlHHPHiv.Size = new System.Drawing.Size(208, 20);
-            this.pnlHHPHiv.TabIndex = 64;
             // 
             // rbtnMemberActiveYes
             // 
@@ -764,7 +704,7 @@
             this.lblHHMemberStatusVal.AutoSize = true;
             this.lblHHMemberStatusVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHHMemberStatusVal.ForeColor = System.Drawing.Color.Red;
-            this.lblHHMemberStatusVal.Location = new System.Drawing.Point(402, 97);
+            this.lblHHMemberStatusVal.Location = new System.Drawing.Point(401, 97);
             this.lblHHMemberStatusVal.Name = "lblHHMemberStatusVal";
             this.lblHHMemberStatusVal.Size = new System.Drawing.Size(11, 13);
             this.lblHHMemberStatusVal.TabIndex = 59;
@@ -784,7 +724,7 @@
             // 
             this.lblHHVMId.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblHHVMId.AutoSize = true;
-            this.lblHHVMId.Location = new System.Drawing.Point(402, 66);
+            this.lblHHVMId.Location = new System.Drawing.Point(401, 66);
             this.lblHHVMId.Name = "lblHHVMId";
             this.lblHHVMId.Size = new System.Drawing.Size(10, 13);
             this.lblHHVMId.TabIndex = 52;
@@ -795,7 +735,7 @@
             // 
             this.lblGender.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblGender.AutoSize = true;
-            this.lblGender.Location = new System.Drawing.Point(443, 66);
+            this.lblGender.Location = new System.Drawing.Point(442, 66);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(28, 13);
             this.lblGender.TabIndex = 12;
@@ -805,7 +745,7 @@
             // 
             this.lblGenderDisplay.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblGenderDisplay.AutoSize = true;
-            this.lblGenderDisplay.Location = new System.Drawing.Point(644, 66);
+            this.lblGenderDisplay.Location = new System.Drawing.Point(643, 66);
             this.lblGenderDisplay.Name = "lblGenderDisplay";
             this.lblGenderDisplay.Size = new System.Drawing.Size(28, 13);
             this.lblGenderDisplay.TabIndex = 53;
@@ -815,7 +755,7 @@
             // 
             this.lblMemberNumber.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMemberNumber.AutoSize = true;
-            this.lblMemberNumber.Location = new System.Drawing.Point(443, 37);
+            this.lblMemberNumber.Location = new System.Drawing.Point(442, 37);
             this.lblMemberNumber.Name = "lblMemberNumber";
             this.lblMemberNumber.Size = new System.Drawing.Size(88, 13);
             this.lblMemberNumber.TabIndex = 4;
@@ -825,7 +765,7 @@
             // 
             this.lblMemberNumberDisplay.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMemberNumberDisplay.AutoSize = true;
-            this.lblMemberNumberDisplay.Location = new System.Drawing.Point(644, 37);
+            this.lblMemberNumberDisplay.Location = new System.Drawing.Point(643, 37);
             this.lblMemberNumberDisplay.Name = "lblMemberNumberDisplay";
             this.lblMemberNumberDisplay.Size = new System.Drawing.Size(13, 13);
             this.lblMemberNumberDisplay.TabIndex = 1;
@@ -895,6 +835,7 @@
             this.llblBackBottom.TabIndex = 46;
             this.llblBackBottom.TabStop = true;
             this.llblBackBottom.Text = "Back";
+            this.llblBackBottom.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblBackBottom_LinkClicked);
             // 
             // llblBackTop
             // 
@@ -907,6 +848,7 @@
             this.llblBackTop.TabIndex = 119;
             this.llblBackTop.TabStop = true;
             this.llblBackTop.Text = "Back";
+            this.llblBackTop.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblBackTop_LinkClicked);
             // 
             // tableLayoutPanel1
             // 
@@ -947,6 +889,7 @@
             this.rbtnMemberActiveNo.TabIndex = 0;
             this.rbtnMemberActiveNo.Text = "No";
             this.rbtnMemberActiveNo.UseVisualStyleBackColor = true;
+            this.rbtnMemberActiveNo.CheckedChanged += new System.EventHandler(this.rbtnMemberActiveNo_CheckedChanged);
             // 
             // lblHHMember
             // 
@@ -997,6 +940,7 @@
             this.dgvMembers.Name = "dgvMembers";
             this.dgvMembers.Size = new System.Drawing.Size(892, 272);
             this.dgvMembers.TabIndex = 21;
+            this.dgvMembers.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMembers_CellDoubleClick);
             // 
             // lblHHMemberVal
             // 
@@ -1004,7 +948,7 @@
             this.lblHHMemberVal.AutoSize = true;
             this.lblHHMemberVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHHMemberVal.ForeColor = System.Drawing.Color.Red;
-            this.lblHHMemberVal.Location = new System.Drawing.Point(402, 37);
+            this.lblHHMemberVal.Location = new System.Drawing.Point(401, 37);
             this.lblHHMemberVal.Name = "lblHHMemberVal";
             this.lblHHMemberVal.Size = new System.Drawing.Size(11, 13);
             this.lblHHMemberVal.TabIndex = 48;
@@ -1021,7 +965,7 @@
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
+            this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
             this.tlpDisplay01.Controls.Add(this.lblHHMemberStatusVal, 2, 3);
             this.tlpDisplay01.Controls.Add(this.lblMemberActive, 0, 3);
             this.tlpDisplay01.Controls.Add(this.lblHHVMId, 2, 2);
@@ -1054,7 +998,7 @@
             this.cbHHMember.FormattingEnabled = true;
             this.cbHHMember.Location = new System.Drawing.Point(205, 33);
             this.cbHHMember.Name = "cbHHMember";
-            this.cbHHMember.Size = new System.Drawing.Size(190, 21);
+            this.cbHHMember.Size = new System.Drawing.Size(189, 21);
             this.cbHHMember.TabIndex = 47;
             this.cbHHMember.SelectionChangeCommitted += new System.EventHandler(this.cbHHMember_SelectionChangeCommitted);
             // 
@@ -1076,7 +1020,7 @@
             this.pnlMemberActive.Controls.Add(this.rbtnMemberActiveNo);
             this.pnlMemberActive.Location = new System.Drawing.Point(205, 94);
             this.pnlMemberActive.Name = "pnlMemberActive";
-            this.pnlMemberActive.Size = new System.Drawing.Size(190, 19);
+            this.pnlMemberActive.Size = new System.Drawing.Size(189, 19);
             this.pnlMemberActive.TabIndex = 58;
             // 
             // lblYearOfBirthDisplay
@@ -1143,7 +1087,7 @@
             // 
             this.lblESAflateen.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblESAflateen.AutoSize = true;
-            this.lblESAflateen.Location = new System.Drawing.Point(443, 57);
+            this.lblESAflateen.Location = new System.Drawing.Point(442, 57);
             this.lblESAflateen.Name = "lblESAflateen";
             this.lblESAflateen.Size = new System.Drawing.Size(183, 26);
             this.lblESAflateen.TabIndex = 9;
@@ -1154,7 +1098,7 @@
             this.pnlFoodBank.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pnlFoodBank.Controls.Add(this.rbtnFoodBankYes);
             this.pnlFoodBank.Controls.Add(this.rbtnFoodBankNo);
-            this.pnlFoodBank.Location = new System.Drawing.Point(644, 61);
+            this.pnlFoodBank.Location = new System.Drawing.Point(643, 61);
             this.pnlFoodBank.Name = "pnlFoodBank";
             this.pnlFoodBank.Size = new System.Drawing.Size(148, 19);
             this.pnlFoodBank.TabIndex = 62;
@@ -1292,9 +1236,9 @@
             this.pnlOtherSavingGroup.Controls.Add(this.rbtnLendingGroupNA);
             this.pnlOtherSavingGroup.Controls.Add(this.rbtnLendingGroupYes);
             this.pnlOtherSavingGroup.Controls.Add(this.rbtnLendingGroupNo);
-            this.pnlOtherSavingGroup.Location = new System.Drawing.Point(644, 5);
+            this.pnlOtherSavingGroup.Location = new System.Drawing.Point(643, 5);
             this.pnlOtherSavingGroup.Name = "pnlOtherSavingGroup";
-            this.pnlOtherSavingGroup.Size = new System.Drawing.Size(190, 19);
+            this.pnlOtherSavingGroup.Size = new System.Drawing.Size(189, 19);
             this.pnlOtherSavingGroup.TabIndex = 61;
             // 
             // rbtnLendingGroupNA
@@ -1333,7 +1277,7 @@
             // 
             this.lblESAgro.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblESAgro.AutoSize = true;
-            this.lblESAgro.Location = new System.Drawing.Point(443, 36);
+            this.lblESAgro.Location = new System.Drawing.Point(442, 36);
             this.lblESAgro.Name = "lblESAgro";
             this.lblESAgro.Size = new System.Drawing.Size(163, 13);
             this.lblESAgro.TabIndex = 11;
@@ -1379,7 +1323,7 @@
             this.tlpDisplay02.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tlpDisplay02.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tlpDisplay02.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDisplay02.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
+            this.tlpDisplay02.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
             this.tlpDisplay02.Controls.Add(this.pnlAflateen, 4, 4);
             this.tlpDisplay02.Controls.Add(this.pnlAggro, 1, 4);
             this.tlpDisplay02.Controls.Add(this.pnlCottage, 4, 3);
@@ -1418,9 +1362,9 @@
             this.pnlAflateen.Controls.Add(this.rbtnAflateenNA);
             this.pnlAflateen.Controls.Add(this.rbtnAflateenYes);
             this.pnlAflateen.Controls.Add(this.rbtnAflateenNo);
-            this.pnlAflateen.Location = new System.Drawing.Point(644, 117);
+            this.pnlAflateen.Location = new System.Drawing.Point(643, 117);
             this.pnlAflateen.Name = "pnlAflateen";
-            this.pnlAflateen.Size = new System.Drawing.Size(190, 19);
+            this.pnlAflateen.Size = new System.Drawing.Size(189, 19);
             this.pnlAflateen.TabIndex = 65;
             // 
             // rbtnAflateenNA
@@ -1504,9 +1448,9 @@
             this.pnlCottage.Controls.Add(this.rbtnCottageNA);
             this.pnlCottage.Controls.Add(this.rbtnCottageYes);
             this.pnlCottage.Controls.Add(this.rbtnCottageNo);
-            this.pnlCottage.Location = new System.Drawing.Point(644, 89);
+            this.pnlCottage.Location = new System.Drawing.Point(643, 89);
             this.pnlCottage.Name = "pnlCottage";
-            this.pnlCottage.Size = new System.Drawing.Size(190, 19);
+            this.pnlCottage.Size = new System.Drawing.Size(189, 19);
             this.pnlCottage.TabIndex = 64;
             // 
             // rbtnCottageNA
@@ -1643,9 +1587,9 @@
             this.pnlEduFund.Controls.Add(this.rbtnEdufundNA);
             this.pnlEduFund.Controls.Add(this.rbtnEdufundYes);
             this.pnlEduFund.Controls.Add(this.rbtnEdufundNo);
-            this.pnlEduFund.Location = new System.Drawing.Point(644, 33);
+            this.pnlEduFund.Location = new System.Drawing.Point(643, 33);
             this.pnlEduFund.Name = "pnlEduFund";
-            this.pnlEduFund.Size = new System.Drawing.Size(190, 19);
+            this.pnlEduFund.Size = new System.Drawing.Size(189, 19);
             this.pnlEduFund.TabIndex = 61;
             // 
             // rbtnEdufundNA
@@ -1673,7 +1617,7 @@
             // 
             this.lblESApprenticeship.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblESApprenticeship.AutoSize = true;
-            this.lblESApprenticeship.Location = new System.Drawing.Point(443, 8);
+            this.lblESApprenticeship.Location = new System.Drawing.Point(442, 8);
             this.lblESApprenticeship.Name = "lblESApprenticeship";
             this.lblESApprenticeship.Size = new System.Drawing.Size(112, 13);
             this.lblESApprenticeship.TabIndex = 10;
@@ -1693,7 +1637,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(443, 92);
+            this.label3.Location = new System.Drawing.Point(442, 92);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 66;
@@ -1713,7 +1657,7 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(443, 120);
+            this.label5.Location = new System.Drawing.Point(442, 120);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 13);
             this.label5.TabIndex = 68;
@@ -1730,7 +1674,7 @@
             this.tlpDisplay04.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
             this.tlpDisplay04.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 181F));
             this.tlpDisplay04.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDisplay04.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.tlpDisplay04.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
             this.tlpDisplay04.Controls.Add(this.pnlPerinatalCompleteReferal, 1, 10);
             this.tlpDisplay04.Controls.Add(this.pnlPerinatalInitiateReferal, 4, 9);
             this.tlpDisplay04.Controls.Add(this.pnlTBCompletedReferal, 1, 9);
@@ -1738,17 +1682,16 @@
             this.tlpDisplay04.Controls.Add(this.pnlTBscreen, 1, 8);
             this.tlpDisplay04.Controls.Add(this.panel21, 4, 7);
             this.tlpDisplay04.Controls.Add(this.pnlImmunization, 1, 7);
-            this.tlpDisplay04.Controls.Add(this.panel19, 4, 6);
-            this.tlpDisplay04.Controls.Add(this.panel16, 1, 6);
-            this.tlpDisplay04.Controls.Add(this.panel14, 4, 5);
-            this.tlpDisplay04.Controls.Add(this.panel9, 1, 5);
+            this.tlpDisplay04.Controls.Add(this.pnlCompleteARTReferal, 4, 6);
+            this.tlpDisplay04.Controls.Add(this.pnlInnitiateARTReferal, 1, 6);
+            this.tlpDisplay04.Controls.Add(this.pnlHTSCompleteReferal, 4, 5);
+            this.tlpDisplay04.Controls.Add(this.pnlHTSInnitiateReferal, 1, 5);
             this.tlpDisplay04.Controls.Add(this.panel10, 1, 4);
             this.tlpDisplay04.Controls.Add(this.pnlHIVPreventionSupport, 4, 3);
             this.tlpDisplay04.Controls.Add(this.pnlAherencesupport, 1, 3);
             this.tlpDisplay04.Controls.Add(this.pnlHIVLiteracy, 1, 2);
             this.tlpDisplay04.Controls.Add(this.label7, 0, 2);
             this.tlpDisplay04.Controls.Add(this.label8, 0, 0);
-            this.tlpDisplay04.Controls.Add(this.pnlHHPHiv);
             this.tlpDisplay04.Controls.Add(this.label9, 3, 2);
             this.tlpDisplay04.Controls.Add(this.pnlHIVDisclosure, 4, 2);
             this.tlpDisplay04.Controls.Add(this.lblAdherence, 3, 1);
@@ -1773,6 +1716,7 @@
             this.tlpDisplay04.Controls.Add(this.label25, 0, 9);
             this.tlpDisplay04.Controls.Add(this.label26, 3, 9);
             this.tlpDisplay04.Controls.Add(this.label27, 0, 10);
+            this.tlpDisplay04.Controls.Add(this.cboHivstatus, 1, 0);
             this.tlpDisplay04.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpDisplay04.Location = new System.Drawing.Point(3, 465);
             this.tlpDisplay04.Name = "tlpDisplay04";
@@ -1840,7 +1784,7 @@
             this.pnlPerinatalInitiateReferal.Controls.Add(this.rbtnInnitiatePMTCTReferalNA);
             this.pnlPerinatalInitiateReferal.Controls.Add(this.rbtnInnitiatePMTCTReferalYes);
             this.pnlPerinatalInitiateReferal.Controls.Add(this.rbtnInnitiatePMTCTReferalNo);
-            this.pnlPerinatalInitiateReferal.Location = new System.Drawing.Point(624, 256);
+            this.pnlPerinatalInitiateReferal.Location = new System.Drawing.Point(623, 256);
             this.pnlPerinatalInitiateReferal.Name = "pnlPerinatalInitiateReferal";
             this.pnlPerinatalInitiateReferal.Size = new System.Drawing.Size(148, 20);
             this.pnlPerinatalInitiateReferal.TabIndex = 68;
@@ -1926,7 +1870,7 @@
             this.pnlTBInnitiateReferal.Controls.Add(this.rbtnInnitiateTBReferalNA);
             this.pnlTBInnitiateReferal.Controls.Add(this.rbtnInnitiateTBReferalYes);
             this.pnlTBInnitiateReferal.Controls.Add(this.rbtnInnitiateTBReferalNo);
-            this.pnlTBInnitiateReferal.Location = new System.Drawing.Point(624, 228);
+            this.pnlTBInnitiateReferal.Location = new System.Drawing.Point(623, 228);
             this.pnlTBInnitiateReferal.Name = "pnlTBInnitiateReferal";
             this.pnlTBInnitiateReferal.Size = new System.Drawing.Size(148, 20);
             this.pnlTBInnitiateReferal.TabIndex = 67;
@@ -2012,7 +1956,7 @@
             this.panel21.Controls.Add(this.rbtnCompleteImmunizaRefferalNA);
             this.panel21.Controls.Add(this.rbtnCompleteImmunizaRefferalYes);
             this.panel21.Controls.Add(this.rbtnCompleteImmunizaRefferalNo);
-            this.panel21.Location = new System.Drawing.Point(624, 200);
+            this.panel21.Location = new System.Drawing.Point(623, 200);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(148, 20);
             this.panel21.TabIndex = 66;
@@ -2092,15 +2036,15 @@
             this.rbtninnitiateImmunizaRefferalNo.Text = "No";
             this.rbtninnitiateImmunizaRefferalNo.UseVisualStyleBackColor = true;
             // 
-            // panel19
+            // pnlCompleteARTReferal
             // 
-            this.panel19.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.panel19.Controls.Add(this.rbtnCompleteARTRefferalYes);
-            this.panel19.Controls.Add(this.rbtnCompleteARTRefferalNo);
-            this.panel19.Location = new System.Drawing.Point(624, 172);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(148, 20);
-            this.panel19.TabIndex = 67;
+            this.pnlCompleteARTReferal.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pnlCompleteARTReferal.Controls.Add(this.rbtnCompleteARTRefferalYes);
+            this.pnlCompleteARTReferal.Controls.Add(this.rbtnCompleteARTRefferalNo);
+            this.pnlCompleteARTReferal.Location = new System.Drawing.Point(623, 172);
+            this.pnlCompleteARTReferal.Name = "pnlCompleteARTReferal";
+            this.pnlCompleteARTReferal.Size = new System.Drawing.Size(148, 20);
+            this.pnlCompleteARTReferal.TabIndex = 67;
             // 
             // rbtnCompleteARTRefferalYes
             // 
@@ -2123,15 +2067,15 @@
             this.rbtnCompleteARTRefferalNo.Text = "No";
             this.rbtnCompleteARTRefferalNo.UseVisualStyleBackColor = true;
             // 
-            // panel16
+            // pnlInnitiateARTReferal
             // 
-            this.panel16.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.panel16.Controls.Add(this.rbtnInniateARTRefferalYes);
-            this.panel16.Controls.Add(this.rbtnInniateARTRefferalNo);
-            this.panel16.Location = new System.Drawing.Point(204, 172);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(148, 20);
-            this.panel16.TabIndex = 66;
+            this.pnlInnitiateARTReferal.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pnlInnitiateARTReferal.Controls.Add(this.rbtnInniateARTRefferalYes);
+            this.pnlInnitiateARTReferal.Controls.Add(this.rbtnInniateARTRefferalNo);
+            this.pnlInnitiateARTReferal.Location = new System.Drawing.Point(204, 172);
+            this.pnlInnitiateARTReferal.Name = "pnlInnitiateARTReferal";
+            this.pnlInnitiateARTReferal.Size = new System.Drawing.Size(148, 20);
+            this.pnlInnitiateARTReferal.TabIndex = 66;
             // 
             // rbtnInniateARTRefferalYes
             // 
@@ -2154,15 +2098,15 @@
             this.rbtnInniateARTRefferalNo.Text = "No";
             this.rbtnInniateARTRefferalNo.UseVisualStyleBackColor = true;
             // 
-            // panel14
+            // pnlHTSCompleteReferal
             // 
-            this.panel14.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.panel14.Controls.Add(this.rbtnCompletedHtsRefferalYes);
-            this.panel14.Controls.Add(this.rbtnCompletedHtsRefferalNo);
-            this.panel14.Location = new System.Drawing.Point(624, 144);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(148, 20);
-            this.panel14.TabIndex = 66;
+            this.pnlHTSCompleteReferal.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pnlHTSCompleteReferal.Controls.Add(this.rbtnCompletedHtsRefferalYes);
+            this.pnlHTSCompleteReferal.Controls.Add(this.rbtnCompletedHtsRefferalNo);
+            this.pnlHTSCompleteReferal.Location = new System.Drawing.Point(623, 144);
+            this.pnlHTSCompleteReferal.Name = "pnlHTSCompleteReferal";
+            this.pnlHTSCompleteReferal.Size = new System.Drawing.Size(148, 20);
+            this.pnlHTSCompleteReferal.TabIndex = 66;
             // 
             // rbtnCompletedHtsRefferalYes
             // 
@@ -2185,15 +2129,15 @@
             this.rbtnCompletedHtsRefferalNo.Text = "No";
             this.rbtnCompletedHtsRefferalNo.UseVisualStyleBackColor = true;
             // 
-            // panel9
+            // pnlHTSInnitiateReferal
             // 
-            this.panel9.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.panel9.Controls.Add(this.rbtnHstRefferalInitiateYes);
-            this.panel9.Controls.Add(this.rbtnHstRefferalInitiateNo);
-            this.panel9.Location = new System.Drawing.Point(204, 144);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(148, 20);
-            this.panel9.TabIndex = 65;
+            this.pnlHTSInnitiateReferal.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pnlHTSInnitiateReferal.Controls.Add(this.rbtnHstRefferalInitiateYes);
+            this.pnlHTSInnitiateReferal.Controls.Add(this.rbtnHstRefferalInitiateNo);
+            this.pnlHTSInnitiateReferal.Location = new System.Drawing.Point(204, 144);
+            this.pnlHTSInnitiateReferal.Name = "pnlHTSInnitiateReferal";
+            this.pnlHTSInnitiateReferal.Size = new System.Drawing.Size(148, 20);
+            this.pnlHTSInnitiateReferal.TabIndex = 65;
             // 
             // rbtnHstRefferalInitiateYes
             // 
@@ -2265,7 +2209,7 @@
             this.pnlHIVPreventionSupport.Controls.Add(this.rbtnHIVPreventionSupportNA);
             this.pnlHIVPreventionSupport.Controls.Add(this.rbtnHIVPreventionSupportYes);
             this.pnlHIVPreventionSupport.Controls.Add(this.rbtnHIVPreventionSupportNo);
-            this.pnlHIVPreventionSupport.Location = new System.Drawing.Point(624, 88);
+            this.pnlHIVPreventionSupport.Location = new System.Drawing.Point(623, 88);
             this.pnlHIVPreventionSupport.Name = "pnlHIVPreventionSupport";
             this.pnlHIVPreventionSupport.Size = new System.Drawing.Size(190, 20);
             this.pnlHIVPreventionSupport.TabIndex = 64;
@@ -2412,7 +2356,7 @@
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(442, 57);
+            this.label9.Location = new System.Drawing.Point(441, 57);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(151, 26);
             this.label9.TabIndex = 9;
@@ -2424,7 +2368,7 @@
             this.pnlHIVDisclosure.Controls.Add(this.rbtnDisclosuresupportNA);
             this.pnlHIVDisclosure.Controls.Add(this.rbtnDisclosuresupportYes);
             this.pnlHIVDisclosure.Controls.Add(this.rbtnDisclosuresupportNo);
-            this.pnlHIVDisclosure.Location = new System.Drawing.Point(624, 60);
+            this.pnlHIVDisclosure.Location = new System.Drawing.Point(623, 60);
             this.pnlHIVDisclosure.Name = "pnlHIVDisclosure";
             this.pnlHIVDisclosure.Size = new System.Drawing.Size(190, 20);
             this.pnlHIVDisclosure.TabIndex = 62;
@@ -2465,7 +2409,7 @@
             // 
             this.lblAdherence.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblAdherence.AutoSize = true;
-            this.lblAdherence.Location = new System.Drawing.Point(442, 36);
+            this.lblAdherence.Location = new System.Drawing.Point(441, 36);
             this.lblAdherence.Name = "lblAdherence";
             this.lblAdherence.Size = new System.Drawing.Size(88, 13);
             this.lblAdherence.TabIndex = 11;
@@ -2477,7 +2421,7 @@
             this.pnlART.Controls.Add(this.rbtnARTNA);
             this.pnlART.Controls.Add(this.rbtnARTYes);
             this.pnlART.Controls.Add(this.rbtnARTNo);
-            this.pnlART.Location = new System.Drawing.Point(624, 4);
+            this.pnlART.Location = new System.Drawing.Point(623, 4);
             this.pnlART.Name = "pnlART";
             this.pnlART.Size = new System.Drawing.Size(190, 20);
             this.pnlART.TabIndex = 61;
@@ -2492,6 +2436,7 @@
             this.rbtnARTNA.TabIndex = 3;
             this.rbtnARTNA.Text = "NA";
             this.rbtnARTNA.UseVisualStyleBackColor = true;
+            this.rbtnARTNA.CheckedChanged += new System.EventHandler(this.rbtnARTNA_CheckedChanged);
             // 
             // rbtnARTYes
             // 
@@ -2514,12 +2459,13 @@
             this.rbtnARTNo.TabIndex = 0;
             this.rbtnARTNo.Text = "No";
             this.rbtnARTNo.UseVisualStyleBackColor = true;
+            this.rbtnARTNo.CheckedChanged += new System.EventHandler(this.rbtnARTNo_CheckedChanged);
             // 
             // lblART
             // 
             this.lblART.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblART.AutoSize = true;
-            this.lblART.Location = new System.Drawing.Point(442, 8);
+            this.lblART.Location = new System.Drawing.Point(441, 8);
             this.lblART.Name = "lblART";
             this.lblART.Size = new System.Drawing.Size(86, 13);
             this.lblART.TabIndex = 10;
@@ -2593,7 +2539,7 @@
             // 
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(442, 85);
+            this.label14.Location = new System.Drawing.Point(441, 85);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(170, 26);
             this.label14.TabIndex = 66;
@@ -2613,7 +2559,7 @@
             // 
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(442, 120);
+            this.label16.Location = new System.Drawing.Point(441, 120);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(138, 13);
             this.label16.TabIndex = 68;
@@ -2622,8 +2568,8 @@
             // cboAherenceLevel
             // 
             this.cboAherenceLevel.FormattingEnabled = true;
-            this.cboAherenceLevel.Location = new System.Drawing.Point(623, 31);
-            this.cboAherenceLevel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboAherenceLevel.Location = new System.Drawing.Point(622, 31);
+            this.cboAherenceLevel.Margin = new System.Windows.Forms.Padding(2);
             this.cboAherenceLevel.Name = "cboAherenceLevel";
             this.cboAherenceLevel.Size = new System.Drawing.Size(192, 21);
             this.cboAherenceLevel.TabIndex = 69;
@@ -2631,8 +2577,8 @@
             // cboNutritionAssResult
             // 
             this.cboNutritionAssResult.FormattingEnabled = true;
-            this.cboNutritionAssResult.Location = new System.Drawing.Point(623, 115);
-            this.cboNutritionAssResult.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboNutritionAssResult.Location = new System.Drawing.Point(622, 115);
+            this.cboNutritionAssResult.Margin = new System.Windows.Forms.Padding(2);
             this.cboNutritionAssResult.Name = "cboNutritionAssResult";
             this.cboNutritionAssResult.Size = new System.Drawing.Size(192, 21);
             this.cboNutritionAssResult.TabIndex = 70;
@@ -2651,7 +2597,7 @@
             // 
             this.label18.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(442, 148);
+            this.label18.Location = new System.Drawing.Point(441, 148);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(150, 13);
             this.label18.TabIndex = 72;
@@ -2671,7 +2617,7 @@
             // 
             this.label20.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(442, 176);
+            this.label20.Location = new System.Drawing.Point(441, 176);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(150, 13);
             this.label20.TabIndex = 74;
@@ -2691,7 +2637,7 @@
             // 
             this.label22.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(442, 197);
+            this.label22.Location = new System.Drawing.Point(441, 197);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(173, 26);
             this.label22.TabIndex = 76;
@@ -2711,7 +2657,7 @@
             // 
             this.label24.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(442, 232);
+            this.label24.Location = new System.Drawing.Point(441, 232);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(140, 13);
             this.label24.TabIndex = 78;
@@ -2731,7 +2677,7 @@
             // 
             this.label26.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(442, 253);
+            this.label26.Location = new System.Drawing.Point(441, 253);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(143, 26);
             this.label26.TabIndex = 80;
@@ -2758,7 +2704,7 @@
             this.tlpDisplay05.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tlpDisplay05.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tlpDisplay05.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDisplay05.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
+            this.tlpDisplay05.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
             this.tlpDisplay05.Controls.Add(this.pnlFamilyGroupDiscussion, 4, 2);
             this.tlpDisplay05.Controls.Add(this.pnlSessionCDO, 4, 3);
             this.tlpDisplay05.Controls.Add(this.pnlReportChildAbuse, 1, 3);
@@ -2793,9 +2739,9 @@
             this.pnlFamilyGroupDiscussion.Controls.Add(this.rbtnFamilygrpDiscusionNA);
             this.pnlFamilyGroupDiscussion.Controls.Add(this.rbtnFamilygrpDiscusionYes);
             this.pnlFamilyGroupDiscussion.Controls.Add(this.rbtnFamilygrpDiscusionNo);
-            this.pnlFamilyGroupDiscussion.Location = new System.Drawing.Point(644, 63);
+            this.pnlFamilyGroupDiscussion.Location = new System.Drawing.Point(643, 63);
             this.pnlFamilyGroupDiscussion.Name = "pnlFamilyGroupDiscussion";
-            this.pnlFamilyGroupDiscussion.Size = new System.Drawing.Size(190, 19);
+            this.pnlFamilyGroupDiscussion.Size = new System.Drawing.Size(189, 19);
             this.pnlFamilyGroupDiscussion.TabIndex = 62;
             // 
             // rbtnFamilygrpDiscusionNA
@@ -2836,9 +2782,9 @@
             this.pnlSessionCDO.Controls.Add(this.rdnSessionCDONA);
             this.pnlSessionCDO.Controls.Add(this.rdnSessionCDOYes);
             this.pnlSessionCDO.Controls.Add(this.rdnSessionCDONo);
-            this.pnlSessionCDO.Location = new System.Drawing.Point(644, 92);
+            this.pnlSessionCDO.Location = new System.Drawing.Point(643, 92);
             this.pnlSessionCDO.Name = "pnlSessionCDO";
-            this.pnlSessionCDO.Size = new System.Drawing.Size(190, 19);
+            this.pnlSessionCDO.Size = new System.Drawing.Size(189, 19);
             this.pnlSessionCDO.TabIndex = 64;
             // 
             // rdnSessionCDONA
@@ -3026,7 +2972,7 @@
             // 
             this.label30.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(443, 66);
+            this.label30.Location = new System.Drawing.Point(442, 66);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(144, 13);
             this.label30.TabIndex = 9;
@@ -3036,7 +2982,7 @@
             // 
             this.label31.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(443, 37);
+            this.label31.Location = new System.Drawing.Point(442, 37);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(165, 13);
             this.label31.TabIndex = 11;
@@ -3048,9 +2994,9 @@
             this.pnlBirthRegInnitiateReferal.Controls.Add(this.rbtnInniateBirthRegReferalNA);
             this.pnlBirthRegInnitiateReferal.Controls.Add(this.rbtnInniateBirthRegReferalYes);
             this.pnlBirthRegInnitiateReferal.Controls.Add(this.rbtnInniateBirthRegReferalNo);
-            this.pnlBirthRegInnitiateReferal.Location = new System.Drawing.Point(644, 34);
+            this.pnlBirthRegInnitiateReferal.Location = new System.Drawing.Point(643, 34);
             this.pnlBirthRegInnitiateReferal.Name = "pnlBirthRegInnitiateReferal";
-            this.pnlBirthRegInnitiateReferal.Size = new System.Drawing.Size(190, 19);
+            this.pnlBirthRegInnitiateReferal.Size = new System.Drawing.Size(189, 19);
             this.pnlBirthRegInnitiateReferal.TabIndex = 61;
             // 
             // rbtnInniateBirthRegReferalNA
@@ -3091,9 +3037,9 @@
             this.pnlPostViolenceCompletedReferal.Controls.Add(this.rbtnCompletedPostViolenceReferalNA);
             this.pnlPostViolenceCompletedReferal.Controls.Add(this.rbtnCompletedPostViolenceReferalYes);
             this.pnlPostViolenceCompletedReferal.Controls.Add(this.rbtnCompletedPostViolenceReferalNo);
-            this.pnlPostViolenceCompletedReferal.Location = new System.Drawing.Point(644, 5);
+            this.pnlPostViolenceCompletedReferal.Location = new System.Drawing.Point(643, 5);
             this.pnlPostViolenceCompletedReferal.Name = "pnlPostViolenceCompletedReferal";
-            this.pnlPostViolenceCompletedReferal.Size = new System.Drawing.Size(190, 19);
+            this.pnlPostViolenceCompletedReferal.Size = new System.Drawing.Size(189, 19);
             this.pnlPostViolenceCompletedReferal.TabIndex = 61;
             // 
             // rbtnCompletedPostViolenceReferalNA
@@ -3132,7 +3078,7 @@
             // 
             this.label32.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(443, 2);
+            this.label32.Location = new System.Drawing.Point(442, 2);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(164, 26);
             this.label32.TabIndex = 10;
@@ -3194,7 +3140,7 @@
             // 
             this.label35.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(443, 89);
+            this.label35.Location = new System.Drawing.Point(442, 89);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(155, 26);
             this.label35.TabIndex = 66;
@@ -3239,10 +3185,31 @@
             this.lblguid.TabIndex = 130;
             this.lblguid.Text = "lblguid";
             // 
+            // lblhhm_id
+            // 
+            this.lblhhm_id.AutoSize = true;
+            this.lblhhm_id.Location = new System.Drawing.Point(315, 2);
+            this.lblhhm_id.Name = "lblhhm_id";
+            this.lblhhm_id.Size = new System.Drawing.Size(51, 13);
+            this.lblhhm_id.TabIndex = 131;
+            this.lblhhm_id.Text = "lblhhm_id";
+            // 
+            // cboHivstatus
+            // 
+            this.cboHivstatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboHivstatus.FormattingEnabled = true;
+            this.cboHivstatus.Location = new System.Drawing.Point(203, 3);
+            this.cboHivstatus.Margin = new System.Windows.Forms.Padding(2);
+            this.cboHivstatus.Name = "cboHivstatus";
+            this.cboHivstatus.Size = new System.Drawing.Size(192, 21);
+            this.cboHivstatus.TabIndex = 82;
+            this.cboHivstatus.SelectedIndexChanged += new System.EventHandler(this.cboHivstatus_SelectedIndexChanged);
+            // 
             // frm_HouseholdHomevisitMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblhhm_id);
             this.Controls.Add(this.lblguid);
             this.Controls.Add(this.tlpDisplay05);
             this.Controls.Add(this.tableLayoutPanel6);
@@ -3256,7 +3223,7 @@
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tableLayoutPanel5);
             this.Controls.Add(this.tlpDisplay02);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_HouseholdHomevisitMember";
             this.Size = new System.Drawing.Size(910, 1294);
             this.Load += new System.EventHandler(this.frm_HouseholdHomevisitMember_Load);
@@ -3274,8 +3241,6 @@
             this.pnlEnrollmentAssistance.PerformLayout();
             this.pnlSchoolUniform.ResumeLayout(false);
             this.pnlSchoolUniform.PerformLayout();
-            this.pnlHHPHiv.ResumeLayout(false);
-            this.pnlHHPHiv.PerformLayout();
             this.tplButton01.ResumeLayout(false);
             this.tplButton01.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -3328,14 +3293,14 @@
             this.panel21.PerformLayout();
             this.pnlImmunization.ResumeLayout(false);
             this.pnlImmunization.PerformLayout();
-            this.panel19.ResumeLayout(false);
-            this.panel19.PerformLayout();
-            this.panel16.ResumeLayout(false);
-            this.panel16.PerformLayout();
-            this.panel14.ResumeLayout(false);
-            this.panel14.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
+            this.pnlCompleteARTReferal.ResumeLayout(false);
+            this.pnlCompleteARTReferal.PerformLayout();
+            this.pnlInnitiateARTReferal.ResumeLayout(false);
+            this.pnlInnitiateARTReferal.PerformLayout();
+            this.pnlHTSCompleteReferal.ResumeLayout(false);
+            this.pnlHTSCompleteReferal.PerformLayout();
+            this.pnlHTSInnitiateReferal.ResumeLayout(false);
+            this.pnlHTSInnitiateReferal.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.pnlHIVPreventionSupport.ResumeLayout(false);
@@ -3376,9 +3341,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.RadioButton rbtnHHPHivUnknown;
-        private System.Windows.Forms.RadioButton rbtnHHPHivNeg;
-        private System.Windows.Forms.RadioButton rbtnHHPHivPos;
         private System.Windows.Forms.TableLayoutPanel tlpDisplay03;
         private System.Windows.Forms.Label lblProChildAbuse;
         private System.Windows.Forms.Label lblProReintegrated;
@@ -3405,8 +3367,6 @@
         private System.Windows.Forms.RadioButton rbtnUniformNA;
         private System.Windows.Forms.RadioButton rbtnUniformYes;
         private System.Windows.Forms.RadioButton rbtnUniformNo;
-        private System.Windows.Forms.RadioButton rbtnHHPHivTNR;
-        private System.Windows.Forms.Panel pnlHHPHiv;
         private System.Windows.Forms.RadioButton rbtnMemberActiveYes;
         private System.Windows.Forms.Label lblHHMemberStatusVal;
         private System.Windows.Forms.Label lblMemberActive;
@@ -3536,19 +3496,19 @@
         private System.Windows.Forms.RadioButton rbtnDisclosuresupportNA;
         private System.Windows.Forms.ComboBox cboNutritionAssResult;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel pnlHTSInnitiateReferal;
         private System.Windows.Forms.RadioButton rbtnHstRefferalInitiateYes;
         private System.Windows.Forms.RadioButton rbtnHstRefferalInitiateNo;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Panel pnlHTSCompleteReferal;
         private System.Windows.Forms.RadioButton rbtnCompletedHtsRefferalYes;
         private System.Windows.Forms.RadioButton rbtnCompletedHtsRefferalNo;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Panel pnlInnitiateARTReferal;
         private System.Windows.Forms.RadioButton rbtnInniateARTRefferalYes;
         private System.Windows.Forms.RadioButton rbtnInniateARTRefferalNo;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.Panel pnlCompleteARTReferal;
         private System.Windows.Forms.RadioButton rbtnCompleteARTRefferalYes;
         private System.Windows.Forms.RadioButton rbtnCompleteARTRefferalNo;
         private System.Windows.Forms.Panel panel21;
@@ -3629,5 +3589,7 @@
         private System.Windows.Forms.RadioButton rbtnFamilygrpDiscusionYes;
         private System.Windows.Forms.RadioButton rbtnFamilygrpDiscusionNo;
         private System.Windows.Forms.Label lblguid;
+        private System.Windows.Forms.Label lblhhm_id;
+        private System.Windows.Forms.ComboBox cboHivstatus;
     }
 }

@@ -273,7 +273,7 @@ namespace SOCY_MIS.DataAccessLayer
                               ,[ofc_id] = '{51}'
                               ,[district_id] ='{52}'
                               ,[gnd_name] = '{53}'
-                               ,[ynna_complete_tb_refferal] = '{54}'
+                              ,[ynna_complete_tb_refferal] = '{54}'
                          WHERE  [hhvm_id] = '{0}'";
 
             strSQL = string.Format(strSQL, hhvm_id, hhm_id, hhv_id, hhm_name, hmm_age, yn_id_hhm_active, ynna_stb_id_SILC, ynna_stb_id_other_saving_grp, ynna_stb_caregiver_services
@@ -282,7 +282,7 @@ namespace SOCY_MIS.DataAccessLayer
            , ynna_sch_ovc_receive_edu_subsidy, ynna_progressed_to_another_class, hst_id, ynna_on_art, ynna_follow_art_prescription, adherence_level, ynna_hiv_literacy
            , yn_hiv_counselling, yn_hiv_adherence_support, yn_hiv_prevention_support, yn_wash_messages, nutrition_assessment_result, yn_initiate_hts_refferal, yn_complete_hts_refferal
            , ynna_initiate_art_refferal, ynna_complete_art_refferal, ynna_initiate_immunize_refferal, ynna_complete_immunize_refferal, ynna_tb_screen, ynna_initiate_tb_refferal
-           , ynna_initiate_perinatal_care_refferal, ynna_complete_perinatal_care_refferal, ynna_complete_post_violence_refferal, ynna_ovc_has_birth_certificate, ynna_initiate_birth_reg_refferal
+           , ynna_initiate_perinatal_care_refferal, ynna_complete_perinatal_care_refferal, ynna_initiate_post_violence_refferal, ynna_complete_post_violence_refferal, ynna_ovc_has_birth_certificate, ynna_initiate_birth_reg_refferal
            , ynna_complete_birth_reg_refferal, ynna_pss_family_group_discussion, ynna_reported_to_police, ynna_violence_evidence_based_intervention, usr_id_update, ofc_id, district_id,gnd_name, ynna_complete_tb_refferal);
 
             dbCon.ExecuteNonQuery(strSQL);
@@ -556,6 +556,101 @@ namespace SOCY_MIS.DataAccessLayer
 
             strSQL = string.Format(strSQL, hh_id);
 
+            try
+            {
+                string strConn = dbCon.ToString();
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(strSQL, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    Adapt = new SqlDataAdapter(cmd);
+                    Adapt.Fill(dt);
+
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            finally
+            {
+                if (conn.State == ConnectionState.Open) { conn.Close(); }
+            }
+
+            return dt;
+        }
+
+
+        public static DataTable LoadHIVstatus()
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter Adapt;
+            string strSQL = string.Empty;
+
+            strSQL = @"SELECT hst_id,hst_name FROM lst_hiv_status";
+
+            try
+            {
+                string strConn = dbCon.ToString();
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(strSQL, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    Adapt = new SqlDataAdapter(cmd);
+                    Adapt.Fill(dt);
+
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            finally
+            {
+                if (conn.State == ConnectionState.Open) { conn.Close(); }
+            }
+
+            return dt;
+        }
+
+        public static DataTable LoadHomeVisitDisplay(string hhv_id)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter Adapt;
+            string strSQL = string.Empty;
+
+            strSQL = @"SELECT* FROM hh_household_home_visit_v_2 WHERE hhv_id = '{0}'";
+            strSQL = string.Format(strSQL,hhv_id);
             try
             {
                 string strConn = dbCon.ToString();

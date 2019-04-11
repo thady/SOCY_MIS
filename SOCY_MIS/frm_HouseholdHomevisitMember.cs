@@ -23,6 +23,7 @@ namespace SOCY_MIS
         private Master frmMST = null;
         int Age = 0;
         DataTable dt = null;
+        string errorMessage = string.Empty;
         #endregion Variables
 
         #region Property
@@ -58,7 +59,15 @@ namespace SOCY_MIS
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            save();
+            if (ValidateInput() == false)
+            {
+                MessageBox.Show(errorMessage,"SOCY MIS",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                save();
+            }
+           
         }
 
         private void frm_HouseholdHomevisitMember_Load(object sender, EventArgs e)
@@ -66,7 +75,7 @@ namespace SOCY_MIS
             LoadMembers();
             LoadHouseholdCode();
             AherenceLevel();
-
+            LoadHIVstatus();
             LoadHomevisitMembers();
         }
 
@@ -104,7 +113,7 @@ namespace SOCY_MIS
                 lblGenderDisplay.Text = dtRow["gnd_name"].ToString();
                 lblMemberNumberDisplay.Text = dtRow["hhm_number"].ToString();
                 string hst_id = dtRow["hst_id"].ToString();
-
+                lblhhm_id.Text = hhm_id;
                 Age = DateTime.Now.Year - Convert.ToInt32(dtRow["hhm_year_of_birth"].ToString());
 
                 SetServicesByAgeGroup(Age);
@@ -112,18 +121,31 @@ namespace SOCY_MIS
                 #region set hiv status
                 if (hst_id == utilConstants.cHSTPositive )
                 {
-                    rbtnHHPHivPos.Checked = true;
-                    pnlHHPHiv.Enabled = false;
+                    cboHivstatus.SelectedValue = hst_id;
+                    cboHivstatus.Enabled = false;
                 }
                 else
                 {
-                    rbtnHHPHivPos.Checked = false;
-                    rbtnHHPHivNeg.Checked = false;
-                    rbtnHHPHivUnknown.Checked = false;
-                    rbtnHHPHivTNR.Checked = false;
-                    pnlHHPHiv.Enabled = true;
+                    cboHivstatus.SelectedValue = "-1";
+                    cboHivstatus.Enabled = true;
                 }
                 #endregion
+            }
+        }
+
+        protected void LoadHIVstatus()
+        {
+            dt = hhHouseholdHomeVisit_v2.LoadHIVstatus();
+            if (dt.Rows.Count > 0)
+            {
+                DataRow sctemptyRow = dt.NewRow();
+                sctemptyRow["hst_id"] = "-1";
+                sctemptyRow["hst_name"] = "Select One";
+                dt.Rows.InsertAt(sctemptyRow, 0);
+
+                cboHivstatus.DataSource = dt;
+                cboHivstatus.DisplayMember = "hst_name";
+                cboHivstatus.ValueMember = "hst_id";
             }
         }
 
@@ -131,6 +153,7 @@ namespace SOCY_MIS
         {
             if (cbHHMember.SelectedValue.ToString() != "-1")
             {
+                ClearMember();
                 LoadMemberDetails(cbHHMember.SelectedValue.ToString());
             }
         }
@@ -609,6 +632,60 @@ namespace SOCY_MIS
             }
             #endregion Safe
         }
+
+        protected bool ValidateInput()
+        {
+            bool isvalid = false;
+            if (lblhhm_id.Text == "lblhhm_id")
+            {
+                isvalid = false;
+                errorMessage = "No member selected,save failed";
+            }
+            else if (rbtnMemberActiveYes.Checked & (cboHivstatus.SelectedValue.ToString() == "-1"))
+            {
+                isvalid = false;
+                errorMessage = "HIV Status csnnot be empty";
+            }
+            else if (rbtnARTNo.Checked & (rbtnInniateARTRefferalYes.Checked == false & rbtnInniateARTRefferalNo.Checked == false & rbtnCompleteARTRefferalYes.Checked == false & rbtnCompleteARTRefferalNo.Checked == false))
+            {
+                isvalid = false;
+                errorMessage = "Beneficiary not on ART,Please indicate if ART referal was innitiated/Completed";
+            }
+            else if (cboHivstatus.SelectedValue.ToString() == utilConstants.cHSTUnKnown & (rbtnHstRefferalInitiateYes.Checked == false & rbtnHstRefferalInitiateNo.Checked == false & rbtnCompletedHtsRefferalYes.Checked == false & rbtnCompletedHtsRefferalNo.Checked == false))
+            {
+                isvalid = false;
+                errorMessage = "Beneficiary HIV status unknown,Please indicate if HTS referal was innitiated/Completed";
+            }
+            else if (rbtnBirthCertificateNo.Checked & (rbtnInniateBirthRegReferalYes.Checked == false & rbtnInniateBirthRegReferalNo.Checked == false & rbtnCompleteBirthRegReferalYes.Checked == false & rbtnCompleteBirthRegReferalNo.Checked == false))
+            {
+                isvalid = false;
+                errorMessage = "OVC has no birth certificate,Please indicate if birth registration referal was innitiated/Completed";
+            }
+            else if (rbtnMemberActiveYes.Checked == false && rbtnMemberActiveNo.Checked == false)
+            {
+                isvalid = false;
+                errorMessage = "Member status is required,please indicate if member is active or not";
+            }
+            else if (cboHivstatus.SelectedValue.ToString() == utilConstants.cHSTPositive  & (rbtnARTYes.Checked == false & rbtnARTNo.Checked == false))
+            {
+                isvalid = false;
+                errorMessage = "Beneficiary HIV status Positive,Please indicate if on ART";
+            }
+            else if (rbtnARTYes.Checked == true & ((rbtnPillsYes.Checked == false & rbtnPillsNo.Checked == false) || (cboAherenceLevel.Text == string.Empty || cboAherenceLevel.Text == "Select one")))
+            {
+
+                isvalid = false;
+                errorMessage = "Beneficiary is on ART,Please indicate if he/she is taking pills as prescribed and adherence level";
+            }
+            else
+            {
+                isvalid = true;
+            }
+
+            return isvalid;
+        }
+
+       
         #endregion Validations
 
 
@@ -618,9 +695,8 @@ namespace SOCY_MIS
             DataAccessLayer.DBConnection dbCon = new DataAccessLayer.DBConnection(utilConstants.cACKConnection);
 
             #region set variables
-            hhHouseholdHomeVisit_v2.hhvm_id = Guid.NewGuid().ToString();
             hhHouseholdHomeVisit_v2.hhv_id = SystemConstants.object_id;
-            hhHouseholdHomeVisit_v2.hhm_id = cbHHMember.SelectedValue.ToString();
+            hhHouseholdHomeVisit_v2.hhm_id = lblhhm_id.Text;
             hhHouseholdHomeVisit_v2.hhm_name = cbHHMember.Text;
             hhHouseholdHomeVisit_v2.hmm_age = (DateTime.Now.Year - Convert.ToInt32(lblYearOfBirthDisplay.Text)).ToString();
             hhHouseholdHomeVisit_v2.gnd_name = lblGenderDisplay.Text;
@@ -643,18 +719,7 @@ namespace SOCY_MIS
             hhHouseholdHomeVisit_v2. ynna_progressed_to_another_class = utilControls.RadioButtonGetSelection(rbtnProgressedYes, rbtnProgressedNo, rbtnProgressedNA);
 
             #region HIV Status
-            if (rbtnHHPHivPos.Checked)
-                hhHouseholdHomeVisit_v2.hst_id = utilConstants.cHSTPositive;
-            else if (rbtnHHPHivNeg.Checked)
-                hhHouseholdHomeVisit_v2.hst_id = utilConstants.cHSTNegative;
-            else if (rbtnHHPHivUnknown.Checked)
-                hhHouseholdHomeVisit_v2.hst_id = utilConstants.cHSTUnKnown;
-            else if (rbtnHHPHivTNR.Checked)
-                hhHouseholdHomeVisit_v2.hst_id = utilConstants.cHSTNR;
-            else if(rbtnHHPHivTNR.Checked)
-                hhHouseholdHomeVisit_v2.hst_id = utilConstants.cHSTNR;
-            else
-                hhHouseholdHomeVisit_v2.hst_id = utilConstants.cDFEmptyListValue;
+            hhHouseholdHomeVisit_v2.hst_id = cboHivstatus.SelectedValue.ToString();
             #endregion HIS Status
 
             hhHouseholdHomeVisit_v2. ynna_on_art = utilControls.RadioButtonGetSelection(rbtnARTYes, rbtnARTNo, rbtnARTNA);
@@ -688,13 +753,28 @@ namespace SOCY_MIS
             #endregion set variables
 
             #region save
-            hhHouseholdHomeVisit_v2.Insert_home_visit_member(dbCon);
-            MessageBox.Show("Sucess","SOCY MIS",MessageBoxButtons.OK,MessageBoxIcon.Information);
-            lblguid.Text = hhHouseholdHomeVisit_v2.hhvm_id;
-            LoadMembers();
-            LoadHomevisitMembers();
+            if(lblguid.Text == "lblguid")
+            {
+                hhHouseholdHomeVisit_v2.hhvm_id = Guid.NewGuid().ToString();
+                hhHouseholdHomeVisit_v2.Insert_home_visit_member(dbCon);
+                MessageBox.Show("Sucess", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                lblguid.Text = hhHouseholdHomeVisit_v2.hhvm_id;
+                LoadMembers();
+                LoadHomevisitMembers();
+                Clear();
+            }
+            else
+            {
+                hhHouseholdHomeVisit_v2.hhvm_id = lblguid.Text;
+                hhHouseholdHomeVisit_v2.update_home_visit_member(dbCon);
+                MessageBox.Show("Sucess", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadMembers();
+                LoadHomevisitMembers();
+                Clear();
+            }
+           
 
-            Clear();
+           
             #endregion save
         }
         #endregion save
@@ -710,6 +790,7 @@ namespace SOCY_MIS
             lblYearOfBirthDisplay.Text = "Age";
             hhHouseholdHomeVisit_v2.gnd_name = string.Empty;
             lblGenderDisplay.Text = "Sex:";
+            lblhhm_id.Text = "lblhhm_id";
             hhHouseholdHomeVisit_v2.yn_id_hhm_active = string.Empty;
             utilControls.RadioButtonSetSelection(rbtnMemberActiveYes, rbtnMemberActiveNo, string.Empty);
             hhHouseholdHomeVisit_v2.ynna_stb_id_SILC = string.Empty;
@@ -745,10 +826,7 @@ namespace SOCY_MIS
             hhHouseholdHomeVisit_v2.ynna_progressed_to_another_class = string.Empty;
             utilControls.RadioButtonSetSelection(rbtnProgressedYes, rbtnProgressedNo, rbtnProgressedNA, string.Empty);
             hhHouseholdHomeVisit_v2.hst_id = string.Empty;
-            rbtnHHPHivPos.Checked = false;
-            rbtnHHPHivNeg.Checked = false;
-            rbtnHHPHivUnknown.Checked = false;
-            rbtnHHPHivTNR.Checked = false;
+            cboHivstatus.SelectedValue = "-1";
             hhHouseholdHomeVisit_v2.ynna_on_art = string.Empty;
             utilControls.RadioButtonSetSelection(rbtnARTYes, rbtnARTNo, rbtnARTNA, string.Empty);
             hhHouseholdHomeVisit_v2.ynna_follow_art_prescription = string.Empty;
@@ -804,6 +882,171 @@ namespace SOCY_MIS
             utilControls.RadioButtonSetSelection(rbtnReportchildAbuseYes, rbtnReportchildAbuseNo, rbtnReportchildAbuseNA, string.Empty);
             hhHouseholdHomeVisit_v2.ynna_reported_to_police = string.Empty;
             utilControls.RadioButtonSetSelection(rdnSessionCDOYes, rdnSessionCDONo, rdnSessionCDONA, string.Empty);
+            lblguid.Text = "lblguid";
+
+            pnlESSilc.Enabled = true;
+            pnlOtherSavingGroup.Enabled = true;
+            pnlEduFund.Enabled = true;
+            pnlCaregiverServices.Enabled = true;
+            pnlSAGE.Enabled = true;
+            rbtnSAGENA.Enabled = true;
+            pnlApprenticeship.Enabled = true;
+            rbtnApprenticeshipNA.Enabled = true;
+            pnlCottage.Enabled = true;
+            pnlCottage.Enabled = true;
+            rbtnCottageNA.Enabled = true;
+            rbtnAggroNA.Enabled = true;
+            pnlAflateen.Enabled = true;
+            rbtnAflateenNA.Enabled = true;
+            pnlEnrolledInSchool.Enabled = true;
+            pnlEnrollmentAssistance.Enabled = true;
+            pnlRegularlyAttendSchool.Enabled = true;
+            pnlSchoolUniform.Enabled = true;
+            pnlEduSubsidy.Enabled = true;
+            pnlSchoolProgress.Enabled = true;
+            pnlHIVLiteracy.Enabled = true;
+            pnlHIVPreventionSupport.Enabled = true;
+            pnlImmunization.Enabled = true;
+            pnlTBscreen.Enabled = true;
+            pnlTBInnitiateReferal.Enabled = true;
+            pnlTBCompletedReferal.Enabled = true;
+            pnlPerinatalInitiateReferal.Enabled = true;
+            pnlPerinatalCompleteReferal.Enabled = true;
+            pnlPostViolenceInnitiateReferal.Enabled = true;
+            pnlPostViolenceCompletedReferal.Enabled = true;
+            pnlBirthCertificate.Enabled = true;
+            pnlBirthRegInnitiateReferal.Enabled = true;
+            pnlBirthRegCompleteReferal.Enabled = true;
+            pnlFamilyGroupDiscussion.Enabled = true;
+            pnlReportChildAbuse.Enabled = true;
+            pnlSessionCDO.Enabled = true;
+            cboNutritionAssResult.Enabled = true;
+
+            rbtnEdufundNA.Enabled = true;
+            rbtnCaregiverGroupNA.Enabled = true;
+            rbtnLendingGroupNA.Enabled = true;
+            rbtnESSilcNA.Enabled = true;
+            rbtnSAGENA.Enabled = true;
+            rbtnApprenticeshipNA.Enabled = true;
+            rbtnCottageNA.Enabled = true;
+            rbtnAflateenNA.Enabled = true;
+            rbtnOvcEduEnrolledNA.Enabled = true;
+            rbtnAssReEnrollmentNA.Enabled = true;
+            rbtnRegularAttendschoolNA.Enabled = true;
+            rbtnUniformNA.Enabled = true;
+            rbtnEduSubsidyNA.Enabled = true;
+            rbtnProgressedNA.Enabled = true;
+            rbtnHIVLiteracyNA.Enabled = true;
+            rbtnHIVPreventionSupportNA.Enabled = true;
+            rbtninnitiateImmunizaRefferalNA.Enabled = true;
+            rbtnTBscreenNA.Enabled = true;
+            rbtnInnitiateTBReferalNA.Enabled = true;
+            rbtnCompleteTBReferalNA.Enabled = true;
+            rbtnCompletedPMTCTReferalNA.Enabled = true;
+            rbtnInnitiatePMTCTReferalNA.Enabled = true;
+            rbtnInnitiatePostViolenceReferalNA.Enabled = true;
+            rbtnCompletedPostViolenceReferalNA.Enabled = true;
+            rbtnInniateBirthRegReferalNA.Enabled = true;
+            rbtnCompleteBirthRegReferalNA.Enabled = true;
+            rbtnFamilygrpDiscusionNA.Enabled = true;
+            rbtnReportchildAbuseNA.Enabled = true;
+            rdnSessionCDONA.Enabled = true;
+        }
+
+
+        protected void ClearMember()
+        {
+            utilControls.RadioButtonSetSelection(rbtnMemberActiveYes, rbtnMemberActiveNo, string.Empty);
+            hhHouseholdHomeVisit_v2.ynna_stb_id_SILC = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnESSilcYes, rbtnESSilcNo, rbtnESSilcNA, string.Empty);
+            hhHouseholdHomeVisit_v2.ynna_stb_id_other_saving_grp = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnLendingGroupYes, rbtnLendingGroupNo, rbtnLendingGroupNA, string.Empty);
+            hhHouseholdHomeVisit_v2.ynna_stb_caregiver_services = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnCaregiverGroupYes, rbtnCaregiverGroupNo, rbtnCaregiverGroupNA, string.Empty);
+            hhHouseholdHomeVisit_v2.ynna_stb_contributes_edu_fund = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnEdufundYes, rbtnEdufundNo, rbtnEdufundNA, string.Empty);
+            hhHouseholdHomeVisit_v2.ynna_stb_SAGE = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnSAGEYes, rbtnSAGENo, rbtnSAGENA, string.Empty);
+            hhHouseholdHomeVisit_v2.yn_stb_receive_social_grant = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnFoodBankYes, rbtnFoodBankNo, string.Empty);
+            hhHouseholdHomeVisit_v2.ynna_stb_apprenticeship = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnApprenticeshipYes, rbtnApprenticeshipNo, rbtnApprenticeshipNA, string.Empty);
+            hhHouseholdHomeVisit_v2.ynna_stb_cottage = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnCottageYes, rbtnCottageNo, rbtnCottageNA, string.Empty);
+            hhHouseholdHomeVisit_v2.ynna_stb_agro_enterprise = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnAggroYes, rbtnAggroNo, rbtnAggroNA, string.Empty);
+            hhHouseholdHomeVisit_v2.ynna_stb_aflateen = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnAflateenYes, rbtnAflateenNo, rbtnAflateenNA, string.Empty);
+            hhHouseholdHomeVisit_v2.ynna_stb_sch_ovc_edu_enrolled = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnOvcEduEnrolledYes, rbtnOvcEduEnrolledNo, rbtnOvcEduEnrolledNA, string.Empty);
+            hhHouseholdHomeVisit_v2.ynna_sch_re_enrollment_support = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnAssReEnrollmentYes, rbtnAssReEnrollmentNo, rbtnAssReEnrollmentNA, string.Empty);
+            hhHouseholdHomeVisit_v2.ynna_sch_ovc_attend_school_regularly = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnRegularAttendschoolYes, rbtnRegularAttendschoolNo, rbtnRegularAttendschoolNA, string.Empty);
+            hhHouseholdHomeVisit_v2.ynna_sch_ovc_receive_school_uniform = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnUniformYes, rbtnUniformNo, rbtnUniformNA, string.Empty);
+            hhHouseholdHomeVisit_v2.ynna_sch_ovc_receive_edu_subsidy = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnEduSubsidyYes, rbtnEduSubsidyNo, rbtnEduSubsidyNA, string.Empty);
+            hhHouseholdHomeVisit_v2.ynna_progressed_to_another_class = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnProgressedYes, rbtnProgressedNo, rbtnProgressedNA, string.Empty);
+            hhHouseholdHomeVisit_v2.hst_id = string.Empty;
+            cboHivstatus.SelectedValue = "-1";
+            hhHouseholdHomeVisit_v2.ynna_on_art = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnARTYes, rbtnARTNo, rbtnARTNA, string.Empty);
+            hhHouseholdHomeVisit_v2.ynna_follow_art_prescription = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnPillsYes, rbtnPillsNo, rbtnPillsNA, string.Empty);
+            cboAherenceLevel.Text = string.Empty;
+            hhHouseholdHomeVisit_v2.adherence_level = string.Empty;
+            hhHouseholdHomeVisit_v2.ynna_hiv_literacy = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnHIVLiteracyYes, rbtnHIVLiteracyNo, rbtnHIVLiteracyNA, string.Empty);
+            hhHouseholdHomeVisit_v2.yn_hiv_counselling = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnDisclosuresupportYes, rbtnDisclosuresupportNo, rbtnDisclosuresupportNA, string.Empty);
+            hhHouseholdHomeVisit_v2.yn_hiv_adherence_support = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnAdherencesupportYes, rbtnAdherencesupportNo, rbtnAdherencesupportNA, string.Empty);
+            hhHouseholdHomeVisit_v2.yn_hiv_prevention_support = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnHIVPreventionSupportYes, rbtnHIVPreventionSupportNo, rbtnHIVPreventionSupportNA, string.Empty);
+            hhHouseholdHomeVisit_v2.yn_wash_messages = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnWashYes, rbtnWashNo, rbtnWashNA, string.Empty);
+            cboNutritionAssResult.Text = string.Empty;
+            hhHouseholdHomeVisit_v2.nutrition_assessment_result = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnHstRefferalInitiateYes, rbtnHstRefferalInitiateNo, string.Empty);
+            hhHouseholdHomeVisit_v2.yn_initiate_hts_refferal = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnCompletedHtsRefferalYes, rbtnCompletedHtsRefferalNo, string.Empty);
+            hhHouseholdHomeVisit_v2.yn_complete_hts_refferal = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnInniateARTRefferalYes, rbtnInniateARTRefferalNo, string.Empty);
+            hhHouseholdHomeVisit_v2.ynna_initiate_art_refferal = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnCompleteARTRefferalYes, rbtnCompleteARTRefferalNo, string.Empty);
+            hhHouseholdHomeVisit_v2.ynna_complete_art_refferal = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtninnitiateImmunizaRefferalYes, rbtninnitiateImmunizaRefferalNo, rbtninnitiateImmunizaRefferalNA, string.Empty);
+            hhHouseholdHomeVisit_v2.ynna_initiate_immunize_refferal = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnCompleteImmunizaRefferalYes, rbtnCompleteImmunizaRefferalNo, rbtnCompleteImmunizaRefferalNA, string.Empty);
+            hhHouseholdHomeVisit_v2.ynna_complete_immunize_refferal = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnTBscreenYes, rbtnTBscreenNo, rbtnTBscreenNA, string.Empty);
+            hhHouseholdHomeVisit_v2.ynna_tb_screen = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnInnitiateTBReferalYes, rbtnInnitiateTBReferalNo, rbtnInnitiateTBReferalNA, string.Empty);
+            hhHouseholdHomeVisit_v2.ynna_initiate_tb_refferal = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnCompleteTBReferalYes, rbtnCompleteTBReferalNo, rbtnCompleteTBReferalNA, string.Empty);
+            hhHouseholdHomeVisit_v2.ynna_complete_tb_refferal = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnInnitiatePMTCTReferalYes, rbtnInnitiatePMTCTReferalNo, rbtnInnitiatePMTCTReferalNA, string.Empty);
+            hhHouseholdHomeVisit_v2.ynna_initiate_perinatal_care_refferal = string.Empty;
+            hhHouseholdHomeVisit_v2.ynna_complete_perinatal_care_refferal = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnCompletedPMTCTReferalYes, rbtnCompletedPMTCTReferalNo, rbtnCompletedPMTCTReferalNA, string.Empty);
+            utilControls.RadioButtonSetSelection(rbtnInnitiatePostViolenceReferalYes, rbtnInnitiatePostViolenceReferalNo, rbtnInnitiatePostViolenceReferalNA, string.Empty);
+            hhHouseholdHomeVisit_v2.ynna_initiate_post_violence_refferal = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnCompletedPostViolenceReferalYes, rbtnCompletedPostViolenceReferalNo, rbtnCompletedPostViolenceReferalNA, string.Empty);
+            hhHouseholdHomeVisit_v2.ynna_complete_post_violence_refferal = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnBirthCertificateYes, rbtnBirthCertificateNo, string.Empty);
+            hhHouseholdHomeVisit_v2.ynna_ovc_has_birth_certificate = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnInniateBirthRegReferalYes, rbtnInniateBirthRegReferalNo, rbtnInniateBirthRegReferalNA, string.Empty);
+            hhHouseholdHomeVisit_v2.ynna_initiate_birth_reg_refferal = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnCompleteBirthRegReferalYes, rbtnCompleteBirthRegReferalNo, rbtnCompleteBirthRegReferalNA, string.Empty);
+            hhHouseholdHomeVisit_v2.ynna_complete_birth_reg_refferal = string.Empty;
+            hhHouseholdHomeVisit_v2.ynna_pss_family_group_discussion = string.Empty;
+            utilControls.RadioButtonSetSelection(rbtnFamilygrpDiscusionYes, rbtnFamilygrpDiscusionNo, rbtnFamilygrpDiscusionNA, string.Empty);
+            utilControls.RadioButtonSetSelection(rbtnReportchildAbuseYes, rbtnReportchildAbuseNo, rbtnReportchildAbuseNA, string.Empty);
+            hhHouseholdHomeVisit_v2.ynna_reported_to_police = string.Empty;
+            utilControls.RadioButtonSetSelection(rdnSessionCDOYes, rdnSessionCDONo, rdnSessionCDONA, string.Empty);
+            lblguid.Text = "lblguid";
 
             pnlESSilc.Enabled = true;
             pnlOtherSavingGroup.Enabled = true;
@@ -920,6 +1163,84 @@ namespace SOCY_MIS
             {
                 DataRow dtRow = dt.Rows[0];
 
+                hhHouseholdHomeVisit_v2.hhvm_id = dtRow["hhvm_id"].ToString();
+                hhHouseholdHomeVisit_v2.hhv_id = dtRow["hhv_id"].ToString();
+                hhHouseholdHomeVisit_v2.hhm_id = dtRow["hhm_id"].ToString();
+                lblguid.Text = dtRow["hhvm_id"].ToString();
+
+                #region MemberHeaderDetails
+                DataTable _dt = hhHouseholdHomeVisit_v2.LoadMemberDetails(dtRow["hhm_id"].ToString());
+                if (_dt.Rows.Count > 0)
+                {
+                    DataRow _dtRow = _dt.Rows[0];
+                    lblYearOfBirthDisplay.Text = _dtRow["hhm_year_of_birth"].ToString();
+                    lblGenderDisplay.Text = _dtRow["gnd_name"].ToString();
+                    lblMemberNumberDisplay.Text = _dtRow["hhm_number"].ToString();
+                   
+
+                    Age = DateTime.Now.Year - Convert.ToInt32(_dtRow["hhm_year_of_birth"].ToString());
+
+                    SetServicesByAgeGroup(Age);
+                }
+                #endregion
+
+                hhHouseholdHomeVisit_v2.hhm_name = dtRow["hhm_name"].ToString();
+                cbHHMember.Text = dtRow["hhm_name"].ToString();
+                cbHHMember.Enabled = false;
+                lblhhm_id.Text = dtRow["hhm_id"].ToString();
+                hhHouseholdHomeVisit_v2.hmm_age = (DateTime.Now.Year - Convert.ToInt32(lblYearOfBirthDisplay.Text)).ToString();
+                hhHouseholdHomeVisit_v2.gnd_name = lblGenderDisplay.Text;
+                utilControls.RadioButtonSetSelection(rbtnMemberActiveYes, rbtnMemberActiveNo, dtRow["yn_id_hhm_active"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnESSilcYes, rbtnESSilcNo, rbtnESSilcNA, dtRow["ynna_stb_id_SILC"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnLendingGroupYes, rbtnLendingGroupNo, rbtnLendingGroupNA, dtRow["ynna_stb_id_other_saving_grp"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnCaregiverGroupYes, rbtnCaregiverGroupNo, rbtnCaregiverGroupNA, dtRow["ynna_stb_caregiver_services"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnEdufundYes, rbtnEdufundNo, rbtnEdufundNA, dtRow["ynna_stb_contributes_edu_fund"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnSAGEYes, rbtnSAGENo, rbtnSAGENA, dtRow["ynna_stb_SAGE"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnFoodBankYes, rbtnFoodBankNo, dtRow["yn_stb_receive_social_grant"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnApprenticeshipYes, rbtnApprenticeshipNo, rbtnApprenticeshipNA, dtRow["ynna_stb_apprenticeship"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnCottageYes, rbtnCottageNo, rbtnCottageNA, dtRow["ynna_stb_cottage"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnAggroYes, rbtnAggroNo, rbtnAggroNA, dtRow["ynna_stb_agro_enterprise"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnAflateenYes, rbtnAflateenNo, rbtnAflateenNA, dtRow["ynna_stb_aflateen"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnOvcEduEnrolledYes, rbtnOvcEduEnrolledNo, rbtnOvcEduEnrolledNA, dtRow["ynna_stb_sch_ovc_edu_enrolled"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnAssReEnrollmentYes, rbtnAssReEnrollmentNo, rbtnAssReEnrollmentNA, dtRow["ynna_sch_re_enrollment_support"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnRegularAttendschoolYes, rbtnRegularAttendschoolNo, rbtnRegularAttendschoolNA, dtRow["ynna_sch_ovc_attend_school_regularly"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnUniformYes, rbtnUniformNo, rbtnUniformNA, dtRow["ynna_sch_ovc_receive_school_uniform"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnEduSubsidyYes, rbtnEduSubsidyNo, rbtnEduSubsidyNA, dtRow["ynna_sch_ovc_receive_edu_subsidy"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnProgressedYes, rbtnProgressedNo, rbtnProgressedNA, dtRow["ynna_progressed_to_another_class"].ToString());
+
+                #region HIV Status
+                string hst_id = dtRow["hst_id"].ToString();
+                cboHivstatus.SelectedValue = hst_id;
+                #endregion HIS Status
+
+                utilControls.RadioButtonSetSelection(rbtnARTYes, rbtnARTNo, rbtnARTNA, dtRow["ynna_on_art"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnPillsYes, rbtnPillsNo, rbtnPillsNA, dtRow["ynna_follow_art_prescription"].ToString());
+                cboAherenceLevel.Text = dtRow["adherence_level"].ToString();
+                utilControls.RadioButtonSetSelection(rbtnHIVLiteracyYes, rbtnHIVLiteracyNo, rbtnHIVLiteracyNA, dtRow["ynna_hiv_literacy"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnDisclosuresupportYes, rbtnDisclosuresupportNo, rbtnDisclosuresupportNA, dtRow["yn_hiv_counselling"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnAdherencesupportYes, rbtnAdherencesupportNo, rbtnAdherencesupportNA, dtRow["yn_hiv_adherence_support"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnHIVPreventionSupportYes, rbtnHIVPreventionSupportNo, rbtnHIVPreventionSupportNA, dtRow["yn_hiv_prevention_support"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnWashYes, rbtnWashNo, rbtnWashNA, dtRow["yn_wash_messages"].ToString());
+                cboNutritionAssResult.Text = dtRow["nutrition_assessment_result"].ToString();
+                utilControls.RadioButtonSetSelection(rbtnHstRefferalInitiateYes, rbtnHstRefferalInitiateNo, dtRow["yn_initiate_hts_refferal"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnCompletedHtsRefferalYes, rbtnCompletedHtsRefferalNo, dtRow["yn_complete_hts_refferal"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnInniateARTRefferalYes, rbtnInniateARTRefferalNo, dtRow["ynna_initiate_art_refferal"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnCompleteARTRefferalYes, rbtnCompleteARTRefferalNo, dtRow["ynna_complete_art_refferal"].ToString());
+                utilControls.RadioButtonSetSelection(rbtninnitiateImmunizaRefferalYes, rbtninnitiateImmunizaRefferalNo, rbtninnitiateImmunizaRefferalNA, dtRow["ynna_initiate_immunize_refferal"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnCompleteImmunizaRefferalYes, rbtnCompleteImmunizaRefferalNo, rbtnCompleteImmunizaRefferalNA, dtRow["ynna_complete_immunize_refferal"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnTBscreenYes, rbtnTBscreenNo, rbtnTBscreenNA, dtRow["ynna_tb_screen"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnInnitiateTBReferalYes, rbtnInnitiateTBReferalNo, rbtnInnitiateTBReferalNA, dtRow["ynna_initiate_tb_refferal"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnCompleteTBReferalYes, rbtnCompleteTBReferalNo, rbtnCompleteTBReferalNA, dtRow["ynna_complete_tb_refferal"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnInnitiatePMTCTReferalYes, rbtnInnitiatePMTCTReferalNo, rbtnInnitiatePMTCTReferalNA, dtRow["ynna_initiate_perinatal_care_refferal"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnCompletedPMTCTReferalYes, rbtnCompletedPMTCTReferalNo, rbtnCompletedPMTCTReferalNA, dtRow["ynna_complete_perinatal_care_refferal"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnInnitiatePostViolenceReferalYes, rbtnInnitiatePostViolenceReferalNo, rbtnInnitiatePostViolenceReferalNA, dtRow["ynna_initiate_post_violence_refferal"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnCompletedPostViolenceReferalYes, rbtnCompletedPostViolenceReferalNo, rbtnCompletedPostViolenceReferalNA, dtRow["ynna_complete_post_violence_refferal"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnBirthCertificateYes, rbtnBirthCertificateNo, dtRow["ynna_ovc_has_birth_certificate"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnInniateBirthRegReferalYes, rbtnInniateBirthRegReferalNo, rbtnInniateBirthRegReferalNA, dtRow["ynna_initiate_birth_reg_refferal"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnCompleteBirthRegReferalYes, rbtnCompleteBirthRegReferalNo, rbtnCompleteBirthRegReferalNA, dtRow["ynna_complete_birth_reg_refferal"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnFamilygrpDiscusionYes, rbtnFamilygrpDiscusionNo, rbtnFamilygrpDiscusionNA, dtRow["ynna_pss_family_group_discussion"].ToString());
+                utilControls.RadioButtonSetSelection(rbtnReportchildAbuseYes, rbtnReportchildAbuseNo, rbtnReportchildAbuseNA, dtRow["ynna_reported_to_police"].ToString());
+                utilControls.RadioButtonSetSelection(rdnSessionCDOYes, rdnSessionCDONo, rdnSessionCDONA, dtRow["ynna_violence_evidence_based_intervention"].ToString());
             }
         }
 
@@ -960,10 +1281,7 @@ namespace SOCY_MIS
             hhHouseholdHomeVisit_v2.ynna_progressed_to_another_class = string.Empty;
             utilControls.RadioButtonSetSelection(rbtnProgressedYes, rbtnProgressedNo, rbtnProgressedNA, string.Empty);
             hhHouseholdHomeVisit_v2.hst_id = string.Empty;
-            rbtnHHPHivPos.Checked = false;
-            rbtnHHPHivNeg.Checked = false;
-            rbtnHHPHivUnknown.Checked = false;
-            rbtnHHPHivTNR.Checked = false;
+            cboHivstatus.SelectedValue = "-1";
             hhHouseholdHomeVisit_v2.ynna_on_art = string.Empty;
             utilControls.RadioButtonSetSelection(rbtnARTYes, rbtnARTNo, rbtnARTNA, string.Empty);
             hhHouseholdHomeVisit_v2.ynna_follow_art_prescription = string.Empty;
@@ -1096,19 +1414,8 @@ namespace SOCY_MIS
 
         private void rbtnHHPHivPos_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbtnHHPHivPos.Checked == true)
-            {
-                pnlART.Enabled = true;
-                rbtnARTNA.Checked = false;
-                rbtnARTNA.Enabled = false;
-                lblART.ForeColor = Color.Red;
-            }
-            else
-            {
-                pnlART.Enabled = false;
-                rbtnARTNA.Checked = true;
-                lblART.ForeColor = Color.Black;
-            }
+         
+
         }
 
         private void rbtnARTYes_CheckedChanged(object sender, EventArgs e)
@@ -1141,19 +1448,25 @@ namespace SOCY_MIS
 
         private void rbtnMemberActiveYes_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbtnMemberActiveYes.Checked == false)
+            if (cbHHMember.SelectedValue.ToString() != "-1")
             {
-                ClearInactiveMember();
-            }
-            else
-            {
-                tlpDisplay02.Enabled = true;
-                tlpDisplay03.Enabled = true;
-                tlpDisplay04.Enabled = true;
-                tlpDisplay05.Enabled = true;
+                if (rbtnMemberActiveYes.Checked == false)
+                {
+                    ClearInactiveMember();
+                }
+                else
+                {
+                    tlpDisplay02.Enabled = true;
+                    tlpDisplay03.Enabled = true;
+                    tlpDisplay04.Enabled = true;
+                    tlpDisplay05.Enabled = true;
 
-                SetServicesByAgeGroup(Age);
+                    LoadMemberDetails(cbHHMember.SelectedValue.ToString());
+                    SetServicesByAgeGroup(Age);
+                }
+
             }
+
         }
 
         private void rbtnBirthCertificateYes_CheckedChanged(object sender, EventArgs e)
@@ -1174,6 +1487,128 @@ namespace SOCY_MIS
                 pnlBirthRegCompleteReferal.Enabled = true;
                 rbtnCompleteBirthRegReferalNA.Checked = false;
             }
+        }
+
+        private void dgvMembers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvMembers.Rows.Count > 0)
+            {
+                string hhvm_id = dgvMembers.CurrentRow.Cells[5].Value.ToString();
+                LoadHouseholdHomevisitMemberDisplay(hhvm_id);
+            }
+        }
+
+        private void rbtnMemberActiveNo_CheckedChanged(object sender, EventArgs e)
+        {
+            rbtnMemberActiveYes_CheckedChanged(rbtnMemberActiveYes, null);
+            
+        }
+
+        private void rbtnHHPHivNeg_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void rbtnHHPHivUnknown_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbtnHHPHivTNR_CheckedChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void rbtnARTNo_CheckedChanged(object sender, EventArgs e)
+        {
+            rbtnARTYes_CheckedChanged(rbtnARTYes, null);
+            if (rbtnARTNo.Checked == true)
+            {
+                rbtnInniateARTRefferalNo.Checked = false;
+                rbtnCompleteARTRefferalYes.Checked = false;
+                rbtnCompleteARTRefferalNo.Checked = false;
+
+                pnlInnitiateARTReferal.Enabled = true;
+                pnlCompleteARTReferal.Enabled = true;
+            }
+            else
+            {
+                rbtnInniateARTRefferalNo.Checked = false;
+                rbtnCompleteARTRefferalYes.Checked = false;
+                rbtnCompleteARTRefferalNo.Checked = false;
+
+                pnlInnitiateARTReferal.Enabled = false;
+                pnlCompleteARTReferal.Enabled = false;
+            }
+        }
+
+        private void rbtnARTNA_CheckedChanged(object sender, EventArgs e)
+        {
+            rbtnARTYes_CheckedChanged(rbtnARTYes, null);
+        }
+
+        private void cboHivstatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboHivstatus.SelectedValue.ToString() == utilConstants.cHSTPositive)
+            {
+                pnlART.Enabled = true;
+                rbtnARTNA.Checked = false;
+                rbtnARTNA.Enabled = false;
+                lblART.ForeColor = Color.Red;
+            }
+            else
+            {
+                pnlART.Enabled = false;
+                rbtnARTNA.Checked = true;
+                lblART.ForeColor = Color.Black;
+            }
+
+            if (cboHivstatus.SelectedValue.ToString() == utilConstants.cHSTNR)
+            {
+                rbtnHstRefferalInitiateYes.Checked = false;
+                rbtnHstRefferalInitiateNo.Checked = false;
+                rbtnCompletedHtsRefferalYes.Checked = false;
+                rbtnCompletedHtsRefferalNo.Checked = false;
+                rbtnInniateARTRefferalYes.Checked = false;
+                rbtnInniateARTRefferalNo.Checked = false;
+                rbtnCompleteARTRefferalYes.Checked = false;
+                rbtnCompleteARTRefferalNo.Checked = false;
+
+                pnlHTSInnitiateReferal.Enabled = false;
+                pnlHTSCompleteReferal.Enabled = false;
+                pnlInnitiateARTReferal.Enabled = false;
+                pnlCompleteARTReferal.Enabled = false;
+            }
+            else
+            {
+                rbtnHstRefferalInitiateYes.Checked = false;
+                rbtnHstRefferalInitiateNo.Checked = false;
+                rbtnCompletedHtsRefferalYes.Checked = false;
+                rbtnCompletedHtsRefferalNo.Checked = false;
+                rbtnInniateARTRefferalYes.Checked = false;
+                rbtnInniateARTRefferalNo.Checked = false;
+                rbtnCompleteARTRefferalYes.Checked = false;
+                rbtnCompleteARTRefferalNo.Checked = false;
+
+                pnlHTSInnitiateReferal.Enabled = true;
+                pnlHTSCompleteReferal.Enabled = true;
+                pnlInnitiateARTReferal.Enabled = true;
+                pnlCompleteARTReferal.Enabled = true;
+            }
+        }
+
+        private void Back()
+        {
+            FormCalling.Back();
+        }
+
+        private void llblBackTop_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Back();
+        }
+
+        private void llblBackBottom_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Back();
         }
     }
 }

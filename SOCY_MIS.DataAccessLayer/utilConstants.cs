@@ -196,6 +196,7 @@ namespace SOCY_MIS.DataAccessLayer
         public const string cRTOVCViralLoad = "8";
         public const string cRTGBV = "9";
         public const string cRTAdherence = "10";
+        public const string cRTHomeVisitHomeVisitMER = "11";
         #endregion PopUp Types
 
         #region Social Worker Type

@@ -213,6 +213,16 @@ namespace SOCY_MIS
                             FormMaster.LoadControl(frmViralLoadCommunity, this.Name, false);
                             #endregion
                             break;
+                        case utilConstants.cRTHomeVisitHomeVisitMER:
+                            #region Set Selected
+                            frm_HouseholdHomeVisitMain frmHNew = new frm_HouseholdHomeVisitMain();
+                            frmHNew.HouseholdId = ObjectId;
+                            frmHNew.ObjectId = strID;
+                            frmHNew.FormCalling = this;
+                            frmHNew.FormMaster = FormMaster;
+                            FormMaster.LoadControl(frmHNew, this.Name, true);
+                            #endregion
+                            break;
 
                     }
                 }
@@ -609,6 +619,7 @@ namespace SOCY_MIS
             #region Set Selected
             frm_HouseholdHomeVisitMain frmNew = new frm_HouseholdHomeVisitMain();
             frmNew.HouseholdId = ObjectId;
+            frmNew.ObjectId = string.Empty;
             frmNew.FormCalling = this;
             frmNew.FormMaster = FormMaster;
             FormMaster.LoadControl(frmNew, this.Name, true);

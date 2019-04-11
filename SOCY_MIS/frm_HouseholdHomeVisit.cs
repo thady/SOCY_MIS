@@ -23,6 +23,7 @@ namespace SOCY_MIS
         private string strId = string.Empty;
         private frm_HouseholdHomeVisitMain frmCll = null;
         private Master frmMST = null;
+        DataTable dt = null;
         #endregion Variables
 
         #region Property
@@ -103,6 +104,7 @@ namespace SOCY_MIS
                         lblSubCountyDisplay.Text = dt.Rows[0]["sct_name"].ToString();
                         lblVillageDisplay.Text = dt.Rows[0]["hh_village"].ToString().ToUpper();
                         lblWardDisplay.Text = dt.Rows[0]["wrd_name"].ToString();
+                        lblHouseholdCodeDisplay.Text = dt.Rows[0]["hh_code"].ToString();
 
                         utilLT = new utilLanguageTranslation();
                         utilLT.Language = FormMaster.LanguageId;
@@ -177,11 +179,37 @@ namespace SOCY_MIS
                     }
                     else
                     {
+                        LoadLists();
+
                         #region Visit
-                        //Load homevisit details
+                        dt = hhHouseholdHomeVisit_v2.LoadHomeVisitDisplay(ObjectId);
+                        if (dt.Rows.Count > 0)
+                        {
+                            DataRow dtRow = dt.Rows[0];
+                            cbHHMember.SelectedValue = dtRow["hhm_id"].ToString();
+                            cbSocialWorker.SelectedValue = dtRow["swk_id"].ToString();
+                            cbHomeVisitReason.SelectedValue = dtRow["hvr_id"].ToString();
+                            cbHomeVisitHouseholdStatus.SelectedValue = dtRow["hvhs_id"].ToString();
+                            dtpDateOfVisit.Value = Convert.ToDateTime(dtRow["hhv_date"].ToString());
+                            utilControls.RadioButtonSetSelection(rbtnRiskAssYes, rbtnRiskAssNo, rbtnRiskAssNA, dtRow["ynna_risk_assessment"].ToString());
+                            utilControls.RadioButtonSetSelection(rbtnReferalMadeYes, rbtnReferalMadeNo, rbtnReferalMadeNA, dtRow["ynna_new_referal"].ToString());
+                            utilControls.RadioButtonSetSelection(rbtnOldReferalYes, rbtnOldReferalNo, rbtnOldReferalNA, dtRow["ynna_old_referal_followup"].ToString());
+                            utilControls.RadioButtonSetSelection(rbtnHipYes, rbtnHipNo, dtRow["yn_hip"].ToString());
+                            txtComments.Text = dtRow["hhv_comments"].ToString();
+                            txtNextSteps.Text = dtRow["hhv_next_steps"].ToString();
+                            cbHomeVisitor.SelectedValue = dtRow["swk_id_visitor"].ToString();
+                            cbHomeVisitorTitle.SelectedValue = dtRow["hnr_id_visitor"].ToString();
+                            txtHomeVisitorTel.Text = dtRow["hhv_visitor_tel"].ToString();
+                            dtpNextVisitDate.Value = Convert.ToDateTime(dtRow["hhv_date_next_visit"].ToString());
+                            SystemConstants.household_status = dtRow["hvhs_id"].ToString();
+                            SystemConstants.object_id = ObjectId;
+
+                            FormCalling.ObjectId = ObjectId;
+                            FormCalling.MembersTab(ObjectId);
+                        }
                         #endregion Visit
 
-                        LoadLists(dalHHV.am_id, dalHHV.hvhs_id, dalHHV.hvr_id, dalHHV.swk_id, dalHHV.swk_id_visitor, dalHHV.hnr_id_visitor, dbCon);
+
                     }
                     #endregion Load Data
                 }
@@ -195,6 +223,8 @@ namespace SOCY_MIS
                 FormMaster.ShowMessage(utilConstants.cPTError, this.Name, "LoadDisplay", exc);
             }
         }
+
+
 
         private void LoadLists(string strAmID, string strHvhsID, string strHvrID, string strSwkID, string strSwkIDVisitor, string strHnrIDVisitor, DataAccessLayer.DBConnection dbCon)
         {
@@ -393,16 +423,14 @@ namespace SOCY_MIS
         #region save
         private void save()
         {
-            DataAccessLayer.DBConnection dbCon  = new DataAccessLayer.DBConnection(utilConstants.cACKConnection);
+            DataAccessLayer.DBConnection dbCon = new DataAccessLayer.DBConnection(utilConstants.cACKConnection);
             #region set variables
-            hhHouseholdHomeVisit_v2.hhv_id = Guid.NewGuid().ToString();
-            ObjectId = hhHouseholdHomeVisit_v2.hhv_id;
-            SystemConstants.object_id = ObjectId;
+           
             hhHouseholdHomeVisit_v2.hhv_date = dtpDateOfVisit.Value.Date;
             hhHouseholdHomeVisit_v2.hhv_date_next_visit = dtpNextVisitDate.Value.Date;
             hhHouseholdHomeVisit_v2.hhv_comments = txtComments.Text;
             hhHouseholdHomeVisit_v2.hhv_next_steps = txtNextSteps.Text;
-            hhHouseholdHomeVisit_v2.ynna_risk_assessment = utilControls.RadioButtonGetSelection(rbtnRiskAssYes, rbtnRiskAssNo,rbtnRiskAssNA);
+            hhHouseholdHomeVisit_v2.ynna_risk_assessment = utilControls.RadioButtonGetSelection(rbtnRiskAssYes, rbtnRiskAssNo, rbtnRiskAssNA);
             hhHouseholdHomeVisit_v2.ynna_new_referal = utilControls.RadioButtonGetSelection(rbtnReferalMadeYes, rbtnReferalMadeNo, rbtnReferalMadeNA);
             hhHouseholdHomeVisit_v2.ynna_old_referal_followup = utilControls.RadioButtonGetSelection(rbtnOldReferalYes, rbtnOldReferalNo, rbtnOldReferalNA);
             hhHouseholdHomeVisit_v2.yn_hip = utilControls.RadioButtonGetSelection(rbtnHipYes, rbtnHipNo);
@@ -417,20 +445,47 @@ namespace SOCY_MIS
             hhHouseholdHomeVisit_v2.swk_id_visitor = cbHomeVisitor.SelectedValue.ToString();
             hhHouseholdHomeVisit_v2.usr_id_create = SystemConstants.user_id;
             hhHouseholdHomeVisit_v2.usr_id_update = SystemConstants.user_id;
-            hhHouseholdHomeVisit_v2. usr_date_create = DateTime.Now;
+            hhHouseholdHomeVisit_v2.usr_date_create = DateTime.Now;
             hhHouseholdHomeVisit_v2.usr_date_update = DateTime.Now;
             hhHouseholdHomeVisit_v2.ofc_id = SystemConstants.ofc_id;
             hhHouseholdHomeVisit_v2.district_id = SystemConstants.Return_office_district();
 
-            hhHouseholdHomeVisit_v2.Insert_home_visit(dbCon);
-            MessageBox.Show("Success","SOCY MIS",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            if (ObjectId == string.Empty)
+            {
+                hhHouseholdHomeVisit_v2.hhv_id = Guid.NewGuid().ToString();
+                ObjectId = hhHouseholdHomeVisit_v2.hhv_id;
+                SystemConstants.object_id = ObjectId;
+                hhHouseholdHomeVisit_v2.Insert_home_visit(dbCon);
+                MessageBox.Show("Success", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            SystemConstants.household_status = cbHomeVisitHouseholdStatus.SelectedValue.ToString();
-            FormCalling.ObjectId = ObjectId;
-            FormCalling.MembersTab(ObjectId);
+                SystemConstants.household_status = cbHomeVisitHouseholdStatus.SelectedValue.ToString();
+                FormCalling.ObjectId = ObjectId;
+                FormCalling.MembersTab(ObjectId);
+            }
+            else
+            {
+                hhHouseholdHomeVisit_v2.hhv_id = ObjectId;
+                hhHouseholdHomeVisit_v2.Update_home_visit(dbCon);
+                MessageBox.Show("Success", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                SystemConstants.household_status = cbHomeVisitHouseholdStatus.SelectedValue.ToString();
+                FormCalling.ObjectId = ObjectId;
+                FormCalling.MembersTab(ObjectId);
+            }
+           
 
             #endregion set variables
         }
         #endregion save
-    }
+
+        private void llblBackBottom_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Back();
+        }
+
+        private void llblBackTop_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Back();
+        }
+    } 
 }

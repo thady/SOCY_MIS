@@ -27853,6 +27853,10 @@ namespace SOCY_MIS.DataAccessLayer
             strSQL = @"INSERT INTO lst_record_type (rtp_id, rtp_name, rtp_order, rtp_active, lng_id, usr_id_create, usr_id_update, usr_date_create, usr_date_update)
                 SELECT '10', 'Community Intensified Adherence Counselling', 10, 1, 'EN', '1', '1', GETDATE(), GETDATE() WHERE NOT '10' IN (SELECT rtp_id FROM lst_record_type WHERE rtp_id = '10') ";
             dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"INSERT INTO lst_record_type (rtp_id, rtp_name, rtp_order, rtp_active, lng_id, usr_id_create, usr_id_update, usr_date_create, usr_date_update)
+                SELECT '11', 'Home Visit Tool MER2.3', 11, 1, 'EN', '1', '1', GETDATE(), GETDATE() WHERE NOT '11' IN (SELECT rtp_id FROM lst_record_type WHERE rtp_id = '11') ";
+            dbCon.ExecuteNonQuery(strSQL);
             #endregion Insert Record Type
         }
 
