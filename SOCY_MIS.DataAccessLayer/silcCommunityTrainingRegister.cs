@@ -5,6 +5,7 @@ using System.Text;
 
 using System.Data;
 using System.Data.SqlClient;
+using PSAUtils;
 
 namespace SOCY_MIS.DataAccessLayer
 {
@@ -291,13 +292,13 @@ namespace SOCY_MIS.DataAccessLayer
             {
                 if (action == "insert")
                 {
-                    SQL = string.Format(Query, ctr_id, prt_id, cso_id, dst_id, sct_id, tr_name, module_name, tr_total_days, tr_date_from, tr_date_to,module_desc,tr_venue,
+                    SQL = string.Format(Query, ctr_id, prt_id, cso_id, dst_id, sct_id, tr_name, module_name, tr_total_days, tr_date_from, tr_date_to,module_desc, utilFormatting.StringForSQL(tr_venue),
                         trainer_type,artisan_name,facilitator_trainer_name,usr_id_create,usr_id_update, usr_date_create, usr_date_update, ofc_id, district_id);
 
                 }
                 else if (action == "update")
                 {
-                    SQL = string.Format(Query, ctr_id, prt_id, cso_id, dst_id, sct_id, tr_name, module_name, tr_total_days, tr_date_from, tr_date_to, module_desc, tr_venue,
+                    SQL = string.Format(Query, ctr_id, prt_id, cso_id, dst_id, sct_id, tr_name, module_name, tr_total_days, tr_date_from, tr_date_to, module_desc, utilFormatting.StringForSQL(tr_venue),
                         trainer_type, artisan_name, facilitator_trainer_name, usr_id_update, usr_date_update);
 
                 }

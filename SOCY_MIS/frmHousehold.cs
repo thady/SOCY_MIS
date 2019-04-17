@@ -223,6 +223,15 @@ namespace SOCY_MIS
                             FormMaster.LoadControl(frmHNew, this.Name, true);
                             #endregion
                             break;
+                        case utilConstants.cRTHIPMER:
+                            #region Set Selected
+                            frm_HouseholdImprovementPlan frmHipNew = new frm_HouseholdImprovementPlan();
+                            frmHipNew.FormCalling = this;
+                            frmHipNew.FormMaster = FormMaster;
+                            hh_household_improvement_plan.hip_id = strID;
+                            FormMaster.LoadControl(frmHipNew, this.Name, false);
+                            #endregion
+                            break;
 
                     }
                 }
@@ -558,9 +567,6 @@ namespace SOCY_MIS
 
         private void llblHip_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //frm_hh_household_improvement_plan plan = new frm_hh_household_improvement_plan();
-            //plan.ShowDialog();
-
             #region Set Selected
             frmHouseholdImprovementPlan frmNew = new frmHouseholdImprovementPlan();
             frmNew.FormCalling = this;
@@ -623,6 +629,17 @@ namespace SOCY_MIS
             frmNew.FormCalling = this;
             frmNew.FormMaster = FormMaster;
             FormMaster.LoadControl(frmNew, this.Name, true);
+            #endregion
+        }
+
+        private void llblHip_v2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            #region Set Selected
+            frm_HouseholdImprovementPlan frmNew = new frm_HouseholdImprovementPlan();
+            frmNew.FormCalling = this;
+            frmNew.FormMaster = FormMaster;
+            hh_household_improvement_plan.hip_id = string.Empty;
+            FormMaster.LoadControl(frmNew, this.Name, false);
             #endregion
         }
     }

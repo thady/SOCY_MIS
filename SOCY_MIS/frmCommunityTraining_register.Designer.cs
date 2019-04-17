@@ -252,7 +252,7 @@
             // 
             this.txtsessiondesc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtsessiondesc.Location = new System.Drawing.Point(551, 138);
-            this.txtsessiondesc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtsessiondesc.Margin = new System.Windows.Forms.Padding(2);
             this.txtsessiondesc.Name = "txtsessiondesc";
             this.txtsessiondesc.Size = new System.Drawing.Size(105, 20);
             this.txtsessiondesc.TabIndex = 72;
@@ -360,7 +360,7 @@
             // 
             this.txtsessionDays.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtsessionDays.Location = new System.Drawing.Point(202, 138);
-            this.txtsessionDays.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtsessionDays.Margin = new System.Windows.Forms.Padding(2);
             this.txtsessionDays.Name = "txtsessionDays";
             this.txtsessionDays.Size = new System.Drawing.Size(105, 20);
             this.txtsessionDays.TabIndex = 74;
@@ -390,7 +390,7 @@
             // 
             this.dtTrainingFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtTrainingFrom.Location = new System.Drawing.Point(202, 109);
-            this.dtTrainingFrom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtTrainingFrom.Margin = new System.Windows.Forms.Padding(2);
             this.dtTrainingFrom.Name = "dtTrainingFrom";
             this.dtTrainingFrom.ShowCheckBox = true;
             this.dtTrainingFrom.Size = new System.Drawing.Size(105, 20);
@@ -401,7 +401,7 @@
             // 
             this.dtTrainingTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtTrainingTo.Location = new System.Drawing.Point(551, 109);
-            this.dtTrainingTo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtTrainingTo.Margin = new System.Windows.Forms.Padding(2);
             this.dtTrainingTo.Name = "dtTrainingTo";
             this.dtTrainingTo.ShowCheckBox = true;
             this.dtTrainingTo.Size = new System.Drawing.Size(105, 20);
@@ -422,7 +422,7 @@
             // 
             this.txtVenue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtVenue.Location = new System.Drawing.Point(202, 166);
-            this.txtVenue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtVenue.Margin = new System.Windows.Forms.Padding(2);
             this.txtVenue.Name = "txtVenue";
             this.txtVenue.Size = new System.Drawing.Size(105, 20);
             this.txtVenue.TabIndex = 78;
@@ -451,7 +451,7 @@
             // 
             this.txtFacilitatorName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFacilitatorName.Location = new System.Drawing.Point(551, 194);
-            this.txtFacilitatorName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFacilitatorName.Margin = new System.Windows.Forms.Padding(2);
             this.txtFacilitatorName.Name = "txtFacilitatorName";
             this.txtFacilitatorName.Size = new System.Drawing.Size(105, 20);
             this.txtFacilitatorName.TabIndex = 94;
@@ -582,7 +582,7 @@
             // 
             this.txtArtisan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtArtisan.Location = new System.Drawing.Point(202, 194);
-            this.txtArtisan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtArtisan.Margin = new System.Windows.Forms.Padding(2);
             this.txtArtisan.Name = "txtArtisan";
             this.txtArtisan.Size = new System.Drawing.Size(105, 20);
             this.txtArtisan.TabIndex = 105;
@@ -700,7 +700,7 @@
             // 
             this.txtAge.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtAge.Location = new System.Drawing.Point(548, 74);
-            this.txtAge.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAge.Margin = new System.Windows.Forms.Padding(2);
             this.txtAge.Name = "txtAge";
             this.txtAge.Size = new System.Drawing.Size(102, 20);
             this.txtAge.TabIndex = 84;
@@ -728,7 +728,7 @@
             // 
             this.txtMemberName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMemberName.Location = new System.Drawing.Point(548, 41);
-            this.txtMemberName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMemberName.Margin = new System.Windows.Forms.Padding(2);
             this.txtMemberName.Name = "txtMemberName";
             this.txtMemberName.Size = new System.Drawing.Size(102, 20);
             this.txtMemberName.TabIndex = 96;
@@ -810,7 +810,7 @@
             // 
             this.btnnew.ForeColor = System.Drawing.Color.Blue;
             this.btnnew.Location = new System.Drawing.Point(551, 2);
-            this.btnnew.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnnew.Margin = new System.Windows.Forms.Padding(2);
             this.btnnew.Name = "btnnew";
             this.btnnew.Size = new System.Drawing.Size(101, 24);
             this.btnnew.TabIndex = 1;
@@ -823,7 +823,7 @@
             this.btnsave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnsave.ForeColor = System.Drawing.Color.Blue;
             this.btnsave.Location = new System.Drawing.Point(384, 2);
-            this.btnsave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnsave.Margin = new System.Windows.Forms.Padding(2);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(163, 25);
             this.btnsave.TabIndex = 0;
@@ -837,7 +837,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnedit.ForeColor = System.Drawing.Color.Blue;
             this.btnedit.Location = new System.Drawing.Point(191, 2);
-            this.btnedit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnedit.Margin = new System.Windows.Forms.Padding(2);
             this.btnedit.Name = "btnedit";
             this.btnedit.Size = new System.Drawing.Size(188, 24);
             this.btnedit.TabIndex = 2;
@@ -876,7 +876,7 @@
             this.panel01.Controls.Add(this.TrainingCalender);
             this.panel01.Controls.Add(this.label27);
             this.panel01.Location = new System.Drawing.Point(4, 399);
-            this.panel01.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel01.Margin = new System.Windows.Forms.Padding(2);
             this.panel01.Name = "panel01";
             this.panel01.Size = new System.Drawing.Size(640, 177);
             this.panel01.TabIndex = 100;
@@ -886,7 +886,7 @@
             this.lstDates.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.lstDates.FormattingEnabled = true;
             this.lstDates.Location = new System.Drawing.Point(341, 2);
-            this.lstDates.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstDates.Margin = new System.Windows.Forms.Padding(2);
             this.lstDates.Name = "lstDates";
             this.lstDates.Size = new System.Drawing.Size(297, 160);
             this.lstDates.TabIndex = 98;
@@ -894,7 +894,7 @@
             // TrainingCalender
             // 
             this.TrainingCalender.Location = new System.Drawing.Point(112, 2);
-            this.TrainingCalender.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.TrainingCalender.Margin = new System.Windows.Forms.Padding(7);
             this.TrainingCalender.Name = "TrainingCalender";
             this.TrainingCalender.TabIndex = 97;
             this.TrainingCalender.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.TrainingCalender_DateChanged);
@@ -935,7 +935,7 @@
             this.gdvParticipants.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gdvParticipants.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gdvParticipants.Location = new System.Drawing.Point(4, 624);
-            this.gdvParticipants.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gdvParticipants.Margin = new System.Windows.Forms.Padding(2);
             this.gdvParticipants.Name = "gdvParticipants";
             this.gdvParticipants.ReadOnly = true;
             this.gdvParticipants.RowTemplate.Height = 24;
@@ -947,7 +947,7 @@
             // 
             this.btneditP.ForeColor = System.Drawing.Color.Blue;
             this.btneditP.Location = new System.Drawing.Point(6, 578);
-            this.btneditP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btneditP.Margin = new System.Windows.Forms.Padding(2);
             this.btneditP.Name = "btneditP";
             this.btneditP.Size = new System.Drawing.Size(128, 28);
             this.btneditP.TabIndex = 106;
@@ -959,7 +959,7 @@
             // 
             this.btnsaveP.ForeColor = System.Drawing.Color.Blue;
             this.btnsaveP.Location = new System.Drawing.Point(138, 579);
-            this.btnsaveP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnsaveP.Margin = new System.Windows.Forms.Padding(2);
             this.btnsaveP.Name = "btnsaveP";
             this.btnsaveP.Size = new System.Drawing.Size(116, 28);
             this.btnsaveP.TabIndex = 107;
@@ -971,7 +971,7 @@
             // 
             this.btnNewP.ForeColor = System.Drawing.Color.Blue;
             this.btnNewP.Location = new System.Drawing.Point(258, 579);
-            this.btnNewP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNewP.Margin = new System.Windows.Forms.Padding(2);
             this.btnNewP.Name = "btnNewP";
             this.btnNewP.Size = new System.Drawing.Size(116, 28);
             this.btnNewP.TabIndex = 108;
@@ -1044,7 +1044,7 @@
             this.Controls.Add(this.tableLayoutPanel5);
             this.Controls.Add(this.tlpDisplay02);
             this.Controls.Add(this.tlpDisplay01);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmCommunityTraining_register";
             this.Size = new System.Drawing.Size(720, 803);
             this.Load += new System.EventHandler(this.frmCommunityTraining_register_Load);

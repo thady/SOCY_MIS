@@ -750,6 +750,12 @@
     <Compile Include="frm_HouseholdHomevisitMember.Designer.cs">
       <DependentUpon>frm_HouseholdHomevisitMember.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_HouseholdImprovementPlan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frm_HouseholdImprovementPlan.Designer.cs">
+      <DependentUpon>frm_HouseholdImprovementPlan.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_linkages_register.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1113,6 +1119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_HouseholdHomevisitMember.resx">
       <DependentUpon>frm_HouseholdHomevisitMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_HouseholdImprovementPlan.resx">
+      <DependentUpon>frm_HouseholdImprovementPlan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_linkages_register.resx">
       <DependentUpon>frm_linkages_register.cs</DependentUpon>
