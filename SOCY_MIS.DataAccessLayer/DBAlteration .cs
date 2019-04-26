@@ -438,86 +438,91 @@ namespace SOCY_MIS.DataAccessLayer
                 {
                     #region Apply Versions
                     {
-                        if (dblVersionCurrent < 3.5)
+                        if (dblVersionCurrent < 3.6)
                         {
-                            if (dblVersionCurrent < 3.4)
+                            if (dblVersionCurrent < 3.5)
                             {
-                                if (dblVersionCurrent < 3.3)
+                                if (dblVersionCurrent < 3.4)
                                 {
-                                    if (dblVersionCurrent < 3.2)
+                                    if (dblVersionCurrent < 3.3)
                                     {
-                                        if (dblVersionCurrent < 3.1)
+                                        if (dblVersionCurrent < 3.2)
                                         {
-                                            if (dblVersionCurrent < 3.0)
+                                            if (dblVersionCurrent < 3.1)
                                             {
-                                                if (dblVersionCurrent < 2.6)
+                                                if (dblVersionCurrent < 3.0)
                                                 {
-                                                    if (dblVersionCurrent < 2.5)
+                                                    if (dblVersionCurrent < 2.6)
                                                     {
-                                                        if (dblVersionCurrent < 2.4)
+                                                        if (dblVersionCurrent < 2.5)
                                                         {
-                                                            if (dblVersionCurrent < 2.3)
+                                                            if (dblVersionCurrent < 2.4)
                                                             {
-                                                                if (dblVersionCurrent < 2.2)
+                                                                if (dblVersionCurrent < 2.3)
                                                                 {
-                                                                    if (dblVersionCurrent < 2.1)
+                                                                    if (dblVersionCurrent < 2.2)
                                                                     {
-                                                                        if (dblVersionCurrent < 2.0)
+                                                                        if (dblVersionCurrent < 2.1)
                                                                         {
-                                                                            if (dblVersionCurrent < 1.6)
+                                                                            if (dblVersionCurrent < 2.0)
                                                                             {
-                                                                                if (dblVersionCurrent < 1.5)
+                                                                                if (dblVersionCurrent < 1.6)
                                                                                 {
-                                                                                    if (dblVersionCurrent < 1.4)
+                                                                                    if (dblVersionCurrent < 1.5)
                                                                                     {
-                                                                                        if (dblVersionCurrent < 1.3)
+                                                                                        if (dblVersionCurrent < 1.4)
                                                                                         {
-                                                                                            if (dblVersionCurrent < 1.2)
+                                                                                            if (dblVersionCurrent < 1.3)
                                                                                             {
-                                                                                                Version12(dbCon);
+                                                                                                if (dblVersionCurrent < 1.2)
+                                                                                                {
+                                                                                                    Version12(dbCon);
+                                                                                                }
+                                                                                                Version13(dbCon);
                                                                                             }
-                                                                                            Version13(dbCon);
+                                                                                            Version14(dbCon);
                                                                                         }
-                                                                                        Version14(dbCon);
+                                                                                        Version15(dbCon);
                                                                                     }
-                                                                                    Version15(dbCon);
+                                                                                    Version16(dbCon);
                                                                                 }
-                                                                                Version16(dbCon);
+                                                                                Version20(dbCon);
                                                                             }
-                                                                            Version20(dbCon);
+                                                                            Version21(dbCon);
                                                                         }
-                                                                        Version21(dbCon);
+                                                                        Version22(dbCon);
                                                                     }
-                                                                    Version22(dbCon);
+                                                                    Version23(dbCon);
                                                                 }
-                                                                Version23(dbCon);
+                                                                Version24(dbCon);
                                                             }
-                                                            Version24(dbCon);
+                                                            Version25(dbCon);
                                                         }
-                                                        Version25(dbCon);
+                                                        Version26(dbCon);
                                                     }
+                                                    //One machine this didn't run, but the version was updated to 2.6. No Idea as it is in a transaction block.
                                                     Version26(dbCon);
+                                                    Version30(dbCon);
                                                 }
-                                                //One machine this didn't run, but the version was updated to 2.6. No Idea as it is in a transaction block.
-                                                Version26(dbCon);
-                                                Version30(dbCon);
+                                                Version31(dbCon);
                                             }
                                             Version31(dbCon);
+                                            Version32(dbCon);
                                         }
                                         Version31(dbCon);
                                         Version32(dbCon);
+                                        Version33(dbCon);
                                     }
                                     Version31(dbCon);
                                     Version32(dbCon);
                                     Version33(dbCon);
+                                    Version34(dbCon);
                                 }
-                                Version31(dbCon);
-                                Version32(dbCon);
-                                Version33(dbCon);
-                                Version34(dbCon);
+
+                                Version35(dbCon);
                             }
 
-                            Version35(dbCon);
+                            Version36(dbCon);
                         }
 
                         #endregion Apply Versions
@@ -530,28 +535,7 @@ namespace SOCY_MIS.DataAccessLayer
                     }
                    
                 }
-                Version35(dbCon);
-                Updatelst_household_status(dbCon);
-                Update_es_trainingType(dbCon);
-                prt_subcounty_ovc_checklist_new_column(dbCon);
-                NewLstCoordinators(dbCon);
-                update_mitooma_subcounty(dbCon);
-                Createben_youth_tracer(dbCon);
-                Insert_new_sync_upload(dbCon);
-                UpdateHousehold_RiskAssessmentTool(dbCon);
-                Insertlst_agro_scoring_crops(dbCon);
-                CreateNewDistricts(dbCon);
-                NewTrainingTypes(dbCon);
-                New_Ndeija_parishes(dbCon);
-                Insertlst_apprenticeship_trade(dbCon);
-                Insertlst_apprenticeship_trade_skills(dbCon);
-                Createben_gbv_screening(dbCon);
-                Createlst_gbv_service(dbCon);
-                Createlst_gbv_service_status(dbCon);
-                Insertlst_gbv_service(dbCon);
-                Insertlst_gbv_service_status(dbCon);
-                //DropRecreateLstAgro_enterprise_ranking(dbCon); //bushenyi error..should be removed when error is rectified.Should not be in version control
-
+        
                 dbCon.TransactionCommit();
             }
             catch (Exception exc)
@@ -13163,6 +13147,1544 @@ namespace SOCY_MIS.DataAccessLayer
             #endregion SQL
         }
 
+
+        private static void Createhh_household_risk_assessment(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            #region SQL
+            #region Tables
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_household_risk_assessment')
+                      CREATE TABLE [dbo].[hh_household_risk_assessment](
+	                    [ra_id] [varchar](50) NOT NULL,
+	                    [hh_id] [varchar](50) NOT NULL,
+	                    [scr_date] [date] NOT NULL,
+	                    [hhm_id] [varchar](50) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](100) NOT NULL,
+	                    [district_id] [nvarchar](50) NOT NULL,
+                     CONSTRAINT [PK_hh_household_risk_assessment] PRIMARY KEY CLUSTERED 
+                    (
+	                    [ra_id] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_household_risk_assessment_upload')
+                        CREATE TABLE [dbo].[hh_household_risk_assessment_upload](
+	                    [ra_sid] [int] IDENTITY(1,1) NOT NULL,
+	                    [ra_id] [varchar](50) NOT NULL,
+	                    [hh_id] [varchar](50) NOT NULL,
+	                    [scr_date] [date] NOT NULL,
+	                    [hhm_id] [varchar](50) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](100) NOT NULL,
+	                    [trg_action] [int] NOT NULL,
+	                    [district_id] [nvarchar](50) NOT NULL,
+                     CONSTRAINT [PK_hh_household_risk_assessment_upload] PRIMARY KEY CLUSTERED 
+                    (
+	                    [ra_sid] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion Tables
+
+            #region Triggers
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_household_risk_assessment_insert' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_household_risk_assessment_insert] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_household_risk_assessment_insert] ON [dbo].[hh_household_risk_assessment] FOR INSERT
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_household_risk_assessment_upload]
+					   ([ra_id],[hh_id] ,[scr_date] ,[hhm_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]
+					   ,[ofc_id],[trg_action] ,[district_id])
+	                SELECT [ra_id],[hh_id] ,[scr_date] ,[hhm_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]
+					   ,[ofc_id],1 ,[district_id]
+                  FROM inserted
+                END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_household_risk_assessment_update' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_household_risk_assessment_update] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_household_risk_assessment_update] ON [dbo].[hh_household_risk_assessment] FOR UPDATE
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_household_risk_assessment_upload]
+					   ([ra_id],[hh_id] ,[scr_date] ,[hhm_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]
+					   ,[ofc_id],[trg_action] ,[district_id])
+	                SELECT [ra_id],[hh_id] ,[scr_date] ,[hhm_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]
+					   ,[ofc_id],2 ,[district_id]
+                  FROM inserted
+                END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_household_risk_assessment_delete' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_household_risk_assessment_delete] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_household_risk_assessment_delete] ON [dbo].[hh_household_risk_assessment] FOR DELETE
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_household_risk_assessment_upload]
+					   ([ra_id],[hh_id] ,[scr_date] ,[hhm_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]
+					   ,[ofc_id],[trg_action] ,[district_id])
+	                SELECT [ra_id],[hh_id] ,[scr_date] ,[hhm_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]
+					   ,[ofc_id],3 ,[district_id]
+                  FROM deleted
+                END
+";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            #endregion Triggers
+            #endregion SQL
+        }
+
+        private static void Createhh_household_risk_assessment_member_child(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            #region SQL
+            #region Tables
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_household_risk_assessment_member_child')
+                     CREATE TABLE [dbo].[hh_household_risk_assessment_member_child](
+	                    [ram_id] [varchar](50) NOT NULL,
+	                    [ra_id] [varchar](50) NOT NULL,
+	                    [hhm_id] [varchar](50) NOT NULL,
+	                    [hhm_name] [varchar](100) NOT NULL,
+	                    [gnd_name] [varchar](50) NOT NULL,
+	                    [gnd_age] [varchar](50) NOT NULL,
+	                    [ra_criteria_id] [varchar](50) NOT NULL,
+	                    [yn_mother_hiv_pos] [varchar](50) NOT NULL,
+	                    [yn_lost_bio_parent] [varchar](50) NOT NULL,
+	                    [yn_malnourished] [varchar](50) NOT NULL,
+	                    [yn_skin_problem] [varchar](50) NOT NULL,
+	                    [yn_hospitalized] [varchar](50) NOT NULL,
+	                    [yn_sexual_violence_exposed] [varchar](50) NOT NULL,
+	                    [yn_acc_exposure_sharp_injury] [varchar](50) NOT NULL,
+	                    [yn_drug_abuse] [varchar](50) NOT NULL,
+	                    [yn_hhm_at_risk] [nchar](10) NOT NULL,
+	                    [yn_hmm_test] [varchar](50) NOT NULL,
+	                    [yn_hhm_accept_test] [varchar](50) NOT NULL,
+	                    [yn_referal] [varchar](50) NOT NULL,
+	                    [yn_referal_completed] [varchar](50) NOT NULL,
+	                    [test_result] [varchar](50) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](100) NOT NULL,
+	                    [district_id] [nvarchar](50) NOT NULL,
+                     CONSTRAINT [PK_hh_household_risk_assessment_member_child] PRIMARY KEY CLUSTERED 
+                    (
+	                    [ram_id] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_household_risk_assessment_member_child_upload')
+                        CREATE TABLE [dbo].[hh_household_risk_assessment_member_child_upload](
+	                    [ram_sid] [int] IDENTITY(1,1) NOT NULL,
+	                    [ram_id] [varchar](50) NOT NULL,
+	                    [ra_id] [varchar](50) NOT NULL,
+	                    [hhm_id] [varchar](50) NOT NULL,
+	                    [hhm_name] [varchar](100) NOT NULL,
+	                    [gnd_name] [varchar](50) NOT NULL,
+	                    [gnd_age] [varchar](50) NOT NULL,
+	                    [ra_criteria_id] [varchar](50) NOT NULL,
+	                    [yn_mother_hiv_pos] [varchar](50) NOT NULL,
+	                    [yn_lost_bio_parent] [varchar](50) NOT NULL,
+	                    [yn_malnourished] [varchar](50) NOT NULL,
+	                    [yn_skin_problem] [varchar](50) NOT NULL,
+	                    [yn_hospitalized] [varchar](50) NOT NULL,
+	                    [yn_sexual_violence_exposed] [varchar](50) NOT NULL,
+	                    [yn_acc_exposure_sharp_injury] [varchar](50) NOT NULL,
+	                    [yn_drug_abuse] [varchar](50) NOT NULL,
+	                    [yn_hhm_at_risk] [nchar](10) NOT NULL,
+	                    [yn_hmm_test] [varchar](50) NOT NULL,
+	                    [yn_hhm_accept_test] [varchar](50) NOT NULL,
+	                    [yn_referal] [varchar](50) NOT NULL,
+	                    [yn_referal_completed] [varchar](50) NOT NULL,
+	                    [test_result] [varchar](50) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](100) NOT NULL,
+	                    [trg_action] [int] NOT NULL,
+	                    [district_id] [nvarchar](50) NOT NULL,
+                     CONSTRAINT [PK_hh_household_risk_assessment_member_child_upload] PRIMARY KEY CLUSTERED 
+                    (
+	                    [ram_sid] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion Tables
+
+            #region Triggers
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_household_risk_assessment_member_child_insert' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_household_risk_assessment_member_child_insert] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_household_risk_assessment_member_child_insert] ON [dbo].[hh_household_risk_assessment_member_child] FOR INSERT
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_household_risk_assessment_member_child_upload]
+                           ([ram_id] ,[ra_id],[hhm_id] ,[hhm_name],[gnd_name] ,[gnd_age] ,[ra_criteria_id],[yn_mother_hiv_pos] ,[yn_lost_bio_parent] ,[yn_malnourished]
+                           ,[yn_skin_problem],[yn_hospitalized] ,[yn_sexual_violence_exposed],[yn_acc_exposure_sharp_injury],[yn_drug_abuse],[yn_hhm_at_risk],[yn_hmm_test]
+                           ,[yn_hhm_accept_test] ,[yn_referal] ,[yn_referal_completed] ,[test_result] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update]
+                           ,[ofc_id],[trg_action],[district_id])
+	                SELECT [ram_id] ,[ra_id],[hhm_id] ,[hhm_name],[gnd_name] ,[gnd_age] ,[ra_criteria_id],[yn_mother_hiv_pos] ,[yn_lost_bio_parent] ,[yn_malnourished]
+                           ,[yn_skin_problem],[yn_hospitalized] ,[yn_sexual_violence_exposed],[yn_acc_exposure_sharp_injury],[yn_drug_abuse],[yn_hhm_at_risk],[yn_hmm_test]
+                           ,[yn_hhm_accept_test] ,[yn_referal] ,[yn_referal_completed] ,[test_result] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update]
+                           ,[ofc_id],1,[district_id]
+                  FROM inserted
+                END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_household_risk_assessment_member_child_update' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_household_risk_assessment_member_child_update] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_household_risk_assessment_member_child_update] ON [dbo].[hh_household_risk_assessment_member_child] FOR UPDATE
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_household_risk_assessment_member_child_upload]
+                           ([ram_id] ,[ra_id],[hhm_id] ,[hhm_name],[gnd_name] ,[gnd_age] ,[ra_criteria_id],[yn_mother_hiv_pos] ,[yn_lost_bio_parent] ,[yn_malnourished]
+                           ,[yn_skin_problem],[yn_hospitalized] ,[yn_sexual_violence_exposed],[yn_acc_exposure_sharp_injury],[yn_drug_abuse],[yn_hhm_at_risk],[yn_hmm_test]
+                           ,[yn_hhm_accept_test] ,[yn_referal] ,[yn_referal_completed] ,[test_result] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update]
+                           ,[ofc_id],[trg_action],[district_id])
+	                SELECT [ram_id] ,[ra_id],[hhm_id] ,[hhm_name],[gnd_name] ,[gnd_age] ,[ra_criteria_id],[yn_mother_hiv_pos] ,[yn_lost_bio_parent] ,[yn_malnourished]
+                           ,[yn_skin_problem],[yn_hospitalized] ,[yn_sexual_violence_exposed],[yn_acc_exposure_sharp_injury],[yn_drug_abuse],[yn_hhm_at_risk],[yn_hmm_test]
+                           ,[yn_hhm_accept_test] ,[yn_referal] ,[yn_referal_completed] ,[test_result] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update]
+                           ,[ofc_id],2,[district_id]
+                  FROM inserted
+                END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_household_risk_assessment_member_child_delete' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_household_risk_assessment_member_child_delete] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_household_risk_assessment_member_child_delete] ON [dbo].[hh_household_risk_assessment_member_child] FOR DELETE
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_household_risk_assessment_member_child_upload]
+                           ([ram_id] ,[ra_id],[hhm_id] ,[hhm_name],[gnd_name] ,[gnd_age] ,[ra_criteria_id],[yn_mother_hiv_pos] ,[yn_lost_bio_parent] ,[yn_malnourished]
+                           ,[yn_skin_problem],[yn_hospitalized] ,[yn_sexual_violence_exposed],[yn_acc_exposure_sharp_injury],[yn_drug_abuse],[yn_hhm_at_risk],[yn_hmm_test]
+                           ,[yn_hhm_accept_test] ,[yn_referal] ,[yn_referal_completed] ,[test_result] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update]
+                           ,[ofc_id],[trg_action],[district_id])
+	                SELECT [ram_id] ,[ra_id],[hhm_id] ,[hhm_name],[gnd_name] ,[gnd_age] ,[ra_criteria_id],[yn_mother_hiv_pos] ,[yn_lost_bio_parent] ,[yn_malnourished]
+                           ,[yn_skin_problem],[yn_hospitalized] ,[yn_sexual_violence_exposed],[yn_acc_exposure_sharp_injury],[yn_drug_abuse],[yn_hhm_at_risk],[yn_hmm_test]
+                           ,[yn_hhm_accept_test] ,[yn_referal] ,[yn_referal_completed] ,[test_result] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update]
+                           ,[ofc_id],3,[district_id]
+                  FROM deleted
+                END";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            #endregion Triggers
+            #endregion SQL
+        }
+
+
+        private static void Createhh_household_risk_assessment_member_adult(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            #region SQL
+            #region Tables
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_household_risk_assessment_member_adult')
+                     CREATE TABLE [dbo].[hh_household_risk_assessment_member_adult](
+	                    [ram_id] [varchar](50) NOT NULL,
+	                    [ra_id] [varchar](50) NOT NULL,
+	                    [hhm_id] [varchar](50) NOT NULL,
+	                    [hhm_name] [varchar](100) NOT NULL,
+	                    [gnd_name] [varchar](50) NOT NULL,
+	                    [gnd_age] [varchar](50) NOT NULL,
+	                    [ra_criteria_id] [varchar](50) NOT NULL,
+	                    [yn_hiv_test] [varchar](50) NOT NULL,
+	                    [yn_unprotected_sex] [varchar](50) NOT NULL,
+	                    [yn_sex_worker] [varchar](50) NOT NULL,
+	                    [yn_lost_sexual_partner] [varchar](50) NOT NULL,
+	                    [yn_tb_disease] [varchar](50) NOT NULL,
+	                    [yn_sexual_violence] [varchar](50) NOT NULL,
+	                    [yn_sickly] [varchar](50) NOT NULL,
+	                    [yn_pregnant_not_tested] [varchar](50) NOT NULL,
+	                    [yn_breast_feeding_not_tested] [varchar](50) NOT NULL,
+	                    [yn_hiv_neg_discodant_not_tested] [varchar](50) NOT NULL,
+	                    [yn_sti] [varchar](50) NOT NULL,
+	                    [yn_hepatitis_b] [varchar](50) NOT NULL,
+	                    [yn_male_female_not_tested] [varchar](50) NOT NULL,
+	                    [yn_hhm_at_risk] [varchar](50) NOT NULL,
+	                    [yn_hmm_test] [varchar](50) NOT NULL,
+	                    [yn_hhm_accept_test] [varchar](50) NOT NULL,
+	                    [yn_referal] [varchar](50) NOT NULL,
+	                    [yn_referal_completed] [varchar](50) NOT NULL,
+	                    [test_result] [varchar](50) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](100) NOT NULL,
+	                    [district_id] [nvarchar](50) NOT NULL,
+                     CONSTRAINT [PK_hh_household_risk_assessment_adult_member] PRIMARY KEY CLUSTERED 
+                    (
+	                    [ram_id] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_household_risk_assessment_member_adult_upload')
+                        CREATE TABLE [dbo].[hh_household_risk_assessment_member_adult_upload](
+	                    [ram_sid] [int] IDENTITY(1,1) NOT NULL,
+	                    [ram_id] [varchar](50) NOT NULL,
+	                    [ra_id] [varchar](50) NOT NULL,
+	                    [hhm_id] [varchar](50) NOT NULL,
+	                    [hhm_name] [varchar](100) NOT NULL,
+	                    [gnd_name] [varchar](50) NOT NULL,
+	                    [gnd_age] [varchar](50) NOT NULL,
+	                    [ra_criteria_id] [varchar](50) NOT NULL,
+	                    [yn_hiv_test] [varchar](50) NOT NULL,
+	                    [yn_unprotected_sex] [varchar](50) NOT NULL,
+	                    [yn_sex_worker] [varchar](50) NOT NULL,
+	                    [yn_lost_sexual_partner] [varchar](50) NOT NULL,
+	                    [yn_tb_disease] [varchar](50) NOT NULL,
+	                    [yn_sexual_violence] [varchar](50) NOT NULL,
+	                    [yn_sickly] [varchar](50) NOT NULL,
+	                    [yn_pregnant_not_tested] [varchar](50) NOT NULL,
+	                    [yn_breast_feeding_not_tested] [varchar](50) NOT NULL,
+	                    [yn_hiv_neg_discodant_not_tested] [varchar](50) NOT NULL,
+	                    [yn_sti] [varchar](50) NOT NULL,
+	                    [yn_hepatitis_b] [varchar](50) NOT NULL,
+	                    [yn_male_female_not_tested] [varchar](50) NOT NULL,
+	                    [yn_hhm_at_risk] [varchar](50) NOT NULL,
+	                    [yn_hmm_test] [varchar](50) NOT NULL,
+	                    [yn_hhm_accept_test] [varchar](50) NOT NULL,
+	                    [yn_referal] [varchar](50) NOT NULL,
+	                    [yn_referal_completed] [varchar](50) NOT NULL,
+	                    [test_result] [varchar](50) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](100) NOT NULL,
+	                    [trg_action] [int] NOT NULL,
+	                    [district_id] [nvarchar](50) NOT NULL,
+                     CONSTRAINT [PK_hh_household_risk_assessment_member_adult_upload] PRIMARY KEY CLUSTERED 
+                    (
+	                    [ram_sid] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion Tables
+
+            #region Triggers
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_household_risk_assessment_member_adult_insert' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_household_risk_assessment_member_adult_insert] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_household_risk_assessment_member_adult_insert] ON [dbo].[hh_household_risk_assessment_member_adult] FOR INSERT
+                AS
+                BEGIN
+	               INSERT INTO [dbo].[hh_household_risk_assessment_member_adult_upload]
+                           ([ram_id] ,[ra_id],[hhm_id],[hhm_name],[gnd_name],[gnd_age],[ra_criteria_id] ,[yn_hiv_test],[yn_unprotected_sex],[yn_sex_worker] ,[yn_lost_sexual_partner]
+                           ,[yn_tb_disease],[yn_sexual_violence],[yn_sickly],[yn_pregnant_not_tested],[yn_breast_feeding_not_tested] ,[yn_hiv_neg_discodant_not_tested],[yn_sti] ,[yn_hepatitis_b]
+                           ,[yn_male_female_not_tested] ,[yn_hhm_at_risk],[yn_hmm_test],[yn_hhm_accept_test],[yn_referal],[yn_referal_completed] ,[test_result],[usr_id_create],[usr_id_update]
+                           ,[usr_date_create],[usr_date_update],[ofc_id],[trg_action] ,[district_id])
+	                SELECT  [ram_id] ,[ra_id],[hhm_id],[hhm_name],[gnd_name],[gnd_age],[ra_criteria_id] ,[yn_hiv_test],[yn_unprotected_sex],[yn_sex_worker] ,[yn_lost_sexual_partner]
+                           ,[yn_tb_disease],[yn_sexual_violence],[yn_sickly],[yn_pregnant_not_tested],[yn_breast_feeding_not_tested] ,[yn_hiv_neg_discodant_not_tested],[yn_sti] ,[yn_hepatitis_b]
+                           ,[yn_male_female_not_tested] ,[yn_hhm_at_risk],[yn_hmm_test],[yn_hhm_accept_test],[yn_referal],[yn_referal_completed] ,[test_result],[usr_id_create],[usr_id_update]
+                           ,[usr_date_create],[usr_date_update],[ofc_id],1 ,[district_id]
+                  FROM inserted
+                END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_household_risk_assessment_member_adult_update' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_household_risk_assessment_member_adult_update] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_household_risk_assessment_member_adult_update] ON [dbo].[hh_household_risk_assessment_member_adult] FOR UPDATE
+                AS
+                BEGIN
+	               INSERT INTO [dbo].[hh_household_risk_assessment_member_adult_upload]
+                           ([ram_id] ,[ra_id],[hhm_id],[hhm_name],[gnd_name],[gnd_age],[ra_criteria_id] ,[yn_hiv_test],[yn_unprotected_sex],[yn_sex_worker] ,[yn_lost_sexual_partner]
+                           ,[yn_tb_disease],[yn_sexual_violence],[yn_sickly],[yn_pregnant_not_tested],[yn_breast_feeding_not_tested] ,[yn_hiv_neg_discodant_not_tested],[yn_sti] ,[yn_hepatitis_b]
+                           ,[yn_male_female_not_tested] ,[yn_hhm_at_risk],[yn_hmm_test],[yn_hhm_accept_test],[yn_referal],[yn_referal_completed] ,[test_result],[usr_id_create],[usr_id_update]
+                           ,[usr_date_create],[usr_date_update],[ofc_id],[trg_action] ,[district_id])
+	                SELECT  [ram_id] ,[ra_id],[hhm_id],[hhm_name],[gnd_name],[gnd_age],[ra_criteria_id] ,[yn_hiv_test],[yn_unprotected_sex],[yn_sex_worker] ,[yn_lost_sexual_partner]
+                           ,[yn_tb_disease],[yn_sexual_violence],[yn_sickly],[yn_pregnant_not_tested],[yn_breast_feeding_not_tested] ,[yn_hiv_neg_discodant_not_tested],[yn_sti] ,[yn_hepatitis_b]
+                           ,[yn_male_female_not_tested] ,[yn_hhm_at_risk],[yn_hmm_test],[yn_hhm_accept_test],[yn_referal],[yn_referal_completed] ,[test_result],[usr_id_create],[usr_id_update]
+                           ,[usr_date_create],[usr_date_update],[ofc_id],2 ,[district_id]
+                  FROM inserted
+                END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_household_risk_assessment_member_adult_delete' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_household_risk_assessment_member_adult_delete] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_household_risk_assessment_member_adult_delete] ON [dbo].[hh_household_risk_assessment_member_adult] FOR DELETE
+                AS
+                BEGIN
+	               INSERT INTO [dbo].[hh_household_risk_assessment_member_adult_upload]
+                           ([ram_id] ,[ra_id],[hhm_id],[hhm_name],[gnd_name],[gnd_age],[ra_criteria_id] ,[yn_hiv_test],[yn_unprotected_sex],[yn_sex_worker] ,[yn_lost_sexual_partner]
+                           ,[yn_tb_disease],[yn_sexual_violence],[yn_sickly],[yn_pregnant_not_tested],[yn_breast_feeding_not_tested] ,[yn_hiv_neg_discodant_not_tested],[yn_sti] ,[yn_hepatitis_b]
+                           ,[yn_male_female_not_tested] ,[yn_hhm_at_risk],[yn_hmm_test],[yn_hhm_accept_test],[yn_referal],[yn_referal_completed] ,[test_result],[usr_id_create],[usr_id_update]
+                           ,[usr_date_create],[usr_date_update],[ofc_id],[trg_action] ,[district_id])
+	                SELECT  [ram_id] ,[ra_id],[hhm_id],[hhm_name],[gnd_name],[gnd_age],[ra_criteria_id] ,[yn_hiv_test],[yn_unprotected_sex],[yn_sex_worker] ,[yn_lost_sexual_partner]
+                           ,[yn_tb_disease],[yn_sexual_violence],[yn_sickly],[yn_pregnant_not_tested],[yn_breast_feeding_not_tested] ,[yn_hiv_neg_discodant_not_tested],[yn_sti] ,[yn_hepatitis_b]
+                           ,[yn_male_female_not_tested] ,[yn_hhm_at_risk],[yn_hmm_test],[yn_hhm_accept_test],[yn_referal],[yn_referal_completed] ,[test_result],[usr_id_create],[usr_id_update]
+                           ,[usr_date_create],[usr_date_update],[ofc_id],3 ,[district_id]
+                  FROM deleted
+                END";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            #endregion Triggers
+            #endregion SQL
+        }
+
+        private static void Createlst_risk_assessment_criteria(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            #region SQL
+            #region Tables
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'lst_risk_assessment_criteria')
+                     CREATE TABLE [dbo].[lst_risk_assessment_criteria](
+	                [cr_id] [varchar](50) NOT NULL,
+	                [cr_name] [varchar](500) NOT NULL,
+	                [cr_order] [int] NOT NULL,
+	                [cr_active] [bit] NOT NULL,
+	                [lng_id] [char](2) NOT NULL,
+	                [usr_id_create] [varchar](50) NOT NULL,
+	                [usr_id_update] [varchar](50) NOT NULL,
+	                [usr_date_create] [datetime] NOT NULL,
+	                [usr_date_update] [datetime] NOT NULL
+                ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+           
+            #endregion Tables
+            #endregion SQL
+        }
+
+
+
+        private static void Createhh_household_improvement_plan_v2(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            #region SQL
+            #region Tables
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_household_improvement_plan_v2')
+                    CREATE TABLE [dbo].[hh_household_improvement_plan_v2](
+	                [hip_id] [nvarchar](100) NOT NULL,
+	                [hh_code] [nvarchar](50) NOT NULL,
+	                [hh_id] [nvarchar](50) NOT NULL,
+	                [initial_hip_date] [date] NOT NULL,
+	                [visit_date] [date] NOT NULL,
+	                [qm_id] [varchar](50) NOT NULL,
+	                [ov_below_seventeen_yrs_male] [int] NOT NULL,
+	                [ov_below_seventeen_yrs_female] [int] NOT NULL,
+	                [ov_above_eighteen_yrs_male] [int] NOT NULL,
+	                [ov_above_eighteen_yrs_female] [int] NOT NULL,
+	                [hip_reason] [varchar](50) NOT NULL,
+	                [yn_knows_status_of_children] [nvarchar](50) NOT NULL,
+	                [yn_knows_status_of_children_action] [varchar](max) NOT NULL,
+	                [yn_knows_status_of_children_out_come] [varchar](max) NOT NULL,
+	                [yn_knows_status_of_children_followup_date] [varchar](50) NOT NULL,
+	                [yn_positive_enrolled_on_art] [nvarchar](50) NOT NULL,
+	                [yn_positive_enrolled_on_art_out_come] [varchar](max) NOT NULL,
+	                [yn_positive_enrolled_on_art_action] [varchar](max) NOT NULL,
+	                [yn_positive_enrolled_on_art_followup_date] [varchar](50) NOT NULL,
+	                [yn_positive_supressing] [varchar](50) NOT NULL,
+	                [yn_positive_supressing_action] [varchar](max) NOT NULL,
+	                [yn_positive_supressing_out_come] [varchar](max) NOT NULL,
+	                [yn_positive_supressing_followup_date] [varchar](50) NOT NULL,
+	                [yn_positive_adhering] [varchar](50) NOT NULL,
+	                [yn_positive_adhering_action] [varchar](max) NOT NULL,
+	                [yn_positive_adhering_out_come] [varchar](max) NOT NULL,
+	                [yn_positive_adhering_followup_date] [varchar](50) NOT NULL,
+	                [yn_adolescent_hiv_prevention] [varchar](50) NOT NULL,
+	                [yn_adolescent_hiv_prevention_action] [varchar](max) NOT NULL,
+	                [yn_adolescent_hiv_prevention_out_come] [varchar](max) NOT NULL,
+	                [yn_adolescent_hiv_prevention_followup_date] [varchar](50) NOT NULL,
+	                [yn_child_undernourished] [varchar](50) NOT NULL,
+	                [yn_child_undernourished_action] [varchar](max) NOT NULL,
+	                [yn_child_undernourished_out_come] [varchar](max) NOT NULL,
+	                [yn_child_undernourished_followup_date] [varchar](50) NOT NULL,
+	                [other_health_issues] [varchar](max) NOT NULL,
+	                [other_health_issues_action] [varchar](max) NOT NULL,
+	                [other_health_issues_out_come] [varchar](max) NOT NULL,
+	                [other_health_issues_action_followup_date] [varchar](50) NOT NULL,
+	                [yn_no_violence] [varchar](50) NOT NULL,
+	                [yn_no_violence_action] [varchar](max) NOT NULL,
+	                [yn_no_violence_out_come] [varchar](max) NOT NULL,
+	                [yn_no_violence_action_followup_date] [varchar](50) NOT NULL,
+	                [yn_stable_care_giver] [varchar](50) NOT NULL,
+	                [yn_stable_care_giver_action] [varchar](max) NOT NULL,
+	                [yn_stable_care_giver_followup_date] [varchar](50) NOT NULL,
+	                [yn_stable_care_giver_out_come] [varchar](max) NOT NULL,
+	                [other_safe_issues] [varchar](max) NOT NULL,
+	                [other_safe_issues_action] [varchar](max) NOT NULL,
+	                [other_safe_issues_followup_date] [varchar](50) NOT NULL,
+	                [other_safe_issues_out_come] [varchar](max) NOT NULL,
+	                [yn_stable_access_money] [varchar](50) NOT NULL,
+	                [yn_stable_access_money_action] [varchar](max) NOT NULL,
+	                [yn_stable_access_money_followup_date] [varchar](50) NOT NULL,
+	                [yn_stable_access_money_out_come] [varchar](max) NOT NULL,
+	                [yn_stable_income_source] [varchar](50) NOT NULL,
+	                [yn_stable_income_source_action] [varchar](max) NOT NULL,
+	                [yn_stable_income_source_followup_date] [varchar](50) NOT NULL,
+	                [yn_stable_income_source_out_come] [varchar](max) NOT NULL,
+	                [other_hes_issues] [varchar](max) NOT NULL,
+	                [other_hes_issues_action] [varchar](max) NOT NULL,
+	                [other_hes_issues_followup_date] [varchar](50) NOT NULL,
+	                [other_hes_issues_out_come] [varchar](max) NOT NULL,
+	                [yn_ovc_regularly_attend_school] [varchar](50) NOT NULL,
+	                [yn_ovc_regularly_attend_school_action] [varchar](max) NOT NULL,
+	                [yn_ovc_regularly_attend_school_followup_date] [varchar](50) NOT NULL,
+	                [yn_ovc_regularly_attend_school_out_come] [varchar](max) NOT NULL,
+	                [yn_attained_tech_skill] [varchar](50) NOT NULL,
+	                [yn_attained_tech_skill_action_plan] [varchar](max) NOT NULL,
+	                [yn_attained_tech_skill_followup_date] [varchar](50) NOT NULL,
+	                [yn_attained_tech_skill_out_come] [varchar](max) NOT NULL,
+	                [other_edu_issues] [varchar](max) NOT NULL,
+	                [other_edu_issues_action] [varchar](max) NOT NULL,
+	                [other_edu_issues_followup_date] [varchar](50) NOT NULL,
+	                [other_edu_issues_out_come] [varchar](max) NOT NULL,
+	                [hip_out_come_date] [varchar](50) NOT NULL,
+	                [sw_id] [varchar](100) NOT NULL,
+	                [sw_comment] [varchar](max) NOT NULL,
+	                [sw_supervisor_name] [varchar](100) NOT NULL,
+	                [sw_supervisor_comment] [varchar](max) NOT NULL,
+	                [usr_id_create] [varchar](50) NOT NULL,
+	                [usr_id_update] [varchar](50) NOT NULL,
+	                [usr_date_create] [datetime] NOT NULL,
+	                [usr_date_update] [datetime] NOT NULL,
+	                [ofc_id] [varchar](50) NOT NULL,
+	                [district_id] [nvarchar](50) NOT NULL,
+                 CONSTRAINT [PK_hh_household_improvement_plan_v2] PRIMARY KEY CLUSTERED 
+                (
+	                [hip_id] ASC
+                )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion Tables
+
+            #region Triggers
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_household_improvement_plan_v2_insert' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_household_improvement_plan_v2_insert] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_household_improvement_plan_v2_insert] ON [dbo].[hh_household_improvement_plan_v2] FOR INSERT
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_household_improvement_plan_v2_upload]
+                        ([hip_id] ,[hh_code],[hh_id] ,[initial_hip_date],[visit_date] ,[qm_id],[ov_below_seventeen_yrs_male],[ov_below_seventeen_yrs_female],[ov_above_eighteen_yrs_male]
+                        ,[ov_above_eighteen_yrs_female] ,[hip_reason],[yn_knows_status_of_children],[yn_knows_status_of_children_action],[yn_knows_status_of_children_out_come] ,[yn_knows_status_of_children_followup_date]
+                        ,[yn_positive_enrolled_on_art],[yn_positive_enrolled_on_art_out_come] ,[yn_positive_enrolled_on_art_action],[yn_positive_enrolled_on_art_followup_date] ,[yn_positive_supressing],[yn_positive_supressing_action]
+                        ,[yn_positive_supressing_out_come] ,[yn_positive_supressing_followup_date] ,[yn_positive_adhering] ,[yn_positive_adhering_action],[yn_positive_adhering_out_come],[yn_positive_adhering_followup_date]
+                        ,[yn_adolescent_hiv_prevention] ,[yn_adolescent_hiv_prevention_action] ,[yn_adolescent_hiv_prevention_out_come],[yn_adolescent_hiv_prevention_followup_date],[yn_child_undernourished] ,[yn_child_undernourished_action]
+                        ,[yn_child_undernourished_out_come] ,[yn_child_undernourished_followup_date],[other_health_issues],[other_health_issues_action],[other_health_issues_out_come] ,[other_health_issues_action_followup_date],[yn_no_violence]
+                        ,[yn_no_violence_action] ,[yn_no_violence_out_come] ,[yn_no_violence_action_followup_date] ,[yn_stable_care_giver],[yn_stable_care_giver_action] ,[yn_stable_care_giver_followup_date] ,[yn_stable_care_giver_out_come]
+                        ,[other_safe_issues] ,[other_safe_issues_action] ,[other_safe_issues_followup_date],[other_safe_issues_out_come] ,[yn_stable_access_money] ,[yn_stable_access_money_action],[yn_stable_access_money_followup_date]
+                        ,[yn_stable_access_money_out_come],[yn_stable_income_source] ,[yn_stable_income_source_action] ,[yn_stable_income_source_followup_date] ,[yn_stable_income_source_out_come],[other_hes_issues] ,[other_hes_issues_action]
+                        ,[other_hes_issues_followup_date] ,[other_hes_issues_out_come],[yn_ovc_regularly_attend_school] ,[yn_ovc_regularly_attend_school_action],[yn_ovc_regularly_attend_school_followup_date] ,[yn_ovc_regularly_attend_school_out_come]
+                        ,[yn_attained_tech_skill] ,[yn_attained_tech_skill_action_plan],[yn_attained_tech_skill_followup_date] ,[yn_attained_tech_skill_out_come],[other_edu_issues],[other_edu_issues_action] ,[other_edu_issues_followup_date]
+                        ,[other_edu_issues_out_come] ,[hip_out_come_date] ,[sw_id],[sw_comment] ,[sw_supervisor_name] ,[sw_supervisor_comment] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id],[trg_action] ,[district_id])
+	                SELECT [hip_id] ,[hh_code],[hh_id] ,[initial_hip_date],[visit_date] ,[qm_id],[ov_below_seventeen_yrs_male],[ov_below_seventeen_yrs_female],[ov_above_eighteen_yrs_male]
+                        ,[ov_above_eighteen_yrs_female] ,[hip_reason],[yn_knows_status_of_children],[yn_knows_status_of_children_action],[yn_knows_status_of_children_out_come] ,[yn_knows_status_of_children_followup_date]
+                        ,[yn_positive_enrolled_on_art],[yn_positive_enrolled_on_art_out_come] ,[yn_positive_enrolled_on_art_action],[yn_positive_enrolled_on_art_followup_date] ,[yn_positive_supressing],[yn_positive_supressing_action]
+                        ,[yn_positive_supressing_out_come] ,[yn_positive_supressing_followup_date] ,[yn_positive_adhering] ,[yn_positive_adhering_action],[yn_positive_adhering_out_come],[yn_positive_adhering_followup_date]
+                        ,[yn_adolescent_hiv_prevention] ,[yn_adolescent_hiv_prevention_action] ,[yn_adolescent_hiv_prevention_out_come],[yn_adolescent_hiv_prevention_followup_date],[yn_child_undernourished] ,[yn_child_undernourished_action]
+                        ,[yn_child_undernourished_out_come] ,[yn_child_undernourished_followup_date],[other_health_issues],[other_health_issues_action],[other_health_issues_out_come] ,[other_health_issues_action_followup_date],[yn_no_violence]
+                        ,[yn_no_violence_action] ,[yn_no_violence_out_come] ,[yn_no_violence_action_followup_date] ,[yn_stable_care_giver],[yn_stable_care_giver_action] ,[yn_stable_care_giver_followup_date] ,[yn_stable_care_giver_out_come]
+                        ,[other_safe_issues] ,[other_safe_issues_action] ,[other_safe_issues_followup_date],[other_safe_issues_out_come] ,[yn_stable_access_money] ,[yn_stable_access_money_action],[yn_stable_access_money_followup_date]
+                        ,[yn_stable_access_money_out_come],[yn_stable_income_source] ,[yn_stable_income_source_action] ,[yn_stable_income_source_followup_date] ,[yn_stable_income_source_out_come],[other_hes_issues] ,[other_hes_issues_action]
+                        ,[other_hes_issues_followup_date] ,[other_hes_issues_out_come],[yn_ovc_regularly_attend_school] ,[yn_ovc_regularly_attend_school_action],[yn_ovc_regularly_attend_school_followup_date] ,[yn_ovc_regularly_attend_school_out_come]
+                        ,[yn_attained_tech_skill] ,[yn_attained_tech_skill_action_plan],[yn_attained_tech_skill_followup_date] ,[yn_attained_tech_skill_out_come],[other_edu_issues],[other_edu_issues_action] ,[other_edu_issues_followup_date]
+                        ,[other_edu_issues_out_come] ,[hip_out_come_date] ,[sw_id],[sw_comment] ,[sw_supervisor_name] ,[sw_supervisor_comment] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id],1 ,[district_id]
+                  FROM inserted END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_household_improvement_plan_v2_update' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_household_improvement_plan_v2_update] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_household_improvement_plan_v2_update] ON [dbo].[hh_household_improvement_plan_v2] FOR UPDATE
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_household_improvement_plan_v2_upload]
+                        ([hip_id] ,[hh_code],[hh_id] ,[initial_hip_date],[visit_date] ,[qm_id],[ov_below_seventeen_yrs_male],[ov_below_seventeen_yrs_female],[ov_above_eighteen_yrs_male]
+                        ,[ov_above_eighteen_yrs_female] ,[hip_reason],[yn_knows_status_of_children],[yn_knows_status_of_children_action],[yn_knows_status_of_children_out_come] ,[yn_knows_status_of_children_followup_date]
+                        ,[yn_positive_enrolled_on_art],[yn_positive_enrolled_on_art_out_come] ,[yn_positive_enrolled_on_art_action],[yn_positive_enrolled_on_art_followup_date] ,[yn_positive_supressing],[yn_positive_supressing_action]
+                        ,[yn_positive_supressing_out_come] ,[yn_positive_supressing_followup_date] ,[yn_positive_adhering] ,[yn_positive_adhering_action],[yn_positive_adhering_out_come],[yn_positive_adhering_followup_date]
+                        ,[yn_adolescent_hiv_prevention] ,[yn_adolescent_hiv_prevention_action] ,[yn_adolescent_hiv_prevention_out_come],[yn_adolescent_hiv_prevention_followup_date],[yn_child_undernourished] ,[yn_child_undernourished_action]
+                        ,[yn_child_undernourished_out_come] ,[yn_child_undernourished_followup_date],[other_health_issues],[other_health_issues_action],[other_health_issues_out_come] ,[other_health_issues_action_followup_date],[yn_no_violence]
+                        ,[yn_no_violence_action] ,[yn_no_violence_out_come] ,[yn_no_violence_action_followup_date] ,[yn_stable_care_giver],[yn_stable_care_giver_action] ,[yn_stable_care_giver_followup_date] ,[yn_stable_care_giver_out_come]
+                        ,[other_safe_issues] ,[other_safe_issues_action] ,[other_safe_issues_followup_date],[other_safe_issues_out_come] ,[yn_stable_access_money] ,[yn_stable_access_money_action],[yn_stable_access_money_followup_date]
+                        ,[yn_stable_access_money_out_come],[yn_stable_income_source] ,[yn_stable_income_source_action] ,[yn_stable_income_source_followup_date] ,[yn_stable_income_source_out_come],[other_hes_issues] ,[other_hes_issues_action]
+                        ,[other_hes_issues_followup_date] ,[other_hes_issues_out_come],[yn_ovc_regularly_attend_school] ,[yn_ovc_regularly_attend_school_action],[yn_ovc_regularly_attend_school_followup_date] ,[yn_ovc_regularly_attend_school_out_come]
+                        ,[yn_attained_tech_skill] ,[yn_attained_tech_skill_action_plan],[yn_attained_tech_skill_followup_date] ,[yn_attained_tech_skill_out_come],[other_edu_issues],[other_edu_issues_action] ,[other_edu_issues_followup_date]
+                        ,[other_edu_issues_out_come] ,[hip_out_come_date] ,[sw_id],[sw_comment] ,[sw_supervisor_name] ,[sw_supervisor_comment] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id],[trg_action] ,[district_id])
+	                SELECT [hip_id] ,[hh_code],[hh_id] ,[initial_hip_date],[visit_date] ,[qm_id],[ov_below_seventeen_yrs_male],[ov_below_seventeen_yrs_female],[ov_above_eighteen_yrs_male]
+                        ,[ov_above_eighteen_yrs_female] ,[hip_reason],[yn_knows_status_of_children],[yn_knows_status_of_children_action],[yn_knows_status_of_children_out_come] ,[yn_knows_status_of_children_followup_date]
+                        ,[yn_positive_enrolled_on_art],[yn_positive_enrolled_on_art_out_come] ,[yn_positive_enrolled_on_art_action],[yn_positive_enrolled_on_art_followup_date] ,[yn_positive_supressing],[yn_positive_supressing_action]
+                        ,[yn_positive_supressing_out_come] ,[yn_positive_supressing_followup_date] ,[yn_positive_adhering] ,[yn_positive_adhering_action],[yn_positive_adhering_out_come],[yn_positive_adhering_followup_date]
+                        ,[yn_adolescent_hiv_prevention] ,[yn_adolescent_hiv_prevention_action] ,[yn_adolescent_hiv_prevention_out_come],[yn_adolescent_hiv_prevention_followup_date],[yn_child_undernourished] ,[yn_child_undernourished_action]
+                        ,[yn_child_undernourished_out_come] ,[yn_child_undernourished_followup_date],[other_health_issues],[other_health_issues_action],[other_health_issues_out_come] ,[other_health_issues_action_followup_date],[yn_no_violence]
+                        ,[yn_no_violence_action] ,[yn_no_violence_out_come] ,[yn_no_violence_action_followup_date] ,[yn_stable_care_giver],[yn_stable_care_giver_action] ,[yn_stable_care_giver_followup_date] ,[yn_stable_care_giver_out_come]
+                        ,[other_safe_issues] ,[other_safe_issues_action] ,[other_safe_issues_followup_date],[other_safe_issues_out_come] ,[yn_stable_access_money] ,[yn_stable_access_money_action],[yn_stable_access_money_followup_date]
+                        ,[yn_stable_access_money_out_come],[yn_stable_income_source] ,[yn_stable_income_source_action] ,[yn_stable_income_source_followup_date] ,[yn_stable_income_source_out_come],[other_hes_issues] ,[other_hes_issues_action]
+                        ,[other_hes_issues_followup_date] ,[other_hes_issues_out_come],[yn_ovc_regularly_attend_school] ,[yn_ovc_regularly_attend_school_action],[yn_ovc_regularly_attend_school_followup_date] ,[yn_ovc_regularly_attend_school_out_come]
+                        ,[yn_attained_tech_skill] ,[yn_attained_tech_skill_action_plan],[yn_attained_tech_skill_followup_date] ,[yn_attained_tech_skill_out_come],[other_edu_issues],[other_edu_issues_action] ,[other_edu_issues_followup_date]
+                        ,[other_edu_issues_out_come] ,[hip_out_come_date] ,[sw_id],[sw_comment] ,[sw_supervisor_name] ,[sw_supervisor_comment] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id],2 ,[district_id]
+                  FROM inserted END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_household_improvement_plan_v2_delete' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_household_improvement_plan_v2_delete] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_household_improvement_plan_v2_delete] ON [dbo].[hh_household_improvement_plan_v2] FOR DELETE
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_household_improvement_plan_v2_upload]
+                        ([hip_id] ,[hh_code],[hh_id] ,[initial_hip_date],[visit_date] ,[qm_id],[ov_below_seventeen_yrs_male],[ov_below_seventeen_yrs_female],[ov_above_eighteen_yrs_male]
+                        ,[ov_above_eighteen_yrs_female] ,[hip_reason],[yn_knows_status_of_children],[yn_knows_status_of_children_action],[yn_knows_status_of_children_out_come] ,[yn_knows_status_of_children_followup_date]
+                        ,[yn_positive_enrolled_on_art],[yn_positive_enrolled_on_art_out_come] ,[yn_positive_enrolled_on_art_action],[yn_positive_enrolled_on_art_followup_date] ,[yn_positive_supressing],[yn_positive_supressing_action]
+                        ,[yn_positive_supressing_out_come] ,[yn_positive_supressing_followup_date] ,[yn_positive_adhering] ,[yn_positive_adhering_action],[yn_positive_adhering_out_come],[yn_positive_adhering_followup_date]
+                        ,[yn_adolescent_hiv_prevention] ,[yn_adolescent_hiv_prevention_action] ,[yn_adolescent_hiv_prevention_out_come],[yn_adolescent_hiv_prevention_followup_date],[yn_child_undernourished] ,[yn_child_undernourished_action]
+                        ,[yn_child_undernourished_out_come] ,[yn_child_undernourished_followup_date],[other_health_issues],[other_health_issues_action],[other_health_issues_out_come] ,[other_health_issues_action_followup_date],[yn_no_violence]
+                        ,[yn_no_violence_action] ,[yn_no_violence_out_come] ,[yn_no_violence_action_followup_date] ,[yn_stable_care_giver],[yn_stable_care_giver_action] ,[yn_stable_care_giver_followup_date] ,[yn_stable_care_giver_out_come]
+                        ,[other_safe_issues] ,[other_safe_issues_action] ,[other_safe_issues_followup_date],[other_safe_issues_out_come] ,[yn_stable_access_money] ,[yn_stable_access_money_action],[yn_stable_access_money_followup_date]
+                        ,[yn_stable_access_money_out_come],[yn_stable_income_source] ,[yn_stable_income_source_action] ,[yn_stable_income_source_followup_date] ,[yn_stable_income_source_out_come],[other_hes_issues] ,[other_hes_issues_action]
+                        ,[other_hes_issues_followup_date] ,[other_hes_issues_out_come],[yn_ovc_regularly_attend_school] ,[yn_ovc_regularly_attend_school_action],[yn_ovc_regularly_attend_school_followup_date] ,[yn_ovc_regularly_attend_school_out_come]
+                        ,[yn_attained_tech_skill] ,[yn_attained_tech_skill_action_plan],[yn_attained_tech_skill_followup_date] ,[yn_attained_tech_skill_out_come],[other_edu_issues],[other_edu_issues_action] ,[other_edu_issues_followup_date]
+                        ,[other_edu_issues_out_come] ,[hip_out_come_date] ,[sw_id],[sw_comment] ,[sw_supervisor_name] ,[sw_supervisor_comment] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id],[trg_action] ,[district_id])
+	                SELECT [hip_id] ,[hh_code],[hh_id] ,[initial_hip_date],[visit_date] ,[qm_id],[ov_below_seventeen_yrs_male],[ov_below_seventeen_yrs_female],[ov_above_eighteen_yrs_male]
+                        ,[ov_above_eighteen_yrs_female] ,[hip_reason],[yn_knows_status_of_children],[yn_knows_status_of_children_action],[yn_knows_status_of_children_out_come] ,[yn_knows_status_of_children_followup_date]
+                        ,[yn_positive_enrolled_on_art],[yn_positive_enrolled_on_art_out_come] ,[yn_positive_enrolled_on_art_action],[yn_positive_enrolled_on_art_followup_date] ,[yn_positive_supressing],[yn_positive_supressing_action]
+                        ,[yn_positive_supressing_out_come] ,[yn_positive_supressing_followup_date] ,[yn_positive_adhering] ,[yn_positive_adhering_action],[yn_positive_adhering_out_come],[yn_positive_adhering_followup_date]
+                        ,[yn_adolescent_hiv_prevention] ,[yn_adolescent_hiv_prevention_action] ,[yn_adolescent_hiv_prevention_out_come],[yn_adolescent_hiv_prevention_followup_date],[yn_child_undernourished] ,[yn_child_undernourished_action]
+                        ,[yn_child_undernourished_out_come] ,[yn_child_undernourished_followup_date],[other_health_issues],[other_health_issues_action],[other_health_issues_out_come] ,[other_health_issues_action_followup_date],[yn_no_violence]
+                        ,[yn_no_violence_action] ,[yn_no_violence_out_come] ,[yn_no_violence_action_followup_date] ,[yn_stable_care_giver],[yn_stable_care_giver_action] ,[yn_stable_care_giver_followup_date] ,[yn_stable_care_giver_out_come]
+                        ,[other_safe_issues] ,[other_safe_issues_action] ,[other_safe_issues_followup_date],[other_safe_issues_out_come] ,[yn_stable_access_money] ,[yn_stable_access_money_action],[yn_stable_access_money_followup_date]
+                        ,[yn_stable_access_money_out_come],[yn_stable_income_source] ,[yn_stable_income_source_action] ,[yn_stable_income_source_followup_date] ,[yn_stable_income_source_out_come],[other_hes_issues] ,[other_hes_issues_action]
+                        ,[other_hes_issues_followup_date] ,[other_hes_issues_out_come],[yn_ovc_regularly_attend_school] ,[yn_ovc_regularly_attend_school_action],[yn_ovc_regularly_attend_school_followup_date] ,[yn_ovc_regularly_attend_school_out_come]
+                        ,[yn_attained_tech_skill] ,[yn_attained_tech_skill_action_plan],[yn_attained_tech_skill_followup_date] ,[yn_attained_tech_skill_out_come],[other_edu_issues],[other_edu_issues_action] ,[other_edu_issues_followup_date]
+                        ,[other_edu_issues_out_come] ,[hip_out_come_date] ,[sw_id],[sw_comment] ,[sw_supervisor_name] ,[sw_supervisor_comment] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id],3 ,[district_id]
+                  FROM deleted END";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            #endregion Triggers
+            #endregion SQL
+        }
+
+
+        private static void Createhh_household_home_visit_v_2(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            #region SQL
+            #region Tables
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_household_home_visit_v_2')
+                     CREATE TABLE [dbo].[hh_household_home_visit_v_2](
+	                [hhv_id] [varchar](50) NOT NULL,
+	                [hhv_date] [datetime] NOT NULL,
+	                [hhv_date_next_visit] [datetime] NOT NULL,
+	                [hhv_comments] [varchar](max) NOT NULL,
+	                [hhv_next_steps] [varchar](max) NOT NULL,
+	                [ynna_risk_assessment] [varchar](50) NOT NULL,
+	                [ynna_new_referal] [varchar](50) NOT NULL,
+	                [ynna_old_referal_followup] [varchar](50) NOT NULL,
+	                [yn_hip] [varchar](50) NOT NULL,
+	                [hhv_swk_code] [varchar](50) NOT NULL,
+	                [hhv_visitor_tel] [varchar](50) NOT NULL,
+	                [hvhs_id] [varchar](50) NOT NULL,
+	                [hvr_id] [varchar](50) NOT NULL,
+	                [hh_id] [varchar](50) NOT NULL,
+	                [hhm_id] [varchar](50) NOT NULL,
+	                [hnr_id_visitor] [varchar](50) NOT NULL,
+	                [swk_id] [varchar](50) NOT NULL,
+	                [swk_id_visitor] [varchar](50) NOT NULL,
+	                [usr_id_create] [varchar](50) NOT NULL,
+	                [usr_id_update] [varchar](50) NOT NULL,
+	                [usr_date_create] [datetime] NOT NULL,
+	                [usr_date_update] [datetime] NOT NULL,
+	                [ofc_id] [varchar](50) NOT NULL,
+	                [district_id] [nvarchar](50) NOT NULL,
+                 CONSTRAINT [PK_hh_household_home_visit_v_2] PRIMARY KEY CLUSTERED 
+                (
+	                [hhv_id] ASC
+                )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_household_home_visit_v_2_upload')
+                        CREATE TABLE [dbo].[hh_household_home_visit_v_2_upload](
+	                    [hhv_sid] [int] IDENTITY(1,1) NOT NULL,
+	                    [hhv_id] [varchar](50) NOT NULL,
+	                    [hhv_date] [datetime] NOT NULL,
+	                    [hhv_date_next_visit] [datetime] NOT NULL,
+	                    [hhv_comments] [varchar](max) NOT NULL,
+	                    [hhv_next_steps] [varchar](max) NOT NULL,
+	                    [ynna_risk_assessment] [varchar](50) NOT NULL,
+	                    [ynna_new_referal] [varchar](50) NOT NULL,
+	                    [ynna_old_referal_followup] [varchar](50) NOT NULL,
+	                    [yn_hip] [varchar](50) NOT NULL,
+	                    [hhv_swk_code] [varchar](50) NOT NULL,
+	                    [hhv_visitor_tel] [varchar](50) NOT NULL,
+	                    [hvhs_id] [varchar](50) NOT NULL,
+	                    [hvr_id] [varchar](50) NOT NULL,
+	                    [hh_id] [varchar](50) NOT NULL,
+	                    [hhm_id] [varchar](50) NOT NULL,
+	                    [hnr_id_visitor] [varchar](50) NOT NULL,
+	                    [swk_id] [varchar](50) NOT NULL,
+	                    [swk_id_visitor] [varchar](50) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [trg_action] [int] NOT NULL,
+	                    [district_id] [nvarchar](50) NOT NULL,
+                     CONSTRAINT [PK_hh_household_home_visit_v_2_upload] PRIMARY KEY CLUSTERED 
+                    (
+	                    [hhv_sid] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion Tables
+
+            #region Triggers
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_household_home_visit_v_2_insert' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_household_home_visit_v_2_insert] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_household_home_visit_v_2_insert] ON [dbo].[hh_household_home_visit_v_2] FOR INSERT
+                AS
+                BEGIN
+	               INSERT INTO [dbo].[hh_household_home_visit_v_2_upload]
+				   ([hhv_id],[hhv_date] ,[hhv_date_next_visit],[hhv_comments],[hhv_next_steps],[ynna_risk_assessment],[ynna_new_referal]
+				   ,[ynna_old_referal_followup],[yn_hip] ,[hhv_swk_code] ,[hhv_visitor_tel] ,[hvhs_id] ,[hvr_id] ,[hh_id],[hhm_id] ,[hnr_id_visitor],[swk_id]
+				   ,[swk_id_visitor] ,[usr_id_create] ,[usr_id_update],[usr_date_create] ,[usr_date_update],[ofc_id],[trg_action],[district_id])
+	                SELECT [hhv_id],[hhv_date] ,[hhv_date_next_visit],[hhv_comments],[hhv_next_steps],[ynna_risk_assessment],[ynna_new_referal]
+				   ,[ynna_old_referal_followup],[yn_hip] ,[hhv_swk_code] ,[hhv_visitor_tel] ,[hvhs_id] ,[hvr_id] ,[hh_id],[hhm_id] ,[hnr_id_visitor],[swk_id]
+				   ,[swk_id_visitor] ,[usr_id_create] ,[usr_id_update],[usr_date_create] ,[usr_date_update],[ofc_id],1,[district_id]
+                  FROM inserted
+                END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_household_home_visit_v_2_update' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_household_home_visit_v_2_update] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_household_home_visit_v_2_update] ON [dbo].[hh_household_home_visit_v_2] FOR UPDATE
+                AS
+                BEGIN
+	               INSERT INTO [dbo].[hh_household_home_visit_v_2_upload]
+				   ([hhv_id],[hhv_date] ,[hhv_date_next_visit],[hhv_comments],[hhv_next_steps],[ynna_risk_assessment],[ynna_new_referal]
+				   ,[ynna_old_referal_followup],[yn_hip] ,[hhv_swk_code] ,[hhv_visitor_tel] ,[hvhs_id] ,[hvr_id] ,[hh_id],[hhm_id] ,[hnr_id_visitor],[swk_id]
+				   ,[swk_id_visitor] ,[usr_id_create] ,[usr_id_update],[usr_date_create] ,[usr_date_update],[ofc_id],[trg_action],[district_id])
+	                SELECT [hhv_id],[hhv_date] ,[hhv_date_next_visit],[hhv_comments],[hhv_next_steps],[ynna_risk_assessment],[ynna_new_referal]
+				   ,[ynna_old_referal_followup],[yn_hip] ,[hhv_swk_code] ,[hhv_visitor_tel] ,[hvhs_id] ,[hvr_id] ,[hh_id],[hhm_id] ,[hnr_id_visitor],[swk_id]
+				   ,[swk_id_visitor] ,[usr_id_create] ,[usr_id_update],[usr_date_create] ,[usr_date_update],[ofc_id],2,[district_id]
+                  FROM inserted
+                END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_household_home_visit_v_2_delete' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_household_home_visit_v_2_delete] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_household_home_visit_v_2_delete] ON [dbo].[hh_household_home_visit_v_2] FOR DELETE
+                AS
+                BEGIN
+	               INSERT INTO [dbo].[hh_household_home_visit_v_2_upload]
+				   ([hhv_id],[hhv_date] ,[hhv_date_next_visit],[hhv_comments],[hhv_next_steps],[ynna_risk_assessment],[ynna_new_referal]
+				   ,[ynna_old_referal_followup],[yn_hip] ,[hhv_swk_code] ,[hhv_visitor_tel] ,[hvhs_id] ,[hvr_id] ,[hh_id],[hhm_id] ,[hnr_id_visitor],[swk_id]
+				   ,[swk_id_visitor] ,[usr_id_create] ,[usr_id_update],[usr_date_create] ,[usr_date_update],[ofc_id],[trg_action],[district_id])
+	                SELECT [hhv_id],[hhv_date] ,[hhv_date_next_visit],[hhv_comments],[hhv_next_steps],[ynna_risk_assessment],[ynna_new_referal]
+				   ,[ynna_old_referal_followup],[yn_hip] ,[hhv_swk_code] ,[hhv_visitor_tel] ,[hvhs_id] ,[hvr_id] ,[hh_id],[hhm_id] ,[hnr_id_visitor],[swk_id]
+				   ,[swk_id_visitor] ,[usr_id_create] ,[usr_id_update],[usr_date_create] ,[usr_date_update],[ofc_id],3,[district_id]
+                  FROM deleted
+                END";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            #endregion Triggers
+            #endregion SQL
+        }
+
+
+
+        private static void Createhh_household_home_visit_member_v_2(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            #region SQL
+            #region Tables
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_household_home_visit_member_v_2')
+                     CREATE TABLE [dbo].[hh_household_home_visit_member_v_2](
+	                    [hhvm_id] [varchar](50) NOT NULL,
+	                    [hhm_id] [varchar](50) NOT NULL,
+	                    [hhv_id] [varchar](50) NOT NULL,
+	                    [hhm_name] [varchar](1000) NOT NULL,
+	                    [hmm_age] [varchar](50) NOT NULL,
+	                    [gnd_name] [varchar](50) NOT NULL,
+	                    [yn_id_hhm_active] [varchar](50) NOT NULL,
+	                    [ynna_stb_id_SILC] [varchar](50) NOT NULL,
+	                    [ynna_stb_id_other_saving_grp] [varchar](50) NOT NULL,
+	                    [ynna_stb_caregiver_services] [varchar](50) NOT NULL,
+	                    [ynna_stb_contributes_edu_fund] [varchar](50) NOT NULL,
+	                    [ynna_stb_SAGE] [varchar](50) NOT NULL,
+	                    [yn_stb_receive_social_grant] [varchar](50) NOT NULL,
+	                    [ynna_stb_apprenticeship] [varchar](50) NOT NULL,
+	                    [ynna_stb_cottage] [varchar](50) NOT NULL,
+	                    [ynna_stb_agro_enterprise] [varchar](50) NOT NULL,
+	                    [ynna_stb_aflateen] [varchar](50) NOT NULL,
+	                    [ynna_stb_sch_ovc_edu_enrolled] [varchar](50) NOT NULL,
+	                    [ynna_sch_re_enrollment_support] [varchar](50) NOT NULL,
+	                    [ynna_sch_ovc_attend_school_regularly] [varchar](50) NOT NULL,
+	                    [ynna_sch_ovc_receive_school_uniform] [varchar](50) NOT NULL,
+	                    [ynna_sch_ovc_receive_edu_subsidy] [varchar](50) NOT NULL,
+	                    [ynna_progressed_to_another_class] [varchar](50) NOT NULL,
+	                    [hst_id] [varchar](50) NOT NULL,
+	                    [ynna_on_art] [varchar](50) NOT NULL,
+	                    [ynna_follow_art_prescription] [varchar](50) NOT NULL,
+	                    [adherence_level] [varchar](50) NOT NULL,
+	                    [ynna_hiv_literacy] [varchar](50) NOT NULL,
+	                    [yn_hiv_counselling] [varchar](50) NOT NULL,
+	                    [yn_hiv_adherence_support] [varchar](50) NOT NULL,
+	                    [yn_hiv_prevention_support] [varchar](50) NOT NULL,
+	                    [yn_wash_messages] [varchar](50) NOT NULL,
+	                    [nutrition_assessment_result] [varchar](50) NOT NULL,
+	                    [yn_initiate_hts_refferal] [varchar](50) NOT NULL,
+	                    [yn_complete_hts_refferal] [varchar](50) NOT NULL,
+	                    [ynna_initiate_art_refferal] [varchar](50) NOT NULL,
+	                    [ynna_complete_art_refferal] [varchar](50) NOT NULL,
+	                    [ynna_initiate_immunize_refferal] [varchar](50) NOT NULL,
+	                    [ynna_complete_immunize_refferal] [varchar](50) NOT NULL,
+	                    [ynna_tb_screen] [varchar](50) NOT NULL,
+	                    [ynna_initiate_tb_refferal] [varchar](50) NOT NULL,
+	                    [ynna_complete_tb_refferal] [varchar](50) NOT NULL,
+	                    [ynna_initiate_perinatal_care_refferal] [varchar](50) NOT NULL,
+	                    [ynna_complete_perinatal_care_refferal] [varchar](50) NOT NULL,
+	                    [ynna_initiate_post_violence_refferal] [varchar](50) NOT NULL,
+	                    [ynna_complete_post_violence_refferal] [varchar](50) NOT NULL,
+	                    [ynna_ovc_has_birth_certificate] [varchar](50) NOT NULL,
+	                    [ynna_initiate_birth_reg_refferal] [varchar](50) NOT NULL,
+	                    [ynna_complete_birth_reg_refferal] [varchar](50) NOT NULL,
+	                    [ynna_pss_family_group_discussion] [varchar](50) NOT NULL,
+	                    [ynna_reported_to_police] [varchar](50) NOT NULL,
+	                    [ynna_violence_evidence_based_intervention] [varchar](50) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [district_id] [varchar](50) NOT NULL,
+                     CONSTRAINT [PK_hh_household_home_visit_member_v_2] PRIMARY KEY CLUSTERED 
+                    (
+	                    [hhvm_id] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_household_home_visit_member_v_2_upload')
+                        CREATE TABLE [dbo].[hh_household_home_visit_member_v_2_upload](
+	                    [hhvm_sid] [int] IDENTITY(1,1) NOT NULL,
+	                    [hhvm_id] [varchar](50) NOT NULL,
+	                    [hhm_id] [varchar](50) NOT NULL,
+	                    [hhv_id] [varchar](50) NOT NULL,
+	                    [hhm_name] [varchar](1000) NOT NULL,
+	                    [hmm_age] [varchar](50) NOT NULL,
+	                    [gnd_name] [varchar](50) NOT NULL,
+	                    [yn_id_hhm_active] [varchar](50) NOT NULL,
+	                    [ynna_stb_id_SILC] [varchar](50) NOT NULL,
+	                    [ynna_stb_id_other_saving_grp] [varchar](50) NOT NULL,
+	                    [ynna_stb_caregiver_services] [varchar](50) NOT NULL,
+	                    [ynna_stb_contributes_edu_fund] [varchar](50) NOT NULL,
+	                    [ynna_stb_SAGE] [varchar](50) NOT NULL,
+	                    [yn_stb_receive_social_grant] [varchar](50) NOT NULL,
+	                    [ynna_stb_apprenticeship] [varchar](50) NOT NULL,
+	                    [ynna_stb_cottage] [varchar](50) NOT NULL,
+	                    [ynna_stb_agro_enterprise] [varchar](50) NOT NULL,
+	                    [ynna_stb_aflateen] [varchar](50) NOT NULL,
+	                    [ynna_stb_sch_ovc_edu_enrolled] [varchar](50) NOT NULL,
+	                    [ynna_sch_re_enrollment_support] [varchar](50) NOT NULL,
+	                    [ynna_sch_ovc_attend_school_regularly] [varchar](50) NOT NULL,
+	                    [ynna_sch_ovc_receive_school_uniform] [varchar](50) NOT NULL,
+	                    [ynna_sch_ovc_receive_edu_subsidy] [varchar](50) NOT NULL,
+	                    [ynna_progressed_to_another_class] [varchar](50) NOT NULL,
+	                    [hst_id] [varchar](50) NOT NULL,
+	                    [ynna_on_art] [varchar](50) NOT NULL,
+	                    [ynna_follow_art_prescription] [varchar](50) NOT NULL,
+	                    [adherence_level] [varchar](50) NOT NULL,
+	                    [ynna_hiv_literacy] [varchar](50) NOT NULL,
+	                    [yn_hiv_counselling] [varchar](50) NOT NULL,
+	                    [yn_hiv_adherence_support] [varchar](50) NOT NULL,
+	                    [yn_hiv_prevention_support] [varchar](50) NOT NULL,
+	                    [yn_wash_messages] [varchar](50) NOT NULL,
+	                    [nutrition_assessment_result] [varchar](50) NOT NULL,
+	                    [yn_initiate_hts_refferal] [varchar](50) NOT NULL,
+	                    [yn_complete_hts_refferal] [varchar](50) NOT NULL,
+	                    [ynna_initiate_art_refferal] [varchar](50) NOT NULL,
+	                    [ynna_complete_art_refferal] [varchar](50) NOT NULL,
+	                    [ynna_initiate_immunize_refferal] [varchar](50) NOT NULL,
+	                    [ynna_complete_immunize_refferal] [varchar](50) NOT NULL,
+	                    [ynna_tb_screen] [varchar](50) NOT NULL,
+	                    [ynna_initiate_tb_refferal] [varchar](50) NOT NULL,
+	                    [ynna_complete_tb_refferal] [varchar](50) NOT NULL,
+	                    [ynna_initiate_perinatal_care_refferal] [varchar](50) NOT NULL,
+	                    [ynna_complete_perinatal_care_refferal] [varchar](50) NOT NULL,
+	                    [ynna_initiate_post_violence_refferal] [varchar](50) NOT NULL,
+	                    [ynna_complete_post_violence_refferal] [varchar](50) NOT NULL,
+	                    [ynna_ovc_has_birth_certificate] [varchar](50) NOT NULL,
+	                    [ynna_initiate_birth_reg_refferal] [varchar](50) NOT NULL,
+	                    [ynna_complete_birth_reg_refferal] [varchar](50) NOT NULL,
+	                    [ynna_pss_family_group_discussion] [varchar](50) NOT NULL,
+	                    [ynna_reported_to_police] [varchar](50) NOT NULL,
+	                    [ynna_violence_evidence_based_intervention] [varchar](50) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [trg_action] [int] NOT NULL,
+	                    [district_id] [varchar](50) NOT NULL,
+                     CONSTRAINT [PK_hh_household_home_visit_member_v_2_upload] PRIMARY KEY CLUSTERED 
+                    (
+	                    [hhvm_sid] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion Tables
+
+            #region Triggers
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_household_home_visit_member_v_2_insert' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_household_home_visit_member_v_2_insert] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_household_home_visit_member_v_2_insert] ON [dbo].[hh_household_home_visit_member_v_2] FOR insert
+                AS
+                BEGIN
+	               INSERT INTO [dbo].[hh_household_home_visit_member_v_2_upload]
+				   ([hhvm_id] ,[hhm_id] ,[hhv_id],[hhm_name],[hmm_age],[gnd_name] ,[yn_id_hhm_active] ,[ynna_stb_id_SILC],[ynna_stb_id_other_saving_grp],[ynna_stb_caregiver_services]
+				   ,[ynna_stb_contributes_edu_fund] ,[ynna_stb_SAGE] ,[yn_stb_receive_social_grant],[ynna_stb_apprenticeship],[ynna_stb_cottage],[ynna_stb_agro_enterprise]
+				   ,[ynna_stb_aflateen] ,[ynna_stb_sch_ovc_edu_enrolled] ,[ynna_sch_re_enrollment_support]  ,[ynna_sch_ovc_attend_school_regularly] ,[ynna_sch_ovc_receive_school_uniform]
+				   ,[ynna_sch_ovc_receive_edu_subsidy],[ynna_progressed_to_another_class] ,[hst_id]  ,[ynna_on_art] ,[ynna_follow_art_prescription] ,[adherence_level] ,[ynna_hiv_literacy]
+				   ,[yn_hiv_counselling] ,[yn_hiv_adherence_support]  ,[yn_hiv_prevention_support] ,[yn_wash_messages] ,[nutrition_assessment_result],[yn_initiate_hts_refferal],[yn_complete_hts_refferal]
+				   ,[ynna_initiate_art_refferal] ,[ynna_complete_art_refferal],[ynna_initiate_immunize_refferal] ,[ynna_complete_immunize_refferal] ,[ynna_tb_screen],[ynna_initiate_tb_refferal],[ynna_complete_tb_refferal]
+				   ,[ynna_initiate_perinatal_care_refferal],[ynna_complete_perinatal_care_refferal],[ynna_initiate_post_violence_refferal] ,[ynna_complete_post_violence_refferal],[ynna_ovc_has_birth_certificate] ,[ynna_initiate_birth_reg_refferal]
+				   ,[ynna_complete_birth_reg_refferal],[ynna_pss_family_group_discussion],[ynna_reported_to_police],[ynna_violence_evidence_based_intervention],[usr_id_create],[usr_id_update],[usr_date_create]
+				   ,[usr_date_update],[ofc_id],[trg_action] ,[district_id])
+	                SELECT [hhvm_id] ,[hhm_id] ,[hhv_id],[hhm_name],[hmm_age],[gnd_name] ,[yn_id_hhm_active] ,[ynna_stb_id_SILC],[ynna_stb_id_other_saving_grp],[ynna_stb_caregiver_services]
+				   ,[ynna_stb_contributes_edu_fund] ,[ynna_stb_SAGE] ,[yn_stb_receive_social_grant],[ynna_stb_apprenticeship],[ynna_stb_cottage],[ynna_stb_agro_enterprise]
+				   ,[ynna_stb_aflateen] ,[ynna_stb_sch_ovc_edu_enrolled] ,[ynna_sch_re_enrollment_support]  ,[ynna_sch_ovc_attend_school_regularly] ,[ynna_sch_ovc_receive_school_uniform]
+				   ,[ynna_sch_ovc_receive_edu_subsidy],[ynna_progressed_to_another_class] ,[hst_id]  ,[ynna_on_art] ,[ynna_follow_art_prescription] ,[adherence_level] ,[ynna_hiv_literacy]
+				   ,[yn_hiv_counselling] ,[yn_hiv_adherence_support]  ,[yn_hiv_prevention_support] ,[yn_wash_messages] ,[nutrition_assessment_result],[yn_initiate_hts_refferal],[yn_complete_hts_refferal]
+				   ,[ynna_initiate_art_refferal] ,[ynna_complete_art_refferal],[ynna_initiate_immunize_refferal] ,[ynna_complete_immunize_refferal] ,[ynna_tb_screen],[ynna_initiate_tb_refferal],[ynna_complete_tb_refferal]
+				   ,[ynna_initiate_perinatal_care_refferal],[ynna_complete_perinatal_care_refferal],[ynna_initiate_post_violence_refferal] ,[ynna_complete_post_violence_refferal],[ynna_ovc_has_birth_certificate] ,[ynna_initiate_birth_reg_refferal]
+				   ,[ynna_complete_birth_reg_refferal],[ynna_pss_family_group_discussion],[ynna_reported_to_police],[ynna_violence_evidence_based_intervention],[usr_id_create],[usr_id_update],[usr_date_create]
+				   ,[usr_date_update],[ofc_id],1,[district_id]
+                  FROM inserted
+                END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_household_home_visit_member_v_2_update' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_household_home_visit_member_v_2_update] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_household_home_visit_member_v_2_update] ON [dbo].[hh_household_home_visit_member_v_2] FOR UPDATE
+                AS
+                BEGIN
+	               INSERT INTO [dbo].[hh_household_home_visit_member_v_2_upload]
+				   ([hhvm_id] ,[hhm_id] ,[hhv_id],[hhm_name],[hmm_age],[gnd_name] ,[yn_id_hhm_active] ,[ynna_stb_id_SILC],[ynna_stb_id_other_saving_grp],[ynna_stb_caregiver_services]
+				   ,[ynna_stb_contributes_edu_fund] ,[ynna_stb_SAGE] ,[yn_stb_receive_social_grant],[ynna_stb_apprenticeship],[ynna_stb_cottage],[ynna_stb_agro_enterprise]
+				   ,[ynna_stb_aflateen] ,[ynna_stb_sch_ovc_edu_enrolled] ,[ynna_sch_re_enrollment_support]  ,[ynna_sch_ovc_attend_school_regularly] ,[ynna_sch_ovc_receive_school_uniform]
+				   ,[ynna_sch_ovc_receive_edu_subsidy],[ynna_progressed_to_another_class] ,[hst_id]  ,[ynna_on_art] ,[ynna_follow_art_prescription] ,[adherence_level] ,[ynna_hiv_literacy]
+				   ,[yn_hiv_counselling] ,[yn_hiv_adherence_support]  ,[yn_hiv_prevention_support] ,[yn_wash_messages] ,[nutrition_assessment_result],[yn_initiate_hts_refferal],[yn_complete_hts_refferal]
+				   ,[ynna_initiate_art_refferal] ,[ynna_complete_art_refferal],[ynna_initiate_immunize_refferal] ,[ynna_complete_immunize_refferal] ,[ynna_tb_screen],[ynna_initiate_tb_refferal],[ynna_complete_tb_refferal]
+				   ,[ynna_initiate_perinatal_care_refferal],[ynna_complete_perinatal_care_refferal],[ynna_initiate_post_violence_refferal] ,[ynna_complete_post_violence_refferal],[ynna_ovc_has_birth_certificate] ,[ynna_initiate_birth_reg_refferal]
+				   ,[ynna_complete_birth_reg_refferal],[ynna_pss_family_group_discussion],[ynna_reported_to_police],[ynna_violence_evidence_based_intervention],[usr_id_create],[usr_id_update],[usr_date_create]
+				   ,[usr_date_update],[ofc_id],[trg_action] ,[district_id])
+	                SELECT [hhvm_id] ,[hhm_id] ,[hhv_id],[hhm_name],[hmm_age],[gnd_name] ,[yn_id_hhm_active] ,[ynna_stb_id_SILC],[ynna_stb_id_other_saving_grp],[ynna_stb_caregiver_services]
+				   ,[ynna_stb_contributes_edu_fund] ,[ynna_stb_SAGE] ,[yn_stb_receive_social_grant],[ynna_stb_apprenticeship],[ynna_stb_cottage],[ynna_stb_agro_enterprise]
+				   ,[ynna_stb_aflateen] ,[ynna_stb_sch_ovc_edu_enrolled] ,[ynna_sch_re_enrollment_support]  ,[ynna_sch_ovc_attend_school_regularly] ,[ynna_sch_ovc_receive_school_uniform]
+				   ,[ynna_sch_ovc_receive_edu_subsidy],[ynna_progressed_to_another_class] ,[hst_id]  ,[ynna_on_art] ,[ynna_follow_art_prescription] ,[adherence_level] ,[ynna_hiv_literacy]
+				   ,[yn_hiv_counselling] ,[yn_hiv_adherence_support]  ,[yn_hiv_prevention_support] ,[yn_wash_messages] ,[nutrition_assessment_result],[yn_initiate_hts_refferal],[yn_complete_hts_refferal]
+				   ,[ynna_initiate_art_refferal] ,[ynna_complete_art_refferal],[ynna_initiate_immunize_refferal] ,[ynna_complete_immunize_refferal] ,[ynna_tb_screen],[ynna_initiate_tb_refferal],[ynna_complete_tb_refferal]
+				   ,[ynna_initiate_perinatal_care_refferal],[ynna_complete_perinatal_care_refferal],[ynna_initiate_post_violence_refferal] ,[ynna_complete_post_violence_refferal],[ynna_ovc_has_birth_certificate] ,[ynna_initiate_birth_reg_refferal]
+				   ,[ynna_complete_birth_reg_refferal],[ynna_pss_family_group_discussion],[ynna_reported_to_police],[ynna_violence_evidence_based_intervention],[usr_id_create],[usr_id_update],[usr_date_create]
+				   ,[usr_date_update],[ofc_id],2,[district_id]
+                  FROM inserted
+                END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_household_home_visit_member_v_2_delete' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_household_home_visit_member_v_2_delete] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_household_home_visit_member_v_2_delete] ON [dbo].[hh_household_home_visit_member_v_2] FOR delete
+                AS
+                BEGIN
+	               INSERT INTO [dbo].[hh_household_home_visit_member_v_2_upload]
+				   ([hhvm_id] ,[hhm_id] ,[hhv_id],[hhm_name],[hmm_age],[gnd_name] ,[yn_id_hhm_active] ,[ynna_stb_id_SILC],[ynna_stb_id_other_saving_grp],[ynna_stb_caregiver_services]
+				   ,[ynna_stb_contributes_edu_fund] ,[ynna_stb_SAGE] ,[yn_stb_receive_social_grant],[ynna_stb_apprenticeship],[ynna_stb_cottage],[ynna_stb_agro_enterprise]
+				   ,[ynna_stb_aflateen] ,[ynna_stb_sch_ovc_edu_enrolled] ,[ynna_sch_re_enrollment_support]  ,[ynna_sch_ovc_attend_school_regularly] ,[ynna_sch_ovc_receive_school_uniform]
+				   ,[ynna_sch_ovc_receive_edu_subsidy],[ynna_progressed_to_another_class] ,[hst_id]  ,[ynna_on_art] ,[ynna_follow_art_prescription] ,[adherence_level] ,[ynna_hiv_literacy]
+				   ,[yn_hiv_counselling] ,[yn_hiv_adherence_support]  ,[yn_hiv_prevention_support] ,[yn_wash_messages] ,[nutrition_assessment_result],[yn_initiate_hts_refferal],[yn_complete_hts_refferal]
+				   ,[ynna_initiate_art_refferal] ,[ynna_complete_art_refferal],[ynna_initiate_immunize_refferal] ,[ynna_complete_immunize_refferal] ,[ynna_tb_screen],[ynna_initiate_tb_refferal],[ynna_complete_tb_refferal]
+				   ,[ynna_initiate_perinatal_care_refferal],[ynna_complete_perinatal_care_refferal],[ynna_initiate_post_violence_refferal] ,[ynna_complete_post_violence_refferal],[ynna_ovc_has_birth_certificate] ,[ynna_initiate_birth_reg_refferal]
+				   ,[ynna_complete_birth_reg_refferal],[ynna_pss_family_group_discussion],[ynna_reported_to_police],[ynna_violence_evidence_based_intervention],[usr_id_create],[usr_id_update],[usr_date_create]
+				   ,[usr_date_update],[ofc_id],[trg_action] ,[district_id])
+	                SELECT [hhvm_id] ,[hhm_id] ,[hhv_id],[hhm_name],[hmm_age],[gnd_name] ,[yn_id_hhm_active] ,[ynna_stb_id_SILC],[ynna_stb_id_other_saving_grp],[ynna_stb_caregiver_services]
+				   ,[ynna_stb_contributes_edu_fund] ,[ynna_stb_SAGE] ,[yn_stb_receive_social_grant],[ynna_stb_apprenticeship],[ynna_stb_cottage],[ynna_stb_agro_enterprise]
+				   ,[ynna_stb_aflateen] ,[ynna_stb_sch_ovc_edu_enrolled] ,[ynna_sch_re_enrollment_support]  ,[ynna_sch_ovc_attend_school_regularly] ,[ynna_sch_ovc_receive_school_uniform]
+				   ,[ynna_sch_ovc_receive_edu_subsidy],[ynna_progressed_to_another_class] ,[hst_id]  ,[ynna_on_art] ,[ynna_follow_art_prescription] ,[adherence_level] ,[ynna_hiv_literacy]
+				   ,[yn_hiv_counselling] ,[yn_hiv_adherence_support]  ,[yn_hiv_prevention_support] ,[yn_wash_messages] ,[nutrition_assessment_result],[yn_initiate_hts_refferal],[yn_complete_hts_refferal]
+				   ,[ynna_initiate_art_refferal] ,[ynna_complete_art_refferal],[ynna_initiate_immunize_refferal] ,[ynna_complete_immunize_refferal] ,[ynna_tb_screen],[ynna_initiate_tb_refferal],[ynna_complete_tb_refferal]
+				   ,[ynna_initiate_perinatal_care_refferal],[ynna_complete_perinatal_care_refferal],[ynna_initiate_post_violence_refferal] ,[ynna_complete_post_violence_refferal],[ynna_ovc_has_birth_certificate] ,[ynna_initiate_birth_reg_refferal]
+				   ,[ynna_complete_birth_reg_refferal],[ynna_pss_family_group_discussion],[ynna_reported_to_police],[ynna_violence_evidence_based_intervention],[usr_id_create],[usr_id_update],[usr_date_create]
+				   ,[usr_date_update],[ofc_id],3,[district_id]
+                  FROM deleted
+                END";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            #endregion Triggers
+            #endregion SQL
+        }
+
+
+        private static void Createben_adherence_counselling(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            #region SQL
+            #region Tables
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'ben_adherence_counselling')
+                     CREATE TABLE [dbo].[ben_adherence_counselling](
+	                    [iac_id] [varchar](100) NOT NULL,
+	                    [hhm_id] [varchar](50) NOT NULL,
+	                    [health_fac_name] [varchar](100) NOT NULL,
+	                    [art_number] [varchar](50) NOT NULL,
+	                    [visit_date] [date] NOT NULL,
+	                    [swk_id] [varchar](50) NOT NULL,
+	                    [lnk_id] [varchar](50) NOT NULL,
+	                    [visit_name] [varchar](50) NOT NULL,
+	                    [yn_ben_supress] [varchar](10) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [district_id] [nvarchar](50) NOT NULL,
+                     CONSTRAINT [PK_ben_adherence_counselling] PRIMARY KEY CLUSTERED 
+                    (
+	                    [iac_id] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'ben_adherence_counselling_upload')
+                       CREATE TABLE [dbo].[ben_adherence_counselling_upload](
+	                    [iac_sid] [int] IDENTITY(1,1) NOT NULL,
+	                    [iac_id] [varchar](100) NOT NULL,
+	                    [hhm_id] [varchar](50) NOT NULL,
+	                    [health_fac_name] [varchar](100) NOT NULL,
+	                    [art_number] [varchar](50) NOT NULL,
+	                    [visit_date] [date] NOT NULL,
+	                    [swk_id] [varchar](50) NOT NULL,
+	                    [lnk_id] [varchar](50) NOT NULL,
+	                    [visit_name] [varchar](50) NOT NULL,
+	                    [yn_ben_supress] [varchar](10) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [trg_action] [int] NOT NULL,
+	                    [district_id] [nvarchar](50) NOT NULL,
+                     CONSTRAINT [PK_ben_adherence_counselling_upload] PRIMARY KEY CLUSTERED 
+                    (
+	                    [iac_sid] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion Tables
+
+            #region Triggers
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_adherence_counselling_insert' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_adherence_counselling_insert] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_adherence_counselling_insert] ON [dbo].[ben_adherence_counselling] FOR insert
+                AS
+                BEGIN
+	               INSERT INTO [dbo].[ben_adherence_counselling_upload]
+                           ([iac_id],[hhm_id],[health_fac_name],[art_number],[visit_date],[swk_id],[lnk_id],[visit_name],[yn_ben_supress]
+                           ,[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update],[ofc_id],[trg_action],[district_id])
+	                SELECT [iac_id],[hhm_id],[health_fac_name],[art_number],[visit_date],[swk_id],[lnk_id],[visit_name],[yn_ben_supress]
+                           ,[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update],[ofc_id],1,[district_id]
+                  FROM inserted
+                END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_adherence_counselling_update' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_adherence_counselling_update] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_adherence_counselling_update] ON [dbo].[ben_adherence_counselling] FOR update
+                AS
+                BEGIN
+	               INSERT INTO [dbo].[ben_adherence_counselling_upload]
+                           ([iac_id],[hhm_id],[health_fac_name],[art_number],[visit_date],[swk_id],[lnk_id],[visit_name],[yn_ben_supress]
+                           ,[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update],[ofc_id],[trg_action],[district_id])
+	                SELECT [iac_id],[hhm_id],[health_fac_name],[art_number],[visit_date],[swk_id],[lnk_id],[visit_name],[yn_ben_supress]
+                           ,[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update],[ofc_id],2,[district_id]
+                  FROM inserted
+                END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_adherence_counselling_delete' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_adherence_counselling_delete] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_adherence_counselling_delete] ON [dbo].[ben_adherence_counselling] FOR delete
+                AS
+                BEGIN
+	               INSERT INTO [dbo].[ben_adherence_counselling_upload]
+                           ([iac_id],[hhm_id],[health_fac_name],[art_number],[visit_date],[swk_id],[lnk_id],[visit_name],[yn_ben_supress]
+                           ,[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update],[ofc_id],[trg_action],[district_id])
+	                SELECT [iac_id],[hhm_id],[health_fac_name],[art_number],[visit_date],[swk_id],[lnk_id],[visit_name],[yn_ben_supress]
+                           ,[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update],[ofc_id],3,[district_id]
+                  FROM deleted
+                END";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            #endregion Triggers
+
+            #endregion SQL
+        }
+
+
+        private static void Createben_adherence_counselling_non_supress_health_facility(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            #region SQL
+            #region Tables
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'ben_adherence_counselling_non_supress_health_facility')
+                     CREATE TABLE [dbo].[ben_adherence_counselling_non_supress_health_facility](
+	                [iacr_id] [varchar](50) NOT NULL,
+	                [iac_id] [varchar](50) NOT NULL,
+	                [nspfac_id] [varchar](50) NOT NULL,
+	                [usr_id_create] [varchar](50) NOT NULL,
+	                [usr_id_update] [varchar](50) NOT NULL,
+	                [usr_date_create] [datetime] NOT NULL,
+	                [usr_date_update] [datetime] NOT NULL,
+	                [ofc_id] [varchar](50) NOT NULL,
+	                [district_id] [nvarchar](50) NOT NULL,
+                 CONSTRAINT [PK_ben_adherence_counselling_non_supress_health_facility] PRIMARY KEY CLUSTERED 
+                (
+	                [iacr_id] ASC
+                )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'ben_adherence_counselling_non_supress_health_facility_upload')
+                       CREATE TABLE [dbo].[ben_adherence_counselling_non_supress_health_facility_upload](
+	                    [iacr_sid] [int] IDENTITY(1,1) NOT NULL,
+	                    [iacr_id] [varchar](50) NOT NULL,
+	                    [iac_id] [varchar](50) NOT NULL,
+	                    [nspfac_id] [varchar](50) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [trg_action] [int] NOT NULL,
+	                    [district_id] [nvarchar](50) NOT NULL,
+                     CONSTRAINT [PK_ben_adherence_counselling_non_supress_health_facility_upload] PRIMARY KEY CLUSTERED 
+                    (
+	                    [iacr_sid] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion Tables
+
+            #region Triggers
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_adherence_counselling_non_supress_health_facility_insert' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_adherence_counselling_non_supress_health_facility_insert] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_adherence_counselling_non_supress_health_facility_insert] ON [dbo].[ben_adherence_counselling_non_supress_health_facility] FOR insert
+                AS
+                BEGIN
+	               INSERT INTO [dbo].[ben_adherence_counselling_non_supress_health_facility_upload]
+                           ([iacr_id],[iac_id],[nspfac_id],[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id],[trg_action],[district_id])
+	                SELECT [iacr_id],[iac_id],[nspfac_id],[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id],1,[district_id]
+                  FROM inserted
+                END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_adherence_counselling_non_supress_health_facility_update' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_adherence_counselling_non_supress_health_facility_update] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_adherence_counselling_non_supress_health_facility_update] ON [dbo].[ben_adherence_counselling_non_supress_health_facility] FOR update
+                AS
+                BEGIN
+	               INSERT INTO [dbo].[ben_adherence_counselling_non_supress_health_facility_upload]
+                           ([iacr_id],[iac_id],[nspfac_id],[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id],[trg_action],[district_id])
+	                SELECT [iacr_id],[iac_id],[nspfac_id],[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id],2,[district_id]
+                  FROM inserted
+                END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_adherence_counselling_non_supress_health_facility_delete' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_adherence_counselling_non_supress_health_facility_delete] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_adherence_counselling_non_supress_health_facility_delete] ON [dbo].[ben_adherence_counselling_non_supress_health_facility] FOR delete
+                AS
+                BEGIN
+	               INSERT INTO [dbo].[ben_adherence_counselling_non_supress_health_facility_upload]
+                           ([iacr_id],[iac_id],[nspfac_id],[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id],[trg_action],[district_id])
+	                SELECT [iacr_id],[iac_id],[nspfac_id],[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id],3,[district_id]
+                  FROM deleted
+                END";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            #endregion Triggers
+
+            #endregion SQL
+        }
+
+
+        private static void Createben_adherence_counselling_non_supress_health_household(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            #region SQL
+            #region Tables
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'ben_adherence_counselling_non_supress_health_household')
+                     CREATE TABLE [dbo].[ben_adherence_counselling_non_supress_health_household](
+	                    [iacr_id] [varchar](50) NOT NULL,
+	                    [iac_id] [varchar](50) NOT NULL,
+	                    [nsphh_id] [varchar](50) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [district_id] [nvarchar](50) NOT NULL,
+                     CONSTRAINT [PK_ben_adherence_counselling_non_supress_health_household] PRIMARY KEY CLUSTERED 
+                    (
+	                    [iacr_id] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'ben_adherence_counselling_non_supress_health_household_upload')
+                       CREATE TABLE [dbo].[ben_adherence_counselling_non_supress_health_household_upload](
+	                    [iacr_sid] [int] IDENTITY(1,1) NOT NULL,
+	                    [iacr_id] [varchar](50) NOT NULL,
+	                    [iac_id] [varchar](50) NOT NULL,
+	                    [nsphh_id] [varchar](50) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [trg_action] [int] NOT NULL,
+	                    [district_id] [nvarchar](50) NOT NULL,
+                     CONSTRAINT [PK_ben_adherence_counselling_non_supress_health_household_upload] PRIMARY KEY CLUSTERED 
+                    (
+	                    [iacr_sid] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion Tables
+
+            #region Triggers
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_adherence_counselling_non_supress_health_household_insert' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_adherence_counselling_non_supress_health_household_insert] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_adherence_counselling_non_supress_health_household_insert] ON [dbo].[ben_adherence_counselling_non_supress_health_household] FOR insert
+                AS
+                BEGIN
+	              INSERT INTO [dbo].[ben_adherence_counselling_non_supress_health_household_upload]
+                           ([iacr_id],[iac_id] ,[nsphh_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update] ,[ofc_id],[trg_action],[district_id])
+	                SELECT [iacr_id],[iac_id] ,[nsphh_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update] ,[ofc_id],1,[district_id]
+                  FROM inserted
+                END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_adherence_counselling_non_supress_health_household_update' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_adherence_counselling_non_supress_health_household_update] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_adherence_counselling_non_supress_health_household_update] ON [dbo].[ben_adherence_counselling_non_supress_health_household] FOR update
+                AS
+                BEGIN
+	              INSERT INTO [dbo].[ben_adherence_counselling_non_supress_health_household_upload]
+                           ([iacr_id],[iac_id] ,[nsphh_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update] ,[ofc_id],[trg_action],[district_id])
+	                SELECT [iacr_id],[iac_id] ,[nsphh_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update] ,[ofc_id],2,[district_id]
+                  FROM inserted
+                END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_adherence_counselling_non_supress_health_household_delete' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_adherence_counselling_non_supress_health_household_delete] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_adherence_counselling_non_supress_health_household_delete] ON [dbo].[ben_adherence_counselling_non_supress_health_household] FOR delete
+                AS
+                BEGIN
+	              INSERT INTO [dbo].[ben_adherence_counselling_non_supress_health_household_upload]
+                           ([iacr_id],[iac_id] ,[nsphh_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update] ,[ofc_id],[trg_action],[district_id])
+	                SELECT [iacr_id],[iac_id] ,[nsphh_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update] ,[ofc_id],3,[district_id]
+                  FROM deleted
+                END";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            #endregion Triggers
+
+            #endregion SQL
+        }
+
+
+        private static void Createben_adherence_counselling_non_supress_household_action(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            #region SQL
+            #region Tables
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'ben_adherence_counselling_non_supress_household_action')
+                     CREATE TABLE [dbo].[ben_adherence_counselling_non_supress_household_action](
+	                [iacrs_id] [varchar](50) NOT NULL,
+	                [iac_id] [varchar](50) NOT NULL,
+	                [iacr_id] [varchar](50) NOT NULL,
+	                [nsp_action_id] [varchar](50) NOT NULL,
+	                [nsp_action_timeline] [date] NOT NULL,
+	                [nsp_action_progress] [varchar](50) NOT NULL,
+	                [nsp_action_person_responsible] [varchar](100) NOT NULL,
+	                [usr_id_create] [varchar](50) NOT NULL,
+	                [usr_id_update] [varchar](50) NOT NULL,
+	                [usr_date_create] [datetime] NOT NULL,
+	                [usr_date_update] [datetime] NOT NULL,
+	                [ofc_id] [varchar](50) NOT NULL,
+	                [district_id] [nvarchar](50) NOT NULL,
+                 CONSTRAINT [PK_ben_adherence_counselling_non_supress_household_action] PRIMARY KEY CLUSTERED 
+                (
+	                [iacrs_id] ASC
+                )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'ben_adherence_counselling_non_supress_household_action_upload')
+                       CREATE TABLE [dbo].[ben_adherence_counselling_non_supress_household_action_upload](
+	                    [iacrs_sid] [int] IDENTITY(1,1) NOT NULL,
+	                    [iacrs_id] [varchar](50) NOT NULL,
+	                    [iac_id] [varchar](50) NOT NULL,
+	                    [iacr_id] [varchar](50) NOT NULL,
+	                    [nsp_action_id] [varchar](50) NOT NULL,
+	                    [nsp_action_timeline] [date] NOT NULL,
+	                    [nsp_action_progress] [varchar](50) NOT NULL,
+	                    [nsp_action_person_responsible] [varchar](100) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [trg_action] [int] NOT NULL,
+	                    [district_id] [nvarchar](50) NOT NULL,
+                     CONSTRAINT [PK_ben_adherence_counselling_non_supress_household_action_upload] PRIMARY KEY CLUSTERED 
+                    (
+	                    [iacrs_sid] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion Tables
+
+            #region Triggers
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_adherence_counselling_non_supress_household_action_insert' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_adherence_counselling_non_supress_household_action_insert] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_adherence_counselling_non_supress_household_action_insert] ON [dbo].[ben_adherence_counselling_non_supress_household_action] FOR insert
+                AS
+                BEGIN
+	               INSERT INTO [dbo].[ben_adherence_counselling_non_supress_household_action_upload]
+                       ([iacrs_id],[iac_id],[iacr_id],[nsp_action_id],[nsp_action_timeline],[nsp_action_progress] ,[nsp_action_person_responsible],[usr_id_create]
+                       ,[usr_id_update],[usr_date_create] ,[usr_date_update],[ofc_id],[trg_action] ,[district_id])
+	                SELECT [iacrs_id],[iac_id],[iacr_id],[nsp_action_id],[nsp_action_timeline],[nsp_action_progress] ,[nsp_action_person_responsible],[usr_id_create]
+                       ,[usr_id_update],[usr_date_create] ,[usr_date_update],[ofc_id],1 ,[district_id]
+                  FROM inserted
+                END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_adherence_counselling_non_supress_household_action_update' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_adherence_counselling_non_supress_household_action_update] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_adherence_counselling_non_supress_household_action_update] ON [dbo].[ben_adherence_counselling_non_supress_household_action] FOR update
+                AS
+                BEGIN
+	               INSERT INTO [dbo].[ben_adherence_counselling_non_supress_household_action_upload]
+                       ([iacrs_id],[iac_id],[iacr_id],[nsp_action_id],[nsp_action_timeline],[nsp_action_progress] ,[nsp_action_person_responsible],[usr_id_create]
+                       ,[usr_id_update],[usr_date_create] ,[usr_date_update],[ofc_id],[trg_action] ,[district_id])
+	                SELECT [iacrs_id],[iac_id],[iacr_id],[nsp_action_id],[nsp_action_timeline],[nsp_action_progress] ,[nsp_action_person_responsible],[usr_id_create]
+                       ,[usr_id_update],[usr_date_create] ,[usr_date_update],[ofc_id],2 ,[district_id]
+                  FROM inserted
+                END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_adherence_counselling_non_supress_household_action_delete' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_adherence_counselling_non_supress_household_action_delete] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_adherence_counselling_non_supress_household_action_delete] ON [dbo].[ben_adherence_counselling_non_supress_household_action] FOR delete
+                AS
+                BEGIN
+	               INSERT INTO [dbo].[ben_adherence_counselling_non_supress_household_action_upload]
+                       ([iacrs_id],[iac_id],[iacr_id],[nsp_action_id],[nsp_action_timeline],[nsp_action_progress] ,[nsp_action_person_responsible],[usr_id_create]
+                       ,[usr_id_update],[usr_date_create] ,[usr_date_update],[ofc_id],[trg_action] ,[district_id])
+	                SELECT [iacrs_id],[iac_id],[iacr_id],[nsp_action_id],[nsp_action_timeline],[nsp_action_progress] ,[nsp_action_person_responsible],[usr_id_create]
+                       ,[usr_id_update],[usr_date_create] ,[usr_date_update],[ofc_id],3 ,[district_id]
+                  FROM deleted
+                END";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            #endregion Triggers
+
+            #endregion SQL
+        }
+
+
+        private static void Createlst_non_supress_health_facility(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            #region SQL
+            #region Tables
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'lst_non_supress_health_facility')
+                     CREATE TABLE [dbo].[lst_non_supress_health_facility](
+	                    [nsp_sid] [int] IDENTITY(1,1) NOT NULL,
+	                    [nsp_id] [varchar](50) NOT NULL,
+	                    [nsp_name] [varchar](500) NOT NULL,
+	                    [nsp_order] [int] NOT NULL,
+	                    [nsp_active] [bit] NOT NULL,
+	                    [lng_id] [char](2) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+                     CONSTRAINT [PK_lst_non_supress_health_facility] PRIMARY KEY CLUSTERED 
+                    (
+	                    [nsp_sid] ASC,
+	                    [nsp_id] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion Tables
+            #endregion SQL
+        }
+
+
+        private static void Createlst_non_supress_action(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            #region SQL
+            #region Tables
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'lst_non_supress_action')
+                     CREATE TABLE [dbo].[lst_non_supress_action](
+	                [nspa_sid] [int] IDENTITY(1,1) NOT NULL,
+	                [nspa_id] [varchar](50) NOT NULL,
+	                [nspa_name] [varchar](500) NOT NULL,
+	                [nspa_order] [int] NOT NULL,
+	                [nspa_active] [bit] NOT NULL,
+	                [lng_id] [char](2) NOT NULL,
+	                [usr_id_create] [varchar](50) NOT NULL,
+	                [usr_id_update] [varchar](50) NOT NULL,
+	                [usr_date_create] [datetime] NOT NULL,
+	                [usr_date_update] [datetime] NOT NULL,
+                 CONSTRAINT [PK_lst_non_supress_action] PRIMARY KEY CLUSTERED 
+                (
+	                [nspa_sid] ASC,
+	                [nspa_id] ASC
+                )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion Tables
+            #endregion SQL
+        }
+
+
+        private static void Createlst_non_supress_household(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            #region SQL
+            #region Tables
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'lst_non_supress_household')
+                     CREATE TABLE [dbo].[lst_non_supress_household](
+	                    [nsp_sid] [int] IDENTITY(1,1) NOT NULL,
+	                    [nsp_id] [varchar](50) NOT NULL,
+	                    [nsp_name] [varchar](500) NOT NULL,
+	                    [nsp_order] [int] NOT NULL,
+	                    [nsp_active] [bit] NOT NULL,
+	                    [lng_id] [char](2) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+                     CONSTRAINT [PK_lst_non_supress_household] PRIMARY KEY CLUSTERED 
+                    (
+	                    [nsp_sid] ASC,
+	                    [nsp_id] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion Tables
+            #endregion SQL
+        }
+
         #endregion Create Tables
 
         #region Insert Data
@@ -13653,6 +15175,102 @@ namespace SOCY_MIS.DataAccessLayer
             INSERT [dbo].[lst_gbv_service] ([gbv_sr_id], [gbv_sr_name], [gbv_sr_order], [gbv_sr_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'5', N'Religious leaders', 5, 1, N'EN', N'1', N'1', CAST(N'2019-02-20T14:55:35.330' AS DateTime), CAST(N'2019-02-20T14:55:35.330' AS DateTime))
             INSERT [dbo].[lst_gbv_service] ([gbv_sr_id], [gbv_sr_name], [gbv_sr_order], [gbv_sr_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'6', N'Cultutral leader', 6, 1, N'EN', N'1', N'1', CAST(N'2019-02-20T14:55:54.317' AS DateTime), CAST(N'2019-02-20T14:55:54.317' AS DateTime))
             INSERT [dbo].[lst_gbv_service] ([gbv_sr_id], [gbv_sr_name], [gbv_sr_order], [gbv_sr_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'7', N'Local Council ', 7, 1, N'EN', N'1', N'1', CAST(N'2019-02-20T14:56:10.130' AS DateTime), CAST(N'2019-02-20T14:56:10.130' AS DateTime))";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion SQL
+        }
+
+
+        private static void Insertlst_risk_assessment_criteria(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            strSQL = "DELETE FROM lst_risk_assessment_criteria";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            #region SQL
+            strSQL = @"INSERT [dbo].[lst_risk_assessment_criteria] ([cr_id], [cr_name], [cr_order], [cr_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'1', N'Unknown status ', 1, 1, N'EN', N'1', N'1', CAST(N'2019-04-23T00:00:00.000' AS DateTime), CAST(N'2019-04-23T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_risk_assessment_criteria] ([cr_id], [cr_name], [cr_order], [cr_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'2', N'Negative/Recently Exposed', 2, 1, N'EN', N'1', N'1', CAST(N'2019-04-23T00:00:00.000' AS DateTime), CAST(N'2019-04-23T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_risk_assessment_criteria] ([cr_id], [cr_name], [cr_order], [cr_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'3', N'At risk older OVC/ adolescent ', 3, 1, N'EN', N'1', N'1', CAST(N'2019-04-23T00:00:00.000' AS DateTime), CAST(N'2019-04-23T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_risk_assessment_criteria] ([cr_id], [cr_name], [cr_order], [cr_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'4', N'Previous HIV Test done more than 6 months ago/Retest', 4, 1, N'EN', N'1', N'1', CAST(N'2019-04-23T00:00:00.000' AS DateTime), CAST(N'2019-04-23T00:00:00.000' AS DateTime))";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion SQL
+        }
+
+
+        private static void Insertlst_non_supress_action(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            strSQL = "DELETE FROM lst_non_supress_action";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            #region SQL
+            strSQL = @"SET IDENTITY_INSERT [dbo].[lst_non_supress_action] ON 
+                        INSERT [dbo].[lst_non_supress_action] ([nspa_sid], [nspa_id], [nspa_name], [nspa_order], [nspa_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1, N'1', N'Provision of Transport', 1, 1, N'EN', N'1', N'1', CAST(N'2019-02-14T15:26:41.563' AS DateTime), CAST(N'2019-02-14T15:26:41.563' AS DateTime))
+                        INSERT [dbo].[lst_non_supress_action] ([nspa_sid], [nspa_id], [nspa_name], [nspa_order], [nspa_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2, N'2', N'Provision of short term food support', 2, 1, N'EN', N'1', N'1', CAST(N'2019-02-14T15:27:02.977' AS DateTime), CAST(N'2019-02-14T15:27:02.977' AS DateTime))
+                        INSERT [dbo].[lst_non_supress_action] ([nspa_sid], [nspa_id], [nspa_name], [nspa_order], [nspa_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (3, N'3', N'Establishing Back yard/ Kitchen gardens', 3, 1, N'EN', N'1', N'1', CAST(N'2019-02-14T15:27:24.333' AS DateTime), CAST(N'2019-02-14T15:27:24.333' AS DateTime))
+                        INSERT [dbo].[lst_non_supress_action] ([nspa_sid], [nspa_id], [nspa_name], [nspa_order], [nspa_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (5, N'4', N'Adherence counselling and Support', 4, 1, N'EN', N'1', N'1', CAST(N'2019-02-14T15:27:45.777' AS DateTime), CAST(N'2019-02-14T15:27:45.777' AS DateTime))
+                        INSERT [dbo].[lst_non_supress_action] ([nspa_sid], [nspa_id], [nspa_name], [nspa_order], [nspa_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (6, N'5', N'Community Based Directly observed treatment by expert client', 5, 1, N'EN', N'1', N'1', CAST(N'2019-02-14T15:28:04.830' AS DateTime), CAST(N'2019-02-14T15:28:04.830' AS DateTime))
+                        INSERT [dbo].[lst_non_supress_action] ([nspa_sid], [nspa_id], [nspa_name], [nspa_order], [nspa_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (7, N'6', N'Referral for Viral load test', 6, 1, N'EN', N'1', N'1', CAST(N'2019-02-14T15:28:23.610' AS DateTime), CAST(N'2019-02-14T15:28:23.610' AS DateTime))
+                        INSERT [dbo].[lst_non_supress_action] ([nspa_sid], [nspa_id], [nspa_name], [nspa_order], [nspa_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (8, N'8', N'Linkage to SILC', 8, 1, N'EN', N'1', N'1', CAST(N'2019-02-14T15:28:45.123' AS DateTime), CAST(N'2019-02-14T15:28:45.123' AS DateTime))
+                        INSERT [dbo].[lst_non_supress_action] ([nspa_sid], [nspa_id], [nspa_name], [nspa_order], [nspa_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (9, N'9', N'Linkage for training in Cottage industries, Agribusiness and other IGAs', 9, 1, N'EN', N'1', N'1', CAST(N'2019-02-14T15:29:06.413' AS DateTime), CAST(N'2019-02-14T15:29:06.413' AS DateTime))
+                        INSERT [dbo].[lst_non_supress_action] ([nspa_sid], [nspa_id], [nspa_name], [nspa_order], [nspa_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (10, N'10', N'Others specify', 10, 1, N'EN', N'1', N'1', CAST(N'2019-02-14T15:29:28.760' AS DateTime), CAST(N'2019-02-14T15:29:28.760' AS DateTime))
+                        SET IDENTITY_INSERT [dbo].[lst_non_supress_action] OFF";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion SQL
+        }
+
+
+        private static void Insertlst_non_supress_health_facility(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            strSQL = "DELETE FROM lst_non_supress_health_facility";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            #region SQL
+            strSQL = @"SET IDENTITY_INSERT [dbo].[lst_non_supress_health_facility] ON 
+                        INSERT [dbo].[lst_non_supress_health_facility] ([nsp_sid], [nsp_id], [nsp_name], [nsp_order], [nsp_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1, N'1', N'Missing Appointments', 1, 1, N'EN', N'1', N'1', CAST(N'2019-02-14T00:00:00.000' AS DateTime), CAST(N'2019-02-14T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_non_supress_health_facility] ([nsp_sid], [nsp_id], [nsp_name], [nsp_order], [nsp_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2, N'2', N'Poor Adherence', 2, 1, N'EN', N'1', N'1', CAST(N'2019-02-14T15:07:10.523' AS DateTime), CAST(N'2019-02-14T15:07:10.523' AS DateTime))
+                        INSERT [dbo].[lst_non_supress_health_facility] ([nsp_sid], [nsp_id], [nsp_name], [nsp_order], [nsp_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (3, N'3', N'Drugs not matching with weight (Poor prescription)', 3, 1, N'EN', N'1', N'1', CAST(N'2019-02-14T15:07:43.133' AS DateTime), CAST(N'2019-02-14T15:07:43.133' AS DateTime))
+                        INSERT [dbo].[lst_non_supress_health_facility] ([nsp_sid], [nsp_id], [nsp_name], [nsp_order], [nsp_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (4, N'4', N'Drug stock outs', 4, 1, N'EN', N'1', N'1', CAST(N'2019-02-14T15:08:05.543' AS DateTime), CAST(N'2019-02-14T15:08:05.543' AS DateTime))
+                        INSERT [dbo].[lst_non_supress_health_facility] ([nsp_sid], [nsp_id], [nsp_name], [nsp_order], [nsp_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (5, N'5', N'Other Infections that may interfere with ARVs (Co- Infections) e.g TB', 5, 1, N'EN', N'1', N'1', CAST(N'2019-02-14T15:08:24.820' AS DateTime), CAST(N'2019-02-14T15:08:24.820' AS DateTime))
+                        INSERT [dbo].[lst_non_supress_health_facility] ([nsp_sid], [nsp_id], [nsp_name], [nsp_order], [nsp_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (6, N'6', N'Drug Resistance', 6, 1, N'EN', N'1', N'1', CAST(N'2019-02-14T15:08:51.030' AS DateTime), CAST(N'2019-02-14T15:08:51.030' AS DateTime))
+                        INSERT [dbo].[lst_non_supress_health_facility] ([nsp_sid], [nsp_id], [nsp_name], [nsp_order], [nsp_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (7, N'7', N'Others Specify', 7, 1, N'EN', N'1', N'1', CAST(N'2019-02-14T15:09:09.600' AS DateTime), CAST(N'2019-02-14T15:09:09.600' AS DateTime))
+                        SET IDENTITY_INSERT [dbo].[lst_non_supress_health_facility] OFF";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion SQL
+        }
+
+
+        private static void Insertlst_non_supress_household(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            strSQL = "DELETE FROM lst_non_supress_household";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            #region SQL
+            strSQL = @"SET IDENTITY_INSERT [dbo].[lst_non_supress_household] ON 
+                        INSERT [dbo].[lst_non_supress_household] ([nsp_sid], [nsp_id], [nsp_name], [nsp_order], [nsp_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1, N'1', N'Insufficient Food', 1, 1, N'EN', N'1', N'1', CAST(N'2019-02-14T15:13:30.107' AS DateTime), CAST(N'2019-02-14T15:13:30.107' AS DateTime))
+                        INSERT [dbo].[lst_non_supress_household] ([nsp_sid], [nsp_id], [nsp_name], [nsp_order], [nsp_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2, N'2', N'Lack of transport to health facility', 2, 1, N'EN', N'1', N'1', CAST(N'2019-02-14T15:13:56.603' AS DateTime), CAST(N'2019-02-14T15:13:56.603' AS DateTime))
+                        INSERT [dbo].[lst_non_supress_household] ([nsp_sid], [nsp_id], [nsp_name], [nsp_order], [nsp_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (3, N'3', N'Non-disclosure', 3, 1, N'EN', N'1', N'1', CAST(N'2019-02-14T15:14:18.063' AS DateTime), CAST(N'2019-02-14T15:14:18.063' AS DateTime))
+                        INSERT [dbo].[lst_non_supress_household] ([nsp_sid], [nsp_id], [nsp_name], [nsp_order], [nsp_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (4, N'4', N'Poor Adherence', 4, 1, N'EN', N'1', N'1', CAST(N'2019-02-14T15:14:38.780' AS DateTime), CAST(N'2019-02-14T15:14:38.780' AS DateTime))
+                        INSERT [dbo].[lst_non_supress_household] ([nsp_sid], [nsp_id], [nsp_name], [nsp_order], [nsp_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (5, N'5', N'Lack of treatment support', 5, 1, N'EN', N'1', N'1', CAST(N'2019-02-14T15:14:57.940' AS DateTime), CAST(N'2019-02-14T15:14:57.940' AS DateTime))
+                        INSERT [dbo].[lst_non_supress_household] ([nsp_sid], [nsp_id], [nsp_name], [nsp_order], [nsp_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (6, N'6', N'Gender Based Violence', 6, 1, N'EN', N'1', N'1', CAST(N'2019-02-14T15:15:16.583' AS DateTime), CAST(N'2019-02-14T15:15:16.583' AS DateTime))
+                        INSERT [dbo].[lst_non_supress_household] ([nsp_sid], [nsp_id], [nsp_name], [nsp_order], [nsp_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (7, N'7', N'Poor Nutrition', 7, 1, N'EN', N'1', N'1', CAST(N'2019-02-14T15:15:35.847' AS DateTime), CAST(N'2019-02-14T15:15:35.847' AS DateTime))
+                        INSERT [dbo].[lst_non_supress_household] ([nsp_sid], [nsp_id], [nsp_name], [nsp_order], [nsp_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (8, N'8', N'Alcoholism', 8, 1, N'EN', N'1', N'1', CAST(N'2019-02-14T15:15:53.480' AS DateTime), CAST(N'2019-02-14T15:15:53.480' AS DateTime))
+                        INSERT [dbo].[lst_non_supress_household] ([nsp_sid], [nsp_id], [nsp_name], [nsp_order], [nsp_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (9, N'9', N'Limited Knowledge on importance of ARVs and how to take ARVs', 9, 1, N'EN', N'1', N'1', CAST(N'2019-02-14T15:16:11.433' AS DateTime), CAST(N'2019-02-14T15:16:11.433' AS DateTime))
+                        INSERT [dbo].[lst_non_supress_household] ([nsp_sid], [nsp_id], [nsp_name], [nsp_order], [nsp_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (10, N'10', N'Others specify', 10, 1, N'EN', N'1', N'1', CAST(N'2019-02-14T15:16:29.453' AS DateTime), CAST(N'2019-02-14T15:16:29.453' AS DateTime))
+                        SET IDENTITY_INSERT [dbo].[lst_non_supress_household] OFF";
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
         }
@@ -27861,6 +29479,10 @@ namespace SOCY_MIS.DataAccessLayer
             strSQL = @"INSERT INTO lst_record_type (rtp_id, rtp_name, rtp_order, rtp_active, lng_id, usr_id_create, usr_id_update, usr_date_create, usr_date_update)
                 SELECT '12', 'Household Improvement Action Plan MER2.3', 12, 1, 'EN', '1', '1', GETDATE(), GETDATE() WHERE NOT '12' IN (SELECT rtp_id FROM lst_record_type WHERE rtp_id = '12') ";
             dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"INSERT INTO lst_record_type (rtp_id, rtp_name, rtp_order, rtp_active, lng_id, usr_id_create, usr_id_update, usr_date_create, usr_date_update)
+                SELECT '13', 'Risk Assessment MER2.3', 13, 1, 'EN', '1', '1', GETDATE(), GETDATE() WHERE NOT '13' IN (SELECT rtp_id FROM lst_record_type WHERE rtp_id = '13') ";
+            dbCon.ExecuteNonQuery(strSQL);
             #endregion Insert Record Type
         }
 
@@ -28052,6 +29674,52 @@ namespace SOCY_MIS.DataAccessLayer
             #endregion lst_hiv_status
         }
 
+
+        public static void Version36(DBConnection dbCon)
+        {
+            #region RunPrevVersionsFirst
+            Version35(dbCon);
+            Updatelst_household_status(dbCon);
+            Update_es_trainingType(dbCon);
+            prt_subcounty_ovc_checklist_new_column(dbCon);
+            NewLstCoordinators(dbCon);
+            update_mitooma_subcounty(dbCon);
+            Createben_youth_tracer(dbCon);
+            Insert_new_sync_upload(dbCon);
+            UpdateHousehold_RiskAssessmentTool(dbCon);
+            Insertlst_agro_scoring_crops(dbCon);
+            CreateNewDistricts(dbCon);
+            NewTrainingTypes(dbCon);
+            New_Ndeija_parishes(dbCon);
+            Insertlst_apprenticeship_trade(dbCon);
+            Insertlst_apprenticeship_trade_skills(dbCon);
+            Createben_gbv_screening(dbCon);
+            Createlst_gbv_service(dbCon);
+            Createlst_gbv_service_status(dbCon);
+            Insertlst_gbv_service(dbCon);
+            Insertlst_gbv_service_status(dbCon);
+            #endregion RunPrevVersionsFirst
+
+            Createhh_household_risk_assessment(dbCon);
+            Createhh_household_risk_assessment_member_child(dbCon);
+            Createhh_household_risk_assessment_member_adult(dbCon);
+            Createlst_risk_assessment_criteria(dbCon);
+            Insertlst_risk_assessment_criteria(dbCon);
+            Createhh_household_improvement_plan_v2(dbCon);
+            Createhh_household_home_visit_v_2(dbCon);
+            Createhh_household_home_visit_member_v_2(dbCon);
+            Createben_adherence_counselling(dbCon);
+            Createben_adherence_counselling_non_supress_health_facility(dbCon);
+            Createben_adherence_counselling_non_supress_health_household(dbCon);
+            Createben_adherence_counselling_non_supress_household_action(dbCon);
+            Createlst_non_supress_health_facility(dbCon);
+            Createlst_non_supress_action(dbCon);
+            Createlst_non_supress_household(dbCon);
+            Insertlst_non_supress_action(dbCon);
+            Insertlst_non_supress_health_facility(dbCon);
+            Insertlst_non_supress_household(dbCon);
+        }
+
         public static void NewCso(DBConnection dbCon)
         {
             string strSQL = string.Empty;
@@ -28229,7 +29897,6 @@ namespace SOCY_MIS.DataAccessLayer
             #endregion New Wards
         }
 
-   
 
         public static void Insert_new_sync_upload(DBConnection dbCon)
         {
@@ -28246,6 +29913,76 @@ namespace SOCY_MIS.DataAccessLayer
                     BEGIN
                     INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
                     VALUES('88','ben_gbv_screening_upload','gbv_id',88,1,1,1,GETDATE(),GETDATE())
+                    END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT sul_name FROM lst_sync_upload WHERE sul_name = 'ben_adherence_counselling_non_supress_health_facility_upload')
+                    BEGIN
+                    INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
+                    VALUES('89','ben_adherence_counselling_non_supress_health_facility_upload','iacr_id',89,1,1,1,GETDATE(),GETDATE())
+                    END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT sul_name FROM lst_sync_upload WHERE sul_name = 'ben_adherence_counselling_non_supress_health_household_upload')
+                    BEGIN
+                    INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
+                    VALUES('90','ben_adherence_counselling_non_supress_health_household_upload','iacr_id',90,1,1,1,GETDATE(),GETDATE())
+                    END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT sul_name FROM lst_sync_upload WHERE sul_name = 'ben_adherence_counselling_non_supress_household_action_upload')
+                    BEGIN
+                    INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
+                    VALUES('91','ben_adherence_counselling_non_supress_household_action_upload','iacrs_id',91,1,1,1,GETDATE(),GETDATE())
+                    END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT sul_name FROM lst_sync_upload WHERE sul_name = 'ben_adherence_counselling_upload')
+                    BEGIN
+                    INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
+                    VALUES('92','ben_adherence_counselling_upload','iac_id',92,1,1,1,GETDATE(),GETDATE())
+                    END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT sul_name FROM lst_sync_upload WHERE sul_name = 'hh_household_home_visit_v_2_upload')
+                    BEGIN
+                    INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
+                    VALUES('93','hh_household_home_visit_v_2_upload','hhv_id',93,1,1,1,GETDATE(),GETDATE())
+                    END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT sul_name FROM lst_sync_upload WHERE sul_name = 'hh_household_home_visit_member_v_2_upload')
+                    BEGIN
+                    INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
+                    VALUES('94','hh_household_home_visit_member_v_2_upload','hhvm_id',94,1,1,1,GETDATE(),GETDATE())
+                    END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT sul_name FROM lst_sync_upload WHERE sul_name = 'hh_household_improvement_plan_v2_upload')
+                    BEGIN
+                    INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
+                    VALUES('95','hh_household_improvement_plan_v2_upload','hip_id',95,1,1,1,GETDATE(),GETDATE())
+                    END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT sul_name FROM lst_sync_upload WHERE sul_name = 'hh_household_risk_assessment_upload')
+                    BEGIN
+                    INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
+                    VALUES('96','hh_household_risk_assessment_upload','ra_id',96,1,1,1,GETDATE(),GETDATE())
+                    END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT sul_name FROM lst_sync_upload WHERE sul_name = 'hh_household_risk_assessment_member_child_upload')
+                    BEGIN
+                    INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
+                    VALUES('97','hh_household_risk_assessment_member_child_upload','ram_id',97,1,1,1,GETDATE(),GETDATE())
+                    END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT sul_name FROM lst_sync_upload WHERE sul_name = 'hh_household_risk_assessment_member_adult_upload')
+                    BEGIN
+                    INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
+                    VALUES('98','hh_household_risk_assessment_member_adult_upload','ram_id',98,1,1,1,GETDATE(),GETDATE())
                     END";
             dbCon.ExecuteNonQuery(strSQL);
         }

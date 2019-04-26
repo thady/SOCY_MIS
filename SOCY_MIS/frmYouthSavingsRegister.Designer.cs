@@ -224,7 +224,7 @@
             // 
             this.txtVillage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtVillage.Location = new System.Drawing.Point(551, 66);
-            this.txtVillage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtVillage.Margin = new System.Windows.Forms.Padding(2);
             this.txtVillage.Name = "txtVillage";
             this.txtVillage.Size = new System.Drawing.Size(105, 20);
             this.txtVillage.TabIndex = 64;
@@ -267,7 +267,7 @@
             // 
             this.txtchairperson_name.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtchairperson_name.Location = new System.Drawing.Point(551, 131);
-            this.txtchairperson_name.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtchairperson_name.Margin = new System.Windows.Forms.Padding(2);
             this.txtchairperson_name.Name = "txtchairperson_name";
             this.txtchairperson_name.Size = new System.Drawing.Size(105, 20);
             this.txtchairperson_name.TabIndex = 72;
@@ -405,7 +405,7 @@
             // 
             this.txtPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPhone.Location = new System.Drawing.Point(202, 164);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(2);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(105, 20);
             this.txtPhone.TabIndex = 78;
@@ -547,7 +547,7 @@
             // 
             this.txtYouthgroup_name.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtYouthgroup_name.Location = new System.Drawing.Point(202, 131);
-            this.txtYouthgroup_name.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtYouthgroup_name.Margin = new System.Windows.Forms.Padding(2);
             this.txtYouthgroup_name.Name = "txtYouthgroup_name";
             this.txtYouthgroup_name.Size = new System.Drawing.Size(105, 20);
             this.txtYouthgroup_name.TabIndex = 105;
@@ -615,7 +615,7 @@
             // 
             this.btnnew.ForeColor = System.Drawing.Color.Blue;
             this.btnnew.Location = new System.Drawing.Point(551, 2);
-            this.btnnew.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnnew.Margin = new System.Windows.Forms.Padding(2);
             this.btnnew.Name = "btnnew";
             this.btnnew.Size = new System.Drawing.Size(101, 24);
             this.btnnew.TabIndex = 1;
@@ -628,7 +628,7 @@
             this.btnsave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnsave.ForeColor = System.Drawing.Color.Blue;
             this.btnsave.Location = new System.Drawing.Point(384, 2);
-            this.btnsave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnsave.Margin = new System.Windows.Forms.Padding(2);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(163, 25);
             this.btnsave.TabIndex = 0;
@@ -642,7 +642,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnedit.ForeColor = System.Drawing.Color.Blue;
             this.btnedit.Location = new System.Drawing.Point(191, 2);
-            this.btnedit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnedit.Margin = new System.Windows.Forms.Padding(2);
             this.btnedit.Name = "btnedit";
             this.btnedit.Size = new System.Drawing.Size(188, 24);
             this.btnedit.TabIndex = 2;
@@ -732,7 +732,7 @@
             // 
             this.txtLoanPurposeOther.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLoanPurposeOther.Location = new System.Drawing.Point(551, 81);
-            this.txtLoanPurposeOther.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLoanPurposeOther.Margin = new System.Windows.Forms.Padding(2);
             this.txtLoanPurposeOther.Name = "txtLoanPurposeOther";
             this.txtLoanPurposeOther.Size = new System.Drawing.Size(105, 20);
             this.txtLoanPurposeOther.TabIndex = 100;
@@ -751,7 +751,7 @@
             // 
             this.txtamountsaved.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtamountsaved.Location = new System.Drawing.Point(202, 54);
-            this.txtamountsaved.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtamountsaved.Margin = new System.Windows.Forms.Padding(2);
             this.txtamountsaved.Name = "txtamountsaved";
             this.txtamountsaved.Size = new System.Drawing.Size(105, 20);
             this.txtamountsaved.TabIndex = 84;
@@ -771,7 +771,7 @@
             // 
             this.txtamountborrowed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtamountborrowed.Location = new System.Drawing.Point(551, 54);
-            this.txtamountborrowed.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtamountborrowed.Margin = new System.Windows.Forms.Padding(2);
             this.txtamountborrowed.Name = "txtamountborrowed";
             this.txtamountborrowed.Size = new System.Drawing.Size(105, 20);
             this.txtamountborrowed.TabIndex = 98;
@@ -840,7 +840,7 @@
             // 
             this.txtYouthName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtYouthName.Location = new System.Drawing.Point(202, 29);
-            this.txtYouthName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtYouthName.Margin = new System.Windows.Forms.Padding(2);
             this.txtYouthName.Name = "txtYouthName";
             this.txtYouthName.Size = new System.Drawing.Size(105, 20);
             this.txtYouthName.TabIndex = 105;
@@ -907,7 +907,7 @@
             // 
             this.btnNewMember.ForeColor = System.Drawing.Color.Blue;
             this.btnNewMember.Location = new System.Drawing.Point(551, 2);
-            this.btnNewMember.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNewMember.Margin = new System.Windows.Forms.Padding(2);
             this.btnNewMember.Name = "btnNewMember";
             this.btnNewMember.Size = new System.Drawing.Size(101, 24);
             this.btnNewMember.TabIndex = 1;
@@ -920,7 +920,7 @@
             this.btnmsaveMember.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnmsaveMember.ForeColor = System.Drawing.Color.Blue;
             this.btnmsaveMember.Location = new System.Drawing.Point(384, 2);
-            this.btnmsaveMember.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnmsaveMember.Margin = new System.Windows.Forms.Padding(2);
             this.btnmsaveMember.Name = "btnmsaveMember";
             this.btnmsaveMember.Size = new System.Drawing.Size(163, 25);
             this.btnmsaveMember.TabIndex = 0;
@@ -934,7 +934,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btneditMember.ForeColor = System.Drawing.Color.Blue;
             this.btneditMember.Location = new System.Drawing.Point(191, 2);
-            this.btneditMember.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btneditMember.Margin = new System.Windows.Forms.Padding(2);
             this.btneditMember.Name = "btneditMember";
             this.btneditMember.Size = new System.Drawing.Size(188, 24);
             this.btneditMember.TabIndex = 2;
@@ -951,7 +951,7 @@
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.gdvSavingsList);
             this.panel1.Location = new System.Drawing.Point(2, 402);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(714, 312);
             this.panel1.TabIndex = 117;
@@ -992,7 +992,7 @@
             this.gdvSavingsList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gdvSavingsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gdvSavingsList.Location = new System.Drawing.Point(6, 20);
-            this.gdvSavingsList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gdvSavingsList.Margin = new System.Windows.Forms.Padding(2);
             this.gdvSavingsList.Name = "gdvSavingsList";
             this.gdvSavingsList.ReadOnly = true;
             this.gdvSavingsList.RowTemplate.Height = 24;
@@ -1088,7 +1088,7 @@
             this.Controls.Add(this.tableLayoutPanel5);
             this.Controls.Add(this.tlpDisplay01);
             this.Controls.Add(this.label29);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmYouthSavingsRegister";
             this.Size = new System.Drawing.Size(720, 716);
             this.Load += new System.EventHandler(this.frmYouthSavingsRegister_Load);

@@ -95,6 +95,7 @@
     <Compile Include="hhHouseholdHomeVisitMember.cs" />
     <Compile Include="hhHouseholdHomeVisit_v2.cs" />
     <Compile Include="hhHouseholdMember.cs" />
+    <Compile Include="hhHouseholdRiskAssessment.cs" />
     <Compile Include="hhHousehold_linkages_register.cs" />
     <Compile Include="hh_household_improvement_plan.cs" />
     <Compile Include="hh_household_risk_assessment_beneficiaries.cs" />

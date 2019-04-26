@@ -283,7 +283,7 @@ namespace SOCY_MIS
             #region  lst_non_supress_household_action
             dt = benOvcNonSuppressionAdherenceCounselling.ReturnLists("lst_non_supress_action");
             gdvNonsupressAction.DataSource = dt;
-           gdvNonsupressAction.Columns["nspa_id"].Visible = false;
+            gdvNonsupressAction.Columns["nspa_id"].Visible = false;
             gdvNonsupressAction.Columns["nspa_name"].HeaderText = "Actions Taken";
             gdvNonsupressAction.Columns["nspa_name"].ReadOnly = true;
 
@@ -354,32 +354,38 @@ namespace SOCY_MIS
                 save_ben_adherence_counselling_non_supress_health_household();
                 #endregion save_ben_adherence_counselling_non_supress_health_household
 
-                for (int i = 0; i < this.gdvNonsupressAction.Rows.Count; i++)
+                if (ValidateActions())
                 {
-                    if (Convert.ToBoolean(this.gdvNonsupressAction.Rows[i].Cells[0].Value))
+                    for (int i = 0; i < this.gdvNonsupressAction.Rows.Count; i++)
                     {
-                        string iacr_id = cboNonsupressHousehold.SelectedValue.ToString();
-                        string nsp_action_id = this.gdvNonsupressAction.Rows[i].Cells[3].Value.ToString();
-                        DateTime nsp_action_timeline = Convert.ToDateTime(this.gdvNonsupressAction.Rows[i].Cells[5].Value.ToString());
-                        string nsp_action_progress = this.gdvNonsupressAction.Rows[i].Cells[1].Value != null ? this.gdvNonsupressAction.Rows[i].Cells[1].Value.ToString() : string.Empty;
-                        string nsp_action_person_responsible = this.gdvNonsupressAction.Rows[i].Cells[2].Value != null ? this.gdvNonsupressAction.Rows[i].Cells[2].Value.ToString() : string.Empty;
-
-                        if (cboNonsupressHousehold.SelectedValue.ToString() == "-1" || nsp_action_timeline == DateTime.Now || nsp_action_progress == null || nsp_action_progress == "" || nsp_action_person_responsible == null || nsp_action_person_responsible == "")
+                        if (Convert.ToBoolean(this.gdvNonsupressAction.Rows[i].Cells[0].Value))
                         {
-                            MessageBox.Show("Please fill in all fields for actions", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            gdvNonsupressAction.Rows[i].DefaultCellStyle.BackColor = Color.Red;
-                        }
-                        else
-                        {
-                            save_ben_adherence_counselling_non_supress_household_action(iacr_id, nsp_action_id, nsp_action_timeline, nsp_action_progress, nsp_action_person_responsible);
-                            gdvNonsupressAction.Rows[i].DefaultCellStyle.BackColor = Color.LightGray;
+                            string iacr_id = cboNonsupressHousehold.SelectedValue.ToString();
+                            string nsp_action_id = this.gdvNonsupressAction.Rows[i].Cells[3].Value.ToString();
+                            DateTime nsp_action_timeline = Convert.ToDateTime(this.gdvNonsupressAction.Rows[i].Cells[5].Value.ToString());
+                            string nsp_action_progress = this.gdvNonsupressAction.Rows[i].Cells[1].Value != null ? this.gdvNonsupressAction.Rows[i].Cells[1].Value.ToString() : string.Empty;
+                            string nsp_action_person_responsible = this.gdvNonsupressAction.Rows[i].Cells[2].Value != null ? this.gdvNonsupressAction.Rows[i].Cells[2].Value.ToString() : string.Empty;
 
-                            cboNonsupressHousehold_SelectionChangeCommitted(cboNonsupressHousehold,null);
+                            if (cboNonsupressHousehold.SelectedValue.ToString() == "-1" || nsp_action_timeline == DateTime.Now || nsp_action_progress == null || nsp_action_progress == "" || nsp_action_person_responsible == null || nsp_action_person_responsible == "")
+                            {
+                                MessageBox.Show("Please fill in all fields for actions", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                gdvNonsupressAction.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                            }
+                            else
+                            {
+                                save_ben_adherence_counselling_non_supress_household_action(iacr_id, nsp_action_id, nsp_action_timeline, nsp_action_progress, nsp_action_person_responsible);
+                                gdvNonsupressAction.Rows[i].DefaultCellStyle.BackColor = Color.LightGray;
+
+                                cboNonsupressHousehold_SelectionChangeCommitted(cboNonsupressHousehold, null);
+                            }
                         }
                     }
+                    MessageBox.Show("Success", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
-                MessageBox.Show("Success", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                {
+                    MessageBox.Show("No action selected,save failed", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }  
         }
 
@@ -446,8 +452,64 @@ namespace SOCY_MIS
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (ValidateInput())
+            {
+                save();
+            }
+            else
+            {
+                MessageBox.Show("Fill in all required values,save failed", "SOCY MIS Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
            
-            save();
+        }
+
+
+        protected bool ValidateInput()
+        {
+            bool isValid = false;
+
+            if (!dtDate.Checked || cboSocialWorker.SelectedValue.ToString() == "-1" || cboLinkagesOfficer.SelectedValue.ToString() == "-1" || cboVisit.Text == string.Empty || (!rdnsupressYes.Checked & !rdnsupressNo.Checked) ||
+              txtARTNumber.Text == string.Empty || !ValidateItemCheck())
+            {
+                isValid = false;
+            }
+            else
+            {
+                isValid = true;
+            }
+
+            return isValid;
+        }
+
+
+        protected bool ValidateActions()
+        {
+            bool isValid = false;
+            for (int i = 0; i < this.gdvNonsupressAction.Rows.Count; i++)
+            {
+                if (Convert.ToBoolean(this.gdvNonsupressAction.Rows[i].Cells[0].Value))
+                {
+                    isValid = true;
+                }
+                
+            }
+
+            return isValid;
+        }
+
+        protected bool ValidateItemCheck()
+        {
+            bool Valid = false;
+            if (chkNonsupressHealthFacility.CheckedItems.Count == 0)
+            {
+                Valid = false;
+            }
+            else
+            {
+                Valid = true;
+            }
+
+            return Valid;
         }
 
         protected void save()
@@ -670,6 +732,8 @@ namespace SOCY_MIS
             cboSocialWorker.SelectedValue = "-1";
             cboLinkagesOfficer.SelectedValue = "-1";
             cboVisit.Text = string.Empty;
+            txtAge.Clear();
+            dtDate.Checked = false;
             utilControls.RadioButtonSetSelection(rdnsupressYes, rdnsupressNo, string.Empty);
 
             dt = null;
@@ -681,6 +745,11 @@ namespace SOCY_MIS
             gdvNonsupressAction.DataSource = dt;
             gdvNonsupressAction.Columns.Clear();
             LoadLists();
+
+            #region uncheckAll
+            for (int i = 0; i < chkNonsupressHealthFacility.Items.Count; i++)
+                chkNonsupressHealthFacility.SetItemCheckState(i, CheckState.Unchecked);
+            #endregion
         }
 
         private void lblNew_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

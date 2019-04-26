@@ -62,6 +62,7 @@
             this.dtInitialHip = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.cbovisitReason = new System.Windows.Forms.ComboBox();
+            this.chkOutCome = new System.Windows.Forms.CheckBox();
             this.lblHeader = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -239,7 +240,6 @@
             this.dtother_edu_issues_followup_date = new System.Windows.Forms.DateTimePicker();
             this.txtother_edu_issues_out_come = new System.Windows.Forms.RichTextBox();
             this.lnkBackTop = new System.Windows.Forms.LinkLabel();
-            this.chkOutCome = new System.Windows.Forms.CheckBox();
             this.tlpDisplay01.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -317,7 +317,7 @@
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 61F));
             this.tlpDisplay01.Controls.Add(this.label33, 0, 7);
             this.tlpDisplay01.Controls.Add(this.label1, 0, 4);
             this.tlpDisplay01.Controls.Add(this.lblGender, 3, 2);
@@ -392,7 +392,7 @@
             // 
             this.lblGender.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblGender.AutoSize = true;
-            this.lblGender.Location = new System.Drawing.Point(426, 56);
+            this.lblGender.Location = new System.Drawing.Point(423, 56);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(89, 13);
             this.lblGender.TabIndex = 12;
@@ -401,7 +401,7 @@
             // dtTimeVisistDate
             // 
             this.dtTimeVisistDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtTimeVisistDate.Location = new System.Drawing.Point(626, 151);
+            this.dtTimeVisistDate.Location = new System.Drawing.Point(623, 151);
             this.dtTimeVisistDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtTimeVisistDate.Name = "dtTimeVisistDate";
             this.dtTimeVisistDate.ShowCheckBox = true;
@@ -412,7 +412,7 @@
             // 
             this.lblMemberNumber.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMemberNumber.AutoSize = true;
-            this.lblMemberNumber.Location = new System.Drawing.Point(426, 31);
+            this.lblMemberNumber.Location = new System.Drawing.Point(423, 31);
             this.lblMemberNumber.Name = "lblMemberNumber";
             this.lblMemberNumber.Size = new System.Drawing.Size(41, 13);
             this.lblMemberNumber.TabIndex = 4;
@@ -424,7 +424,7 @@
             this.lblYearOfBirth.AutoSize = true;
             this.lblYearOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblYearOfBirth.ForeColor = System.Drawing.Color.Red;
-            this.lblYearOfBirth.Location = new System.Drawing.Point(426, 155);
+            this.lblYearOfBirth.Location = new System.Drawing.Point(423, 155);
             this.lblYearOfBirth.Name = "lblYearOfBirth";
             this.lblYearOfBirth.Size = new System.Drawing.Size(66, 13);
             this.lblYearOfBirth.TabIndex = 10;
@@ -457,7 +457,7 @@
             this.cboParish.FormattingEnabled = true;
             this.cboParish.Location = new System.Drawing.Point(205, 28);
             this.cboParish.Name = "cboParish";
-            this.cboParish.Size = new System.Drawing.Size(173, 21);
+            this.cboParish.Size = new System.Drawing.Size(170, 21);
             this.cboParish.TabIndex = 47;
             // 
             // cboDistrict
@@ -467,14 +467,14 @@
             this.cboDistrict.FormattingEnabled = true;
             this.cboDistrict.Location = new System.Drawing.Point(205, 4);
             this.cboDistrict.Name = "cboDistrict";
-            this.cboDistrict.Size = new System.Drawing.Size(173, 21);
+            this.cboDistrict.Size = new System.Drawing.Size(170, 21);
             this.cboDistrict.TabIndex = 59;
             // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(426, 6);
+            this.label4.Location = new System.Drawing.Point(423, 6);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 13);
             this.label4.TabIndex = 60;
@@ -485,29 +485,29 @@
             this.cboSubCounty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboSubCounty.Enabled = false;
             this.cboSubCounty.FormattingEnabled = true;
-            this.cboSubCounty.Location = new System.Drawing.Point(627, 4);
+            this.cboSubCounty.Location = new System.Drawing.Point(624, 4);
             this.cboSubCounty.Name = "cboSubCounty";
-            this.cboSubCounty.Size = new System.Drawing.Size(173, 21);
+            this.cboSubCounty.Size = new System.Drawing.Size(170, 21);
             this.cboSubCounty.TabIndex = 61;
             // 
             // txtVilage
             // 
             this.txtVilage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtVilage.Enabled = false;
-            this.txtVilage.Location = new System.Drawing.Point(626, 27);
+            this.txtVilage.Location = new System.Drawing.Point(623, 27);
             this.txtVilage.Margin = new System.Windows.Forms.Padding(2);
             this.txtVilage.Name = "txtVilage";
-            this.txtVilage.Size = new System.Drawing.Size(175, 20);
+            this.txtVilage.Size = new System.Drawing.Size(172, 20);
             this.txtVilage.TabIndex = 62;
             // 
             // txtHHCode
             // 
             this.txtHHCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtHHCode.Enabled = false;
-            this.txtHHCode.Location = new System.Drawing.Point(626, 53);
+            this.txtHHCode.Location = new System.Drawing.Point(623, 53);
             this.txtHHCode.Margin = new System.Windows.Forms.Padding(2);
             this.txtHHCode.Name = "txtHHCode";
-            this.txtHHCode.Size = new System.Drawing.Size(175, 20);
+            this.txtHHCode.Size = new System.Drawing.Size(172, 20);
             this.txtHHCode.TabIndex = 64;
             // 
             // lblHHMemberVal
@@ -516,7 +516,7 @@
             this.lblHHMemberVal.AutoSize = true;
             this.lblHHMemberVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHHMemberVal.ForeColor = System.Drawing.Color.Red;
-            this.lblHHMemberVal.Location = new System.Drawing.Point(807, 81);
+            this.lblHHMemberVal.Location = new System.Drawing.Point(801, 81);
             this.lblHHMemberVal.Name = "lblHHMemberVal";
             this.lblHHMemberVal.Size = new System.Drawing.Size(11, 13);
             this.lblHHMemberVal.TabIndex = 48;
@@ -528,7 +528,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Red;
-            this.label19.Location = new System.Drawing.Point(385, 56);
+            this.label19.Location = new System.Drawing.Point(382, 56);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(11, 13);
             this.label19.TabIndex = 70;
@@ -561,7 +561,7 @@
             this.cboCso.FormattingEnabled = true;
             this.cboCso.Location = new System.Drawing.Point(205, 54);
             this.cboCso.Name = "cboCso";
-            this.cboCso.Size = new System.Drawing.Size(173, 21);
+            this.cboCso.Size = new System.Drawing.Size(170, 21);
             this.cboCso.TabIndex = 65;
             // 
             // label5
@@ -583,14 +583,14 @@
             this.cboCaregiver.FormattingEnabled = true;
             this.cboCaregiver.Location = new System.Drawing.Point(205, 79);
             this.cboCaregiver.Name = "cboCaregiver";
-            this.cboCaregiver.Size = new System.Drawing.Size(173, 21);
+            this.cboCaregiver.Size = new System.Drawing.Size(170, 21);
             this.cboCaregiver.TabIndex = 67;
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(426, 81);
+            this.label2.Location = new System.Drawing.Point(423, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(122, 13);
             this.label2.TabIndex = 73;
@@ -600,7 +600,7 @@
             // 
             this.txtFemalebelowseventeen.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtFemalebelowseventeen.Enabled = false;
-            this.txtFemalebelowseventeen.Location = new System.Drawing.Point(626, 78);
+            this.txtFemalebelowseventeen.Location = new System.Drawing.Point(623, 78);
             this.txtFemalebelowseventeen.Margin = new System.Windows.Forms.Padding(2);
             this.txtFemalebelowseventeen.Name = "txtFemalebelowseventeen";
             this.txtFemalebelowseventeen.Size = new System.Drawing.Size(88, 20);
@@ -610,7 +610,7 @@
             // 
             this.txtmaleboveseventeen.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtmaleboveseventeen.Enabled = false;
-            this.txtmaleboveseventeen.Location = new System.Drawing.Point(626, 103);
+            this.txtmaleboveseventeen.Location = new System.Drawing.Point(623, 103);
             this.txtmaleboveseventeen.Margin = new System.Windows.Forms.Padding(2);
             this.txtmaleboveseventeen.Name = "txtmaleboveseventeen";
             this.txtmaleboveseventeen.Size = new System.Drawing.Size(88, 20);
@@ -620,7 +620,7 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(426, 106);
+            this.label6.Location = new System.Drawing.Point(423, 106);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(121, 13);
             this.label6.TabIndex = 76;
@@ -650,9 +650,9 @@
             // 
             this.cboQuarter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboQuarter.FormattingEnabled = true;
-            this.cboQuarter.Location = new System.Drawing.Point(627, 128);
+            this.cboQuarter.Location = new System.Drawing.Point(624, 128);
             this.cboQuarter.Name = "cboQuarter";
-            this.cboQuarter.Size = new System.Drawing.Size(173, 21);
+            this.cboQuarter.Size = new System.Drawing.Size(170, 21);
             this.cboQuarter.TabIndex = 82;
             // 
             // label31
@@ -661,7 +661,7 @@
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.Color.Red;
-            this.label31.Location = new System.Drawing.Point(426, 130);
+            this.label31.Location = new System.Drawing.Point(423, 130);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(49, 13);
             this.label31.TabIndex = 83;
@@ -700,8 +700,21 @@
             "Others"});
             this.cbovisitReason.Location = new System.Drawing.Point(205, 178);
             this.cbovisitReason.Name = "cbovisitReason";
-            this.cbovisitReason.Size = new System.Drawing.Size(173, 21);
+            this.cbovisitReason.Size = new System.Drawing.Size(170, 21);
             this.cbovisitReason.TabIndex = 85;
+            // 
+            // chkOutCome
+            // 
+            this.chkOutCome.AutoSize = true;
+            this.chkOutCome.BackColor = System.Drawing.Color.Yellow;
+            this.chkOutCome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkOutCome.Location = new System.Drawing.Point(423, 178);
+            this.chkOutCome.Name = "chkOutCome";
+            this.chkOutCome.Size = new System.Drawing.Size(189, 17);
+            this.chkOutCome.TabIndex = 86;
+            this.chkOutCome.Text = "Enter HIP Outcomes/Results";
+            this.chkOutCome.UseVisualStyleBackColor = false;
+            this.chkOutCome.CheckedChanged += new System.EventHandler(this.chkOutCome_CheckedChanged);
             // 
             // lblHeader
             // 
@@ -743,8 +756,8 @@
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 83F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 83F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 86F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 86F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(252, 81);
             this.tableLayoutPanel2.TabIndex = 82;
             // 
@@ -752,7 +765,7 @@
             // 
             this.lblhiv_status.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblhiv_status.AutoSize = true;
-            this.lblhiv_status.Location = new System.Drawing.Point(4, 23);
+            this.lblhiv_status.Location = new System.Drawing.Point(4, 24);
             this.lblhiv_status.Name = "lblhiv_status";
             this.lblhiv_status.Size = new System.Drawing.Size(242, 39);
             this.lblhiv_status.TabIndex = 74;
@@ -1226,7 +1239,7 @@
             this.tableLayoutPanel33.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel33.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tableLayoutPanel33.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel33.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.tableLayoutPanel33.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
             this.tableLayoutPanel33.Controls.Add(this.dtOutComeDate, 1, 2);
             this.tableLayoutPanel33.Controls.Add(this.lblOutComeDate, 0, 2);
             this.tableLayoutPanel33.Controls.Add(this.label32, 3, 1);
@@ -1271,7 +1284,7 @@
             // 
             this.label32.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(430, 52);
+            this.label32.Location = new System.Drawing.Point(427, 52);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(104, 13);
             this.label32.TabIndex = 4;
@@ -1303,14 +1316,14 @@
             this.cboSocialWorker.FormattingEnabled = true;
             this.cboSocialWorker.Location = new System.Drawing.Point(217, 9);
             this.cboSocialWorker.Name = "cboSocialWorker";
-            this.cboSocialWorker.Size = new System.Drawing.Size(165, 21);
+            this.cboSocialWorker.Size = new System.Drawing.Size(162, 21);
             this.cboSocialWorker.TabIndex = 59;
             // 
             // label36
             // 
             this.label36.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(430, 13);
+            this.label36.Location = new System.Drawing.Point(427, 13);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(121, 13);
             this.label36.TabIndex = 60;
@@ -1319,10 +1332,10 @@
             // txtSupervisorComment
             // 
             this.txtSupervisorComment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSupervisorComment.Location = new System.Drawing.Point(630, 49);
+            this.txtSupervisorComment.Location = new System.Drawing.Point(627, 49);
             this.txtSupervisorComment.Margin = new System.Windows.Forms.Padding(2);
             this.txtSupervisorComment.Name = "txtSupervisorComment";
-            this.txtSupervisorComment.Size = new System.Drawing.Size(167, 20);
+            this.txtSupervisorComment.Size = new System.Drawing.Size(164, 20);
             this.txtSupervisorComment.TabIndex = 62;
             // 
             // txtSupervisor
@@ -1331,16 +1344,16 @@
             this.txtSupervisor.Location = new System.Drawing.Point(216, 49);
             this.txtSupervisor.Margin = new System.Windows.Forms.Padding(2);
             this.txtSupervisor.Name = "txtSupervisor";
-            this.txtSupervisor.Size = new System.Drawing.Size(167, 20);
+            this.txtSupervisor.Size = new System.Drawing.Size(164, 20);
             this.txtSupervisor.TabIndex = 74;
             // 
             // txtSocialWorkerComment
             // 
             this.txtSocialWorkerComment.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtSocialWorkerComment.Location = new System.Drawing.Point(630, 10);
+            this.txtSocialWorkerComment.Location = new System.Drawing.Point(627, 10);
             this.txtSocialWorkerComment.Margin = new System.Windows.Forms.Padding(2);
             this.txtSocialWorkerComment.Name = "txtSocialWorkerComment";
-            this.txtSocialWorkerComment.Size = new System.Drawing.Size(167, 20);
+            this.txtSocialWorkerComment.Size = new System.Drawing.Size(164, 20);
             this.txtSocialWorkerComment.TabIndex = 116;
             // 
             // tableLayoutPanel34
@@ -1353,7 +1366,7 @@
             this.tableLayoutPanel34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 166F));
+            this.tableLayoutPanel34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 172F));
             this.tableLayoutPanel34.Controls.Add(this.btnsave, 1, 0);
             this.tableLayoutPanel34.Controls.Add(this.lblBack, 4, 0);
             this.tableLayoutPanel34.Controls.Add(this.btnCancel, 3, 0);
@@ -1368,7 +1381,7 @@
             // btnsave
             // 
             this.btnsave.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnsave.Location = new System.Drawing.Point(268, 8);
+            this.btnsave.Location = new System.Drawing.Point(265, 8);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(75, 23);
             this.btnsave.TabIndex = 14;
@@ -1392,7 +1405,7 @@
             // btnCancel
             // 
             this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnCancel.Location = new System.Drawing.Point(411, 8);
+            this.btnCancel.Location = new System.Drawing.Point(408, 8);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 15;
@@ -3306,19 +3319,6 @@
             this.lnkBackTop.TabStop = true;
             this.lnkBackTop.Text = "Back";
             this.lnkBackTop.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkBackTop_LinkClicked);
-            // 
-            // chkOutCome
-            // 
-            this.chkOutCome.AutoSize = true;
-            this.chkOutCome.BackColor = System.Drawing.Color.Yellow;
-            this.chkOutCome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkOutCome.Location = new System.Drawing.Point(426, 178);
-            this.chkOutCome.Name = "chkOutCome";
-            this.chkOutCome.Size = new System.Drawing.Size(189, 17);
-            this.chkOutCome.TabIndex = 86;
-            this.chkOutCome.Text = "Enter HIP Outcomes/Results";
-            this.chkOutCome.UseVisualStyleBackColor = false;
-            this.chkOutCome.CheckedChanged += new System.EventHandler(this.chkOutCome_CheckedChanged);
             // 
             // frm_HouseholdImprovementPlan
             // 

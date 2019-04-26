@@ -271,7 +271,7 @@ namespace SOCY_MIS.DataAccessLayer
             DataRow dtRow;
             string SQL = @"SELECT HHM.hhm_id,(HHM.hhm_first_name + ' ' + HHM.hhm_last_name) AS hhm_name   FROM hh_household_member HHM
                             LEFT JOIN hh_household H ON HHM.hh_id = H.hh_id
-                            WHERE YEAR(GETDATE()) - CAST(HHM.hhm_year_of_birth AS INT) >= 15 AND YEAR(GETDATE()) - CAST(HHM.hhm_year_of_birth AS INT) <= 24
+                            WHERE YEAR(GETDATE()) - CAST(HHM.hhm_year_of_birth AS INT) >= 15 AND YEAR(GETDATE()) - CAST(HHM.hhm_year_of_birth AS INT) <= 25
                             AND H.hh_id = '{0}'";
             SQL = string.Format(SQL,hh_id);
 

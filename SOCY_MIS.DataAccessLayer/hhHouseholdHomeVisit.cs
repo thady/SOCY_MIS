@@ -121,7 +121,7 @@ namespace SOCY_MIS.DataAccessLayer
             string crop_name = string.Empty;
 
             string SQL = "UPDATE hh_household SET hhs_id = '{0}',district_id = '{2}' WHERE hh_id = '{1}'";
-            SQL = string.Format(SQL, hh_id,hhs_id,SystemConstants.Return_office_district());
+            SQL = string.Format(SQL, hhs_id, hh_id,SystemConstants.Return_office_district());
             try
             {
                 string strConn = dbCon.ToString();

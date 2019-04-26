@@ -61,6 +61,7 @@ namespace SOCY_MIS
         {
             LoadHousehold(HouseholdId);
             LoadDisplay();
+            set_home_visit_reason(ObjectId);
         }
 
         private void LoadHousehold(string strId)
@@ -416,7 +417,56 @@ namespace SOCY_MIS
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            save();
+            if (ValidateInput())
+            {
+                save();
+            }
+            else
+            {
+                MessageBox.Show("Please fill in all required fields,save failed", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        protected void set_home_visit_reason(string object_id)
+        {
+            if (object_id.Length == 0)
+            {
+                SystemConstants._household_status = SystemConstants.Return_household_status(HouseholdId);
+                if (SystemConstants._household_status == "2") //household is graduated
+                {
+                    cbHomeVisitReason.SelectedValue = "4";
+                    cbHomeVisitHouseholdStatus.SelectedValue = "2";
+                    cbHomeVisitReason.Enabled = false;
+                    cbHomeVisitHouseholdStatus.Enabled = false;
+                }
+                else
+                {
+                    cbHomeVisitReason.SelectedValue = "-1";
+                    cbHomeVisitHouseholdStatus.SelectedValue = "-1";
+                    cbHomeVisitReason.Enabled = true;
+                    cbHomeVisitHouseholdStatus.Enabled = true;
+                }
+            }
+
+        }
+
+        protected bool ValidateInput()
+        {
+            bool isValid = false;
+
+            if (cbHHMember.SelectedValue.ToString() == "-1" || cbSocialWorker.SelectedValue.ToString() == "-1" || cbHomeVisitReason.SelectedValue.ToString() == "-1" ||
+                dtpDateOfVisit.Checked == false || cbHomeVisitHouseholdStatus.SelectedValue.ToString() == "-1" || (!rbtnRiskAssYes.Checked & !rbtnRiskAssNo.Checked & !rbtnRiskAssNA.Checked) ||
+                (!rbtnOldReferalYes.Checked & !rbtnOldReferalNo.Checked & !rbtnOldReferalNA.Checked) || (!rbtnReferalMadeYes.Checked & !rbtnReferalMadeNo.Checked & !rbtnReferalMadeNA.Checked) ||
+                (!rbtnHipYes.Checked & !rbtnHipNo.Checked) || cbHomeVisitor.SelectedValue.ToString() == "-1" || !dtpNextVisitDate.Checked)
+            {
+                isValid = false;
+            }
+            else
+            {
+                isValid = true;
+            }
+
+            return isValid;
         }
 
 

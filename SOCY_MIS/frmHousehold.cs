@@ -232,6 +232,23 @@ namespace SOCY_MIS
                             FormMaster.LoadControl(frmHipNew, this.Name, false);
                             #endregion
                             break;
+                        case utilConstants.cRTRiskAssessmentMER:
+                            #region Set Selected
+                            frmHouseholdRiskAssessmentMain frmNewRAT = new frmHouseholdRiskAssessmentMain();
+                            frmHouseholdRiskAssessmentAdult frmNewAdult = new frmHouseholdRiskAssessmentAdult();
+                            frmHouseholdRiskAssessmentChild frmNewChild = new frmHouseholdRiskAssessmentChild();
+                            frmNewRAT.HouseholdId = ObjectId;
+                            frmNewChild.HouseholdId = ObjectId;
+                            frmNewAdult.HouseholdId = ObjectId;
+                            frmNewRAT.ObjectId = strID;
+                            frmNewAdult.ObjectId = strID;
+                            frmNewChild.ObjectId = strID;
+                            hhHouseholdRiskAssessment.ra_id = strID;
+                            frmNewRAT.FormCalling = this;
+                            frmNewRAT.FormMaster = FormMaster;
+                            FormMaster.LoadControl(frmNewRAT, this.Name, true);
+                            #endregion
+                            break;
 
                     }
                 }
@@ -640,6 +657,22 @@ namespace SOCY_MIS
             frmNew.FormMaster = FormMaster;
             hh_household_improvement_plan.hip_id = string.Empty;
             FormMaster.LoadControl(frmNew, this.Name, false);
+            #endregion
+        }
+
+        private void lnkRiskAssessment_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            #region Set Selected
+            frmHouseholdRiskAssessmentMain frmNew = new frmHouseholdRiskAssessmentMain();
+            frmHouseholdRiskAssessmentAdult frmNewAdult = new frmHouseholdRiskAssessmentAdult();
+            frmHouseholdRiskAssessmentChild frmNewChild = new frmHouseholdRiskAssessmentChild();
+            frmNew.HouseholdId = ObjectId;
+            frmNewChild.HouseholdId = ObjectId;
+            frmNewAdult.HouseholdId = ObjectId;
+            frmNew.ObjectId = string.Empty;
+            frmNew.FormCalling = this;
+            frmNew.FormMaster = FormMaster;
+            FormMaster.LoadControl(frmNew, this.Name, true);
             #endregion
         }
     }

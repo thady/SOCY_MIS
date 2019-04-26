@@ -432,6 +432,30 @@
     <Compile Include="frmHouseholdMembers.Designer.cs">
       <DependentUpon>frmHouseholdMembers.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHouseholdRiskAssessment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmHouseholdRiskAssessment.Designer.cs">
+      <DependentUpon>frmHouseholdRiskAssessment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHouseholdRiskAssessmentAdult.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmHouseholdRiskAssessmentAdult.Designer.cs">
+      <DependentUpon>frmHouseholdRiskAssessmentAdult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHouseholdRiskAssessmentChild.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmHouseholdRiskAssessmentChild.Designer.cs">
+      <DependentUpon>frmHouseholdRiskAssessmentChild.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHouseholdRiskAssessmentMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmHouseholdRiskAssessmentMain.Designer.cs">
+      <DependentUpon>frmHouseholdRiskAssessmentMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHouseholdRiskAssessmentRegister.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -960,6 +984,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmHouseholdMembers.resx">
       <DependentUpon>frmHouseholdMembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHouseholdRiskAssessment.resx">
+      <DependentUpon>frmHouseholdRiskAssessment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHouseholdRiskAssessmentAdult.resx">
+      <DependentUpon>frmHouseholdRiskAssessmentAdult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHouseholdRiskAssessmentChild.resx">
+      <DependentUpon>frmHouseholdRiskAssessmentChild.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHouseholdRiskAssessmentMain.resx">
+      <DependentUpon>frmHouseholdRiskAssessmentMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHouseholdRiskAssessmentRegister.resx">
       <DependentUpon>frmHouseholdRiskAssessmentRegister.cs</DependentUpon>

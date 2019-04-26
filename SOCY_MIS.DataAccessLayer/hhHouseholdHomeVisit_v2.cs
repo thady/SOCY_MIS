@@ -127,6 +127,7 @@ namespace SOCY_MIS.DataAccessLayer
                 , usr_id_create, usr_id_update, ofc_id, district_id);
 
             dbCon.ExecuteNonQuery(strSQL);
+            update_hh_status(hh_id, hvhs_id);
             #endregion SQL
         }
 
@@ -172,6 +173,8 @@ namespace SOCY_MIS.DataAccessLayer
                 , usr_id_update, ofc_id, district_id);
 
             dbCon.ExecuteNonQuery(strSQL);
+
+            update_hh_status(hh_id, hvhs_id);
             #endregion SQL
         }
 
@@ -288,6 +291,7 @@ namespace SOCY_MIS.DataAccessLayer
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
         }
+
         #endregion Save
 
 
@@ -296,7 +300,7 @@ namespace SOCY_MIS.DataAccessLayer
             string crop_name = string.Empty;
 
             string SQL = "UPDATE hh_household SET hhs_id = '{0}',district_id = '{2}' WHERE hh_id = '{1}'";
-            SQL = string.Format(SQL, hh_id, hhs_id, SystemConstants.Return_office_district());
+            SQL = string.Format(SQL, hhs_id, hh_id, SystemConstants.Return_office_district());
             try
             {
                 string strConn = dbCon.ToString();
