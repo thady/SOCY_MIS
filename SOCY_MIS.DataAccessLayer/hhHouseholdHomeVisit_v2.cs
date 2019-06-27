@@ -346,14 +346,14 @@ namespace SOCY_MIS.DataAccessLayer
             string strSQL = string.Empty;
 
             strSQL = @"With CteA AS (
-	                    SELECT hhvm.hhm_id AS hhm_id FROM hh_household_home_visit_v_2 hhv 
-	                     LEFT JOIN hh_household_home_visit_member_v_2 hhvm ON hhv.hhv_id = hhvm.hhv_id
-	                     WHERE hhv.hh_id = '{0}' AND hhv.hhv_id = '{1}'
-                      )
-                      SELECT hhm.hhm_first_name + ' ' + hhm.hhm_last_name AS hhm_name,hhm.hhm_id FROM hh_household_member hhm LEFT JOIN  CteA A ON hhm.hhm_id = A.hhm_id
-                      WHERE hhm.hh_id =  '{0}'
-                      AND A.hhm_id is NULL
-                      ORDER BY hhm.hhm_first_name + ' ' + hhm.hhm_last_name ASC";
+                        SELECT hhvm.hhm_id AS hhm_id FROM hh_household_home_visit_v_2 hhv 
+                        LEFT JOIN hh_household_home_visit_member_v_2 hhvm ON hhv.hhv_id = hhvm.hhv_id
+                        WHERE hhv.hh_id = '{0}' AND hhv.hhv_id = '{1}'
+                        )
+                        SELECT hhm.hhm_first_name + ' ' + hhm.hhm_last_name AS hhm_name,hhm.hhm_id FROM hh_household_member hhm LEFT JOIN  CteA A ON hhm.hhm_id = A.hhm_id
+                        WHERE hhm.hh_id =  '{0}'
+                        AND A.hhm_id is NULL
+                        ORDER BY hhm.hhm_number ASC";
             strSQL = string.Format(strSQL,hh_id,hhv_id);
 
             try

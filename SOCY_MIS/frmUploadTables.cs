@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using SOCY_MIS.DataAccessLayer;
 using System.ServiceModel.Dispatcher;
+using PSAUtils;
 
 namespace SOCY_MIS
 {
@@ -81,6 +82,12 @@ namespace SOCY_MIS
             table.Rows.Add("Social Workers", "swm_social_worker");
             table.Rows.Add("Household Identification & Prioritization", "hh_ovc_identification_prioritization");
             table.Rows.Add("Household Improvement Plan", "hh_household_improvement_plan");
+            table.Rows.Add("Home Visit MER2.3", "hh_household_home_visit_v_2");
+            table.Rows.Add("Home Visit Member MER2.3", "hh_household_home_visit_member_v_2");
+            table.Rows.Add("Household Improvement Plan MER2.3", "hh_household_improvement_plan_v2");
+            table.Rows.Add("Risk Assessment MER2.3", "hh_household_risk_assessment");
+            table.Rows.Add("Risk Assessment Children MER2.3", "hh_household_risk_assessment_member_child");
+            table.Rows.Add("Risk Assessment Adults MER2.3", "hh_household_risk_assessment_member_adult");
 
             DataRow dstemptyRow = table.NewRow();
             dstemptyRow["table_id"] = "-1";
@@ -131,46 +138,6 @@ namespace SOCY_MIS
             {
                 SetProgressBarMaxValue(dt.Rows.Count);
                 SetstatusText("Now running imports...please wait...");
-
-                //#region DeleteHouseholdsOnLocalMachine
-
-                //if (DownLoadTable == "hh_household")
-                //{
-                //    #region DisableDeleleTrigger
-                //    strSQLTrigger = "ALTER TABLE {0} DISABLE TRIGGER {0}_delete";
-                //    strSQLTrigger = string.Format(strSQLTrigger, DownLoadTable);
-                //    dbCon.ExecuteNonQuery(strSQLTrigger);
-                //    #endregion DisableDeleleTrigger
-
-                //    strSQLDelete = "DELETE FROM hh_household";
-                //    dbCon.ExecuteNonQuery(strSQLDelete);
-
-                //    #region EnableDeleleTrigger
-                //    strSQLTrigger = "ALTER TABLE {0} ENABLE TRIGGER {0}_delete";
-                //    strSQLTrigger = string.Format(strSQLTrigger, DownLoadTable);
-                //    dbCon.ExecuteNonQuery(strSQLTrigger);
-                //    #endregion EnableDeleleTrigger
-                //}
-
-                //if (DownLoadTable == "hh_household_member")
-                //{
-                //    #region DisableDeleleTrigger
-                //    strSQLTrigger = "ALTER TABLE {0} DISABLE TRIGGER {0}_delete";
-                //    strSQLTrigger = string.Format(strSQLTrigger, DownLoadTable);
-                //    dbCon.ExecuteNonQuery(strSQLTrigger);
-                //    #endregion DisableDeleleTrigger
-
-                //    strSQLDelete = "DELETE FROM hh_household_member";
-                //    dbCon.ExecuteNonQuery(strSQLDelete);
-
-                //    #region EnableDeleleTrigger
-                //    strSQLTrigger = "ALTER TABLE {0} ENABLE TRIGGER {0}_delete";
-                //    strSQLTrigger = string.Format(strSQLTrigger, DownLoadTable);
-                //    dbCon.ExecuteNonQuery(strSQLTrigger);
-                //    #endregion EnableDeleleTrigger
-                //}
-
-                //#endregion DeleteHouseholdsOnLocalMachine 
 
                 for (int x = 0; x < dt.Rows.Count; x++)
                 {
@@ -411,21 +378,20 @@ namespace SOCY_MIS
                                 strSQLInsert = string.Format(strSQLInsert, dtRow["swk_id"].ToString(), dtRow["swk_first_name"].ToString(), dtRow["swk_last_name"].ToString(),
                                         dtRow["swk_email"].ToString(), dtRow["swk_phone"].ToString(), dtRow["swk_phone_other"].ToString(),
                                         dtRow["swk_status_reason"].ToString(), dtRow["swk_village"].ToString(),
-                                        dtRow["cso_id"].ToString(), dtRow["hnr_id"].ToString() , dtRow["swk_id_manager"].ToString()  , dtRow["sws_id"].ToString()  , dtRow["swt_id"].ToString() , dtRow["wrd_id"].ToString() ,
-                                        dtRow["usr_id_create"].ToString(), dtRow["usr_id_update"].ToString(),Convert.ToDateTime(dtRow["usr_date_create"]), Convert.ToDateTime(dtRow["usr_date_update"]), dtRow["ofc_id"].ToString() , dtRow["district_id"].ToString());
-
+                                        dtRow["cso_id"].ToString(), dtRow["hnr_id"].ToString(), dtRow["swk_id_manager"].ToString(), dtRow["sws_id"].ToString(), dtRow["swt_id"].ToString(), dtRow["wrd_id"].ToString(),
+                                        dtRow["usr_id_create"].ToString(), dtRow["usr_id_update"].ToString(), Convert.ToDateTime(dtRow["usr_date_create"]), Convert.ToDateTime(dtRow["usr_date_update"]), dtRow["ofc_id"].ToString(), dtRow["district_id"].ToString());
                                 break;
                             #endregion swm_social_worker
 
                             #region hh_ovc_identification_prioritization
                             case "hh_ovc_identification_prioritization":
-
+                               
                                 #region Delete
                                 strID = dtRow["oip_id"].ToString();
                                 strSQLDelete = " DELETE FROM {0} WHERE oip_id = '{1}'";
                                 strSQLDelete = string.Format(strSQLDelete, DownLoadTable, strID);
                                 #endregion Delete
-
+                                
                                 strSQLInsert = "INSERT INTO hh_ovc_identification_prioritization " +
                                                 "(oip_id, oip_comments, oip_date, " +
                                                 "oip_18_above_female, oip_18_above_male, oip_18_below_female, oip_18_below_male, oip_hiv_adult, oip_hiv_children, " +
@@ -444,7 +410,7 @@ namespace SOCY_MIS
                                                 "ynna_id_edu_missed_school, ynna_id_edu_not_enrolled, " +
                                                 "usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id,district_id,ids_id,hh_enroll_reason) " +
                                                 "VALUES ('{0}', '{1}', '{2}', " +
-                                                "{3}, {4}, {5}, {6}, {7}, {8}, " +
+                                                "'{3}', '{4}', '{5}', '{6}', '{7}', '{8}', " +
                                                 "'{9}', '{10}', " +
                                                 "'{11}', '{12}', '{13}', '{14}', " +
                                                 "'{15}', " +
@@ -460,25 +426,29 @@ namespace SOCY_MIS
                                                 "'{41}', '{42}', " +
                                                 "'{43}', '{44}','{45}','{46}', '{47}','{48}','{49}','{50}')";
 
-                                strSQLInsert = string.Format(strSQLInsert, dtRow["oip_id"].ToString(), dtRow["oip_comments"].ToString(), Convert.ToDateTime(dtRow["oip_date"]),
-                                            dtRow["oip_18_above_female"].ToString(), dtRow["oip_18_above_male"].ToString() , dtRow["oip_18_below_female"].ToString() , dtRow["oip_18_below_male"].ToString() , dtRow["oip_hiv_adult"].ToString(), dtRow["oip_hiv_children"].ToString(),
+                                string oip_id = dtRow["oip_id"].ToString();
+                                strSQLInsert = string.Format(strSQLInsert, oip_id, utilFormatting.StringForSQL(dtRow["oip_comments"].ToString()), Convert.ToDateTime(dtRow["oip_date"]),
+                                            dtRow["oip_18_above_female"].ToString(), dtRow["oip_18_above_male"].ToString(), dtRow["oip_18_below_female"].ToString(), dtRow["oip_18_below_male"].ToString(), dtRow["oip_hiv_adult"].ToString(), dtRow["oip_hiv_children"].ToString(),
                                             dtRow["oip_cp_month"].ToString(), dtRow["oip_interviewer_tel"].ToString(),
-                                            dtRow["cso_id"].ToString(), dtRow["hh_id"].ToString() , dtRow["hhm_id"].ToString() , dtRow["swk_id"].ToString()  ,
+                                            dtRow["cso_id"].ToString(), dtRow["hh_id"].ToString(), dtRow["hhm_id"].ToString(), dtRow["swk_id"].ToString(),
                                             dtRow["yn_id_children"].ToString(),
                                                 dtRow["yn_id_cp_abuse"].ToString(), dtRow["yn_id_cp_abuse_physical"].ToString(), dtRow["yn_id_cp_abuse_sexual"].ToString(),
-                                            dtRow["yn_id_cp_marriage_teen_parent"].ToString(), dtRow["yn_id_cp_neglected"].ToString() , dtRow["yn_id_cp_no_birth_register"].ToString() ,
-                                            dtRow["yn_id_cp_orphan"].ToString() , dtRow["yn_id_cp_pregnancy"].ToString() , dtRow["yn_id_cp_referred"].ToString() ,
-                                            dtRow["yn_id_edu_referred"].ToString(), dtRow["yn_id_es_child_headed"].ToString() , dtRow["yn_id_es_disability"].ToString() ,
-                                            dtRow["yn_id_es_employment"].ToString(), dtRow["yn_id_es_expense"].ToString() , dtRow["yn_id_es_referred"].ToString() ,
-                                            dtRow["yn_id_fsn_meals"].ToString(), dtRow["yn_id_fsn_malnourished"].ToString() , dtRow["yn_id_fsn_referred"].ToString() ,
-                                            dtRow["yn_id_hwss_hiv_positive"].ToString() , dtRow["yn_id_hwss_hiv_status"].ToString()  , dtRow["yn_id_hwss_referred"].ToString() ,
-                                            dtRow["yn_id_hwss_shelter"].ToString(), dtRow["yn_id_hwss_water"].ToString() ,
-                                            dtRow["yn_id_psbc_referred"].ToString() , dtRow["yn_id_psbc_stigmatized"].ToString()  ,
-                                            dtRow["ynna_id_edu_missed_school"].ToString(), dtRow["ynna_id_edu_not_enrolled"].ToString() ,
-                                            dtRow["usr_id_create"].ToString(), dtRow["usr_id_update"].ToString(), Convert.ToDateTime(dtRow["usr_date_create"]), Convert.ToDateTime(dtRow["usr_date_update"]), dtRow["ofc_id"].ToString(), dtRow["district_id"].ToString() , dtRow["ids_id"].ToString(), dtRow["hh_enroll_reason"].ToString());
+                                            dtRow["yn_id_cp_marriage_teen_parent"].ToString(), dtRow["yn_id_cp_neglected"].ToString(), dtRow["yn_id_cp_no_birth_register"].ToString(),
+                                            dtRow["yn_id_cp_orphan"].ToString(), dtRow["yn_id_cp_pregnancy"].ToString(), dtRow["yn_id_cp_referred"].ToString(),
+                                            dtRow["yn_id_edu_referred"].ToString(), dtRow["yn_id_es_child_headed"].ToString(), dtRow["yn_id_es_disability"].ToString(),
+                                            dtRow["yn_id_es_employment"].ToString(), dtRow["yn_id_es_expense"].ToString(), dtRow["yn_id_es_referred"].ToString(),
+                                            dtRow["yn_id_fsn_meals"].ToString(), dtRow["yn_id_fsn_malnourished"].ToString(), dtRow["yn_id_fsn_referred"].ToString(),
+                                            dtRow["yn_id_hwss_hiv_positive"].ToString(), dtRow["yn_id_hwss_hiv_status"].ToString(), dtRow["yn_id_hwss_referred"].ToString(),
+                                            dtRow["yn_id_hwss_shelter"].ToString(), dtRow["yn_id_hwss_water"].ToString(),
+                                            dtRow["yn_id_psbc_referred"].ToString(), dtRow["yn_id_psbc_stigmatized"].ToString(),
+                                            dtRow["ynna_id_edu_missed_school"].ToString(), dtRow["ynna_id_edu_not_enrolled"].ToString(),
+                                            dtRow["usr_id_create"].ToString(), dtRow["usr_id_update"].ToString(), Convert.ToDateTime(dtRow["usr_date_create"]), Convert.ToDateTime(dtRow["usr_date_update"]), dtRow["ofc_id"].ToString(), dtRow["district_id"].ToString(), dtRow["ids_id"].ToString(), dtRow["hh_enroll_reason"].ToString());
+                                //string err = strSQLInsert;
+                                //SetText("Hello World");
 
                                 break;
-                            #endregion hh_ovc_identification_prioritization
+                               
+                            #endregion hh_ovc_identification_prioritization   
 
                             #region hh_household_improvement_plan
                             case "hh_household_improvement_plan":
@@ -499,15 +469,192 @@ namespace SOCY_MIS
                                             VALUES('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}','{16}','{17}','{18}','{19}','{20}','{21}','{22}','{23}','{24}',
                                                     '{25}','{26}','{27}','{28}','{29}','{30}','{31}','{32}','{33}','{34}','{35}','{36}','{37}')";
 
-                                strSQLInsert = string.Format(strSQLInsert, dtRow["hip_id"].ToString(), dtRow["hh_code"].ToString(), dtRow["hh_id"].ToString(), Convert.ToDateTime(dtRow["visit_date"]) , dtRow["ov_below_seventeen_yrs_male"].ToString() , dtRow["ov_below_seventeen_yrs_female"].ToString() , dtRow["ov_above_eighteen_yrs_male"].ToString() ,
-                        dtRow["ov_above_eighteen_yrs_female"].ToString(), dtRow["health_knows_status_of_children"].ToString() , dtRow["health_enrolled_on_art"].ToString(), dtRow["health_action_plan"].ToString() , dtRow["health_follow_up_date"].ToString() , dtRow["household_is_healthy"].ToString() ,
-                        dtRow["safe_has_birth_certificates"].ToString(), dtRow["safe_no_child_abuse"].ToString() , dtRow["safe_action_plan"].ToString() , dtRow["safe_follow_up_date"].ToString() , dtRow["household_is_safe"].ToString() , dtRow["stable_source_of_income"].ToString() , dtRow["stable_financial_services"].ToString() ,
-                        dtRow["stable_two_or_more_meals"].ToString(), dtRow["stable_action_plan"].ToString() , dtRow["stable_follow_up_date"].ToString() , dtRow["household_is_stable"].ToString() , dtRow["schooled_all_attending_school"].ToString() , dtRow["schooled_attained_techinical_skill"].ToString() ,
-                        dtRow["schooled_others"].ToString(), dtRow["schooled_action_plan"].ToString() , dtRow["schooled_follow_up_date"].ToString() , dtRow["household_is_schooled"].ToString() , dtRow["sw_id"].ToString() , dtRow["sw_comment"].ToString() , dtRow["usr_id_create"].ToString() , dtRow["usr_id_update"].ToString() , Convert.ToDateTime(dtRow["usr_date_create"]) ,
-                        Convert.ToDateTime(dtRow["usr_date_update"]) , dtRow["ofc_id"].ToString()  , dtRow["district_id"].ToString()  );
+                                strSQLInsert = string.Format(strSQLInsert, dtRow["hip_id"].ToString(), dtRow["hh_code"].ToString(), dtRow["hh_id"].ToString(), Convert.ToDateTime(dtRow["visit_date"]), dtRow["ov_below_seventeen_yrs_male"].ToString(), dtRow["ov_below_seventeen_yrs_female"].ToString(), dtRow["ov_above_eighteen_yrs_male"].ToString(),
+                        dtRow["ov_above_eighteen_yrs_female"].ToString(), dtRow["health_knows_status_of_children"].ToString(), dtRow["health_enrolled_on_art"].ToString(), dtRow["health_action_plan"].ToString(), dtRow["health_follow_up_date"].ToString(), dtRow["household_is_healthy"].ToString(),
+                        dtRow["safe_has_birth_certificates"].ToString(), dtRow["safe_no_child_abuse"].ToString(), dtRow["safe_action_plan"].ToString(), dtRow["safe_follow_up_date"].ToString(), dtRow["household_is_safe"].ToString(), dtRow["stable_source_of_income"].ToString(), dtRow["stable_financial_services"].ToString(),
+                        dtRow["stable_two_or_more_meals"].ToString(), dtRow["stable_action_plan"].ToString(), dtRow["stable_follow_up_date"].ToString(), dtRow["household_is_stable"].ToString(), dtRow["schooled_all_attending_school"].ToString(), dtRow["schooled_attained_techinical_skill"].ToString(),
+                        dtRow["schooled_others"].ToString(), dtRow["schooled_action_plan"].ToString(), dtRow["schooled_follow_up_date"].ToString(), dtRow["household_is_schooled"].ToString(), dtRow["sw_id"].ToString(), dtRow["sw_comment"].ToString(), dtRow["usr_id_create"].ToString(), dtRow["usr_id_update"].ToString(), Convert.ToDateTime(dtRow["usr_date_create"]),
+                        Convert.ToDateTime(dtRow["usr_date_update"]), dtRow["ofc_id"].ToString(), dtRow["district_id"].ToString());
 
                                 break;
-                                #endregion hh_household_improvement_plan
+                            #endregion hh_household_improvement_plan  
+
+                            #region hh_household_home_visit_v_2
+                            case "hh_household_home_visit_v_2":
+
+                                #region Delete
+                                strID = dtRow["hhv_id"].ToString();
+                                strSQLDelete = " DELETE FROM {0} WHERE hhv_id = '{1}'";
+                                strSQLDelete = string.Format(strSQLDelete, DownLoadTable, strID);
+                                #endregion Delete
+
+                                strSQLInsert = @"INSERT INTO [dbo].[hh_household_home_visit_v_2]
+                                       ([hhv_id],[hhv_date] ,[hhv_date_next_visit],[hhv_comments],[hhv_next_steps],[ynna_risk_assessment],[ynna_new_referal]
+                                       ,[ynna_old_referal_followup],[yn_hip] ,[hhv_swk_code] ,[hhv_visitor_tel] ,[hvhs_id] ,[hvr_id] ,[hh_id],[hhm_id] ,[hnr_id_visitor],[swk_id]
+                                       ,[swk_id_visitor] ,[usr_id_create] ,[usr_id_update],[usr_date_create] ,[usr_date_update],[ofc_id],[district_id])
+                                        VALUES('{0}','{1}' ,'{2}' ,'{3}' ,'{4}' ,'{5}' ,'{6}','{7}' ,'{8}' ,'{9}' ,'{10}' ,'{11}','{12}','{13}' ,'{14}' ,'{15}','{16}' ,'{17}' ,'{18}' ,'{19}' ,'{20}' ,'{21}' ,'{22}' ,'{23}')";
+
+                                strSQLInsert = string.Format(strSQLInsert, dtRow["hhv_id"].ToString(), Convert.ToDateTime(dtRow["hhv_date"]), Convert.ToDateTime(dtRow["hhv_date_next_visit"]), utilFormatting.StringForSQL(dtRow["hhv_comments"].ToString()),
+                                                        utilFormatting.StringForSQL(dtRow["hhv_next_steps"].ToString()), dtRow["ynna_risk_assessment"].ToString(), dtRow["ynna_new_referal"].ToString(), dtRow["ynna_old_referal_followup"].ToString(),
+                                                        dtRow["yn_hip"].ToString(), utilFormatting.StringForSQL(dtRow["hhv_swk_code"].ToString()), utilFormatting.StringForSQL(dtRow["hhv_visitor_tel"].ToString()), dtRow["hvhs_id"].ToString(),
+                                                        dtRow["hvr_id"].ToString(), dtRow["hh_id"].ToString(), dtRow["hhm_id"].ToString(), dtRow["hnr_id_visitor"].ToString(), dtRow["swk_id"].ToString(), dtRow["swk_id_visitor"].ToString(),
+                                                         dtRow["usr_id_create"].ToString(), dtRow["usr_id_update"].ToString(), Convert.ToDateTime(dtRow["usr_date_create"]), Convert.ToDateTime(dtRow["usr_date_update"]), dtRow["ofc_id"].ToString(),
+                                                         dtRow["district_id"].ToString());
+
+                                break;
+                            #endregion hh_household_home_visit_v_2  
+
+                            #region hh_household_home_visit_member_v_2
+                            case "hh_household_home_visit_member_v_2":
+
+                                #region Delete
+                                strID = dtRow["hhvm_id"].ToString();
+                                strSQLDelete = " DELETE FROM {0} WHERE hhvm_id = '{1}'";
+                                strSQLDelete = string.Format(strSQLDelete, DownLoadTable, strID);
+                                #endregion Delete
+
+                                strSQLInsert = @"INSERT INTO [dbo].[hh_household_home_visit_member_v_2]
+                                               ([hhvm_id] ,[hhm_id] ,[hhv_id],[hhm_name],[hmm_age],[gnd_name] ,[yn_id_hhm_active] ,[ynna_stb_id_SILC],[ynna_stb_id_other_saving_grp],[ynna_stb_caregiver_services]
+                                               ,[ynna_stb_contributes_edu_fund] ,[ynna_stb_SAGE] ,[yn_stb_receive_social_grant],[ynna_stb_apprenticeship],[ynna_stb_cottage],[ynna_stb_agro_enterprise]
+                                               ,[ynna_stb_aflateen] ,[ynna_stb_sch_ovc_edu_enrolled] ,[ynna_sch_re_enrollment_support]  ,[ynna_sch_ovc_attend_school_regularly] ,[ynna_sch_ovc_receive_school_uniform]
+                                               ,[ynna_sch_ovc_receive_edu_subsidy],[ynna_progressed_to_another_class] ,[hst_id]  ,[ynna_on_art] ,[ynna_follow_art_prescription] ,[adherence_level] ,[ynna_hiv_literacy]
+                                               ,[yn_hiv_counselling] ,[yn_hiv_adherence_support]  ,[yn_hiv_prevention_support] ,[yn_wash_messages] ,[nutrition_assessment_result],[yn_initiate_hts_refferal],[yn_complete_hts_refferal]
+                                               ,[ynna_initiate_art_refferal] ,[ynna_complete_art_refferal],[ynna_initiate_immunize_refferal] ,[ynna_complete_immunize_refferal] ,[ynna_tb_screen],[ynna_initiate_tb_refferal],[ynna_complete_tb_refferal]
+                                               ,[ynna_initiate_perinatal_care_refferal],[ynna_complete_perinatal_care_refferal],[ynna_initiate_post_violence_refferal] ,[ynna_complete_post_violence_refferal],[ynna_ovc_has_birth_certificate] ,[ynna_initiate_birth_reg_refferal]
+                                               ,[ynna_complete_birth_reg_refferal],[ynna_pss_family_group_discussion],[ynna_reported_to_police],[ynna_violence_evidence_based_intervention],[usr_id_create],[usr_id_update],[usr_date_create]
+                                               ,[usr_date_update],[ofc_id] ,[district_id])
+                                            VALUES ('{0}' ,'{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}' ,'{16}','{17}'
+                                               ,'{18}' ,'{19}','{20}' ,'{21}' ,'{22}' ,'{23}' ,'{24}' ,'{25}','{26}','{27}','{28}','{29}','{30}','{31}' ,'{32}','{33}'
+                                               ,'{34}','{35}','{36}','{37}' ,'{38}' ,'{39}','{40}' ,'{41}','{42}','{43}' ,'{44}' ,'{45}','{46}' ,'{47}','{48}','{49}'
+                                               ,'{50}' ,'{51}' ,'{52}' ,'{53}' ,'{54}','{55}','{56}','{57}')";
+
+                                strSQLInsert = string.Format(strSQLInsert, dtRow["hhvm_id"].ToString(), dtRow["hhm_id"].ToString(), dtRow["hhv_id"].ToString(), dtRow["hhm_name"].ToString(), dtRow["hmm_age"].ToString(), dtRow["gnd_name"].ToString(), dtRow["yn_id_hhm_active"].ToString()
+                                            , dtRow["ynna_stb_id_SILC"].ToString(), dtRow["ynna_stb_id_other_saving_grp"].ToString(), dtRow["ynna_stb_caregiver_services"].ToString(), dtRow["ynna_stb_contributes_edu_fund"].ToString()
+                                          , dtRow["ynna_stb_SAGE"].ToString(), dtRow["yn_stb_receive_social_grant"].ToString(), dtRow["ynna_stb_apprenticeship"].ToString(), dtRow["ynna_stb_cottage"].ToString(), dtRow["ynna_stb_agro_enterprise"].ToString()
+                                          , dtRow["ynna_stb_aflateen"].ToString(), dtRow["ynna_stb_sch_ovc_edu_enrolled"].ToString(), dtRow["ynna_sch_re_enrollment_support"].ToString(), dtRow["ynna_sch_ovc_attend_school_regularly"].ToString(), dtRow["ynna_sch_ovc_receive_school_uniform"].ToString()
+                                          , dtRow["ynna_sch_ovc_receive_edu_subsidy"].ToString(), dtRow["ynna_progressed_to_another_class"].ToString(), dtRow["hst_id"].ToString(), dtRow["ynna_on_art"].ToString(), dtRow["ynna_follow_art_prescription"].ToString(), dtRow["adherence_level"].ToString(), dtRow["ynna_hiv_literacy"].ToString()
+                                          , dtRow["yn_hiv_counselling"].ToString(), dtRow["yn_hiv_adherence_support"].ToString(), dtRow["yn_hiv_prevention_support"].ToString(), dtRow["yn_wash_messages"].ToString(), dtRow["nutrition_assessment_result"].ToString(), dtRow["yn_initiate_hts_refferal"].ToString(), dtRow["yn_complete_hts_refferal"].ToString()
+                                          , dtRow["ynna_initiate_art_refferal"].ToString(), dtRow["ynna_complete_art_refferal"].ToString(), dtRow["ynna_initiate_immunize_refferal"].ToString(), dtRow["ynna_complete_immunize_refferal"].ToString(), dtRow["ynna_tb_screen"].ToString(), dtRow["ynna_initiate_tb_refferal"].ToString(), dtRow["ynna_complete_tb_refferal"].ToString()
+                                          , dtRow["ynna_initiate_perinatal_care_refferal"].ToString(), dtRow["ynna_complete_perinatal_care_refferal"].ToString(), dtRow["ynna_initiate_post_violence_refferal"].ToString(), dtRow["ynna_complete_post_violence_refferal"].ToString(), dtRow["ynna_ovc_has_birth_certificate"].ToString(), dtRow["ynna_initiate_birth_reg_refferal"].ToString()
+                                          , dtRow["ynna_complete_birth_reg_refferal"].ToString(), dtRow["ynna_pss_family_group_discussion"].ToString(), dtRow["ynna_reported_to_police"].ToString(), dtRow["ynna_violence_evidence_based_intervention"].ToString(), dtRow["usr_id_create"].ToString(), dtRow["usr_id_update"].ToString(), Convert.ToDateTime(dtRow["usr_date_create"]), Convert.ToDateTime(dtRow["usr_date_update"]), dtRow["ofc_id"].ToString(),
+                                          dtRow["district_id"].ToString());
+
+                                break;
+                            #endregion hh_household_home_visit_member_v_2  
+
+                            #region hh_household_improvement_plan_v2
+                            case "hh_household_improvement_plan_v2":
+
+                                #region Delete
+                                strID = dtRow["hip_id"].ToString();
+                                strSQLDelete = " DELETE FROM {0} WHERE hip_id = '{1}'";
+                                strSQLDelete = string.Format(strSQLDelete, DownLoadTable, strID);
+                                #endregion Delete
+
+                                strSQLInsert = @"INSERT INTO [dbo].[hh_household_improvement_plan_v2]
+                                                ([hip_id] ,[hh_code],[hh_id] ,[initial_hip_date],[visit_date] ,[qm_id],[ov_below_seventeen_yrs_male],[ov_below_seventeen_yrs_female],[ov_above_eighteen_yrs_male]
+                                                ,[ov_above_eighteen_yrs_female] ,[hip_reason],[yn_knows_status_of_children],[yn_knows_status_of_children_action],[yn_knows_status_of_children_out_come] ,[yn_knows_status_of_children_followup_date]
+                                                ,[yn_positive_enrolled_on_art],[yn_positive_enrolled_on_art_out_come] ,[yn_positive_enrolled_on_art_action],[yn_positive_enrolled_on_art_followup_date] ,[yn_positive_supressing],[yn_positive_supressing_action]
+                                                ,[yn_positive_supressing_out_come] ,[yn_positive_supressing_followup_date] ,[yn_positive_adhering] ,[yn_positive_adhering_action],[yn_positive_adhering_out_come],[yn_positive_adhering_followup_date]
+                                                ,[yn_adolescent_hiv_prevention] ,[yn_adolescent_hiv_prevention_action] ,[yn_adolescent_hiv_prevention_out_come],[yn_adolescent_hiv_prevention_followup_date],[yn_child_undernourished] ,[yn_child_undernourished_action]
+                                                ,[yn_child_undernourished_out_come] ,[yn_child_undernourished_followup_date],[other_health_issues],[other_health_issues_action],[other_health_issues_out_come] ,[other_health_issues_action_followup_date],[yn_no_violence]
+                                                ,[yn_no_violence_action] ,[yn_no_violence_out_come] ,[yn_no_violence_action_followup_date] ,[yn_stable_care_giver],[yn_stable_care_giver_action] ,[yn_stable_care_giver_followup_date] ,[yn_stable_care_giver_out_come]
+                                                ,[other_safe_issues] ,[other_safe_issues_action] ,[other_safe_issues_followup_date],[other_safe_issues_out_come] ,[yn_stable_access_money] ,[yn_stable_access_money_action],[yn_stable_access_money_followup_date]
+                                                ,[yn_stable_access_money_out_come],[yn_stable_income_source] ,[yn_stable_income_source_action] ,[yn_stable_income_source_followup_date] ,[yn_stable_income_source_out_come],[other_hes_issues] ,[other_hes_issues_action]
+                                                ,[other_hes_issues_followup_date] ,[other_hes_issues_out_come],[yn_ovc_regularly_attend_school] ,[yn_ovc_regularly_attend_school_action],[yn_ovc_regularly_attend_school_followup_date] ,[yn_ovc_regularly_attend_school_out_come]
+                                                ,[yn_attained_tech_skill] ,[yn_attained_tech_skill_action_plan],[yn_attained_tech_skill_followup_date] ,[yn_attained_tech_skill_out_come],[other_edu_issues],[other_edu_issues_action] ,[other_edu_issues_followup_date]
+                                                ,[other_edu_issues_out_come] ,[hip_out_come_date] ,[sw_id],[sw_comment] ,[sw_supervisor_name] ,[sw_supervisor_comment] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id] ,[district_id])
+                                            VALUES ('{0}' ,'{1}' ,'{2}' ,'{3}' ,'{4}' ,'{5}','{6}','{7}','{8}','{9}','{10}' ,'{11}','{12}','{13}','{14}','{15}','{16}','{17}','{18}'
+                                                ,'{19}' ,'{20}','{21}','{22}','{23}','{24}','{25}','{26}','{27}','{28}','{29}','{30}','{31}','{32}','{33}','{34}','{35}','{36}','{37}'
+                                                ,'{38}','{39}','{40}','{41}' ,'{42}','{43}' ,'{44}','{45}','{46}','{47}','{48}','{49}','{50}','{51}' ,'{52}','{53}','{54}','{55}','{56}'
+                                                ,'{57}' ,'{58}' ,'{59}','{60}','{61}' ,'{62}' ,'{63}' ,'{64}' ,'{65}' ,'{66}' ,'{67}','{68}','{69}','{70}' ,'{71}','{72}' ,'{73}' ,'{74}'
+                                                ,'{75}' ,'{76}'  ,'{77}' ,'{78}' ,'{79}','{80}','{81}' ,'{82}' ,'{83}','{84}','{85}')";
+
+                                strSQLInsert = string.Format(strSQLInsert, dtRow["hip_id"].ToString(), dtRow["hh_code"].ToString(), dtRow["hh_id"].ToString(), Convert.ToDateTime(dtRow["initial_hip_date"]), Convert.ToDateTime(dtRow["visit_date"]), dtRow["qm_id"].ToString(), Convert.ToInt32(dtRow["ov_below_seventeen_yrs_male"].ToString()), Convert.ToInt32(dtRow["ov_below_seventeen_yrs_female"].ToString()), Convert.ToInt32(dtRow["ov_above_eighteen_yrs_male"].ToString())
+                                        , Convert.ToInt32(dtRow["ov_above_eighteen_yrs_female"].ToString()), dtRow["hip_reason"].ToString(), dtRow["yn_knows_status_of_children"].ToString(), utilFormatting.StringForSQL(dtRow["yn_knows_status_of_children_action"].ToString()), utilFormatting.StringForSQL(dtRow["yn_knows_status_of_children_out_come"].ToString()), dtRow["yn_knows_status_of_children_followup_date"].ToString()
+                                        , dtRow["yn_positive_enrolled_on_art"].ToString(), utilFormatting.StringForSQL(dtRow["yn_positive_enrolled_on_art_out_come"].ToString()), utilFormatting.StringForSQL(dtRow["yn_positive_enrolled_on_art_action"].ToString()), dtRow["yn_positive_enrolled_on_art_followup_date"].ToString(), dtRow["yn_positive_supressing"].ToString(), utilFormatting.StringForSQL(dtRow["yn_positive_supressing_action"].ToString())
+                                        , utilFormatting.StringForSQL(dtRow["yn_positive_supressing_out_come"].ToString()), dtRow["yn_positive_supressing_followup_date"].ToString(), dtRow["yn_positive_adhering"].ToString(), utilFormatting.StringForSQL(dtRow["yn_positive_adhering_action"].ToString()), utilFormatting.StringForSQL(dtRow["yn_positive_adhering_out_come"].ToString()), dtRow["yn_positive_adhering_followup_date"].ToString()
+                                        , dtRow["yn_adolescent_hiv_prevention"].ToString(), utilFormatting.StringForSQL(dtRow["yn_adolescent_hiv_prevention_action"].ToString()), utilFormatting.StringForSQL(dtRow["yn_adolescent_hiv_prevention_out_come"].ToString()), dtRow["yn_adolescent_hiv_prevention_followup_date"].ToString(), dtRow["yn_child_undernourished"].ToString(), utilFormatting.StringForSQL(dtRow["yn_child_undernourished_action"].ToString())
+                                        , utilFormatting.StringForSQL(dtRow["yn_child_undernourished_out_come"].ToString()), dtRow["yn_child_undernourished_followup_date"].ToString(), utilFormatting.StringForSQL(dtRow["other_health_issues"].ToString()), utilFormatting.StringForSQL(dtRow["other_health_issues_action"].ToString()), utilFormatting.StringForSQL(dtRow["other_health_issues_out_come"].ToString()), dtRow["other_health_issues_action_followup_date"].ToString(), dtRow["yn_no_violence"].ToString()
+                                        , utilFormatting.StringForSQL(dtRow["yn_no_violence_action"].ToString()), utilFormatting.StringForSQL(dtRow["yn_no_violence_out_come"].ToString()), dtRow["yn_no_violence_action_followup_date"].ToString(), dtRow["yn_stable_care_giver"].ToString(), utilFormatting.StringForSQL(dtRow["yn_stable_care_giver_action"].ToString()), dtRow["yn_stable_care_giver_followup_date"].ToString(), utilFormatting.StringForSQL(dtRow["yn_stable_care_giver_out_come"].ToString())
+                                        , utilFormatting.StringForSQL(dtRow["other_safe_issues"].ToString()), utilFormatting.StringForSQL(dtRow["other_safe_issues_action"].ToString()), dtRow["other_safe_issues_followup_date"].ToString(), utilFormatting.StringForSQL(dtRow["other_safe_issues_out_come"].ToString()), dtRow["yn_stable_access_money"].ToString(), utilFormatting.StringForSQL(dtRow["yn_stable_access_money_action"].ToString()), dtRow["yn_stable_access_money_followup_date"].ToString()
+                                        , utilFormatting.StringForSQL(dtRow["yn_stable_access_money_out_come"].ToString()), dtRow["yn_stable_income_source"].ToString(), utilFormatting.StringForSQL(dtRow["yn_stable_income_source_action"].ToString()), dtRow["yn_stable_income_source_followup_date"].ToString(), utilFormatting.StringForSQL(dtRow["yn_stable_income_source_out_come"].ToString()), utilFormatting.StringForSQL(dtRow["other_hes_issues"].ToString()), utilFormatting.StringForSQL(dtRow["other_hes_issues_action"].ToString())
+                                        , dtRow["other_hes_issues_followup_date"].ToString(), utilFormatting.StringForSQL(dtRow["other_hes_issues_out_come"].ToString()), dtRow["yn_ovc_regularly_attend_school"].ToString(), utilFormatting.StringForSQL(dtRow["yn_ovc_regularly_attend_school_action"].ToString()), dtRow["yn_ovc_regularly_attend_school_followup_date"].ToString(), utilFormatting.StringForSQL(dtRow["yn_ovc_regularly_attend_school_out_come"].ToString())
+                                        , dtRow["yn_attained_tech_skill"].ToString(), utilFormatting.StringForSQL(dtRow["yn_attained_tech_skill_action_plan"].ToString()), dtRow["yn_attained_tech_skill_followup_date"].ToString(), utilFormatting.StringForSQL(dtRow["yn_attained_tech_skill_out_come"].ToString()), utilFormatting.StringForSQL(dtRow["other_edu_issues"].ToString()), utilFormatting.StringForSQL(dtRow["other_edu_issues_action"].ToString()), dtRow["other_edu_issues_followup_date"].ToString()
+                                        , utilFormatting.StringForSQL(dtRow["other_edu_issues_out_come"].ToString()), dtRow["hip_out_come_date"].ToString(), dtRow["sw_id"].ToString(), utilFormatting.StringForSQL(dtRow["sw_comment"].ToString()), dtRow["sw_supervisor_name"].ToString(), utilFormatting.StringForSQL(dtRow["sw_supervisor_comment"].ToString()), dtRow["usr_id_create"].ToString(), dtRow["usr_id_update"].ToString(), Convert.ToDateTime(dtRow["usr_date_create"]), Convert.ToDateTime(dtRow["usr_date_update"]), dtRow["ofc_id"].ToString(),
+                                          dtRow["district_id"].ToString());
+
+                                break;
+                            #endregion hh_household_improvement_plan_v2  
+
+                            #region hh_household_risk_assessment
+                            case "hh_household_risk_assessment":
+
+                                #region Delete
+                                strID = dtRow["ra_id"].ToString();
+                                strSQLDelete = " DELETE FROM {0} WHERE ra_id = '{1}'";
+                                strSQLDelete = string.Format(strSQLDelete, DownLoadTable, strID);
+                                #endregion Delete
+
+                                strSQLInsert = @"INSERT INTO [dbo].[hh_household_risk_assessment]([ra_id],[hh_id],[scr_date],[hhm_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update],[ofc_id],[district_id])
+                        VALUES ('{0}','{1}','{2}' ,'{3}','{4}','{5}' ,'{6}' ,'{7}','{8}','{9}')";
+
+                                strSQLInsert = string.Format(strSQLInsert, dtRow["ra_id"].ToString(), dtRow["hh_id"].ToString() , Convert.ToDateTime(dtRow["scr_date"]) , dtRow["hhm_id"].ToString() , dtRow["usr_id_create"].ToString() , dtRow["usr_id_update"].ToString(), Convert.ToDateTime(dtRow["usr_date_create"]) , Convert.ToDateTime(dtRow["usr_date_update"]) , dtRow["ofc_id"].ToString(),
+                                          dtRow["district_id"].ToString());
+
+                                break;
+                            #endregion hh_household_risk_assessment  
+
+                            #region hh_household_risk_assessment_member_adult
+                            case "hh_household_risk_assessment_member_adult":
+
+                                #region Delete
+                                strID = dtRow["ra_id"].ToString();
+                                strSQLDelete = " DELETE FROM {0} WHERE ra_id = '{1}'";
+                                strSQLDelete = string.Format(strSQLDelete, DownLoadTable, strID);
+                                #endregion Delete
+
+                                strSQLInsert = @"INSERT INTO [dbo].[hh_household_risk_assessment_member_adult]
+                                               ([ram_id] ,[ra_id],[hhm_id],[hhm_name],[gnd_name],[gnd_age],[ra_criteria_id] ,[yn_hiv_test],[yn_unprotected_sex],[yn_sex_worker] ,[yn_lost_sexual_partner]
+                                               ,[yn_tb_disease],[yn_sexual_violence],[yn_sickly],[yn_pregnant_not_tested],[yn_breast_feeding_not_tested] ,[yn_hiv_neg_discodant_not_tested],[yn_sti] ,[yn_hepatitis_b]
+                                               ,[yn_male_female_not_tested] ,[yn_hhm_at_risk],[yn_hmm_test],[yn_hhm_accept_test],[yn_referal],[yn_referal_completed] ,[test_result],[usr_id_create],[usr_id_update]
+                                               ,[usr_date_create],[usr_date_update],[ofc_id] ,[district_id])
+                                         VALUES('{0}' ,'{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}'
+                                               ,'{16}' ,'{17}' ,'{18}' ,'{19}' ,'{20}','{21}' ,'{22}' ,'{23}' ,'{24}' ,'{25}' ,'{26}' ,'{27}','{28}'
+                                               ,'{29}','{30}','{31}')";
+
+                                strSQLInsert = string.Format(strSQLInsert, dtRow["ram_id"].ToString() , dtRow["ra_id"].ToString() , dtRow["hhm_id"].ToString(), dtRow["hhm_name"].ToString(), dtRow["gnd_name"].ToString() , dtRow["gnd_age"].ToString() , dtRow["ra_criteria_id"].ToString() , dtRow["yn_hiv_test"].ToString() , dtRow["yn_unprotected_sex"].ToString() , dtRow["yn_sex_worker"].ToString() , dtRow["yn_lost_sexual_partner"].ToString() 
+                                                       , dtRow["yn_tb_disease"].ToString(), dtRow["yn_sexual_violence"].ToString() , dtRow["yn_sickly"].ToString() , dtRow["yn_pregnant_not_tested"].ToString() , dtRow["yn_breast_feeding_not_tested"].ToString() , dtRow["yn_hiv_neg_discodant_not_tested"].ToString() , dtRow["yn_sti"].ToString() , dtRow["yn_hepatitis_b"].ToString() 
+                                                       , dtRow["yn_male_female_not_tested"].ToString(), dtRow["yn_hhm_at_risk"].ToString() , dtRow["yn_hmm_test"].ToString() , dtRow["yn_hhm_accept_test"].ToString() , dtRow["yn_referal"].ToString() , dtRow["yn_referal_completed"].ToString() , dtRow["test_result"].ToString() , dtRow["usr_id_create"].ToString(), dtRow["usr_id_update"].ToString(), Convert.ToDateTime(dtRow["usr_date_create"]), Convert.ToDateTime(dtRow["usr_date_update"]), dtRow["ofc_id"].ToString(),
+                                                        dtRow["district_id"].ToString());
+
+                                break;
+                            #endregion hh_household_risk_assessment_member_adult  
+
+                            #region hh_household_risk_assessment_member_child
+                            case "hh_household_risk_assessment_member_child":
+
+                                #region Delete
+                                strID = dtRow["ra_id"].ToString();
+                                strSQLDelete = " DELETE FROM {0} WHERE ra_id = '{1}'";
+                                strSQLDelete = string.Format(strSQLDelete, DownLoadTable, strID);
+                                #endregion Delete
+
+                                strSQLInsert = @"INSERT INTO [dbo].[hh_household_risk_assessment_member_child]
+                                               ([ram_id] ,[ra_id],[hhm_id] ,[hhm_name],[gnd_name] ,[gnd_age] ,[ra_criteria_id],[yn_mother_hiv_pos] ,[yn_lost_bio_parent] ,[yn_malnourished]
+                                               ,[yn_skin_problem],[yn_hospitalized] ,[yn_sexual_violence_exposed],[yn_acc_exposure_sharp_injury],[yn_drug_abuse],[yn_hhm_at_risk],[yn_hmm_test]
+                                               ,[yn_hhm_accept_test] ,[yn_referal] ,[yn_referal_completed] ,[test_result] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update]
+                                               ,[ofc_id],[district_id])
+                                         VALUES('{0}' ,'{1}','{2}' ,'{3}' ,'{4}' ,'{5}' ,'{6}' ,'{7}','{8}' ,'{9}','{10}','{11}' ,'{12}','{13}' ,'{14}' ,'{15}','{16}'
+                                               ,'{17}' ,'{18}' ,'{19}','{20}' ,'{21}' ,'{22}','{23}' ,'{24}','{25}' ,'{26}')";
+
+                                strSQLInsert = string.Format(strSQLInsert, dtRow["ram_id"].ToString(), dtRow["ra_id"].ToString() , dtRow["hhm_id"].ToString(), dtRow["hhm_name"].ToString() , dtRow["gnd_name"].ToString() , dtRow["gnd_age"].ToString() , dtRow["ra_criteria_id"].ToString() , dtRow["yn_mother_hiv_pos"].ToString() , dtRow["yn_lost_bio_parent"].ToString() , dtRow["yn_malnourished"].ToString() 
+                                                       , dtRow["yn_skin_problem"].ToString(), dtRow["yn_hospitalized"].ToString() , dtRow["yn_sexual_violence_exposed"].ToString() , dtRow["yn_acc_exposure_sharp_injury"].ToString() , dtRow["yn_drug_abuse"].ToString() , dtRow["yn_hhm_at_risk"].ToString() , dtRow["yn_hmm_test"].ToString() 
+                                                       , dtRow["yn_hhm_accept_test"].ToString(), dtRow["yn_referal"].ToString() , dtRow["yn_referal_completed"].ToString() , dtRow["test_result"].ToString() , dtRow["usr_id_create"].ToString(), dtRow["usr_id_update"].ToString(), Convert.ToDateTime(dtRow["usr_date_create"]), Convert.ToDateTime(dtRow["usr_date_update"]), dtRow["ofc_id"].ToString(),
+                                                        dtRow["district_id"].ToString());
+
+                                break;
+                                #endregion hh_household_risk_assessment_member_child  
                         }
 
                         #endregion Switch Tables
@@ -550,6 +697,8 @@ namespace SOCY_MIS
                         #endregion Execute Delete
 
                         #region Execute Insert
+
+                        string str = strSQLInsert;
 
                         using (conn = new SqlConnection(SQLConnection))
                         using (SqlCommand cmd = new SqlCommand(strSQLInsert, conn))
@@ -595,6 +744,8 @@ namespace SOCY_MIS
                     }
                     catch (SqlException ex)
                     {
+
+
                         #region Enable Triggers
 
                         strSQLTrigger = "ALTER TABLE {0} ENABLE TRIGGER {0}_delete";
@@ -613,6 +764,7 @@ namespace SOCY_MIS
                     }
                     finally
                     {
+                        string str = strSQLInsert;
                         conn.Close();
                         conn.Dispose();
                     }
@@ -788,7 +940,8 @@ namespace SOCY_MIS
 
         private void cboDownloadList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            panelDates.Visible = cboDownloadList.SelectedValue.ToString() == "hh_household_home_visit" || cboDownloadList.SelectedValue.ToString() == "hh_household_home_visit_member" || cboDownloadList.SelectedValue.ToString() == "hh_household" || cboDownloadList.SelectedValue.ToString() == "hh_household_member" ? true : false;
+            panelDates.Visible = cboDownloadList.SelectedValue.ToString() == "hh_household_home_visit" || cboDownloadList.SelectedValue.ToString() == "hh_household_home_visit_member" || cboDownloadList.SelectedValue.ToString() == "hh_household" || cboDownloadList.SelectedValue.ToString() == "hh_household_member"
+                || cboDownloadList.SelectedValue.ToString() == "hh_household_home_visit_v_2" || cboDownloadList.SelectedValue.ToString() == "hh_household_home_visit_member_v_2" ? true : false;
         }
     }
 }

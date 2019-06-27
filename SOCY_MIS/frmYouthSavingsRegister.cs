@@ -178,6 +178,8 @@ namespace SOCY_MIS
             cboParish.AutoCompleteSource = AutoCompleteSource.ListItems;
 
             #endregion Load Parishes
+
+            returnHHMemberCodes();
         }
 
         protected void returnHHMemberCodes()
@@ -243,7 +245,7 @@ namespace SOCY_MIS
             bool isValidInput = false;
             if (cboIP.SelectedValue.ToString() == "-1" || cboCso.SelectedValue.ToString() == "-1" || cboDistrict.SelectedValue.ToString() == "-1" || cboSubCounty.SelectedValue.ToString() == "-1"
                 || cboParish.SelectedValue.ToString() == "-1" || txtVillage.Text == string.Empty || cboMonth.Text == string.Empty || cboYear.Text == string.Empty
-                || txtYouthgroup_name.Text == string.Empty || txtchairperson_name.Text == string.Empty || txtPhone.Text == string.Empty)
+                || txtYouthgroup_name.Text == string.Empty || txtchairperson_name.Text == string.Empty)
             {
                 isValidInput = false;
             }
@@ -269,7 +271,7 @@ namespace SOCY_MIS
             benYouthSavingsRegister.ygrp_name = txtYouthgroup_name.Text;
             benYouthSavingsRegister.ygrp_chairperson_name = txtchairperson_name.Text;
             benYouthSavingsRegister.ygrp_chairperson_name_phone = txtPhone.Text;
-            benYouthSavingsRegister.youth_field_assisstant_name = cboTrainerType.Text;
+            benYouthSavingsRegister.youth_field_assisstant_name = txtYFA.Text;
 
             benYouthSavingsRegister.usr_id_create = SystemConstants.user_id;
             benYouthSavingsRegister.usr_id_update = SystemConstants.user_id;
@@ -471,7 +473,7 @@ namespace SOCY_MIS
                 txtYouthgroup_name.Text = dtRow["ygrp_name"].ToString();
                 txtchairperson_name.Text = dtRow["ygrp_chairperson_name"].ToString();
                 txtPhone.Text = dtRow["ygrp_chairperson_name_phone"].ToString();
-                cboTrainerType.Text = dtRow["youth_field_assisstant_name"].ToString();
+                txtYFA.Text = dtRow["youth_field_assisstant_name"].ToString();
                 lblysr_id.Text = benYouthSavingsRegister.ysr_id;
                 tlpDisplay01.Enabled = false;
 
@@ -610,7 +612,7 @@ namespace SOCY_MIS
                 txtYouthgroup_name.Clear();
                 txtchairperson_name.Clear();
                 txtPhone.Clear();
-                cboTrainerType.Text = string.Empty;
+                txtYFA.Clear();
                 lblysr_id.Text = "lblysr_id";
 
                 cboHHMember.SelectedValue = "-1";
@@ -721,7 +723,7 @@ namespace SOCY_MIS
 
         private void cboParish_SelectedIndexChanged(object sender, EventArgs e)
         {
-            returnHHMemberCodes();
+            //returnHHMemberCodes();
         }
 
         private void Back()

@@ -454,17 +454,35 @@ namespace SOCY_MIS
         {
             bool isValid = false;
 
-            if (cbHHMember.SelectedValue.ToString() == "-1" || cbSocialWorker.SelectedValue.ToString() == "-1" || cbHomeVisitReason.SelectedValue.ToString() == "-1" ||
-                dtpDateOfVisit.Checked == false || cbHomeVisitHouseholdStatus.SelectedValue.ToString() == "-1" || (!rbtnRiskAssYes.Checked & !rbtnRiskAssNo.Checked & !rbtnRiskAssNA.Checked) ||
-                (!rbtnOldReferalYes.Checked & !rbtnOldReferalNo.Checked & !rbtnOldReferalNA.Checked) || (!rbtnReferalMadeYes.Checked & !rbtnReferalMadeNo.Checked & !rbtnReferalMadeNA.Checked) ||
-                (!rbtnHipYes.Checked & !rbtnHipNo.Checked) || cbHomeVisitor.SelectedValue.ToString() == "-1" || !dtpNextVisitDate.Checked)
+            if (cbHomeVisitHouseholdStatus.SelectedValue.ToString() != "1" && cbHomeVisitHouseholdStatus.SelectedValue.ToString() != "2")
             {
-                isValid = false;
+                if ((cbHHMember.SelectedValue.ToString() == "-1" && (cbHomeVisitHouseholdStatus.SelectedValue.ToString() == "1" || cbHomeVisitHouseholdStatus.SelectedValue.ToString() == "2")) || cbSocialWorker.SelectedValue.ToString() == "-1" || cbHomeVisitReason.SelectedValue.ToString() == "-1" ||
+               dtpDateOfVisit.Checked == false || cbHomeVisitHouseholdStatus.SelectedValue.ToString() == "-1" || cbHomeVisitor.SelectedValue.ToString() == "-1" || !dtpNextVisitDate.Checked)
+
+                {
+                    isValid = false;
+                }
+                else
+                {
+                    isValid = true;
+                }
             }
             else
             {
-                isValid = true;
+                if ((cbHHMember.SelectedValue.ToString() == "-1" && (cbHomeVisitHouseholdStatus.SelectedValue.ToString() == "1" || cbHomeVisitHouseholdStatus.SelectedValue.ToString() == "2")) || cbSocialWorker.SelectedValue.ToString() == "-1" || cbHomeVisitReason.SelectedValue.ToString() == "-1" ||
+               dtpDateOfVisit.Checked == false || cbHomeVisitHouseholdStatus.SelectedValue.ToString() == "-1" || (!rbtnRiskAssYes.Checked & !rbtnRiskAssNo.Checked & !rbtnRiskAssNA.Checked) ||
+               (!rbtnOldReferalYes.Checked & !rbtnOldReferalNo.Checked & !rbtnOldReferalNA.Checked) || (!rbtnReferalMadeYes.Checked & !rbtnReferalMadeNo.Checked & !rbtnReferalMadeNA.Checked) ||
+               (!rbtnHipYes.Checked & !rbtnHipNo.Checked) || cbHomeVisitor.SelectedValue.ToString() == "-1" || !dtpNextVisitDate.Checked)
+                {
+                    isValid = false;
+                }
+                else
+                {
+                    isValid = true;
+                }
             }
+
+               
 
             return isValid;
         }
@@ -536,6 +554,46 @@ namespace SOCY_MIS
         private void llblBackTop_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Back();
+        }
+
+        private void cbHomeVisitHouseholdStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbHomeVisitHouseholdStatus.SelectedValue.ToString() != "1" && cbHomeVisitHouseholdStatus.SelectedValue.ToString() != "2" && cbHomeVisitHouseholdStatus.SelectedValue.ToString() != "-1") 
+            {
+                cbHHMember.SelectedValue = "-1";
+                cbHHMember.Enabled = false;
+
+                TblDisplay01.Enabled = false;
+                rbtnRiskAssYes.Checked = false;
+                rbtnRiskAssNo.Checked = false;
+                rbtnRiskAssNA.Checked = false;
+                rbtnOldReferalYes.Checked = false;
+                rbtnOldReferalNo.Checked = false;
+                rbtnOldReferalNA.Checked = false;
+                rbtnReferalMadeYes.Checked = false;
+                rbtnReferalMadeNo.Checked = false;
+                rbtnReferalMadeNA.Checked = false;
+                rbtnHipYes.Checked = false;
+                rbtnHipNo.Checked = false;
+                
+            }
+            else
+            {
+                cbHHMember.Enabled = true;
+
+                TblDisplay01.Enabled = true;
+                rbtnRiskAssYes.Checked = false;
+                rbtnRiskAssNo.Checked = false;
+                rbtnRiskAssNA.Checked = false;
+                rbtnOldReferalYes.Checked = false;
+                rbtnOldReferalNo.Checked = false;
+                rbtnOldReferalNA.Checked = false;
+                rbtnReferalMadeYes.Checked = false;
+                rbtnReferalMadeNo.Checked = false;
+                rbtnReferalMadeNA.Checked = false;
+                rbtnHipYes.Checked = false;
+                rbtnHipNo.Checked = false;
+            }
         }
     } 
 }

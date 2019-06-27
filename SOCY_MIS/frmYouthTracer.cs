@@ -336,9 +336,12 @@ namespace SOCY_MIS
 
             if (cboprt.SelectedValue.ToString() == "-1" || cboCso.SelectedValue.ToString() == "-1" || cboDistrict.SelectedValue.ToString() == "-1" || cboSubCounty.SelectedValue.ToString() == "-1" ||
                 cboParish.SelectedValue.ToString() == "-1" || dtDate.Checked == false || cboHHCode.SelectedValue.ToString() == "-1" || cboHHMemberName.SelectedValue.ToString() == "-1" || txtYFOName.Text == string.Empty ||
-                cboTrainingReceived.Text == "select one" || (cboTrainingReceived.Text == "Others (Specify)" && txtTrainingOther.Text == string.Empty) || cboEmploymentstatus.Text == "select one" || cboMarketAvailable.Text == "select one"
-                || cboAverageIncome.Text == "select one" || ((cboEmploymentstatus.Text == "Employed (formal sector)" || cboEmploymentstatus.Text == "Employed (informal sector") && (txtEmployed_bussiness.Text == string.Empty || txtEmploymentSearchperiod.Text == string.Empty))
+                cboTrainingReceived.Text == "select one" || (cboTrainingReceived.Text == "Others (Specify)" && txtTrainingOther.Text == string.Empty) || cboEmploymentstatus.Text == "select one" || (cboEmploymentstatus.Text != "Unemployed (go to section III)" && cboMarketAvailable.Text == "select one")
+
+                || (cboEmploymentstatus.Text != "Unemployed (go to section III)" && cboAverageIncome.Text == "select one") || ((cboEmploymentstatus.Text == "Employed (formal sector)" || cboEmploymentstatus.Text == "Employed (informal sector") && (txtEmployed_bussiness.Text == string.Empty || txtEmploymentSearchperiod.Text == string.Empty))
+
                 || ((cboEmploymentstatus.Text == "Self-Employed") && (txtSelf_bussiness_sector.Text == string.Empty || (chkFamilySavings.Checked == false && chkGovernment.Checked == false && chkLoan.Checked == false && chkPersonalSavings.Checked == false && chkSponsor.Checked == false)
+
                 || txt_startup_amt.Value == 0 || cbo_bussiness_help_source.Text == "select one" || txt_business_setup_duration.Text == string.Empty || cboOccupation.Text == "select one")) || cboEmploymentstatus.Text == "Unemployed (go to section III)"
                 && (cboUnemployReason.Text == "select one" || (cboEmploymentstatus.Text == "other (Specify)" && txt_unemployReasonOther.Text == string.Empty) || (yn_recommend_programmeYes.Checked == false && yn_recommend_programmeNo.Checked == false) ||
                 (cboEmploymentstatus.Text != "Unemployed (go to section III)" && (rdn_using_acquired_skillsYes.Checked == false && rdn_using_acquired_skillsNo.Checked == false))))
@@ -430,8 +433,24 @@ namespace SOCY_MIS
             if (cboEmploymentstatus.Text != "Unemployed (go to section III)" && cboEmploymentstatus.Text != "select one")
             {
                 lblUseAcquiredSkills.ForeColor = Color.Red;
+                panel1Employment.Enabled = true;
+                txt_rdn_using_acquired_skillsNoReason.Enabled = true;
+                cboMarketAvailable.Enabled = true;
+                cboAverageIncome.Enabled = true;
+                cboMarketAvailable.Text = "select one";
+                cboAverageIncome.Text = "select one";
+
             }
-            else { lblUseAcquiredSkills.ForeColor = Color.Black; }
+            else
+            {
+                lblUseAcquiredSkills.ForeColor = Color.Black;
+                panel1Employment.Enabled = false;
+                txt_rdn_using_acquired_skillsNoReason.Enabled = false;
+                cboMarketAvailable.Enabled = false;
+                cboAverageIncome.Enabled = false;
+                cboMarketAvailable.Text = "select one";
+                cboAverageIncome.Text = "select one";
+            }
         }
 
         #region LoadDisplay

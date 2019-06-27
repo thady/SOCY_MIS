@@ -211,15 +211,15 @@ namespace SOCY_MIS
             hh_household_improvement_plan.yn_knows_status_of_children_action = txtyn_knows_status_of_children_action.Text;
             hh_household_improvement_plan.yn_knows_status_of_children_out_come = txtyn_knows_status_of_children_out_come.Text;
             hh_household_improvement_plan.yn_knows_status_of_children_followup_date = dtyn_knows_status_of_children_followup_date.Checked == true ? dtyn_knows_status_of_children_followup_date.Value.Date.ToShortDateString() : string.Empty;
-            hh_household_improvement_plan.yn_positive_enrolled_on_art = utilControls.RadioButtonGetSelection(rbtn_yn_positive_enrolled_on_art_Yes, rbtn_yn_positive_enrolled_on_art_No);
+            hh_household_improvement_plan.yn_positive_enrolled_on_art = utilControls.RadioButtonGetSelection(rbtn_yn_positive_enrolled_on_art_Yes, rbtn_yn_positive_enrolled_on_art_No, rbtn_yn_positive_enrolled_on_art_NA);
             hh_household_improvement_plan.yn_positive_enrolled_on_art_out_come = txtyn_positive_enrolled_on_art_out_come.Text;
             hh_household_improvement_plan.yn_positive_enrolled_on_art_action = txtyn_positive_enrolled_on_art_action.Text;
             hh_household_improvement_plan.yn_positive_enrolled_on_art_followup_date = dtyn_positive_enrolled_on_art_followup_date.Checked ? dtyn_positive_enrolled_on_art_followup_date.Value.Date.ToShortDateString() : string.Empty;
-            hh_household_improvement_plan.yn_positive_supressing = utilControls.RadioButtonGetSelection(rbtn_yn_positive_supressing_Yes, rbtn_yn_positive_supressing_No);
+            hh_household_improvement_plan.yn_positive_supressing = utilControls.RadioButtonGetSelection(rbtn_yn_positive_supressing_Yes, rbtn_yn_positive_supressing_No, rbtn_yn_positive_supressing_NA);
             hh_household_improvement_plan.yn_positive_supressing_action = txtyn_positive_supressing_action.Text;
             hh_household_improvement_plan.yn_positive_supressing_out_come = txtyn_positive_supressing_out_come.Text;
             hh_household_improvement_plan.yn_positive_supressing_followup_date = dtyn_positive_supressing_followup_date.Checked ? dtyn_positive_supressing_followup_date.Value.Date.ToShortDateString() : string.Empty;
-            hh_household_improvement_plan.yn_positive_adhering = utilControls.RadioButtonGetSelection(rbtn_yn_positive_adhering_Yes, rbtn_yn_positive_adhering_No);
+            hh_household_improvement_plan.yn_positive_adhering = utilControls.RadioButtonGetSelection(rbtn_yn_positive_adhering_Yes, rbtn_yn_positive_adhering_No, rbtn_yn_positive_adhering_NA);
             hh_household_improvement_plan.yn_positive_adhering_action = txtyn_positive_adhering_action.Text;
             hh_household_improvement_plan.yn_positive_adhering_out_come = txtyn_positive_adhering_out_come.Text;
             hh_household_improvement_plan.yn_positive_adhering_followup_date = dtyn_positive_adhering_followup_date.Checked ? dtyn_positive_adhering_followup_date.Value.Date.ToShortDateString() : string.Empty;
@@ -227,7 +227,7 @@ namespace SOCY_MIS
             hh_household_improvement_plan.yn_adolescent_hiv_prevention_action = txtyn_adolescent_hiv_prevention_action.Text;
             hh_household_improvement_plan.yn_adolescent_hiv_prevention_out_come = txtyn_adolescent_hiv_prevention_out_come.Text;
             hh_household_improvement_plan.yn_adolescent_hiv_prevention_followup_date = dtyn_adolescent_hiv_prevention_followup_date.Checked ? dtyn_adolescent_hiv_prevention_followup_date.Value.Date.ToShortDateString() : string.Empty;
-            hh_household_improvement_plan.yn_child_undernourished = utilControls.RadioButtonGetSelection(rbtn_yn_child_undernourished_Yes, rbtn_yn_child_undernourished_No);
+            hh_household_improvement_plan.yn_child_undernourished = utilControls.RadioButtonGetSelection(rbtn_yn_child_undernourished_Yes, rbtn_yn_child_undernourished_No, rbtn_yn_child_undernourished_NA);
             hh_household_improvement_plan.yn_child_undernourished_action = txtyn_child_undernourished_action.Text;
             hh_household_improvement_plan.yn_child_undernourished_out_come = txtyn_child_undernourished_out_come.Text;
             hh_household_improvement_plan.yn_child_undernourished_followup_date = dtyn_child_undernourished_followup_date.Checked ? dtyn_child_undernourished_followup_date.Value.Date.ToShortDateString() : string.Empty;
@@ -263,7 +263,7 @@ namespace SOCY_MIS
             hh_household_improvement_plan.yn_ovc_regularly_attend_school_action = txtyn_ovc_regularly_attend_school_action.Text;
             hh_household_improvement_plan.yn_ovc_regularly_attend_school_followup_date = dtyn_ovc_regularly_attend_school_followup_date.Checked ? dtyn_ovc_regularly_attend_school_followup_date.Value.Date.ToShortDateString() : string.Empty;
             hh_household_improvement_plan.yn_ovc_regularly_attend_school_out_come = txtyn_ovc_regularly_attend_school_out_come.Text;
-            hh_household_improvement_plan.yn_attained_tech_skill = utilControls.RadioButtonGetSelection(rbtn_yn_attained_tech_skill_Yes, rbtn_yn_attained_tech_skill_No);
+            hh_household_improvement_plan.yn_attained_tech_skill = utilControls.RadioButtonGetSelection(rbtn_yn_attained_tech_skill_Yes, rbtn_yn_attained_tech_skill_No, rbtn_yn_attained_tech_skill_NA);
             hh_household_improvement_plan.yn_attained_tech_skill_action_plan = txtyn_attained_tech_skill_action_plan.Text;
             hh_household_improvement_plan.yn_attained_tech_skill_followup_date = dtyn_attained_tech_skill_followup_date.Checked ? dtyn_attained_tech_skill_followup_date.Value.Date.ToShortDateString() : string.Empty;
             hh_household_improvement_plan.yn_attained_tech_skill_out_come = txtyn_attained_tech_skill_out_come.Text;
@@ -324,17 +324,17 @@ namespace SOCY_MIS
                 txtyn_knows_status_of_children_out_come.Text = dtRow["yn_knows_status_of_children_out_come"].ToString();
                 dtyn_knows_status_of_children_followup_date.Value = dtRow["yn_knows_status_of_children_followup_date"].ToString() != string.Empty ? Convert.ToDateTime(dtRow["yn_knows_status_of_children_followup_date"].ToString()): DateTime.Today;
                 dtyn_knows_status_of_children_followup_date.Checked = dtRow["yn_knows_status_of_children_followup_date"].ToString() != string.Empty ? true : false;
-                utilControls.RadioButtonSetSelection(rbtn_yn_positive_enrolled_on_art_Yes, rbtn_yn_positive_enrolled_on_art_No, dtRow["yn_positive_enrolled_on_art"].ToString());
+                utilControls.RadioButtonSetSelection(rbtn_yn_positive_enrolled_on_art_Yes, rbtn_yn_positive_enrolled_on_art_No, rbtn_yn_positive_enrolled_on_art_NA, dtRow["yn_positive_enrolled_on_art"].ToString());
                 txtyn_positive_enrolled_on_art_out_come.Text = dtRow["yn_positive_enrolled_on_art_out_come"].ToString();
                 hh_household_improvement_plan.yn_positive_enrolled_on_art_action = txtyn_positive_enrolled_on_art_action.Text = dtRow["yn_positive_enrolled_on_art_action"].ToString();
                 dtyn_positive_enrolled_on_art_followup_date.Value = dtRow["yn_positive_enrolled_on_art_followup_date"].ToString() != string.Empty ? Convert.ToDateTime(dtRow["yn_positive_enrolled_on_art_followup_date"].ToString()) : DateTime.Today;
                 dtyn_positive_enrolled_on_art_followup_date.Checked = dtRow["yn_positive_enrolled_on_art_followup_date"].ToString() != string.Empty ? true : false;
-                utilControls.RadioButtonSetSelection(rbtn_yn_positive_supressing_Yes, rbtn_yn_positive_supressing_No, dtRow["yn_positive_supressing"].ToString());
+                utilControls.RadioButtonSetSelection(rbtn_yn_positive_supressing_Yes, rbtn_yn_positive_supressing_No, rbtn_yn_positive_supressing_NA, dtRow["yn_positive_supressing"].ToString());
                 txtyn_positive_supressing_action.Text = dtRow["yn_positive_supressing_action"].ToString();
                 txtyn_positive_supressing_out_come.Text = dtRow["yn_positive_supressing_out_come"].ToString();
                 dtyn_positive_supressing_followup_date.Value = dtRow["yn_positive_supressing_followup_date"].ToString() != string.Empty ? Convert.ToDateTime(dtRow["yn_positive_supressing_followup_date"].ToString()) : DateTime.Today;
                 dtyn_positive_supressing_followup_date.Checked = dtRow["yn_positive_supressing_followup_date"].ToString() != string.Empty ? true : false;
-                utilControls.RadioButtonSetSelection(rbtn_yn_positive_adhering_Yes, rbtn_yn_positive_adhering_No, dtRow["yn_positive_adhering"].ToString());
+                utilControls.RadioButtonSetSelection(rbtn_yn_positive_adhering_Yes, rbtn_yn_positive_adhering_No, rbtn_yn_positive_adhering_NA, dtRow["yn_positive_adhering"].ToString());
                 txtyn_positive_adhering_action.Text = dtRow["yn_positive_adhering_action"].ToString();
                 txtyn_positive_adhering_out_come.Text = dtRow["yn_positive_adhering_out_come"].ToString();
                 dtyn_positive_adhering_followup_date.Value = dtRow["yn_positive_adhering_followup_date"].ToString() != string.Empty ? Convert.ToDateTime(dtRow["yn_positive_adhering_followup_date"].ToString()) : DateTime.Today;
@@ -344,7 +344,7 @@ namespace SOCY_MIS
                 txtyn_adolescent_hiv_prevention_out_come.Text = dtRow["yn_adolescent_hiv_prevention_out_come"].ToString();
                 dtyn_adolescent_hiv_prevention_followup_date.Value = dtRow["yn_adolescent_hiv_prevention_followup_date"].ToString() != string.Empty ? Convert.ToDateTime(dtRow["yn_adolescent_hiv_prevention_followup_date"].ToString()) : DateTime.Today;
                 dtyn_adolescent_hiv_prevention_followup_date.Checked = dtRow["yn_adolescent_hiv_prevention_followup_date"].ToString() != string.Empty ? true : false;
-                utilControls.RadioButtonSetSelection(rbtn_yn_child_undernourished_Yes, rbtn_yn_child_undernourished_No, dtRow["yn_child_undernourished"].ToString());
+                utilControls.RadioButtonSetSelection(rbtn_yn_child_undernourished_Yes, rbtn_yn_child_undernourished_No, rbtn_yn_child_undernourished_NA, dtRow["yn_child_undernourished"].ToString());
                 txtyn_child_undernourished_action.Text = dtRow["yn_child_undernourished_action"].ToString();
                 txtyn_child_undernourished_out_come.Text = dtRow["yn_child_undernourished_out_come"].ToString();
                 dtyn_child_undernourished_followup_date.Value = dtRow["yn_child_undernourished_followup_date"].ToString() != string.Empty ? Convert.ToDateTime(dtRow["yn_child_undernourished_followup_date"].ToString()) : DateTime.Today;
@@ -389,7 +389,7 @@ namespace SOCY_MIS
                 dtyn_ovc_regularly_attend_school_followup_date.Value = dtRow["yn_ovc_regularly_attend_school_followup_date"].ToString() != string.Empty ? Convert.ToDateTime(dtRow["yn_ovc_regularly_attend_school_followup_date"].ToString()) : DateTime.Today;
                 dtyn_ovc_regularly_attend_school_followup_date.Checked = dtRow["yn_ovc_regularly_attend_school_followup_date"].ToString() != string.Empty ? true : false;
                 txtyn_ovc_regularly_attend_school_out_come.Text = dtRow["yn_ovc_regularly_attend_school_out_come"].ToString();
-                utilControls.RadioButtonSetSelection(rbtn_yn_attained_tech_skill_Yes, rbtn_yn_attained_tech_skill_No, dtRow["yn_attained_tech_skill"].ToString());
+                utilControls.RadioButtonSetSelection(rbtn_yn_attained_tech_skill_Yes, rbtn_yn_attained_tech_skill_No, rbtn_yn_attained_tech_skill_NA, dtRow["yn_attained_tech_skill"].ToString());
                 hh_household_improvement_plan.yn_attained_tech_skill_action_plan = txtyn_attained_tech_skill_action_plan.Text = dtRow["yn_attained_tech_skill_action_plan"].ToString();
                 dtyn_attained_tech_skill_followup_date.Value = dtRow["yn_attained_tech_skill_followup_date"].ToString() != string.Empty ? Convert.ToDateTime(dtRow["yn_attained_tech_skill_followup_date"].ToString()) : DateTime.Today;
                 dtyn_attained_tech_skill_followup_date.Checked = dtRow["yn_attained_tech_skill_followup_date"].ToString() != string.Empty ? true : false;
@@ -418,11 +418,11 @@ namespace SOCY_MIS
             {
                 isValid = false;
             }
-            else if (!rbtn_yn_positive_enrolled_on_art_Yes.Checked &(txtyn_positive_enrolled_on_art_action.Text == string.Empty || !dtyn_positive_enrolled_on_art_followup_date.Checked)) { isValid = false; }
-            else if (!rbtn_yn_positive_supressing_Yes.Checked &(txtyn_positive_supressing_action.Text == string.Empty || !dtyn_positive_supressing_followup_date.Checked)) { isValid = false; }
-            else if (!rbtn_yn_positive_adhering_Yes.Checked &(txtyn_positive_adhering_action.Text == string.Empty || !dtyn_positive_adhering_followup_date.Checked)) { isValid = false; }
-            else if (!rbtn_yn_adolescent_hiv_prevention_Yes.Checked &(txtyn_adolescent_hiv_prevention_action.Text == string.Empty || !dtyn_adolescent_hiv_prevention_followup_date.Checked)) { isValid = false; }
-            else if (!rbtn_yn_child_undernourished_Yes.Checked &(txtyn_child_undernourished_action.Text == string.Empty || !dtyn_child_undernourished_followup_date.Checked)) { isValid = false; }
+            else if (!rbtn_yn_positive_enrolled_on_art_Yes.Checked & !rbtn_yn_positive_enrolled_on_art_NA.Checked & (txtyn_positive_enrolled_on_art_action.Text == string.Empty || !dtyn_positive_enrolled_on_art_followup_date.Checked)) { isValid = false; }
+            else if (!rbtn_yn_positive_supressing_Yes.Checked & !rbtn_yn_positive_supressing_NA.Checked & (txtyn_positive_supressing_action.Text == string.Empty || !dtyn_positive_supressing_followup_date.Checked)) { isValid = false; }
+            else if (!rbtn_yn_positive_adhering_Yes.Checked & !rbtn_yn_positive_adhering_NA.Checked & (txtyn_positive_adhering_action.Text == string.Empty || !dtyn_positive_adhering_followup_date.Checked)) { isValid = false; }
+            else if (!rbtn_yn_adolescent_hiv_prevention_Yes.Checked & !rbtn_yn_adolescent_hiv_prevention_NA.Checked & (txtyn_adolescent_hiv_prevention_action.Text == string.Empty || !dtyn_adolescent_hiv_prevention_followup_date.Checked)) { isValid = false; }
+            else if (!rbtn_yn_child_undernourished_Yes.Checked  & !rbtn_yn_child_undernourished_NA.Checked & (txtyn_child_undernourished_action.Text == string.Empty || !dtyn_child_undernourished_followup_date.Checked)) { isValid = false; }
             else if (txtother_health_issues.Text != string.Empty &(txtother_health_issues_action.Text == string.Empty || !dtother_health_issues_action_followup_date.Checked)) { isValid = false; }
             else if (!rbtn_yn_no_violence_Yes.Checked & (txtyn_no_violence_action.Text == string.Empty || !dtyn_no_violence_action_followup_date.Checked)) { isValid = false; }
             else if (!rbtn_yn_stable_care_giver_Yes.Checked & (txtyn_stable_care_giver_action.Text == string.Empty || !dtyn_stable_care_giver_followup_date.Checked)) { isValid = false; }
@@ -430,8 +430,8 @@ namespace SOCY_MIS
             else if (!yn_stable_access_money_Yes.Checked & (txtyn_stable_access_money_action.Text == string.Empty || !dtyn_stable_access_money_followup_date.Checked)) { isValid = false; }
             else if (!rbtn_yn_stable_income_source_Yes.Checked & (txtyn_stable_income_source_action.Text == string.Empty || !dtyn_stable_income_source_followup_date.Checked)) { isValid = false; }
             else if (txtother_hes_issues.Text != string.Empty &(txtother_hes_issues_action.Text == string.Empty || !dtother_hes_issues_followup_date.Checked)) { isValid = false; }
-            else if (!rbtn_yn_ovc_regularly_attend_school_Yes.Checked & (txtyn_ovc_regularly_attend_school_action.Text == string.Empty || !dtyn_ovc_regularly_attend_school_followup_date.Checked)) { isValid = false; }
-            else if (!rbtn_yn_attained_tech_skill_Yes.Checked & (txtyn_attained_tech_skill_action_plan.Text == string.Empty || !dtyn_attained_tech_skill_followup_date.Checked)) { isValid = false; }
+            else if (!rbtn_yn_ovc_regularly_attend_school_Yes.Checked & !rbtn_yn_ovc_regularly_attend_school_NA.Checked & (txtyn_ovc_regularly_attend_school_action.Text == string.Empty || !dtyn_ovc_regularly_attend_school_followup_date.Checked)) { isValid = false; }
+            else if (!rbtn_yn_attained_tech_skill_Yes.Checked & !rbtn_yn_attained_tech_skill_NA.Checked & (txtyn_attained_tech_skill_action_plan.Text == string.Empty || !dtyn_attained_tech_skill_followup_date.Checked)) { isValid = false; }
             else if (txtother_edu_issues.Text != string.Empty & (txtother_edu_issues_action.Text == string.Empty || !dtother_edu_issues_followup_date.Checked)) { isValid = false; }
             else if (cboSocialWorker.SelectedValue.ToString() == "-1" || txtSupervisor.Text == string.Empty || cboQuarter.SelectedValue.ToString() == "-1" || !dtInitialHip.Checked || cbovisitReason.Text == string.Empty || !dtTimeVisistDate.Checked || cboCaregiver.SelectedValue.ToString() == "-1") { isValid = false; }
             else if (chkOutCome.Checked & !dtOutComeDate.Checked) { isValid = false; }
@@ -457,7 +457,7 @@ namespace SOCY_MIS
 
         private void rbtn_yn_positive_enrolled_on_art_Yes_CheckedChanged(object sender, EventArgs e)
         {
-            if (!rbtn_yn_positive_enrolled_on_art_Yes.Checked == true)
+            if (!rbtn_yn_positive_enrolled_on_art_Yes.Checked == true & !rbtn_yn_positive_enrolled_on_art_NA.Checked == true)
             {
                 lblART.ForeColor = Color.Red;
             }
@@ -467,7 +467,7 @@ namespace SOCY_MIS
 
         private void rbtn_yn_positive_supressing_Yes_CheckedChanged(object sender, EventArgs e)
         {
-            if (!rbtn_yn_positive_supressing_Yes.Checked)
+            if (!rbtn_yn_positive_supressing_Yes.Checked & !rbtn_yn_positive_supressing_NA.Checked)
             {
                 lblsupress.ForeColor = Color.Red;
             }
@@ -487,7 +487,7 @@ namespace SOCY_MIS
 
         private void rbtn_yn_positive_adhering_Yes_CheckedChanged(object sender, EventArgs e)
         {
-            if (!rbtn_yn_positive_adhering_Yes.Checked)
+            if (!rbtn_yn_positive_adhering_Yes.Checked & !rbtn_yn_positive_adhering_NA.Checked)
             {
                 lblAdhering.ForeColor = Color.Red;
             }
@@ -524,7 +524,7 @@ namespace SOCY_MIS
 
         private void rbtn_yn_child_undernourished_Yes_Click(object sender, EventArgs e)
         {
-            if (!rbtn_yn_child_undernourished_Yes.Checked)
+            if (!rbtn_yn_child_undernourished_Yes.Checked & !rbtn_yn_child_undernourished_NA.Checked)
             {
                 lblUndernourished.ForeColor = Color.Red;
             }
@@ -640,7 +640,7 @@ namespace SOCY_MIS
 
         private void rbtn_yn_attained_tech_skill_Yes_CheckedChanged(object sender, EventArgs e)
         {
-            if (!rbtn_yn_attained_tech_skill_Yes.Checked) { lblTechnicalSkill.ForeColor = Color.Red; }
+            if (!rbtn_yn_attained_tech_skill_Yes.Checked & !rbtn_yn_attained_tech_skill_NA.Checked) { lblTechnicalSkill.ForeColor = Color.Red; }
             else
                 lblTechnicalSkill.ForeColor = Color.Black;
         }
@@ -846,6 +846,41 @@ namespace SOCY_MIS
         {
             if (hh_household_improvement_plan.hip_id == string.Empty) { chkOutCome.Visible = false; chkOutCome_CheckedChanged(chkOutCome, null); }
             else { chkOutCome.Visible = true;chkOutCome_CheckedChanged(chkOutCome, null);  }
+        }
+
+        private void rbtn_yn_attained_tech_skill_NA_CheckedChanged(object sender, EventArgs e)
+        {
+            rbtn_yn_attained_tech_skill_Yes_CheckedChanged(rbtn_yn_attained_tech_skill_Yes, null);
+        }
+
+        private void rbtn_yn_child_undernourished_NA_CheckedChanged(object sender, EventArgs e)
+        {
+            rbtn_yn_child_undernourished_Yes_Click(rbtn_yn_child_undernourished_Yes, null);
+        }
+
+        private void tableLayoutPanel34_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void rbtn_yn_stable_income_source_No_CheckedChanged(object sender, EventArgs e)
+        {
+            rbtn_yn_stable_income_source_Yes_CheckedChanged(rbtn_yn_stable_income_source_Yes,null);
+        }
+
+        private void rbtn_yn_positive_enrolled_on_art_NA_CheckedChanged(object sender, EventArgs e)
+        {
+            rbtn_yn_positive_enrolled_on_art_Yes_CheckedChanged(rbtn_yn_positive_enrolled_on_art_Yes, null);
+        }
+
+        private void rbtn_yn_positive_supressing_NA_CheckedChanged(object sender, EventArgs e)
+        {
+            rbtn_yn_positive_supressing_Yes_CheckedChanged(rbtn_yn_positive_supressing_Yes, null);
+        }
+
+        private void rbtn_yn_positive_adhering_NA_CheckedChanged(object sender, EventArgs e)
+        {
+            rbtn_yn_positive_adhering_Yes_CheckedChanged(rbtn_yn_positive_adhering_Yes, null);
         }
     }
 }

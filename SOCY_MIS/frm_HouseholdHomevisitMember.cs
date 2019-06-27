@@ -309,7 +309,7 @@ namespace SOCY_MIS
                 rbtnAggroNA.Checked = false;
 
                 pnlCottage.Enabled = true;
-                pnlCottage.Enabled = true;
+                pnlAggro.Enabled = true;
                 rbtnCottageNA.Enabled = false;
                 rbtnAggroNA.Enabled = false;
             }
@@ -410,7 +410,7 @@ namespace SOCY_MIS
             #endregion Schooled
 
             #region Healthy
-            if (Age > 17)
+            if (Age < 17 & cboHivstatus.SelectedValue.ToString() != "1")
             {
                 rbtnHIVLiteracyYes.Checked = false;
                 rbtnHIVLiteracyNo.Checked = false;
@@ -418,7 +418,7 @@ namespace SOCY_MIS
 
                 pnlHIVLiteracy.Enabled = false;
             }
-            else
+            else if(Age < 17 & cboHivstatus.SelectedValue.ToString() == "1")
             {
                 rbtnHIVLiteracyYes.Checked = false;
                 rbtnHIVLiteracyNo.Checked = false;
@@ -427,6 +427,33 @@ namespace SOCY_MIS
                 pnlHIVLiteracy.Enabled = true;
                 rbtnHIVLiteracyNA.Enabled = false;
             }
+            else
+            {
+                rbtnHIVLiteracyYes.Checked = false;
+                rbtnHIVLiteracyNo.Checked = false;
+                rbtnHIVLiteracyNA.Checked = true;
+
+                pnlHIVLiteracy.Enabled = false;
+            }
+
+            if (cboHivstatus.SelectedValue.ToString() != "1")
+            {
+                rbtnAdherencesupportYes.Checked = false;
+                rbtnAdherencesupportNo.Checked = false;
+                rbtnAdherencesupportNA.Checked = true;
+
+                pnlAherencesupport.Enabled = false;
+            }
+            else
+            {
+                rbtnAdherencesupportYes.Checked = false;
+                rbtnAdherencesupportNo.Checked = false;
+                rbtnAdherencesupportNA.Checked = false;
+
+                pnlAherencesupport.Enabled = true;
+                rbtnAdherencesupportNA.Enabled = false;
+            }
+
 
             if (Age < 10 || Age > 17)
             {
@@ -703,7 +730,7 @@ namespace SOCY_MIS
             hhHouseholdHomeVisit_v2.yn_id_hhm_active = utilControls.RadioButtonGetSelection(rbtnMemberActiveYes, rbtnMemberActiveNo);
             hhHouseholdHomeVisit_v2.ynna_stb_id_SILC = utilControls.RadioButtonGetSelection(rbtnESSilcYes, rbtnESSilcNo, rbtnESSilcNA);
             hhHouseholdHomeVisit_v2.ynna_stb_id_other_saving_grp = utilControls.RadioButtonGetSelection(rbtnLendingGroupYes, rbtnLendingGroupNo, rbtnLendingGroupNA);
-            hhHouseholdHomeVisit_v2.ynna_stb_caregiver_services = utilControls.RadioButtonGetSelection(rbtnCaregiverGroupYes, rbtnCaregiverGroupNo, rbtnCaregiverGroupNA);
+            hhHouseholdHomeVisit_v2.ynna_stb_caregiver_services = string.Empty;
             hhHouseholdHomeVisit_v2.ynna_stb_contributes_edu_fund = utilControls.RadioButtonGetSelection(rbtnEdufundYes, rbtnEdufundNo, rbtnEdufundNA);
             hhHouseholdHomeVisit_v2.ynna_stb_SAGE = utilControls.RadioButtonGetSelection(rbtnSAGEYes, rbtnSAGENo, rbtnSAGENA);
             hhHouseholdHomeVisit_v2.yn_stb_receive_social_grant = utilControls.RadioButtonGetSelection(rbtnFoodBankYes, rbtnFoodBankNo);
@@ -1594,6 +1621,26 @@ namespace SOCY_MIS
                 pnlInnitiateARTReferal.Enabled = true;
                 pnlCompleteARTReferal.Enabled = true;
             }
+
+            if (cboHivstatus.SelectedValue.ToString() != "1")
+            {
+                rbtnAdherencesupportYes.Checked = false;
+                rbtnAdherencesupportNo.Checked = false;
+                rbtnAdherencesupportNA.Checked = true;
+
+                pnlAherencesupport.Enabled = false;
+            }
+            else
+            {
+                rbtnAdherencesupportYes.Checked = false;
+                rbtnAdherencesupportNo.Checked = false;
+                rbtnAdherencesupportNA.Checked = false;
+
+                pnlAherencesupport.Enabled = true;
+                rbtnAdherencesupportNA.Enabled = false;
+            }
+
+            //SetServicesByAgeGroup(Age);
         }
 
         private void Back()
@@ -1609,6 +1656,206 @@ namespace SOCY_MIS
         private void llblBackBottom_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Back();
+        }
+
+        private void rbtnHstRefferalInitiateYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnHstRefferalInitiateYes.Checked == true)
+            {
+                pnlHTSCompleteReferal.Enabled = true;
+                
+            }
+            else
+            {
+                pnlHTSCompleteReferal.Enabled = false;
+                rbtnCompletedHtsRefferalYes.Checked = false;
+                rbtnCompletedHtsRefferalNo.Checked = false;
+            }
+        }
+
+        private void rbtnHstRefferalInitiateNo_CheckedChanged(object sender, EventArgs e)
+        {
+            rbtnHstRefferalInitiateYes_CheckedChanged(rbtnHstRefferalInitiateYes, null);
+        }
+
+        private void rbtnInniateARTRefferalYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnInniateARTRefferalYes.Checked)
+            {
+                pnlCompleteARTReferal.Enabled = true;
+            }
+            else
+            {
+                pnlCompleteARTReferal.Enabled = false;
+                rbtnCompleteARTRefferalYes.Checked = false;
+                rbtnCompleteARTRefferalNo.Checked = false;
+            }
+        }
+
+        private void rbtnInniateARTRefferalNo_CheckedChanged(object sender, EventArgs e)
+        {
+            rbtnInniateARTRefferalYes_CheckedChanged(rbtnInniateARTRefferalYes,null);
+        }
+
+        private void rbtninnitiateImmunizaRefferalYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtninnitiateImmunizaRefferalYes.Checked)
+            {
+                panelImmunization.Enabled = true;
+            }
+            else
+            {
+                panelImmunization.Enabled = false;
+
+                rbtnCompleteImmunizaRefferalYes.Checked = false;
+                rbtnCompleteImmunizaRefferalNo.Checked = false;
+                rbtnCompleteImmunizaRefferalNA.Checked = false;
+
+            }
+        }
+
+        private void rbtninnitiateImmunizaRefferalNo_CheckedChanged(object sender, EventArgs e)
+        {
+            rbtninnitiateImmunizaRefferalYes_CheckedChanged(rbtninnitiateImmunizaRefferalYes,null);
+        }
+
+        private void rbtninnitiateImmunizaRefferalNA_CheckedChanged(object sender, EventArgs e)
+        {
+            rbtninnitiateImmunizaRefferalYes_CheckedChanged(rbtninnitiateImmunizaRefferalYes, null);
+        }
+
+        private void rbtnInnitiateTBReferalYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnInnitiateTBReferalYes.Checked)
+            {
+                pnlPerinatalCompleteReferal.Enabled = true;
+            }
+            else
+            {
+                pnlPerinatalCompleteReferal.Enabled = false;
+                rbtnCompletedPMTCTReferalYes.Checked = false;
+                rbtnCompletedPMTCTReferalNo.Checked = false;
+                rbtnCompletedPMTCTReferalNA.Checked = false;
+            }
+        }
+
+        private void rbtnInnitiateTBReferalNo_CheckedChanged(object sender, EventArgs e)
+        {
+            rbtnInnitiateTBReferalYes_CheckedChanged(rbtnInnitiateTBReferalYes, null);
+        }
+
+        private void rbtnInnitiateTBReferalNA_CheckedChanged(object sender, EventArgs e)
+        {
+            rbtnInnitiateTBReferalYes_CheckedChanged(rbtnInnitiateTBReferalYes, null);
+        }
+
+        private void rbtnInnitiatePMTCTReferalYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnInnitiatePMTCTReferalYes.Checked)
+            {
+                pnlPerinatalCompleteReferal.Enabled = true;
+            }
+            else
+            {
+                pnlPerinatalCompleteReferal.Enabled = false;
+
+                rbtnCompletedPMTCTReferalYes.Checked = false;
+                rbtnCompletedPMTCTReferalNo.Checked = false;
+                rbtnCompletedPMTCTReferalNA.Checked = false;
+            }
+        }
+
+        private void rbtnInnitiatePostViolenceReferalYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnInnitiatePostViolenceReferalYes.Checked)
+            {
+                pnlPostViolenceCompletedReferal.Enabled = true;
+            }
+            else
+            {
+                pnlPostViolenceCompletedReferal.Enabled = false;
+
+                rbtnCompletedPostViolenceReferalYes.Checked = false;
+                rbtnCompletedPostViolenceReferalNo.Checked = false;
+                rbtnCompletedPostViolenceReferalNA.Checked = false;
+
+            }
+        }
+
+        private void rbtnInnitiatePostViolenceReferalNo_CheckedChanged(object sender, EventArgs e)
+        {
+            rbtnInnitiatePostViolenceReferalYes_CheckedChanged(rbtnInnitiatePostViolenceReferalYes, null);
+        }
+
+        private void rbtnInnitiatePostViolenceReferalNA_CheckedChanged(object sender, EventArgs e)
+        {
+            rbtnInnitiatePostViolenceReferalYes_CheckedChanged(rbtnInnitiatePostViolenceReferalYes, null);
+        }
+
+        private void rbtnInnitiatePMTCTReferalNo_CheckedChanged(object sender, EventArgs e)
+        {
+            rbtnInnitiatePMTCTReferalYes_CheckedChanged(rbtnInnitiatePMTCTReferalYes, null);
+        }
+
+        private void rbtnInnitiatePMTCTReferalNA_CheckedChanged(object sender, EventArgs e)
+        {
+            rbtnInnitiatePMTCTReferalYes_CheckedChanged(rbtnInnitiatePMTCTReferalYes, null);
+        }
+
+        private void rbtnInniateBirthRegReferalYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnInniateBirthRegReferalYes.Checked)
+            {
+                pnlBirthRegCompleteReferal.Enabled = true;
+            }
+            else
+            {
+                pnlBirthRegCompleteReferal.Enabled = false;
+
+                rbtnCompleteBirthRegReferalYes.Checked = false;
+                rbtnCompleteBirthRegReferalNo.Checked = false;
+                rbtnCompleteBirthRegReferalNA.Checked = false;
+            }
+        }
+
+        private void rbtnInniateBirthRegReferalNo_CheckedChanged(object sender, EventArgs e)
+        {
+            rbtnInniateBirthRegReferalYes_CheckedChanged(rbtnInniateBirthRegReferalYes,null);
+        }
+
+        private void rbtnInniateBirthRegReferalNA_CheckedChanged(object sender, EventArgs e)
+        {
+            rbtnInniateBirthRegReferalYes_CheckedChanged(rbtnInniateBirthRegReferalYes, null);
+        }
+
+        private void rbtnESSilcYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnESSilcYes.Checked)
+            {
+                pnlEduFund.Enabled = true;
+                rbtnEdufundNA.Checked = false;
+                rbtnEdufundNA.Enabled = false;
+                rbtnEdufundYes.Enabled = true;
+                rbtnEdufundNo.Enabled = true;
+            }
+            else
+            {
+                pnlEduFund.Enabled = false;
+                rbtnEdufundNA.Checked = true;
+                rbtnEdufundNA.Enabled = false;
+                rbtnEdufundYes.Enabled = false;
+                rbtnEdufundNo.Enabled = false;
+            }
+        }
+
+        private void rbtnESSilcNo_CheckedChanged(object sender, EventArgs e)
+        {
+            rbtnESSilcYes_CheckedChanged(rbtnESSilcYes, null);
+        }
+
+        private void rbtnESSilcNA_CheckedChanged(object sender, EventArgs e)
+        {
+            rbtnESSilcYes_CheckedChanged(rbtnESSilcYes, null);
         }
     }
 }

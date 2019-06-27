@@ -113,9 +113,8 @@ namespace SOCY_MIS.DataAccessLayer
                                 LEFT JOIN lst_sub_county S ON W.sct_id = S.sct_id
                                 LEFT JOIN lst_district D ON S.dst_id = D.dst_id
                                 WHERE D.dst_id = '{0}'
-                                AND S.sct_id = '{1}'
-                                AND w.wrd_id = '{2}'";
-                        SQL = string.Format(SQL, dst_id, sct_id,wrd_id);
+                                AND S.sct_id = '{1}'";
+                        SQL = string.Format(SQL, dst_id, sct_id);
                         break;
                 }
                 using (conn = new SqlConnection(SQLConnection))

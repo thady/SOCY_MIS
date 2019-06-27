@@ -74,7 +74,7 @@ namespace SOCY_MIS
 
         protected void LoadCriterialList()
         {
-            dt = hhHouseholdRiskAssessment.ReturnCriteriaList();
+            dt = hhHouseholdRiskAssessment.ReturnCriteriaListAdults();
 
             DataRow sctemptyRow = dt.NewRow();
             sctemptyRow["cr_id"] = "-1";
