@@ -164,6 +164,20 @@ namespace SOCY_MIS
             cbo_hhm_03.DisplayMember = "hhm_name";
         }
 
+        protected void LoadHouseholdMembersBenchMark04(string gat_id)
+        {
+            dt = hhgraduation_assessment.LoadHouseholdMembersBenchMark04(HouseholdId, gat_id);
+
+            DataRow emptyRow = dt.NewRow();
+            emptyRow["hhm_id"] = "-1";
+            emptyRow["hhm_name"] = "Select Caregiver";
+            dt.Rows.InsertAt(emptyRow, 0);
+
+            cbo_hhm_04.DataSource = dt;
+            cbo_hhm_04.ValueMember = "hhm_id";
+            cbo_hhm_04.DisplayMember = "hhm_name";
+        }
+
         protected void display_hh_details()
         {
             DataTable dt = hhHousehold_linkages_register.Return_household_details(SystemConstants.hh_record_guid); //reused
@@ -228,6 +242,7 @@ namespace SOCY_MIS
                     LoadHouseholdMembersBenchMark01(hhgraduation_assessment.gat_id);
                     LoadHouseholdMembersBenchMark02(hhgraduation_assessment.gat_id);
                     LoadHouseholdMembersBenchMark03(hhgraduation_assessment.gat_id);
+                    LoadHouseholdMembersBenchMark04(hhgraduation_assessment.gat_id);
                     MessageBox.Show("Success!", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -249,6 +264,7 @@ namespace SOCY_MIS
                     LoadHouseholdMembersBenchMark01(hhgraduation_assessment.gat_id);
                     LoadHouseholdMembersBenchMark02(hhgraduation_assessment.gat_id);
                     LoadHouseholdMembersBenchMark03(hhgraduation_assessment.gat_id);
+                    LoadHouseholdMembersBenchMark04(hhgraduation_assessment.gat_id);
                     MessageBox.Show("Success!", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
@@ -335,6 +351,64 @@ namespace SOCY_MIS
             {
                 MessageBox.Show("Fill in all required values!,save failed", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }  
+        }
+
+
+        protected void saveBenchMark03()
+        {
+            if (lblID03.Text == "lblID03")
+            {
+                hhgraduation_assessment.gat_b_id = Guid.NewGuid().ToString();
+                hhgraduation_assessment.hhm_id = cbo_hhm_03.SelectedValue.ToString();
+                hhgraduation_assessment.yn_hiv_risk_knowledge = utilControls.RadioButtonGetSelection(yn_risks_identifiedYes, yn_risks_identifiedNo);
+                hhgraduation_assessment.yn_hiv_prevention = utilControls.RadioButtonGetSelection(yn_hiv_preventionYes, yn_hiv_preventionNo);
+                hhgraduation_assessment.saveBenchMark03(string.Empty);
+                ValidateBenchMarks();
+                LoadHouseholdMembersBenchMark03(hhgraduation_assessment.gat_id);
+                MessageBox.Show("Success!", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                hhgraduation_assessment.gat_b_id = lblID03.Text;
+                hhgraduation_assessment.hhm_id = cbo_hhm_03.SelectedValue.ToString();
+                hhgraduation_assessment.yn_hiv_risk_knowledge = utilControls.RadioButtonGetSelection(yn_risks_identifiedYes, yn_risks_identifiedNo);
+                hhgraduation_assessment.yn_hiv_prevention = utilControls.RadioButtonGetSelection(yn_hiv_preventionYes, yn_hiv_preventionNo);
+                hhgraduation_assessment.saveBenchMark03(hhgraduation_assessment.gat_b_id);
+                ValidateBenchMarks();
+                LoadHouseholdMembersBenchMark03(hhgraduation_assessment.gat_id);
+                MessageBox.Show("Success!", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+           
+        }
+
+
+        protected void saveBenchMark04()
+        {
+            if (lblID04.Text == "lblID04")
+            {
+                hhgraduation_assessment.gat_b_id = Guid.NewGuid().ToString();
+                hhgraduation_assessment.hhm_id = cbo_hhm_04.SelectedValue.ToString();
+
+                hhgraduation_assessment.yn_muac_normal = utilControls.RadioButtonGetSelection(yn_muac_normalYes, yn_muac_normalNo);
+                hhgraduation_assessment.yn_edema_free = utilControls.RadioButtonGetSelection(yn_edema_freeYes, yn_edema_freeNo);
+                hhgraduation_assessment.saveBenchMark04(string.Empty);
+                ValidateBenchMarks();
+                LoadHouseholdMembersBenchMark04(hhgraduation_assessment.gat_id);
+                MessageBox.Show("Success!", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                hhgraduation_assessment.gat_b_id = lblID04.Text;
+                hhgraduation_assessment.hhm_id = cbo_hhm_04.SelectedValue.ToString();
+
+                hhgraduation_assessment.yn_muac_normal = utilControls.RadioButtonGetSelection(yn_muac_normalYes, yn_muac_normalNo);
+                hhgraduation_assessment.yn_edema_free = utilControls.RadioButtonGetSelection(yn_edema_freeYes, yn_edema_freeNo);
+                hhgraduation_assessment.saveBenchMark04(hhgraduation_assessment.gat_b_id);
+                ValidateBenchMarks();
+                LoadHouseholdMembersBenchMark04(hhgraduation_assessment.gat_id);
+                MessageBox.Show("Success!", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
         #endregion BenchMark01
 
@@ -431,6 +505,16 @@ namespace SOCY_MIS
         private void btnSaveBenchMark02_Click(object sender, EventArgs e)
         {
             saveBenchMark02();
+        }
+
+        private void btnSaveBenchMark03_Click(object sender, EventArgs e)
+        {
+            saveBenchMark03();
+        }
+
+        private void btnSaveBenchMark04_Click(object sender, EventArgs e)
+        {
+            saveBenchMark04();
         }
     }
 }

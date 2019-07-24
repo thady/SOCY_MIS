@@ -255,6 +255,8 @@
             this.lblID = new System.Windows.Forms.Label();
             this.lblID01 = new System.Windows.Forms.Label();
             this.lblID02 = new System.Windows.Forms.Label();
+            this.lblID03 = new System.Windows.Forms.Label();
+            this.lblID04 = new System.Windows.Forms.Label();
             this.tabControl01.SuspendLayout();
             this.tab01.SuspendLayout();
             this.tab02.SuspendLayout();
@@ -380,6 +382,7 @@
             // 
             // tab04
             // 
+            this.tab04.Controls.Add(this.lblID03);
             this.tab04.Controls.Add(this.panelBenchMark03);
             this.tab04.Controls.Add(this.label16);
             this.tab04.Controls.Add(this.label13);
@@ -392,6 +395,7 @@
             // 
             // tab05
             // 
+            this.tab05.Controls.Add(this.lblID04);
             this.tab05.Controls.Add(this.tableLayoutPanel8);
             this.tab05.Controls.Add(this.tableLayoutPanel7);
             this.tab05.Controls.Add(this.label30);
@@ -1583,6 +1587,7 @@
             this.btnSaveBenchMark03.TabIndex = 14;
             this.btnSaveBenchMark03.Text = "Save";
             this.btnSaveBenchMark03.UseVisualStyleBackColor = true;
+            this.btnSaveBenchMark03.Click += new System.EventHandler(this.btnSaveBenchMark03_Click);
             // 
             // btnCancelBenchMark03
             // 
@@ -1838,6 +1843,7 @@
             this.btnSaveBenchMark04.TabIndex = 14;
             this.btnSaveBenchMark04.Text = "Save";
             this.btnSaveBenchMark04.UseVisualStyleBackColor = true;
+            this.btnSaveBenchMark04.Click += new System.EventHandler(this.btnSaveBenchMark04_Click);
             // 
             // btnCancelBenchMark04
             // 
@@ -3093,6 +3099,24 @@
             this.lblID02.TabIndex = 187;
             this.lblID02.Text = "lblID02";
             // 
+            // lblID03
+            // 
+            this.lblID03.AutoSize = true;
+            this.lblID03.Location = new System.Drawing.Point(662, 5);
+            this.lblID03.Name = "lblID03";
+            this.lblID03.Size = new System.Drawing.Size(40, 13);
+            this.lblID03.TabIndex = 188;
+            this.lblID03.Text = "lblID03";
+            // 
+            // lblID04
+            // 
+            this.lblID04.AutoSize = true;
+            this.lblID04.Location = new System.Drawing.Point(514, 6);
+            this.lblID04.Name = "lblID04";
+            this.lblID04.Size = new System.Drawing.Size(40, 13);
+            this.lblID04.TabIndex = 188;
+            this.lblID04.Text = "lblID04";
+            // 
             // frmHouseholdGraduationAssessment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3442,5 +3466,7 @@
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label lblID01;
         private System.Windows.Forms.Label lblID02;
+        private System.Windows.Forms.Label lblID03;
+        private System.Windows.Forms.Label lblID04;
     }
 }
