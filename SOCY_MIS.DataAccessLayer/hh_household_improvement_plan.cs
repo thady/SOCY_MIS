@@ -51,6 +51,11 @@ namespace SOCY_MIS.DataAccessLayer
         public static DateTime usr_date_update = DateTime.Today;
         public static string ofc_id = string.Empty;
         public static string district_id = string.Empty;
+
+        public static string yn_safe_birth_certificates = string.Empty;
+        public static string yn_safe_birth_certificates_action = string.Empty;
+        public static string yn_safe_birth_certificates_followup_date = string.Empty;
+        public static string yn_safe_birth_certificates_out_come = string.Empty;
         #endregion OldHip
 
         #region NewHip
@@ -239,7 +244,7 @@ namespace SOCY_MIS.DataAccessLayer
         {
             DataTable dt = new DataTable();
             SqlDataAdapter Adapt;
-            string SQL = "SELECT S.swk_id,S.swk_first_name + ' ' + S.swk_last_name AS swk_name FROM swm_social_worker S " +
+            string SQL = "SELECT S.swk_id,UPPER(S.swk_first_name + ' ' + S.swk_last_name) AS swk_name FROM swm_social_worker S " +
                         "LEFT JOIN lst_ward W ON S.wrd_id = W.wrd_id " +
                         "LEFT JOIN lst_sub_county SB ON W.sct_id = SB.sct_id " +
                         "LEFT JOIN lst_district D ON SB.dst_id = D.dst_id " +
@@ -534,12 +539,13 @@ namespace SOCY_MIS.DataAccessLayer
                         ,[yn_stable_access_money_out_come],[yn_stable_income_source] ,[yn_stable_income_source_action] ,[yn_stable_income_source_followup_date] ,[yn_stable_income_source_out_come],[other_hes_issues] ,[other_hes_issues_action]
                         ,[other_hes_issues_followup_date] ,[other_hes_issues_out_come],[yn_ovc_regularly_attend_school] ,[yn_ovc_regularly_attend_school_action],[yn_ovc_regularly_attend_school_followup_date] ,[yn_ovc_regularly_attend_school_out_come]
                         ,[yn_attained_tech_skill] ,[yn_attained_tech_skill_action_plan],[yn_attained_tech_skill_followup_date] ,[yn_attained_tech_skill_out_come],[other_edu_issues],[other_edu_issues_action] ,[other_edu_issues_followup_date]
-                        ,[other_edu_issues_out_come] ,[hip_out_come_date] ,[sw_id],[sw_comment] ,[sw_supervisor_name] ,[sw_supervisor_comment] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id] ,[district_id])
+                        ,[other_edu_issues_out_come] ,[hip_out_come_date] ,[sw_id],[sw_comment] ,[sw_supervisor_name] ,[sw_supervisor_comment] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id] ,[district_id],
+                        yn_safe_birth_certificates,yn_safe_birth_certificates_action,yn_safe_birth_certificates_followup_date,yn_safe_birth_certificates_out_come)
                     VALUES ('{0}' ,'{1}' ,'{2}' ,'{3}' ,'{4}' ,'{5}','{6}','{7}','{8}','{9}','{10}' ,'{11}','{12}','{13}','{14}','{15}','{16}','{17}','{18}'
                         ,'{19}' ,'{20}','{21}','{22}','{23}','{24}','{25}','{26}','{27}','{28}','{29}','{30}','{31}','{32}','{33}','{34}','{35}','{36}','{37}'
                         ,'{38}','{39}','{40}','{41}' ,'{42}','{43}' ,'{44}','{45}','{46}','{47}','{48}','{49}','{50}','{51}' ,'{52}','{53}','{54}','{55}','{56}'
                         ,'{57}' ,'{58}' ,'{59}','{60}','{61}' ,'{62}' ,'{63}' ,'{64}' ,'{65}' ,'{66}' ,'{67}','{68}','{69}','{70}' ,'{71}','{72}' ,'{73}' ,'{74}'
-                        ,'{75}' ,'{76}'  ,'{77}' ,'{78}' ,'{79}','{80}','{81}' ,'{82}' ,'{83}','{84}','{85}')";
+                        ,'{75}' ,'{76}'  ,'{77}' ,'{78}' ,'{79}','{80}','{81}' ,'{82}' ,'{83}','{84}','{85}','{86}','{87}','{88}','{89}')";
 
             strSQL = string.Format(strSQL, hip_id, hh_code, hh_id, initial_hip_date, visit_date, qm_id, ov_below_seventeen_yrs_male, ov_below_seventeen_yrs_female, ov_above_eighteen_yrs_male
                     , ov_above_eighteen_yrs_female, hip_reason, yn_knows_status_of_children, utilFormatting.StringForSQL(yn_knows_status_of_children_action), utilFormatting.StringForSQL(yn_knows_status_of_children_out_come), yn_knows_status_of_children_followup_date
@@ -552,7 +558,8 @@ namespace SOCY_MIS.DataAccessLayer
                     , utilFormatting.StringForSQL(yn_stable_access_money_out_come), yn_stable_income_source, utilFormatting.StringForSQL(yn_stable_income_source_action), yn_stable_income_source_followup_date, utilFormatting.StringForSQL(yn_stable_income_source_out_come), utilFormatting.StringForSQL(other_hes_issues), utilFormatting.StringForSQL(other_hes_issues_action)
                     , other_hes_issues_followup_date, utilFormatting.StringForSQL(other_hes_issues_out_come), yn_ovc_regularly_attend_school, utilFormatting.StringForSQL(yn_ovc_regularly_attend_school_action), yn_ovc_regularly_attend_school_followup_date, utilFormatting.StringForSQL(yn_ovc_regularly_attend_school_out_come)
                     , yn_attained_tech_skill, utilFormatting.StringForSQL(yn_attained_tech_skill_action_plan), yn_attained_tech_skill_followup_date, utilFormatting.StringForSQL(yn_attained_tech_skill_out_come), utilFormatting.StringForSQL(other_edu_issues), utilFormatting.StringForSQL(other_edu_issues_action), other_edu_issues_followup_date
-                    , utilFormatting.StringForSQL(other_edu_issues_out_come), hip_out_come_date, sw_id, utilFormatting.StringForSQL(sw_comment), sw_supervisor_name, utilFormatting.StringForSQL(sw_supervisor_comment), usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id, district_id);
+                    , utilFormatting.StringForSQL(other_edu_issues_out_come), hip_out_come_date, sw_id, utilFormatting.StringForSQL(sw_comment), sw_supervisor_name, utilFormatting.StringForSQL(sw_supervisor_comment), usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id, district_id,
+                    yn_safe_birth_certificates, yn_safe_birth_certificates_action, yn_safe_birth_certificates_followup_date, yn_safe_birth_certificates_out_come);
             #endregion Insert
 
             try
@@ -679,6 +686,10 @@ namespace SOCY_MIS.DataAccessLayer
                       ,[usr_date_update] = '{81}'
                       ,[ofc_id] ='{82}'
                       ,[district_id] = '{83}'
+                    ,[yn_safe_birth_certificates] = '{84}'
+                    ,[yn_safe_birth_certificates_action] = '{85}'
+                    ,[yn_safe_birth_certificates_followup_date] = '{86}'
+                    ,[yn_safe_birth_certificates_out_come] = '{87}'
                  WHERE [hip_id] = '{0}'";
 
             strSQL = string.Format(strSQL,hip_id, initial_hip_date, visit_date, qm_id, ov_below_seventeen_yrs_male, ov_below_seventeen_yrs_female, ov_above_eighteen_yrs_male
@@ -692,7 +703,8 @@ namespace SOCY_MIS.DataAccessLayer
                     , utilFormatting.StringForSQL(yn_stable_access_money_out_come), yn_stable_income_source, utilFormatting.StringForSQL(yn_stable_income_source_action), yn_stable_income_source_followup_date, utilFormatting.StringForSQL(yn_stable_income_source_out_come), utilFormatting.StringForSQL(other_hes_issues), utilFormatting.StringForSQL(other_hes_issues_action)
                     , other_hes_issues_followup_date, utilFormatting.StringForSQL(other_hes_issues_out_come), yn_ovc_regularly_attend_school, utilFormatting.StringForSQL(yn_ovc_regularly_attend_school_action), yn_ovc_regularly_attend_school_followup_date, utilFormatting.StringForSQL(yn_ovc_regularly_attend_school_out_come)
                     , yn_attained_tech_skill, utilFormatting.StringForSQL(yn_attained_tech_skill_action_plan), yn_attained_tech_skill_followup_date, utilFormatting.StringForSQL(yn_attained_tech_skill_out_come), utilFormatting.StringForSQL(other_edu_issues), utilFormatting.StringForSQL(other_edu_issues_action), other_edu_issues_followup_date
-                    , utilFormatting.StringForSQL(other_edu_issues_out_come), hip_out_come_date, sw_id, utilFormatting.StringForSQL(sw_comment), sw_supervisor_name, utilFormatting.StringForSQL(sw_supervisor_comment), usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id, district_id);
+                    , utilFormatting.StringForSQL(other_edu_issues_out_come), hip_out_come_date, sw_id, utilFormatting.StringForSQL(sw_comment), sw_supervisor_name, utilFormatting.StringForSQL(sw_supervisor_comment), usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id, district_id,
+                    yn_safe_birth_certificates, yn_safe_birth_certificates_action, yn_safe_birth_certificates_followup_date, yn_safe_birth_certificates_out_come);
             #endregion Update
 
             try

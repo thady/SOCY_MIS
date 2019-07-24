@@ -113,15 +113,16 @@ namespace SOCY_MIS
                 lblGenderDisplay.Text = dtRow["gnd_name"].ToString();
                 lblMemberNumberDisplay.Text = dtRow["hhm_number"].ToString();
                 string hst_id = dtRow["hst_id"].ToString();
+                string hst_id_new = dtRow["hst_id_new"].ToString();
                 lblhhm_id.Text = hhm_id;
                 Age = DateTime.Now.Year - Convert.ToInt32(dtRow["hhm_year_of_birth"].ToString());
 
                 SetServicesByAgeGroup(Age);
 
                 #region set hiv status
-                if (hst_id == utilConstants.cHSTPositive )
+                if (hst_id == utilConstants.cHSTPositive || hst_id_new == utilConstants.cHSTPositive)
                 {
-                    cboHivstatus.SelectedValue = hst_id;
+                    cboHivstatus.SelectedValue = utilConstants.cHSTPositive;
                     cboHivstatus.Enabled = false;
                 }
                 else
@@ -704,6 +705,11 @@ namespace SOCY_MIS
                 isvalid = false;
                 errorMessage = "Beneficiary is on ART,Please indicate if he/she is taking pills as prescribed and adherence level";
             }
+            else if (rbtnMemberActiveNo.Checked && cboInactiveReason.Text == string.Empty)
+            {
+                isvalid = false;
+                errorMessage = "Please indicate the reason why beneficiary is inactive";
+            }
             else
             {
                 isvalid = true;
@@ -777,13 +783,19 @@ namespace SOCY_MIS
             hhHouseholdHomeVisit_v2. ynna_pss_family_group_discussion = utilControls.RadioButtonGetSelection(rbtnFamilygrpDiscusionYes, rbtnFamilygrpDiscusionNo, rbtnFamilygrpDiscusionNA);
             hhHouseholdHomeVisit_v2. ynna_reported_to_police = utilControls.RadioButtonGetSelection(rbtnReportchildAbuseYes, rbtnReportchildAbuseNo, rbtnReportchildAbuseNA);
             hhHouseholdHomeVisit_v2.ynna_violence_evidence_based_intervention = utilControls.RadioButtonGetSelection(rdnSessionCDOYes, rdnSessionCDONo, rdnSessionCDONA);
+            hhHouseholdHomeVisit_v2.hhm_inactive_reason = cboInactiveReason.Text;
             #endregion set variables
 
             #region save
-            if(lblguid.Text == "lblguid")
+            if (lblguid.Text == "lblguid")
             {
                 hhHouseholdHomeVisit_v2.hhvm_id = Guid.NewGuid().ToString();
                 hhHouseholdHomeVisit_v2.Insert_home_visit_member(dbCon);
+
+                #region updateNewHIVstatus
+                hhHouseholdHomeVisit_v2.update_member_hiv_status(lblhhm_id.Text, cboHivstatus.SelectedValue.ToString());
+                #endregion
+
                 MessageBox.Show("Sucess", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 lblguid.Text = hhHouseholdHomeVisit_v2.hhvm_id;
                 LoadMembers();
@@ -794,6 +806,11 @@ namespace SOCY_MIS
             {
                 hhHouseholdHomeVisit_v2.hhvm_id = lblguid.Text;
                 hhHouseholdHomeVisit_v2.update_home_visit_member(dbCon);
+
+                #region updateNewHIVstatus
+                hhHouseholdHomeVisit_v2.update_member_hiv_status(lblhhm_id.Text, cboHivstatus.SelectedValue.ToString());
+                #endregion
+
                 MessageBox.Show("Sucess", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadMembers();
                 LoadHomevisitMembers();
@@ -909,6 +926,7 @@ namespace SOCY_MIS
             utilControls.RadioButtonSetSelection(rbtnReportchildAbuseYes, rbtnReportchildAbuseNo, rbtnReportchildAbuseNA, string.Empty);
             hhHouseholdHomeVisit_v2.ynna_reported_to_police = string.Empty;
             utilControls.RadioButtonSetSelection(rdnSessionCDOYes, rdnSessionCDONo, rdnSessionCDONA, string.Empty);
+            cboInactiveReason.Text = string.Empty;
             lblguid.Text = "lblguid";
 
             pnlESSilc.Enabled = true;
@@ -1074,6 +1092,7 @@ namespace SOCY_MIS
             hhHouseholdHomeVisit_v2.ynna_reported_to_police = string.Empty;
             utilControls.RadioButtonSetSelection(rdnSessionCDOYes, rdnSessionCDONo, rdnSessionCDONA, string.Empty);
             lblguid.Text = "lblguid";
+            //cboInactiveReason.Text = string.Empty;
 
             pnlESSilc.Enabled = true;
             pnlOtherSavingGroup.Enabled = true;
@@ -1215,6 +1234,7 @@ namespace SOCY_MIS
                 cbHHMember.Text = dtRow["hhm_name"].ToString();
                 cbHHMember.Enabled = false;
                 lblhhm_id.Text = dtRow["hhm_id"].ToString();
+                cboInactiveReason.Text = dtRow["hhm_inactive_reason"].ToString();
                 hhHouseholdHomeVisit_v2.hmm_age = (DateTime.Now.Year - Convert.ToInt32(lblYearOfBirthDisplay.Text)).ToString();
                 hhHouseholdHomeVisit_v2.gnd_name = lblGenderDisplay.Text;
                 utilControls.RadioButtonSetSelection(rbtnMemberActiveYes, rbtnMemberActiveNo, dtRow["yn_id_hhm_active"].ToString());
@@ -1494,6 +1514,19 @@ namespace SOCY_MIS
 
             }
 
+            if (rbtnMemberActiveNo.Checked)
+            {
+                lblInactive.ForeColor = Color.Red;
+                cboInactiveReason.Enabled =true;
+               
+            }
+            else
+            {
+                lblInactive.ForeColor = Color.Black;
+                cboInactiveReason.Enabled = false;
+                cboInactiveReason.Text = string.Empty;
+            }
+
         }
 
         private void rbtnBirthCertificateYes_CheckedChanged(object sender, EventArgs e)
@@ -1528,7 +1561,8 @@ namespace SOCY_MIS
         private void rbtnMemberActiveNo_CheckedChanged(object sender, EventArgs e)
         {
             rbtnMemberActiveYes_CheckedChanged(rbtnMemberActiveYes, null);
-            
+           
+
         }
 
         private void rbtnHHPHivNeg_CheckedChanged(object sender, EventArgs e)

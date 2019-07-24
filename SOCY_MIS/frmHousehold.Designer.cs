@@ -82,7 +82,7 @@
             this.gbManage = new System.Windows.Forms.GroupBox();
             this.tlpDisplay02 = new System.Windows.Forms.TableLayoutPanel();
             this.lbl_risk_assessment = new System.Windows.Forms.LinkLabel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblGat = new System.Windows.Forms.LinkLabel();
             this.gbDetails.SuspendLayout();
             this.tlpDisplay03.SuspendLayout();
             this.gbRecords.SuspendLayout();
@@ -428,7 +428,7 @@
             this.gbNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbNew.Location = new System.Drawing.Point(3, 6);
             this.gbNew.Name = "gbNew";
-            this.gbNew.Size = new System.Drawing.Size(168, 278);
+            this.gbNew.Size = new System.Drawing.Size(168, 298);
             this.gbNew.TabIndex = 2;
             this.gbNew.TabStop = false;
             this.gbNew.Text = "New Records";
@@ -438,34 +438,34 @@
             this.tlpDisplay01.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpDisplay01.ColumnCount = 1;
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay01.Controls.Add(this.label1, 0, 7);
+            this.tlpDisplay01.Controls.Add(this.lblGat, 0, 7);
             this.tlpDisplay01.Controls.Add(this.lnkRiskAssessment, 0, 1);
-            this.tlpDisplay01.Controls.Add(this.llblHomeVisitArchive, 0, 8);
-            this.tlpDisplay01.Controls.Add(this.llblHip, 0, 9);
-            this.tlpDisplay01.Controls.Add(this.llblHouseholdAssessment, 0, 10);
             this.tlpDisplay01.Controls.Add(this.llblHip_v2, 0, 0);
-            this.tlpDisplay01.Controls.Add(this.llblHomeVisit, 0, 11);
             this.tlpDisplay01.Controls.Add(this.llblReferral, 0, 3);
             this.tlpDisplay01.Controls.Add(this.lblHomevisitNew, 0, 2);
             this.tlpDisplay01.Controls.Add(this.llblViralLoad, 0, 4);
             this.tlpDisplay01.Controls.Add(this.lblAdherence, 0, 5);
             this.tlpDisplay01.Controls.Add(this.lblGBV, 0, 6);
+            this.tlpDisplay01.Controls.Add(this.llblHomeVisit, 0, 11);
+            this.tlpDisplay01.Controls.Add(this.llblHouseholdAssessment, 0, 10);
+            this.tlpDisplay01.Controls.Add(this.llblHip, 0, 9);
+            this.tlpDisplay01.Controls.Add(this.llblHomeVisitArchive, 0, 8);
             this.tlpDisplay01.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tlpDisplay01.Location = new System.Drawing.Point(6, 19);
+            this.tlpDisplay01.Location = new System.Drawing.Point(6, 26);
             this.tlpDisplay01.Name = "tlpDisplay01";
             this.tlpDisplay01.RowCount = 12;
             this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.226686F));
             this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.25212F));
             this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.25212F));
-            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.25212F));
-            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.25212F));
+            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.196721F));
+            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.88525F));
             this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.527132F));
             this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.751938F));
-            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.813953F));
-            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.302325F));
+            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.298756F));
+            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.883817F));
             this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.25212F));
             this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.25212F));
-            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.25212F));
+            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 9F));
             this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpDisplay01.Size = new System.Drawing.Size(156, 259);
             this.tlpDisplay01.TabIndex = 3;
@@ -486,7 +486,8 @@
             // 
             this.llblHomeVisitArchive.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.llblHomeVisitArchive.AutoSize = true;
-            this.llblHomeVisitArchive.Location = new System.Drawing.Point(4, 171);
+            this.llblHomeVisitArchive.Enabled = false;
+            this.llblHomeVisitArchive.Location = new System.Drawing.Point(4, 184);
             this.llblHomeVisitArchive.Name = "llblHomeVisitArchive";
             this.llblHomeVisitArchive.Size = new System.Drawing.Size(102, 13);
             this.llblHomeVisitArchive.TabIndex = 4;
@@ -499,7 +500,8 @@
             // 
             this.llblHip.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.llblHip.AutoSize = true;
-            this.llblHip.Location = new System.Drawing.Point(3, 193);
+            this.llblHip.Enabled = false;
+            this.llblHip.Location = new System.Drawing.Point(3, 204);
             this.llblHip.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.llblHip.Name = "llblHip";
             this.llblHip.Size = new System.Drawing.Size(64, 13);
@@ -512,7 +514,8 @@
             // 
             this.llblHouseholdAssessment.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.llblHouseholdAssessment.AutoSize = true;
-            this.llblHouseholdAssessment.Location = new System.Drawing.Point(4, 214);
+            this.llblHouseholdAssessment.Enabled = false;
+            this.llblHouseholdAssessment.Location = new System.Drawing.Point(4, 225);
             this.llblHouseholdAssessment.Name = "llblHouseholdAssessment";
             this.llblHouseholdAssessment.Size = new System.Drawing.Size(68, 13);
             this.llblHouseholdAssessment.TabIndex = 0;
@@ -536,7 +539,8 @@
             // 
             this.llblHomeVisit.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.llblHomeVisit.AutoSize = true;
-            this.llblHomeVisit.Location = new System.Drawing.Point(4, 238);
+            this.llblHomeVisit.Enabled = false;
+            this.llblHomeVisit.Location = new System.Drawing.Point(4, 244);
             this.llblHomeVisit.Name = "llblHomeVisit";
             this.llblHomeVisit.Size = new System.Drawing.Size(96, 13);
             this.llblHomeVisit.TabIndex = 2;
@@ -572,7 +576,7 @@
             // 
             this.llblViralLoad.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.llblViralLoad.AutoSize = true;
-            this.llblViralLoad.Location = new System.Drawing.Point(3, 91);
+            this.llblViralLoad.Location = new System.Drawing.Point(3, 96);
             this.llblViralLoad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.llblViralLoad.Name = "llblViralLoad";
             this.llblViralLoad.Size = new System.Drawing.Size(130, 13);
@@ -585,7 +589,7 @@
             // 
             this.lblAdherence.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblAdherence.AutoSize = true;
-            this.lblAdherence.Location = new System.Drawing.Point(4, 113);
+            this.lblAdherence.Location = new System.Drawing.Point(4, 122);
             this.lblAdherence.Name = "lblAdherence";
             this.lblAdherence.Size = new System.Drawing.Size(131, 13);
             this.lblAdherence.TabIndex = 33;
@@ -597,7 +601,7 @@
             // 
             this.lblGBV.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblGBV.AutoSize = true;
-            this.lblGBV.Location = new System.Drawing.Point(4, 134);
+            this.lblGBV.Location = new System.Drawing.Point(4, 143);
             this.lblGBV.Name = "lblGBV";
             this.lblGBV.Size = new System.Drawing.Size(104, 13);
             this.lblGBV.TabIndex = 34;
@@ -609,7 +613,7 @@
             // 
             this.llblLinkages_register.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.llblLinkages_register.AutoSize = true;
-            this.llblLinkages_register.Location = new System.Drawing.Point(4, 56);
+            this.llblLinkages_register.Location = new System.Drawing.Point(4, 53);
             this.llblLinkages_register.Name = "llblLinkages_register";
             this.llblLinkages_register.Size = new System.Drawing.Size(95, 13);
             this.llblLinkages_register.TabIndex = 14;
@@ -622,7 +626,7 @@
             this.llblOVCIdentificationPrioritization.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.llblOVCIdentificationPrioritization.AutoSize = true;
             this.llblOVCIdentificationPrioritization.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblOVCIdentificationPrioritization.Location = new System.Drawing.Point(4, 99);
+            this.llblOVCIdentificationPrioritization.Location = new System.Drawing.Point(4, 95);
             this.llblOVCIdentificationPrioritization.Name = "llblOVCIdentificationPrioritization";
             this.llblOVCIdentificationPrioritization.Size = new System.Drawing.Size(136, 26);
             this.llblOVCIdentificationPrioritization.TabIndex = 6;
@@ -635,7 +639,7 @@
             // 
             this.llblHouseholdDetails.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.llblHouseholdDetails.AutoSize = true;
-            this.llblHouseholdDetails.Location = new System.Drawing.Point(4, 7);
+            this.llblHouseholdDetails.Location = new System.Drawing.Point(4, 6);
             this.llblHouseholdDetails.Name = "llblHouseholdDetails";
             this.llblHouseholdDetails.Size = new System.Drawing.Size(93, 13);
             this.llblHouseholdDetails.TabIndex = 5;
@@ -647,7 +651,7 @@
             // 
             this.llblHouseholdMembers.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.llblHouseholdMembers.AutoSize = true;
-            this.llblHouseholdMembers.Location = new System.Drawing.Point(4, 33);
+            this.llblHouseholdMembers.Location = new System.Drawing.Point(4, 31);
             this.llblHouseholdMembers.Name = "llblHouseholdMembers";
             this.llblHouseholdMembers.Size = new System.Drawing.Size(104, 13);
             this.llblHouseholdMembers.TabIndex = 1;
@@ -742,9 +746,9 @@
             // 
             this.gbManage.Controls.Add(this.tlpDisplay02);
             this.gbManage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbManage.Location = new System.Drawing.Point(3, 290);
+            this.gbManage.Location = new System.Drawing.Point(3, 310);
             this.gbManage.Name = "gbManage";
-            this.gbManage.Size = new System.Drawing.Size(168, 175);
+            this.gbManage.Size = new System.Drawing.Size(168, 155);
             this.gbManage.TabIndex = 4;
             this.gbManage.TabStop = false;
             this.gbManage.Text = "Manage Records";
@@ -762,21 +766,20 @@
             this.tlpDisplay02.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpDisplay02.Location = new System.Drawing.Point(6, 19);
             this.tlpDisplay02.Name = "tlpDisplay02";
-            this.tlpDisplay02.RowCount = 6;
+            this.tlpDisplay02.RowCount = 5;
             this.tlpDisplay02.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpDisplay02.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpDisplay02.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.4321F));
             this.tlpDisplay02.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.04938F));
             this.tlpDisplay02.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.22078F));
-            this.tlpDisplay02.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.tlpDisplay02.Size = new System.Drawing.Size(156, 150);
+            this.tlpDisplay02.Size = new System.Drawing.Size(156, 128);
             this.tlpDisplay02.TabIndex = 3;
             // 
             // lbl_risk_assessment
             // 
             this.lbl_risk_assessment.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl_risk_assessment.AutoSize = true;
-            this.lbl_risk_assessment.Location = new System.Drawing.Point(4, 76);
+            this.lbl_risk_assessment.Location = new System.Drawing.Point(4, 73);
             this.lbl_risk_assessment.Name = "lbl_risk_assessment";
             this.lbl_risk_assessment.Size = new System.Drawing.Size(122, 13);
             this.lbl_risk_assessment.TabIndex = 15;
@@ -784,15 +787,16 @@
             this.lbl_risk_assessment.Text = "Risk Assessment Details";
             this.lbl_risk_assessment.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbl_risk_assessment_LinkClicked);
             // 
-            // label1
+            // lblGat
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(4, 151);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Archived Tools";
+            this.lblGat.AutoSize = true;
+            this.lblGat.Location = new System.Drawing.Point(4, 160);
+            this.lblGat.Name = "lblGat";
+            this.lblGat.Size = new System.Drawing.Size(118, 13);
+            this.lblGat.TabIndex = 23;
+            this.lblGat.TabStop = true;
+            this.lblGat.Text = "Graduation Assessment";
+            this.lblGat.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblGat_LinkClicked);
             // 
             // frmHousehold
             // 
@@ -884,6 +888,6 @@
         private System.Windows.Forms.LinkLabel lblHomevisitNew;
         private System.Windows.Forms.LinkLabel llblHip_v2;
         private System.Windows.Forms.LinkLabel lnkRiskAssessment;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.LinkLabel lblGat;
     }
 }

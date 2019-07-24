@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using AutoUpdaterDotNET;
+
 using SOCY_MIS.DataAccessLayer;
 
 namespace SOCY_MIS
@@ -130,6 +132,17 @@ namespace SOCY_MIS
         {
             frmUploadTables download = new frmUploadTables();
             download.Show();
+        }
+
+        private void lnkUpdate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmAutoUpdate update = new frmAutoUpdate();
+            update.ShowDialog();
+        }
+
+        private void frmAdmin_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

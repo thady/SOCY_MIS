@@ -87,6 +87,7 @@
     <Compile Include="drmSteppingStonesRegister.cs" />
     <Compile Include="drmSteppingStonesRegisterLine.cs" />
     <Compile Include="GBV_screeningTool.cs" />
+    <Compile Include="hhgraduation_assessment.cs" />
     <Compile Include="hhHomeVisit.cs" />
     <Compile Include="hhHousehold.cs" />
     <Compile Include="hhHouseholdAssessment.cs" />

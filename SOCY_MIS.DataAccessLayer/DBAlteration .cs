@@ -13791,6 +13791,125 @@ namespace SOCY_MIS.DataAccessLayer
             dbCon.ExecuteNonQuery(strSQL);
             #endregion Tables
 
+            #region NewColumns
+
+                strSQL = "IF NOT EXISTS(SELECT * FROM sys.columns " +
+               "WHERE[name] = N'yn_safe_birth_certificates' AND[object_id] = OBJECT_ID(N'hh_household_improvement_plan_v2')) " +
+                "BEGIN " +
+                   "ALTER TABLE hh_household_improvement_plan_v2 ADD yn_safe_birth_certificates varchar(50) NULL " +
+                "END";
+                dbCon.ExecuteNonQuery(strSQL);
+
+                strSQL = "IF NOT EXISTS(SELECT * FROM sys.columns " +
+              "WHERE[name] = N'yn_safe_birth_certificates_action' AND[object_id] = OBJECT_ID(N'hh_household_improvement_plan_v2')) " +
+               "BEGIN " +
+                  "ALTER TABLE hh_household_improvement_plan_v2 ADD yn_safe_birth_certificates_action varchar(50) NULL " +
+               "END";
+                dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "IF EXISTS(SELECT * FROM sys.columns " +
+             "WHERE[name] = N'yn_safe_birth_certificates_action' AND[object_id] = OBJECT_ID(N'hh_household_improvement_plan_v2')) " +
+              "BEGIN " +
+                 "ALTER TABLE hh_household_improvement_plan_v2 ALTER COLUMN yn_safe_birth_certificates_action varchar(MAX) NULL " +
+              "END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "IF NOT EXISTS(SELECT * FROM sys.columns " +
+             "WHERE[name] = N'yn_safe_birth_certificates_followup_date' AND[object_id] = OBJECT_ID(N'hh_household_improvement_plan_v2')) " +
+              "BEGIN " +
+                 "ALTER TABLE hh_household_improvement_plan_v2 ADD yn_safe_birth_certificates_followup_date varchar(50) NULL " +
+              "END";
+                dbCon.ExecuteNonQuery(strSQL);
+
+                strSQL = "IF NOT EXISTS(SELECT * FROM sys.columns " +
+            "WHERE[name] = N'yn_safe_birth_certificates_out_come' AND[object_id] = OBJECT_ID(N'hh_household_improvement_plan_v2')) " +
+             "BEGIN " +
+                "ALTER TABLE hh_household_improvement_plan_v2 ADD yn_safe_birth_certificates_out_come varchar(50) NULL " +
+             "END";
+                dbCon.ExecuteNonQuery(strSQL);
+
+
+            strSQL = "IF NOT EXISTS(SELECT * FROM sys.columns " +
+          "WHERE[name] = N'yn_safe_birth_certificates' AND[object_id] = OBJECT_ID(N'hh_household_improvement_plan_v2_upload')) " +
+           "BEGIN " +
+              "ALTER TABLE hh_household_improvement_plan_v2_upload ADD yn_safe_birth_certificates varchar(50) NULL " +
+           "END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "IF NOT EXISTS(SELECT * FROM sys.columns " +
+          "WHERE[name] = N'yn_safe_birth_certificates_action' AND[object_id] = OBJECT_ID(N'hh_household_improvement_plan_v2_upload')) " +
+           "BEGIN " +
+              "ALTER TABLE hh_household_improvement_plan_v2_upload ADD yn_safe_birth_certificates_action varchar(50) NULL " +
+           "END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "IF EXISTS(SELECT * FROM sys.columns " +
+         "WHERE[name] = N'yn_safe_birth_certificates_action' AND[object_id] = OBJECT_ID(N'hh_household_improvement_plan_v2_upload')) " +
+          "BEGIN " +
+             "ALTER TABLE hh_household_improvement_plan_v2_upload ALTER COLUMN yn_safe_birth_certificates_action varchar(MAX) NULL " +
+          "END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "IF NOT EXISTS(SELECT * FROM sys.columns " +
+         "WHERE[name] = N'yn_safe_birth_certificates_followup_date' AND[object_id] = OBJECT_ID(N'hh_household_improvement_plan_v2_upload')) " +
+          "BEGIN " +
+             "ALTER TABLE hh_household_improvement_plan_v2_upload ADD yn_safe_birth_certificates_followup_date varchar(50) NULL " +
+          "END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "IF NOT EXISTS(SELECT * FROM sys.columns " +
+        "WHERE[name] = N'yn_safe_birth_certificates_out_come' AND[object_id] = OBJECT_ID(N'hh_household_improvement_plan_v2_upload')) " +
+         "BEGIN " +
+            "ALTER TABLE hh_household_improvement_plan_v2_upload ADD yn_safe_birth_certificates_out_come varchar(50) NULL " +
+         "END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            #endregion NewColumns
+
+            #region DisableTriggers
+            strSQL = "ALTER TABLE hh_household_improvement_plan_v2 DISABLE TRIGGER hh_household_improvement_plan_v2_insert";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "ALTER TABLE hh_household_improvement_plan_v2 DISABLE TRIGGER hh_household_improvement_plan_v2_update";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "ALTER TABLE hh_household_improvement_plan_v2 DISABLE TRIGGER hh_household_improvement_plan_v2_delete";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_household_improvement_plan_v2 SET yn_safe_birth_certificates = '' WHERE yn_safe_birth_certificates IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_household_improvement_plan_v2 SET yn_safe_birth_certificates_action = '' WHERE yn_safe_birth_certificates_action IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_household_improvement_plan_v2 SET yn_safe_birth_certificates_followup_date = '' WHERE yn_safe_birth_certificates_followup_date IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_household_improvement_plan_v2 SET yn_safe_birth_certificates_out_come = '' WHERE yn_safe_birth_certificates_out_come IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_household_improvement_plan_v2_upload SET yn_safe_birth_certificates = '' WHERE yn_safe_birth_certificates IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_household_improvement_plan_v2_upload SET yn_safe_birth_certificates_action = '' WHERE yn_safe_birth_certificates_action IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_household_improvement_plan_v2_upload SET yn_safe_birth_certificates_followup_date = '' WHERE yn_safe_birth_certificates_followup_date IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_household_improvement_plan_v2_upload SET yn_safe_birth_certificates_out_come = '' WHERE yn_safe_birth_certificates_out_come IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "ALTER TABLE hh_household_improvement_plan_v2 ENABLE TRIGGER hh_household_improvement_plan_v2_insert";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "ALTER TABLE hh_household_improvement_plan_v2 ENABLE TRIGGER hh_household_improvement_plan_v2_update";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "ALTER TABLE hh_household_improvement_plan_v2 ENABLE TRIGGER hh_household_improvement_plan_v2_delete";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion DisableTriggers
+
             #region Triggers
             strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_household_improvement_plan_v2_insert' AND [type] = 'TR')
                 DROP TRIGGER [dbo].[hh_household_improvement_plan_v2_insert] ";
@@ -13810,7 +13929,8 @@ namespace SOCY_MIS.DataAccessLayer
                         ,[yn_stable_access_money_out_come],[yn_stable_income_source] ,[yn_stable_income_source_action] ,[yn_stable_income_source_followup_date] ,[yn_stable_income_source_out_come],[other_hes_issues] ,[other_hes_issues_action]
                         ,[other_hes_issues_followup_date] ,[other_hes_issues_out_come],[yn_ovc_regularly_attend_school] ,[yn_ovc_regularly_attend_school_action],[yn_ovc_regularly_attend_school_followup_date] ,[yn_ovc_regularly_attend_school_out_come]
                         ,[yn_attained_tech_skill] ,[yn_attained_tech_skill_action_plan],[yn_attained_tech_skill_followup_date] ,[yn_attained_tech_skill_out_come],[other_edu_issues],[other_edu_issues_action] ,[other_edu_issues_followup_date]
-                        ,[other_edu_issues_out_come] ,[hip_out_come_date] ,[sw_id],[sw_comment] ,[sw_supervisor_name] ,[sw_supervisor_comment] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id],[trg_action] ,[district_id])
+                        ,[other_edu_issues_out_come] ,[hip_out_come_date] ,[sw_id],[sw_comment] ,[sw_supervisor_name] ,[sw_supervisor_comment] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id],[trg_action] ,[district_id],
+                        yn_safe_birth_certificates, yn_safe_birth_certificates_action, yn_safe_birth_certificates_followup_date, yn_safe_birth_certificates_out_come)
 	                SELECT [hip_id] ,[hh_code],[hh_id] ,[initial_hip_date],[visit_date] ,[qm_id],[ov_below_seventeen_yrs_male],[ov_below_seventeen_yrs_female],[ov_above_eighteen_yrs_male]
                         ,[ov_above_eighteen_yrs_female] ,[hip_reason],[yn_knows_status_of_children],[yn_knows_status_of_children_action],[yn_knows_status_of_children_out_come] ,[yn_knows_status_of_children_followup_date]
                         ,[yn_positive_enrolled_on_art],[yn_positive_enrolled_on_art_out_come] ,[yn_positive_enrolled_on_art_action],[yn_positive_enrolled_on_art_followup_date] ,[yn_positive_supressing],[yn_positive_supressing_action]
@@ -13822,7 +13942,8 @@ namespace SOCY_MIS.DataAccessLayer
                         ,[yn_stable_access_money_out_come],[yn_stable_income_source] ,[yn_stable_income_source_action] ,[yn_stable_income_source_followup_date] ,[yn_stable_income_source_out_come],[other_hes_issues] ,[other_hes_issues_action]
                         ,[other_hes_issues_followup_date] ,[other_hes_issues_out_come],[yn_ovc_regularly_attend_school] ,[yn_ovc_regularly_attend_school_action],[yn_ovc_regularly_attend_school_followup_date] ,[yn_ovc_regularly_attend_school_out_come]
                         ,[yn_attained_tech_skill] ,[yn_attained_tech_skill_action_plan],[yn_attained_tech_skill_followup_date] ,[yn_attained_tech_skill_out_come],[other_edu_issues],[other_edu_issues_action] ,[other_edu_issues_followup_date]
-                        ,[other_edu_issues_out_come] ,[hip_out_come_date] ,[sw_id],[sw_comment] ,[sw_supervisor_name] ,[sw_supervisor_comment] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id],1 ,[district_id]
+                        ,[other_edu_issues_out_come] ,[hip_out_come_date] ,[sw_id],[sw_comment] ,[sw_supervisor_name] ,[sw_supervisor_comment] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id],1 ,[district_id],
+                        yn_safe_birth_certificates, yn_safe_birth_certificates_action, yn_safe_birth_certificates_followup_date, yn_safe_birth_certificates_out_come
                   FROM inserted END";
             dbCon.ExecuteNonQuery(strSQL);
 
@@ -13844,7 +13965,8 @@ namespace SOCY_MIS.DataAccessLayer
                         ,[yn_stable_access_money_out_come],[yn_stable_income_source] ,[yn_stable_income_source_action] ,[yn_stable_income_source_followup_date] ,[yn_stable_income_source_out_come],[other_hes_issues] ,[other_hes_issues_action]
                         ,[other_hes_issues_followup_date] ,[other_hes_issues_out_come],[yn_ovc_regularly_attend_school] ,[yn_ovc_regularly_attend_school_action],[yn_ovc_regularly_attend_school_followup_date] ,[yn_ovc_regularly_attend_school_out_come]
                         ,[yn_attained_tech_skill] ,[yn_attained_tech_skill_action_plan],[yn_attained_tech_skill_followup_date] ,[yn_attained_tech_skill_out_come],[other_edu_issues],[other_edu_issues_action] ,[other_edu_issues_followup_date]
-                        ,[other_edu_issues_out_come] ,[hip_out_come_date] ,[sw_id],[sw_comment] ,[sw_supervisor_name] ,[sw_supervisor_comment] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id],[trg_action] ,[district_id])
+                        ,[other_edu_issues_out_come] ,[hip_out_come_date] ,[sw_id],[sw_comment] ,[sw_supervisor_name] ,[sw_supervisor_comment] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id],[trg_action] ,[district_id],
+                         yn_safe_birth_certificates, yn_safe_birth_certificates_action, yn_safe_birth_certificates_followup_date, yn_safe_birth_certificates_out_come)
 	                SELECT [hip_id] ,[hh_code],[hh_id] ,[initial_hip_date],[visit_date] ,[qm_id],[ov_below_seventeen_yrs_male],[ov_below_seventeen_yrs_female],[ov_above_eighteen_yrs_male]
                         ,[ov_above_eighteen_yrs_female] ,[hip_reason],[yn_knows_status_of_children],[yn_knows_status_of_children_action],[yn_knows_status_of_children_out_come] ,[yn_knows_status_of_children_followup_date]
                         ,[yn_positive_enrolled_on_art],[yn_positive_enrolled_on_art_out_come] ,[yn_positive_enrolled_on_art_action],[yn_positive_enrolled_on_art_followup_date] ,[yn_positive_supressing],[yn_positive_supressing_action]
@@ -13856,7 +13978,8 @@ namespace SOCY_MIS.DataAccessLayer
                         ,[yn_stable_access_money_out_come],[yn_stable_income_source] ,[yn_stable_income_source_action] ,[yn_stable_income_source_followup_date] ,[yn_stable_income_source_out_come],[other_hes_issues] ,[other_hes_issues_action]
                         ,[other_hes_issues_followup_date] ,[other_hes_issues_out_come],[yn_ovc_regularly_attend_school] ,[yn_ovc_regularly_attend_school_action],[yn_ovc_regularly_attend_school_followup_date] ,[yn_ovc_regularly_attend_school_out_come]
                         ,[yn_attained_tech_skill] ,[yn_attained_tech_skill_action_plan],[yn_attained_tech_skill_followup_date] ,[yn_attained_tech_skill_out_come],[other_edu_issues],[other_edu_issues_action] ,[other_edu_issues_followup_date]
-                        ,[other_edu_issues_out_come] ,[hip_out_come_date] ,[sw_id],[sw_comment] ,[sw_supervisor_name] ,[sw_supervisor_comment] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id],2 ,[district_id]
+                        ,[other_edu_issues_out_come] ,[hip_out_come_date] ,[sw_id],[sw_comment] ,[sw_supervisor_name] ,[sw_supervisor_comment] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id],2 ,[district_id],
+                        yn_safe_birth_certificates, yn_safe_birth_certificates_action, yn_safe_birth_certificates_followup_date, yn_safe_birth_certificates_out_come
                   FROM inserted END";
             dbCon.ExecuteNonQuery(strSQL);
 
@@ -13878,7 +14001,8 @@ namespace SOCY_MIS.DataAccessLayer
                         ,[yn_stable_access_money_out_come],[yn_stable_income_source] ,[yn_stable_income_source_action] ,[yn_stable_income_source_followup_date] ,[yn_stable_income_source_out_come],[other_hes_issues] ,[other_hes_issues_action]
                         ,[other_hes_issues_followup_date] ,[other_hes_issues_out_come],[yn_ovc_regularly_attend_school] ,[yn_ovc_regularly_attend_school_action],[yn_ovc_regularly_attend_school_followup_date] ,[yn_ovc_regularly_attend_school_out_come]
                         ,[yn_attained_tech_skill] ,[yn_attained_tech_skill_action_plan],[yn_attained_tech_skill_followup_date] ,[yn_attained_tech_skill_out_come],[other_edu_issues],[other_edu_issues_action] ,[other_edu_issues_followup_date]
-                        ,[other_edu_issues_out_come] ,[hip_out_come_date] ,[sw_id],[sw_comment] ,[sw_supervisor_name] ,[sw_supervisor_comment] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id],[trg_action] ,[district_id])
+                        ,[other_edu_issues_out_come] ,[hip_out_come_date] ,[sw_id],[sw_comment] ,[sw_supervisor_name] ,[sw_supervisor_comment] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id],[trg_action] ,[district_id],
+                        yn_safe_birth_certificates, yn_safe_birth_certificates_action, yn_safe_birth_certificates_followup_date, yn_safe_birth_certificates_out_come)
 	                SELECT [hip_id] ,[hh_code],[hh_id] ,[initial_hip_date],[visit_date] ,[qm_id],[ov_below_seventeen_yrs_male],[ov_below_seventeen_yrs_female],[ov_above_eighteen_yrs_male]
                         ,[ov_above_eighteen_yrs_female] ,[hip_reason],[yn_knows_status_of_children],[yn_knows_status_of_children_action],[yn_knows_status_of_children_out_come] ,[yn_knows_status_of_children_followup_date]
                         ,[yn_positive_enrolled_on_art],[yn_positive_enrolled_on_art_out_come] ,[yn_positive_enrolled_on_art_action],[yn_positive_enrolled_on_art_followup_date] ,[yn_positive_supressing],[yn_positive_supressing_action]
@@ -13890,7 +14014,8 @@ namespace SOCY_MIS.DataAccessLayer
                         ,[yn_stable_access_money_out_come],[yn_stable_income_source] ,[yn_stable_income_source_action] ,[yn_stable_income_source_followup_date] ,[yn_stable_income_source_out_come],[other_hes_issues] ,[other_hes_issues_action]
                         ,[other_hes_issues_followup_date] ,[other_hes_issues_out_come],[yn_ovc_regularly_attend_school] ,[yn_ovc_regularly_attend_school_action],[yn_ovc_regularly_attend_school_followup_date] ,[yn_ovc_regularly_attend_school_out_come]
                         ,[yn_attained_tech_skill] ,[yn_attained_tech_skill_action_plan],[yn_attained_tech_skill_followup_date] ,[yn_attained_tech_skill_out_come],[other_edu_issues],[other_edu_issues_action] ,[other_edu_issues_followup_date]
-                        ,[other_edu_issues_out_come] ,[hip_out_come_date] ,[sw_id],[sw_comment] ,[sw_supervisor_name] ,[sw_supervisor_comment] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id],3 ,[district_id]
+                        ,[other_edu_issues_out_come] ,[hip_out_come_date] ,[sw_id],[sw_comment] ,[sw_supervisor_name] ,[sw_supervisor_comment] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id],3 ,[district_id],
+                         yn_safe_birth_certificates, yn_safe_birth_certificates_action, yn_safe_birth_certificates_followup_date, yn_safe_birth_certificates_out_come
                   FROM deleted END";
 
             dbCon.ExecuteNonQuery(strSQL);
@@ -14183,6 +14308,51 @@ namespace SOCY_MIS.DataAccessLayer
             dbCon.ExecuteNonQuery(strSQL);
             #endregion Tables
 
+            #region NewColumns
+
+            strSQL = "IF NOT EXISTS(SELECT * FROM sys.columns " +
+           "WHERE[name] = N'hhm_inactive_reason' AND[object_id] = OBJECT_ID(N'hh_household_home_visit_member_v_2')) " +
+            "BEGIN " +
+               "ALTER TABLE hh_household_home_visit_member_v_2 ADD hhm_inactive_reason varchar(50) NULL " +
+            "END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "IF NOT EXISTS(SELECT * FROM sys.columns " +
+                     "WHERE[name] = N'hhm_inactive_reason' AND[object_id] = OBJECT_ID(N'hh_household_home_visit_member_v_2_upload')) " +
+                      "BEGIN " +
+                         "ALTER TABLE hh_household_home_visit_member_v_2_upload ADD hhm_inactive_reason varchar(50) NULL " +
+                      "END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            #endregion NewColumns
+
+            #region DisableTriggers
+            strSQL = "ALTER TABLE hh_household_home_visit_member_v_2 DISABLE TRIGGER hh_household_home_visit_member_v_2_insert";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "ALTER TABLE hh_household_home_visit_member_v_2 DISABLE TRIGGER hh_household_home_visit_member_v_2_update";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "ALTER TABLE hh_household_home_visit_member_v_2 DISABLE TRIGGER hh_household_home_visit_member_v_2_delete";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_household_home_visit_member_v_2 SET hhm_inactive_reason = '' WHERE hhm_inactive_reason IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_household_home_visit_member_v_2_upload SET hhm_inactive_reason = '' WHERE hhm_inactive_reason IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "ALTER TABLE hh_household_home_visit_member_v_2 ENABLE TRIGGER hh_household_home_visit_member_v_2_insert";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "ALTER TABLE hh_household_home_visit_member_v_2 ENABLE TRIGGER hh_household_home_visit_member_v_2_update";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "ALTER TABLE hh_household_home_visit_member_v_2 ENABLE TRIGGER hh_household_home_visit_member_v_2_delete";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion DisableTriggers
+
+
             #region Triggers
             strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_household_home_visit_member_v_2_insert' AND [type] = 'TR')
                 DROP TRIGGER [dbo].[hh_household_home_visit_member_v_2_insert] ";
@@ -14199,7 +14369,7 @@ namespace SOCY_MIS.DataAccessLayer
 				   ,[ynna_initiate_art_refferal] ,[ynna_complete_art_refferal],[ynna_initiate_immunize_refferal] ,[ynna_complete_immunize_refferal] ,[ynna_tb_screen],[ynna_initiate_tb_refferal],[ynna_complete_tb_refferal]
 				   ,[ynna_initiate_perinatal_care_refferal],[ynna_complete_perinatal_care_refferal],[ynna_initiate_post_violence_refferal] ,[ynna_complete_post_violence_refferal],[ynna_ovc_has_birth_certificate] ,[ynna_initiate_birth_reg_refferal]
 				   ,[ynna_complete_birth_reg_refferal],[ynna_pss_family_group_discussion],[ynna_reported_to_police],[ynna_violence_evidence_based_intervention],[usr_id_create],[usr_id_update],[usr_date_create]
-				   ,[usr_date_update],[ofc_id],[trg_action] ,[district_id])
+				   ,[usr_date_update],[ofc_id],[trg_action] ,[district_id],[hhm_inactive_reason])
 	                SELECT [hhvm_id] ,[hhm_id] ,[hhv_id],[hhm_name],[hmm_age],[gnd_name] ,[yn_id_hhm_active] ,[ynna_stb_id_SILC],[ynna_stb_id_other_saving_grp],[ynna_stb_caregiver_services]
 				   ,[ynna_stb_contributes_edu_fund] ,[ynna_stb_SAGE] ,[yn_stb_receive_social_grant],[ynna_stb_apprenticeship],[ynna_stb_cottage],[ynna_stb_agro_enterprise]
 				   ,[ynna_stb_aflateen] ,[ynna_stb_sch_ovc_edu_enrolled] ,[ynna_sch_re_enrollment_support]  ,[ynna_sch_ovc_attend_school_regularly] ,[ynna_sch_ovc_receive_school_uniform]
@@ -14208,7 +14378,7 @@ namespace SOCY_MIS.DataAccessLayer
 				   ,[ynna_initiate_art_refferal] ,[ynna_complete_art_refferal],[ynna_initiate_immunize_refferal] ,[ynna_complete_immunize_refferal] ,[ynna_tb_screen],[ynna_initiate_tb_refferal],[ynna_complete_tb_refferal]
 				   ,[ynna_initiate_perinatal_care_refferal],[ynna_complete_perinatal_care_refferal],[ynna_initiate_post_violence_refferal] ,[ynna_complete_post_violence_refferal],[ynna_ovc_has_birth_certificate] ,[ynna_initiate_birth_reg_refferal]
 				   ,[ynna_complete_birth_reg_refferal],[ynna_pss_family_group_discussion],[ynna_reported_to_police],[ynna_violence_evidence_based_intervention],[usr_id_create],[usr_id_update],[usr_date_create]
-				   ,[usr_date_update],[ofc_id],1,[district_id]
+				   ,[usr_date_update],[ofc_id],1,[district_id],[hhm_inactive_reason]
                   FROM inserted
                 END";
             dbCon.ExecuteNonQuery(strSQL);
@@ -14228,7 +14398,7 @@ namespace SOCY_MIS.DataAccessLayer
 				   ,[ynna_initiate_art_refferal] ,[ynna_complete_art_refferal],[ynna_initiate_immunize_refferal] ,[ynna_complete_immunize_refferal] ,[ynna_tb_screen],[ynna_initiate_tb_refferal],[ynna_complete_tb_refferal]
 				   ,[ynna_initiate_perinatal_care_refferal],[ynna_complete_perinatal_care_refferal],[ynna_initiate_post_violence_refferal] ,[ynna_complete_post_violence_refferal],[ynna_ovc_has_birth_certificate] ,[ynna_initiate_birth_reg_refferal]
 				   ,[ynna_complete_birth_reg_refferal],[ynna_pss_family_group_discussion],[ynna_reported_to_police],[ynna_violence_evidence_based_intervention],[usr_id_create],[usr_id_update],[usr_date_create]
-				   ,[usr_date_update],[ofc_id],[trg_action] ,[district_id])
+				   ,[usr_date_update],[ofc_id],[trg_action] ,[district_id],[hhm_inactive_reason])
 	                SELECT [hhvm_id] ,[hhm_id] ,[hhv_id],[hhm_name],[hmm_age],[gnd_name] ,[yn_id_hhm_active] ,[ynna_stb_id_SILC],[ynna_stb_id_other_saving_grp],[ynna_stb_caregiver_services]
 				   ,[ynna_stb_contributes_edu_fund] ,[ynna_stb_SAGE] ,[yn_stb_receive_social_grant],[ynna_stb_apprenticeship],[ynna_stb_cottage],[ynna_stb_agro_enterprise]
 				   ,[ynna_stb_aflateen] ,[ynna_stb_sch_ovc_edu_enrolled] ,[ynna_sch_re_enrollment_support]  ,[ynna_sch_ovc_attend_school_regularly] ,[ynna_sch_ovc_receive_school_uniform]
@@ -14237,7 +14407,7 @@ namespace SOCY_MIS.DataAccessLayer
 				   ,[ynna_initiate_art_refferal] ,[ynna_complete_art_refferal],[ynna_initiate_immunize_refferal] ,[ynna_complete_immunize_refferal] ,[ynna_tb_screen],[ynna_initiate_tb_refferal],[ynna_complete_tb_refferal]
 				   ,[ynna_initiate_perinatal_care_refferal],[ynna_complete_perinatal_care_refferal],[ynna_initiate_post_violence_refferal] ,[ynna_complete_post_violence_refferal],[ynna_ovc_has_birth_certificate] ,[ynna_initiate_birth_reg_refferal]
 				   ,[ynna_complete_birth_reg_refferal],[ynna_pss_family_group_discussion],[ynna_reported_to_police],[ynna_violence_evidence_based_intervention],[usr_id_create],[usr_id_update],[usr_date_create]
-				   ,[usr_date_update],[ofc_id],2,[district_id]
+				   ,[usr_date_update],[ofc_id],2,[district_id],[hhm_inactive_reason]
                   FROM inserted
                 END";
             dbCon.ExecuteNonQuery(strSQL);
@@ -14257,7 +14427,7 @@ namespace SOCY_MIS.DataAccessLayer
 				   ,[ynna_initiate_art_refferal] ,[ynna_complete_art_refferal],[ynna_initiate_immunize_refferal] ,[ynna_complete_immunize_refferal] ,[ynna_tb_screen],[ynna_initiate_tb_refferal],[ynna_complete_tb_refferal]
 				   ,[ynna_initiate_perinatal_care_refferal],[ynna_complete_perinatal_care_refferal],[ynna_initiate_post_violence_refferal] ,[ynna_complete_post_violence_refferal],[ynna_ovc_has_birth_certificate] ,[ynna_initiate_birth_reg_refferal]
 				   ,[ynna_complete_birth_reg_refferal],[ynna_pss_family_group_discussion],[ynna_reported_to_police],[ynna_violence_evidence_based_intervention],[usr_id_create],[usr_id_update],[usr_date_create]
-				   ,[usr_date_update],[ofc_id],[trg_action] ,[district_id])
+				   ,[usr_date_update],[ofc_id],[trg_action] ,[district_id],[hhm_inactive_reason])
 	                SELECT [hhvm_id] ,[hhm_id] ,[hhv_id],[hhm_name],[hmm_age],[gnd_name] ,[yn_id_hhm_active] ,[ynna_stb_id_SILC],[ynna_stb_id_other_saving_grp],[ynna_stb_caregiver_services]
 				   ,[ynna_stb_contributes_edu_fund] ,[ynna_stb_SAGE] ,[yn_stb_receive_social_grant],[ynna_stb_apprenticeship],[ynna_stb_cottage],[ynna_stb_agro_enterprise]
 				   ,[ynna_stb_aflateen] ,[ynna_stb_sch_ovc_edu_enrolled] ,[ynna_sch_re_enrollment_support]  ,[ynna_sch_ovc_attend_school_regularly] ,[ynna_sch_ovc_receive_school_uniform]
@@ -14266,7 +14436,7 @@ namespace SOCY_MIS.DataAccessLayer
 				   ,[ynna_initiate_art_refferal] ,[ynna_complete_art_refferal],[ynna_initiate_immunize_refferal] ,[ynna_complete_immunize_refferal] ,[ynna_tb_screen],[ynna_initiate_tb_refferal],[ynna_complete_tb_refferal]
 				   ,[ynna_initiate_perinatal_care_refferal],[ynna_complete_perinatal_care_refferal],[ynna_initiate_post_violence_refferal] ,[ynna_complete_post_violence_refferal],[ynna_ovc_has_birth_certificate] ,[ynna_initiate_birth_reg_refferal]
 				   ,[ynna_complete_birth_reg_refferal],[ynna_pss_family_group_discussion],[ynna_reported_to_police],[ynna_violence_evidence_based_intervention],[usr_id_create],[usr_id_update],[usr_date_create]
-				   ,[usr_date_update],[ofc_id],3,[district_id]
+				   ,[usr_date_update],[ofc_id],3,[district_id],[hhm_inactive_reason]
                   FROM deleted
                 END";
 
@@ -15414,7 +15584,7 @@ namespace SOCY_MIS.DataAccessLayer
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('12','Mwongyera Varias',12,'783660718','Mwongyerav@gmail.com','CSO002',1,'16','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('13','Omony Emmanuel',13,'772359672','Lamobrf2016@gmail.com','CSO001',1,'17','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('14','Nyesigamukama Alex',14,'784020702','nyejigamulkamaalexa@gmail.com','CSO019',1,'14','1','1','2018-07-19','2018-07-19')
-            INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('15','Elizabeth',15,'783915182','','CSO016',1,'19','1','1','2018-07-19','2018-07-19')
+            INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('15','KUKUNDA ELIZABETH',15,'783915182','','CSO016',1,'19','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('16','Kasule Fredrick',16,'0774547072','kirumirafrederick@gmail.com','CSO017',1,'12','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('17','Nakigudde Alice',17,'700233149','Alice2009@gmail.com','CSO018',1,'21','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('18','Kobushinge Annet',18,'89860951','kobzannet@yahoo.com','CSO018',1,'20','1','1','2018-07-19','2018-07-19')
@@ -19645,7 +19815,8 @@ namespace SOCY_MIS.DataAccessLayer
                         INSERT [dbo].[lst_hh_identification_source] ([ids_sid], [ids_id], [ids_name], [ids_order], [ids_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (6, N'6', N'PLHA ', 6, 1, N'EN', N'1', N'1', CAST(N'2018-06-14T09:35:16.383' AS DateTime), CAST(N'2018-06-14T09:35:16.383' AS DateTime))
                         INSERT [dbo].[lst_hh_identification_source] ([ids_sid], [ids_id], [ids_name], [ids_order], [ids_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (7, N'7', N'Hotspot ', 7, 1, N'EN', N'1', N'1', CAST(N'2018-06-14T09:35:54.547' AS DateTime), CAST(N'2018-06-14T09:35:54.547' AS DateTime))
                         INSERT [dbo].[lst_hh_identification_source] ([ids_sid], [ids_id], [ids_name], [ids_order], [ids_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (8, N'8', N'Transitioned', 8, 1, N'EN', N'1', N'1', CAST(N'2018-06-14T09:36:57.183' AS DateTime), CAST(N'2018-06-14T09:36:57.183' AS DateTime))
-                        INSERT [dbo].[lst_hh_identification_source] ([ids_sid], [ids_id], [ids_name], [ids_order], [ids_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (9, N'9', N'SOCHA', 9, 1, N'EN', N'1', N'1', CAST(N'2018-06-14T10:12:18.310' AS DateTime), CAST(N'2018-06-14T10:12:18.310' AS DateTime))";
+                        INSERT [dbo].[lst_hh_identification_source] ([ids_sid], [ids_id], [ids_name], [ids_order], [ids_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (9, N'9', N'SOCHA', 9, 1, N'EN', N'1', N'1', CAST(N'2018-06-14T10:12:18.310' AS DateTime), CAST(N'2018-06-14T10:12:18.310' AS DateTime))
+                        INSERT [dbo].[lst_hh_identification_source] ([ids_sid], [ids_id], [ids_name], [ids_order], [ids_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (10, N'10', N'Refered by Clinical Partner', 10, 1, N'EN', N'1', N'1', CAST(N'2018-06-14T10:12:18.310' AS DateTime), CAST(N'2018-06-14T10:12:18.310' AS DateTime))";
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
 
@@ -29485,7 +29656,17 @@ namespace SOCY_MIS.DataAccessLayer
      VALUES (144,'144','9','Yoghurt making',144,1 ,'EN',1,1,GETDATE(),GETDATE())";
             dbCon.ExecuteNonQuery(strSQL);
 
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 145)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (145,'145','4','Electro engineering',145,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
 
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 146)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (146,'146','9','Petroleum Jelly',146,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
 
 
             strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 100)
@@ -29823,6 +30004,7 @@ namespace SOCY_MIS.DataAccessLayer
             Insertlst_non_supress_action(dbCon);
             Insertlst_non_supress_health_facility(dbCon);
             Insertlst_non_supress_household(dbCon);
+            HomeVisitMERUpdate(dbCon);
         }
 
         public static void NewCso(DBConnection dbCon)
@@ -29835,6 +30017,104 @@ namespace SOCY_MIS.DataAccessLayer
             InsertLstCSO(dbCon);
 
             InsertTempCSOs(dbCon);
+        }
+
+        public static void HomeVisitMERUpdate(DBConnection dbCon)
+        {
+            string strSQL = string.Empty;
+
+            #region NewColum
+            strSQL = "IF NOT EXISTS(SELECT * FROM sys.columns " +
+                            "WHERE[name] = N'hst_id_new' AND[object_id] = OBJECT_ID(N'hh_household_member')) " +
+                    "BEGIN " +
+                        "ALTER TABLE hh_household_member ADD hst_id_new Nvarchar(50) NULL " +
+                    "END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "IF NOT EXISTS(SELECT * FROM sys.columns " +
+                           "WHERE[name] = N'hst_id_new' AND[object_id] = OBJECT_ID(N'hh_household_member_upload')) " +
+                   "BEGIN " +
+                       "ALTER TABLE hh_household_member_upload ADD hst_id_new Nvarchar(50) NULL " +
+                   "END";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion NewColum
+
+            #region Triggers
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_household_member_insert' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_household_member_insert] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_household_member_insert] ON [dbo].[hh_household_member] FOR INSERT
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_household_member_upload]
+                        ([hhm_id], [hhm_first_name], [hhm_last_name], [hhm_number], [hhm_year_of_birth], [dtp_id], [edu_id], [gnd_id], [hh_id], [hst_id], [mst_id], [prf_id], [prt_id], [yn_id_art], [yn_id_birth_registration], [yn_id_caregiver], [yn_id_disability], [yn_id_given_birth], [yn_id_hoh], [yn_id_immun], [yn_id_pregnant], [yn_id_school], 
+		                [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], [trg_action],[district_id],hst_id_new)
+	                SELECT [hhm_id], [hhm_first_name], [hhm_last_name], [hhm_number], [hhm_year_of_birth], [dtp_id], [edu_id], [gnd_id], [hh_id], [hst_id], [mst_id], [prf_id], [prt_id], [yn_id_art], [yn_id_birth_registration], [yn_id_caregiver], [yn_id_disability], [yn_id_given_birth], [yn_id_hoh], [yn_id_immun], [yn_id_pregnant], [yn_id_school], 
+		                [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], 1,[district_id],hst_id_new
+                  FROM inserted
+                END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_household_member_update' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_household_member_update] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_household_member_update] ON [dbo].[hh_household_member] FOR UPDATE
+                AS
+                BEGIN
+	                IF (UPDATE(hhm_id) OR UPDATE(hhm_first_name) OR UPDATE(hhm_last_name) OR UPDATE(hhm_number) OR UPDATE(hhm_year_of_birth) OR UPDATE(dtp_id) OR UPDATE(edu_id) OR UPDATE(gnd_id) OR UPDATE(hh_id) OR UPDATE(hst_id) OR UPDATE(mst_id) OR UPDATE(prf_id) OR UPDATE(prt_id) OR UPDATE(yn_id_art) OR UPDATE(yn_id_birth_registration) OR UPDATE(yn_id_caregiver) OR UPDATE(yn_id_disability) OR UPDATE(yn_id_given_birth) OR UPDATE(yn_id_hoh) OR UPDATE(yn_id_immun) OR UPDATE(yn_id_pregnant) OR UPDATE(yn_id_school) OR UPDATE(hst_id_new))
+	                BEGIN
+		                INSERT INTO [dbo].[hh_household_member_upload]
+							([hhm_id], [hhm_first_name], [hhm_last_name], [hhm_number], [hhm_year_of_birth], [dtp_id], [edu_id], [gnd_id], [hh_id], [hst_id], [mst_id], [prf_id], [prt_id], [yn_id_art], [yn_id_birth_registration], [yn_id_caregiver], [yn_id_disability], [yn_id_given_birth], [yn_id_hoh], [yn_id_immun], [yn_id_pregnant], [yn_id_school], 
+							[usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], [trg_action],[district_id],hst_id_new)
+						SELECT [hhm_id], [hhm_first_name], [hhm_last_name], [hhm_number], [hhm_year_of_birth], [dtp_id], [edu_id], [gnd_id], [hh_id], [hst_id], [mst_id], [prf_id], [prt_id], [yn_id_art], [yn_id_birth_registration], [yn_id_caregiver], [yn_id_disability], [yn_id_given_birth], [yn_id_hoh], [yn_id_immun], [yn_id_pregnant], [yn_id_school], 
+							[usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], 2,[district_id],hst_id_new
+	                  FROM inserted
+	                END
+                END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_household_member_delete' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_household_member_delete] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_household_member_delete] ON [dbo].[hh_household_member] FOR DELETE
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_household_member_upload]
+                        ([hhm_id], [hhm_first_name], [hhm_last_name], [hhm_number], [hhm_year_of_birth], [dtp_id], [edu_id], [gnd_id], [hh_id], [hst_id], [mst_id], [prf_id], [prt_id], [yn_id_art], [yn_id_birth_registration], [yn_id_caregiver], [yn_id_disability], [yn_id_given_birth], [yn_id_hoh], [yn_id_immun], [yn_id_pregnant], [yn_id_school], 
+		                [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], [trg_action],[district_id],hst_id_new)
+	                SELECT [hhm_id], [hhm_first_name], [hhm_last_name], [hhm_number], [hhm_year_of_birth], [dtp_id], [edu_id], [gnd_id], [hh_id], [hst_id], [mst_id], [prf_id], [prt_id], [yn_id_art], [yn_id_birth_registration], [yn_id_caregiver], [yn_id_disability], [yn_id_given_birth], [yn_id_hoh], [yn_id_immun], [yn_id_pregnant], [yn_id_school], 
+		                [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], 3,[district_id],hst_id_new
+                  FROM deleted
+                END";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion Triggers
+
+            #region Remove Nulls
+            strSQL = "ALTER TABLE hh_household_member DISABLE TRIGGER hh_household_member_insert";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "ALTER TABLE hh_household_member DISABLE TRIGGER hh_household_member_update";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "ALTER TABLE hh_household_member DISABLE TRIGGER hh_household_member_delete";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_household_member SET hst_id_new = '' WHERE hst_id_new IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_household_member_upload SET hst_id_new = '' WHERE hst_id_new IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "ALTER TABLE hh_household_member ENABLE TRIGGER hh_household_member_insert";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "ALTER TABLE hh_household_member ENABLE TRIGGER hh_household_member_update";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "ALTER TABLE hh_household_member ENABLE TRIGGER hh_household_member_delete";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion
+
         }
 
         public static void NewHomeVisitReason(DBConnection dbCon)

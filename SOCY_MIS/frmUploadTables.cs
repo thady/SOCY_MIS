@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using SOCY_MIS.DataAccessLayer;
 using System.ServiceModel.Dispatcher;
 using PSAUtils;
+using AutoUpdaterDotNET;
 
 namespace SOCY_MIS
 {
@@ -32,6 +33,9 @@ namespace SOCY_MIS
         {
             GetTable();
             Return_lookups();
+            AutoUpdater.Start("https://esocy.crs.org/AppDownload/updater.xml");
+            AutoUpdater.Mandatory = true;
+            AutoUpdater.UpdateMode = Mode.Forced;
         }
 
         public void LoadWSResults(string DownLoadTable,string dst_id)
@@ -88,6 +92,9 @@ namespace SOCY_MIS
             table.Rows.Add("Risk Assessment MER2.3", "hh_household_risk_assessment");
             table.Rows.Add("Risk Assessment Children MER2.3", "hh_household_risk_assessment_member_child");
             table.Rows.Add("Risk Assessment Adults MER2.3", "hh_household_risk_assessment_member_adult");
+            table.Rows.Add("Community Training Register", "silc_community_training_register");
+            table.Rows.Add("Community Training Register Member", "silc_community_training_register_member");
+            table.Rows.Add("Community Training Register Attendance", "silc_community_training_register_member_attendance_dates");
 
             DataRow dstemptyRow = table.NewRow();
             dstemptyRow["table_id"] = "-1";
@@ -654,7 +661,65 @@ namespace SOCY_MIS
                                                         dtRow["district_id"].ToString());
 
                                 break;
-                                #endregion hh_household_risk_assessment_member_child  
+                            #endregion hh_household_risk_assessment_member_child  
+
+                            #region silc_community_training_register
+                            case "silc_community_training_register":
+
+                                #region Delete
+                                strID = dtRow["ctr_id"].ToString();
+                                strSQLDelete = " DELETE FROM {0} WHERE ctr_id = '{1}'";
+                                strSQLDelete = string.Format(strSQLDelete, DownLoadTable, strID);
+                                #endregion Delete
+
+                                strSQLInsert = @"INSERT INTO [dbo].[silc_community_training_register]
+                                                   ([ctr_id],[prt_id],[cso_id],[dst_id],[sct_id],[tr_name],[module_name],[tr_total_days]
+                                                   ,[tr_date_from],[tr_date_to],[module_desc],[tr_venue] ,[trainer_type],[artisan_name],[facilitator_trainer_name]
+                                                   ,[usr_id_create] ,[usr_id_update],[usr_date_create],[usr_date_update],[ofc_id],[district_id])
+                                                   VALUES('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}','{16}','{17}','{18}','{19}','{20}')";
+
+                                strSQLInsert = string.Format(strSQLInsert, dtRow["ctr_id"].ToString() , dtRow["prt_id"].ToString() , dtRow["cso_id"].ToString() , dtRow["dst_id"].ToString() , dtRow["sct_id"].ToString()  , dtRow["tr_name"].ToString()  , utilFormatting.StringForSQL(dtRow["module_name"].ToString()), utilFormatting.StringForSQL(dtRow["tr_total_days"].ToString()) , Convert.ToDateTime(dtRow["tr_date_from"]) ,
+                                Convert.ToDateTime(dtRow["tr_date_to"]) ,utilFormatting.StringForSQL(dtRow["module_desc"].ToString()), utilFormatting.StringForSQL(dtRow["tr_venue"].ToString()),
+                                dtRow["trainer_type"].ToString(), dtRow["artisan_name"].ToString() , dtRow["facilitator_trainer_name"].ToString() , dtRow["usr_id_create"].ToString() , dtRow["usr_id_update"].ToString() , Convert.ToDateTime(dtRow["usr_date_create"]), Convert.ToDateTime(dtRow["usr_date_update"]) ,dtRow["ofc_id"].ToString(),dtRow["district_id"].ToString());
+
+                                break;
+                            #endregion silc_community_training_register  
+
+                            #region silc_community_training_register_member
+                            case "silc_community_training_register_member":
+
+                                #region Delete
+                                strID = dtRow["ctrm_id"].ToString();
+                                strSQLDelete = " DELETE FROM {0} WHERE ctrm_id = '{1}'";
+                                strSQLDelete = string.Format(strSQLDelete, DownLoadTable, strID);
+                                #endregion Delete
+
+                                strSQLInsert = @"INSERT INTO [dbo].[silc_community_training_register_member]
+                                                   ([ctrm_id],[ctr_id],[ben_type] ,[hhm_code],[parcipant_name],[gnd_id],[age] ,[usr_id_create]
+                                                   ,[usr_id_update] ,[usr_date_create] ,[usr_date_update],[ofc_id],[district_id])
+                                                   VALUES('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}')";
+
+                                strSQLInsert = string.Format(strSQLInsert,dtRow["ctrm_id"].ToString(), dtRow["ctr_id"].ToString() , dtRow["ben_type"].ToString() , dtRow["hhm_code"].ToString() , dtRow["parcipant_name"].ToString() , dtRow["gnd_id"].ToString() ,dtRow["age"].ToString() , dtRow["usr_id_create"].ToString() , dtRow["usr_id_update"].ToString() , Convert.ToDateTime(dtRow["usr_date_create"]), Convert.ToDateTime(dtRow["usr_date_update"]), dtRow["ofc_id"].ToString(), dtRow["district_id"].ToString());
+
+                                break;
+                            #endregion silc_community_training_register_member 
+
+                            #region silc_community_training_register_member_attendance_dates
+                            case "silc_community_training_register_member_attendance_dates":
+
+                                #region Delete
+                                strID = dtRow["ctrmD_id"].ToString();
+                                strSQLDelete = " DELETE FROM {0} WHERE ctrmD_id = '{1}'";
+                                strSQLDelete = string.Format(strSQLDelete, DownLoadTable, strID);
+                                #endregion Delete
+
+                                strSQLInsert = @"INSERT INTO silc_community_training_register_member_attendance_dates(ctrmD_id,ctrm_id,date,ofc_id,district_id)
+	                                             VALUES('{0}','{1}','{2}','{3}','{4}')";
+
+                                strSQLInsert = string.Format(strSQLInsert, dtRow["ctrmD_id"].ToString() , dtRow["ctrm_id"].ToString() , Convert.ToDateTime(dtRow["date"]) , dtRow["ofc_id"].ToString(), dtRow["district_id"].ToString());
+
+                                break;
+                                #endregion silc_community_training_register_member_attendance_dates 
                         }
 
                         #endregion Switch Tables

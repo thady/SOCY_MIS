@@ -252,7 +252,7 @@ namespace SOCY_MIS
             hh_household_improvement_plan.yn_stable_access_money_followup_date = dtyn_stable_access_money_followup_date.Checked ? dtyn_stable_access_money_followup_date.Value.Date.ToShortDateString() : string.Empty;
             hh_household_improvement_plan.yn_stable_access_money_out_come = yn_stable_access_money_out_come.Text;
             hh_household_improvement_plan.yn_stable_income_source = utilControls.RadioButtonGetSelection(rbtn_yn_stable_income_source_Yes, rbtn_yn_stable_income_source_No);
-            hh_household_improvement_plan.yn_stable_income_source_action = txtyn_stable_income_source_action.Text;
+            hh_household_improvement_plan.yn_stable_income_source_action = txt_yn_stable_income_source_action.Text;
             hh_household_improvement_plan.yn_stable_income_source_followup_date = dtyn_stable_income_source_followup_date.Checked ? dtyn_stable_income_source_followup_date.Value.Date.ToShortDateString() : string.Empty;
             hh_household_improvement_plan.yn_stable_income_source_out_come = txtyn_stable_income_source_out_come.Text;
             hh_household_improvement_plan.other_hes_issues = txtother_hes_issues.Text;
@@ -282,6 +282,11 @@ namespace SOCY_MIS
             hh_household_improvement_plan.usr_date_update = DateTime.Today;
             hh_household_improvement_plan.ofc_id = SystemConstants.ofc_id;
             hh_household_improvement_plan.district_id = SystemConstants.Return_office_district();
+
+            hh_household_improvement_plan.yn_safe_birth_certificates = utilControls.RadioButtonGetSelection(rbtn_yn_birth_certificateYes, rbtn_yn_birth_certificateNo, rbtn_yn_birth_certificateNA);
+            hh_household_improvement_plan.yn_safe_birth_certificates_action = txt_yn_birth_certificate_action.Text;
+            hh_household_improvement_plan.yn_safe_birth_certificates_followup_date = dt_yn_birth_certificates_followup_date.Checked ? dt_yn_birth_certificates_followup_date.Value.Date.ToShortDateString() : string.Empty;
+            hh_household_improvement_plan.yn_safe_birth_certificates_out_come = txt_yn_birth_certificate_out_come.Text;
             #endregion setVariables
 
             #region save
@@ -375,7 +380,7 @@ namespace SOCY_MIS
                 dtyn_stable_access_money_followup_date.Checked = dtRow["yn_stable_access_money_followup_date"].ToString() != string.Empty ? true : false;
                 yn_stable_access_money_out_come.Text = dtRow["yn_stable_access_money_out_come"].ToString();
                 utilControls.RadioButtonSetSelection(rbtn_yn_stable_income_source_Yes, rbtn_yn_stable_income_source_No, dtRow["yn_stable_income_source"].ToString());
-                txtyn_stable_income_source_action.Text = dtRow["yn_stable_income_source_action"].ToString();
+                txt_yn_stable_income_source_action.Text = dtRow["yn_stable_income_source_action"].ToString();
                 dtyn_stable_income_source_followup_date.Value = dtRow["yn_stable_income_source_followup_date"].ToString() != string.Empty ? Convert.ToDateTime(dtRow["yn_stable_income_source_followup_date"].ToString()) : DateTime.Today;
                 dtyn_stable_income_source_followup_date.Checked = dtRow["yn_stable_income_source_followup_date"].ToString() != string.Empty ? true : false;
                 txtyn_stable_income_source_out_come.Text = dtRow["yn_stable_income_source_out_come"].ToString();
@@ -425,10 +430,11 @@ namespace SOCY_MIS
             else if (!rbtn_yn_child_undernourished_Yes.Checked  & !rbtn_yn_child_undernourished_NA.Checked & (txtyn_child_undernourished_action.Text == string.Empty || !dtyn_child_undernourished_followup_date.Checked)) { isValid = false; }
             else if (txtother_health_issues.Text != string.Empty &(txtother_health_issues_action.Text == string.Empty || !dtother_health_issues_action_followup_date.Checked)) { isValid = false; }
             else if (!rbtn_yn_no_violence_Yes.Checked & (txtyn_no_violence_action.Text == string.Empty || !dtyn_no_violence_action_followup_date.Checked)) { isValid = false; }
+            else if (!rbtn_yn_birth_certificateYes.Checked & !rbtn_yn_birth_certificateNA.Checked & (txt_yn_birth_certificate_action.Text == string.Empty || !dt_yn_birth_certificates_followup_date.Checked)) { isValid = false; }
             else if (!rbtn_yn_stable_care_giver_Yes.Checked & (txtyn_stable_care_giver_action.Text == string.Empty || !dtyn_stable_care_giver_followup_date.Checked)) { isValid = false; }
             else if (txtother_safe_issues.Text != string.Empty & (txtother_safe_issues_action.Text == string.Empty || !dtother_safe_issues_followup_date.Checked)) { isValid = false; }
             else if (!yn_stable_access_money_Yes.Checked & (txtyn_stable_access_money_action.Text == string.Empty || !dtyn_stable_access_money_followup_date.Checked)) { isValid = false; }
-            else if (!rbtn_yn_stable_income_source_Yes.Checked & (txtyn_stable_income_source_action.Text == string.Empty || !dtyn_stable_income_source_followup_date.Checked)) { isValid = false; }
+            else if (!rbtn_yn_stable_income_source_Yes.Checked & (txt_yn_stable_income_source_action.Text == string.Empty || !dtyn_stable_income_source_followup_date.Checked)) { isValid = false; }
             else if (txtother_hes_issues.Text != string.Empty &(txtother_hes_issues_action.Text == string.Empty || !dtother_hes_issues_followup_date.Checked)) { isValid = false; }
             else if (!rbtn_yn_ovc_regularly_attend_school_Yes.Checked & !rbtn_yn_ovc_regularly_attend_school_NA.Checked & (txtyn_ovc_regularly_attend_school_action.Text == string.Empty || !dtyn_ovc_regularly_attend_school_followup_date.Checked)) { isValid = false; }
             else if (!rbtn_yn_attained_tech_skill_Yes.Checked & !rbtn_yn_attained_tech_skill_NA.Checked & (txtyn_attained_tech_skill_action_plan.Text == string.Empty || !dtyn_attained_tech_skill_followup_date.Checked)) { isValid = false; }
@@ -667,6 +673,7 @@ namespace SOCY_MIS
             dtyn_positive_adhering_followup_date.Checked = false;
             dtyn_adolescent_hiv_prevention_followup_date.Checked = false;
             dtyn_child_undernourished_followup_date.Checked = false;
+            dt_yn_birth_certificates_followup_date.Checked = false;
             dtother_health_issues_action_followup_date.Checked = false;
             dtyn_no_violence_action_followup_date.Checked = false;
             dtyn_stable_care_giver_followup_date.Checked = false;
@@ -717,6 +724,7 @@ namespace SOCY_MIS
                 panelResponse10.Enabled = false;
                 panelResponse11.Enabled = false;
                 panelResponse12.Enabled = false;
+                panelResponse13.Enabled = false;
                 txtother_health_issues.Enabled = false;
                 txtother_safe_issues.Enabled = false;
                 txtother_hes_issues.Enabled = false;
@@ -732,7 +740,8 @@ namespace SOCY_MIS
                 txtyn_stable_care_giver_action.Enabled = false;
                 txtother_safe_issues_action.Enabled = false;
                 txtyn_stable_access_money_action.Enabled = false;
-                txtyn_stable_income_source_action.Enabled = false;
+                txt_yn_stable_income_source_action.Enabled = false;
+                txt_yn_birth_certificate_action.Enabled = false;
                 txtother_hes_issues_action.Enabled = false;
                 txtyn_ovc_regularly_attend_school_action.Enabled = false;
                 txtyn_attained_tech_skill_action_plan.Enabled = false;
@@ -744,6 +753,7 @@ namespace SOCY_MIS
                 dtyn_positive_enrolled_on_art_followup_date.Enabled = false;
                 dtyn_positive_supressing_followup_date.Enabled = false;
                 dtyn_positive_adhering_followup_date.Enabled = false;
+                dt_yn_birth_certificates_followup_date.Enabled = false;
                 dtyn_adolescent_hiv_prevention_followup_date.Enabled = false;
                 dtyn_child_undernourished_followup_date.Enabled = false;
                 dtother_health_issues_action_followup_date.Enabled = false;
@@ -797,6 +807,7 @@ namespace SOCY_MIS
                 panelResponse10.Enabled = true;
                 panelResponse11.Enabled = true;
                 panelResponse12.Enabled = true;
+                panelResponse13.Enabled = true;
                 txtother_health_issues.Enabled = true;
                 txtother_safe_issues.Enabled = true;
                 txtother_hes_issues.Enabled = true;
@@ -812,11 +823,12 @@ namespace SOCY_MIS
                 txtyn_stable_care_giver_action.Enabled = true;
                 txtother_safe_issues_action.Enabled = true;
                 txtyn_stable_access_money_action.Enabled = true;
-                txtyn_stable_income_source_action.Enabled = true;
+                txt_yn_stable_income_source_action.Enabled = true;
                 txtother_hes_issues_action.Enabled = true;
                 txtyn_ovc_regularly_attend_school_action.Enabled = true;
                 txtyn_attained_tech_skill_action_plan.Enabled = true;
                 txtother_edu_issues_action.Enabled = true;
+                txt_yn_birth_certificate_action.Enabled = true;
 
                 dtInitialHip.Enabled = true;
                 dtTimeVisistDate.Enabled = true;
@@ -836,6 +848,7 @@ namespace SOCY_MIS
                 dtyn_ovc_regularly_attend_school_followup_date.Enabled = true;
                 dtyn_attained_tech_skill_followup_date.Enabled = true;
                 dtother_edu_issues_followup_date.Enabled = true;
+                dt_yn_birth_certificates_followup_date.Enabled = true;
 
                 #endregion EnableControls
             }

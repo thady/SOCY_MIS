@@ -67,6 +67,12 @@ namespace SOCY_MIS
                 SetPermissions();
                 LoadHousehold();
                 LoadDisplay();
+
+                //temporarily disable save button
+                DateTime ExpiryDate = DateTime.Now.Date;
+
+                if (ExpiryDate <= Convert.ToDateTime( "2019-07-26")) { btnSave.Enabled = true; }
+                else { btnSave.Enabled = false; }
             }
         }
 

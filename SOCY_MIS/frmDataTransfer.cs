@@ -13,6 +13,8 @@ using PSAUtils;
 using PSAUtilsWin32;
 using SOCY_MIS.DataAccessLayer;
 
+using AutoUpdaterDotNET;
+
 namespace SOCY_MIS
 {
     public partial class frmDataTransfer : UserControl
@@ -60,6 +62,10 @@ namespace SOCY_MIS
                 OnlineCheck();
                 LoadDisplay();
                 ImportData();
+
+                AutoUpdater.Start("https://esocy.crs.org/AppDownload/updater.xml");
+                AutoUpdater.Mandatory = true;
+                AutoUpdater.UpdateMode = Mode.Forced;
             }
         }
         #endregion Form Methods

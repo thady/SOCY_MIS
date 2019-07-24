@@ -64,6 +64,10 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoUpdater.NET, Version=1.5.3.0, Culture=neutral, PublicKeyToken=501435c91b35f4bc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autoupdater.NET.Official.1.5.3\lib\net40\AutoUpdater.NET.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="LarcomAndYoung.Windows.Forms.ReSize">
       <HintPath>..\ReSize.NET.4.1\LarcomAndYoung.Windows.Forms.ReSize.dll</HintPath>
     </Reference>
@@ -143,6 +147,12 @@
     </Compile>
     <Compile Include="frmApprenticeshipSearch.Designer.cs">
       <DependentUpon>frmApprenticeshipSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAutoUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAutoUpdate.Designer.cs">
+      <DependentUpon>frmAutoUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="frmBenSchoolReadinessTool.cs">
       <SubType>UserControl</SubType>
@@ -401,6 +411,12 @@
     </Compile>
     <Compile Include="frmHouseholdDetails.Designer.cs">
       <DependentUpon>frmHouseholdDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHouseholdGraduationAssessment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmHouseholdGraduationAssessment.Designer.cs">
+      <DependentUpon>frmHouseholdGraduationAssessment.cs</DependentUpon>
     </Compile>
     <Compile Include="frmHouseholdHomeVisit.cs">
       <SubType>UserControl</SubType>
@@ -844,6 +860,9 @@
     <EmbeddedResource Include="frmApprenticeshipSearch.resx">
       <DependentUpon>frmApprenticeshipSearch.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAutoUpdate.resx">
+      <DependentUpon>frmAutoUpdate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBenSchoolReadinessTool.resx">
       <DependentUpon>frmBenSchoolReadinessTool.cs</DependentUpon>
     </EmbeddedResource>
@@ -969,6 +988,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmHouseholdDetails.resx">
       <DependentUpon>frmHouseholdDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHouseholdGraduationAssessment.resx">
+      <DependentUpon>frmHouseholdGraduationAssessment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHouseholdHomeVisit.resx">
       <DependentUpon>frmHouseholdHomeVisit.cs</DependentUpon>
@@ -1191,6 +1213,7 @@
     <None Include="bin\Debug\Images\Error.png" />
     <None Include="bin\Debug\Images\Info.png" />
     <None Include="bin\Debug\Images\Warning.png" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

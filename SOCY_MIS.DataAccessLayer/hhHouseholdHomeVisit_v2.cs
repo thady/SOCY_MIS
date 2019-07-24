@@ -89,6 +89,7 @@ namespace SOCY_MIS.DataAccessLayer
         public static string ynna_tb_screen = string.Empty;
         public static string ynna_initiate_tb_refferal = string.Empty;
         public static string ynna_complete_tb_refferal = string.Empty;
+        public static string hhm_inactive_reason = string.Empty;
         public static string ynna_initiate_perinatal_care_refferal = string.Empty;
         public static string ynna_complete_perinatal_care_refferal = string.Empty;
         public static string ynna_initiate_post_violence_refferal = string.Empty;
@@ -194,11 +195,11 @@ namespace SOCY_MIS.DataAccessLayer
            ,[ynna_initiate_art_refferal] ,[ynna_complete_art_refferal],[ynna_initiate_immunize_refferal] ,[ynna_complete_immunize_refferal] ,[ynna_tb_screen],[ynna_initiate_tb_refferal],[ynna_complete_tb_refferal]
            ,[ynna_initiate_perinatal_care_refferal],[ynna_complete_perinatal_care_refferal],[ynna_initiate_post_violence_refferal] ,[ynna_complete_post_violence_refferal],[ynna_ovc_has_birth_certificate] ,[ynna_initiate_birth_reg_refferal]
            ,[ynna_complete_birth_reg_refferal],[ynna_pss_family_group_discussion],[ynna_reported_to_police],[ynna_violence_evidence_based_intervention],[usr_id_create],[usr_id_update],[usr_date_create]
-           ,[usr_date_update],[ofc_id] ,[district_id])
+           ,[usr_date_update],[ofc_id] ,[district_id],hhm_inactive_reason)
         VALUES ('{0}' ,'{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}' ,'{16}','{17}'
            ,'{18}' ,'{19}','{20}' ,'{21}' ,'{22}' ,'{23}' ,'{24}' ,'{25}','{26}','{27}','{28}','{29}','{30}','{31}' ,'{32}','{33}'
            ,'{34}','{35}','{36}','{37}' ,'{38}' ,'{39}','{40}' ,'{41}','{42}','{43}' ,'{44}' ,'{45}','{46}' ,'{47}','{48}','{49}'
-           ,'{50}' ,'{51}' ,'{52}' ,'{53}' ,GETDATE(),GETDATE(),'{54}','{55}')";
+           ,'{50}' ,'{51}' ,'{52}' ,'{53}' ,GETDATE(),GETDATE(),'{54}','{55}','{56}')";
 
             strSQL = string.Format(strSQL, hhvm_id, hhm_id, hhv_id, hhm_name, hmm_age, gnd_name, yn_id_hhm_active, ynna_stb_id_SILC, ynna_stb_id_other_saving_grp, ynna_stb_caregiver_services
            , ynna_stb_contributes_edu_fund, ynna_stb_SAGE, yn_stb_receive_social_grant, ynna_stb_apprenticeship, ynna_stb_cottage, ynna_stb_agro_enterprise
@@ -207,7 +208,7 @@ namespace SOCY_MIS.DataAccessLayer
            , yn_hiv_counselling, yn_hiv_adherence_support, yn_hiv_prevention_support, yn_wash_messages, nutrition_assessment_result, yn_initiate_hts_refferal, yn_complete_hts_refferal
            , ynna_initiate_art_refferal, ynna_complete_art_refferal, ynna_initiate_immunize_refferal, ynna_complete_immunize_refferal, ynna_tb_screen, ynna_initiate_tb_refferal, ynna_complete_tb_refferal
            , ynna_initiate_perinatal_care_refferal, ynna_complete_perinatal_care_refferal, ynna_initiate_post_violence_refferal, ynna_complete_post_violence_refferal, ynna_ovc_has_birth_certificate, ynna_initiate_birth_reg_refferal
-           , ynna_complete_birth_reg_refferal, ynna_pss_family_group_discussion, ynna_reported_to_police, ynna_violence_evidence_based_intervention, usr_id_create, usr_id_update, ofc_id, district_id);
+           , ynna_complete_birth_reg_refferal, ynna_pss_family_group_discussion, ynna_reported_to_police, ynna_violence_evidence_based_intervention, usr_id_create, usr_id_update, ofc_id, district_id, hhm_inactive_reason);
 
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
@@ -277,6 +278,7 @@ namespace SOCY_MIS.DataAccessLayer
                               ,[district_id] ='{52}'
                               ,[gnd_name] = '{53}'
                               ,[ynna_complete_tb_refferal] = '{54}'
+                              ,hhm_inactive_reason = '{55}'
                          WHERE  [hhvm_id] = '{0}'";
 
             strSQL = string.Format(strSQL, hhvm_id, hhm_id, hhv_id, hhm_name, hmm_age, yn_id_hhm_active, ynna_stb_id_SILC, ynna_stb_id_other_saving_grp, ynna_stb_caregiver_services
@@ -286,13 +288,58 @@ namespace SOCY_MIS.DataAccessLayer
            , yn_hiv_counselling, yn_hiv_adherence_support, yn_hiv_prevention_support, yn_wash_messages, nutrition_assessment_result, yn_initiate_hts_refferal, yn_complete_hts_refferal
            , ynna_initiate_art_refferal, ynna_complete_art_refferal, ynna_initiate_immunize_refferal, ynna_complete_immunize_refferal, ynna_tb_screen, ynna_initiate_tb_refferal
            , ynna_initiate_perinatal_care_refferal, ynna_complete_perinatal_care_refferal, ynna_initiate_post_violence_refferal, ynna_complete_post_violence_refferal, ynna_ovc_has_birth_certificate, ynna_initiate_birth_reg_refferal
-           , ynna_complete_birth_reg_refferal, ynna_pss_family_group_discussion, ynna_reported_to_police, ynna_violence_evidence_based_intervention, usr_id_update, ofc_id, district_id,gnd_name, ynna_complete_tb_refferal);
+           , ynna_complete_birth_reg_refferal, ynna_pss_family_group_discussion, ynna_reported_to_police, ynna_violence_evidence_based_intervention, usr_id_update, ofc_id, district_id,gnd_name, ynna_complete_tb_refferal, hhm_inactive_reason);
 
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
         }
 
         #endregion Save
+
+
+        public static void update_member_hiv_status(string hhm_id, string hst_id)
+        {
+            string crop_name = string.Empty;
+
+            string SQL = "UPDATE hh_household_member SET hst_id_new = '{0}' WHERE hhm_id = '{1}' AND hst_id_new <> '1'";
+            SQL = string.Format(SQL, hst_id,hhm_id);
+            try
+            {
+                string strConn = dbCon.ToString();
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(SQL, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+
+                    cmd.ExecuteNonQuery();
+
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            finally
+            {
+                if (conn.State == ConnectionState.Open) { conn.Close(); }
+            }
+
+        }
 
 
         public static void update_hh_status(string hh_id, string hhs_id)
@@ -401,7 +448,7 @@ namespace SOCY_MIS.DataAccessLayer
             SqlDataAdapter Adapt;
             string strSQL = string.Empty;
 
-            strSQL = @"SELECT hhm.hhm_year_of_birth,hhm.hhm_number,gnd.gnd_name,hhm.hst_id FROM hh_household_member hhm
+            strSQL = @"SELECT hhm.hhm_year_of_birth,hhm.hhm_number,gnd.gnd_name,hhm.hst_id,hhm.hst_id_new FROM hh_household_member hhm
                       INNER JOIN lst_gender gnd ON hhm.gnd_id = gnd.gnd_id
                        WHERE hhm.hhm_id = '{0}'";
 

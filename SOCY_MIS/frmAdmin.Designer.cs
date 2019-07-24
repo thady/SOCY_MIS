@@ -38,6 +38,7 @@
             this.llblDCConnect = new System.Windows.Forms.LinkLabel();
             this.llbdistrict_download = new System.Windows.Forms.LinkLabel();
             this.pnlPlaceHolder = new System.Windows.Forms.Panel();
+            this.lnkUpdate = new System.Windows.Forms.LinkLabel();
             this.gbAdminFunctions.SuspendLayout();
             this.tlpDisplay01.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +58,7 @@
             // 
             this.tlpDisplay01.ColumnCount = 1;
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpDisplay01.Controls.Add(this.lnkUpdate, 0, 7);
             this.tlpDisplay01.Controls.Add(this.llblDownload, 0, 6);
             this.tlpDisplay01.Controls.Add(this.llblDataTransfer, 0, 5);
             this.tlpDisplay01.Controls.Add(this.llblUserManagement, 0, 0);
@@ -66,7 +68,7 @@
             this.tlpDisplay01.Controls.Add(this.llbdistrict_download, 0, 4);
             this.tlpDisplay01.Location = new System.Drawing.Point(6, 19);
             this.tlpDisplay01.Name = "tlpDisplay01";
-            this.tlpDisplay01.RowCount = 7;
+            this.tlpDisplay01.RowCount = 8;
             this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -74,7 +76,8 @@
             this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tlpDisplay01.Size = new System.Drawing.Size(156, 174);
+            this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpDisplay01.Size = new System.Drawing.Size(156, 212);
             this.tlpDisplay01.TabIndex = 2;
             // 
             // llblDownload
@@ -82,7 +85,7 @@
             this.llblDownload.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.llblDownload.AutoSize = true;
             this.llblDownload.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblDownload.Location = new System.Drawing.Point(3, 154);
+            this.llblDownload.Location = new System.Drawing.Point(3, 173);
             this.llblDownload.Name = "llblDownload";
             this.llblDownload.Size = new System.Drawing.Size(85, 13);
             this.llblDownload.TabIndex = 6;
@@ -95,7 +98,7 @@
             this.llblDataTransfer.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.llblDataTransfer.AutoSize = true;
             this.llblDataTransfer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblDataTransfer.Location = new System.Drawing.Point(3, 127);
+            this.llblDataTransfer.Location = new System.Drawing.Point(3, 147);
             this.llblDataTransfer.Name = "llblDataTransfer";
             this.llblDataTransfer.Size = new System.Drawing.Size(67, 13);
             this.llblDataTransfer.TabIndex = 4;
@@ -108,7 +111,7 @@
             this.llblUserManagement.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.llblUserManagement.AutoSize = true;
             this.llblUserManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblUserManagement.Location = new System.Drawing.Point(3, 5);
+            this.llblUserManagement.Location = new System.Drawing.Point(3, 7);
             this.llblUserManagement.Name = "llblUserManagement";
             this.llblUserManagement.Size = new System.Drawing.Size(94, 13);
             this.llblUserManagement.TabIndex = 1;
@@ -121,7 +124,7 @@
             this.llblRoleManagement.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.llblRoleManagement.AutoSize = true;
             this.llblRoleManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblRoleManagement.Location = new System.Drawing.Point(3, 29);
+            this.llblRoleManagement.Location = new System.Drawing.Point(3, 35);
             this.llblRoleManagement.Name = "llblRoleManagement";
             this.llblRoleManagement.Size = new System.Drawing.Size(94, 13);
             this.llblRoleManagement.TabIndex = 2;
@@ -134,7 +137,7 @@
             this.llblOfficeManagement.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.llblOfficeManagement.AutoSize = true;
             this.llblOfficeManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblOfficeManagement.Location = new System.Drawing.Point(3, 77);
+            this.llblOfficeManagement.Location = new System.Drawing.Point(3, 91);
             this.llblOfficeManagement.Name = "llblOfficeManagement";
             this.llblOfficeManagement.Size = new System.Drawing.Size(90, 13);
             this.llblOfficeManagement.TabIndex = 0;
@@ -147,7 +150,7 @@
             this.llblDCConnect.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.llblDCConnect.AutoSize = true;
             this.llblDCConnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblDCConnect.Location = new System.Drawing.Point(3, 53);
+            this.llblDCConnect.Location = new System.Drawing.Point(3, 63);
             this.llblDCConnect.Name = "llblDCConnect";
             this.llblDCConnect.Size = new System.Drawing.Size(110, 13);
             this.llblDCConnect.TabIndex = 3;
@@ -160,7 +163,7 @@
             this.llbdistrict_download.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.llbdistrict_download.AutoSize = true;
             this.llbdistrict_download.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llbdistrict_download.Location = new System.Drawing.Point(3, 101);
+            this.llbdistrict_download.Location = new System.Drawing.Point(3, 119);
             this.llbdistrict_download.Name = "llbdistrict_download";
             this.llbdistrict_download.Size = new System.Drawing.Size(103, 13);
             this.llbdistrict_download.TabIndex = 5;
@@ -180,6 +183,19 @@
             this.pnlPlaceHolder.Size = new System.Drawing.Size(730, 513);
             this.pnlPlaceHolder.TabIndex = 1;
             // 
+            // lnkUpdate
+            // 
+            this.lnkUpdate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lnkUpdate.AutoSize = true;
+            this.lnkUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkUpdate.Location = new System.Drawing.Point(3, 195);
+            this.lnkUpdate.Name = "lnkUpdate";
+            this.lnkUpdate.Size = new System.Drawing.Size(81, 13);
+            this.lnkUpdate.TabIndex = 7;
+            this.lnkUpdate.TabStop = true;
+            this.lnkUpdate.Text = "Check Updates";
+            this.lnkUpdate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkUpdate_LinkClicked);
+            // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -189,6 +205,7 @@
             this.Controls.Add(this.gbAdminFunctions);
             this.Name = "frmAdmin";
             this.Size = new System.Drawing.Size(910, 520);
+            this.Load += new System.EventHandler(this.frmAdmin_Load);
             this.gbAdminFunctions.ResumeLayout(false);
             this.tlpDisplay01.ResumeLayout(false);
             this.tlpDisplay01.PerformLayout();
@@ -208,5 +225,6 @@
         private System.Windows.Forms.LinkLabel llblDataTransfer;
         private System.Windows.Forms.LinkLabel llbdistrict_download;
         private System.Windows.Forms.LinkLabel llblDownload;
+        private System.Windows.Forms.LinkLabel lnkUpdate;
     }
 }
