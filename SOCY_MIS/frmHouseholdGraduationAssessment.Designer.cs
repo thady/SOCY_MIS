@@ -65,6 +65,8 @@
             this.tab02 = new System.Windows.Forms.TabPage();
             this.lblID01 = new System.Windows.Forms.Label();
             this.panelBenchMark01 = new System.Windows.Forms.Panel();
+            this.panel1BenchMark01 = new System.Windows.Forms.Panel();
+            this.gdv01 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -86,11 +88,13 @@
             this.tab03 = new System.Windows.Forms.TabPage();
             this.lblID02 = new System.Windows.Forms.Label();
             this.panelBenchMark02 = new System.Windows.Forms.Panel();
+            this.panel1BenchMark02 = new System.Windows.Forms.Panel();
+            this.gdv02 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panelAppointment = new System.Windows.Forms.Panel();
             this.yn_appointmentYes = new System.Windows.Forms.RadioButton();
             this.yn_appointmentNo = new System.Windows.Forms.RadioButton();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.panelART = new System.Windows.Forms.Panel();
             this.yn_prescribedYes = new System.Windows.Forms.RadioButton();
             this.yn_prescribedNo = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -114,6 +118,8 @@
             this.tab04 = new System.Windows.Forms.TabPage();
             this.lblID03 = new System.Windows.Forms.Label();
             this.panelBenchMark03 = new System.Windows.Forms.Panel();
+            this.panel1BenchMark03 = new System.Windows.Forms.Panel();
+            this.gdv03 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.yn_hiv_preventionYes = new System.Windows.Forms.RadioButton();
@@ -136,6 +142,8 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.tab05 = new System.Windows.Forms.TabPage();
+            this.panel1BenchMark04 = new System.Windows.Forms.Panel();
+            this.gdv04 = new System.Windows.Forms.DataGridView();
             this.lblID04 = new System.Windows.Forms.Label();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.btnSaveBenchMark04 = new System.Windows.Forms.Button();
@@ -159,6 +167,9 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.tab06 = new System.Windows.Forms.TabPage();
+            this.panel1BenchMark05 = new System.Windows.Forms.Panel();
+            this.gdv05 = new System.Windows.Forms.DataGridView();
+            this.lblID05 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.btnSaveBenchMark05 = new System.Windows.Forms.Button();
@@ -196,6 +207,9 @@
             this.yn_pay_medical_feesNo = new System.Windows.Forms.RadioButton();
             this.label35 = new System.Windows.Forms.Label();
             this.tab07 = new System.Windows.Forms.TabPage();
+            this.panel1BenchMark06 = new System.Windows.Forms.Panel();
+            this.gdv06 = new System.Windows.Forms.DataGridView();
+            this.lblID06 = new System.Windows.Forms.Label();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.btnSaveBenchMark06 = new System.Windows.Forms.Button();
             this.btnCancelBenchMark06 = new System.Windows.Forms.Button();
@@ -221,6 +235,9 @@
             this.label46 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.tab08 = new System.Windows.Forms.TabPage();
+            this.panel1BenchMark07 = new System.Windows.Forms.Panel();
+            this.gdv07 = new System.Windows.Forms.DataGridView();
+            this.lblID07 = new System.Windows.Forms.Label();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.btnSaveBenchMark07 = new System.Windows.Forms.Button();
             this.btnCancelBenchMark07 = new System.Windows.Forms.Button();
@@ -235,6 +252,9 @@
             this.label55 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
             this.tab09 = new System.Windows.Forms.TabPage();
+            this.panel1BenchMark08 = new System.Windows.Forms.Panel();
+            this.gdv08 = new System.Windows.Forms.DataGridView();
+            this.lblID08 = new System.Windows.Forms.Label();
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
             this.btnSaveBenchMark08 = new System.Windows.Forms.Button();
             this.btnCancelBenchMark08 = new System.Windows.Forms.Button();
@@ -257,42 +277,48 @@
             this.label59 = new System.Windows.Forms.Label();
             this.label60 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
-            this.lblID05 = new System.Windows.Forms.Label();
-            this.lblID06 = new System.Windows.Forms.Label();
-            this.lblID07 = new System.Windows.Forms.Label();
-            this.lblID08 = new System.Windows.Forms.Label();
             this.tabControl01.SuspendLayout();
             this.tab01.SuspendLayout();
             this.tableLayoutPanel34.SuspendLayout();
             this.tlpDisplay01.SuspendLayout();
             this.tab02.SuspendLayout();
             this.panelBenchMark01.SuspendLayout();
+            this.panel1BenchMark01.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gdv01)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelResponse01.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tab03.SuspendLayout();
             this.panelBenchMark02.SuspendLayout();
+            this.panel1BenchMark02.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gdv02)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.panelAppointment.SuspendLayout();
+            this.panelART.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tab04.SuspendLayout();
             this.panelBenchMark03.SuspendLayout();
+            this.panel1BenchMark03.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gdv03)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tab05.SuspendLayout();
+            this.panel1BenchMark04.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gdv04)).BeginInit();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
             this.tab06.SuspendLayout();
+            this.panel1BenchMark05.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gdv05)).BeginInit();
             this.tableLayoutPanel10.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
             this.panel18.SuspendLayout();
@@ -303,6 +329,8 @@
             this.panel16.SuspendLayout();
             this.panel15.SuspendLayout();
             this.tab07.SuspendLayout();
+            this.panel1BenchMark06.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gdv06)).BeginInit();
             this.tableLayoutPanel12.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
             this.panel03.SuspendLayout();
@@ -310,11 +338,15 @@
             this.panel02.SuspendLayout();
             this.panel01.SuspendLayout();
             this.tab08.SuspendLayout();
+            this.panel1BenchMark07.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gdv07)).BeginInit();
             this.tableLayoutPanel14.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
             this.panel24.SuspendLayout();
             this.panel26.SuspendLayout();
             this.tab09.SuspendLayout();
+            this.panel1BenchMark08.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gdv08)).BeginInit();
             this.tableLayoutPanel16.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
             this.panel23.SuspendLayout();
@@ -376,7 +408,7 @@
             this.tableLayoutPanel34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 197F));
+            this.tableLayoutPanel34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 205F));
             this.tableLayoutPanel34.Controls.Add(this.btnsave, 1, 0);
             this.tableLayoutPanel34.Controls.Add(this.lblBack, 4, 0);
             this.tableLayoutPanel34.Controls.Add(this.btnCancel, 3, 0);
@@ -391,7 +423,7 @@
             // btnsave
             // 
             this.btnsave.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnsave.Location = new System.Drawing.Point(278, 8);
+            this.btnsave.Location = new System.Drawing.Point(274, 8);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(75, 23);
             this.btnsave.TabIndex = 14;
@@ -414,7 +446,7 @@
             // btnCancel
             // 
             this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnCancel.Location = new System.Drawing.Point(393, 8);
+            this.btnCancel.Location = new System.Drawing.Point(389, 8);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 15;
@@ -445,7 +477,7 @@
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.174613F));
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0019F));
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.44543F));
-            this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.tlpDisplay01.Controls.Add(this.cboDistrict, 4, 1);
             this.tlpDisplay01.Controls.Add(this.cboCso, 1, 1);
             this.tlpDisplay01.Controls.Add(this.lblDistrict, 0, 0);
@@ -489,9 +521,9 @@
             this.cboDistrict.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboDistrict.Enabled = false;
             this.cboDistrict.FormattingEnabled = true;
-            this.cboDistrict.Location = new System.Drawing.Point(685, 39);
+            this.cboDistrict.Location = new System.Drawing.Point(675, 39);
             this.cboDistrict.Name = "cboDistrict";
-            this.cboDistrict.Size = new System.Drawing.Size(168, 21);
+            this.cboDistrict.Size = new System.Drawing.Size(165, 21);
             this.cboDistrict.TabIndex = 59;
             this.cboDistrict.SelectedIndexChanged += new System.EventHandler(this.cboDistrict_SelectedIndexChanged);
             // 
@@ -500,9 +532,9 @@
             this.cboCso.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboCso.Enabled = false;
             this.cboCso.FormattingEnabled = true;
-            this.cboCso.Location = new System.Drawing.Point(175, 39);
+            this.cboCso.Location = new System.Drawing.Point(173, 39);
             this.cboCso.Name = "cboCso";
-            this.cboCso.Size = new System.Drawing.Size(313, 21);
+            this.cboCso.Size = new System.Drawing.Size(307, 21);
             this.cboCso.TabIndex = 65;
             // 
             // lblDistrict
@@ -519,7 +551,7 @@
             // 
             this.lblMemberNumber.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMemberNumber.AutoSize = true;
-            this.lblMemberNumber.Location = new System.Drawing.Point(514, 43);
+            this.lblMemberNumber.Location = new System.Drawing.Point(506, 43);
             this.lblMemberNumber.Name = "lblMemberNumber";
             this.lblMemberNumber.Size = new System.Drawing.Size(42, 13);
             this.lblMemberNumber.TabIndex = 4;
@@ -529,7 +561,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(514, 10);
+            this.label4.Location = new System.Drawing.Point(506, 10);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 13);
             this.label4.TabIndex = 60;
@@ -540,9 +572,9 @@
             this.cboIP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboIP.Enabled = false;
             this.cboIP.FormattingEnabled = true;
-            this.cboIP.Location = new System.Drawing.Point(685, 6);
+            this.cboIP.Location = new System.Drawing.Point(675, 6);
             this.cboIP.Name = "cboIP";
-            this.cboIP.Size = new System.Drawing.Size(168, 21);
+            this.cboIP.Size = new System.Drawing.Size(165, 21);
             this.cboIP.TabIndex = 61;
             // 
             // lblHHMemberVal
@@ -551,7 +583,7 @@
             this.lblHHMemberVal.AutoSize = true;
             this.lblHHMemberVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHHMemberVal.ForeColor = System.Drawing.Color.Red;
-            this.lblHHMemberVal.Location = new System.Drawing.Point(860, 109);
+            this.lblHHMemberVal.Location = new System.Drawing.Point(847, 109);
             this.lblHHMemberVal.Name = "lblHHMemberVal";
             this.lblHHMemberVal.Size = new System.Drawing.Size(11, 13);
             this.lblHHMemberVal.TabIndex = 48;
@@ -561,7 +593,7 @@
             // 
             this.dtGatDate.Checked = false;
             this.dtGatDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtGatDate.Location = new System.Drawing.Point(174, 3);
+            this.dtGatDate.Location = new System.Drawing.Point(172, 3);
             this.dtGatDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtGatDate.Name = "dtGatDate";
             this.dtGatDate.ShowCheckBox = true;
@@ -584,7 +616,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Red;
-            this.label19.Location = new System.Drawing.Point(495, 10);
+            this.label19.Location = new System.Drawing.Point(487, 10);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(11, 13);
             this.label19.TabIndex = 70;
@@ -596,7 +628,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(860, 142);
+            this.label7.Location = new System.Drawing.Point(847, 142);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(11, 13);
             this.label7.TabIndex = 87;
@@ -617,9 +649,9 @@
             this.cboSubCounty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboSubCounty.Enabled = false;
             this.cboSubCounty.FormattingEnabled = true;
-            this.cboSubCounty.Location = new System.Drawing.Point(175, 72);
+            this.cboSubCounty.Location = new System.Drawing.Point(173, 72);
             this.cboSubCounty.Name = "cboSubCounty";
-            this.cboSubCounty.Size = new System.Drawing.Size(313, 21);
+            this.cboSubCounty.Size = new System.Drawing.Size(307, 21);
             this.cboSubCounty.TabIndex = 89;
             // 
             // cboParish
@@ -627,9 +659,9 @@
             this.cboParish.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboParish.Enabled = false;
             this.cboParish.FormattingEnabled = true;
-            this.cboParish.Location = new System.Drawing.Point(685, 72);
+            this.cboParish.Location = new System.Drawing.Point(675, 72);
             this.cboParish.Name = "cboParish";
-            this.cboParish.Size = new System.Drawing.Size(168, 21);
+            this.cboParish.Size = new System.Drawing.Size(165, 21);
             this.cboParish.TabIndex = 47;
             this.cboParish.SelectedIndexChanged += new System.EventHandler(this.cboParish_SelectedIndexChanged);
             // 
@@ -637,7 +669,7 @@
             // 
             this.lblGender.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblGender.AutoSize = true;
-            this.lblGender.Location = new System.Drawing.Point(514, 76);
+            this.lblGender.Location = new System.Drawing.Point(506, 76);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(39, 13);
             this.lblGender.TabIndex = 12;
@@ -657,27 +689,27 @@
             // 
             this.txtVilage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtVilage.Enabled = false;
-            this.txtVilage.Location = new System.Drawing.Point(174, 106);
+            this.txtVilage.Location = new System.Drawing.Point(172, 106);
             this.txtVilage.Margin = new System.Windows.Forms.Padding(2);
             this.txtVilage.Name = "txtVilage";
-            this.txtVilage.Size = new System.Drawing.Size(315, 20);
+            this.txtVilage.Size = new System.Drawing.Size(309, 20);
             this.txtVilage.TabIndex = 62;
             // 
             // txtHHCode
             // 
             this.txtHHCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtHHCode.Enabled = false;
-            this.txtHHCode.Location = new System.Drawing.Point(684, 106);
+            this.txtHHCode.Location = new System.Drawing.Point(674, 106);
             this.txtHHCode.Margin = new System.Windows.Forms.Padding(2);
             this.txtHHCode.Name = "txtHHCode";
-            this.txtHHCode.Size = new System.Drawing.Size(170, 20);
+            this.txtHHCode.Size = new System.Drawing.Size(167, 20);
             this.txtHHCode.TabIndex = 64;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(514, 109);
+            this.label1.Location = new System.Drawing.Point(506, 109);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 13);
             this.label1.TabIndex = 71;
@@ -697,9 +729,9 @@
             // 
             this.cboSocialWorker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboSocialWorker.FormattingEnabled = true;
-            this.cboSocialWorker.Location = new System.Drawing.Point(175, 138);
+            this.cboSocialWorker.Location = new System.Drawing.Point(173, 138);
             this.cboSocialWorker.Name = "cboSocialWorker";
-            this.cboSocialWorker.Size = new System.Drawing.Size(313, 21);
+            this.cboSocialWorker.Size = new System.Drawing.Size(307, 21);
             this.cboSocialWorker.TabIndex = 82;
             this.cboSocialWorker.SelectionChangeCommitted += new System.EventHandler(this.cboSocialWorker_SelectionChangeCommitted);
             // 
@@ -707,17 +739,17 @@
             // 
             this.txtSocialWorkerPhone.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtSocialWorkerPhone.Enabled = false;
-            this.txtSocialWorkerPhone.Location = new System.Drawing.Point(684, 139);
+            this.txtSocialWorkerPhone.Location = new System.Drawing.Point(674, 139);
             this.txtSocialWorkerPhone.Margin = new System.Windows.Forms.Padding(2);
             this.txtSocialWorkerPhone.Name = "txtSocialWorkerPhone";
-            this.txtSocialWorkerPhone.Size = new System.Drawing.Size(170, 20);
+            this.txtSocialWorkerPhone.Size = new System.Drawing.Size(167, 20);
             this.txtSocialWorkerPhone.TabIndex = 78;
             // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(514, 142);
+            this.label3.Location = new System.Drawing.Point(506, 142);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 13);
             this.label3.TabIndex = 75;
@@ -737,9 +769,9 @@
             // 
             this.cboCaregiver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboCaregiver.FormattingEnabled = true;
-            this.cboCaregiver.Location = new System.Drawing.Point(175, 172);
+            this.cboCaregiver.Location = new System.Drawing.Point(173, 172);
             this.cboCaregiver.Name = "cboCaregiver";
-            this.cboCaregiver.Size = new System.Drawing.Size(313, 21);
+            this.cboCaregiver.Size = new System.Drawing.Size(307, 21);
             this.cboCaregiver.TabIndex = 67;
             // 
             // tab02
@@ -770,12 +802,41 @@
             this.panelBenchMark01.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelBenchMark01.Controls.Add(this.panel1BenchMark01);
             this.panelBenchMark01.Controls.Add(this.tableLayoutPanel1);
             this.panelBenchMark01.Controls.Add(this.tableLayoutPanel2);
             this.panelBenchMark01.Location = new System.Drawing.Point(5, 19);
             this.panelBenchMark01.Name = "panelBenchMark01";
             this.panelBenchMark01.Size = new System.Drawing.Size(885, 440);
             this.panelBenchMark01.TabIndex = 185;
+            // 
+            // panel1BenchMark01
+            // 
+            this.panel1BenchMark01.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1BenchMark01.Controls.Add(this.gdv01);
+            this.panel1BenchMark01.Location = new System.Drawing.Point(3, 175);
+            this.panel1BenchMark01.Name = "panel1BenchMark01";
+            this.panel1BenchMark01.Size = new System.Drawing.Size(879, 262);
+            this.panel1BenchMark01.TabIndex = 186;
+            // 
+            // gdv01
+            // 
+            this.gdv01.AllowUserToAddRows = false;
+            this.gdv01.AllowUserToDeleteRows = false;
+            this.gdv01.AllowUserToResizeColumns = false;
+            this.gdv01.AllowUserToResizeRows = false;
+            this.gdv01.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gdv01.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gdv01.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gdv01.Location = new System.Drawing.Point(3, 3);
+            this.gdv01.Name = "gdv01";
+            this.gdv01.Size = new System.Drawing.Size(873, 249);
+            this.gdv01.TabIndex = 185;
+            this.gdv01.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdv01_CellDoubleClick);
             // 
             // tableLayoutPanel1
             // 
@@ -786,7 +847,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.27294F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.72706F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.Controls.Add(this.label12, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.label11, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 2);
@@ -811,7 +872,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(858, 42);
+            this.label12.Location = new System.Drawing.Point(850, 42);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(11, 13);
             this.label12.TabIndex = 57;
@@ -823,7 +884,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(858, 11);
+            this.label11.Location = new System.Drawing.Point(850, 11);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(11, 13);
             this.label11.TabIndex = 57;
@@ -835,7 +896,7 @@
             this.panel1.Controls.Add(this.rbtn_BenchMark01Yes);
             this.panel1.Controls.Add(this.rbtn_BenchMark01No);
             this.panel1.Enabled = false;
-            this.panel1.Location = new System.Drawing.Point(561, 74);
+            this.panel1.Location = new System.Drawing.Point(556, 74);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(181, 23);
             this.panel1.TabIndex = 129;
@@ -868,7 +929,7 @@
             this.panelResponse01.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panelResponse01.Controls.Add(this.rbtn_yn_hiv_statusYes);
             this.panelResponse01.Controls.Add(this.rbtn_yn_hiv_statusNo);
-            this.panelResponse01.Location = new System.Drawing.Point(561, 38);
+            this.panelResponse01.Location = new System.Drawing.Point(556, 38);
             this.panelResponse01.Name = "panelResponse01";
             this.panelResponse01.Size = new System.Drawing.Size(181, 22);
             this.panelResponse01.TabIndex = 128;
@@ -932,7 +993,7 @@
             // 
             this.cbo_hhm_01.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbo_hhm_01.FormattingEnabled = true;
-            this.cbo_hhm_01.Location = new System.Drawing.Point(561, 7);
+            this.cbo_hhm_01.Location = new System.Drawing.Point(556, 7);
             this.cbo_hhm_01.Name = "cbo_hhm_01";
             this.cbo_hhm_01.Size = new System.Drawing.Size(262, 21);
             this.cbo_hhm_01.TabIndex = 65;
@@ -947,7 +1008,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 198F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 206F));
             this.tableLayoutPanel2.Controls.Add(this.btnSaveBenchMark01, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnCancelBenchMark01, 3, 0);
             this.tableLayoutPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -961,7 +1022,7 @@
             // btnSaveBenchMark01
             // 
             this.btnSaveBenchMark01.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnSaveBenchMark01.Location = new System.Drawing.Point(275, 8);
+            this.btnSaveBenchMark01.Location = new System.Drawing.Point(271, 8);
             this.btnSaveBenchMark01.Name = "btnSaveBenchMark01";
             this.btnSaveBenchMark01.Size = new System.Drawing.Size(75, 23);
             this.btnSaveBenchMark01.TabIndex = 14;
@@ -972,7 +1033,7 @@
             // btnCancelBenchMark01
             // 
             this.btnCancelBenchMark01.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnCancelBenchMark01.Location = new System.Drawing.Point(390, 8);
+            this.btnCancelBenchMark01.Location = new System.Drawing.Point(386, 8);
             this.btnCancelBenchMark01.Name = "btnCancelBenchMark01";
             this.btnCancelBenchMark01.Size = new System.Drawing.Size(75, 23);
             this.btnCancelBenchMark01.TabIndex = 15;
@@ -1030,12 +1091,42 @@
             this.panelBenchMark02.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelBenchMark02.Controls.Add(this.panel1BenchMark02);
             this.panelBenchMark02.Controls.Add(this.tableLayoutPanel3);
             this.panelBenchMark02.Controls.Add(this.tableLayoutPanel4);
             this.panelBenchMark02.Location = new System.Drawing.Point(3, 19);
             this.panelBenchMark02.Name = "panelBenchMark02";
             this.panelBenchMark02.Size = new System.Drawing.Size(884, 440);
             this.panelBenchMark02.TabIndex = 186;
+            // 
+            // panel1BenchMark02
+            // 
+            this.panel1BenchMark02.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1BenchMark02.Controls.Add(this.gdv02);
+            this.panel1BenchMark02.Location = new System.Drawing.Point(4, 219);
+            this.panel1BenchMark02.Name = "panel1BenchMark02";
+            this.panel1BenchMark02.Size = new System.Drawing.Size(879, 218);
+            this.panel1BenchMark02.TabIndex = 187;
+            // 
+            // gdv02
+            // 
+            this.gdv02.AllowUserToAddRows = false;
+            this.gdv02.AllowUserToDeleteRows = false;
+            this.gdv02.AllowUserToOrderColumns = true;
+            this.gdv02.AllowUserToResizeColumns = false;
+            this.gdv02.AllowUserToResizeRows = false;
+            this.gdv02.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gdv02.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gdv02.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gdv02.Location = new System.Drawing.Point(3, 3);
+            this.gdv02.Name = "gdv02";
+            this.gdv02.Size = new System.Drawing.Size(873, 212);
+            this.gdv02.TabIndex = 185;
+            this.gdv02.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdv02_CellDoubleClick);
             // 
             // tableLayoutPanel3
             // 
@@ -1046,9 +1137,9 @@
             this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.27294F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.72706F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
-            this.tableLayoutPanel3.Controls.Add(this.panel5, 1, 3);
-            this.tableLayoutPanel3.Controls.Add(this.panel4, 1, 2);
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel3.Controls.Add(this.panelAppointment, 1, 3);
+            this.tableLayoutPanel3.Controls.Add(this.panelART, 1, 2);
             this.tableLayoutPanel3.Controls.Add(this.panel2, 1, 4);
             this.tableLayoutPanel3.Controls.Add(this.panel3, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.label17, 0, 0);
@@ -1069,15 +1160,15 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(877, 169);
             this.tableLayoutPanel3.TabIndex = 57;
             // 
-            // panel5
+            // panelAppointment
             // 
-            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.panel5.Controls.Add(this.yn_appointmentYes);
-            this.panel5.Controls.Add(this.yn_appointmentNo);
-            this.panel5.Location = new System.Drawing.Point(560, 108);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(181, 23);
-            this.panel5.TabIndex = 130;
+            this.panelAppointment.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panelAppointment.Controls.Add(this.yn_appointmentYes);
+            this.panelAppointment.Controls.Add(this.yn_appointmentNo);
+            this.panelAppointment.Location = new System.Drawing.Point(555, 108);
+            this.panelAppointment.Name = "panelAppointment";
+            this.panelAppointment.Size = new System.Drawing.Size(181, 23);
+            this.panelAppointment.TabIndex = 130;
             // 
             // yn_appointmentYes
             // 
@@ -1102,15 +1193,15 @@
             this.yn_appointmentNo.Text = "No";
             this.yn_appointmentNo.UseVisualStyleBackColor = true;
             // 
-            // panel4
+            // panelART
             // 
-            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.panel4.Controls.Add(this.yn_prescribedYes);
-            this.panel4.Controls.Add(this.yn_prescribedNo);
-            this.panel4.Location = new System.Drawing.Point(560, 72);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(181, 28);
-            this.panel4.TabIndex = 129;
+            this.panelART.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panelART.Controls.Add(this.yn_prescribedYes);
+            this.panelART.Controls.Add(this.yn_prescribedNo);
+            this.panelART.Location = new System.Drawing.Point(555, 72);
+            this.panelART.Name = "panelART";
+            this.panelART.Size = new System.Drawing.Size(181, 28);
+            this.panelART.TabIndex = 129;
             // 
             // yn_prescribedYes
             // 
@@ -1142,7 +1233,7 @@
             this.panel2.Controls.Add(this.rbtn_BenchMark02Yes);
             this.panel2.Controls.Add(this.rbtn_BenchMark02No);
             this.panel2.Enabled = false;
-            this.panel2.Location = new System.Drawing.Point(560, 141);
+            this.panel2.Location = new System.Drawing.Point(555, 141);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(262, 23);
             this.panel2.TabIndex = 129;
@@ -1186,7 +1277,7 @@
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel3.Controls.Add(this.yn_supressYes);
             this.panel3.Controls.Add(this.yn_supressNo);
-            this.panel3.Location = new System.Drawing.Point(560, 40);
+            this.panel3.Location = new System.Drawing.Point(555, 40);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(181, 22);
             this.panel3.TabIndex = 128;
@@ -1202,6 +1293,7 @@
             this.yn_supressYes.TabIndex = 2;
             this.yn_supressYes.Text = "Yes";
             this.yn_supressYes.UseVisualStyleBackColor = true;
+            this.yn_supressYes.CheckedChanged += new System.EventHandler(this.yn_supressYes_CheckedChanged);
             // 
             // yn_supressNo
             // 
@@ -1213,6 +1305,7 @@
             this.yn_supressNo.TabIndex = 0;
             this.yn_supressNo.Text = "No";
             this.yn_supressNo.UseVisualStyleBackColor = true;
+            this.yn_supressNo.CheckedChanged += new System.EventHandler(this.yn_supressNo_CheckedChanged);
             // 
             // label17
             // 
@@ -1250,7 +1343,7 @@
             // 
             this.cbo_hhm_02.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbo_hhm_02.FormattingEnabled = true;
-            this.cbo_hhm_02.Location = new System.Drawing.Point(560, 6);
+            this.cbo_hhm_02.Location = new System.Drawing.Point(555, 6);
             this.cbo_hhm_02.Name = "cbo_hhm_02";
             this.cbo_hhm_02.Size = new System.Drawing.Size(262, 21);
             this.cbo_hhm_02.TabIndex = 65;
@@ -1272,7 +1365,7 @@
             this.label24.AutoSize = true;
             this.label24.Location = new System.Drawing.Point(4, 107);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(548, 26);
+            this.label24.Size = new System.Drawing.Size(533, 26);
             this.label24.TabIndex = 131;
             this.label24.Text = "In the past 12 months, has this beneficiary been regularly attending ART appointm" +
     "ents and picking up ART pills on schedule?";
@@ -1287,7 +1380,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 198F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 206F));
             this.tableLayoutPanel4.Controls.Add(this.btnSaveBenchMark02, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.btnCancelBenchMark02, 3, 0);
             this.tableLayoutPanel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1301,7 +1394,7 @@
             // btnSaveBenchMark02
             // 
             this.btnSaveBenchMark02.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnSaveBenchMark02.Location = new System.Drawing.Point(274, 8);
+            this.btnSaveBenchMark02.Location = new System.Drawing.Point(270, 8);
             this.btnSaveBenchMark02.Name = "btnSaveBenchMark02";
             this.btnSaveBenchMark02.Size = new System.Drawing.Size(75, 23);
             this.btnSaveBenchMark02.TabIndex = 14;
@@ -1312,7 +1405,7 @@
             // btnCancelBenchMark02
             // 
             this.btnCancelBenchMark02.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnCancelBenchMark02.Location = new System.Drawing.Point(389, 8);
+            this.btnCancelBenchMark02.Location = new System.Drawing.Point(385, 8);
             this.btnCancelBenchMark02.Name = "btnCancelBenchMark02";
             this.btnCancelBenchMark02.Size = new System.Drawing.Size(75, 23);
             this.btnCancelBenchMark02.TabIndex = 15;
@@ -1370,12 +1463,41 @@
             this.panelBenchMark03.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelBenchMark03.Controls.Add(this.panel1BenchMark03);
             this.panelBenchMark03.Controls.Add(this.tableLayoutPanel5);
             this.panelBenchMark03.Controls.Add(this.tableLayoutPanel6);
             this.panelBenchMark03.Location = new System.Drawing.Point(3, 21);
             this.panelBenchMark03.Name = "panelBenchMark03";
             this.panelBenchMark03.Size = new System.Drawing.Size(884, 438);
             this.panelBenchMark03.TabIndex = 187;
+            // 
+            // panel1BenchMark03
+            // 
+            this.panel1BenchMark03.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1BenchMark03.Controls.Add(this.gdv03);
+            this.panel1BenchMark03.Location = new System.Drawing.Point(5, 203);
+            this.panel1BenchMark03.Name = "panel1BenchMark03";
+            this.panel1BenchMark03.Size = new System.Drawing.Size(879, 232);
+            this.panel1BenchMark03.TabIndex = 188;
+            // 
+            // gdv03
+            // 
+            this.gdv03.AllowUserToAddRows = false;
+            this.gdv03.AllowUserToDeleteRows = false;
+            this.gdv03.AllowUserToResizeColumns = false;
+            this.gdv03.AllowUserToResizeRows = false;
+            this.gdv03.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gdv03.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gdv03.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gdv03.Location = new System.Drawing.Point(3, 3);
+            this.gdv03.Name = "gdv03";
+            this.gdv03.Size = new System.Drawing.Size(873, 226);
+            this.gdv03.TabIndex = 185;
+            this.gdv03.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdv03_CellDoubleClick);
             // 
             // tableLayoutPanel5
             // 
@@ -1386,7 +1508,7 @@
             this.tableLayoutPanel5.ColumnCount = 3;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.27294F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.72706F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel5.Controls.Add(this.panel7, 1, 2);
             this.tableLayoutPanel5.Controls.Add(this.panel8, 1, 3);
             this.tableLayoutPanel5.Controls.Add(this.panel9, 1, 1);
@@ -1411,7 +1533,7 @@
             this.panel7.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel7.Controls.Add(this.yn_hiv_preventionYes);
             this.panel7.Controls.Add(this.yn_hiv_preventionNo);
-            this.panel7.Location = new System.Drawing.Point(561, 70);
+            this.panel7.Location = new System.Drawing.Point(555, 70);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(181, 28);
             this.panel7.TabIndex = 129;
@@ -1446,7 +1568,7 @@
             this.panel8.Controls.Add(this.rbtn_BenchMark03Yes);
             this.panel8.Controls.Add(this.rbtn_BenchMark03No);
             this.panel8.Enabled = false;
-            this.panel8.Location = new System.Drawing.Point(561, 106);
+            this.panel8.Location = new System.Drawing.Point(555, 106);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(262, 23);
             this.panel8.TabIndex = 129;
@@ -1490,7 +1612,7 @@
             this.panel9.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel9.Controls.Add(this.yn_risks_identifiedYes);
             this.panel9.Controls.Add(this.yn_risks_identifiedNo);
-            this.panel9.Location = new System.Drawing.Point(561, 38);
+            this.panel9.Location = new System.Drawing.Point(555, 38);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(181, 22);
             this.panel9.TabIndex = 128;
@@ -1553,7 +1675,7 @@
             // 
             this.cbo_hhm_03.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbo_hhm_03.FormattingEnabled = true;
-            this.cbo_hhm_03.Location = new System.Drawing.Point(561, 6);
+            this.cbo_hhm_03.Location = new System.Drawing.Point(555, 6);
             this.cbo_hhm_03.Name = "cbo_hhm_03";
             this.cbo_hhm_03.Size = new System.Drawing.Size(262, 21);
             this.cbo_hhm_03.TabIndex = 65;
@@ -1578,7 +1700,7 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 198F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 206F));
             this.tableLayoutPanel6.Controls.Add(this.btnSaveBenchMark03, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.btnCancelBenchMark03, 3, 0);
             this.tableLayoutPanel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1592,7 +1714,7 @@
             // btnSaveBenchMark03
             // 
             this.btnSaveBenchMark03.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnSaveBenchMark03.Location = new System.Drawing.Point(274, 8);
+            this.btnSaveBenchMark03.Location = new System.Drawing.Point(270, 8);
             this.btnSaveBenchMark03.Name = "btnSaveBenchMark03";
             this.btnSaveBenchMark03.Size = new System.Drawing.Size(75, 23);
             this.btnSaveBenchMark03.TabIndex = 14;
@@ -1603,7 +1725,7 @@
             // btnCancelBenchMark03
             // 
             this.btnCancelBenchMark03.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnCancelBenchMark03.Location = new System.Drawing.Point(389, 8);
+            this.btnCancelBenchMark03.Location = new System.Drawing.Point(385, 8);
             this.btnCancelBenchMark03.Name = "btnCancelBenchMark03";
             this.btnCancelBenchMark03.Size = new System.Drawing.Size(75, 23);
             this.btnCancelBenchMark03.TabIndex = 15;
@@ -1636,6 +1758,7 @@
             // 
             // tab05
             // 
+            this.tab05.Controls.Add(this.panel1BenchMark04);
             this.tab05.Controls.Add(this.lblID04);
             this.tab05.Controls.Add(this.tableLayoutPanel8);
             this.tab05.Controls.Add(this.tableLayoutPanel7);
@@ -1647,6 +1770,34 @@
             this.tab05.TabIndex = 4;
             this.tab05.Text = "BenchMark-04";
             this.tab05.UseVisualStyleBackColor = true;
+            // 
+            // panel1BenchMark04
+            // 
+            this.panel1BenchMark04.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1BenchMark04.Controls.Add(this.gdv04);
+            this.panel1BenchMark04.Location = new System.Drawing.Point(3, 218);
+            this.panel1BenchMark04.Name = "panel1BenchMark04";
+            this.panel1BenchMark04.Size = new System.Drawing.Size(879, 241);
+            this.panel1BenchMark04.TabIndex = 189;
+            // 
+            // gdv04
+            // 
+            this.gdv04.AllowUserToAddRows = false;
+            this.gdv04.AllowUserToDeleteRows = false;
+            this.gdv04.AllowUserToResizeColumns = false;
+            this.gdv04.AllowUserToResizeRows = false;
+            this.gdv04.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gdv04.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gdv04.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gdv04.Location = new System.Drawing.Point(3, 3);
+            this.gdv04.Name = "gdv04";
+            this.gdv04.Size = new System.Drawing.Size(873, 235);
+            this.gdv04.TabIndex = 185;
+            this.gdv04.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdv04_CellDoubleClick);
             // 
             // lblID04
             // 
@@ -1667,7 +1818,7 @@
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 197F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 205F));
             this.tableLayoutPanel8.Controls.Add(this.btnSaveBenchMark04, 1, 0);
             this.tableLayoutPanel8.Controls.Add(this.btnCancelBenchMark04, 3, 0);
             this.tableLayoutPanel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1681,7 +1832,7 @@
             // btnSaveBenchMark04
             // 
             this.btnSaveBenchMark04.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnSaveBenchMark04.Location = new System.Drawing.Point(278, 8);
+            this.btnSaveBenchMark04.Location = new System.Drawing.Point(274, 8);
             this.btnSaveBenchMark04.Name = "btnSaveBenchMark04";
             this.btnSaveBenchMark04.Size = new System.Drawing.Size(75, 23);
             this.btnSaveBenchMark04.TabIndex = 14;
@@ -1692,7 +1843,7 @@
             // btnCancelBenchMark04
             // 
             this.btnCancelBenchMark04.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnCancelBenchMark04.Location = new System.Drawing.Point(393, 8);
+            this.btnCancelBenchMark04.Location = new System.Drawing.Point(389, 8);
             this.btnCancelBenchMark04.Name = "btnCancelBenchMark04";
             this.btnCancelBenchMark04.Size = new System.Drawing.Size(75, 23);
             this.btnCancelBenchMark04.TabIndex = 15;
@@ -1708,7 +1859,7 @@
             this.tableLayoutPanel7.ColumnCount = 3;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.27294F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.72706F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel7.Controls.Add(this.panel6, 1, 2);
             this.tableLayoutPanel7.Controls.Add(this.panel10, 1, 3);
             this.tableLayoutPanel7.Controls.Add(this.panel11, 1, 1);
@@ -1733,7 +1884,7 @@
             this.panel6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel6.Controls.Add(this.yn_edema_freeYes);
             this.panel6.Controls.Add(this.yn_edema_freeNo);
-            this.panel6.Location = new System.Drawing.Point(565, 70);
+            this.panel6.Location = new System.Drawing.Point(559, 70);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(181, 28);
             this.panel6.TabIndex = 129;
@@ -1768,7 +1919,7 @@
             this.panel10.Controls.Add(this.rbtn_BenchMark04Yes);
             this.panel10.Controls.Add(this.rbtn_BenchMark04No);
             this.panel10.Enabled = false;
-            this.panel10.Location = new System.Drawing.Point(565, 106);
+            this.panel10.Location = new System.Drawing.Point(559, 106);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(262, 23);
             this.panel10.TabIndex = 129;
@@ -1812,7 +1963,7 @@
             this.panel11.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel11.Controls.Add(this.yn_muac_normalYes);
             this.panel11.Controls.Add(this.yn_muac_normalNo);
-            this.panel11.Location = new System.Drawing.Point(565, 38);
+            this.panel11.Location = new System.Drawing.Point(559, 38);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(181, 22);
             this.panel11.TabIndex = 128;
@@ -1875,7 +2026,7 @@
             // 
             this.cbo_hhm_04.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbo_hhm_04.FormattingEnabled = true;
-            this.cbo_hhm_04.Location = new System.Drawing.Point(565, 6);
+            this.cbo_hhm_04.Location = new System.Drawing.Point(559, 6);
             this.cbo_hhm_04.Name = "cbo_hhm_04";
             this.cbo_hhm_04.Size = new System.Drawing.Size(262, 21);
             this.cbo_hhm_04.TabIndex = 65;
@@ -1916,6 +2067,7 @@
             // 
             // tab06
             // 
+            this.tab06.Controls.Add(this.panel1BenchMark05);
             this.tab06.Controls.Add(this.lblID05);
             this.tab06.Controls.Add(this.label45);
             this.tab06.Controls.Add(this.tableLayoutPanel10);
@@ -1927,6 +2079,43 @@
             this.tab06.TabIndex = 5;
             this.tab06.Text = "BenchMark-05";
             this.tab06.UseVisualStyleBackColor = true;
+            // 
+            // panel1BenchMark05
+            // 
+            this.panel1BenchMark05.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1BenchMark05.Controls.Add(this.gdv05);
+            this.panel1BenchMark05.Location = new System.Drawing.Point(6, 341);
+            this.panel1BenchMark05.Name = "panel1BenchMark05";
+            this.panel1BenchMark05.Size = new System.Drawing.Size(879, 118);
+            this.panel1BenchMark05.TabIndex = 191;
+            // 
+            // gdv05
+            // 
+            this.gdv05.AllowUserToAddRows = false;
+            this.gdv05.AllowUserToDeleteRows = false;
+            this.gdv05.AllowUserToResizeColumns = false;
+            this.gdv05.AllowUserToResizeRows = false;
+            this.gdv05.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gdv05.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gdv05.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gdv05.Location = new System.Drawing.Point(3, 3);
+            this.gdv05.Name = "gdv05";
+            this.gdv05.Size = new System.Drawing.Size(873, 112);
+            this.gdv05.TabIndex = 185;
+            this.gdv05.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdv05_CellDoubleClick);
+            // 
+            // lblID05
+            // 
+            this.lblID05.AutoSize = true;
+            this.lblID05.Location = new System.Drawing.Point(521, 3);
+            this.lblID05.Name = "lblID05";
+            this.lblID05.Size = new System.Drawing.Size(40, 13);
+            this.lblID05.TabIndex = 190;
+            this.lblID05.Text = "lblID05";
             // 
             // label45
             // 
@@ -1950,7 +2139,7 @@
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 197F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 205F));
             this.tableLayoutPanel10.Controls.Add(this.btnSaveBenchMark05, 1, 0);
             this.tableLayoutPanel10.Controls.Add(this.btnCancelBenchMark05, 3, 0);
             this.tableLayoutPanel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1964,7 +2153,7 @@
             // btnSaveBenchMark05
             // 
             this.btnSaveBenchMark05.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnSaveBenchMark05.Location = new System.Drawing.Point(278, 8);
+            this.btnSaveBenchMark05.Location = new System.Drawing.Point(274, 8);
             this.btnSaveBenchMark05.Name = "btnSaveBenchMark05";
             this.btnSaveBenchMark05.Size = new System.Drawing.Size(75, 23);
             this.btnSaveBenchMark05.TabIndex = 14;
@@ -1975,7 +2164,7 @@
             // btnCancelBenchMark05
             // 
             this.btnCancelBenchMark05.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnCancelBenchMark05.Location = new System.Drawing.Point(393, 8);
+            this.btnCancelBenchMark05.Location = new System.Drawing.Point(389, 8);
             this.btnCancelBenchMark05.Name = "btnCancelBenchMark05";
             this.btnCancelBenchMark05.Size = new System.Drawing.Size(75, 23);
             this.btnCancelBenchMark05.TabIndex = 15;
@@ -1991,7 +2180,7 @@
             this.tableLayoutPanel9.ColumnCount = 3;
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.27294F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.72706F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel9.Controls.Add(this.panel18, 1, 6);
             this.tableLayoutPanel9.Controls.Add(this.panel17, 1, 5);
             this.tableLayoutPanel9.Controls.Add(this.panel12, 1, 2);
@@ -2028,7 +2217,7 @@
             this.panel18.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel18.Controls.Add(this.yn_pay_medical_fees_no_sell_assetYes);
             this.panel18.Controls.Add(this.yn_pay_medical_fees_no_sell_assetNo);
-            this.panel18.Location = new System.Drawing.Point(565, 208);
+            this.panel18.Location = new System.Drawing.Point(559, 208);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(181, 27);
             this.panel18.TabIndex = 132;
@@ -2061,7 +2250,7 @@
             this.panel17.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel17.Controls.Add(this.yn_pay_medical_fees_no_grantYes);
             this.panel17.Controls.Add(this.yn_pay_medical_fees_no_grantNo);
-            this.panel17.Location = new System.Drawing.Point(565, 174);
+            this.panel17.Location = new System.Drawing.Point(559, 174);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(181, 27);
             this.panel17.TabIndex = 131;
@@ -2094,7 +2283,7 @@
             this.panel12.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel12.Controls.Add(this.yn_pay_fees_no_grantYes);
             this.panel12.Controls.Add(this.yn_pay_fees_no_grantNo);
-            this.panel12.Location = new System.Drawing.Point(565, 72);
+            this.panel12.Location = new System.Drawing.Point(559, 72);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(181, 27);
             this.panel12.TabIndex = 129;
@@ -2128,7 +2317,7 @@
             this.panel13.Controls.Add(this.rbtn_BenchMark05Yes);
             this.panel13.Controls.Add(this.rbtn_BenchMark05No);
             this.panel13.Enabled = false;
-            this.panel13.Location = new System.Drawing.Point(565, 244);
+            this.panel13.Location = new System.Drawing.Point(559, 244);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(181, 23);
             this.panel13.TabIndex = 129;
@@ -2161,7 +2350,7 @@
             this.panel14.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel14.Controls.Add(this.yn_pay_feesYes);
             this.panel14.Controls.Add(this.yn_pay_feesNo);
-            this.panel14.Location = new System.Drawing.Point(565, 40);
+            this.panel14.Location = new System.Drawing.Point(559, 40);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(181, 22);
             this.panel14.TabIndex = 128;
@@ -2225,7 +2414,7 @@
             // 
             this.cbo_hhm_05.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbo_hhm_05.FormattingEnabled = true;
-            this.cbo_hhm_05.Location = new System.Drawing.Point(565, 7);
+            this.cbo_hhm_05.Location = new System.Drawing.Point(559, 7);
             this.cbo_hhm_05.Name = "cbo_hhm_05";
             this.cbo_hhm_05.Size = new System.Drawing.Size(262, 21);
             this.cbo_hhm_05.TabIndex = 65;
@@ -2247,7 +2436,7 @@
             this.label40.AutoSize = true;
             this.label40.Location = new System.Drawing.Point(4, 106);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(553, 26);
+            this.label40.Size = new System.Drawing.Size(511, 26);
             this.label40.TabIndex = 131;
             this.label40.Text = "Were you able to pay for these school fees without selling productive household a" +
     "ssets, such as cows that produce milk, chickens that produce eggs, or a motorcyc" +
@@ -2292,7 +2481,7 @@
             this.panel16.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel16.Controls.Add(this.yn_pay_fees_no_sell_assetYes);
             this.panel16.Controls.Add(this.yn_pay_fees_no_sell_assetNo);
-            this.panel16.Location = new System.Drawing.Point(565, 106);
+            this.panel16.Location = new System.Drawing.Point(559, 106);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(181, 27);
             this.panel16.TabIndex = 135;
@@ -2325,7 +2514,7 @@
             this.panel15.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel15.Controls.Add(this.yn_pay_medical_feesYes);
             this.panel15.Controls.Add(this.yn_pay_medical_feesNo);
-            this.panel15.Location = new System.Drawing.Point(565, 140);
+            this.panel15.Location = new System.Drawing.Point(559, 140);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(181, 27);
             this.panel15.TabIndex = 130;
@@ -2367,6 +2556,7 @@
             // 
             // tab07
             // 
+            this.tab07.Controls.Add(this.panel1BenchMark06);
             this.tab07.Controls.Add(this.lblID06);
             this.tab07.Controls.Add(this.tableLayoutPanel12);
             this.tab07.Controls.Add(this.tableLayoutPanel11);
@@ -2379,6 +2569,43 @@
             this.tab07.Text = "BenchMark-06";
             this.tab07.UseVisualStyleBackColor = true;
             // 
+            // panel1BenchMark06
+            // 
+            this.panel1BenchMark06.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1BenchMark06.Controls.Add(this.gdv06);
+            this.panel1BenchMark06.Location = new System.Drawing.Point(5, 227);
+            this.panel1BenchMark06.Name = "panel1BenchMark06";
+            this.panel1BenchMark06.Size = new System.Drawing.Size(879, 232);
+            this.panel1BenchMark06.TabIndex = 192;
+            // 
+            // gdv06
+            // 
+            this.gdv06.AllowUserToAddRows = false;
+            this.gdv06.AllowUserToDeleteRows = false;
+            this.gdv06.AllowUserToResizeColumns = false;
+            this.gdv06.AllowUserToResizeRows = false;
+            this.gdv06.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gdv06.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gdv06.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gdv06.Location = new System.Drawing.Point(3, 3);
+            this.gdv06.Name = "gdv06";
+            this.gdv06.Size = new System.Drawing.Size(873, 226);
+            this.gdv06.TabIndex = 185;
+            this.gdv06.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdv06_CellDoubleClick);
+            // 
+            // lblID06
+            // 
+            this.lblID06.AutoSize = true;
+            this.lblID06.Location = new System.Drawing.Point(536, 0);
+            this.lblID06.Name = "lblID06";
+            this.lblID06.Size = new System.Drawing.Size(40, 13);
+            this.lblID06.TabIndex = 191;
+            this.lblID06.Text = "lblID06";
+            // 
             // tableLayoutPanel12
             // 
             this.tableLayoutPanel12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -2389,7 +2616,7 @@
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 197F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 205F));
             this.tableLayoutPanel12.Controls.Add(this.btnSaveBenchMark06, 1, 0);
             this.tableLayoutPanel12.Controls.Add(this.btnCancelBenchMark06, 3, 0);
             this.tableLayoutPanel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2403,7 +2630,7 @@
             // btnSaveBenchMark06
             // 
             this.btnSaveBenchMark06.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnSaveBenchMark06.Location = new System.Drawing.Point(278, 8);
+            this.btnSaveBenchMark06.Location = new System.Drawing.Point(274, 8);
             this.btnSaveBenchMark06.Name = "btnSaveBenchMark06";
             this.btnSaveBenchMark06.Size = new System.Drawing.Size(75, 23);
             this.btnSaveBenchMark06.TabIndex = 14;
@@ -2414,7 +2641,7 @@
             // btnCancelBenchMark06
             // 
             this.btnCancelBenchMark06.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnCancelBenchMark06.Location = new System.Drawing.Point(393, 8);
+            this.btnCancelBenchMark06.Location = new System.Drawing.Point(389, 8);
             this.btnCancelBenchMark06.Name = "btnCancelBenchMark06";
             this.btnCancelBenchMark06.Size = new System.Drawing.Size(75, 23);
             this.btnCancelBenchMark06.TabIndex = 15;
@@ -2430,7 +2657,7 @@
             this.tableLayoutPanel11.ColumnCount = 3;
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.27294F));
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.72706F));
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel11.Controls.Add(this.panel03, 1, 3);
             this.tableLayoutPanel11.Controls.Add(this.panel20, 1, 4);
             this.tableLayoutPanel11.Controls.Add(this.panel02, 1, 2);
@@ -2458,7 +2685,7 @@
             this.panel03.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel03.Controls.Add(this.yn_child_violenceYes);
             this.panel03.Controls.Add(this.yn_child_violenceNo);
-            this.panel03.Location = new System.Drawing.Point(565, 94);
+            this.panel03.Location = new System.Drawing.Point(559, 94);
             this.panel03.Name = "panel03";
             this.panel03.Size = new System.Drawing.Size(181, 23);
             this.panel03.TabIndex = 130;
@@ -2492,7 +2719,7 @@
             this.panel20.Controls.Add(this.rbtn_BenchMark06Yes);
             this.panel20.Controls.Add(this.rbtn_BenchMark06No);
             this.panel20.Enabled = false;
-            this.panel20.Location = new System.Drawing.Point(565, 124);
+            this.panel20.Location = new System.Drawing.Point(559, 124);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(181, 23);
             this.panel20.TabIndex = 130;
@@ -2525,7 +2752,7 @@
             this.panel02.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel02.Controls.Add(this.yn_child_abuse_awareYes);
             this.panel02.Controls.Add(this.yn_child_abuse_awareNo);
-            this.panel02.Location = new System.Drawing.Point(565, 64);
+            this.panel02.Location = new System.Drawing.Point(559, 64);
             this.panel02.Name = "panel02";
             this.panel02.Size = new System.Drawing.Size(181, 23);
             this.panel02.TabIndex = 129;
@@ -2558,7 +2785,7 @@
             this.panel01.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel01.Controls.Add(this.yn_adult_kickedYes);
             this.panel01.Controls.Add(this.yn_adult_kickedNo);
-            this.panel01.Location = new System.Drawing.Point(565, 34);
+            this.panel01.Location = new System.Drawing.Point(559, 34);
             this.panel01.Name = "panel01";
             this.panel01.Size = new System.Drawing.Size(181, 22);
             this.panel01.TabIndex = 128;
@@ -2622,7 +2849,7 @@
             // 
             this.cbo_hhm_06.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbo_hhm_06.FormattingEnabled = true;
-            this.cbo_hhm_06.Location = new System.Drawing.Point(565, 5);
+            this.cbo_hhm_06.Location = new System.Drawing.Point(559, 5);
             this.cbo_hhm_06.Name = "cbo_hhm_06";
             this.cbo_hhm_06.Size = new System.Drawing.Size(262, 21);
             this.cbo_hhm_06.TabIndex = 65;
@@ -2632,9 +2859,9 @@
             // 
             this.label50.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(4, 69);
+            this.label50.Location = new System.Drawing.Point(4, 62);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(549, 13);
+            this.label50.Size = new System.Drawing.Size(520, 26);
             this.label50.TabIndex = 130;
             this.label50.Text = "In the past six months, are you aware of any child in your household being punche" +
     "d, kicked, or beaten by an adult?";
@@ -2643,9 +2870,9 @@
             // 
             this.label51.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(4, 99);
+            this.label51.Location = new System.Drawing.Point(4, 92);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(553, 13);
+            this.label51.Size = new System.Drawing.Size(518, 26);
             this.label51.TabIndex = 131;
             this.label51.Text = "In the past six months, have you or any children in your household experienced an" +
     "y other type of violence or abuse?";
@@ -2676,6 +2903,7 @@
             // 
             // tab08
             // 
+            this.tab08.Controls.Add(this.panel1BenchMark07);
             this.tab08.Controls.Add(this.lblID07);
             this.tab08.Controls.Add(this.tableLayoutPanel14);
             this.tab08.Controls.Add(this.tableLayoutPanel13);
@@ -2687,6 +2915,43 @@
             this.tab08.Text = "BenchMark-07";
             this.tab08.UseVisualStyleBackColor = true;
             // 
+            // panel1BenchMark07
+            // 
+            this.panel1BenchMark07.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1BenchMark07.Controls.Add(this.gdv07);
+            this.panel1BenchMark07.Location = new System.Drawing.Point(3, 141);
+            this.panel1BenchMark07.Name = "panel1BenchMark07";
+            this.panel1BenchMark07.Size = new System.Drawing.Size(879, 318);
+            this.panel1BenchMark07.TabIndex = 193;
+            // 
+            // gdv07
+            // 
+            this.gdv07.AllowUserToAddRows = false;
+            this.gdv07.AllowUserToDeleteRows = false;
+            this.gdv07.AllowUserToResizeColumns = false;
+            this.gdv07.AllowUserToResizeRows = false;
+            this.gdv07.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gdv07.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gdv07.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gdv07.Location = new System.Drawing.Point(3, 3);
+            this.gdv07.Name = "gdv07";
+            this.gdv07.Size = new System.Drawing.Size(873, 312);
+            this.gdv07.TabIndex = 185;
+            this.gdv07.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdv07_CellDoubleClick);
+            // 
+            // lblID07
+            // 
+            this.lblID07.AutoSize = true;
+            this.lblID07.Location = new System.Drawing.Point(336, 4);
+            this.lblID07.Name = "lblID07";
+            this.lblID07.Size = new System.Drawing.Size(40, 13);
+            this.lblID07.TabIndex = 191;
+            this.lblID07.Text = "lblID07";
+            // 
             // tableLayoutPanel14
             // 
             this.tableLayoutPanel14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -2697,7 +2962,7 @@
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 197F));
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 205F));
             this.tableLayoutPanel14.Controls.Add(this.btnSaveBenchMark07, 1, 0);
             this.tableLayoutPanel14.Controls.Add(this.btnCancelBenchMark07, 3, 0);
             this.tableLayoutPanel14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2711,7 +2976,7 @@
             // btnSaveBenchMark07
             // 
             this.btnSaveBenchMark07.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnSaveBenchMark07.Location = new System.Drawing.Point(278, 8);
+            this.btnSaveBenchMark07.Location = new System.Drawing.Point(274, 8);
             this.btnSaveBenchMark07.Name = "btnSaveBenchMark07";
             this.btnSaveBenchMark07.Size = new System.Drawing.Size(75, 23);
             this.btnSaveBenchMark07.TabIndex = 14;
@@ -2722,7 +2987,7 @@
             // btnCancelBenchMark07
             // 
             this.btnCancelBenchMark07.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnCancelBenchMark07.Location = new System.Drawing.Point(393, 8);
+            this.btnCancelBenchMark07.Location = new System.Drawing.Point(389, 8);
             this.btnCancelBenchMark07.Name = "btnCancelBenchMark07";
             this.btnCancelBenchMark07.Size = new System.Drawing.Size(75, 23);
             this.btnCancelBenchMark07.TabIndex = 15;
@@ -2738,7 +3003,7 @@
             this.tableLayoutPanel13.ColumnCount = 3;
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.27294F));
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.72706F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel13.Controls.Add(this.panel24, 1, 1);
             this.tableLayoutPanel13.Controls.Add(this.panel26, 1, 0);
             this.tableLayoutPanel13.Controls.Add(this.label54, 0, 0);
@@ -2758,7 +3023,7 @@
             this.panel24.Controls.Add(this.rbtn_BenchMark07Yes);
             this.panel24.Controls.Add(this.rbtn_BenchMark07No);
             this.panel24.Enabled = false;
-            this.panel24.Location = new System.Drawing.Point(565, 43);
+            this.panel24.Location = new System.Drawing.Point(559, 43);
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(181, 23);
             this.panel24.TabIndex = 130;
@@ -2791,7 +3056,7 @@
             this.panel26.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel26.Controls.Add(this.yn_stableCaregiverYes);
             this.panel26.Controls.Add(this.yn_stableCaregiverNo);
-            this.panel26.Location = new System.Drawing.Point(565, 7);
+            this.panel26.Location = new System.Drawing.Point(559, 7);
             this.panel26.Name = "panel26";
             this.panel26.Size = new System.Drawing.Size(181, 22);
             this.panel26.TabIndex = 128;
@@ -2825,7 +3090,7 @@
             this.label54.AutoSize = true;
             this.label54.Location = new System.Drawing.Point(4, 5);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(553, 26);
+            this.label54.Size = new System.Drawing.Size(530, 26);
             this.label54.TabIndex = 57;
             this.label54.Text = "During the past 12 months, have all children and adolescents in the household bee" +
     "n under the care of a stable adult caregiver?";
@@ -2855,6 +3120,7 @@
             // 
             // tab09
             // 
+            this.tab09.Controls.Add(this.panel1BenchMark08);
             this.tab09.Controls.Add(this.lblID08);
             this.tab09.Controls.Add(this.tableLayoutPanel16);
             this.tab09.Controls.Add(this.tableLayoutPanel15);
@@ -2866,6 +3132,43 @@
             this.tab09.Text = "BenchMark-08";
             this.tab09.UseVisualStyleBackColor = true;
             // 
+            // panel1BenchMark08
+            // 
+            this.panel1BenchMark08.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1BenchMark08.Controls.Add(this.gdv08);
+            this.panel1BenchMark08.Location = new System.Drawing.Point(5, 206);
+            this.panel1BenchMark08.Name = "panel1BenchMark08";
+            this.panel1BenchMark08.Size = new System.Drawing.Size(879, 253);
+            this.panel1BenchMark08.TabIndex = 193;
+            // 
+            // gdv08
+            // 
+            this.gdv08.AllowUserToAddRows = false;
+            this.gdv08.AllowUserToDeleteRows = false;
+            this.gdv08.AllowUserToResizeColumns = false;
+            this.gdv08.AllowUserToResizeRows = false;
+            this.gdv08.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gdv08.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gdv08.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gdv08.Location = new System.Drawing.Point(3, 3);
+            this.gdv08.Name = "gdv08";
+            this.gdv08.Size = new System.Drawing.Size(873, 247);
+            this.gdv08.TabIndex = 185;
+            this.gdv08.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdv08_CellDoubleClick);
+            // 
+            // lblID08
+            // 
+            this.lblID08.AutoSize = true;
+            this.lblID08.Location = new System.Drawing.Point(298, 0);
+            this.lblID08.Name = "lblID08";
+            this.lblID08.Size = new System.Drawing.Size(40, 13);
+            this.lblID08.TabIndex = 192;
+            this.lblID08.Text = "lblID08";
+            // 
             // tableLayoutPanel16
             // 
             this.tableLayoutPanel16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -2876,7 +3179,7 @@
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 197F));
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 205F));
             this.tableLayoutPanel16.Controls.Add(this.btnSaveBenchMark08, 1, 0);
             this.tableLayoutPanel16.Controls.Add(this.btnCancelBenchMark08, 3, 0);
             this.tableLayoutPanel16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2890,7 +3193,7 @@
             // btnSaveBenchMark08
             // 
             this.btnSaveBenchMark08.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnSaveBenchMark08.Location = new System.Drawing.Point(278, 8);
+            this.btnSaveBenchMark08.Location = new System.Drawing.Point(274, 8);
             this.btnSaveBenchMark08.Name = "btnSaveBenchMark08";
             this.btnSaveBenchMark08.Size = new System.Drawing.Size(75, 23);
             this.btnSaveBenchMark08.TabIndex = 14;
@@ -2901,7 +3204,7 @@
             // btnCancelBenchMark08
             // 
             this.btnCancelBenchMark08.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnCancelBenchMark08.Location = new System.Drawing.Point(393, 8);
+            this.btnCancelBenchMark08.Location = new System.Drawing.Point(389, 8);
             this.btnCancelBenchMark08.Name = "btnCancelBenchMark08";
             this.btnCancelBenchMark08.Size = new System.Drawing.Size(75, 23);
             this.btnCancelBenchMark08.TabIndex = 15;
@@ -2917,7 +3220,7 @@
             this.tableLayoutPanel15.ColumnCount = 3;
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.27294F));
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.72706F));
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel15.Controls.Add(this.panel23, 1, 2);
             this.tableLayoutPanel15.Controls.Add(this.panel25, 1, 3);
             this.tableLayoutPanel15.Controls.Add(this.panel27, 1, 1);
@@ -2942,7 +3245,7 @@
             this.panel23.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel23.Controls.Add(this.yn_edu_progressYes);
             this.panel23.Controls.Add(this.yn_edu_progressNo);
-            this.panel23.Location = new System.Drawing.Point(565, 74);
+            this.panel23.Location = new System.Drawing.Point(559, 74);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(181, 23);
             this.panel23.TabIndex = 130;
@@ -2977,7 +3280,7 @@
             this.panel25.Controls.Add(this.rbtn_BenchMark08Yes);
             this.panel25.Controls.Add(this.rbtn_BenchMark08No);
             this.panel25.Enabled = false;
-            this.panel25.Location = new System.Drawing.Point(565, 108);
+            this.panel25.Location = new System.Drawing.Point(559, 108);
             this.panel25.Name = "panel25";
             this.panel25.Size = new System.Drawing.Size(260, 23);
             this.panel25.TabIndex = 130;
@@ -3021,7 +3324,7 @@
             this.panel27.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel27.Controls.Add(this.yn_edu_attend_tegularlayYes);
             this.panel27.Controls.Add(this.yn_edu_attend_tegularlayNo);
-            this.panel27.Location = new System.Drawing.Point(565, 40);
+            this.panel27.Location = new System.Drawing.Point(559, 40);
             this.panel27.Name = "panel27";
             this.panel27.Size = new System.Drawing.Size(181, 23);
             this.panel27.TabIndex = 129;
@@ -3054,7 +3357,7 @@
             this.panel28.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel28.Controls.Add(this.yn_edu_enrolledYes);
             this.panel28.Controls.Add(this.yn_edu_enrolledNo);
-            this.panel28.Location = new System.Drawing.Point(565, 6);
+            this.panel28.Location = new System.Drawing.Point(559, 6);
             this.panel28.Name = "panel28";
             this.panel28.Size = new System.Drawing.Size(181, 22);
             this.panel28.TabIndex = 128;
@@ -3120,7 +3423,7 @@
             this.label60.AutoSize = true;
             this.label60.Location = new System.Drawing.Point(4, 72);
             this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(550, 26);
+            this.label60.Size = new System.Drawing.Size(547, 26);
             this.label60.TabIndex = 131;
             this.label60.Text = "Did all children in the household ages 6-17 progress to the next level this schoo" +
     "l year? (In other words, no child had to repeat a level this year.)";
@@ -3136,42 +3439,6 @@
             this.label53.Size = new System.Drawing.Size(194, 13);
             this.label53.TabIndex = 64;
             this.label53.Text = "BenchMark-08:Children in school";
-            // 
-            // lblID05
-            // 
-            this.lblID05.AutoSize = true;
-            this.lblID05.Location = new System.Drawing.Point(521, 3);
-            this.lblID05.Name = "lblID05";
-            this.lblID05.Size = new System.Drawing.Size(40, 13);
-            this.lblID05.TabIndex = 190;
-            this.lblID05.Text = "lblID05";
-            // 
-            // lblID06
-            // 
-            this.lblID06.AutoSize = true;
-            this.lblID06.Location = new System.Drawing.Point(536, 0);
-            this.lblID06.Name = "lblID06";
-            this.lblID06.Size = new System.Drawing.Size(40, 13);
-            this.lblID06.TabIndex = 191;
-            this.lblID06.Text = "lblID06";
-            // 
-            // lblID07
-            // 
-            this.lblID07.AutoSize = true;
-            this.lblID07.Location = new System.Drawing.Point(336, 4);
-            this.lblID07.Name = "lblID07";
-            this.lblID07.Size = new System.Drawing.Size(40, 13);
-            this.lblID07.TabIndex = 191;
-            this.lblID07.Text = "lblID07";
-            // 
-            // lblID08
-            // 
-            this.lblID08.AutoSize = true;
-            this.lblID08.Location = new System.Drawing.Point(298, 0);
-            this.lblID08.Name = "lblID08";
-            this.lblID08.Size = new System.Drawing.Size(40, 13);
-            this.lblID08.TabIndex = 192;
-            this.lblID08.Text = "lblID08";
             // 
             // frmHouseholdGraduationAssessment
             // 
@@ -3191,6 +3458,8 @@
             this.tab02.ResumeLayout(false);
             this.tab02.PerformLayout();
             this.panelBenchMark01.ResumeLayout(false);
+            this.panel1BenchMark01.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gdv01)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -3201,12 +3470,14 @@
             this.tab03.ResumeLayout(false);
             this.tab03.PerformLayout();
             this.panelBenchMark02.ResumeLayout(false);
+            this.panel1BenchMark02.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gdv02)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.panelAppointment.ResumeLayout(false);
+            this.panelAppointment.PerformLayout();
+            this.panelART.ResumeLayout(false);
+            this.panelART.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -3215,6 +3486,8 @@
             this.tab04.ResumeLayout(false);
             this.tab04.PerformLayout();
             this.panelBenchMark03.ResumeLayout(false);
+            this.panel1BenchMark03.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gdv03)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             this.panel7.ResumeLayout(false);
@@ -3226,6 +3499,8 @@
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tab05.ResumeLayout(false);
             this.tab05.PerformLayout();
+            this.panel1BenchMark04.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gdv04)).EndInit();
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
@@ -3237,6 +3512,8 @@
             this.panel11.PerformLayout();
             this.tab06.ResumeLayout(false);
             this.tab06.PerformLayout();
+            this.panel1BenchMark05.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gdv05)).EndInit();
             this.tableLayoutPanel10.ResumeLayout(false);
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel9.PerformLayout();
@@ -3256,6 +3533,8 @@
             this.panel15.PerformLayout();
             this.tab07.ResumeLayout(false);
             this.tab07.PerformLayout();
+            this.panel1BenchMark06.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gdv06)).EndInit();
             this.tableLayoutPanel12.ResumeLayout(false);
             this.tableLayoutPanel11.ResumeLayout(false);
             this.tableLayoutPanel11.PerformLayout();
@@ -3269,6 +3548,8 @@
             this.panel01.PerformLayout();
             this.tab08.ResumeLayout(false);
             this.tab08.PerformLayout();
+            this.panel1BenchMark07.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gdv07)).EndInit();
             this.tableLayoutPanel14.ResumeLayout(false);
             this.tableLayoutPanel13.ResumeLayout(false);
             this.tableLayoutPanel13.PerformLayout();
@@ -3278,6 +3559,8 @@
             this.panel26.PerformLayout();
             this.tab09.ResumeLayout(false);
             this.tab09.PerformLayout();
+            this.panel1BenchMark08.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gdv08)).EndInit();
             this.tableLayoutPanel16.ResumeLayout(false);
             this.tableLayoutPanel15.ResumeLayout(false);
             this.tableLayoutPanel15.PerformLayout();
@@ -3368,10 +3651,10 @@
         private System.Windows.Forms.RadioButton rbtn_BenchMark02NA;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panelAppointment;
         private System.Windows.Forms.RadioButton yn_appointmentYes;
         private System.Windows.Forms.RadioButton yn_appointmentNo;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panelART;
         private System.Windows.Forms.RadioButton yn_prescribedYes;
         private System.Windows.Forms.RadioButton yn_prescribedNo;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
@@ -3528,5 +3811,21 @@
         private System.Windows.Forms.Label lblID06;
         private System.Windows.Forms.Label lblID07;
         private System.Windows.Forms.Label lblID08;
+        private System.Windows.Forms.DataGridView gdv01;
+        private System.Windows.Forms.Panel panel1BenchMark01;
+        private System.Windows.Forms.Panel panel1BenchMark02;
+        private System.Windows.Forms.DataGridView gdv02;
+        private System.Windows.Forms.Panel panel1BenchMark03;
+        private System.Windows.Forms.DataGridView gdv03;
+        private System.Windows.Forms.Panel panel1BenchMark04;
+        private System.Windows.Forms.DataGridView gdv04;
+        private System.Windows.Forms.Panel panel1BenchMark05;
+        private System.Windows.Forms.DataGridView gdv05;
+        private System.Windows.Forms.Panel panel1BenchMark06;
+        private System.Windows.Forms.DataGridView gdv06;
+        private System.Windows.Forms.Panel panel1BenchMark07;
+        private System.Windows.Forms.DataGridView gdv07;
+        private System.Windows.Forms.Panel panel1BenchMark08;
+        private System.Windows.Forms.DataGridView gdv08;
     }
 }

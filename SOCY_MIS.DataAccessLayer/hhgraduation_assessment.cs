@@ -531,6 +531,237 @@ namespace SOCY_MIS.DataAccessLayer
         }
 
 
+
+        public static DataTable LoadMemberLists(string gat_id,string benchMark)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter Adapt;
+            string strSQL = string.Empty;
+
+            switch (benchMark)
+            {
+                case "01":
+                    strSQL = @"SELECT gat_b_id,gat_id,hhm.hhm_first_name + ' ' + hhm.hhm_last_name AS hhm_name,yn.yn_name AS known_hiv_status FROM [dbo].[hh_graduation_assessment_benchmark01] dt
+                                INNER JOIN hh_household_member hhm ON dt.hhm_id = hhm.hhm_id
+                                INNER JOIN lst_yes_no yn ON dt.yn_hiv_status = yn.yn_id
+                                WHERE gat_id = '{0}'";
+
+                    strSQL = string.Format(strSQL, gat_id);
+                    break;
+                case "02":
+                    strSQL = @"SELECT gat_b_id,gat_id,hhm.hhm_first_name + ' ' + hhm.hhm_last_name AS hhm_name,yn_sup.ynna_name AS suppressing,yn_adher.ynna_name AS Adhere,yn_app.ynna_name AS Appointment FROM [dbo].[hh_graduation_assessment_benchmark02] dt
+                            INNER JOIN hh_household_member hhm ON dt.hhm_id = hhm.hhm_id
+                            INNER JOIN lst_yes_no_not_applicable yn_sup ON dt.yn_supressed = yn_sup.ynna_id
+                            INNER JOIN lst_yes_no_not_applicable yn_adher ON dt.yn_adhering = yn_adher.ynna_id
+                            INNER JOIN lst_yes_no_not_applicable yn_app ON dt.yn_attend_art_appointment = yn_app.ynna_id
+                            WHERE dt.gat_id = '{0}'";
+
+                    strSQL = string.Format(strSQL, gat_id);
+                    break;
+                case "03":
+                    strSQL = @"SELECT gat_b_id,gat_id,hhm.hhm_first_name + ' ' + hhm.hhm_last_name AS hhm_name,yn_risk.ynna_name AS yn_risk,yn_prev.ynna_name AS yn_prev  FROM [dbo].[hh_graduation_assessment_benchmark03] dt
+                                INNER JOIN hh_household_member hhm ON dt.hhm_id = hhm.hhm_id
+                                INNER JOIN lst_yes_no_not_applicable yn_risk ON dt.yn_hiv_risk_knowledge = yn_risk.ynna_id
+                                INNER JOIN lst_yes_no_not_applicable yn_prev ON dt.yn_hiv_prevention = yn_prev.ynna_id
+                                WHERE gat_id = '{0}'";
+
+                    strSQL = string.Format(strSQL, gat_id);
+                    break;
+                case "04":
+                    strSQL = @"SELECT gat_b_id,gat_id,hhm.hhm_first_name + ' ' + hhm.hhm_last_name AS hhm_name,yn_muac.ynna_name AS yn_muac,yn_edema.ynna_name AS yn_edema FROM [dbo].[hh_graduation_assessment_benchmark04] dt
+                                INNER JOIN hh_household_member hhm ON dt.hhm_id = hhm.hhm_id
+                                INNER JOIN lst_yes_no_not_applicable yn_muac ON dt.yn_muac_normal = yn_muac.ynna_id
+                                INNER JOIN lst_yes_no_not_applicable yn_edema ON dt.yn_edema_free = yn_edema.ynna_id
+                                WHERE gat_id = '{0}'";
+
+                    strSQL = string.Format(strSQL, gat_id);
+                    break;
+                case "05":
+                    strSQL = @"SELECT gat_b_id,gat_id,hhm.hhm_first_name + ' ' + hhm.hhm_last_name AS hhm_name,yn_pay_fees.ynna_name AS yn_pay_fees,yn_pay_fees_no_pepfar_grant.ynna_name AS yn_pay_fees_no_pepfar_grant,
+                                yn_pay_fees_no_sell_asset.ynna_name AS yn_pay_fees_no_sell_asset,yn_pay_medical_costs.ynna_name AS yn_pay_medical_costs,yn_pay_medical_costs_no_pepfar_grant.ynna_name AS yn_pay_medical_costs_no_pepfar_grant,
+                                yn_pay_medical_costs_no_sell_asset.ynna_name AS yn_pay_medical_costs_no_sell_asset
+                                FROM [dbo].[hh_graduation_assessment_benchmark05] dt
+                                INNER JOIN hh_household_member hhm ON dt.hhm_id = hhm.hhm_id
+                                INNER JOIN lst_yes_no_not_applicable yn_pay_fees ON dt.yn_pay_fees = yn_pay_fees.ynna_id
+                                INNER JOIN lst_yes_no_not_applicable yn_pay_fees_no_pepfar_grant ON dt.yn_pay_fees_no_pepfar_grant = yn_pay_fees_no_pepfar_grant.ynna_id
+                                INNER JOIN lst_yes_no_not_applicable yn_pay_fees_no_sell_asset ON dt.yn_pay_fees_no_sell_asset = yn_pay_fees_no_sell_asset.ynna_id
+                                INNER JOIN lst_yes_no_not_applicable yn_pay_medical_costs ON dt.yn_pay_medical_costs = yn_pay_medical_costs.ynna_id
+                                INNER JOIN lst_yes_no_not_applicable  yn_pay_medical_costs_no_pepfar_grant ON dt.yn_pay_medical_costs_no_pepfar_grant = yn_pay_medical_costs_no_pepfar_grant.ynna_id
+                                INNER JOIN lst_yes_no_not_applicable yn_pay_medical_costs_no_sell_asset ON dt.yn_pay_medical_costs_no_sell_asset = yn_pay_medical_costs_no_sell_asset.ynna_id
+                                WHERE gat_id = '{0}'";
+
+                    strSQL = string.Format(strSQL, gat_id);
+                    break;
+                case "06":
+                    strSQL = @"SELECT  gat_b_id,gat_id,hhm.hhm_first_name + ' ' + hhm.hhm_last_name AS hhm_name,yn_kicked.ynna_name AS yn_kicked,yn_child_kicked.ynna_name AS yn_child_kicked,yn_child_violence.ynna_name AS yn_child_violence
+                            FROM [dbo].[hh_graduation_assessment_benchmark06] dt
+                            INNER JOIN hh_household_member hhm ON dt.hhm_id = hhm.hhm_id
+                            INNER JOIN lst_yes_no_not_applicable yn_kicked ON dt.yn_kicked = yn_kicked.ynna_id
+                            INNER JOIN lst_yes_no_not_applicable yn_child_kicked ON dt.yn_child_kicked = yn_child_kicked.ynna_id
+                            INNER JOIN lst_yes_no_not_applicable yn_child_violence ON dt.yn_child_violence = yn_child_violence.ynna_id
+                            WHERE gat_id = '{0}'";
+
+                    strSQL = string.Format(strSQL, gat_id);
+                    break;
+                case "07":
+                    strSQL = @"SELECT  gat_b_id,gat_id,yn_stable_caregiver.ynna_name AS yn_stable_caregiver FROM [dbo].[hh_graduation_assessment_benchmark07] dt
+                            INNER JOIN lst_yes_no_not_applicable yn_stable_caregiver ON dt.yn_stable_caregiver = yn_stable_caregiver.ynna_id
+                            WHERE gat_id = '{0}'";
+
+                    strSQL = string.Format(strSQL, gat_id);
+                    break;
+                case "08":
+                    strSQL = @"SELECT gat_b_id,gat_id,yn_children_enrolled_in_school.ynna_name AS yn_children_enrolled_in_school,yn_atte_school_regualarly.ynna_name AS yn_atte_school_regualarly,yn_progress_next_level.ynna_name AS yn_progress_next_level
+                                FROM [dbo].[hh_graduation_assessment_benchmark08] dt
+                                INNER JOIN lst_yes_no_not_applicable yn_children_enrolled_in_school ON dt.yn_children_enrolled_in_school = yn_children_enrolled_in_school.ynna_id
+                                INNER JOIN lst_yes_no_not_applicable yn_atte_school_regualarly ON dt.yn_atte_school_regualarly = yn_atte_school_regualarly.ynna_id
+                                INNER JOIN lst_yes_no_not_applicable yn_progress_next_level ON dt.yn_progress_next_level = yn_progress_next_level.ynna_id
+                                WHERE gat_id = '{0}'";
+
+                    strSQL = string.Format(strSQL, gat_id);
+                    break;
+
+            }
+            try
+            {
+                string strConn = dbCon.ToString();
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(strSQL, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    Adapt = new SqlDataAdapter(cmd);
+                    Adapt.Fill(dt);
+
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            finally
+            {
+                if (conn.State == ConnectionState.Open) { conn.Close(); }
+            }
+
+            return dt;
+        }
+
+
+        public static DataTable LoadRecordDetails(string gat_b_id,string benchMark)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter Adapt;
+            string strSQL = string.Empty;
+
+            switch (benchMark)
+            {
+                case "01":
+                    strSQL = @"SELECT dt.*, hhm.hhm_first_name + ' ' + hhm.hhm_last_name AS hhm_name FROM [dbo].[hh_graduation_assessment_benchmark01] dt
+                                INNER JOIN hh_household_member hhm ON dt.hhm_id = hhm.hhm_id
+                                WHERE gat_b_id = '{0}'";
+
+                    strSQL = string.Format(strSQL, gat_b_id);
+                    break;
+                case "02":
+                    strSQL = @"SELECT dt.*, hhm.hhm_first_name + ' ' + hhm.hhm_last_name AS hhm_name FROM [dbo].[hh_graduation_assessment_benchmark02] dt
+                                INNER JOIN hh_household_member hhm ON dt.hhm_id = hhm.hhm_id
+                                WHERE gat_b_id = '{0}'";
+
+                    strSQL = string.Format(strSQL, gat_b_id);
+                    break;
+                case "03":
+                    strSQL = @"SELECT dt.*, hhm.hhm_first_name + ' ' + hhm.hhm_last_name AS hhm_name FROM [dbo].[hh_graduation_assessment_benchmark03] dt
+                                INNER JOIN hh_household_member hhm ON dt.hhm_id = hhm.hhm_id
+                                WHERE gat_b_id = '{0}'";
+
+                    strSQL = string.Format(strSQL, gat_b_id);
+                    break;
+                case "04":
+                    strSQL = @"SELECT dt.*, hhm.hhm_first_name + ' ' + hhm.hhm_last_name AS hhm_name FROM [dbo].[hh_graduation_assessment_benchmark04] dt
+                                INNER JOIN hh_household_member hhm ON dt.hhm_id = hhm.hhm_id
+                                WHERE gat_b_id = '{0}'";
+
+                    strSQL = string.Format(strSQL, gat_b_id);
+                    break;
+                case "05":
+                    strSQL = @"SELECT dt.*, hhm.hhm_first_name + ' ' + hhm.hhm_last_name AS hhm_name FROM [dbo].[hh_graduation_assessment_benchmark05] dt
+                                INNER JOIN hh_household_member hhm ON dt.hhm_id = hhm.hhm_id
+                                WHERE gat_b_id = '{0}'";
+
+                    strSQL = string.Format(strSQL, gat_b_id);
+                    break;
+                case "06":
+                    strSQL = @"SELECT dt.*, hhm.hhm_first_name + ' ' + hhm.hhm_last_name AS hhm_name FROM [dbo].[hh_graduation_assessment_benchmark06] dt
+                                INNER JOIN hh_household_member hhm ON dt.hhm_id = hhm.hhm_id
+                                WHERE gat_b_id = '{0}'";
+
+                    strSQL = string.Format(strSQL, gat_b_id);
+                    break;
+                case "07":
+                    strSQL = @"SELECT* FROM [dbo].[hh_graduation_assessment_benchmark07] WHERE gat_b_id = '{0}'";
+
+                    strSQL = string.Format(strSQL, gat_b_id);
+                    break;
+                case "08":
+                    strSQL = @"SELECT* FROM [dbo].[hh_graduation_assessment_benchmark08] WHERE gat_b_id = '{0}'";
+
+                    strSQL = string.Format(strSQL, gat_b_id);
+                    break;
+            }
+            try
+            {
+                string strConn = dbCon.ToString();
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(strSQL, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    Adapt = new SqlDataAdapter(cmd);
+                    Adapt.Fill(dt);
+
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            finally
+            {
+                if (conn.State == ConnectionState.Open) { conn.Close(); }
+            }
+
+            return dt;
+        }
+
         public static int LoadHouseholdMemberAge(string hhm_id)
         {
             DataTable dt = new DataTable();
@@ -630,7 +861,7 @@ namespace SOCY_MIS.DataAccessLayer
                     break;
                 case "08":
                     strSQL = @"SELECT COUNT(*)  FROM hh_graduation_assessment_benchmark08
-                                WHERE (yn_children_enrolled_in_school = 0  OR yn_atte_school_regualarly = 0 OR yn_atte_school_regualarly = 0) AND gat_id = '{0}'";
+                                WHERE (yn_children_enrolled_in_school = 0  OR yn_atte_school_regualarly = 0 OR yn_progress_next_level = 0) AND gat_id = '{0}'";
                     strSQL = string.Format(strSQL, gat_id);
                     break;
             }

@@ -137,7 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\PSAUtilsWin32\PSAUtilsWin32\PSAUtilsWin32.csproj">
-      <Project>{85401351-6520-4473-b2bd-4b6ae83a9368}</Project>
+      <Project>{85401351-6520-4473-B2BD-4B6AE83A9368}</Project>
       <Name>PSAUtilsWin32</Name>
     </ProjectReference>
   </ItemGroup>
