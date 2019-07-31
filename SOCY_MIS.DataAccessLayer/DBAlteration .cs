@@ -14957,6 +14957,788 @@ namespace SOCY_MIS.DataAccessLayer
             #endregion SQL
         }
 
+
+        private static void Createhh_graduation_assessment(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            #region SQL
+            #region Tables
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_graduation_assessment')
+                     CREATE TABLE [dbo].[hh_graduation_assessment](
+	                    [gat_id] [varchar](100) NOT NULL,
+	                    [hh_id] [varchar](50) NOT NULL,
+	                    [swk_id] [varchar](50) NOT NULL,
+	                    [hhm_head_id] [varchar](100) NOT NULL,
+	                    [gat_date] [date] NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [district_id] [varchar](50) NOT NULL,
+                     CONSTRAINT [PK_hh_graduation_assessment] PRIMARY KEY CLUSTERED 
+                    (
+	                    [gat_id] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_graduation_assessment_upload')
+                     CREATE TABLE [dbo].[hh_graduation_assessment_upload](
+	                    [gat_id] [varchar](100) NOT NULL,
+	                    [hh_id] [varchar](50) NOT NULL,
+	                    [swk_id] [varchar](50) NOT NULL,
+	                    [hhm_head_id] [varchar](100) NOT NULL,
+	                    [gat_date] [date] NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [trg_action] [int] NOT NULL,
+	                    [district_id] [varchar](50) NOT NULL
+                    ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_graduation_assessment_final')
+                     CREATE TABLE [dbo].[hh_graduation_assessment_final](
+	                    [gat_id] [varchar](50) NOT NULL,
+	                    [yn_met_benchmark01] [varchar](50) NOT NULL,
+	                    [yn_met_benchmark02] [varchar](50) NOT NULL,
+	                    [yn_met_benchmark03] [varchar](50) NOT NULL,
+	                    [yn_met_benchmark04] [varchar](50) NOT NULL,
+	                    [yn_met_benchmark05] [varchar](50) NOT NULL,
+	                    [yn_met_benchmark06] [varchar](50) NOT NULL,
+	                    [yn_met_benchmark07] [varchar](50) NOT NULL,
+	                    [yn_met_benchmark08] [varchar](50) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [district_id] [varchar](50) NOT NULL,
+                     CONSTRAINT [PK_hh_graduation_assessment_final] PRIMARY KEY CLUSTERED 
+                    (
+	                    [gat_id] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_graduation_assessment_final_upload')
+                     CREATE TABLE [dbo].[hh_graduation_assessment_final_upload](
+	                    [gat_id] [varchar](50) NOT NULL,
+	                    [yn_met_benchmark01] [varchar](50) NOT NULL,
+	                    [yn_met_benchmark02] [varchar](50) NOT NULL,
+	                    [yn_met_benchmark03] [varchar](50) NOT NULL,
+	                    [yn_met_benchmark04] [varchar](50) NOT NULL,
+	                    [yn_met_benchmark05] [varchar](50) NOT NULL,
+	                    [yn_met_benchmark06] [varchar](50) NOT NULL,
+	                    [yn_met_benchmark07] [varchar](50) NOT NULL,
+	                    [yn_met_benchmark08] [varchar](50) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [trg_action] [int] NOT NULL,
+	                    [district_id] [varchar](50) NOT NULL
+                    ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_graduation_assessment_benchmark01')
+                     CREATE TABLE [dbo].[hh_graduation_assessment_benchmark01](
+	                [gat_b_id] [varchar](50) NOT NULL,
+	                [gat_id] [varchar](50) NOT NULL,
+	                [hhm_id] [varchar](50) NOT NULL,
+	                [yn_hiv_status] [varchar](10) NOT NULL,
+	                [usr_id_create] [varchar](50) NOT NULL,
+	                [usr_id_update] [varchar](50) NOT NULL,
+	                [usr_date_create] [datetime] NOT NULL,
+	                [usr_date_update] [datetime] NOT NULL,
+	                [ofc_id] [varchar](50) NOT NULL,
+	                [district_id] [varchar](50) NOT NULL,
+                 CONSTRAINT [PK_hh_graduation_assessment_benchmark01] PRIMARY KEY CLUSTERED 
+                (
+	                [gat_b_id] ASC
+                )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_graduation_assessment_benchmark01_upload')
+                     CREATE TABLE [dbo].[hh_graduation_assessment_benchmark01_upload](
+	                    [gat_b_id] [varchar](50) NOT NULL,
+	                    [gat_id] [varchar](50) NOT NULL,
+	                    [hhm_id] [varchar](50) NOT NULL,
+	                    [yn_hiv_status] [varchar](10) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [trg_action] [int] NOT NULL,
+	                    [district_id] [varchar](50) NOT NULL
+                    ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_graduation_assessment_benchmark02')
+                     CREATE TABLE [dbo].[hh_graduation_assessment_benchmark02](
+	                    [gat_b_id] [varchar](50) NOT NULL,
+	                    [gat_id] [varchar](50) NOT NULL,
+	                    [hhm_id] [varchar](50) NOT NULL,
+	                    [yn_supressed] [varchar](50) NOT NULL,
+	                    [yn_adhering] [varchar](50) NOT NULL,
+	                    [yn_attend_art_appointment] [varchar](50) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [district_id] [varchar](50) NOT NULL,
+                     CONSTRAINT [PK_hh_graduation_assessment_benchmark02] PRIMARY KEY CLUSTERED 
+                    (
+	                    [gat_b_id] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_graduation_assessment_benchmark02_upload')
+                     CREATE TABLE [dbo].[hh_graduation_assessment_benchmark02_upload](
+	                [gat_b_id] [varchar](50) NOT NULL,
+	                [gat_id] [varchar](50) NOT NULL,
+	                [hhm_id] [varchar](50) NOT NULL,
+	                [yn_supressed] [varchar](50) NOT NULL,
+	                [yn_adhering] [varchar](50) NOT NULL,
+	                [yn_attend_art_appointment] [varchar](50) NOT NULL,
+	                [usr_id_create] [varchar](50) NOT NULL,
+	                [usr_id_update] [varchar](50) NOT NULL,
+	                [usr_date_create] [datetime] NOT NULL,
+	                [usr_date_update] [datetime] NOT NULL,
+	                [ofc_id] [varchar](50) NOT NULL,
+	                [trg_action] [int] NOT NULL,
+	                [district_id] [varchar](50) NOT NULL
+                ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_graduation_assessment_benchmark03')
+                     CREATE TABLE [dbo].[hh_graduation_assessment_benchmark03](
+	                    [gat_b_id] [varchar](50) NOT NULL,
+	                    [gat_id] [varchar](50) NOT NULL,
+	                    [hhm_id] [varchar](50) NOT NULL,
+	                    [yn_hiv_risk_knowledge] [varchar](50) NOT NULL,
+	                    [yn_hiv_prevention] [varchar](50) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [district_id] [varchar](50) NOT NULL,
+                     CONSTRAINT [PK_hh_graduation_assessment_benchmark03] PRIMARY KEY CLUSTERED 
+                    (
+	                    [gat_b_id] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_graduation_assessment_benchmark03_upload')
+                     CREATE TABLE [dbo].[hh_graduation_assessment_benchmark03_upload](
+	                [gat_b_id] [varchar](50) NOT NULL,
+	                [gat_id] [varchar](50) NOT NULL,
+	                [hhm_id] [varchar](50) NOT NULL,
+	                [yn_hiv_risk_knowledge] [varchar](50) NOT NULL,
+	                [yn_hiv_prevention] [varchar](50) NOT NULL,
+	                [usr_id_create] [varchar](50) NOT NULL,
+	                [usr_id_update] [varchar](50) NOT NULL,
+	                [usr_date_create] [datetime] NOT NULL,
+	                [usr_date_update] [datetime] NOT NULL,
+	                [ofc_id] [varchar](50) NOT NULL,
+	                [trg_action] [int] NOT NULL,
+	                [district_id] [varchar](50) NOT NULL
+                ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_graduation_assessment_benchmark04')
+                    CREATE TABLE [dbo].[hh_graduation_assessment_benchmark04](
+	                [gat_b_id] [varchar](50) NOT NULL,
+	                [gat_id] [varchar](50) NOT NULL,
+	                [hhm_id] [varchar](50) NOT NULL,
+	                [yn_muac_normal] [varchar](50) NOT NULL,
+	                [yn_edema_free] [varchar](50) NOT NULL,
+	                [usr_id_create] [varchar](50) NOT NULL,
+	                [usr_id_update] [varchar](50) NOT NULL,
+	                [usr_date_create] [datetime] NOT NULL,
+	                [usr_date_update] [datetime] NOT NULL,
+	                [ofc_id] [varchar](50) NOT NULL,
+	                [district_id] [varchar](50) NOT NULL,
+                 CONSTRAINT [PK_hh_graduation_assessment_benchmark04] PRIMARY KEY CLUSTERED 
+                (
+	                [gat_b_id] ASC
+                )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_graduation_assessment_benchmark04_upload')
+                    CREATE TABLE [dbo].[hh_graduation_assessment_benchmark04_upload](
+	                [gat_b_id] [varchar](50) NOT NULL,
+	                [gat_id] [varchar](50) NOT NULL,
+	                [hhm_id] [varchar](50) NOT NULL,
+	                [yn_muac_normal] [varchar](50) NOT NULL,
+	                [yn_edema_free] [varchar](50) NOT NULL,
+	                [usr_id_create] [varchar](50) NOT NULL,
+	                [usr_id_update] [varchar](50) NOT NULL,
+	                [usr_date_create] [datetime] NOT NULL,
+	                [usr_date_update] [datetime] NOT NULL,
+	                [ofc_id] [varchar](50) NOT NULL,
+	                [trg_action] [int] NOT NULL,
+	                [district_id] [varchar](50) NOT NULL
+                ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_graduation_assessment_benchmark05')
+                   CREATE TABLE [dbo].[hh_graduation_assessment_benchmark05](
+	                [gat_b_id] [varchar](50) NOT NULL,
+	                [gat_id] [varchar](50) NOT NULL,
+	                [hhm_id] [varchar](50) NOT NULL,
+	                [yn_pay_fees] [varchar](50) NOT NULL,
+	                [yn_pay_fees_no_pepfar_grant] [varchar](50) NOT NULL,
+	                [yn_pay_fees_no_sell_asset] [varchar](50) NOT NULL,
+	                [yn_pay_medical_costs] [varchar](50) NOT NULL,
+	                [yn_pay_medical_costs_no_pepfar_grant] [varchar](50) NOT NULL,
+	                [yn_pay_medical_costs_no_sell_asset] [nchar](10) NOT NULL,
+	                [usr_id_create] [varchar](50) NOT NULL,
+	                [usr_id_update] [varchar](50) NOT NULL,
+	                [usr_date_create] [datetime] NOT NULL,
+	                [usr_date_update] [datetime] NOT NULL,
+	                [ofc_id] [varchar](50) NOT NULL,
+	                [district_id] [varchar](50) NOT NULL,
+                 CONSTRAINT [PK_hh_graduation_assessment_benchmark05] PRIMARY KEY CLUSTERED 
+                (
+	                [gat_b_id] ASC
+                )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_graduation_assessment_benchmark05_upload')
+                   CREATE TABLE [dbo].[hh_graduation_assessment_benchmark05_upload](
+	                [gat_b_id] [varchar](50) NOT NULL,
+	                [gat_id] [varchar](50) NOT NULL,
+	                [hhm_id] [varchar](50) NOT NULL,
+	                [yn_pay_fees] [varchar](50) NOT NULL,
+	                [yn_pay_fees_no_pepfar_grant] [varchar](50) NOT NULL,
+	                [yn_pay_fees_no_sell_asset] [varchar](50) NOT NULL,
+	                [yn_pay_medical_costs] [varchar](50) NOT NULL,
+	                [yn_pay_medical_costs_no_pepfar_grant] [varchar](50) NOT NULL,
+	                [yn_pay_medical_costs_no_sell_asset] [nchar](10) NOT NULL,
+	                [usr_id_create] [varchar](50) NOT NULL,
+	                [usr_id_update] [varchar](50) NOT NULL,
+	                [usr_date_create] [datetime] NOT NULL,
+	                [usr_date_update] [datetime] NOT NULL,
+	                [ofc_id] [varchar](50) NOT NULL,
+	                [trg_action] [int] NOT NULL,
+	                [district_id] [varchar](50) NOT NULL
+                ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_graduation_assessment_benchmark06')
+                   CREATE TABLE [dbo].[hh_graduation_assessment_benchmark06](
+	                [gat_b_id] [varchar](50) NOT NULL,
+	                [gat_id] [varchar](50) NOT NULL,
+	                [hhm_id] [varchar](50) NOT NULL,
+	                [yn_kicked] [varchar](50) NOT NULL,
+	                [yn_child_kicked] [varchar](50) NOT NULL,
+	                [yn_child_violence] [varchar](50) NOT NULL,
+	                [usr_id_create] [varchar](50) NOT NULL,
+	                [usr_id_update] [varchar](50) NOT NULL,
+	                [usr_date_create] [datetime] NOT NULL,
+	                [usr_date_update] [datetime] NOT NULL,
+	                [ofc_id] [varchar](50) NOT NULL,
+	                [district_id] [varchar](50) NOT NULL,
+                 CONSTRAINT [PK_hh_graduation_assessment_benchmark06] PRIMARY KEY CLUSTERED 
+                (
+	                [gat_b_id] ASC
+                )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_graduation_assessment_benchmark06_upload')
+                   CREATE TABLE [dbo].[hh_graduation_assessment_benchmark06_upload](
+	                [gat_b_id] [varchar](50) NOT NULL,
+	                [gat_id] [varchar](50) NOT NULL,
+	                [hhm_id] [varchar](50) NOT NULL,
+	                [yn_kicked] [varchar](50) NOT NULL,
+	                [yn_child_kicked] [varchar](50) NOT NULL,
+	                [yn_child_violence] [varchar](50) NOT NULL,
+	                [usr_id_create] [varchar](50) NOT NULL,
+	                [usr_id_update] [varchar](50) NOT NULL,
+	                [usr_date_create] [datetime] NOT NULL,
+	                [usr_date_update] [datetime] NOT NULL,
+	                [ofc_id] [varchar](50) NOT NULL,
+	                [trg_action] [int] NOT NULL,
+	                [district_id] [varchar](50) NOT NULL
+                ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_graduation_assessment_benchmark07')
+                  CREATE TABLE [dbo].[hh_graduation_assessment_benchmark07](
+	                [gat_b_id] [varchar](50) NOT NULL,
+	                [gat_id] [varchar](50) NOT NULL,
+	                [yn_stable_caregiver] [varchar](50) NOT NULL,
+	                [usr_id_create] [varchar](50) NOT NULL,
+	                [usr_id_update] [varchar](50) NOT NULL,
+	                [usr_date_create] [datetime] NOT NULL,
+	                [usr_date_update] [datetime] NOT NULL,
+	                [ofc_id] [varchar](50) NOT NULL,
+	                [district_id] [varchar](50) NOT NULL,
+                 CONSTRAINT [PK_hh_graduation_assessment_benchmark07] PRIMARY KEY CLUSTERED 
+                (
+	                [gat_b_id] ASC
+                )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_graduation_assessment_benchmark07_upload')
+                  CREATE TABLE [dbo].[hh_graduation_assessment_benchmark07_upload](
+	                    [gat_b_id] [varchar](50) NOT NULL,
+	                    [gat_id] [varchar](50) NOT NULL,
+	                    [yn_stable_caregiver] [varchar](50) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [trg_action] [int] NOT NULL,
+	                    [district_id] [varchar](50) NOT NULL
+                    ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_graduation_assessment_benchmark08')
+                  CREATE TABLE [dbo].[hh_graduation_assessment_benchmark08](
+	                [gat_b_id] [varchar](50) NOT NULL,
+	                [gat_id] [varchar](50) NOT NULL,
+	                [yn_children_enrolled_in_school] [varchar](50) NOT NULL,
+	                [yn_atte_school_regualarly] [varchar](50) NOT NULL,
+	                [yn_progress_next_level] [varchar](50) NOT NULL,
+	                [usr_id_create] [varchar](50) NOT NULL,
+	                [usr_id_update] [varchar](50) NOT NULL,
+	                [usr_date_create] [datetime] NOT NULL,
+	                [usr_date_update] [datetime] NOT NULL,
+	                [ofc_id] [varchar](50) NOT NULL,
+	                [district_id] [varchar](50) NOT NULL,
+                 CONSTRAINT [PK_hh_graduation_assessment_benchmark08] PRIMARY KEY CLUSTERED 
+                (
+	                [gat_b_id] ASC
+                )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_graduation_assessment_benchmark08_upload')
+                  CREATE TABLE [dbo].[hh_graduation_assessment_benchmark08_upload](
+	                [gat_b_id] [varchar](50) NOT NULL,
+	                [gat_id] [varchar](50) NOT NULL,
+	                [yn_children_enrolled_in_school] [varchar](50) NOT NULL,
+	                [yn_atte_school_regualarly] [varchar](50) NOT NULL,
+	                [yn_progress_next_level] [varchar](50) NOT NULL,
+	                [usr_id_create] [varchar](50) NOT NULL,
+	                [usr_id_update] [varchar](50) NOT NULL,
+	                [usr_date_create] [datetime] NOT NULL,
+	                [usr_date_update] [datetime] NOT NULL,
+	                [ofc_id] [varchar](50) NOT NULL,
+	                [trg_action] [int] NOT NULL,
+	                [district_id] [varchar](50) NOT NULL
+                ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion Tables
+
+            #region Triggers
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_graduation_assessment_upload_insert' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_graduation_assessment_upload_insert] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_graduation_assessment_upload_insert] ON [dbo].[hh_graduation_assessment] FOR INSERT
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_graduation_assessment_upload] 
+					([gat_id] ,[hh_id] ,[swk_id] ,[hhm_head_id],[gat_date] ,[usr_id_create] ,[usr_id_update],[usr_date_create] ,[usr_date_update],[ofc_id],[trg_action],[district_id])
+	                SELECT [gat_id] ,[hh_id] ,[swk_id] ,[hhm_head_id],[gat_date] ,[usr_id_create] ,[usr_id_update],[usr_date_create] ,[usr_date_update],[ofc_id],1,[district_id]
+                  FROM inserted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_graduation_assessment_upload_update' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_graduation_assessment_upload_update] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_graduation_assessment_upload_update] ON [dbo].[hh_graduation_assessment] FOR UPDATE
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_graduation_assessment_upload] 
+					([gat_id] ,[hh_id] ,[swk_id] ,[hhm_head_id],[gat_date] ,[usr_id_create] ,[usr_id_update],[usr_date_create] ,[usr_date_update],[ofc_id],[trg_action],[district_id])
+	                SELECT [gat_id] ,[hh_id] ,[swk_id] ,[hhm_head_id],[gat_date] ,[usr_id_create] ,[usr_id_update],[usr_date_create] ,[usr_date_update],[ofc_id],2,[district_id]
+                  FROM inserted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_graduation_assessment_upload_delete' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_graduation_assessment_upload_delete] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_graduation_assessment_upload_delete] ON [dbo].[hh_graduation_assessment] FOR DELETE
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_graduation_assessment_upload] 
+					([gat_id] ,[hh_id] ,[swk_id] ,[hhm_head_id],[gat_date] ,[usr_id_create] ,[usr_id_update],[usr_date_create] ,[usr_date_update],[ofc_id],[trg_action],[district_id])
+	                SELECT [gat_id] ,[hh_id] ,[swk_id] ,[hhm_head_id],[gat_date] ,[usr_id_create] ,[usr_id_update],[usr_date_create] ,[usr_date_update],[ofc_id],3,[district_id]
+                  FROM inserted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_graduation_assessment_benchmark01_insert' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_graduation_assessment_benchmark01_insert] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_graduation_assessment_benchmark01_insert] ON [dbo].[hh_graduation_assessment_benchmark01] FOR INSERT
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_graduation_assessment_benchmark01_upload]
+					([gat_b_id] ,[gat_id] ,[hhm_id] ,[yn_hiv_status] ,[usr_id_create],[usr_id_update],[usr_date_create] ,[usr_date_update] ,[ofc_id],[trg_action],[district_id])
+	                SELECT [gat_b_id] ,[gat_id] ,[hhm_id] ,[yn_hiv_status] ,[usr_id_create],[usr_id_update],[usr_date_create] ,[usr_date_update] ,[ofc_id],1,[district_id]
+                  FROM inserted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_graduation_assessment_benchmark01_update' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_graduation_assessment_benchmark01_update] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_graduation_assessment_benchmark01_update] ON [dbo].[hh_graduation_assessment_benchmark01] FOR UPDATE
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_graduation_assessment_benchmark01_upload]
+					([gat_b_id] ,[gat_id] ,[hhm_id] ,[yn_hiv_status] ,[usr_id_create],[usr_id_update],[usr_date_create] ,[usr_date_update] ,[ofc_id],[trg_action],[district_id])
+	                SELECT [gat_b_id] ,[gat_id] ,[hhm_id] ,[yn_hiv_status] ,[usr_id_create],[usr_id_update],[usr_date_create] ,[usr_date_update] ,[ofc_id],2,[district_id]
+                  FROM inserted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_graduation_assessment_benchmark01_delete' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_graduation_assessment_benchmark01_delete] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_graduation_assessment_benchmark01_delete] ON [dbo].[hh_graduation_assessment_benchmark01] FOR DELETE
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_graduation_assessment_benchmark01_upload]
+					([gat_b_id] ,[gat_id] ,[hhm_id] ,[yn_hiv_status] ,[usr_id_create],[usr_id_update],[usr_date_create] ,[usr_date_update] ,[ofc_id],[trg_action],[district_id])
+	                SELECT [gat_b_id] ,[gat_id] ,[hhm_id] ,[yn_hiv_status] ,[usr_id_create],[usr_id_update],[usr_date_create] ,[usr_date_update] ,[ofc_id],3,[district_id]
+                  FROM inserted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_graduation_assessment_benchmark02_insert' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_graduation_assessment_benchmark02_insert] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_graduation_assessment_benchmark02_insert] ON [dbo].[hh_graduation_assessment_benchmark02] FOR INSERT
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_graduation_assessment_benchmark02_upload]
+					([gat_b_id],[gat_id] ,[hhm_id] ,[yn_supressed] ,[yn_adhering] ,[yn_attend_art_appointment],[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id] ,[trg_action],[district_id])
+	                SELECT[gat_b_id],[gat_id] ,[hhm_id] ,[yn_supressed] ,[yn_adhering] ,[yn_attend_art_appointment],[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id] ,1,[district_id]
+                  FROM inserted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_graduation_assessment_benchmark02_update' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_graduation_assessment_benchmark02_update] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_graduation_assessment_benchmark02_update] ON [dbo].[hh_graduation_assessment_benchmark02] FOR UPDATE
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_graduation_assessment_benchmark02_upload]
+					([gat_b_id],[gat_id] ,[hhm_id] ,[yn_supressed] ,[yn_adhering] ,[yn_attend_art_appointment],[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id] ,[trg_action],[district_id])
+	                SELECT[gat_b_id],[gat_id] ,[hhm_id] ,[yn_supressed] ,[yn_adhering] ,[yn_attend_art_appointment],[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id] ,2,[district_id]
+                  FROM inserted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_graduation_assessment_benchmark02_delete' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_graduation_assessment_benchmark02_delete] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_graduation_assessment_benchmark02_delete] ON [dbo].[hh_graduation_assessment_benchmark02] FOR DELETE
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_graduation_assessment_benchmark02_upload]
+					([gat_b_id],[gat_id] ,[hhm_id] ,[yn_supressed] ,[yn_adhering] ,[yn_attend_art_appointment],[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id] ,[trg_action],[district_id])
+	                SELECT[gat_b_id],[gat_id] ,[hhm_id] ,[yn_supressed] ,[yn_adhering] ,[yn_attend_art_appointment],[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id] ,3,[district_id]
+                  FROM inserted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_graduation_assessment_benchmark03_insert' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_graduation_assessment_benchmark03_insert] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_graduation_assessment_benchmark03_insert] ON [dbo].[hh_graduation_assessment_benchmark03] FOR INSERT
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_graduation_assessment_benchmark03_upload]
+					([gat_b_id] ,[gat_id] ,[hhm_id],[yn_hiv_risk_knowledge],[yn_hiv_prevention] ,[usr_id_create],[usr_id_update] ,[usr_date_create],[usr_date_update],[ofc_id],[trg_action] ,[district_id])
+	                SELECT [gat_b_id] ,[gat_id] ,[hhm_id],[yn_hiv_risk_knowledge],[yn_hiv_prevention] ,[usr_id_create],[usr_id_update] ,[usr_date_create],[usr_date_update],[ofc_id],1 ,[district_id]
+                  FROM inserted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_graduation_assessment_benchmark03_update' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_graduation_assessment_benchmark03_update] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_graduation_assessment_benchmark03_update] ON [dbo].[hh_graduation_assessment_benchmark03] FOR UPDATE
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_graduation_assessment_benchmark03_upload]
+					([gat_b_id] ,[gat_id] ,[hhm_id],[yn_hiv_risk_knowledge],[yn_hiv_prevention] ,[usr_id_create],[usr_id_update] ,[usr_date_create],[usr_date_update],[ofc_id],[trg_action] ,[district_id])
+	                SELECT [gat_b_id] ,[gat_id] ,[hhm_id],[yn_hiv_risk_knowledge],[yn_hiv_prevention] ,[usr_id_create],[usr_id_update] ,[usr_date_create],[usr_date_update],[ofc_id],2 ,[district_id]
+                  FROM inserted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_graduation_assessment_benchmark03_delete' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_graduation_assessment_benchmark03_delete] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_graduation_assessment_benchmark03_delete] ON [dbo].[hh_graduation_assessment_benchmark03] FOR DELETE
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_graduation_assessment_benchmark03_upload]
+					([gat_b_id] ,[gat_id] ,[hhm_id],[yn_hiv_risk_knowledge],[yn_hiv_prevention] ,[usr_id_create],[usr_id_update] ,[usr_date_create],[usr_date_update],[ofc_id],[trg_action] ,[district_id])
+	                SELECT [gat_b_id] ,[gat_id] ,[hhm_id],[yn_hiv_risk_knowledge],[yn_hiv_prevention] ,[usr_id_create],[usr_id_update] ,[usr_date_create],[usr_date_update],[ofc_id],3 ,[district_id]
+                  FROM inserted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_graduation_assessment_benchmark04_insert' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_graduation_assessment_benchmark04_insert] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_graduation_assessment_benchmark04_insert] ON [dbo].[hh_graduation_assessment_benchmark04] FOR INSERT
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_graduation_assessment_benchmark04_upload]
+					([gat_b_id] ,[gat_id] ,[hhm_id] ,[yn_muac_normal] ,[yn_edema_free] ,[usr_id_create],[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id] ,[trg_action],[district_id])
+	                SELECT [gat_b_id] ,[gat_id] ,[hhm_id] ,[yn_muac_normal] ,[yn_edema_free] ,[usr_id_create],[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id] ,1,[district_id]
+                  FROM inserted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_graduation_assessment_benchmark04_update' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_graduation_assessment_benchmark04_update] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_graduation_assessment_benchmark04_update] ON [dbo].[hh_graduation_assessment_benchmark04] FOR UPDATE
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_graduation_assessment_benchmark04_upload]
+					([gat_b_id] ,[gat_id] ,[hhm_id] ,[yn_muac_normal] ,[yn_edema_free] ,[usr_id_create],[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id] ,[trg_action],[district_id])
+	                SELECT [gat_b_id] ,[gat_id] ,[hhm_id] ,[yn_muac_normal] ,[yn_edema_free] ,[usr_id_create],[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id] ,2,[district_id]
+                  FROM inserted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_graduation_assessment_benchmark04_delete' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_graduation_assessment_benchmark04_delete] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_graduation_assessment_benchmark04_delete] ON [dbo].[hh_graduation_assessment_benchmark04] FOR DELETE
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_graduation_assessment_benchmark04_upload]
+					([gat_b_id] ,[gat_id] ,[hhm_id] ,[yn_muac_normal] ,[yn_edema_free] ,[usr_id_create],[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id] ,[trg_action],[district_id])
+	                SELECT [gat_b_id] ,[gat_id] ,[hhm_id] ,[yn_muac_normal] ,[yn_edema_free] ,[usr_id_create],[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id] ,3,[district_id]
+                  FROM inserted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_graduation_assessment_benchmark05_insert' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_graduation_assessment_benchmark05_insert] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_graduation_assessment_benchmark05_insert] ON [dbo].[hh_graduation_assessment_benchmark05] FOR INSERT
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_graduation_assessment_benchmark05_upload]
+				   ([gat_b_id] ,[gat_id] ,[hhm_id] ,[yn_pay_fees],[yn_pay_fees_no_pepfar_grant],[yn_pay_fees_no_sell_asset],[yn_pay_medical_costs] ,[yn_pay_medical_costs_no_pepfar_grant] ,[yn_pay_medical_costs_no_sell_asset]
+				   ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update],[ofc_id] ,[trg_action]  ,[district_id])
+	                SELECT [gat_b_id] ,[gat_id] ,[hhm_id] ,[yn_pay_fees],[yn_pay_fees_no_pepfar_grant],[yn_pay_fees_no_sell_asset],[yn_pay_medical_costs] ,[yn_pay_medical_costs_no_pepfar_grant] ,[yn_pay_medical_costs_no_sell_asset]
+				   ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update],[ofc_id] ,1  ,[district_id]
+                  FROM inserted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_graduation_assessment_benchmark05_update' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_graduation_assessment_benchmark05_update] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_graduation_assessment_benchmark05_update] ON [dbo].[hh_graduation_assessment_benchmark05] FOR UPDATE
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_graduation_assessment_benchmark05_upload]
+				   ([gat_b_id] ,[gat_id] ,[hhm_id] ,[yn_pay_fees],[yn_pay_fees_no_pepfar_grant],[yn_pay_fees_no_sell_asset],[yn_pay_medical_costs] ,[yn_pay_medical_costs_no_pepfar_grant] ,[yn_pay_medical_costs_no_sell_asset]
+				   ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update],[ofc_id] ,[trg_action]  ,[district_id])
+	                SELECT [gat_b_id] ,[gat_id] ,[hhm_id] ,[yn_pay_fees],[yn_pay_fees_no_pepfar_grant],[yn_pay_fees_no_sell_asset],[yn_pay_medical_costs] ,[yn_pay_medical_costs_no_pepfar_grant] ,[yn_pay_medical_costs_no_sell_asset]
+				   ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update],[ofc_id] ,2  ,[district_id]
+                  FROM inserted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_graduation_assessment_benchmark05_delete' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_graduation_assessment_benchmark05_delete] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_graduation_assessment_benchmark05_delete] ON [dbo].[hh_graduation_assessment_benchmark05] FOR DELETE
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_graduation_assessment_benchmark05_upload]
+				   ([gat_b_id] ,[gat_id] ,[hhm_id] ,[yn_pay_fees],[yn_pay_fees_no_pepfar_grant],[yn_pay_fees_no_sell_asset],[yn_pay_medical_costs] ,[yn_pay_medical_costs_no_pepfar_grant] ,[yn_pay_medical_costs_no_sell_asset]
+				   ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update],[ofc_id] ,[trg_action]  ,[district_id])
+	                SELECT [gat_b_id] ,[gat_id] ,[hhm_id] ,[yn_pay_fees],[yn_pay_fees_no_pepfar_grant],[yn_pay_fees_no_sell_asset],[yn_pay_medical_costs] ,[yn_pay_medical_costs_no_pepfar_grant] ,[yn_pay_medical_costs_no_sell_asset]
+				   ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update],[ofc_id] ,3  ,[district_id]
+                  FROM inserted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_graduation_assessment_benchmark06_insert' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_graduation_assessment_benchmark06_insert] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_graduation_assessment_benchmark06_insert] ON [dbo].[hh_graduation_assessment_benchmark06] FOR INSERT
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_graduation_assessment_benchmark06_upload]
+					 ([gat_b_id] ,[gat_id] ,[hhm_id],[yn_kicked] ,[yn_child_kicked],[yn_child_violence],[usr_id_create],[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id] ,[trg_action] ,[district_id])
+	                SELECT [gat_b_id] ,[gat_id] ,[hhm_id],[yn_kicked] ,[yn_child_kicked],[yn_child_violence],[usr_id_create],[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id] ,1 ,[district_id]
+                  FROM inserted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_graduation_assessment_benchmark06_update' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_graduation_assessment_benchmark06_update] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_graduation_assessment_benchmark06_update] ON [dbo].[hh_graduation_assessment_benchmark06] FOR UPDATE
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_graduation_assessment_benchmark06_upload]
+					 ([gat_b_id] ,[gat_id] ,[hhm_id],[yn_kicked] ,[yn_child_kicked],[yn_child_violence],[usr_id_create],[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id] ,[trg_action] ,[district_id])
+	                SELECT [gat_b_id] ,[gat_id] ,[hhm_id],[yn_kicked] ,[yn_child_kicked],[yn_child_violence],[usr_id_create],[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id] ,2 ,[district_id]
+                  FROM inserted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_graduation_assessment_benchmark06_delete' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_graduation_assessment_benchmark06_delete] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_graduation_assessment_benchmark06_delete] ON [dbo].[hh_graduation_assessment_benchmark06] FOR DELETE
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_graduation_assessment_benchmark06_upload]
+					 ([gat_b_id] ,[gat_id] ,[hhm_id],[yn_kicked] ,[yn_child_kicked],[yn_child_violence],[usr_id_create],[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id] ,[trg_action] ,[district_id])
+	                SELECT [gat_b_id] ,[gat_id] ,[hhm_id],[yn_kicked] ,[yn_child_kicked],[yn_child_violence],[usr_id_create],[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id] ,3 ,[district_id]
+                  FROM inserted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_graduation_assessment_benchmark07_insert' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_graduation_assessment_benchmark07_insert] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_graduation_assessment_benchmark07_insert] ON [dbo].[hh_graduation_assessment_benchmark07] FOR INSERT
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_graduation_assessment_benchmark07_upload]
+					([gat_b_id] ,[gat_id] ,[yn_stable_caregiver],[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update],[ofc_id] ,[trg_action] ,[district_id])
+	                SELECT [gat_b_id] ,[gat_id] ,[yn_stable_caregiver],[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update],[ofc_id] ,1 ,[district_id]
+                  FROM inserted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_graduation_assessment_benchmark07_update' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_graduation_assessment_benchmark07_update] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_graduation_assessment_benchmark07_update] ON [dbo].[hh_graduation_assessment_benchmark07] FOR UPDATE
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_graduation_assessment_benchmark07_upload]
+					([gat_b_id] ,[gat_id] ,[yn_stable_caregiver],[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update],[ofc_id] ,[trg_action] ,[district_id])
+	                SELECT [gat_b_id] ,[gat_id] ,[yn_stable_caregiver],[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update],[ofc_id] ,2 ,[district_id]
+                  FROM inserted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_graduation_assessment_benchmark07_delete' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_graduation_assessment_benchmark07_delete] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_graduation_assessment_benchmark07_delete] ON [dbo].[hh_graduation_assessment_benchmark07] FOR DELETE
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_graduation_assessment_benchmark07_upload]
+					([gat_b_id] ,[gat_id] ,[yn_stable_caregiver],[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update],[ofc_id] ,[trg_action] ,[district_id])
+	                SELECT [gat_b_id] ,[gat_id] ,[yn_stable_caregiver],[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update],[ofc_id] ,3 ,[district_id]
+                  FROM inserted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_graduation_assessment_benchmark08_insert' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_graduation_assessment_benchmark08_insert] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_graduation_assessment_benchmark08_insert] ON [dbo].[hh_graduation_assessment_benchmark08] FOR INSERT
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_graduation_assessment_benchmark08_upload]
+				   ([gat_b_id] ,[gat_id] ,[yn_children_enrolled_in_school] ,[yn_atte_school_regualarly] ,[yn_progress_next_level] ,[usr_id_create],[usr_id_update]
+				   ,[usr_date_create] ,[usr_date_update] ,[ofc_id] ,[trg_action],[district_id])
+	                SELECT [gat_b_id] ,[gat_id] ,[yn_children_enrolled_in_school] ,[yn_atte_school_regualarly] ,[yn_progress_next_level] ,[usr_id_create],[usr_id_update]
+				   ,[usr_date_create] ,[usr_date_update] ,[ofc_id] ,1,[district_id]
+                  FROM inserted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_graduation_assessment_benchmark08_update' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_graduation_assessment_benchmark08_update] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_graduation_assessment_benchmark08_update] ON [dbo].[hh_graduation_assessment_benchmark08] FOR UPDATE
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_graduation_assessment_benchmark08_upload]
+				   ([gat_b_id] ,[gat_id] ,[yn_children_enrolled_in_school] ,[yn_atte_school_regualarly] ,[yn_progress_next_level] ,[usr_id_create],[usr_id_update]
+				   ,[usr_date_create] ,[usr_date_update] ,[ofc_id] ,[trg_action],[district_id])
+	                SELECT [gat_b_id] ,[gat_id] ,[yn_children_enrolled_in_school] ,[yn_atte_school_regualarly] ,[yn_progress_next_level] ,[usr_id_create],[usr_id_update]
+				   ,[usr_date_create] ,[usr_date_update] ,[ofc_id] ,2,[district_id]
+                  FROM inserted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_graduation_assessment_benchmark08_delete' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_graduation_assessment_benchmark08_delete] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_graduation_assessment_benchmark08_delete] ON [dbo].[hh_graduation_assessment_benchmark08] FOR DELETE
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_graduation_assessment_benchmark08_upload]
+				   ([gat_b_id] ,[gat_id] ,[yn_children_enrolled_in_school] ,[yn_atte_school_regualarly] ,[yn_progress_next_level] ,[usr_id_create],[usr_id_update]
+				   ,[usr_date_create] ,[usr_date_update] ,[ofc_id] ,[trg_action],[district_id])
+	                SELECT [gat_b_id] ,[gat_id] ,[yn_children_enrolled_in_school] ,[yn_atte_school_regualarly] ,[yn_progress_next_level] ,[usr_id_create],[usr_id_update]
+				   ,[usr_date_create] ,[usr_date_update] ,[ofc_id] ,3,[district_id]
+                  FROM inserted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion Triggers
+            #endregion SQL
+        }
+
         #endregion Create Tables
 
         #region Insert Data
@@ -16648,354 +17430,354 @@ namespace SOCY_MIS.DataAccessLayer
 
             #region SQL
             strSQL = @"SET IDENTITY_INSERT [dbo].[lst_sub_county] ON 
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1, N'1', N'BAMUNANIKA', 1, 1, N'12', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2, N'2', N'BIGULI (Curved out of Bwizi)', 2, 1, N'6', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (3, N'3', N'BIRERE', 3, 1, N'4', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (4, N'4', N'Bitooma [New – from Kyamuhunga]', 4, 1, N'1', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (5, N'5', N'BOMBO TOWN COUNCIL', 5, 1, N'12', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (6, N'6', N'BUBARE', 6, 1, N'5', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (7, N'7', N'BUFUNDI', 7, 1, N'5', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (8, N'8', N'BUFUNJO', 8, 1, N'11', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (9, N'9', N'BUGAAKI', 9, 1, N'11', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (10, N'10', N'BUGAMBE', 10, 1, N'3', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (11, N'11', N'BUGANGARI', 11, 1, N'16', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (12, N'12', N'BUGOYE', 12, 1, N'8', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (13, N'13', N'BUHANDA (Curved out of Kicheche)', 13, 1, N'6', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (14, N'14', N'BUHANIKA', 14, 1, N'3', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (15, N'15', N'BUHARA', 15, 1, N'5', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (16, N'16', N'BUHIMBA', 16, 1, N'3', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (17, N'17', N'BUHUNGA', 17, 1, N'16', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (18, N'18', N'BUJUMBURA Division (curved Busisi & Kitoba S/Cs & Hoima T/C)', 18, 1, N'3', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (19, N'19', N'BUKINDA', 19, 1, N'5', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (20, N'20', N'BULEMBIA DIVISION (curved from Kilembe S/C & Rukoiki S/C)', 20, 1, N'8', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (21, N'21', N'BULERA', 21, 1, N'13', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (22, N'22', N'Bumbaire', 22, 1, N'1', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (23, N'23', N'BUREMBA', 23, 1, N'10', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (24, N'24', N'BURUNGA', 24, 1, N'10', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (25, N'25', N'BUSERUKA', 25, 1, N'3', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (26, N'26', N'BUSIISI Division (Curved from Busisi & Bugambe S/C)', 26, 1, N'3', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (27, N'27', N'BUSIMBI', 27, 1, N'13', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (28, N'28', N'BUSIRIBA (Curved out of Kahunge)', 28, 1, N'6', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (29, N'29', N'BUSUKUMA', 29, 1, N'17', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (30, N'30', N'BUTANDA', 30, 1, N'5', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (31, N'31', N'BUTAYUNJA', 31, 1, N'13', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (32, N'32', N'BUTIITI SUB COUNTY', 32, 1, N'11', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (33, N'33', N'BUTUNDUUZI SUB COUNTY', 33, 1, N'11', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (34, N'34', N'BUTUNTUMULA', 34, 1, N'12', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (35, N'35', N'BUYANJA', 35, 1, N'16', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (36, N'36', N'BWAMBARA', 36, 1, N'16', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (37, N'37', N'Bwamiramira', 37, 1, N'9', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (38, N'38', N'Bwanswa', 38, 1, N'9', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (39, N'39', N'BWERA', 39, 1, N'8', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (40, N'40', N'BWESUMBU (New, Curved out of Kyabarungira)', 40, 1, N'8', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (41, N'41', N'Bwikara', 41, 1, N'9', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (42, N'42', N'BWIZI', 42, 1, N'6', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (43, N'43', N'BWONGYERA', 43, 1, N'14', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (44, N'44', N'Byakabanda', 44, 1, N'15', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (45, N'45', N'Central Division (Curved from Bushenyi - Ishaka T/C, Bumbaire & Kakanju S/Cs)', 45, 1, N'1', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (46, N'46', N'CENTRAL DIVISION (Curved out of  Ntungamo T/C)', 46, 1, N'14', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (47, N'47', N'Ddwaniro', 47, 1, N'15', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (48, N'48', N'EASTERN DIVISION (Curved out of  Ntungamo T/C)', 48, 1, N'14', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (49, N'49', N'EASTERN DIVISION (Curved out of Kagunga S/C)', 49, 1, N'16', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (50, N'50', N'EASTERN DIVISION (Curved out of Rukungiri T/C)', 50, 1, N'16', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (51, N'51', N'EASTERN DIVISION or WESTERN DIVISION (to be confirmed)', 51, 1, N'16', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (52, N'52', N'ENDINZI', 52, 1, N'4', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (53, N'53', N'ENTEBBE DIVISION A', 53, 1, N'17', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (54, N'54', N'ENTEBBE DIVISION B', 54, 1, N'17', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (55, N'55', N'GOMBE', 55, 1, N'17', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (56, N'56', N'HAMURWA', 56, 1, N'5', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (57, N'57', N'Hamurwa Town Council (Curved out of Hamurwa & Bubare S/Cs)', 57, 1, N'5', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (58, N'58', N'HIMA TOWN COUNCIL (New, Curved out of Kitswamba)', 58, 1, N'8', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (59, N'59', N'Ibaare [New from Bumbaire Subcounty]', 59, 1, N'1', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (60, N'60', N'IHANDIRO', 60, 1, N'8', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (61, N'61', N'IHUNGA Subcounty', 61, 1, N'14', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (62, N'62', N'IKUMBA', 62, 1, N'5', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (63, N'63', N'Ishaka Division (Curved from Bushenyi - Ishaka T/C & Nyabubare S/C)', 63, 1, N'1', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (64, N'64', N'ISINGIRO Town Council (New, curved out of Kabingo)', 64, 1, N'4', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (65, N'65', N'ITOJO Subcounty', 65, 1, N'14', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (66, N'66', N'KABALE CENTRAL DIVISION', 66, 1, N'5', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (67, N'67', N'KABALE NORTHERN DIVISION', 67, 1, N'5', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (68, N'68', N'KABALE SOUTHERN DIVISION', 68, 1, N'5', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (69, N'69', N'KABAMBIRO (New, Curved out of Kamwenge)', 69, 1, N'6', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (70, N'70', N'KABEREBERE TOWN COUNCIL (curved out of Birere)', 70, 1, N'4', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (71, N'71', N'KABINGO', 71, 1, N'4', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (72, N'72', N'Kabira', 72, 1, N'23', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (73, N'73', N'KABULASOKE', 73, 1, N'2', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (74, N'74', N'KABUYANDA Subcounty', 74, 1, N'4', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (75, N'75', N'KABUYANDA Town Council ( curved out of Kabuyanda subcounty)', 75, 1, N'4', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (76, N'76', N'KABWOYA', 76, 1, N'3', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (77, N'77', N'KACHEERA', 77, 1, N'15', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (78, N'78', N'Kagadi Subcounty', 78, 1, N'9', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (79, N'79', N'KAGADI Town Council (New, Curved out of Kagadi)', 79, 1, N'9', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (80, N'80', N'KAGAMBA (BUYAMBA)', 80, 1, N'15', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (81, N'81', N'KAHARO', 81, 1, N'5', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (82, N'82', N'KAHOORA Division (curved from Hoima T/C & Kitoba S/C)', 82, 1, N'3', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (83, N'83', N'KAHUNGE', 83, 1, N'6', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (84, N'84', N'Kakanju', 84, 1, N'1', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (85, N'85', N'Kakindo', 85, 1, N'9', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (86, N'86', N'KAKINDU', 86, 1, N'13', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (87, N'87', N'KAKIRI Subcounty', 87, 1, N'17', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (88, N'88', N'KAKIRI Town Council (New Curved out of Kakiri)', 88, 1, N'17', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (89, N'89', N'KAKUUTO', 89, 1, N'15', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (90, N'90', N'KALAGALA', 90, 1, N'12', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (91, N'91', N'Kalisizo Rural', 91, 1, N'15', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (92, N'92', N'KALISIZO Town Council', 92, 1, N'15', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (93, N'93', N'KAMBUGA', 93, 1, N'7', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (94, N'94', N'KAMIRA', 94, 1, N'12', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (95, N'95', N'KAMUGANGUZI', 95, 1, N'5', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (96, N'96', N'KAMWENGE SUBCOUNTY', 96, 1, N'6', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (97, N'97', N'KAMWENGE TOWN COUNCIL', 97, 1, N'6', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (98, N'98', N'KAMWEZI', 98, 1, N'5', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (99, N'99', N'KANARA (Curved out of Nyabbani)', 99, 1, N'6', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (100, N'100', N'KANONI', 100, 1, N'10', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (101, N'101', N'KANONI Town Council (Curved from Kyegonza S/C)', 101, 1, N'2', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (102, N'102', N'KANUNGU TOWN COUNCIL', 102, 1, N'7', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (103, N'103', N'KANYANTOROGO', 103, 1, N'7', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (104, N'104', N'KANYARYERU', 104, 1, N'10', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (105, N'105', N'KARAMBI', 105, 1, N'8', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (106, N'106', N'KARUSANDARA', 106, 1, N'8', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (107, N'107', N'Kasaali', 107, 1, N'15', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (108, N'108', N'Kasambya', 108, 1, N'9', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (109, N'109', N'KASANJE', 109, 1, N'17', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (110, N'110', N'KASASA', 110, 1, N'15', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (111, N'111', N'KASESE CENTRAL DIVISION (curved from Kasese T/C & Muhokya S/C)', 111, 1, N'8', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (112, N'112', N'KASHAMBYA', 112, 1, N'5', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (113, N'113', N'KASHONGI', 113, 1, N'10', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (114, N'114', N'KASHUMBA', 114, 1, N'4', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (115, N'115', N'KATABI', 115, 1, N'17', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (116, N'116', N'KATIKAMU', 116, 1, N'12', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (117, N'117', N'KATOOKE SUBCOUNTY', 117, 1, N'11', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (118, N'118', N'KATOOKE TOWN COUNCIL (Curved out of Katooke S/C)', 118, 1, N'11', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (119, N'119', N'KATOOKE TOWN COUNCIL (Curved out of Katooke)', 119, 1, N'11', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (120, N'120', N'KATWE KABATORO TOWN COUNCIL', 120, 1, N'8', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (121, N'121', N'KAYONZA', 121, 1, N'7', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (122, N'122', N'KAYONZA Subcounty', 122, 1, N'14', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (123, N'123', N'KAZO', 123, 1, N'10', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (124, N'124', N'KEBISONI', 124, 1, N'16', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (125, N'125', N'KENSHUNGA', 125, 1, N'10', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (126, N'126', N'Kibaale Town Council', 126, 1, N'9', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (127, N'127', N'KIBANDA', 127, 1, N'15', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (128, N'128', N'KIBATSI Subcounty.', 128, 1, N'14', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (129, N'129', N'KICHECHE', 129, 1, N'6', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (130, N'130', N'KIFAMBA', 130, 1, N'15', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (131, N'131', N'KIGARAALE (New Curved out of Nyantungo S/C)', 131, 1, N'11', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (132, N'132', N'KIGOROBYA', 132, 1, N'3', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (133, N'133', N'KIGOROBYA Town Council', 133, 1, N'3', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (134, N'134', N'KIHIIHI SUBCOUNTY', 134, 1, N'7', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (135, N'135', N'KIHIIHI TOWN COUNCIL.(New, Curved out of Kihiihi)', 135, 1, N'7', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (136, N'136', N'KIHUURA', 136, 1, N'11', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (137, N'137', N'KIKAGATI', 137, 1, N'4', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (138, N'138', N'KIKANDWA', 138, 1, N'13', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (139, N'139', N'KIKATSI', 139, 1, N'10', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (140, N'140', N'KIKYUSA', 140, 1, N'12', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (141, N'141', N'KILEMBE', 141, 1, N'8', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (142, N'142', N'KINONI', 142, 1, N'10', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (143, N'143', N'KIRA TOWN COUNCIL', 143, 1, N'17', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (144, N'144', N'KIRIMA', 144, 1, N'7', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (145, N'145', N'KIRUHURA TOWN COUNCIL (New, Curved out of Kenshunga)', 145, 1, N'10', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (146, N'146', N'Kirumba', 146, 1, N'15', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (147, N'147', N'Kiryanga', 147, 1, N'9', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (148, N'148', N'Kisiita', 148, 1, N'9', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (149, N'149', N'KISINGA', 149, 1, N'8', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (150, N'150', N'KISOJJO (New Curved out of Kihuura S/C)', 150, 1, N'11', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (151, N'151', N'KITHOLHU', 151, 1, N'8', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (152, N'152', N'KITOBA', 152, 1, N'3', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (153, N'153', N'KITSWAMBA', 153, 1, N'8', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (154, N'154', N'KITUMBA', 154, 1, N'5', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (155, N'155', N'KIZIBA (curved out of Kyalulangira)', 155, 1, N'15', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (156, N'156', N'KIZIRANFUMBI', 156, 1, N'3', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (157, N'157', N'KYABARUNGIRA', 157, 1, N'8', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (158, N'158', N'KYABIGAMBIRE', 158, 1, N'3', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (159, N'159', N'Kyabugimbi', 159, 1, N'1', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (160, N'160', N'Kyalulangira', 160, 1, N'15', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (161, N'161', N'Kyamuhunga', 161, 1, N'1', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (162, N'162', N'Kyanaisoke', 162, 1, N'9', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (163, N'163', N'KYANAMIRA', 163, 1, N'5', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (164, N'164', N'KYANGWALI', 164, 1, N'3', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (165, N'165', N'KYARUMBA', 165, 1, N'8', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (166, N'166', N'KYARUSOZI SUB COUNTY', 166, 1, N'11', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (167, N'167', N'KYARUSOZI TOWN COUNCIL', 167, 1, N'11', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (168, N'168', N'Kyebando', 168, 1, N'9', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (169, N'169', N'KYEBE', 169, 1, N'15', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (170, N'170', N'KYEGONZA', 170, 1, N'2', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (171, N'171', N'Kyeizooba', 171, 1, N'1', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (172, N'172', N'KYENJOJO TOWN COUNCIL', 172, 1, N'11', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (173, N'173', N'KYONDO', 173, 1, N'8', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (174, N'174', N'KYOTERA Town Council', 174, 1, N'23', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (175, N'175', N'LAKE KATWE', 175, 1, N'8', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (176, N'176', N'LUWEERO SUBCOUNTY', 176, 1, N'12', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (177, N'177', N'LUWERO TOWN COUNCIL', 177, 1, N'12', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (178, N'178', N'Lwamaggwa', 178, 1, N'15', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (179, N'179', N'Lwanda', 179, 1, N'15', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (180, N'180', N'Lwankoni', 180, 1, N'15', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (181, N'181', N'MAANYI', 181, 1, N'13', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (182, N'182', N'Mabaale', 182, 1, N'9', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (183, N'183', N'MADDU', 183, 1, N'2', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (184, N'184', N'MAHANGO', 184, 1, N'8', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (185, N'185', N'MAHYORO', 185, 1, N'6', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (186, N'186', N'MAKULUBITA', 186, 1, N'12', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (187, N'187', N'MALANGALA', 187, 1, N'13', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (188, N'188', N'MALIBA', 188, 1, N'8', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (189, N'189', N'MASHA', 189, 1, N'4', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (190, N'190', N'MASULITA', 190, 1, N'17', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (191, N'191', N'Matale', 191, 1, N'9', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (192, N'192', N'MAZIBA', 192, 1, N'5', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (193, N'193', N'MBAARE (New, curved out of Endizi, Kashumba & Rugaaga)', 193, 1, N'4', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (194, N'194', N'MITYANA TOWN COUNCIL', 194, 1, N'13', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (195, N'195', N'MPARO Division (curverd from Buhanika, Kigorobya & Buhimba S/Cs & Hoima T/C)', 195, 1, N'3', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (196, N'196', N'Mpeefu', 196, 1, N'9', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (197, N'197', N'MPENJA', 197, 1, N'2', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (198, N'198', N'MPONDWE - RUBIRIHA T.C. (New, Curved out of Bwera)', 198, 1, N'8', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (199, N'199', N'MPUNGU', 199, 1, N'7', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (200, N'200', N'Mugarama', 200, 1, N'9', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (201, N'201', N'MUHOKYA', 201, 1, N'8', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (202, N'202', N'Muhorro', 202, 1, N'9', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (203, N'203', N'MUKO', 203, 1, N'5', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (204, N'204', N'MUNKUNYU', 204, 1, N'8', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (205, N'205', N'Nabigasa', 205, 1, N'15', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (206, N'206', N'NABWERU', 206, 1, N'17', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (207, N'207', N'Nalweyo', 207, 1, N'9', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (208, N'208', N'NAMAYUMBA', 208, 1, N'17', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (209, N'209', N'NANGABO', 209, 1, N'17', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (210, N'210', N'NANSANA TOWN COUNCIL (New Curved out of Nabwerui)', 210, 1, N'17', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (211, N'211', N'NGARAMA', 211, 1, N'4', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (212, N'212', N'NGOMA Subcounty', 212, 1, N'14', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (213, N'213', N'NKOMA', 213, 1, N'6', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (214, N'214', N'Nkooko', 214, 1, N'9', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (215, N'215', N'NSANGI', 215, 1, N'17', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (216, N'216', N'NTARA', 216, 1, N'6', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (217, N'217', N'NTUNGAMO Subcounty', 217, 1, N'14', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (218, N'218', N'NYABBANI', 218, 1, N'6', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (219, N'219', N'NYABIHOKO', 219, 1, N'14', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (220, N'220', N'Nyabubare', 220, 1, N'1', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (221, N'221', N'NYABUHARWA (New Curved out of Butiiti S/C)', 221, 1, N'11', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (222, N'222', N'NYABUHARWA Subcounty (New from Butiiti S/C)', 222, 1, N'11', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (223, N'223', N'Nyakabirizi Division (Curved from Bushenyi - Ishaka T/C, Bumbaire & Kyabugimbi S/Cs)', 223, 1, N'1', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (224, N'224', N'NYAKAGYEME', 224, 1, N'16', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (225, N'225', N'NYAKASHASHARA', 225, 1, N'10', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (226, N'226', N'NYAKISHENYI', 226, 1, N'16', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (227, N'227', N'NYAKITUNDA', 227, 1, N'4', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (228, N'228', N'NYAKIYUMBU', 228, 1, N'8', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (229, N'229', N'NYAKYERA Subcounty', 229, 1, N'14', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (230, N'230', N'NYAMIRAMA', 230, 1, N'7', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (231, N'231', N'NYAMUYANJA (New, curved out of Birere)', 231, 1, N'4', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (232, N'232', N'NYAMWAMBA DIVISION (curved from Kasese T/C, Bugoye & Rukoki S/C )', 232, 1, N'8', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (233, N'233', N'NYAMWERU (New, curved form Bubare subcounty)', 233, 1, N'5', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (234, N'234', N'Nyankwanzi', 234, 1, N'11', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (235, N'235', N'NYANKWAZI SUBCOUNTY', 235, 1, N'11', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (236, N'236', N'NYANTUNGO', 236, 1, N'11', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (237, N'237', N'NYARUSHANJE', 237, 1, N'16', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (238, N'238', N'NYIMBWA', 238, 1, N'12', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (239, N'239', N'RAKAI Town Council', 239, 1, N'15', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (240, N'240', N'RUBAARE Subcounty', 240, 1, N'14', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (241, N'241', N'RUBAYA', 241, 1, N'5', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (242, N'242', N'RUBOROGOTA (New, curved out of Kabuyanda)', 242, 1, N'4', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (243, N'243', N'RUGAAGA', 243, 1, N'4', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (244, N'244', N'RUGARAMA Subcounty', 244, 1, N'14', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (245, N'245', N'Rugashaari', 245, 1, N'9', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (246, N'246', N'RUGYEYO', 246, 1, N'7', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (247, N'247', N'RUHAAMA Subcounty', 247, 1, N'14', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (248, N'248', N'RUHIJA (New, curved form Ikumba subcounty)', 248, 1, N'5', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (249, N'249', N'RUHINDA', 249, 1, N'16', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (250, N'250', N'Ruhumuro [New from Kyabugimbi subcounty]', 250, 1, N'1', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (251, N'251', N'RUKOKI', 251, 1, N'8', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (252, N'252', N'RUKONI  EAST Subcounty', 252, 1, N'14', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (253, N'253', N'RUKONI WEST Subcounty', 253, 1, N'14', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (254, N'254', N'RUSHASHA (New, curved out of Rugaaga)', 254, 1, N'4', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (255, N'255', N'RUTENGA', 255, 1, N'7', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (256, N'256', N'RWAMUCUCU', 256, 1, N'5', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (257, N'257', N'RWEIKINIRO Subcounty', 257, 1, N'14', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (258, N'258', N'RWEMIKOMA', 258, 1, N'10', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (259, N'259', N'SANGA', 259, 1, N'10', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (260, N'260', N'SOUTHERN DIVISION (Curved out of Kagunga S/C)', 260, 1, N'16', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (261, N'261', N'SOUTHERN DIVISION (Curved out of Nyakageme S/C)', 261, 1, N'16', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (262, N'262', N'SOUTHERN DIVISION (Curved out of Rukungiri T/C)', 262, 1, N'16', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (263, N'263', N'SSABAGABO-MAKINDYE', 263, 1, N'17', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (264, N'264', N'SSEKANYONYI', 264, 1, N'13', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (265, N'265', N'SSISA', 265, 1, N'17', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (266, N'266', N'WAKISO', 266, 1, N'17', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (267, N'267', N'WAKISO TOWN COUNCIL', 267, 1, N'17', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (268, N'268', N'WESTERN DIVISION (Curved out of  Ntungamo T/C)', 268, 1, N'14', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (269, N'269', N'WESTERN DIVISION (Curved out of Kagunga S/C)', 269, 1, N'16', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (270, N'270', N'WESTERN DIVISION (Curved out of Nyakageme S/C)', 270, 1, N'16', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (271, N'271', N'WESTERN DIVISION (Curved out of Rukungiri T/C)', 271, 1, N'16', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (272, N'272', N'WOBULENZI  TOWN COUNCIL', 272, 1, N'12', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (273, N'273', N'ZIROBWE', 273, 1, N'12', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (274, N'274', N'Bubango', 274, 1, N'9', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (275, N'275', N'Engari', 275, 1, N'10', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (276, N'276', N'Kakumiro Town Council', 276, 1, N'9', N'EN', N'1', N'1', GETDATE(), GETDATE()) 
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (277, N'277', N'Kalangaalo', 277, 1, N'13', N'EN', N'1', N'1', GETDATE(), GETDATE()) 
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (278, N'278', N'Kyaterekera ', 278, 1, N'9', N'EN', N'1', N'1', GETDATE(), GETDATE()) 
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (279, N'279', N'Ndaiga ', 279, 1, N'9', N'EN', N'1', N'1', GETDATE(), GETDATE()) 
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (280, N'280', N'Nyamarebe', 280, 1, N'18', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (281, N'281', N'Kicuzi', 281, 1, N'18', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (282, N'282', N'Rukiri ', 282, 1, N'18', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (283, N'283', N'Ishongororo', 283, 1, N'18', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (284, N'284', N'Kijogo ', 284, 1, N'18', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (285, N'285', N'Kikyenkye', 285, 1, N'18', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (286, N'286', N'Keihangara', 286, 1, N'18', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (287, N'287', N'Bisheshe', 287, 1, N'18', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (288, N'288', N'Kakindo Town Council', 288, 1, N'20', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (289, N'289', N'Kyangyenyi', 289, 1, N'20', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (290, N'290', N'Kigarama', 290, 1, N'20', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (291, N'291', N'Masheruka', 291, 1, N'20', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (292, N'292', N'Masheruka Town Council', 292, 1, N'20', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (293, N'293', N'Bugongi Town Council', 293, 1, N'20', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (294, N'294', N' Kitagata Town Council', 294, 1, N'20', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (295, N'295', N'Kitagata Sub county', 295, 1, N'20', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (296, N'296', N'Kasaana', 296, 1, N'20', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (297, N'297', N'Rugarama', 297, 1, N'20', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (298, N'298', N'Shuuku Town Council', 298, 1, N'20', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (299, N'299', N'Kabwohe Division', 299, 1, N'20', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (300, N'300', N'Kagango Division', 300, 1, N'20', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (301, N'301', N'Kashozi Division', 301, 1, N'20', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (302, N'302', N'Sheema Central Division', 302, 1, N'20', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (303, N'303', N'NYAMITANGA Division', 303, 1, N'19', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (304, N'304', N'KAKOBA DIVISION', 304, 1, N'19', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (305, N'305', N'KAMUKUZI DIVISION', 305, 1, N'19', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (306, N'306', N'KAKIIKA DIVISION', 306, 1, N'19', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (307, N'307', N'BIHARWE DIVISION', 307, 1, N'19', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (308, N'308', N'NYAKAYOJO DIVISION', 308, 1, N'19', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (309, N'309', N'RUBINDI', 309, 1, N'19', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (310, N'310', N'BUKIRO', 310, 1, N'19', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (311, N'311', N'KASHARE', 311, 1, N'19', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (312, N'312', N'KAGONGI', 312, 1, N'19', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (313, N'313', N'RUBAYA', 313, 1, N'19', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (314, N'314', N'BUBAARE', 314, 1, N'19', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (315, N'315', N'RWANYAMAAHEMBE', 315, 1, N'19', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (316, N'316', N'NDEIJA', 316, 1, N'19', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (317, N'317', N'MWIZI', 317, 1, N'19', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (318, N'318', N'BUGAMBA', 318, 1, N'19', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (319, N'319', N' RUGANDO', 319, 1, N'19', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (320, N'320', N'Bitereko', 320, 1, N'21', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (321, N'321', N'Kabira', 321, 1, N'21', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (322, N'322', N'Kanyabwanga', 322, 1, N'21', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (323, N'323', N'Kasheshero', 323, 1, N'21', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (324, N'324', N'Kyanga', 324, 1, N'21', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (325, N'325', N'Mitooma', 325, 1, N'21', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (326, N'326', N'Mutara', 326, 1, N'21', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (327, N'327', N'Katenga', 327, 1, N'21', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (328, N'328', N'Mayanga', 328, 1, N'21', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (329, N'329', N'Rurehe', 329, 1, N'21', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (330, N'330', N'Kasheshero T/C', 330, 1, N'21', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (331, N'331', N'Mitooma T/C', 331, 1, N'21', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (332, N'332', N'NYAMARWA', 332, 1, N'9', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (333, N'333', N'NYAMARUNDA', 333, 1, N'9', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (334, N'334', N'KASIMBI', 334, 1, N'9', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (335, N'335', N'Bussi SC', 335, 1, N'17', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (336, N'336', N'Kyengera TC', 336, 1, N'17', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (338, N'338', N'BWEYOGERERE DIVISION', 338, 1, N'17', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (339, N'339', N'MASAJJA DIVISION', 339, 1, N'17', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (340, N'340', N'BUNAMWAYA DIVISION', 340, 1, N'17', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (341, N'341', N'NAMUGONGO DIVISION', 341, 1, N'17', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (342, N'342', N'NDEJJE', 342, 1, N'17', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (343, N'343', N'Bufunda', 343, 1, N'18', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (344, N'344', N'BUTUNDUUZI TOWN COUNCIL', 344, 1, N'11', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (345, N'345', N'NAMUNGO', 345, 1, N'13', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (346, N'346', N'MPARO TOWN COUNCIL', 346, 1, N'24', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (347, N'347', N'MUHANGA TOWN COUNCIL', 347, 1, N'24', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (348, N'348', N'BWANSWA SUB COUNTY', 348, 1, N'26', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    SET IDENTITY_INSERT [dbo].[lst_sub_county] OFF ";
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1, N'1', N'BAMUNANIKA', 1, 1, N'12', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2, N'2', N'BIGULI ', 2, 1, N'6', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (3, N'3', N'BIRERE', 3, 1, N'4', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (4, N'4', N'BITOOMA ', 4, 1, N'1', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (5, N'5', N'BOMBO TOWN COUNCIL', 5, 1, N'12', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (6, N'6', N'BUBARE', 6, 1, N'27', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (7, N'7', N'BUFUNDI', 7, 1, N'5', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (8, N'8', N'BUFUNJO', 8, 1, N'11', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (9, N'9', N'BUGAAKI', 9, 1, N'11', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (10, N'10', N'BUGAMBE', 10, 1, N'22', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (11, N'11', N'BUGANGARI', 11, 1, N'16', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (12, N'12', N'BUGOYE', 12, 1, N'8', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (13, N'13', N'BUHANDA', 13, 1, N'6', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (14, N'14', N'BUHANIKA', 14, 1, N'3', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (15, N'15', N'BUHARA', 15, 1, N'5', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (16, N'16', N'BUHIMBA', 16, 1, N'22', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (17, N'17', N'BUHUNGA', 17, 1, N'16', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (18, N'18', N'BUJUMBURA DIVISION ', 18, 1, N'3', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (19, N'19', N'BUKINDA', 19, 1, N'24', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (20, N'20', N'BULEMBIA DIVISION ', 20, 1, N'8', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (21, N'21', N'BULERA', 21, 1, N'13', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (22, N'22', N'BUMBAIRE', 22, 1, N'1', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (23, N'23', N'BUREMBA', 23, 1, N'10', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (24, N'24', N'BURUNGA', 24, 1, N'10', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (25, N'25', N'BUSERUKA', 25, 1, N'3', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (26, N'26', N'BUSIISI DIVISION ', 26, 1, N'3', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (27, N'27', N'BUSIMBI', 27, 1, N'13', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (28, N'28', N'BUSIRIBA ', 28, 1, N'6', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (29, N'29', N'BUSUKUMA', 29, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (30, N'30', N'BUTANDA', 30, 1, N'5', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (31, N'31', N'BUTAYUNJA', 31, 1, N'13', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (32, N'32', N'BUTIITI SUB COUNTY', 32, 1, N'11', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (33, N'33', N'BUTUNDUUZI SUB COUNTY', 33, 1, N'11', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (34, N'34', N'BUTUNTUMULA', 34, 1, N'12', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (35, N'35', N'BUYANJA', 35, 1, N'16', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (36, N'36', N'BWAMBARA', 36, 1, N'16', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (37, N'37', N'BWAMIRAMIRA', 37, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (38, N'38', N'BWANSWA', 38, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (39, N'39', N'BWERA', 39, 1, N'8', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (40, N'40', N'BWESUMBU ', 40, 1, N'8', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (41, N'41', N'BWIKARA', 41, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (42, N'42', N'BWIZI', 42, 1, N'6', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (43, N'43', N'BWONGYERA', 43, 1, N'14', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (44, N'44', N'BYAKABANDA', 44, 1, N'15', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (45, N'45', N'CENTRAL DIVISION ', 45, 1, N'1', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (46, N'46', N'CENTRAL DIVISION ', 46, 1, N'14', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (47, N'47', N'DDWANIRO', 47, 1, N'15', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (48, N'48', N'EASTERN DIVISION ', 48, 1, N'14', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (49, N'49', N'EASTERN DIVISION ', 49, 1, N'16', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (50, N'50', N'EASTERN DIVISION ', 50, 1, N'16', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (51, N'51', N'EASTERN DIVISION OR WESTERN DIVISION ', 51, 1, N'16', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (52, N'52', N'ENDINZI', 52, 1, N'4', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (53, N'53', N'ENTEBBE DIVISION A', 53, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (54, N'54', N'ENTEBBE DIVISION B', 54, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (55, N'55', N'GOMBE', 55, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (56, N'56', N'HAMURWA', 56, 1, N'5', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (57, N'57', N'HAMURWA TOWN COUNCIL ', 57, 1, N'5', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (58, N'58', N'HIMA TOWN COUNCIL ', 58, 1, N'8', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (59, N'59', N'IBAARE ', 59, 1, N'1', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (60, N'60', N'IHANDIRO', 60, 1, N'8', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (61, N'61', N'IHUNGA SUBCOUNTY', 61, 1, N'14', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (62, N'62', N'IKUMBA', 62, 1, N'5', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (63, N'63', N'ISHAKA DIVISION ', 63, 1, N'1', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (64, N'64', N'ISINGIRO TOWN COUNCIL ', 64, 1, N'4', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (65, N'65', N'ITOJO SUBCOUNTY', 65, 1, N'14', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (66, N'66', N'KABALE CENTRAL DIVISION', 66, 1, N'5', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (67, N'67', N'KABALE NORTHERN DIVISION', 67, 1, N'5', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (68, N'68', N'KABALE SOUTHERN DIVISION', 68, 1, N'5', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (69, N'69', N'KABAMBIRO', 69, 1, N'6', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (70, N'70', N'KABEREBERE TOWN COUNCIL ', 70, 1, N'4', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (71, N'71', N'KABINGO', 71, 1, N'4', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (72, N'72', N'KABIRA', 72, 1, N'23', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (73, N'73', N'KABULASOKE', 73, 1, N'2', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (74, N'74', N'KABUYANDA SUBCOUNTY', 74, 1, N'4', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (75, N'75', N'KABUYANDA TOWN COUNCIL ', 75, 1, N'4', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (76, N'76', N'KABWOYA', 76, 1, N'3', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (77, N'77', N'KACHEERA', 77, 1, N'15', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (78, N'78', N'KAGADI SUBCOUNTY', 78, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (79, N'79', N'KAGADI TOWN COUNCIL ', 79, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (80, N'80', N'KAGAMBA ', 80, 1, N'15', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (81, N'81', N'KAHARO', 81, 1, N'5', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (82, N'82', N'KAHOORA DIVISION ', 82, 1, N'3', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (83, N'83', N'KAHUNGE', 83, 1, N'6', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (84, N'84', N'KAKANJU', 84, 1, N'1', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (85, N'85', N'KAKINDO', 85, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (86, N'86', N'KAKINDU', 86, 1, N'13', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (87, N'87', N'KAKIRI SUBCOUNTY', 87, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (88, N'88', N'KAKIRI TOWN COUNCIL', 88, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (89, N'89', N'KAKUUTO', 89, 1, N'23', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (90, N'90', N'KALAGALA', 90, 1, N'12', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (91, N'91', N'KALISIZO RURAL', 91, 1, N'15', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (92, N'92', N'KALISIZO TOWN COUNCIL', 92, 1, N'15', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (93, N'93', N'KAMBUGA', 93, 1, N'7', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (94, N'94', N'KAMIRA', 94, 1, N'12', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (95, N'95', N'KAMUGANGUZI', 95, 1, N'5', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (96, N'96', N'KAMWENGE SUBCOUNTY', 96, 1, N'6', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (97, N'97', N'KAMWENGE TOWN COUNCIL', 97, 1, N'6', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (98, N'98', N'KAMWEZI', 98, 1, N'24', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (99, N'99', N'KANARA ', 99, 1, N'6', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (100, N'100', N'KANONI', 100, 1, N'10', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (101, N'101', N'KANONI TOWN COUNCIL ', 101, 1, N'2', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (102, N'102', N'KANUNGU TOWN COUNCIL', 102, 1, N'7', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (103, N'103', N'KANYANTOROGO', 103, 1, N'7', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (104, N'104', N'KANYARYERU', 104, 1, N'10', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (105, N'105', N'KARAMBI', 105, 1, N'8', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (106, N'106', N'KARUSANDARA', 106, 1, N'8', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (107, N'107', N'KASAALI', 107, 1, N'15', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (108, N'108', N'KASAMBYA', 108, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (109, N'109', N'KASANJE', 109, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (110, N'110', N'KASASA', 110, 1, N'23', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (111, N'111', N'KASESE CENTRAL DIVISION ', 111, 1, N'8', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (112, N'112', N'KASHAMBYA', 112, 1, N'24', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (113, N'113', N'KASHONGI', 113, 1, N'10', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (114, N'114', N'KASHUMBA', 114, 1, N'4', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (115, N'115', N'KATABI TOWN COUNCIL', 115, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (116, N'116', N'KATIKAMU', 116, 1, N'12', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (117, N'117', N'KATOOKE SUBCOUNTY', 117, 1, N'11', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (118, N'118', N'KATOOKE TOWN COUNCIL ', 118, 1, N'11', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (119, N'119', N'KATOOKE TOWN COUNCIL', 119, 1, N'11', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (120, N'120', N'KATWE KABATORO TOWN COUNCIL', 120, 1, N'8', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (121, N'121', N'KAYONZA', 121, 1, N'7', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (122, N'122', N'KAYONZA SUBCOUNTY', 122, 1, N'14', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (123, N'123', N'KAZO', 123, 1, N'10', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (124, N'124', N'KEBISONI', 124, 1, N'16', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (125, N'125', N'KENSHUNGA', 125, 1, N'10', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (126, N'126', N'KIBAALE TOWN COUNCIL', 126, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (127, N'127', N'KIBANDA', 127, 1, N'15', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (128, N'128', N'KIBATSI SUBCOUNTY.', 128, 1, N'14', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (129, N'129', N'KICHECHE', 129, 1, N'6', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (130, N'130', N'KIFAMBA', 130, 1, N'15', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (131, N'131', N'KIGARAALE ', 131, 1, N'11', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (132, N'132', N'KIGOROBYA', 132, 1, N'3', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (133, N'133', N'KIGOROBYA TOWN COUNCIL', 133, 1, N'3', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (134, N'134', N'KIHIIHI SUBCOUNTY', 134, 1, N'7', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (135, N'135', N'KIHIIHI TOWN COUNCIL', 135, 1, N'7', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (136, N'136', N'KIHUURA', 136, 1, N'11', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (137, N'137', N'KIKAGATI', 137, 1, N'4', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (138, N'138', N'KIKANDWA', 138, 1, N'13', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (139, N'139', N'KIKATSI', 139, 1, N'10', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (140, N'140', N'KIKYUSA', 140, 1, N'12', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (141, N'141', N'KILEMBE', 141, 1, N'8', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (142, N'142', N'KINONI', 142, 1, N'10', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (143, N'143', N'KIRA DIVISION', 143, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (144, N'144', N'KIRIMA', 144, 1, N'7', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (145, N'145', N'KIRUHURA TOWN COUNCIL ', 145, 1, N'10', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (146, N'146', N'KIRUMBA', 146, 1, N'23', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (147, N'147', N'KIRYANGA', 147, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (148, N'148', N'KISIITA', 148, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (149, N'149', N'KISINGA', 149, 1, N'8', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (150, N'150', N'KISOJJO', 150, 1, N'11', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (151, N'151', N'KITHOLHU', 151, 1, N'8', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (152, N'152', N'KITOBA', 152, 1, N'3', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (153, N'153', N'KITSWAMBA', 153, 1, N'8', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (154, N'154', N'KITUMBA', 154, 1, N'5', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (155, N'155', N'KIZIBA ', 155, 1, N'15', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (156, N'156', N'KIZIRANFUMBI', 156, 1, N'22', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (157, N'157', N'KYABARUNGIRA', 157, 1, N'8', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (158, N'158', N'KYABIGAMBIRE', 158, 1, N'3', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (159, N'159', N'KYABUGIMBI', 159, 1, N'1', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (160, N'160', N'KYALULANGIRA', 160, 1, N'15', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (161, N'161', N'KYAMUHUNGA', 161, 1, N'1', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (162, N'162', N'KYANAISOKE', 162, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (163, N'163', N'KYANAMIRA', 163, 1, N'5', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (164, N'164', N'KYANGWALI', 164, 1, N'22', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (165, N'165', N'KYARUMBA', 165, 1, N'8', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (166, N'166', N'KYARUSOZI SUB COUNTY', 166, 1, N'11', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (167, N'167', N'KYARUSOZI TOWN COUNCIL', 167, 1, N'11', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (168, N'168', N'KYEBANDO', 168, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (169, N'169', N'KYEBE', 169, 1, N'15', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (170, N'170', N'KYEGONZA', 170, 1, N'2', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (171, N'171', N'KYEIZOOBA', 171, 1, N'1', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (172, N'172', N'KYENJOJO TOWN COUNCIL', 172, 1, N'11', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (173, N'173', N'KYONDO', 173, 1, N'8', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (174, N'174', N'KYOTERA TOWN COUNCIL', 174, 1, N'23', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (175, N'175', N'LAKE KATWE', 175, 1, N'8', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (176, N'176', N'LUWEERO SUBCOUNTY', 176, 1, N'12', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (177, N'177', N'LUWERO TOWN COUNCIL', 177, 1, N'12', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (178, N'178', N'LWAMAGGWA', 178, 1, N'15', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (179, N'179', N'LWANDA', 179, 1, N'15', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (180, N'180', N'LWANKONI', 180, 1, N'23', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (181, N'181', N'MAANYI', 181, 1, N'13', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (182, N'182', N'MABAALE', 182, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (183, N'183', N'MADDU', 183, 1, N'2', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (184, N'184', N'MAHANGO', 184, 1, N'8', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (185, N'185', N'MAHYORO', 185, 1, N'6', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (186, N'186', N'MAKULUBITA', 186, 1, N'12', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (187, N'187', N'MALANGALA', 187, 1, N'13', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (188, N'188', N'MALIBA', 188, 1, N'8', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (189, N'189', N'MASHA', 189, 1, N'4', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (190, N'190', N'MASULITA', 190, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (191, N'191', N'MATALE', 191, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (192, N'192', N'MAZIBA', 192, 1, N'5', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (193, N'193', N'MBAARE ', 193, 1, N'4', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (194, N'194', N'MITYANA TOWN COUNCIL', 194, 1, N'13', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (195, N'195', N'MPARO DIVISION', 195, 1, N'3', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (196, N'196', N'MPEEFU', 196, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (197, N'197', N'MPENJA', 197, 1, N'2', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (198, N'198', N'MPONDWE - RUBIRIHA T.C', 198, 1, N'8', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (199, N'199', N'MPUNGU', 199, 1, N'7', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (200, N'200', N'MUGARAMA', 200, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (201, N'201', N'MUHOKYA', 201, 1, N'8', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (202, N'202', N'MUHORRO', 202, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (203, N'203', N'MUKO', 203, 1, N'5', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (204, N'204', N'MUNKUNYU', 204, 1, N'8', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (205, N'205', N'NABIGASA', 205, 1, N'15', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (206, N'206', N'NABWERU DIVISION', 206, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (207, N'207', N'NALWEYO', 207, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (208, N'208', N'NAMAYUMBA', 208, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (209, N'209', N'KASANGATI TOWN COUNCIL', 209, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (210, N'210', N'NANSANA DIVISION', 210, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (211, N'211', N'NGARAMA', 211, 1, N'4', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (212, N'212', N'NGOMA SUBCOUNTY', 212, 1, N'14', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (213, N'213', N'NKOMA', 213, 1, N'6', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (214, N'214', N'NKOOKO', 214, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (215, N'215', N'NSANGI', 215, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (216, N'216', N'NTARA', 216, 1, N'6', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (217, N'217', N'NTUNGAMO SUBCOUNTY', 217, 1, N'14', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (218, N'218', N'NYABBANI', 218, 1, N'6', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (219, N'219', N'NYABIHOKO', 219, 1, N'14', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (220, N'220', N'NYABUBARE', 220, 1, N'1', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (221, N'221', N'NYABUHARWA ', 221, 1, N'11', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (222, N'222', N'NYABUHARWA SUBCOUNTY', 222, 1, N'11', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (223, N'223', N'NYAKABIRIZI DIVISION ', 223, 1, N'1', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (224, N'224', N'NYAKAGYEME', 224, 1, N'16', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (225, N'225', N'NYAKASHASHARA', 225, 1, N'10', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (226, N'226', N'NYAKISHENYI', 226, 1, N'16', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (227, N'227', N'NYAKITUNDA', 227, 1, N'4', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (228, N'228', N'NYAKIYUMBU', 228, 1, N'8', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (229, N'229', N'NYAKYERA SUBCOUNTY', 229, 1, N'14', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (230, N'230', N'NYAMIRAMA', 230, 1, N'7', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (231, N'231', N'NYAMUYANJA ', 231, 1, N'4', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (232, N'232', N'NYAMWAMBA DIVISION ', 232, 1, N'8', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (233, N'233', N'NYAMWERU ', 233, 1, N'5', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (234, N'234', N'NYANKWANZI', 234, 1, N'11', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (235, N'235', N'NYANKWAZI SUBCOUNTY', 235, 1, N'11', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (236, N'236', N'NYANTUNGO', 236, 1, N'11', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (237, N'237', N'NYARUSHANJE', 237, 1, N'16', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (238, N'238', N'NYIMBWA', 238, 1, N'12', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (239, N'239', N'RAKAI TOWN COUNCIL', 239, 1, N'15', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (240, N'240', N'RUBAARE SUBCOUNTY', 240, 1, N'14', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (241, N'241', N'RUBAYA', 241, 1, N'5', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (242, N'242', N'RUBOROGOTA', 242, 1, N'4', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (243, N'243', N'RUGAAGA', 243, 1, N'4', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (244, N'244', N'RUGARAMA SUBCOUNTY', 244, 1, N'14', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (245, N'245', N'RUGASHAARI', 245, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (246, N'246', N'RUGYEYO', 246, 1, N'7', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (247, N'247', N'RUHAAMA SUBCOUNTY', 247, 1, N'14', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (248, N'248', N'RUHIJA', 248, 1, N'5', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (249, N'249', N'RUHINDA', 249, 1, N'16', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (250, N'250', N'RUHUMURO ', 250, 1, N'1', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (251, N'251', N'RUKOKI', 251, 1, N'8', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (252, N'252', N'RUKONI  EAST SUBCOUNTY', 252, 1, N'14', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (253, N'253', N'RUKONI WEST SUBCOUNTY', 253, 1, N'14', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (254, N'254', N'RUSHASHA', 254, 1, N'4', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (255, N'255', N'RUTENGA', 255, 1, N'7', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (256, N'256', N'RWAMUCUCU', 256, 1, N'24', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (257, N'257', N'RWEIKINIRO SUBCOUNTY', 257, 1, N'14', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (258, N'258', N'RWEMIKOMA', 258, 1, N'10', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (259, N'259', N'SANGA', 259, 1, N'10', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (260, N'260', N'SOUTHERN DIVISION ', 260, 1, N'16', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (261, N'261', N'SOUTHERN DIVISION ', 261, 1, N'16', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (262, N'262', N'SOUTHERN DIVISION', 262, 1, N'16', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (263, N'263', N'SSABAGABO-MAKINDYE', 263, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (264, N'264', N'SSEKANYONYI', 264, 1, N'13', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (265, N'265', N'KAJJANSI TOWN COUNCIL', 265, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (266, N'266', N'WAKISO SUB COUNTY', 266, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (267, N'267', N'WAKISO TOWN COUNCIL', 267, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (268, N'268', N'WESTERN DIVISION ', 268, 1, N'14', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (269, N'269', N'WESTERN DIVISION ', 269, 1, N'16', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (270, N'270', N'WESTERN DIVISION ', 270, 1, N'16', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (271, N'271', N'WESTERN DIVISION', 271, 1, N'16', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (272, N'272', N'WOBULENZI  TOWN COUNCIL', 272, 1, N'12', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (273, N'273', N'ZIROBWE', 273, 1, N'12', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (274, N'274', N'BUBANGO', 274, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (275, N'275', N'ENGARI', 275, 1, N'10', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (276, N'276', N'KAKUMIRO TOWN COUNCIL', 276, 1, N'26', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (277, N'277', N'KALANGAALO', 277, 1, N'13', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (278, N'278', N'KYATEREKERA ', 278, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (279, N'279', N'NDAIGA ', 279, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (280, N'280', N'NYAMAREBE', 280, 1, N'18', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (281, N'281', N'KICUZI', 281, 1, N'18', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (282, N'282', N'RUKIRI ', 282, 1, N'18', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (283, N'283', N'ISHONGORORO', 283, 1, N'18', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (284, N'284', N'KIJOGO ', 284, 1, N'18', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (285, N'285', N'KIKYENKYE', 285, 1, N'18', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (286, N'286', N'KEIHANGARA', 286, 1, N'18', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (287, N'287', N'BISHESHE', 287, 1, N'18', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (288, N'288', N'KAKINDO TOWN COUNCIL', 288, 1, N'20', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (289, N'289', N'KYANGYENYI', 289, 1, N'20', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (290, N'290', N'KIGARAMA', 290, 1, N'20', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (291, N'291', N'MASHERUKA', 291, 1, N'20', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (292, N'292', N'MASHERUKA TOWN COUNCIL', 292, 1, N'20', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (293, N'293', N'BUGONGI TOWN COUNCIL', 293, 1, N'20', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (294, N'294', N' KITAGATA TOWN COUNCIL', 294, 1, N'20', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (295, N'295', N'KITAGATA SUB COUNTY', 295, 1, N'20', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (296, N'296', N'KASAANA', 296, 1, N'20', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (297, N'297', N'RUGARAMA', 297, 1, N'20', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (298, N'298', N'SHUUKU TOWN COUNCIL', 298, 1, N'20', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (299, N'299', N'KABWOHE DIVISION', 299, 1, N'20', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (300, N'300', N'KAGANGO DIVISION', 300, 1, N'20', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (301, N'301', N'KASHOZI DIVISION', 301, 1, N'20', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (302, N'302', N'SHEEMA CENTRAL DIVISION', 302, 1, N'20', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (303, N'303', N'NYAMITANGA DIVISION', 303, 1, N'19', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (304, N'304', N'KAKOBA DIVISION', 304, 1, N'19', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (305, N'305', N'KAMUKUZI DIVISION', 305, 1, N'19', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (306, N'306', N'KAKIIKA DIVISION', 306, 1, N'19', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (307, N'307', N'BIHARWE DIVISION', 307, 1, N'19', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (308, N'308', N'NYAKAYOJO DIVISION', 308, 1, N'19', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (309, N'309', N'RUBINDI', 309, 1, N'19', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (310, N'310', N'BUKIRO', 310, 1, N'19', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (311, N'311', N'KASHARE', 311, 1, N'19', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (312, N'312', N'KAGONGI', 312, 1, N'19', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (313, N'313', N'RUBAYA', 313, 1, N'19', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (314, N'314', N'BUBAARE', 314, 1, N'19', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (315, N'315', N'RWANYAMAAHEMBE', 315, 1, N'19', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (316, N'316', N'NDEIJA', 316, 1, N'19', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (317, N'317', N'MWIZI', 317, 1, N'19', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (318, N'318', N'BUGAMBA', 318, 1, N'19', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (319, N'319', N' RUGANDO', 319, 1, N'19', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (320, N'320', N'BITEREKO', 320, 1, N'21', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (321, N'321', N'KABIRA', 321, 1, N'21', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (322, N'322', N'KANYABWANGA', 322, 1, N'21', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (323, N'323', N'KASHESHERO', 323, 1, N'21', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (324, N'324', N'KYANGA', 324, 1, N'21', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (325, N'325', N'MITOOMA', 325, 1, N'21', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (326, N'326', N'MUTARA', 326, 1, N'21', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (327, N'327', N'KATENGA', 327, 1, N'21', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (328, N'328', N'MAYANGA', 328, 1, N'21', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (329, N'329', N'RUREHE', 329, 1, N'21', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (330, N'330', N'KASHESHERO T/C', 330, 1, N'21', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (331, N'331', N'MITOOMA T/C', 331, 1, N'21', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (332, N'332', N'NYAMARWA', 332, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (333, N'333', N'NYAMARUNDA', 333, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (334, N'334', N'KASIMBI', 334, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (335, N'335', N'BUSSI SUB COUNTY', 335, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (336, N'336', N'KYENGERA TC', 336, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (338, N'338', N'BWEYOGERERE DIVISION', 338, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (339, N'339', N'MASAJJA DIVISION', 339, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (340, N'340', N'BUNAMWAYA DIVISION', 340, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (341, N'341', N'NAMUGONGO DIVISION', 341, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (342, N'342', N'NDEJJE DIVISION', 342, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (343, N'343', N'BUFUNDA', 343, 1, N'18', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (344, N'344', N'BUTUNDUUZI TOWN COUNCIL', 344, 1, N'11', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (345, N'345', N'NAMUNGO', 345, 1, N'13', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (346, N'346', N'MPARO TOWN COUNCIL', 346, 1, N'24', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (347, N'347', N'MUHANGA TOWN COUNCIL', 347, 1, N'24', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (348, N'348', N'BWANSWA SUB COUNTY', 348, 1, N'26', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        SET IDENTITY_INSERT [dbo].[lst_sub_county] OFF ";
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
         }
@@ -19628,7 +20410,8 @@ namespace SOCY_MIS.DataAccessLayer
             INSERT [dbo].[lst_agro_scoring_crops] ([crop_sid], [crop_id], [crop_name], [crop_order], [crop_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update],[type_id]) VALUES (35, N'35', N'Organic Sugar', 35, 1, N'EN', N'Mar  9 2018 11:45AM', N'1', CAST(N'1900-01-02T00:00:00.000' AS DateTime), CAST(N'2018-03-09T11:45:39.543' AS DateTime), N'2')
             INSERT [dbo].[lst_agro_scoring_crops] ([crop_sid], [crop_id], [crop_name], [crop_order], [crop_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update],[type_id]) VALUES (36, N'36', N'Body Jelly', 36, 1, N'EN', N'Mar  9 2018 11:45AM', N'1', CAST(N'1900-01-02T00:00:00.000' AS DateTime), CAST(N'2018-03-09T11:45:39.543' AS DateTime), N'2')
             INSERT [dbo].[lst_agro_scoring_crops] ([crop_sid], [crop_id], [crop_name], [crop_order], [crop_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update],[type_id]) VALUES (37, N'37', N'Mosquito Repellant', 37, 1, N'EN', N'Mar  9 2018 11:45AM', N'1', CAST(N'1900-01-02T00:00:00.000' AS DateTime), CAST(N'2018-03-09T11:45:39.543' AS DateTime), N'2')
-            INSERT [dbo].[lst_agro_scoring_crops] ([crop_sid], [crop_id], [crop_name], [crop_order], [crop_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update],[type_id]) VALUES (38, N'38', N'Yorghut', 38, 1, N'EN', N'Mar  9 2018 11:45AM', N'1', CAST(N'1900-01-02T00:00:00.000' AS DateTime), CAST(N'2018-03-09T11:45:39.543' AS DateTime), N'2')";
+            INSERT [dbo].[lst_agro_scoring_crops] ([crop_sid], [crop_id], [crop_name], [crop_order], [crop_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update],[type_id]) VALUES (38, N'38', N'Yorghut', 38, 1, N'EN', N'Mar  9 2018 11:45AM', N'1', CAST(N'1900-01-02T00:00:00.000' AS DateTime), CAST(N'2018-03-09T11:45:39.543' AS DateTime), N'2')
+            INSERT [dbo].[lst_agro_scoring_crops] ([crop_sid], [crop_id], [crop_name], [crop_order], [crop_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update],[type_id]) VALUES (39, N'39', N'Shampoo', 39, 1, N'EN', N'Mar  9 2018 11:45AM', N'1', CAST(N'1900-01-02T00:00:00.000' AS DateTime), CAST(N'2018-03-09T11:45:39.543' AS DateTime), N'2')";
 
 
             dbCon.ExecuteNonQuery(strSQL);
@@ -30005,6 +30788,7 @@ namespace SOCY_MIS.DataAccessLayer
             Insertlst_non_supress_health_facility(dbCon);
             Insertlst_non_supress_household(dbCon);
             HomeVisitMERUpdate(dbCon);
+            Createhh_graduation_assessment(dbCon);
         }
 
         public static void NewCso(DBConnection dbCon)
@@ -30114,6 +30898,9 @@ namespace SOCY_MIS.DataAccessLayer
             strSQL = "ALTER TABLE hh_household_member ENABLE TRIGGER hh_household_member_delete";
             dbCon.ExecuteNonQuery(strSQL);
             #endregion
+
+            //strSQL = "UPDATE hh_household_member SET hhm_id = LOWER(hhm_id) WHERE hst_id_new IS NOT NULL AND hst_id_new <> ''"; //remove after two days
+            //dbCon.ExecuteNonQuery(strSQL);
 
         }
 

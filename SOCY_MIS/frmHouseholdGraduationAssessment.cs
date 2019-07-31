@@ -394,15 +394,17 @@ namespace SOCY_MIS
         protected void CheckNumberPositiveInHousehold()
         {
             int count = hhgraduation_assessment.CheckNumberPositiveInHousehold(HouseholdId);
-            if (dt.Rows.Count == 0)
+            if (count == 0)
             {
                 rbtn_BenchMark02NA.Checked = true;
                 cbo_hhm_02.Enabled = false;
+                lblMessage02.Visible = true;
             }
             else
             {
                 rbtn_BenchMark02NA.Checked = false;
                 cbo_hhm_02.Enabled = true;
+                lblMessage02.Visible = false;
             }
         }
 
@@ -412,13 +414,14 @@ namespace SOCY_MIS
             if (count == 0)
             {
                 rbtn_BenchMark03NA.Checked = true;
-
+                lblMessage03.Visible = true;
                 cbo_hhm_03.Enabled = false;
             }
             else
             {
                 rbtn_BenchMark03NA.Checked = false;
                 cbo_hhm_03.Enabled = true;
+                lblMessage02.Visible = false;
             }
         }
 
@@ -1359,7 +1362,7 @@ namespace SOCY_MIS
         {
             bool isValid = false;
             if ((cbo_hhm_02.Text == "Select One" || cbo_hhm_02.Text == string.Empty) & hhgraduation_assessment.LoadHouseholdMembersBenchMark02(HouseholdId, hhgraduation_assessment.gat_id).Rows.Count > 0 &
-                (!yn_supressYes.Checked & !yn_supressNo.Checked) || (!yn_prescribedYes.Checked & !yn_prescribedNo.Checked) || (!yn_appointmentYes.Checked & !yn_appointmentNo.Checked))
+                (!yn_supressYes.Checked & !yn_supressNo.Checked) & (!yn_prescribedYes.Checked & !yn_prescribedNo.Checked) & (!yn_appointmentYes.Checked & !yn_appointmentNo.Checked))
             {
                 isValid = false;
             }
@@ -1377,7 +1380,7 @@ namespace SOCY_MIS
             bool isValid = false;
 
             if ((cbo_hhm_03.Text == "Select One" || cbo_hhm_03.Text == string.Empty) & hhgraduation_assessment.LoadHouseholdMembersBenchMark03(HouseholdId, hhgraduation_assessment.gat_id).Rows.Count > 0 &
-                (!yn_risks_identifiedYes.Checked & !yn_risks_identifiedNo.Checked) || (!yn_hiv_preventionYes.Checked & !yn_hiv_preventionNo.Checked))
+                ((!yn_risks_identifiedYes.Checked & !yn_risks_identifiedNo.Checked) || (!yn_hiv_preventionYes.Checked & !yn_hiv_preventionNo.Checked)))
             {
                 isValid = false;
             }

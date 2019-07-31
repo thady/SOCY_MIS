@@ -687,5 +687,16 @@ namespace SOCY_MIS
             FormMaster.LoadControl(frmNew, this.Name, true);
             #endregion
         }
+
+        private void llblHouseholdAssessmen_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            #region Set Selected
+            frmHouseholdAssessmentMain frmNew = new frmHouseholdAssessmentMain();
+            frmNew.ObjectId = ObjectId;
+            frmNew.FormCalling = this;
+            frmNew.FormMaster = FormMaster;
+            FormMaster.LoadControl(frmNew, this.Name, false);
+            #endregion
+        }
     }
 }
