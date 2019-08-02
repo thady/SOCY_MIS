@@ -199,6 +199,7 @@ namespace SOCY_MIS.DataAccessLayer
         public const string cRTHomeVisitHomeVisitMER = "11";
         public const string cRTHIPMER = "12";
         public const string cRTRiskAssessmentMER = "13";
+        public const string cRTGAT = "14";
         #endregion PopUp Types
 
         #region Social Worker Type

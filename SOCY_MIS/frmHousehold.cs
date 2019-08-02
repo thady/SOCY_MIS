@@ -249,6 +249,16 @@ namespace SOCY_MIS
                             FormMaster.LoadControl(frmNewRAT, this.Name, true);
                             #endregion
                             break;
+                        case utilConstants.cRTGAT:
+                            #region Set Selected
+                            frmHouseholdGraduationAssessment frmNewGat = new frmHouseholdGraduationAssessment();
+                            frmNewGat.HouseholdId = ObjectId;
+                            frmNewGat.ObjectId = strID;
+                            frmNewGat.FormCalling = this;
+                            frmNewGat.FormMaster = FormMaster;
+                            FormMaster.LoadControl(frmNewGat, this.Name, true);
+                            #endregion
+                            break;
 
                     }
                 }

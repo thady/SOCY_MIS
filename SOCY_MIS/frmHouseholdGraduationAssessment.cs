@@ -60,11 +60,9 @@ namespace SOCY_MIS
             display_hh_details();
             LoadHouseholdMembers();
 
-
-            // str_id = "890906a9-c851-443b-b684-61fed6e7faad";
-            lblID.Text = str_id != string.Empty ? str_id : "lblID";
-            hhgraduation_assessment.gat_id = str_id;
-
+            lblID.Text = ObjectId != string.Empty ? ObjectId : "lblID";
+            str_id = ObjectId;
+            hhgraduation_assessment.gat_id = ObjectId;
             ValidateBenchMarks();
 
             LoadMemberLists(str_id, "01", gdv01);
@@ -75,6 +73,17 @@ namespace SOCY_MIS
             LoadMemberLists(str_id, "06", gdv06);
             LoadMemberLists(str_id, "07", gdv07);
             LoadMemberLists(str_id, "08", gdv08);
+
+            LoadHouseholdBenchMarks(str_id);//load benchamrks final 
+            LoadGatDetails(str_id);
+
+            if (str_id != string.Empty)
+            {
+                CheckNumberPositiveInHousehold();
+                CheckNumber10To17();
+                CheckNumberUnder5Years();
+                CheckNumberSchoolAge();
+            }
         }
 
         protected void Return_lookups()
@@ -102,6 +111,78 @@ namespace SOCY_MIS
             cboParish.DataSource = dt;
             cboParish.DisplayMember = "wrd_name";
             cboParish.ValueMember = "wrd_id";
+        }
+
+        protected void LoadHouseholdBenchMarks(string gat_id)
+        {
+            dt = hhgraduation_assessment.LoadHouseholdBenchMarks(gat_id);
+            if (dt.Rows.Count > 0)
+            {
+                DataRow dtRow = dt.Rows[0];
+
+                utilControls.RadioButtonSetSelection(rbtn_BenchMark01Yes, rbtn_BenchMark01No, dtRow["yn_met_benchmark01"].ToString());
+                utilControls.RadioButtonSetSelection(rbtn_BenchMark02Yes, rbtn_BenchMark02No, rbtn_BenchMark02NA, dtRow["yn_met_benchmark02"].ToString());
+                utilControls.RadioButtonSetSelection(rbtn_BenchMark03Yes, rbtn_BenchMark03No, rbtn_BenchMark03NA, dtRow["yn_met_benchmark03"].ToString());
+                utilControls.RadioButtonSetSelection(rbtn_BenchMark04Yes, rbtn_BenchMark04No, rbtn_BenchMark04NA, dtRow["yn_met_benchmark04"].ToString());
+                utilControls.RadioButtonSetSelection(rbtn_BenchMark05Yes, rbtn_BenchMark05No, dtRow["yn_met_benchmark05"].ToString());
+                utilControls.RadioButtonSetSelection(rbtn_BenchMark06Yes, rbtn_BenchMark06No, dtRow["yn_met_benchmark06"].ToString());
+                utilControls.RadioButtonSetSelection(rbtn_BenchMark07Yes, rbtn_BenchMark07No, dtRow["yn_met_benchmark07"].ToString());
+                utilControls.RadioButtonSetSelection(rbtn_BenchMark08Yes, rbtn_BenchMark08No, rbtn_BenchMark08NA, dtRow["yn_met_benchmark08"].ToString());
+
+                #region disbable save buttons for NA benchmarks
+                if (rbtn_BenchMark02NA.Checked)
+                {
+                    btnSaveBenchMark02.Enabled = false;
+                }
+                else
+                {
+                    btnSaveBenchMark02.Enabled = true;
+                }
+
+                if (rbtn_BenchMark03NA.Checked)
+                {
+                    btnSaveBenchMark03.Enabled = false;
+                }
+                else
+                {
+                    btnSaveBenchMark03.Enabled = true;
+                }
+
+                if (rbtn_BenchMark04NA.Checked)
+                {
+                    btnSaveBenchMark04.Enabled = false;
+                }
+                else
+                {
+                    btnSaveBenchMark04.Enabled = true;
+                }
+
+                if (rbtn_BenchMark08NA.Checked)
+                {
+                    btnSaveBenchMark08.Enabled = false;
+                }
+                else
+                {
+                    btnSaveBenchMark08.Enabled = true;
+                }
+                #endregion
+
+                LoadRecordDetails(hhgraduation_assessment.LoadBenchMark7ID(gat_id), "07");
+                LoadRecordDetails(hhgraduation_assessment.LoadBenchMark8ID(gat_id), "08");
+                LoadRecordDetails(hhgraduation_assessment.LoadBenchMark5ID(gat_id), "05");
+            }
+        }
+
+        protected void LoadGatDetails(string gat_id)
+        {
+            dt = hhgraduation_assessment.LoadGATDetails(gat_id);
+            if (dt.Rows.Count > 0)
+            {
+                DataRow dtRow = dt.Rows[0];
+                dtGatDate.Value = Convert.ToDateTime(dtRow["gat_date"]);
+                cboSocialWorker.SelectedValue = dtRow["swk_id"].ToString();
+                cboCaregiver.SelectedValue = dtRow["hhm_head_id"].ToString();
+            }
         }
 
         protected void LoadMemberLists(string gat_id, string benchMark, DataGridView gdvname)
@@ -284,6 +365,8 @@ namespace SOCY_MIS
                     {
                         dtRow = dt.Rows[0];
                         cbo_hhm_05.Text = dtRow["hhm_name"].ToString();
+                        cbo_hhm_05.SelectedValue = dtRow["hhm_id"].ToString();
+                        cbo_hhm_05.Enabled = false;
                         utilControls.RadioButtonSetSelection(yn_pay_feesYes, yn_pay_feesNo, dtRow["yn_pay_fees"].ToString());
                         utilControls.RadioButtonSetSelection(yn_pay_fees_no_grantYes, yn_pay_fees_no_grantNo, dtRow["yn_pay_fees_no_pepfar_grant"].ToString());
                         utilControls.RadioButtonSetSelection(yn_pay_fees_no_sell_assetYes, yn_pay_fees_no_sell_assetNo, dtRow["yn_pay_fees_no_sell_asset"].ToString());
@@ -446,11 +529,20 @@ namespace SOCY_MIS
             if (count == 0)
             {
                 rbtn_BenchMark08NA.Checked = true;
+                lblMessage08.Visible = true;
             }
             else
             {
                 rbtn_BenchMark08NA.Checked = false;
+                lblMessage08.Visible = false;
             }
+        }
+
+        private void Back()
+        {
+            hhgraduation_assessment.gat_id = string.Empty;
+            FormCalling.LoadDisplay();
+            FormMaster.LoadControl(FormCalling, this.Name, false);
         }
 
 
@@ -1734,6 +1826,11 @@ namespace SOCY_MIS
         private void yn_supressNo_CheckedChanged(object sender, EventArgs e)
         {
             yn_supressYes_CheckedChanged(yn_supressYes, null);
+        }
+
+        private void lblBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Back();
         }
     }
 }

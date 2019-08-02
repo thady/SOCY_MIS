@@ -117,4 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="txtHelp.Text" xml:space="preserve">
+    <value>Graduation Assessment Tool-Data Entry guidelines
+
+1) This tool is segmented according to the eight benchmarks on the HIP
+2) You must save the details around basic information for a household 
+     before continuing with the benchmarks otherwise the system will not allow to save any benchmark
+3) You must save details for each benchmark before proceding to the next benchmark.
+     Otherwise the next benchmark will not allow you to save before completing the previous 
+      benchmark.
+4) If a benchmark doesnt apply to the household e.g for BenchMark02 about viral suppression; if there is no positive beneficiaciary in the household;the 
+     system automatically checks for you the "NA" option.All you have to do is click on the save button and procede
+      to the next benchmark.
+5) The system automatically determines if the benchmark has been met or not according to the responses you have entered under each beneficiary
+6) You can only save responses from only one beneficiary for Benchmark05..usually that shoud the the caregiver</value>
+  </data>
 </root>

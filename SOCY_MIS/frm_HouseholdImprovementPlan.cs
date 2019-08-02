@@ -354,6 +354,14 @@ namespace SOCY_MIS
                 txtyn_child_undernourished_out_come.Text = dtRow["yn_child_undernourished_out_come"].ToString();
                 dtyn_child_undernourished_followup_date.Value = dtRow["yn_child_undernourished_followup_date"].ToString() != string.Empty ? Convert.ToDateTime(dtRow["yn_child_undernourished_followup_date"].ToString()) : DateTime.Today;
                 dtyn_child_undernourished_followup_date.Checked = dtRow["yn_child_undernourished_followup_date"].ToString() != string.Empty ? true : false;
+
+                utilControls.RadioButtonSetSelection(rbtn_yn_birth_certificateYes, rbtn_yn_birth_certificateNo, rbtn_yn_birth_certificateNA, dtRow["yn_safe_birth_certificates"].ToString());
+                txt_yn_birth_certificate_action.Text = dtRow["yn_safe_birth_certificates_action"].ToString();
+                txt_yn_birth_certificate_out_come.Text = dtRow["yn_safe_birth_certificates_out_come"].ToString();
+                dt_yn_birth_certificates_followup_date.Value = dtRow["yn_safe_birth_certificates_followup_date"].ToString() != string.Empty ? Convert.ToDateTime(dtRow["yn_safe_birth_certificates_followup_date"].ToString()) : DateTime.Today;
+                dt_yn_birth_certificates_followup_date.Checked = dtRow["yn_safe_birth_certificates_followup_date"].ToString() != string.Empty ? true : false;
+
+
                 txtother_health_issues.Text = dtRow["other_health_issues"].ToString();
                 txtother_health_issues_action.Text = dtRow["other_health_issues_action"].ToString();
                 txtother_health_issues_out_come.Text = dtRow["other_health_issues_out_come"].ToString();

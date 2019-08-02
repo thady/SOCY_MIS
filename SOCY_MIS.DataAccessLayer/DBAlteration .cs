@@ -30552,6 +30552,10 @@ namespace SOCY_MIS.DataAccessLayer
             strSQL = @"INSERT INTO lst_record_type (rtp_id, rtp_name, rtp_order, rtp_active, lng_id, usr_id_create, usr_id_update, usr_date_create, usr_date_update)
                 SELECT '13', 'Risk Assessment MER2.3', 13, 1, 'EN', '1', '1', GETDATE(), GETDATE() WHERE NOT '13' IN (SELECT rtp_id FROM lst_record_type WHERE rtp_id = '13') ";
             dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"INSERT INTO lst_record_type (rtp_id, rtp_name, rtp_order, rtp_active, lng_id, usr_id_create, usr_id_update, usr_date_create, usr_date_update)
+                SELECT '14', 'Household Graduation Assessment', 14, 1, 'EN', '1', '1', GETDATE(), GETDATE() WHERE NOT '14' IN (SELECT rtp_id FROM lst_record_type WHERE rtp_id = '14') ";
+            dbCon.ExecuteNonQuery(strSQL);
             #endregion Insert Record Type
         }
 
@@ -31158,6 +31162,76 @@ namespace SOCY_MIS.DataAccessLayer
                     BEGIN
                     INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
                     VALUES('98','hh_household_risk_assessment_member_adult_upload','ram_id',98,1,1,1,GETDATE(),GETDATE())
+                    END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT sul_name FROM lst_sync_upload WHERE sul_name = 'hh_graduation_assessment_upload')
+                    BEGIN
+                    INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
+                    VALUES('99','hh_graduation_assessment_upload','gat_id',99,1,1,1,GETDATE(),GETDATE())
+                    END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT sul_name FROM lst_sync_upload WHERE sul_name = 'hh_graduation_assessment_final_upload')
+                    BEGIN
+                    INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
+                    VALUES('100','hh_graduation_assessment_final_upload','gat_id',100,1,1,1,GETDATE(),GETDATE())
+                    END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT sul_name FROM lst_sync_upload WHERE sul_name = 'hh_graduation_assessment_benchmark01_upload')
+                    BEGIN
+                    INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
+                    VALUES('101','hh_graduation_assessment_benchmark01_upload','gat_b_id',101,1,1,1,GETDATE(),GETDATE())
+                    END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT sul_name FROM lst_sync_upload WHERE sul_name = 'hh_graduation_assessment_benchmark02_upload')
+                    BEGIN
+                    INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
+                    VALUES('102','hh_graduation_assessment_benchmark02_upload','gat_b_id',102,1,1,1,GETDATE(),GETDATE())
+                    END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT sul_name FROM lst_sync_upload WHERE sul_name = 'hh_graduation_assessment_benchmark03_upload')
+                    BEGIN
+                    INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
+                    VALUES('103','hh_graduation_assessment_benchmark03_upload','gat_b_id',103,1,1,1,GETDATE(),GETDATE())
+                    END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT sul_name FROM lst_sync_upload WHERE sul_name = 'hh_graduation_assessment_benchmark04_upload')
+                    BEGIN
+                    INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
+                    VALUES('104','hh_graduation_assessment_benchmark04_upload','gat_b_id',104,1,1,1,GETDATE(),GETDATE())
+                    END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT sul_name FROM lst_sync_upload WHERE sul_name = 'hh_graduation_assessment_benchmark05_upload')
+                    BEGIN
+                    INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
+                    VALUES('105','hh_graduation_assessment_benchmark05_upload','gat_b_id',105,1,1,1,GETDATE(),GETDATE())
+                    END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT sul_name FROM lst_sync_upload WHERE sul_name = 'hh_graduation_assessment_benchmark06_upload')
+                    BEGIN
+                    INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
+                    VALUES('106','hh_graduation_assessment_benchmark06_upload','gat_b_id',106,1,1,1,GETDATE(),GETDATE())
+                    END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT sul_name FROM lst_sync_upload WHERE sul_name = 'hh_graduation_assessment_benchmark07_upload')
+                    BEGIN
+                    INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
+                    VALUES('107','hh_graduation_assessment_benchmark07_upload','gat_b_id',107,1,1,1,GETDATE(),GETDATE())
+                    END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT sul_name FROM lst_sync_upload WHERE sul_name = 'hh_graduation_assessment_benchmark08_upload')
+                    BEGIN
+                    INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
+                    VALUES('108','hh_graduation_assessment_benchmark08_upload','gat_b_id',108,1,1,1,GETDATE(),GETDATE())
                     END";
             dbCon.ExecuteNonQuery(strSQL);
         }

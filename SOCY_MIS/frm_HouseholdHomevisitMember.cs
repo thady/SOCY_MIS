@@ -456,7 +456,7 @@ namespace SOCY_MIS
             }
 
 
-            if (Age < 10 || Age > 17)
+            if (Age < 10)
             {
                 rbtnHIVPreventionSupportYes.Checked = false;
                 rbtnHIVPreventionSupportNo.Checked = false;

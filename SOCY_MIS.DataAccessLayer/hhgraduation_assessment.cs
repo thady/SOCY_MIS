@@ -549,11 +549,11 @@ namespace SOCY_MIS.DataAccessLayer
                     strSQL = string.Format(strSQL, gat_id);
                     break;
                 case "02":
-                    strSQL = @"SELECT gat_b_id,gat_id,hhm.hhm_first_name + ' ' + hhm.hhm_last_name AS hhm_name,yn_sup.ynna_name AS suppressing,yn_adher.ynna_name AS Adhere,yn_app.ynna_name AS Appointment FROM [dbo].[hh_graduation_assessment_benchmark02] dt
+                    strSQL = @"SELECT gat_b_id,gat_id,hhm.hhm_first_name + ' ' + hhm.hhm_last_name AS hhm_name,ISNULL(yn_sup.ynna_name,'') AS suppressing,ISNULL(yn_adher.ynna_name,'') AS Adhere,ISNULL(yn_app.ynna_name,'') AS Appointment FROM [dbo].[hh_graduation_assessment_benchmark02] dt
                             INNER JOIN hh_household_member hhm ON dt.hhm_id = hhm.hhm_id
-                            INNER JOIN lst_yes_no_not_applicable yn_sup ON dt.yn_supressed = yn_sup.ynna_id
-                            INNER JOIN lst_yes_no_not_applicable yn_adher ON dt.yn_adhering = yn_adher.ynna_id
-                            INNER JOIN lst_yes_no_not_applicable yn_app ON dt.yn_attend_art_appointment = yn_app.ynna_id
+                            LEFT JOIN lst_yes_no_not_applicable yn_sup ON dt.yn_supressed = yn_sup.ynna_id
+                            LEFT JOIN lst_yes_no_not_applicable yn_adher ON dt.yn_adhering = yn_adher.ynna_id
+                            LEFT JOIN lst_yes_no_not_applicable yn_app ON dt.yn_attend_art_appointment = yn_app.ynna_id
                             WHERE dt.gat_id = '{0}'";
 
                     strSQL = string.Format(strSQL, gat_id);
@@ -593,12 +593,12 @@ namespace SOCY_MIS.DataAccessLayer
                     strSQL = string.Format(strSQL, gat_id);
                     break;
                 case "06":
-                    strSQL = @"SELECT  gat_b_id,gat_id,hhm.hhm_first_name + ' ' + hhm.hhm_last_name AS hhm_name,yn_kicked.ynna_name AS yn_kicked,yn_child_kicked.ynna_name AS yn_child_kicked,yn_child_violence.ynna_name AS yn_child_violence
+                    strSQL = @"SELECT  gat_b_id,gat_id,hhm.hhm_first_name + ' ' + hhm.hhm_last_name AS hhm_name,ISNULL(yn_kicked.ynna_name,'') AS yn_kicked,ISNULL(yn_child_kicked.ynna_name,'') AS yn_child_kicked,ISNULL(yn_child_violence.ynna_name,'') AS yn_child_violence
                             FROM [dbo].[hh_graduation_assessment_benchmark06] dt
                             INNER JOIN hh_household_member hhm ON dt.hhm_id = hhm.hhm_id
-                            INNER JOIN lst_yes_no_not_applicable yn_kicked ON dt.yn_kicked = yn_kicked.ynna_id
-                            INNER JOIN lst_yes_no_not_applicable yn_child_kicked ON dt.yn_child_kicked = yn_child_kicked.ynna_id
-                            INNER JOIN lst_yes_no_not_applicable yn_child_violence ON dt.yn_child_violence = yn_child_violence.ynna_id
+                            LEFT JOIN lst_yes_no_not_applicable yn_kicked ON dt.yn_kicked = yn_kicked.ynna_id
+                            LEFT JOIN lst_yes_no_not_applicable yn_child_kicked ON dt.yn_child_kicked = yn_child_kicked.ynna_id
+                            LEFT JOIN lst_yes_no_not_applicable yn_child_violence ON dt.yn_child_violence = yn_child_violence.ynna_id
                             WHERE gat_id = '{0}'";
 
                     strSQL = string.Format(strSQL, gat_id);
@@ -620,7 +620,6 @@ namespace SOCY_MIS.DataAccessLayer
 
                     strSQL = string.Format(strSQL, gat_id);
                     break;
-
             }
             try
             {
@@ -762,6 +761,99 @@ namespace SOCY_MIS.DataAccessLayer
             return dt;
         }
 
+        public static DataTable LoadHouseholdBenchMarks(string gat_id)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter Adapt;
+            string swk_phone = string.Empty;
+
+            string strSQL = @"SELECT* FROM hh_graduation_assessment_final WHERE gat_id = '{0}'";
+            strSQL = string.Format(strSQL, gat_id);
+            try
+            {
+                string strConn = dbCon.ToString();
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(strSQL, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    Adapt = new SqlDataAdapter(cmd);
+                    Adapt.Fill(dt);
+
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            finally
+            {
+                if (conn.State == ConnectionState.Open) { conn.Close(); }
+            }
+
+            return dt;
+        }
+
+        public static DataTable LoadGATDetails(string gat_id)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter Adapt;
+            string swk_phone = string.Empty;
+
+            string strSQL = @"SELECT* FROM hh_graduation_assessment WHERE gat_id = '{0}'";
+            strSQL = string.Format(strSQL, gat_id);
+            try
+            {
+                string strConn = dbCon.ToString();
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(strSQL, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    Adapt = new SqlDataAdapter(cmd);
+                    Adapt.Fill(dt);
+
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            finally
+            {
+                if (conn.State == ConnectionState.Open) { conn.Close(); }
+            }
+
+            return dt;
+        }
         public static int LoadHouseholdMemberAge(string hhm_id)
         {
             DataTable dt = new DataTable();
@@ -812,6 +904,163 @@ namespace SOCY_MIS.DataAccessLayer
             }
 
             return age;
+        }
+
+
+        public static string LoadBenchMark7ID(string gat_id)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter Adapt;
+            string str_id = string.Empty;
+
+            string strSQL = @"SELECT gat_b_id FROM [dbo].[hh_graduation_assessment_benchmark07] WHERE gat_id = '{0}'";
+
+            strSQL = string.Format(strSQL, gat_id);
+            try
+            {
+                string strConn = dbCon.ToString();
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(strSQL, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    Adapt = new SqlDataAdapter(cmd);
+                    Adapt.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        DataRow dtRow = dt.Rows[0];
+                        str_id = dtRow["gat_b_id"].ToString();
+                    }
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            finally
+            {
+                if (conn.State == ConnectionState.Open) { conn.Close(); }
+            }
+
+            return str_id;
+        }
+
+        public static string LoadBenchMark8ID(string gat_id)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter Adapt;
+            string str_id = string.Empty;
+
+            string strSQL = @"SELECT gat_b_id FROM [dbo].[hh_graduation_assessment_benchmark08] WHERE gat_id = '{0}'";
+
+            strSQL = string.Format(strSQL, gat_id);
+            try
+            {
+                string strConn = dbCon.ToString();
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(strSQL, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    Adapt = new SqlDataAdapter(cmd);
+                    Adapt.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        DataRow dtRow = dt.Rows[0];
+                        str_id = dtRow["gat_b_id"].ToString();
+                    }
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            finally
+            {
+                if (conn.State == ConnectionState.Open) { conn.Close(); }
+            }
+
+            return str_id;
+        }
+
+        public static string LoadBenchMark5ID(string gat_id)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter Adapt;
+            string str_id = string.Empty;
+
+            string strSQL = @"SELECT gat_b_id FROM [dbo].[hh_graduation_assessment_benchmark05] WHERE gat_id = '{0}'";
+
+            strSQL = string.Format(strSQL, gat_id);
+            try
+            {
+                string strConn = dbCon.ToString();
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(strSQL, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    Adapt = new SqlDataAdapter(cmd);
+                    Adapt.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        DataRow dtRow = dt.Rows[0];
+                        str_id = dtRow["gat_b_id"].ToString();
+                    }
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            finally
+            {
+                if (conn.State == ConnectionState.Open) { conn.Close(); }
+            }
+
+            return str_id;
         }
 
 
@@ -1643,10 +1892,13 @@ namespace SOCY_MIS.DataAccessLayer
         public static void saveFinalBenchMark(string gat_id,string benchmark)
         {
             string strSQL = string.Empty;
+            string strSQLDelete = string.Empty;
 
             switch (benchmark)
             {
                 case "01":
+                    strSQLDelete = "DELETE FROM hh_graduation_assessment_final_upload WHERE gat_id = '{0}' ";
+                    strSQLDelete = string.Format(strSQLDelete,gat_id);
                     strSQL = @"IF NOT EXISTS(SELECT* FROM [dbo].[hh_graduation_assessment_final] WHERE gat_id = '{0}')
 	                            BEGIN
 	                            INSERT INTO [dbo].[hh_graduation_assessment_final]
@@ -1662,37 +1914,58 @@ namespace SOCY_MIS.DataAccessLayer
                         usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id, district_id);
                     break;
                 case "02":
+                    strSQLDelete = "DELETE FROM hh_graduation_assessment_final_upload WHERE gat_id = '{0}' ";
+                    strSQLDelete = string.Format(strSQLDelete, gat_id);
+
                     strSQL = @"UPDATE [dbo].[hh_graduation_assessment_final] SET yn_met_benchmark02 = '{1}'
                                 WHERE gat_id = '{0}'";
                     strSQL = string.Format(strSQL, gat_id, yn_met_benchmark02);
                     break;
                 case "03":
+                    strSQLDelete = "DELETE FROM hh_graduation_assessment_final_upload WHERE gat_id = '{0}' ";
+                    strSQLDelete = string.Format(strSQLDelete, gat_id);
+
                     strSQL = @"UPDATE [dbo].[hh_graduation_assessment_final] SET yn_met_benchmark03 = '{1}'
                                 WHERE gat_id = '{0}'";
                     strSQL = string.Format(strSQL, gat_id, yn_met_benchmark03);
                     break;
 
                 case "04":
+                    strSQLDelete = "DELETE FROM hh_graduation_assessment_final_upload WHERE gat_id = '{0}' ";
+                    strSQLDelete = string.Format(strSQLDelete, gat_id);
+
                     strSQL = @"UPDATE [dbo].[hh_graduation_assessment_final] SET yn_met_benchmark04 = '{1}'
                                 WHERE gat_id = '{0}'";
                     strSQL = string.Format(strSQL, gat_id, yn_met_benchmark04);
                     break;
                 case "05":
+                    strSQLDelete = "DELETE FROM hh_graduation_assessment_final_upload WHERE gat_id = '{0}' ";
+                    strSQLDelete = string.Format(strSQLDelete, gat_id);
+
                     strSQL = @"UPDATE [dbo].[hh_graduation_assessment_final] SET yn_met_benchmark05 = '{1}'
                                 WHERE gat_id = '{0}'";
                     strSQL = string.Format(strSQL, gat_id, yn_met_benchmark05);
                     break;
                 case "06":
+                    strSQLDelete = "DELETE FROM hh_graduation_assessment_final_upload WHERE gat_id = '{0}' ";
+                    strSQLDelete = string.Format(strSQLDelete, gat_id);
+
                     strSQL = @"UPDATE [dbo].[hh_graduation_assessment_final] SET yn_met_benchmark06 = '{1}'
                                 WHERE gat_id = '{0}'";
                     strSQL = string.Format(strSQL, gat_id, yn_met_benchmark06);
                     break;
                 case "07":
+                    strSQLDelete = "DELETE FROM hh_graduation_assessment_final_upload WHERE gat_id = '{0}' ";
+                    strSQLDelete = string.Format(strSQLDelete, gat_id);
+
                     strSQL = @"UPDATE [dbo].[hh_graduation_assessment_final] SET yn_met_benchmark07 = '{1}'
                                 WHERE gat_id = '{0}'";
                     strSQL = string.Format(strSQL, gat_id, yn_met_benchmark07);
                     break;
                 case "08":
+                    strSQLDelete = "DELETE FROM hh_graduation_assessment_final_upload WHERE gat_id = '{0}' ";
+                    strSQLDelete = string.Format(strSQLDelete, gat_id);
+
                     strSQL = @"UPDATE [dbo].[hh_graduation_assessment_final] SET yn_met_benchmark08 = '{1}'
                                 WHERE gat_id = '{0}'";
                     strSQL = string.Format(strSQL, gat_id, yn_met_benchmark08);
@@ -1702,6 +1975,27 @@ namespace SOCY_MIS.DataAccessLayer
             try
             {
                 string strConn = dbCon.ToString();
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(strSQLDelete, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    cmd.ExecuteNonQuery();
+
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
 
                 using (conn = new SqlConnection(SQLConnection))
                 using (SqlCommand cmd = new SqlCommand(strSQL, conn))

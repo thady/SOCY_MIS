@@ -593,6 +593,15 @@ namespace SOCY_MIS.DataAccessLayer
                             "FROM hh_household_risk_assessment V " +
                             "WHERE V.hh_id = '{0}' ";
                         break;
+                    case utilConstants.cRTGAT:
+                        strSQLTemp = "SELECT '" + dr["rtp_id"].ToString() + "' AS rtp_id, " +
+                            "'" + dr["rtp_name"].ToString() + "' AS rtp_name, " +
+                            dr["rtp_order"].ToString() + " AS rtp_order, " +
+                            "RTRIM(LTRIM(CONVERT(CHAR(15), V.gat_date, 106))) AS the_date_display, " +
+                            "v.gat_date AS the_date, v.gat_id AS rcd_id " +
+                            "FROM hh_graduation_assessment V " +
+                            "WHERE V.hh_id = '{0}' ";
+                        break;
                 }
 
                 if (strSQLTemp.Length != 0)
