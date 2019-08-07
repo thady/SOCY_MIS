@@ -577,17 +577,17 @@ namespace SOCY_MIS.DataAccessLayer
                     strSQL = string.Format(strSQL, gat_id);
                     break;
                 case "05":
-                    strSQL = @"SELECT gat_b_id,gat_id,hhm.hhm_first_name + ' ' + hhm.hhm_last_name AS hhm_name,yn_pay_fees.ynna_name AS yn_pay_fees,yn_pay_fees_no_pepfar_grant.ynna_name AS yn_pay_fees_no_pepfar_grant,
-                                yn_pay_fees_no_sell_asset.ynna_name AS yn_pay_fees_no_sell_asset,yn_pay_medical_costs.ynna_name AS yn_pay_medical_costs,yn_pay_medical_costs_no_pepfar_grant.ynna_name AS yn_pay_medical_costs_no_pepfar_grant,
-                                yn_pay_medical_costs_no_sell_asset.ynna_name AS yn_pay_medical_costs_no_sell_asset
+                    strSQL = @"SELECT gat_b_id,gat_id,hhm.hhm_first_name + ' ' + hhm.hhm_last_name AS hhm_name,yn_pay_fees.ynna_name AS yn_pay_fees,ISNULL(yn_pay_fees_no_pepfar_grant.ynna_name,'Not Applicable') AS yn_pay_fees_no_pepfar_grant,
+                                ISNULL(yn_pay_fees_no_sell_asset.ynna_name,'Not Applicable') AS yn_pay_fees_no_sell_asset,yn_pay_medical_costs.ynna_name AS yn_pay_medical_costs,ISNULL(yn_pay_medical_costs_no_pepfar_grant.ynna_name,'Not Applicable') AS yn_pay_medical_costs_no_pepfar_grant,
+                                ISNULL(yn_pay_medical_costs_no_sell_asset.ynna_name,'Not Applicable') AS yn_pay_medical_costs_no_sell_asset
                                 FROM [dbo].[hh_graduation_assessment_benchmark05] dt
                                 INNER JOIN hh_household_member hhm ON dt.hhm_id = hhm.hhm_id
                                 INNER JOIN lst_yes_no_not_applicable yn_pay_fees ON dt.yn_pay_fees = yn_pay_fees.ynna_id
-                                INNER JOIN lst_yes_no_not_applicable yn_pay_fees_no_pepfar_grant ON dt.yn_pay_fees_no_pepfar_grant = yn_pay_fees_no_pepfar_grant.ynna_id
-                                INNER JOIN lst_yes_no_not_applicable yn_pay_fees_no_sell_asset ON dt.yn_pay_fees_no_sell_asset = yn_pay_fees_no_sell_asset.ynna_id
+                                LEFT JOIN lst_yes_no_not_applicable yn_pay_fees_no_pepfar_grant ON dt.yn_pay_fees_no_pepfar_grant = yn_pay_fees_no_pepfar_grant.ynna_id
+                                LEFT JOIN lst_yes_no_not_applicable yn_pay_fees_no_sell_asset ON dt.yn_pay_fees_no_sell_asset = yn_pay_fees_no_sell_asset.ynna_id
                                 INNER JOIN lst_yes_no_not_applicable yn_pay_medical_costs ON dt.yn_pay_medical_costs = yn_pay_medical_costs.ynna_id
-                                INNER JOIN lst_yes_no_not_applicable  yn_pay_medical_costs_no_pepfar_grant ON dt.yn_pay_medical_costs_no_pepfar_grant = yn_pay_medical_costs_no_pepfar_grant.ynna_id
-                                INNER JOIN lst_yes_no_not_applicable yn_pay_medical_costs_no_sell_asset ON dt.yn_pay_medical_costs_no_sell_asset = yn_pay_medical_costs_no_sell_asset.ynna_id
+                                LEFT JOIN lst_yes_no_not_applicable  yn_pay_medical_costs_no_pepfar_grant ON dt.yn_pay_medical_costs_no_pepfar_grant = yn_pay_medical_costs_no_pepfar_grant.ynna_id
+                                LEFT JOIN lst_yes_no_not_applicable yn_pay_medical_costs_no_sell_asset ON dt.yn_pay_medical_costs_no_sell_asset = yn_pay_medical_costs_no_sell_asset.ynna_id
                                 WHERE gat_id = '{0}'";
 
                     strSQL = string.Format(strSQL, gat_id);

@@ -1094,10 +1094,10 @@ namespace SOCY_MIS
                     hhgraduation_assessment.gat_b_id = Guid.NewGuid().ToString();
                     hhgraduation_assessment.hhm_id = cbo_hhm_05.SelectedValue.ToString();
 
-                    hhgraduation_assessment.yn_pay_fees = utilControls.RadioButtonGetSelection(yn_pay_feesYes, yn_pay_feesNo);
+                    hhgraduation_assessment.yn_pay_fees = utilControls.RadioButtonGetSelection(yn_pay_feesYes, yn_pay_feesNo, yn_pay_feesNA);
                     hhgraduation_assessment.yn_pay_fees_no_pepfar_grant = utilControls.RadioButtonGetSelection(yn_pay_fees_no_grantYes, yn_pay_fees_no_grantNo);
                     hhgraduation_assessment.yn_pay_fees_no_sell_asset = utilControls.RadioButtonGetSelection(yn_pay_fees_no_sell_assetYes, yn_pay_fees_no_sell_assetNo);
-                    hhgraduation_assessment.yn_pay_medical_costs = utilControls.RadioButtonGetSelection(yn_pay_medical_feesYes, yn_pay_medical_feesNo);
+                    hhgraduation_assessment.yn_pay_medical_costs = utilControls.RadioButtonGetSelection(yn_pay_medical_feesYes, yn_pay_medical_feesNo, yn_pay_medical_feesNA);
                     hhgraduation_assessment.yn_pay_medical_costs_no_pepfar_grant = utilControls.RadioButtonGetSelection(yn_pay_medical_fees_no_grantYes, yn_pay_medical_fees_no_grantNo);
                     hhgraduation_assessment.yn_pay_medical_costs_no_sell_asset = utilControls.RadioButtonGetSelection(yn_pay_medical_fees_no_sell_assetYes, yn_pay_medical_fees_no_sell_assetNo);
 
@@ -1132,10 +1132,10 @@ namespace SOCY_MIS
                     hhgraduation_assessment.gat_b_id = lblID05.Text;
                     // hhgraduation_assessment.hhm_id = cbo_hhm_05.SelectedValue.ToString();
 
-                    hhgraduation_assessment.yn_pay_fees = utilControls.RadioButtonGetSelection(yn_pay_feesYes, yn_pay_feesNo);
+                    hhgraduation_assessment.yn_pay_fees = utilControls.RadioButtonGetSelection(yn_pay_feesYes, yn_pay_feesNo, yn_pay_feesNA);
                     hhgraduation_assessment.yn_pay_fees_no_pepfar_grant = utilControls.RadioButtonGetSelection(yn_pay_fees_no_grantYes, yn_pay_fees_no_grantNo);
                     hhgraduation_assessment.yn_pay_fees_no_sell_asset = utilControls.RadioButtonGetSelection(yn_pay_fees_no_sell_assetYes, yn_pay_fees_no_sell_assetNo);
-                    hhgraduation_assessment.yn_pay_medical_costs = utilControls.RadioButtonGetSelection(yn_pay_medical_feesYes, yn_pay_medical_feesNo);
+                    hhgraduation_assessment.yn_pay_medical_costs = utilControls.RadioButtonGetSelection(yn_pay_medical_feesYes, yn_pay_medical_feesNo, yn_pay_medical_feesNA);
                     hhgraduation_assessment.yn_pay_medical_costs_no_pepfar_grant = utilControls.RadioButtonGetSelection(yn_pay_medical_fees_no_grantYes, yn_pay_medical_fees_no_grantNo);
                     hhgraduation_assessment.yn_pay_medical_costs_no_sell_asset = utilControls.RadioButtonGetSelection(yn_pay_medical_fees_no_sell_assetYes, yn_pay_medical_fees_no_sell_assetNo);
 
@@ -1506,8 +1506,8 @@ namespace SOCY_MIS
             bool isValid = false;
 
             if ((cbo_hhm_05.Text == "Select One" || cbo_hhm_05.Text == string.Empty) & hhgraduation_assessment.LoadHouseholdMembersBenchMark05(HouseholdId, hhgraduation_assessment.gat_id).Rows.Count > 0 &
-                (!yn_pay_feesYes.Checked & !yn_pay_feesNo.Checked) || (!yn_pay_fees_no_grantYes.Checked & !yn_pay_fees_no_grantNo.Checked) || (!yn_pay_fees_no_sell_assetYes.Checked & !yn_pay_fees_no_sell_assetNo.Checked) || 
-                (!yn_pay_medical_feesYes.Checked & !yn_pay_medical_feesNo.Checked) || (!yn_pay_medical_fees_no_grantYes.Checked & !yn_pay_medical_fees_no_grantNo.Checked) || (!yn_pay_medical_fees_no_sell_assetYes.Checked & !yn_pay_medical_fees_no_sell_assetNo.Checked))
+                (!yn_pay_feesYes.Checked & !yn_pay_feesNo.Checked & !yn_pay_feesNA.Checked) || (!yn_pay_fees_no_grantYes.Checked & !yn_pay_fees_no_grantNo.Checked & !yn_pay_feesNA.Checked) || (!yn_pay_fees_no_sell_assetYes.Checked & !yn_pay_fees_no_sell_assetNo.Checked & !yn_pay_feesNA.Checked) || 
+                (!yn_pay_medical_feesYes.Checked & !yn_pay_medical_feesNo.Checked & !yn_pay_medical_feesNA.Checked) || (!yn_pay_medical_fees_no_grantYes.Checked & !yn_pay_medical_fees_no_grantNo.Checked & !yn_pay_medical_feesNA.Checked) || (!yn_pay_medical_fees_no_sell_assetYes.Checked & !yn_pay_medical_fees_no_sell_assetNo.Checked & !yn_pay_medical_feesNA.Checked))
             {
                 isValid = false;
             }
@@ -1831,6 +1831,110 @@ namespace SOCY_MIS
         private void lblBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Back();
+        }
+
+        private void yn_pay_feesNA_CheckedChanged(object sender, EventArgs e)
+        {
+            if (yn_pay_feesNA.Checked)
+            {
+                panel052.Enabled = false;
+                panel053.Enabled = false;
+                yn_pay_fees_no_grantYes.Checked = false;
+                yn_pay_fees_no_grantNo.Checked = false;
+                yn_pay_fees_no_sell_assetYes.Checked = false;
+                yn_pay_fees_no_sell_assetNo.Checked = false;
+            }
+            else
+            {
+                yn_pay_fees_no_grantYes.Checked = false;
+                yn_pay_fees_no_grantNo.Checked = false;
+                yn_pay_fees_no_sell_assetYes.Checked = false;
+                yn_pay_fees_no_sell_assetNo.Checked = false;
+                panel052.Enabled = true;
+                panel053.Enabled = true;
+            }
+        }
+
+        private void yn_pay_feesNo_CheckedChanged(object sender, EventArgs e)
+        {
+            yn_pay_feesNA_CheckedChanged(yn_pay_feesNA,null);
+        }
+
+        private void yn_pay_feesYes_CheckedChanged(object sender, EventArgs e)
+        {
+            yn_pay_feesNA_CheckedChanged(yn_pay_feesNA, null);
+        }
+
+        private void yn_pay_fees_no_grantNo_CheckedChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void yn_pay_fees_no_grantYes_CheckedChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void yn_pay_fees_no_sell_assetNo_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void yn_pay_fees_no_sell_assetYes_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void yn_pay_medical_feesNA_CheckedChanged(object sender, EventArgs e)
+        {
+            if (yn_pay_medical_feesNA.Checked)
+            {
+                yn_pay_medical_fees_no_sell_assetYes.Checked = false;
+                yn_pay_medical_fees_no_sell_assetNo.Checked = false;
+                yn_pay_medical_fees_no_grantYes.Checked = false;
+                yn_pay_medical_fees_no_grantNo.Checked = false;
+                panel055.Enabled = false;
+                panel056.Enabled = false;
+            }
+            else
+            {
+                yn_pay_medical_fees_no_sell_assetYes.Checked = false;
+                yn_pay_medical_fees_no_sell_assetNo.Checked = false;
+                yn_pay_medical_fees_no_grantYes.Checked = false;
+                yn_pay_medical_fees_no_grantNo.Checked = false;
+                panel055.Enabled = true;
+                panel056.Enabled = true;
+            }
+        }
+
+        private void yn_pay_medical_fees_no_grantNo_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void yn_pay_medical_fees_no_grantYes_CheckedChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void yn_pay_medical_fees_no_sell_assetNo_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void yn_pay_medical_fees_no_sell_assetYes_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void yn_pay_medical_feesNo_CheckedChanged(object sender, EventArgs e)
+        {
+            yn_pay_medical_feesNA_CheckedChanged(yn_pay_medical_feesNA, null);
+        }
+
+        private void yn_pay_medical_feesYes_CheckedChanged(object sender, EventArgs e)
+        {
+            yn_pay_medical_feesNA_CheckedChanged(yn_pay_medical_feesNA, null);
         }
     }
 }
