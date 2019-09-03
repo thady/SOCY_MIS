@@ -771,6 +771,15 @@ namespace SOCY_MIS
                         dalHHM.yn_id_pregnant = cbPregnant.SelectedValue.ToString();
                         dalHHM.yn_id_school = cbSchool.SelectedValue.ToString();
                         dalHHM.usr_id_update = FormMaster.UserId;
+                        if (rbtnActive.Checked)
+                        {
+                            dalHHM.hhm_status = utilConstants.cDFActive.ToString();
+                        }
+                        else
+                        {
+                            dalHHM.hhm_status = utilConstants.cDFInActives.ToString();
+                        }
+
                         dalHHM.Save(dbCon);
                         #endregion Household Member
 
@@ -809,6 +818,7 @@ namespace SOCY_MIS
                         dalHAM.usr_id_update = FormMaster.UserId;
                         dalHAM.yn_attained_vocational_skill = cbAttainedVocationalSkill.SelectedValue.ToString();
                         dalHAM.district_id = SystemConstants.Return_office_district();
+                        
                         dalHAM.Save(dbCon);
                         #endregion Household Assessment Member
 
@@ -860,7 +870,7 @@ namespace SOCY_MIS
                 cbGender.SelectedIndex == 0 || cbYearOfBirth.SelectedIndex == 0 ||
                 (cbHHMember.SelectedIndex == 0 && lblHHMemberVal.Visible) || cbDisability.SelectedIndex == 0 || (cbDisability.Text == "Yes" && cbDisabilityType.SelectedIndex == 0)
                 || (cbDisabilityType.SelectedIndex != 0 && (cbDisability.SelectedIndex == 0 || cbDisability.Text == "No")) || cbHIVStatus.SelectedIndex == 0 || cbProfession.SelectedIndex == 0 || cbSchool.SelectedIndex == 0
-                || cbProtection.SelectedIndex == 0 || cbMaritalStatus.SelectedIndex == 0 || cbEducation.SelectedIndex == 0 || (cbGender.Text == "Female" && cbGivenBirth.SelectedIndex == 0) || (cbHIVStatus.Text == "Positive" && cbART.SelectedIndex == 0))
+                || cbProtection.SelectedIndex == 0 || cbMaritalStatus.SelectedIndex == 0 || cbEducation.SelectedIndex == 0 || (cbGender.Text == "Female" && cbGivenBirth.SelectedIndex == 0) || (cbHIVStatus.Text == "Positive" && cbART.SelectedIndex == 0) || (!rbtnActive.Checked & !rbtnInactive.Checked))
                 strMessage = strMessage + "," + utilConstants.cMIDRequiredFields;
             #endregion Required Fields
 

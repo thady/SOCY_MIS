@@ -103,11 +103,16 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.rbtnActive = new System.Windows.Forms.RadioButton();
+            this.rbtnInactive = new System.Windows.Forms.RadioButton();
             this.gbMembers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).BeginInit();
             this.tplButton01.SuspendLayout();
             this.tlpDisplay01.SuspendLayout();
             this.pnlMemberType.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbMembers
@@ -291,6 +296,7 @@
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.tlpDisplay01.Controls.Add(this.panel1, 4, 12);
             this.tlpDisplay01.Controls.Add(this.chkCaregiver, 4, 2);
             this.tlpDisplay01.Controls.Add(this.lblHouseholdCodeDisplay, 1, 0);
             this.tlpDisplay01.Controls.Add(this.chkHeadOfHousehold, 1, 2);
@@ -349,6 +355,7 @@
             this.tlpDisplay01.Controls.Add(this.label7, 2, 9);
             this.tlpDisplay01.Controls.Add(this.label8, 5, 9);
             this.tlpDisplay01.Controls.Add(this.label9, 5, 10);
+            this.tlpDisplay01.Controls.Add(this.label10, 3, 12);
             this.tlpDisplay01.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpDisplay01.Location = new System.Drawing.Point(4, 22);
             this.tlpDisplay01.Margin = new System.Windows.Forms.Padding(4);
@@ -1048,6 +1055,53 @@
             this.label9.TabIndex = 60;
             this.label9.Text = "*";
             // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(606, 447);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(107, 17);
+            this.label10.TabIndex = 61;
+            this.label10.Text = "Member Status:";
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panel1.Controls.Add(this.rbtnActive);
+            this.panel1.Controls.Add(this.rbtnInactive);
+            this.panel1.Location = new System.Drawing.Point(806, 444);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(267, 23);
+            this.panel1.TabIndex = 50;
+            // 
+            // rbtnActive
+            // 
+            this.rbtnActive.AutoSize = true;
+            this.rbtnActive.Checked = true;
+            this.rbtnActive.Location = new System.Drawing.Point(4, 1);
+            this.rbtnActive.Margin = new System.Windows.Forms.Padding(4);
+            this.rbtnActive.Name = "rbtnActive";
+            this.rbtnActive.Size = new System.Drawing.Size(67, 21);
+            this.rbtnActive.TabIndex = 2;
+            this.rbtnActive.TabStop = true;
+            this.rbtnActive.Text = "Active";
+            this.rbtnActive.UseVisualStyleBackColor = true;
+            // 
+            // rbtnInactive
+            // 
+            this.rbtnInactive.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.rbtnInactive.AutoSize = true;
+            this.rbtnInactive.Location = new System.Drawing.Point(93, 1);
+            this.rbtnInactive.Margin = new System.Windows.Forms.Padding(4);
+            this.rbtnInactive.Name = "rbtnInactive";
+            this.rbtnInactive.Size = new System.Drawing.Size(77, 21);
+            this.rbtnInactive.TabIndex = 0;
+            this.rbtnInactive.Text = "Inactive";
+            this.rbtnInactive.UseVisualStyleBackColor = true;
+            // 
             // frmHouseholdAssessmentMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1070,6 +1124,8 @@
             this.tlpDisplay01.PerformLayout();
             this.pnlMemberType.ResumeLayout(false);
             this.pnlMemberType.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1152,5 +1208,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton rbtnActive;
+        private System.Windows.Forms.RadioButton rbtnInactive;
     }
 }

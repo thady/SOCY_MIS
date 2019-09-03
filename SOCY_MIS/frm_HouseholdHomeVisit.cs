@@ -495,7 +495,7 @@ namespace SOCY_MIS
             #region set variables
            
             hhHouseholdHomeVisit_v2.hhv_date = dtpDateOfVisit.Value.Date;
-            hhHouseholdHomeVisit_v2.hhv_date_next_visit = dtpNextVisitDate.Value.Date;
+            hhHouseholdHomeVisit_v2.hhv_date_next_visit = dtpNextVisitDate.Value;
             hhHouseholdHomeVisit_v2.hhv_comments = txtComments.Text;
             hhHouseholdHomeVisit_v2.hhv_next_steps = txtNextSteps.Text;
             hhHouseholdHomeVisit_v2.ynna_risk_assessment = utilControls.RadioButtonGetSelection(rbtnRiskAssYes, rbtnRiskAssNo, rbtnRiskAssNA);

@@ -73,6 +73,13 @@
             this.lblProtection = new System.Windows.Forms.Label();
             this.lblPregnant = new System.Windows.Forms.Label();
             this.lblMaritalStatus = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.gbHouseholdMembers = new System.Windows.Forms.GroupBox();
             this.llblBackTop = new System.Windows.Forms.LinkLabel();
             this.gbMembers = new System.Windows.Forms.GroupBox();
@@ -92,18 +99,16 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.llblBackBottom = new System.Windows.Forms.LinkLabel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.rbtnActive = new System.Windows.Forms.RadioButton();
+            this.rbtnInactive = new System.Windows.Forms.RadioButton();
+            this.label10 = new System.Windows.Forms.Label();
             this.tlpDisplay01.SuspendLayout();
             this.gbHouseholdMembers.SuspendLayout();
             this.gbMembers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).BeginInit();
             this.tplButton01.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpDisplay01
@@ -116,7 +121,8 @@
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.tlpDisplay01.Controls.Add(this.label10, 3, 11);
             this.tlpDisplay01.Controls.Add(this.lblHouseholdCodeDisplay, 1, 0);
             this.tlpDisplay01.Controls.Add(this.lblHouseholdCode, 0, 0);
             this.tlpDisplay01.Controls.Add(this.lblMemberNumber, 3, 0);
@@ -168,9 +174,10 @@
             this.tlpDisplay01.Controls.Add(this.label7, 2, 9);
             this.tlpDisplay01.Controls.Add(this.label8, 2, 11);
             this.tlpDisplay01.Controls.Add(this.label9, 5, 8);
+            this.tlpDisplay01.Controls.Add(this.panel1, 4, 11);
             this.tlpDisplay01.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpDisplay01.Location = new System.Drawing.Point(40, 37);
-            this.tlpDisplay01.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay01.Margin = new System.Windows.Forms.Padding(4);
             this.tlpDisplay01.Name = "tlpDisplay01";
             this.tlpDisplay01.RowCount = 12;
             this.tlpDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692544F));
@@ -290,7 +297,7 @@
             this.chkHeadOfHousehold.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.chkHeadOfHousehold.AutoSize = true;
             this.chkHeadOfHousehold.Location = new System.Drawing.Point(204, 43);
-            this.chkHeadOfHousehold.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkHeadOfHousehold.Margin = new System.Windows.Forms.Padding(4);
             this.chkHeadOfHousehold.Name = "chkHeadOfHousehold";
             this.chkHeadOfHousehold.Size = new System.Drawing.Size(152, 21);
             this.chkHeadOfHousehold.TabIndex = 40;
@@ -301,7 +308,7 @@
             // 
             this.txtFirstName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFirstName.Location = new System.Drawing.Point(204, 78);
-            this.txtFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFirstName.Margin = new System.Windows.Forms.Padding(4);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(301, 23);
             this.txtFirstName.TabIndex = 22;
@@ -311,7 +318,7 @@
             this.cbYearOfBirth.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbYearOfBirth.FormattingEnabled = true;
             this.cbYearOfBirth.Location = new System.Drawing.Point(204, 113);
-            this.cbYearOfBirth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbYearOfBirth.Margin = new System.Windows.Forms.Padding(4);
             this.cbYearOfBirth.Name = "cbYearOfBirth";
             this.cbYearOfBirth.Size = new System.Drawing.Size(113, 25);
             this.cbYearOfBirth.TabIndex = 26;
@@ -321,7 +328,7 @@
             this.cbBirthRegistration.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbBirthRegistration.FormattingEnabled = true;
             this.cbBirthRegistration.Location = new System.Drawing.Point(204, 149);
-            this.cbBirthRegistration.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbBirthRegistration.Margin = new System.Windows.Forms.Padding(4);
             this.cbBirthRegistration.Name = "cbBirthRegistration";
             this.cbBirthRegistration.Size = new System.Drawing.Size(301, 25);
             this.cbBirthRegistration.TabIndex = 22;
@@ -331,7 +338,7 @@
             this.cbDisability.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbDisability.FormattingEnabled = true;
             this.cbDisability.Location = new System.Drawing.Point(204, 185);
-            this.cbDisability.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbDisability.Margin = new System.Windows.Forms.Padding(4);
             this.cbDisability.Name = "cbDisability";
             this.cbDisability.Size = new System.Drawing.Size(301, 25);
             this.cbDisability.TabIndex = 22;
@@ -343,7 +350,7 @@
             this.cbHIVStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbHIVStatus.FormattingEnabled = true;
             this.cbHIVStatus.Location = new System.Drawing.Point(204, 221);
-            this.cbHIVStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbHIVStatus.Margin = new System.Windows.Forms.Padding(4);
             this.cbHIVStatus.Name = "cbHIVStatus";
             this.cbHIVStatus.Size = new System.Drawing.Size(301, 25);
             this.cbHIVStatus.TabIndex = 23;
@@ -355,7 +362,7 @@
             this.cbProfession.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbProfession.FormattingEnabled = true;
             this.cbProfession.Location = new System.Drawing.Point(204, 257);
-            this.cbProfession.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbProfession.Margin = new System.Windows.Forms.Padding(4);
             this.cbProfession.Name = "cbProfession";
             this.cbProfession.Size = new System.Drawing.Size(301, 25);
             this.cbProfession.TabIndex = 22;
@@ -365,7 +372,7 @@
             this.cbSchool.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbSchool.FormattingEnabled = true;
             this.cbSchool.Location = new System.Drawing.Point(204, 293);
-            this.cbSchool.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbSchool.Margin = new System.Windows.Forms.Padding(4);
             this.cbSchool.Name = "cbSchool";
             this.cbSchool.Size = new System.Drawing.Size(301, 25);
             this.cbSchool.TabIndex = 33;
@@ -375,7 +382,7 @@
             this.cbProtection.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbProtection.FormattingEnabled = true;
             this.cbProtection.Location = new System.Drawing.Point(204, 329);
-            this.cbProtection.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbProtection.Margin = new System.Windows.Forms.Padding(4);
             this.cbProtection.Name = "cbProtection";
             this.cbProtection.Size = new System.Drawing.Size(301, 25);
             this.cbProtection.TabIndex = 22;
@@ -385,7 +392,7 @@
             this.cbPregnant.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbPregnant.FormattingEnabled = true;
             this.cbPregnant.Location = new System.Drawing.Point(204, 365);
-            this.cbPregnant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbPregnant.Margin = new System.Windows.Forms.Padding(4);
             this.cbPregnant.Name = "cbPregnant";
             this.cbPregnant.Size = new System.Drawing.Size(301, 25);
             this.cbPregnant.TabIndex = 37;
@@ -395,7 +402,7 @@
             this.cbMaritalStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbMaritalStatus.FormattingEnabled = true;
             this.cbMaritalStatus.Location = new System.Drawing.Point(204, 407);
-            this.cbMaritalStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbMaritalStatus.Margin = new System.Windows.Forms.Padding(4);
             this.cbMaritalStatus.Name = "cbMaritalStatus";
             this.cbMaritalStatus.Size = new System.Drawing.Size(301, 25);
             this.cbMaritalStatus.TabIndex = 39;
@@ -405,7 +412,7 @@
             this.chkCaregiver.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.chkCaregiver.AutoSize = true;
             this.chkCaregiver.Location = new System.Drawing.Point(766, 43);
-            this.chkCaregiver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkCaregiver.Margin = new System.Windows.Forms.Padding(4);
             this.chkCaregiver.Name = "chkCaregiver";
             this.chkCaregiver.Size = new System.Drawing.Size(91, 21);
             this.chkCaregiver.TabIndex = 41;
@@ -416,7 +423,7 @@
             // 
             this.txtLastName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLastName.Location = new System.Drawing.Point(766, 78);
-            this.txtLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLastName.Margin = new System.Windows.Forms.Padding(4);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(301, 23);
             this.txtLastName.TabIndex = 42;
@@ -426,7 +433,7 @@
             this.cbGender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbGender.FormattingEnabled = true;
             this.cbGender.Location = new System.Drawing.Point(766, 113);
-            this.cbGender.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbGender.Margin = new System.Windows.Forms.Padding(4);
             this.cbGender.Name = "cbGender";
             this.cbGender.Size = new System.Drawing.Size(301, 25);
             this.cbGender.TabIndex = 21;
@@ -438,7 +445,7 @@
             this.cbImmunize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbImmunize.FormattingEnabled = true;
             this.cbImmunize.Location = new System.Drawing.Point(766, 149);
-            this.cbImmunize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbImmunize.Margin = new System.Windows.Forms.Padding(4);
             this.cbImmunize.Name = "cbImmunize";
             this.cbImmunize.Size = new System.Drawing.Size(301, 25);
             this.cbImmunize.TabIndex = 22;
@@ -449,7 +456,7 @@
             this.cbDisabilityType.Enabled = false;
             this.cbDisabilityType.FormattingEnabled = true;
             this.cbDisabilityType.Location = new System.Drawing.Point(766, 185);
-            this.cbDisabilityType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbDisabilityType.Margin = new System.Windows.Forms.Padding(4);
             this.cbDisabilityType.Name = "cbDisabilityType";
             this.cbDisabilityType.Size = new System.Drawing.Size(301, 25);
             this.cbDisabilityType.TabIndex = 25;
@@ -459,7 +466,7 @@
             this.cbART.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbART.FormattingEnabled = true;
             this.cbART.Location = new System.Drawing.Point(766, 221);
-            this.cbART.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbART.Margin = new System.Windows.Forms.Padding(4);
             this.cbART.Name = "cbART";
             this.cbART.Size = new System.Drawing.Size(301, 25);
             this.cbART.TabIndex = 22;
@@ -469,7 +476,7 @@
             this.cbEducation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbEducation.FormattingEnabled = true;
             this.cbEducation.Location = new System.Drawing.Point(766, 293);
-            this.cbEducation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbEducation.Margin = new System.Windows.Forms.Padding(4);
             this.cbEducation.Name = "cbEducation";
             this.cbEducation.Size = new System.Drawing.Size(301, 25);
             this.cbEducation.TabIndex = 32;
@@ -479,7 +486,7 @@
             this.cbGivenBirth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbGivenBirth.FormattingEnabled = true;
             this.cbGivenBirth.Location = new System.Drawing.Point(766, 365);
-            this.cbGivenBirth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbGivenBirth.Margin = new System.Windows.Forms.Padding(4);
             this.cbGivenBirth.Name = "cbGivenBirth";
             this.cbGivenBirth.Size = new System.Drawing.Size(301, 25);
             this.cbGivenBirth.TabIndex = 38;
@@ -671,242 +678,6 @@
             this.lblMaritalStatus.TabIndex = 35;
             this.lblMaritalStatus.Text = "Marital Status:";
             // 
-            // gbHouseholdMembers
-            // 
-            this.gbHouseholdMembers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbHouseholdMembers.Controls.Add(this.llblBackTop);
-            this.gbHouseholdMembers.Controls.Add(this.gbMembers);
-            this.gbHouseholdMembers.Controls.Add(this.tplButton01);
-            this.gbHouseholdMembers.Controls.Add(this.tlpDisplay01);
-            this.gbHouseholdMembers.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbHouseholdMembers.Location = new System.Drawing.Point(4, 7);
-            this.gbHouseholdMembers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gbHouseholdMembers.Name = "gbHouseholdMembers";
-            this.gbHouseholdMembers.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gbHouseholdMembers.Size = new System.Drawing.Size(1205, 838);
-            this.gbHouseholdMembers.TabIndex = 1;
-            this.gbHouseholdMembers.TabStop = false;
-            this.gbHouseholdMembers.Text = "Household Members";
-            // 
-            // llblBackTop
-            // 
-            this.llblBackTop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.llblBackTop.AutoSize = true;
-            this.llblBackTop.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblBackTop.Location = new System.Drawing.Point(1155, 20);
-            this.llblBackTop.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.llblBackTop.Name = "llblBackTop";
-            this.llblBackTop.Size = new System.Drawing.Size(39, 17);
-            this.llblBackTop.TabIndex = 23;
-            this.llblBackTop.TabStop = true;
-            this.llblBackTop.Text = "Back";
-            this.llblBackTop.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblBack_LinkClicked);
-            // 
-            // gbMembers
-            // 
-            this.gbMembers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbMembers.Controls.Add(this.lblTotalNumber);
-            this.gbMembers.Controls.Add(this.lblTotal);
-            this.gbMembers.Controls.Add(this.btnDelete);
-            this.gbMembers.Controls.Add(this.dgvMembers);
-            this.gbMembers.Location = new System.Drawing.Point(8, 535);
-            this.gbMembers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gbMembers.Name = "gbMembers";
-            this.gbMembers.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gbMembers.Size = new System.Drawing.Size(1189, 295);
-            this.gbMembers.TabIndex = 21;
-            this.gbMembers.TabStop = false;
-            this.gbMembers.Text = "Existing Members";
-            // 
-            // lblTotalNumber
-            // 
-            this.lblTotalNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblTotalNumber.AutoSize = true;
-            this.lblTotalNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalNumber.Location = new System.Drawing.Point(60, 266);
-            this.lblTotalNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTotalNumber.Name = "lblTotalNumber";
-            this.lblTotalNumber.Size = new System.Drawing.Size(13, 17);
-            this.lblTotalNumber.TabIndex = 32;
-            this.lblTotalNumber.Text = "-";
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(7, 266);
-            this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(44, 17);
-            this.lblTotal.TabIndex = 31;
-            this.lblTotal.Text = "Total:";
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(1089, 260);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(100, 28);
-            this.btnDelete.TabIndex = 30;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // dgvMembers
-            // 
-            this.dgvMembers.AllowUserToAddRows = false;
-            this.dgvMembers.AllowUserToDeleteRows = false;
-            this.dgvMembers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMembers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.gclID,
-            this.gclNumber,
-            this.gclFirstName,
-            this.gclLastName,
-            this.gclGender,
-            this.gclYearOfBirth,
-            this.gclDelete,
-            this.gclOfcId});
-            this.dgvMembers.Location = new System.Drawing.Point(8, 23);
-            this.dgvMembers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dgvMembers.MultiSelect = false;
-            this.dgvMembers.Name = "dgvMembers";
-            this.dgvMembers.Size = new System.Drawing.Size(1173, 229);
-            this.dgvMembers.TabIndex = 21;
-            this.dgvMembers.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMembers_CellDoubleClick);
-            this.dgvMembers.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvMembers_RowPostPaint);
-            // 
-            // gclID
-            // 
-            this.gclID.DataPropertyName = "hhm_id";
-            this.gclID.HeaderText = "ID";
-            this.gclID.Name = "gclID";
-            this.gclID.ReadOnly = true;
-            this.gclID.Visible = false;
-            // 
-            // gclNumber
-            // 
-            this.gclNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.gclNumber.DataPropertyName = "hhm_number";
-            this.gclNumber.HeaderText = "Member Number";
-            this.gclNumber.Name = "gclNumber";
-            this.gclNumber.ReadOnly = true;
-            // 
-            // gclFirstName
-            // 
-            this.gclFirstName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.gclFirstName.DataPropertyName = "hhm_first_name";
-            this.gclFirstName.HeaderText = "First Name";
-            this.gclFirstName.Name = "gclFirstName";
-            this.gclFirstName.ReadOnly = true;
-            // 
-            // gclLastName
-            // 
-            this.gclLastName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.gclLastName.DataPropertyName = "hhm_last_name";
-            this.gclLastName.HeaderText = "Last Name";
-            this.gclLastName.Name = "gclLastName";
-            this.gclLastName.ReadOnly = true;
-            // 
-            // gclGender
-            // 
-            this.gclGender.DataPropertyName = "gnd_name";
-            this.gclGender.HeaderText = "Sex";
-            this.gclGender.Name = "gclGender";
-            this.gclGender.ReadOnly = true;
-            this.gclGender.Width = 150;
-            // 
-            // gclYearOfBirth
-            // 
-            this.gclYearOfBirth.DataPropertyName = "year_of_birth";
-            this.gclYearOfBirth.HeaderText = "Year Of Birth";
-            this.gclYearOfBirth.Name = "gclYearOfBirth";
-            this.gclYearOfBirth.ReadOnly = true;
-            this.gclYearOfBirth.Width = 150;
-            // 
-            // gclDelete
-            // 
-            this.gclDelete.HeaderText = "Delete";
-            this.gclDelete.Name = "gclDelete";
-            // 
-            // gclOfcId
-            // 
-            this.gclOfcId.DataPropertyName = "ofc_id";
-            this.gclOfcId.HeaderText = "OfficeId";
-            this.gclOfcId.Name = "gclOfcId";
-            this.gclOfcId.ReadOnly = true;
-            this.gclOfcId.Visible = false;
-            // 
-            // tplButton01
-            // 
-            this.tplButton01.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tplButton01.ColumnCount = 4;
-            this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
-            this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
-            this.tplButton01.Controls.Add(this.btnSave, 0, 0);
-            this.tplButton01.Controls.Add(this.btnCancel, 2, 0);
-            this.tplButton01.Controls.Add(this.llblBackBottom, 3, 0);
-            this.tplButton01.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tplButton01.Location = new System.Drawing.Point(40, 479);
-            this.tplButton01.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tplButton01.Name = "tplButton01";
-            this.tplButton01.RowCount = 1;
-            this.tplButton01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tplButton01.Size = new System.Drawing.Size(1125, 49);
-            this.tplButton01.TabIndex = 20;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(405, 10);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(100, 28);
-            this.btnSave.TabIndex = 2;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(566, 10);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(100, 28);
-            this.btnCancel.TabIndex = 10;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // llblBackBottom
-            // 
-            this.llblBackBottom.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.llblBackBottom.AutoSize = true;
-            this.llblBackBottom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblBackBottom.Location = new System.Drawing.Point(1082, 16);
-            this.llblBackBottom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.llblBackBottom.Name = "llblBackBottom";
-            this.llblBackBottom.Size = new System.Drawing.Size(39, 17);
-            this.llblBackBottom.TabIndex = 47;
-            this.llblBackBottom.TabStop = true;
-            this.llblBackBottom.Text = "Back";
-            this.llblBackBottom.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblBack_LinkClicked);
-            // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -998,13 +769,296 @@
             this.label9.TabIndex = 51;
             this.label9.Text = "*";
             // 
+            // gbHouseholdMembers
+            // 
+            this.gbHouseholdMembers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbHouseholdMembers.Controls.Add(this.llblBackTop);
+            this.gbHouseholdMembers.Controls.Add(this.gbMembers);
+            this.gbHouseholdMembers.Controls.Add(this.tplButton01);
+            this.gbHouseholdMembers.Controls.Add(this.tlpDisplay01);
+            this.gbHouseholdMembers.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbHouseholdMembers.Location = new System.Drawing.Point(4, 7);
+            this.gbHouseholdMembers.Margin = new System.Windows.Forms.Padding(4);
+            this.gbHouseholdMembers.Name = "gbHouseholdMembers";
+            this.gbHouseholdMembers.Padding = new System.Windows.Forms.Padding(4);
+            this.gbHouseholdMembers.Size = new System.Drawing.Size(1205, 838);
+            this.gbHouseholdMembers.TabIndex = 1;
+            this.gbHouseholdMembers.TabStop = false;
+            this.gbHouseholdMembers.Text = "Household Members";
+            // 
+            // llblBackTop
+            // 
+            this.llblBackTop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.llblBackTop.AutoSize = true;
+            this.llblBackTop.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llblBackTop.Location = new System.Drawing.Point(1155, 20);
+            this.llblBackTop.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.llblBackTop.Name = "llblBackTop";
+            this.llblBackTop.Size = new System.Drawing.Size(39, 17);
+            this.llblBackTop.TabIndex = 23;
+            this.llblBackTop.TabStop = true;
+            this.llblBackTop.Text = "Back";
+            this.llblBackTop.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblBack_LinkClicked);
+            // 
+            // gbMembers
+            // 
+            this.gbMembers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbMembers.Controls.Add(this.lblTotalNumber);
+            this.gbMembers.Controls.Add(this.lblTotal);
+            this.gbMembers.Controls.Add(this.btnDelete);
+            this.gbMembers.Controls.Add(this.dgvMembers);
+            this.gbMembers.Location = new System.Drawing.Point(8, 535);
+            this.gbMembers.Margin = new System.Windows.Forms.Padding(4);
+            this.gbMembers.Name = "gbMembers";
+            this.gbMembers.Padding = new System.Windows.Forms.Padding(4);
+            this.gbMembers.Size = new System.Drawing.Size(1189, 295);
+            this.gbMembers.TabIndex = 21;
+            this.gbMembers.TabStop = false;
+            this.gbMembers.Text = "Existing Members";
+            // 
+            // lblTotalNumber
+            // 
+            this.lblTotalNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblTotalNumber.AutoSize = true;
+            this.lblTotalNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalNumber.Location = new System.Drawing.Point(60, 266);
+            this.lblTotalNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotalNumber.Name = "lblTotalNumber";
+            this.lblTotalNumber.Size = new System.Drawing.Size(13, 17);
+            this.lblTotalNumber.TabIndex = 32;
+            this.lblTotalNumber.Text = "-";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(7, 266);
+            this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(44, 17);
+            this.lblTotal.TabIndex = 31;
+            this.lblTotal.Text = "Total:";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(1089, 260);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(100, 28);
+            this.btnDelete.TabIndex = 30;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // dgvMembers
+            // 
+            this.dgvMembers.AllowUserToAddRows = false;
+            this.dgvMembers.AllowUserToDeleteRows = false;
+            this.dgvMembers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMembers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gclID,
+            this.gclNumber,
+            this.gclFirstName,
+            this.gclLastName,
+            this.gclGender,
+            this.gclYearOfBirth,
+            this.gclDelete,
+            this.gclOfcId});
+            this.dgvMembers.Location = new System.Drawing.Point(8, 23);
+            this.dgvMembers.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvMembers.MultiSelect = false;
+            this.dgvMembers.Name = "dgvMembers";
+            this.dgvMembers.Size = new System.Drawing.Size(1173, 229);
+            this.dgvMembers.TabIndex = 21;
+            this.dgvMembers.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMembers_CellDoubleClick);
+            this.dgvMembers.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvMembers_RowPostPaint);
+            // 
+            // gclID
+            // 
+            this.gclID.DataPropertyName = "hhm_id";
+            this.gclID.HeaderText = "ID";
+            this.gclID.Name = "gclID";
+            this.gclID.ReadOnly = true;
+            this.gclID.Visible = false;
+            // 
+            // gclNumber
+            // 
+            this.gclNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.gclNumber.DataPropertyName = "hhm_number";
+            this.gclNumber.HeaderText = "Member Number";
+            this.gclNumber.Name = "gclNumber";
+            this.gclNumber.ReadOnly = true;
+            // 
+            // gclFirstName
+            // 
+            this.gclFirstName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.gclFirstName.DataPropertyName = "hhm_first_name";
+            this.gclFirstName.HeaderText = "First Name";
+            this.gclFirstName.Name = "gclFirstName";
+            this.gclFirstName.ReadOnly = true;
+            // 
+            // gclLastName
+            // 
+            this.gclLastName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.gclLastName.DataPropertyName = "hhm_last_name";
+            this.gclLastName.HeaderText = "Last Name";
+            this.gclLastName.Name = "gclLastName";
+            this.gclLastName.ReadOnly = true;
+            // 
+            // gclGender
+            // 
+            this.gclGender.DataPropertyName = "gnd_name";
+            this.gclGender.HeaderText = "Sex";
+            this.gclGender.Name = "gclGender";
+            this.gclGender.ReadOnly = true;
+            this.gclGender.Width = 150;
+            // 
+            // gclYearOfBirth
+            // 
+            this.gclYearOfBirth.DataPropertyName = "year_of_birth";
+            this.gclYearOfBirth.HeaderText = "Year Of Birth";
+            this.gclYearOfBirth.Name = "gclYearOfBirth";
+            this.gclYearOfBirth.ReadOnly = true;
+            this.gclYearOfBirth.Width = 150;
+            // 
+            // gclDelete
+            // 
+            this.gclDelete.HeaderText = "Delete";
+            this.gclDelete.Name = "gclDelete";
+            // 
+            // gclOfcId
+            // 
+            this.gclOfcId.DataPropertyName = "ofc_id";
+            this.gclOfcId.HeaderText = "OfficeId";
+            this.gclOfcId.Name = "gclOfcId";
+            this.gclOfcId.ReadOnly = true;
+            this.gclOfcId.Visible = false;
+            // 
+            // tplButton01
+            // 
+            this.tplButton01.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tplButton01.ColumnCount = 4;
+            this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.tplButton01.Controls.Add(this.btnSave, 0, 0);
+            this.tplButton01.Controls.Add(this.btnCancel, 2, 0);
+            this.tplButton01.Controls.Add(this.llblBackBottom, 3, 0);
+            this.tplButton01.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tplButton01.Location = new System.Drawing.Point(40, 479);
+            this.tplButton01.Margin = new System.Windows.Forms.Padding(4);
+            this.tplButton01.Name = "tplButton01";
+            this.tplButton01.RowCount = 1;
+            this.tplButton01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tplButton01.Size = new System.Drawing.Size(1125, 49);
+            this.tplButton01.TabIndex = 20;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(405, 10);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(100, 28);
+            this.btnSave.TabIndex = 2;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(566, 10);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(100, 28);
+            this.btnCancel.TabIndex = 10;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // llblBackBottom
+            // 
+            this.llblBackBottom.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.llblBackBottom.AutoSize = true;
+            this.llblBackBottom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llblBackBottom.Location = new System.Drawing.Point(1082, 16);
+            this.llblBackBottom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.llblBackBottom.Name = "llblBackBottom";
+            this.llblBackBottom.Size = new System.Drawing.Size(39, 17);
+            this.llblBackBottom.TabIndex = 47;
+            this.llblBackBottom.TabStop = true;
+            this.llblBackBottom.Text = "Back";
+            this.llblBackBottom.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblBack_LinkClicked);
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panel1.Controls.Add(this.rbtnActive);
+            this.panel1.Controls.Add(this.rbtnInactive);
+            this.panel1.Location = new System.Drawing.Point(766, 408);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(267, 23);
+            this.panel1.TabIndex = 52;
+            // 
+            // rbtnActive
+            // 
+            this.rbtnActive.AutoSize = true;
+            this.rbtnActive.Checked = true;
+            this.rbtnActive.Location = new System.Drawing.Point(4, 1);
+            this.rbtnActive.Margin = new System.Windows.Forms.Padding(4);
+            this.rbtnActive.Name = "rbtnActive";
+            this.rbtnActive.Size = new System.Drawing.Size(67, 21);
+            this.rbtnActive.TabIndex = 2;
+            this.rbtnActive.TabStop = true;
+            this.rbtnActive.Text = "Active";
+            this.rbtnActive.UseVisualStyleBackColor = true;
+            // 
+            // rbtnInactive
+            // 
+            this.rbtnInactive.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.rbtnInactive.AutoSize = true;
+            this.rbtnInactive.Location = new System.Drawing.Point(93, 1);
+            this.rbtnInactive.Margin = new System.Windows.Forms.Padding(4);
+            this.rbtnInactive.Name = "rbtnInactive";
+            this.rbtnInactive.Size = new System.Drawing.Size(77, 21);
+            this.rbtnInactive.TabIndex = 0;
+            this.rbtnInactive.Text = "Inactive";
+            this.rbtnInactive.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(566, 411);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(107, 17);
+            this.label10.TabIndex = 62;
+            this.label10.Text = "Member Status:";
+            // 
             // frmHouseholdMembers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.gbHouseholdMembers);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmHouseholdMembers";
             this.Size = new System.Drawing.Size(1213, 849);
             this.Load += new System.EventHandler(this.frmHouseholdMembers_Load);
@@ -1018,6 +1072,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).EndInit();
             this.tplButton01.ResumeLayout(false);
             this.tplButton01.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1095,5 +1151,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton rbtnActive;
+        private System.Windows.Forms.RadioButton rbtnInactive;
+        private System.Windows.Forms.Label label10;
     }
 }

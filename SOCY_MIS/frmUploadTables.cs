@@ -207,7 +207,7 @@ namespace SOCY_MIS
                                          "yn_id_art, yn_id_birth_registration, yn_id_caregiver, " +
                                          "yn_id_disability, yn_id_given_birth, yn_id_hoh, " +
                                          "yn_id_immun, yn_id_pregnant, yn_id_school, " +
-                                         "usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id,district_id) " +
+                                         "usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id,district_id,hst_id_new,hhm_status) " +
                                          "VALUES ('{1}', '{2}', " +
                                          "'{3}', '{4}', " +
                                          "'{5}', '{6}', '{7}', " +
@@ -216,7 +216,7 @@ namespace SOCY_MIS
                                          "'{13}', '{14}', '{15}', " +
                                          "'{16}', '{17}', '{18}', " +
                                          "'{19}', '{20}', '{21}', " +
-                                         "'{22}', '{23}','{23}', GETDATE(), GETDATE(), '{24}','{25}') ";
+                                         "'{22}', '{23}','{23}', GETDATE(), GETDATE(), '{24}','{25}','{26}','{27}') ";
 
                                 strSQLInsert = string.Format(strSQLInsert, DownLoadTable, dtRow["hhm_id"].ToString(),
                                     dtRow["hhm_first_name"].ToString(), dtRow["hhm_last_name"].ToString(),
@@ -227,7 +227,7 @@ namespace SOCY_MIS
                                     dtRow["yn_id_art"].ToString(), dtRow["yn_id_birth_registration"].ToString(), dtRow["yn_id_caregiver"].ToString(),
                                     dtRow["yn_id_disability"].ToString(), dtRow["yn_id_given_birth"].ToString(), dtRow["yn_id_hoh"].ToString(),
                                     dtRow["yn_id_immun"].ToString(), dtRow["yn_id_pregnant"].ToString(), dtRow["yn_id_school"].ToString(),
-                                    dtRow["usr_id_update"].ToString(), dtRow["ofc_id"].ToString(), dtRow["dst_id"].ToString());
+                                    dtRow["usr_id_update"].ToString(), dtRow["ofc_id"].ToString(), dtRow["dst_id"].ToString(), dtRow["hst_id_new"].ToString(), dtRow["hhm_status"].ToString());
 
                                 break;
 

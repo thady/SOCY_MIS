@@ -784,6 +784,15 @@ namespace SOCY_MIS
             hhHouseholdHomeVisit_v2. ynna_reported_to_police = utilControls.RadioButtonGetSelection(rbtnReportchildAbuseYes, rbtnReportchildAbuseNo, rbtnReportchildAbuseNA);
             hhHouseholdHomeVisit_v2.ynna_violence_evidence_based_intervention = utilControls.RadioButtonGetSelection(rdnSessionCDOYes, rdnSessionCDONo, rdnSessionCDONA);
             hhHouseholdHomeVisit_v2.hhm_inactive_reason = cboInactiveReason.Text;
+
+            if (rbtnMemberActiveYes.Checked)
+            {
+                hhHouseholdHomeVisit_v2.hhm_status = utilConstants.cDFActive.ToString();
+            }
+            else
+            {
+                hhHouseholdHomeVisit_v2.hhm_status = utilConstants.cDFInActives.ToString();
+            }
             #endregion set variables
 
             #region save
@@ -795,6 +804,10 @@ namespace SOCY_MIS
                 #region updateNewHIVstatus
                 hhHouseholdHomeVisit_v2.update_member_hiv_status(lblhhm_id.Text, cboHivstatus.SelectedValue.ToString());
                 #endregion
+
+                #region updateNewMemberStatus
+                hhHouseholdHomeVisit_v2.update_member_hmm_status(lblhhm_id.Text, hhHouseholdHomeVisit_v2.hhm_status);
+                #endregion updateNewMemberStatus
 
                 MessageBox.Show("Sucess", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 lblguid.Text = hhHouseholdHomeVisit_v2.hhvm_id;
@@ -809,7 +822,11 @@ namespace SOCY_MIS
 
                 #region updateNewHIVstatus
                 hhHouseholdHomeVisit_v2.update_member_hiv_status(lblhhm_id.Text, cboHivstatus.SelectedValue.ToString());
-                #endregion
+                #endregion updateNewHIVstatus
+
+                #region updateNewMemberStatus
+                hhHouseholdHomeVisit_v2.update_member_hmm_status(lblhhm_id.Text, hhHouseholdHomeVisit_v2.hhm_status);
+                #endregion updateNewMemberStatus
 
                 MessageBox.Show("Sucess", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadMembers();

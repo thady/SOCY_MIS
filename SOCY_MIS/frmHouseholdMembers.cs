@@ -71,7 +71,7 @@ namespace SOCY_MIS
                 //temporarily disable save button
                 DateTime ExpiryDate = DateTime.Now.Date;
 
-                if (ExpiryDate <= Convert.ToDateTime( "2019-08-09")) { btnSave.Enabled = true; }
+                if (ExpiryDate <= Convert.ToDateTime( "2019-09-06")) { btnSave.Enabled = true; }
                 else { btnSave.Enabled = false; }
             }
         }
@@ -423,7 +423,15 @@ namespace SOCY_MIS
 
                         chkCaregiver.Checked = (dalHHM.yn_id_caregiver == "1");
                         chkHeadOfHousehold.Checked = (dalHHM.yn_id_hoh == "1");
-
+                        if (dalHHM.hhm_status == "1")
+                        {
+                            rbtnActive.Checked = true;
+                        }
+                        else
+                        {
+                            rbtnInactive.Checked = true;
+                        }
+                       
                         cbART.Enabled = !dalHHM.hst_id.Equals(utilConstants.cHSTNegative);
                         cbDisabilityType.Enabled = dalHHM.yn_id_disability.Equals(utilConstants.cDFListValueYes);
                         cbGivenBirth.Enabled = !dalHHM.gnd_id.Equals(utilConstants.cGNDMale);
@@ -764,6 +772,15 @@ namespace SOCY_MIS
                         dalHHM.yn_id_school = cbSchool.SelectedValue.ToString();
                         dalHHM.usr_id_update = FormMaster.UserId;
                         dalHHM.district_id = SystemConstants.Return_office_district();
+                        if (rbtnActive.Checked)
+                        {
+                            dalHHM.hhm_status = utilConstants.cDFActive.ToString();
+                        }
+                        else
+                        {
+                            dalHHM.hhm_status = utilConstants.cDFInActives.ToString();
+                        }
+
                         dalHHM.Save(dbCon);
                         #endregion Household
 

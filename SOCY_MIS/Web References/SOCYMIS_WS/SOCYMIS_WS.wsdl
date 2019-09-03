@@ -253,7 +253,7 @@
   <wsdl:message name="DownloadTotalSoapOut">
     <wsdl:part name="parameters" element="tns:DownloadTotalResponse" />
   </wsdl:message>
-  <wsdl:portType name="SOCY_WSSoap">
+  <wsdl:portType name="SOCYMIS_WSSoap">
     <wsdl:operation name="OnlineCheck">
       <wsdl:input message="tns:OnlineCheckSoapIn" />
       <wsdl:output message="tns:OnlineCheckSoapOut" />
@@ -299,7 +299,7 @@
       <wsdl:output message="tns:DownloadTotalSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="SOCY_WSSoap" type="tns:SOCY_WSSoap">
+  <wsdl:binding name="SOCYMIS_WSSoap" type="tns:SOCYMIS_WSSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="OnlineCheck">
       <soap:operation soapAction="http://tempuri.org/OnlineCheck" style="document" />
@@ -401,7 +401,7 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:binding name="SOCY_WSSoap12" type="tns:SOCY_WSSoap">
+  <wsdl:binding name="SOCYMIS_WSSoap12" type="tns:SOCYMIS_WSSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="OnlineCheck">
       <soap12:operation soapAction="http://tempuri.org/OnlineCheck" style="document" />
@@ -503,12 +503,12 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="SOCY_WS">
-    <wsdl:port name="SOCY_WSSoap" binding="tns:SOCY_WSSoap">
-      <soap:address location="http://localhost:53694/SOCY_WS.asmx" />
+  <wsdl:service name="SOCYMIS_WS">
+    <wsdl:port name="SOCYMIS_WSSoap" binding="tns:SOCYMIS_WSSoap">
+      <soap:address location="http://localhost:53694/SOCYMIS_WS.asmx" />
     </wsdl:port>
-    <wsdl:port name="SOCY_WSSoap12" binding="tns:SOCY_WSSoap12">
-      <soap12:address location="http://localhost:53694/SOCY_WS.asmx" />
+    <wsdl:port name="SOCYMIS_WSSoap12" binding="tns:SOCYMIS_WSSoap12">
+      <soap12:address location="http://localhost:53694/SOCYMIS_WS.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

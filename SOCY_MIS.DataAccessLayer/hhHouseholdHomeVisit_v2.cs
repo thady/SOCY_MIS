@@ -100,6 +100,7 @@ namespace SOCY_MIS.DataAccessLayer
         public static string ynna_pss_family_group_discussion = string.Empty;
         public static string ynna_reported_to_police = string.Empty;
         public static string ynna_violence_evidence_based_intervention = string.Empty;
+        public static string hhm_status = string.Empty;
         #endregion hh_household_home_visit_member_v_2
         #endregion Variables
 
@@ -386,6 +387,50 @@ namespace SOCY_MIS.DataAccessLayer
 
         }
 
+        public static void update_member_hmm_status(string hhm_id, string hhm_status)
+        {
+            string crop_name = string.Empty;
+
+            string SQL = "UPDATE hh_household_member SET hhm_status = '{0}' WHERE hhm_id = '{1}' AND hhm_status <> '0'";
+            SQL = string.Format(SQL, hhm_status, hhm_id);
+            try
+            {
+                string strConn = dbCon.ToString();
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(SQL, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+
+                    cmd.ExecuteNonQuery();
+
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            finally
+            {
+                if (conn.State == ConnectionState.Open) { conn.Close(); }
+            }
+
+        }
+
         public static DataTable LoadMembers(string hh_id,string hhv_id)
         {
             DataTable dt = new DataTable();
@@ -400,6 +445,7 @@ namespace SOCY_MIS.DataAccessLayer
                         SELECT hhm.hhm_first_name + ' ' + hhm.hhm_last_name AS hhm_name,hhm.hhm_id FROM hh_household_member hhm LEFT JOIN  CteA A ON hhm.hhm_id = A.hhm_id
                         WHERE hhm.hh_id =  '{0}'
                         AND A.hhm_id is NULL
+                        AND hhm.hhm_status = '1'
                         ORDER BY hhm.hhm_number ASC";
             strSQL = string.Format(strSQL,hh_id,hhv_id);
 

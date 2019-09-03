@@ -36,6 +36,7 @@ namespace SOCY_MIS.DataAccessLayer
         public string usr_id_update = string.Empty;
         public string ofc_id = string.Empty;
         public string district_id = string.Empty;
+        public string hhm_status = string.Empty;
         
         public string yn_attained_vocational_skill = utilConstants.cDFEmptyListValue;
         #endregion Public
@@ -252,7 +253,7 @@ namespace SOCY_MIS.DataAccessLayer
                 "yn_id_art, yn_id_birth_registration, yn_id_caregiver, " +
                 "yn_id_disability, yn_id_given_birth, yn_id_hoh, " +
                 "yn_id_immun, yn_id_pregnant, yn_id_school, " +
-                "usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id,district_id) " +
+                "usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id,district_id,hst_id_new,hhm_status) " +
                 "VALUES ('{0}', " +
                 "'{1}', '{2}', " +
                 "'{3}', '{4}', " +
@@ -262,7 +263,7 @@ namespace SOCY_MIS.DataAccessLayer
                 "'{13}', '{14}', '{15}', " +
                 "'{16}', '{17}', '{18}', " +
                 "'{19}', '{20}', '{21}', " +
-                "'{22}', '{22}', GETDATE(), GETDATE(), '{23}','{24}') ";
+                "'{22}', '{22}', GETDATE(), GETDATE(), '{23}','{24}','{9}','{25}') ";
             strSQL = string.Format(strSQL, hhm_id,
                 utilFormatting.StringForSQL(hhm_first_name), utilFormatting.StringForSQL(hhm_last_name),
                 utilFormatting.StringForSQL(hhm_number), utilFormatting.StringForSQL(hhm_year_of_birth),  
@@ -272,7 +273,7 @@ namespace SOCY_MIS.DataAccessLayer
                 yn_id_art, yn_id_birth_registration, yn_id_caregiver, 
                 yn_id_disability, yn_id_given_birth, yn_id_hoh, 
                 yn_id_immun, yn_id_pregnant, yn_id_school, 
-                usr_id_update, ofc_id,district_id);
+                usr_id_update, ofc_id,district_id,hhm_status);
 
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
@@ -316,6 +317,7 @@ namespace SOCY_MIS.DataAccessLayer
                 yn_id_school = dr["yn_id_school"].ToString();
                 usr_id_update = dr["usr_id_update"].ToString();
                 ofc_id = dr["ofc_id"].ToString();
+                hhm_status = dr["hhm_status"].ToString();
                 #endregion Load Values
             }
         }
@@ -336,7 +338,7 @@ namespace SOCY_MIS.DataAccessLayer
                 "yn_id_art = '{13}', yn_id_birth_registration = '{14}', yn_id_caregiver = '{15}', " +
                 "yn_id_disability = '{16}', yn_id_given_birth = '{17}', yn_id_hoh = '{18}', " +
                 "yn_id_immun = '{19}', yn_id_pregnant = '{20}', yn_id_school = '{21}', " +
-                "usr_id_update = '{22}', usr_date_update = GETDATE() ,district_id = '{23}'" +
+                "usr_id_update = '{22}', usr_date_update = GETDATE() ,district_id = '{23}',hhm_status = '{24}',hst_id_new = '{9}'" +
                 "WHERE hhm_id = '{0}' ";
             strSQL = string.Format(strSQL, hhm_id,
                 utilFormatting.StringForSQL(hhm_first_name), utilFormatting.StringForSQL(hhm_last_name),
@@ -347,10 +349,26 @@ namespace SOCY_MIS.DataAccessLayer
                 yn_id_art, yn_id_birth_registration, yn_id_caregiver,
                 yn_id_disability, yn_id_given_birth, yn_id_hoh,
                 yn_id_immun, yn_id_pregnant, yn_id_school, 
-                usr_id_update,district_id);
+                usr_id_update,district_id,hhm_status);
 
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
+
+            #region UpdateHomevisitData
+            if (hst_id != "1")
+            {
+                strSQL = @"UPDATE hh_household_home_visit_member_v_2 SET hst_id = '{1}',ynna_on_art = '2',adherence_level = 'NA',ynna_follow_art_prescription = '2'
+                        WHERE hhm_id = '{0}'";
+                strSQL = string.Format(strSQL,hhm_id,hst_id);
+                dbCon.ExecuteNonQuery(strSQL);
+
+                strSQL = @"UPDATE hh_household_home_visit_member SET hst_id = '{1}',ynna_id_hhp_art = '2',ynna_id_hhp_adhering = '2' 
+                            WHERE hhm_id = '{0}'";
+                strSQL = string.Format(strSQL, hhm_id, hst_id);
+                dbCon.ExecuteNonQuery(strSQL);
+            }
+
+            #endregion UpdateHomevisitData
         }
         #endregion Private
         #endregion Function Methods
@@ -367,7 +385,7 @@ namespace SOCY_MIS.DataAccessLayer
             #region SQL
             strSQL = "SELECT hhm.hhm_id, RTRIM(LTRIM(hhm.hhm_number + ' - ' + hhm.hhm_first_name + ' ' + hhm.hhm_last_name)) AS hhm_name " +
                 "FROM hh_household_member hhm ";
-            strSQL = strSQL + string.Format("WHERE hhm.hh_id = '{0}' ", strHHId);
+            strSQL = strSQL + string.Format("WHERE hhm.hh_id = '{0}' AND hhm.hhm_status = '1' ", strHHId);
             strSQL = strSQL + "ORDER BY hhm.hhm_number ";
             dt = dbCon.ExecuteQueryDataTable(strSQL);
             #endregion SQL

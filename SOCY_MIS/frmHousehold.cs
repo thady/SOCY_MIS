@@ -702,7 +702,8 @@ namespace SOCY_MIS
         {
             #region Set Selected
             frmHouseholdAssessmentMain frmNew = new frmHouseholdAssessmentMain();
-            frmNew.ObjectId = ObjectId;
+            frmNew.ObjectId = string.Empty;
+            frmNew.HouseholdId = ObjectId;
             frmNew.FormCalling = this;
             frmNew.FormMaster = FormMaster;
             FormMaster.LoadControl(frmNew, this.Name, false);

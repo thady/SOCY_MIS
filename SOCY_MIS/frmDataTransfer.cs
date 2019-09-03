@@ -14,6 +14,7 @@ using PSAUtilsWin32;
 using SOCY_MIS.DataAccessLayer;
 
 using AutoUpdaterDotNET;
+using SOCY_MIS.SOCYMIS_WS;
 
 namespace SOCY_MIS
 {
@@ -320,6 +321,7 @@ namespace SOCY_MIS
         {
             #region Variables
             SOCY_WS.SOCY_WS wsSM = null;
+            //SOCYMIS_WS.SOCYMIS_WS _wsSM = null; 
             wsDataTransfer dalDT = new wsDataTransfer();
             utilLanguageTranslation utilLT = null;
 
@@ -396,6 +398,9 @@ namespace SOCY_MIS
                 {
                     wsSM = new SOCY_WS.SOCY_WS();
                     wsSM.Timeout = -1;
+
+                    //_wsSM = new SOCYMIS_WS.SOCYMIS_WS();
+                    //_wsSM.Timeout = -1;
                     try
                     {
                         intTotal = dalDT.GetUploadTotal(dtTables, "sul_name", dbCon);  //total number of records to be uploaded in all the upload tables
@@ -405,6 +410,7 @@ namespace SOCY_MIS
                             strTable = dtTables.Rows[intCount]["sul_name"].ToString(); //upload table name
                            
                             strTableKey = dtTables.Rows[intCount]["sul_key"].ToString(); //primary key column in the table
+                           
                             dt = dalDT.GetDataTop01(strTable, strTableKey, dbCon);  //get the top record in the table
                             while (utilCollections.HasRows(dt) && blnResult) //check if row exists 
                             {
@@ -429,6 +435,11 @@ namespace SOCY_MIS
                                         wsSM = new SOCY_WS.SOCY_WS();
                                         wsSM.Timeout = -1;
                                         blnResult = wsSM.ProcessRecord(strSsnId, strXML);
+
+                                        //wsSM = new SOCY_WS.SOCY_WS();
+                                        //wsSM.Timeout = -1;
+                                        //blnResult = wsSM.ProcessRecord(strSsnId, strXML);
+
                                         intRestart++;
                                         lblConnectionRestart.Visible = true;
                                         lblConnectionRestart.Text = "Connection Restarted: " + intRestart.ToString();

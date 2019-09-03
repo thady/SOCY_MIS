@@ -828,6 +828,11 @@
     <Compile Include="frmResultArea01.Designer.cs">
       <DependentUpon>frmResultArea01.cs</DependentUpon>
     </Compile>
+    <Compile Include="Web References\SOCYMIS_WS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\SOCY_WS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1224,6 +1229,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="SOCY_MIS_TemporaryKey.pfx" />
+    <None Include="Web References\SOCYMIS_WS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SOCYMIS_WS\SOCYMIS_WS.wsdl" />
     <None Include="Web References\SOCY_WS\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -1878,6 +1888,7 @@
     <Content Include="ImportedData\Orig\ImportedSocialWorkerOrig9.txt" />
     <Content Include="ImportedData\Orig\ImportedSocialWorkerSCRIPT.txt" />
     <None Include="Web References\SOCY_WS\SOCY_WS.disco" />
+    <None Include="Web References\SOCYMIS_WS\SOCYMIS_WS.disco" />
   </ItemGroup>
   <ItemGroup>
     <WebReferences Include="Web References\" />
@@ -1886,10 +1897,21 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://localhost:61866/SOCY_WS.asmx">
+    <WebReferenceUrl Include="http://localhost:53694/SOCYMIS_WS.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SOCYMIS_WS\</RelPath>
+      <UpdateFromURL>http://localhost:53694/SOCYMIS_WS.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SOCY_MIS_SOCYMIS_WS_SOCYMIS_WS</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:53694/SOCY_WS.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\SOCY_WS\</RelPath>
-      <UpdateFromURL>http://localhost:61866/SOCY_WS.asmx</UpdateFromURL>
+      <UpdateFromURL>http://localhost:53694/SOCY_WS.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>

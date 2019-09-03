@@ -911,7 +911,9 @@ namespace SOCY_MIS
                             dalHHM.usr_id_update = FormMaster.UserId;
                             dalHHM.ofc_id = FormMaster.OfficeId;
                             dalHHM.district_id = static_variables.district_id;
-                           
+                            dalHHM.hhm_status = utilConstants.cDFActive.ToString();
+
+
                             dalHHM.Save(dbCon);
                         }
                         #endregion Household

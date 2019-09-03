@@ -63,6 +63,11 @@ namespace SOCY_MIS
             lblID.Text = ObjectId != string.Empty ? ObjectId : "lblID";
             str_id = ObjectId;
             hhgraduation_assessment.gat_id = ObjectId;
+
+            lblgatfinal02.Text = hhgraduation_assessment.LoadGatFinalID(str_id) !=string.Empty? hhgraduation_assessment.LoadGatFinalID(str_id):"--";
+            lblgatfinal03.Text = hhgraduation_assessment.LoadGatFinalID(str_id) != string.Empty ? hhgraduation_assessment.LoadGatFinalID(str_id) : "--";
+            lblgatfinal04.Text = hhgraduation_assessment.LoadGatFinalID(str_id) != string.Empty ? hhgraduation_assessment.LoadGatFinalID(str_id) : "--";
+            lblgatfinal08.Text = hhgraduation_assessment.LoadGatFinalID(str_id) != string.Empty ? hhgraduation_assessment.LoadGatFinalID(str_id) : "--";
             ValidateBenchMarks();
 
             LoadMemberLists(str_id, "01", gdv01);
@@ -129,43 +134,43 @@ namespace SOCY_MIS
                 utilControls.RadioButtonSetSelection(rbtn_BenchMark07Yes, rbtn_BenchMark07No, dtRow["yn_met_benchmark07"].ToString());
                 utilControls.RadioButtonSetSelection(rbtn_BenchMark08Yes, rbtn_BenchMark08No, rbtn_BenchMark08NA, dtRow["yn_met_benchmark08"].ToString());
 
-                #region disbable save buttons for NA benchmarks
-                if (rbtn_BenchMark02NA.Checked)
-                {
-                    btnSaveBenchMark02.Enabled = false;
-                }
-                else
-                {
-                    btnSaveBenchMark02.Enabled = true;
-                }
+                //#region disbable save buttons for NA benchmarks
+                //if (rbtn_BenchMark02NA.Checked)
+                //{
+                //    btnSaveBenchMark02.Enabled = false;
+                //}
+                //else
+                //{
+                //    btnSaveBenchMark02.Enabled = true;
+                //}
 
-                if (rbtn_BenchMark03NA.Checked)
-                {
-                    btnSaveBenchMark03.Enabled = false;
-                }
-                else
-                {
-                    btnSaveBenchMark03.Enabled = true;
-                }
+                //if (rbtn_BenchMark03NA.Checked)
+                //{
+                //    btnSaveBenchMark03.Enabled = false;
+                //}
+                //else
+                //{
+                //    btnSaveBenchMark03.Enabled = true;
+                //}
 
-                if (rbtn_BenchMark04NA.Checked)
-                {
-                    btnSaveBenchMark04.Enabled = false;
-                }
-                else
-                {
-                    btnSaveBenchMark04.Enabled = true;
-                }
+                //if (rbtn_BenchMark04NA.Checked)
+                //{
+                //    btnSaveBenchMark04.Enabled = false;
+                //}
+                //else
+                //{
+                //    btnSaveBenchMark04.Enabled = true;
+                //}
 
-                if (rbtn_BenchMark08NA.Checked)
-                {
-                    btnSaveBenchMark08.Enabled = false;
-                }
-                else
-                {
-                    btnSaveBenchMark08.Enabled = true;
-                }
-                #endregion
+                //if (rbtn_BenchMark08NA.Checked)
+                //{
+                //    btnSaveBenchMark08.Enabled = false;
+                //}
+                //else
+                //{
+                //    btnSaveBenchMark08.Enabled = true;
+                //}
+                //#endregion
 
                 LoadRecordDetails(hhgraduation_assessment.LoadBenchMark7ID(gat_id), "07");
                 LoadRecordDetails(hhgraduation_assessment.LoadBenchMark8ID(gat_id), "08");
@@ -741,12 +746,33 @@ namespace SOCY_MIS
 
                     #region SaveFinalBenchMarkPassFail
                     hhgraduation_assessment.yn_met_benchmark01 = utilControls.RadioButtonGetSelection(rbtn_BenchMark01Yes, rbtn_BenchMark01No);
+                    if(hhgraduation_assessment.CheckNumberPositiveInHousehold(HouseholdId) == 0)
+                    {
+                        hhgraduation_assessment.yn_met_benchmark02 = "2"; //not applicable
+                    }
+
+                    if (hhgraduation_assessment.CheckNumber10To17(HouseholdId) == 0)
+                    {
+                        hhgraduation_assessment.yn_met_benchmark03 = "2";
+                    }
+
+                    if (hhgraduation_assessment.CheckNumberUnder5Years(HouseholdId) == 0)
+                    {
+                        hhgraduation_assessment.yn_met_benchmark04 = "2";
+                    }
+
+                    if (hhgraduation_assessment.CheckNumberSchoolAge(HouseholdId) == 0)
+                    {
+                        hhgraduation_assessment.yn_met_benchmark08 = "2";
+                    }
+
                     hhgraduation_assessment.saveFinalBenchMark(hhgraduation_assessment.gat_id, "01");
                     #endregion SaveFinalBenchMarkPassFail
 
                     //lblID01.Text = hhgraduation_assessment.gat_b_id;
-                    ValidateBenchMarks();
+                    
                     LoadHouseholdMembersBenchMark01(hhgraduation_assessment.gat_id);
+                    ValidateBenchMarks();
                     MessageBox.Show("Success!", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -773,9 +799,8 @@ namespace SOCY_MIS
                     hhgraduation_assessment.saveFinalBenchMark(hhgraduation_assessment.gat_id, "01");
                     #endregion SaveFinalBenchMarkPassFail
 
-
-                    ValidateBenchMarks();
                     LoadHouseholdMembersBenchMark01(hhgraduation_assessment.gat_id);
+                    ValidateBenchMarks();
                     MessageBox.Show("Success!", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -809,6 +834,7 @@ namespace SOCY_MIS
                         #region SaveFinalBenchMarkPassFail
                         hhgraduation_assessment.yn_met_benchmark02 = utilControls.RadioButtonGetSelection(rbtn_BenchMark02Yes, rbtn_BenchMark02No, rbtn_BenchMark02NA);
                         hhgraduation_assessment.saveFinalBenchMark(hhgraduation_assessment.gat_id, "02");
+                        lblgatfinal02.Text = hhgraduation_assessment.LoadGatFinalID(hhgraduation_assessment.gat_id);
                         #endregion SaveFinalBenchMarkPassFail
                     }
                     else
@@ -828,12 +854,13 @@ namespace SOCY_MIS
                         #region SaveFinalBenchMarkPassFail
                         hhgraduation_assessment.yn_met_benchmark02 = utilControls.RadioButtonGetSelection(rbtn_BenchMark02Yes, rbtn_BenchMark02No, rbtn_BenchMark02NA);
                         hhgraduation_assessment.saveFinalBenchMark(hhgraduation_assessment.gat_id, "02");
+                        lblgatfinal02.Text = hhgraduation_assessment.LoadGatFinalID(hhgraduation_assessment.gat_id);
                         #endregion SaveFinalBenchMarkPassFail
                     }
                     #endregion
 
-                    ValidateBenchMarks();
                     LoadHouseholdMembersBenchMark02(hhgraduation_assessment.gat_id);
+                    ValidateBenchMarks();
                     MessageBox.Show("Success!", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -852,6 +879,7 @@ namespace SOCY_MIS
                         #region SaveFinalBenchMarkPassFail
                         hhgraduation_assessment.yn_met_benchmark02 = utilControls.RadioButtonGetSelection(rbtn_BenchMark02Yes, rbtn_BenchMark02No, rbtn_BenchMark02NA);
                         hhgraduation_assessment.saveFinalBenchMark(hhgraduation_assessment.gat_id, "02");
+                        lblgatfinal02.Text = hhgraduation_assessment.LoadGatFinalID(hhgraduation_assessment.gat_id);
                         #endregion SaveFinalBenchMarkPassFail
                     }
                     else
@@ -871,12 +899,13 @@ namespace SOCY_MIS
                         #region SaveFinalBenchMarkPassFail
                         hhgraduation_assessment.yn_met_benchmark02 = utilControls.RadioButtonGetSelection(rbtn_BenchMark02Yes, rbtn_BenchMark02No, rbtn_BenchMark02NA);
                         hhgraduation_assessment.saveFinalBenchMark(hhgraduation_assessment.gat_id, "02");
+                        lblgatfinal02.Text = hhgraduation_assessment.LoadGatFinalID(hhgraduation_assessment.gat_id);
                         #endregion SaveFinalBenchMarkPassFail
                     }
                     #endregion
 
-                    ValidateBenchMarks();
                     LoadHouseholdMembersBenchMark02(hhgraduation_assessment.gat_id);
+                    ValidateBenchMarks();
                     MessageBox.Show("Success!", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -906,6 +935,7 @@ namespace SOCY_MIS
                         #region SaveFinalBenchMarkPassFail
                         hhgraduation_assessment.yn_met_benchmark03 = utilControls.RadioButtonGetSelection(rbtn_BenchMark03Yes, rbtn_BenchMark03No, rbtn_BenchMark03NA);
                         hhgraduation_assessment.saveFinalBenchMark(hhgraduation_assessment.gat_id, "03");
+                        lblgatfinal03.Text = hhgraduation_assessment.LoadGatFinalID(hhgraduation_assessment.gat_id);
                         #endregion SaveFinalBenchMarkPassFail
                     }
                     else
@@ -925,12 +955,13 @@ namespace SOCY_MIS
                         #region SaveFinalBenchMarkPassFail
                         hhgraduation_assessment.yn_met_benchmark03 = utilControls.RadioButtonGetSelection(rbtn_BenchMark03Yes, rbtn_BenchMark03No, rbtn_BenchMark03NA);
                         hhgraduation_assessment.saveFinalBenchMark(hhgraduation_assessment.gat_id, "03");
+                        lblgatfinal03.Text = hhgraduation_assessment.LoadGatFinalID(hhgraduation_assessment.gat_id);
                         #endregion SaveFinalBenchMarkPassFail
                     }
                     #endregion
 
-                    ValidateBenchMarks();
                     LoadHouseholdMembersBenchMark03(hhgraduation_assessment.gat_id);
+                    ValidateBenchMarks();
                     MessageBox.Show("Success!", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -949,6 +980,7 @@ namespace SOCY_MIS
                         #region SaveFinalBenchMarkPassFail
                         hhgraduation_assessment.yn_met_benchmark03 = utilControls.RadioButtonGetSelection(rbtn_BenchMark03Yes, rbtn_BenchMark03No, rbtn_BenchMark03NA);
                         hhgraduation_assessment.saveFinalBenchMark(hhgraduation_assessment.gat_id, "03");
+                        lblgatfinal03.Text = hhgraduation_assessment.LoadGatFinalID(hhgraduation_assessment.gat_id);
                         #endregion SaveFinalBenchMarkPassFail
                     }
                     else
@@ -972,8 +1004,8 @@ namespace SOCY_MIS
                     }
                     #endregion
 
-                    ValidateBenchMarks();
                     LoadHouseholdMembersBenchMark03(hhgraduation_assessment.gat_id);
+                    ValidateBenchMarks();
                     MessageBox.Show("Success!", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -1005,6 +1037,7 @@ namespace SOCY_MIS
                         #region SaveFinalBenchMarkPassFail
                         hhgraduation_assessment.yn_met_benchmark04 = utilControls.RadioButtonGetSelection(rbtn_BenchMark04Yes, rbtn_BenchMark04No, rbtn_BenchMark04NA);
                         hhgraduation_assessment.saveFinalBenchMark(hhgraduation_assessment.gat_id, "04");
+                        lblgatfinal04.Text = hhgraduation_assessment.LoadGatFinalID(hhgraduation_assessment.gat_id);
                         #endregion SaveFinalBenchMarkPassFail
                     }
                     else
@@ -1024,12 +1057,13 @@ namespace SOCY_MIS
                         #region SaveFinalBenchMarkPassFail
                         hhgraduation_assessment.yn_met_benchmark04 = utilControls.RadioButtonGetSelection(rbtn_BenchMark04Yes, rbtn_BenchMark04No, rbtn_BenchMark04NA);
                         hhgraduation_assessment.saveFinalBenchMark(hhgraduation_assessment.gat_id, "04");
+                        lblgatfinal04.Text = hhgraduation_assessment.LoadGatFinalID(hhgraduation_assessment.gat_id);
                         #endregion SaveFinalBenchMarkPassFail
                     }
                     #endregion
 
-                    ValidateBenchMarks();
                     LoadHouseholdMembersBenchMark04(hhgraduation_assessment.gat_id);
+                    ValidateBenchMarks();
                     MessageBox.Show("Success!", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -1049,6 +1083,7 @@ namespace SOCY_MIS
                         #region SaveFinalBenchMarkPassFail
                         hhgraduation_assessment.yn_met_benchmark04 = utilControls.RadioButtonGetSelection(rbtn_BenchMark04Yes, rbtn_BenchMark04No, rbtn_BenchMark04NA);
                         hhgraduation_assessment.saveFinalBenchMark(hhgraduation_assessment.gat_id, "04");
+                        lblgatfinal04.Text = hhgraduation_assessment.LoadGatFinalID(hhgraduation_assessment.gat_id);
                         #endregion SaveFinalBenchMarkPassFail
                     }
                     else
@@ -1072,8 +1107,8 @@ namespace SOCY_MIS
                     }
                     #endregion
 
-                    ValidateBenchMarks();
                     LoadHouseholdMembersBenchMark04(hhgraduation_assessment.gat_id);
+                    ValidateBenchMarks();
                     MessageBox.Show("Success!", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -1123,8 +1158,9 @@ namespace SOCY_MIS
 
 
                     lblID05.Text = hhgraduation_assessment.gat_b_id;
-                    ValidateBenchMarks();
+                   
                     LoadHouseholdMembersBenchMark05(hhgraduation_assessment.gat_id);
+                    ValidateBenchMarks();
                     MessageBox.Show("Success!", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -1159,8 +1195,9 @@ namespace SOCY_MIS
                     hhgraduation_assessment.saveFinalBenchMark(hhgraduation_assessment.gat_id, "05");
                     #endregion SaveFinalBenchMarkPassFail
 
-                    ValidateBenchMarks();
+                    
                     LoadHouseholdMembersBenchMark05(hhgraduation_assessment.gat_id);
+                    ValidateBenchMarks();
                     MessageBox.Show("Success!", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -1204,8 +1241,9 @@ namespace SOCY_MIS
                     hhgraduation_assessment.saveFinalBenchMark(hhgraduation_assessment.gat_id, "06");
                     #endregion SaveFinalBenchMarkPassFail
 
-                    ValidateBenchMarks();
+                   
                     LoadHouseholdMembersBenchMark06(hhgraduation_assessment.gat_id);
+                    ValidateBenchMarks();
                     MessageBox.Show("Success!", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -1237,8 +1275,8 @@ namespace SOCY_MIS
                     hhgraduation_assessment.saveFinalBenchMark(hhgraduation_assessment.gat_id, "06");
                     #endregion SaveFinalBenchMarkPassFail
 
-                    ValidateBenchMarks();
                     LoadHouseholdMembersBenchMark06(hhgraduation_assessment.gat_id);
+                    ValidateBenchMarks();
                     MessageBox.Show("Success!", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -1342,6 +1380,7 @@ namespace SOCY_MIS
                         #region SaveFinalBenchMarkPassFail
                         hhgraduation_assessment.yn_met_benchmark08 = utilControls.RadioButtonGetSelection(rbtn_BenchMark08Yes, rbtn_BenchMark08No, rbtn_BenchMark08NA);
                         hhgraduation_assessment.saveFinalBenchMark(hhgraduation_assessment.gat_id, "08");
+                        lblgatfinal08.Text = hhgraduation_assessment.LoadGatFinalID(hhgraduation_assessment.gat_id);
                         #endregion SaveFinalBenchMarkPassFail
                     }
                     else
@@ -1361,6 +1400,7 @@ namespace SOCY_MIS
                         #region SaveFinalBenchMarkPassFail
                         hhgraduation_assessment.yn_met_benchmark08 = utilControls.RadioButtonGetSelection(rbtn_BenchMark08Yes, rbtn_BenchMark08No, rbtn_BenchMark08NA);
                         hhgraduation_assessment.saveFinalBenchMark(hhgraduation_assessment.gat_id, "08");
+                        lblgatfinal08.Text = hhgraduation_assessment.LoadGatFinalID(hhgraduation_assessment.gat_id);
                         #endregion SaveFinalBenchMarkPassFail
                     }
                     #endregion
@@ -1385,6 +1425,7 @@ namespace SOCY_MIS
                         #region SaveFinalBenchMarkPassFail
                         hhgraduation_assessment.yn_met_benchmark08 = utilControls.RadioButtonGetSelection(rbtn_BenchMark08Yes, rbtn_BenchMark08No, rbtn_BenchMark08NA);
                         hhgraduation_assessment.saveFinalBenchMark(hhgraduation_assessment.gat_id, "08");
+                        lblgatfinal08.Text = hhgraduation_assessment.LoadGatFinalID(hhgraduation_assessment.gat_id);
                         #endregion SaveFinalBenchMarkPassFail
                     }
                     else
@@ -1404,6 +1445,7 @@ namespace SOCY_MIS
                         #region SaveFinalBenchMarkPassFail
                         hhgraduation_assessment.yn_met_benchmark08 = utilControls.RadioButtonGetSelection(rbtn_BenchMark08Yes, rbtn_BenchMark08No, rbtn_BenchMark08NA);
                         hhgraduation_assessment.saveFinalBenchMark(hhgraduation_assessment.gat_id, "08");
+                        lblgatfinal08.Text = hhgraduation_assessment.LoadGatFinalID(hhgraduation_assessment.gat_id);
                         #endregion SaveFinalBenchMarkPassFail
                     }
                     #endregion
@@ -1588,7 +1630,7 @@ namespace SOCY_MIS
                 btnCancelBenchMark01.Enabled = true;
             }
 
-            if (hhgraduation_assessment.LoadHouseholdMembersBenchMark01(HouseholdId, hhgraduation_assessment.gat_id).Rows.Count > 0 || lblID.Text == "lblID")
+            if (gdv01.Rows.Count == 0) //made this to allow saving benchamark02 without completing all members on benchmark01
             {
                 btnSaveBenchMark02.Enabled = false;
                 btnCancelBenchMark02.Enabled = false;
@@ -1599,7 +1641,7 @@ namespace SOCY_MIS
                 btnCancelBenchMark02.Enabled = true;
             }
 
-            if (hhgraduation_assessment.LoadHouseholdMembersBenchMark02(HouseholdId, hhgraduation_assessment.gat_id).Rows.Count > 0 || lblID.Text == "lblID")
+            if (gdv02.Rows.Count == 0 && rbtn_BenchMark02NA.Checked == false && lblgatfinal02.Text == "--")
             {
                 btnSaveBenchMark03.Enabled = false;
                 btnCancelBenchMark03.Enabled = false;
@@ -1611,7 +1653,7 @@ namespace SOCY_MIS
             }
 
 
-            if (hhgraduation_assessment.LoadHouseholdMembersBenchMark03(HouseholdId, hhgraduation_assessment.gat_id).Rows.Count > 0 || lblID.Text == "lblID")
+            if (gdv03.Rows.Count == 0 && rbtn_BenchMark03NA.Checked == false && lblgatfinal03.Text == "--")
             {
                 btnSaveBenchMark04.Enabled = false;
                 btnCancelBenchMark04.Enabled = false;
@@ -1645,7 +1687,7 @@ namespace SOCY_MIS
                 btnSaveBenchMark05.Enabled = false;
             }
 
-            if (hhgraduation_assessment.LoadHouseholdMembersBenchMark06(HouseholdId, hhgraduation_assessment.gat_id).Rows.Count > 0 || lblID.Text == "lblID")
+            if (gdv06.Rows.Count == 0)
             {
                 btnSaveBenchMark07.Enabled = false;
                 btnCancelBenchMark07.Enabled = false;
@@ -1654,6 +1696,17 @@ namespace SOCY_MIS
             {
                 btnSaveBenchMark07.Enabled = true;
                 btnCancelBenchMark07.Enabled = true;
+            }
+
+            if (lblID07.Text == "lblID07")
+            {
+                btnSaveBenchMark08.Enabled = false;
+                btnCancelBenchMark08.Enabled = false;
+            }
+            else
+            {
+                btnSaveBenchMark08.Enabled = true;
+                btnCancelBenchMark08.Enabled = true;
             }
         }
         #endregion BenchMarkValidations
@@ -1680,48 +1733,107 @@ namespace SOCY_MIS
         {
             saveBenchMark01();
             LoadMemberLists(hhgraduation_assessment.gat_id, "01", gdv01);
+            ValidateBenchMarks();
         }
 
         private void btnSaveBenchMark02_Click(object sender, EventArgs e)
         {
-            saveBenchMark02();
-            LoadMemberLists(hhgraduation_assessment.gat_id, "02", gdv02);
+            if (hhgraduation_assessment.Check_if_prev_benchmark_saved(hhgraduation_assessment.gat_id, "yn_met_benchmark02") == string.Empty)
+            {
+                MessageBox.Show("Please save BenchMark01 first before saving to benchmark02,save failed", "SOCYMIS Message Center", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                saveBenchMark02();
+                LoadMemberLists(hhgraduation_assessment.gat_id, "02", gdv02);
+                ValidateBenchMarks();
+            }
         }
 
         private void btnSaveBenchMark03_Click(object sender, EventArgs e)
         {
-            saveBenchMark03();
-            LoadMemberLists(hhgraduation_assessment.gat_id, "03", gdv03);
+            if (hhgraduation_assessment.Check_if_prev_benchmark_saved(hhgraduation_assessment.gat_id, "yn_met_benchmark03") == string.Empty)
+            {
+                MessageBox.Show("Please save BenchMark02 first before saving to benchmark03,save failed", "SOCYMIS Message Center", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                saveBenchMark03();
+                LoadMemberLists(hhgraduation_assessment.gat_id, "03", gdv03);
+                ValidateBenchMarks();
+            }
+                
         }
 
         private void btnSaveBenchMark04_Click(object sender, EventArgs e)
         {
-            saveBenchMark04();
-            LoadMemberLists(hhgraduation_assessment.gat_id, "04", gdv04);
+            if (hhgraduation_assessment.Check_if_prev_benchmark_saved(hhgraduation_assessment.gat_id, "yn_met_benchmark04") == string.Empty)
+            {
+                MessageBox.Show("Please save BenchMark03 first before saving to benchmark04,save failed", "SOCYMIS Message Center", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                saveBenchMark04();
+                LoadMemberLists(hhgraduation_assessment.gat_id, "04", gdv04);
+                ValidateBenchMarks();
+            }  
         }
 
         private void btnSaveBenchMark05_Click(object sender, EventArgs e)
         {
-            saveBenchMark05();
-            LoadMemberLists(hhgraduation_assessment.gat_id, "05", gdv05);
+            if (hhgraduation_assessment.Check_if_prev_benchmark_saved(hhgraduation_assessment.gat_id, "yn_met_benchmark05") == string.Empty)
+            {
+                MessageBox.Show("Please save BenchMark04 first before saving to benchmark05,save failed", "SOCYMIS Message Center", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                saveBenchMark05();
+                LoadMemberLists(hhgraduation_assessment.gat_id, "05", gdv05);
+                ValidateBenchMarks();
+            }
+           
         }
 
         private void btnSaveBenchMark06_Click(object sender, EventArgs e)
         {
-            saveBenchMark06();
-            LoadMemberLists(hhgraduation_assessment.gat_id, "06", gdv06);
+            if (hhgraduation_assessment.Check_if_prev_benchmark_saved(hhgraduation_assessment.gat_id, "yn_met_benchmark06") == string.Empty)
+            {
+                MessageBox.Show("Please save BenchMark05 first before saving to benchmark06,save failed", "SOCYMIS Message Center", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                saveBenchMark06();
+                LoadMemberLists(hhgraduation_assessment.gat_id, "06", gdv06);
+                ValidateBenchMarks();
+            } 
         }
 
         private void btnSaveBenchMark07_Click(object sender, EventArgs e)
         {
-            saveBenchMark07();
-            LoadMemberLists(hhgraduation_assessment.gat_id, "07", gdv07);
+            if (hhgraduation_assessment.Check_if_prev_benchmark_saved(hhgraduation_assessment.gat_id, "yn_met_benchmark07") == string.Empty)
+            {
+                MessageBox.Show("Please save BenchMark06 first before saving to benchmark07,save failed", "SOCYMIS Message Center", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                saveBenchMark07();
+                LoadMemberLists(hhgraduation_assessment.gat_id, "07", gdv07);
+                ValidateBenchMarks();
+            }
         }
 
         private void btnSaveBenchMark08_Click(object sender, EventArgs e)
         {
-            saveBenchMark08();
-            LoadMemberLists(hhgraduation_assessment.gat_id, "08", gdv08);
+            if (hhgraduation_assessment.Check_if_prev_benchmark_saved(hhgraduation_assessment.gat_id, "yn_met_benchmark08") == string.Empty)
+            {
+                MessageBox.Show("Please save BenchMark07 first before saving to benchmark08,save failed", "SOCYMIS Message Center", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                saveBenchMark08();
+                LoadMemberLists(hhgraduation_assessment.gat_id, "08", gdv08);
+                ValidateBenchMarks();
+            } 
         }
 
         private void cbo_hhm_06_SelectionChangeCommitted(object sender, EventArgs e)

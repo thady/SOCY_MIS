@@ -13866,50 +13866,6 @@ namespace SOCY_MIS.DataAccessLayer
 
             #endregion NewColumns
 
-            #region DisableTriggers
-            strSQL = "ALTER TABLE hh_household_improvement_plan_v2 DISABLE TRIGGER hh_household_improvement_plan_v2_insert";
-            dbCon.ExecuteNonQuery(strSQL);
-
-            strSQL = "ALTER TABLE hh_household_improvement_plan_v2 DISABLE TRIGGER hh_household_improvement_plan_v2_update";
-            dbCon.ExecuteNonQuery(strSQL);
-
-            strSQL = "ALTER TABLE hh_household_improvement_plan_v2 DISABLE TRIGGER hh_household_improvement_plan_v2_delete";
-            dbCon.ExecuteNonQuery(strSQL);
-
-            strSQL = "UPDATE hh_household_improvement_plan_v2 SET yn_safe_birth_certificates = '' WHERE yn_safe_birth_certificates IS NULL";
-            dbCon.ExecuteNonQuery(strSQL);
-
-            strSQL = "UPDATE hh_household_improvement_plan_v2 SET yn_safe_birth_certificates_action = '' WHERE yn_safe_birth_certificates_action IS NULL";
-            dbCon.ExecuteNonQuery(strSQL);
-
-            strSQL = "UPDATE hh_household_improvement_plan_v2 SET yn_safe_birth_certificates_followup_date = '' WHERE yn_safe_birth_certificates_followup_date IS NULL";
-            dbCon.ExecuteNonQuery(strSQL);
-
-            strSQL = "UPDATE hh_household_improvement_plan_v2 SET yn_safe_birth_certificates_out_come = '' WHERE yn_safe_birth_certificates_out_come IS NULL";
-            dbCon.ExecuteNonQuery(strSQL);
-
-            strSQL = "UPDATE hh_household_improvement_plan_v2_upload SET yn_safe_birth_certificates = '' WHERE yn_safe_birth_certificates IS NULL";
-            dbCon.ExecuteNonQuery(strSQL);
-
-            strSQL = "UPDATE hh_household_improvement_plan_v2_upload SET yn_safe_birth_certificates_action = '' WHERE yn_safe_birth_certificates_action IS NULL";
-            dbCon.ExecuteNonQuery(strSQL);
-
-            strSQL = "UPDATE hh_household_improvement_plan_v2_upload SET yn_safe_birth_certificates_followup_date = '' WHERE yn_safe_birth_certificates_followup_date IS NULL";
-            dbCon.ExecuteNonQuery(strSQL);
-
-            strSQL = "UPDATE hh_household_improvement_plan_v2_upload SET yn_safe_birth_certificates_out_come = '' WHERE yn_safe_birth_certificates_out_come IS NULL";
-            dbCon.ExecuteNonQuery(strSQL);
-
-            strSQL = "ALTER TABLE hh_household_improvement_plan_v2 ENABLE TRIGGER hh_household_improvement_plan_v2_insert";
-            dbCon.ExecuteNonQuery(strSQL);
-
-            strSQL = "ALTER TABLE hh_household_improvement_plan_v2 ENABLE TRIGGER hh_household_improvement_plan_v2_update";
-            dbCon.ExecuteNonQuery(strSQL);
-
-            strSQL = "ALTER TABLE hh_household_improvement_plan_v2 ENABLE TRIGGER hh_household_improvement_plan_v2_delete";
-            dbCon.ExecuteNonQuery(strSQL);
-            #endregion DisableTriggers
-
             #region Triggers
             strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_household_improvement_plan_v2_insert' AND [type] = 'TR')
                 DROP TRIGGER [dbo].[hh_household_improvement_plan_v2_insert] ";
@@ -14021,6 +13977,50 @@ namespace SOCY_MIS.DataAccessLayer
             dbCon.ExecuteNonQuery(strSQL);
 
             #endregion Triggers
+
+            #region DisableTriggers
+            strSQL = "ALTER TABLE hh_household_improvement_plan_v2 DISABLE TRIGGER hh_household_improvement_plan_v2_insert";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "ALTER TABLE hh_household_improvement_plan_v2 DISABLE TRIGGER hh_household_improvement_plan_v2_update";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "ALTER TABLE hh_household_improvement_plan_v2 DISABLE TRIGGER hh_household_improvement_plan_v2_delete";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_household_improvement_plan_v2 SET yn_safe_birth_certificates = '' WHERE yn_safe_birth_certificates IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_household_improvement_plan_v2 SET yn_safe_birth_certificates_action = '' WHERE yn_safe_birth_certificates_action IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_household_improvement_plan_v2 SET yn_safe_birth_certificates_followup_date = '' WHERE yn_safe_birth_certificates_followup_date IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_household_improvement_plan_v2 SET yn_safe_birth_certificates_out_come = '' WHERE yn_safe_birth_certificates_out_come IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_household_improvement_plan_v2_upload SET yn_safe_birth_certificates = '' WHERE yn_safe_birth_certificates IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_household_improvement_plan_v2_upload SET yn_safe_birth_certificates_action = '' WHERE yn_safe_birth_certificates_action IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_household_improvement_plan_v2_upload SET yn_safe_birth_certificates_followup_date = '' WHERE yn_safe_birth_certificates_followup_date IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_household_improvement_plan_v2_upload SET yn_safe_birth_certificates_out_come = '' WHERE yn_safe_birth_certificates_out_come IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "ALTER TABLE hh_household_improvement_plan_v2 ENABLE TRIGGER hh_household_improvement_plan_v2_insert";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "ALTER TABLE hh_household_improvement_plan_v2 ENABLE TRIGGER hh_household_improvement_plan_v2_update";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "ALTER TABLE hh_household_improvement_plan_v2 ENABLE TRIGGER hh_household_improvement_plan_v2_delete";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion DisableTriggers
             #endregion SQL
         }
 
@@ -14326,33 +14326,6 @@ namespace SOCY_MIS.DataAccessLayer
 
             #endregion NewColumns
 
-            #region DisableTriggers
-            strSQL = "ALTER TABLE hh_household_home_visit_member_v_2 DISABLE TRIGGER hh_household_home_visit_member_v_2_insert";
-            dbCon.ExecuteNonQuery(strSQL);
-
-            strSQL = "ALTER TABLE hh_household_home_visit_member_v_2 DISABLE TRIGGER hh_household_home_visit_member_v_2_update";
-            dbCon.ExecuteNonQuery(strSQL);
-
-            strSQL = "ALTER TABLE hh_household_home_visit_member_v_2 DISABLE TRIGGER hh_household_home_visit_member_v_2_delete";
-            dbCon.ExecuteNonQuery(strSQL);
-
-            strSQL = "UPDATE hh_household_home_visit_member_v_2 SET hhm_inactive_reason = '' WHERE hhm_inactive_reason IS NULL";
-            dbCon.ExecuteNonQuery(strSQL);
-
-            strSQL = "UPDATE hh_household_home_visit_member_v_2_upload SET hhm_inactive_reason = '' WHERE hhm_inactive_reason IS NULL";
-            dbCon.ExecuteNonQuery(strSQL);
-
-            strSQL = "ALTER TABLE hh_household_home_visit_member_v_2 ENABLE TRIGGER hh_household_home_visit_member_v_2_insert";
-            dbCon.ExecuteNonQuery(strSQL);
-
-            strSQL = "ALTER TABLE hh_household_home_visit_member_v_2 ENABLE TRIGGER hh_household_home_visit_member_v_2_update";
-            dbCon.ExecuteNonQuery(strSQL);
-
-            strSQL = "ALTER TABLE hh_household_home_visit_member_v_2 ENABLE TRIGGER hh_household_home_visit_member_v_2_delete";
-            dbCon.ExecuteNonQuery(strSQL);
-            #endregion DisableTriggers
-
-
             #region Triggers
             strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_household_home_visit_member_v_2_insert' AND [type] = 'TR')
                 DROP TRIGGER [dbo].[hh_household_home_visit_member_v_2_insert] ";
@@ -14443,6 +14416,32 @@ namespace SOCY_MIS.DataAccessLayer
             dbCon.ExecuteNonQuery(strSQL);
 
             #endregion Triggers
+
+            #region DisableTriggers
+            strSQL = "ALTER TABLE hh_household_home_visit_member_v_2 DISABLE TRIGGER hh_household_home_visit_member_v_2_insert";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "ALTER TABLE hh_household_home_visit_member_v_2 DISABLE TRIGGER hh_household_home_visit_member_v_2_update";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "ALTER TABLE hh_household_home_visit_member_v_2 DISABLE TRIGGER hh_household_home_visit_member_v_2_delete";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_household_home_visit_member_v_2 SET hhm_inactive_reason = '' WHERE hhm_inactive_reason IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_household_home_visit_member_v_2_upload SET hhm_inactive_reason = '' WHERE hhm_inactive_reason IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "ALTER TABLE hh_household_home_visit_member_v_2 ENABLE TRIGGER hh_household_home_visit_member_v_2_insert";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "ALTER TABLE hh_household_home_visit_member_v_2 ENABLE TRIGGER hh_household_home_visit_member_v_2_update";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "ALTER TABLE hh_household_home_visit_member_v_2 ENABLE TRIGGER hh_household_home_visit_member_v_2_delete";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion DisableTriggers
             #endregion SQL
         }
 
@@ -15732,6 +15731,51 @@ namespace SOCY_MIS.DataAccessLayer
 				   ,[usr_date_create] ,[usr_date_update] ,[ofc_id] ,[trg_action],[district_id])
 	                SELECT [gat_b_id] ,[gat_id] ,[yn_children_enrolled_in_school] ,[yn_atte_school_regualarly] ,[yn_progress_next_level] ,[usr_id_create],[usr_id_update]
 				   ,[usr_date_create] ,[usr_date_update] ,[ofc_id] ,3,[district_id]
+                  FROM inserted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_graduation_assessment_final_insert' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_graduation_assessment_final_insert] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_graduation_assessment_final_insert] ON [dbo].[hh_graduation_assessment_final] FOR INSERT
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_graduation_assessment_final_upload]
+			   ([gat_id],[yn_met_benchmark01] ,[yn_met_benchmark02] ,[yn_met_benchmark03],[yn_met_benchmark04],[yn_met_benchmark05] ,[yn_met_benchmark06]
+			   ,[yn_met_benchmark07] ,[yn_met_benchmark08] ,[usr_id_create] ,[usr_id_update],[usr_date_create] ,[usr_date_update] ,[ofc_id],[trg_action] ,[district_id])
+	                SELECT [gat_id],[yn_met_benchmark01] ,[yn_met_benchmark02] ,[yn_met_benchmark03],[yn_met_benchmark04],[yn_met_benchmark05] ,[yn_met_benchmark06]
+			   ,[yn_met_benchmark07] ,[yn_met_benchmark08] ,[usr_id_create] ,[usr_id_update],[usr_date_create] ,[usr_date_update] ,[ofc_id],1 ,[district_id]
+                  FROM inserted
+                END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_graduation_assessment_final_update' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_graduation_assessment_final_update] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_graduation_assessment_final_update] ON [dbo].[hh_graduation_assessment_final] FOR UPDATE
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_graduation_assessment_final_upload]
+			   ([gat_id],[yn_met_benchmark01] ,[yn_met_benchmark02] ,[yn_met_benchmark03],[yn_met_benchmark04],[yn_met_benchmark05] ,[yn_met_benchmark06]
+			   ,[yn_met_benchmark07] ,[yn_met_benchmark08] ,[usr_id_create] ,[usr_id_update],[usr_date_create] ,[usr_date_update] ,[ofc_id],[trg_action] ,[district_id])
+	                SELECT [gat_id],[yn_met_benchmark01] ,[yn_met_benchmark02] ,[yn_met_benchmark03],[yn_met_benchmark04],[yn_met_benchmark05] ,[yn_met_benchmark06]
+			   ,[yn_met_benchmark07] ,[yn_met_benchmark08] ,[usr_id_create] ,[usr_id_update],[usr_date_create] ,[usr_date_update] ,[ofc_id],2 ,[district_id]
+                  FROM inserted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_graduation_assessment_final_delete' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_graduation_assessment_final_delete] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_graduation_assessment_final_delete] ON [dbo].[hh_graduation_assessment_final] FOR DELETE
+                AS
+                BEGIN
+	                INSERT INTO [dbo].[hh_graduation_assessment_final_upload]
+			   ([gat_id],[yn_met_benchmark01] ,[yn_met_benchmark02] ,[yn_met_benchmark03],[yn_met_benchmark04],[yn_met_benchmark05] ,[yn_met_benchmark06]
+			   ,[yn_met_benchmark07] ,[yn_met_benchmark08] ,[usr_id_create] ,[usr_id_update],[usr_date_create] ,[usr_date_update] ,[ofc_id],[trg_action] ,[district_id])
+	                SELECT [gat_id],[yn_met_benchmark01] ,[yn_met_benchmark02] ,[yn_met_benchmark03],[yn_met_benchmark04],[yn_met_benchmark05] ,[yn_met_benchmark06]
+			   ,[yn_met_benchmark07] ,[yn_met_benchmark08] ,[usr_id_create] ,[usr_id_update],[usr_date_create] ,[usr_date_update] ,[ofc_id],3 ,[district_id]
                   FROM inserted
                 END ";
             dbCon.ExecuteNonQuery(strSQL);
@@ -30451,6 +30495,42 @@ namespace SOCY_MIS.DataAccessLayer
      VALUES (146,'146','9','Petroleum Jelly',146,1 ,'EN',1,1,GETDATE(),GETDATE())";
             dbCon.ExecuteNonQuery(strSQL);
 
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 147)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (147,'147','9','Hair Shampoo',147,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 148)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (148,'148','9','Chalk Making',148,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 150)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (150,'150','9','Paper Bag Making',150,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 151)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (151,'151','4','Computer',151,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 152)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (152,'152','4','Building and Construction',152,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 153)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (153,'153','4','Electrical Installation',153,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
 
             strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 100)
 	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
@@ -30724,6 +30804,7 @@ namespace SOCY_MIS.DataAccessLayer
             Createlst_linkages_coordinator(dbCon);
 
             NewCso(dbCon);
+            //RescheduleHatUpload(dbCon);
 
             NewLstCoordinators(dbCon);
 
@@ -30795,6 +30876,22 @@ namespace SOCY_MIS.DataAccessLayer
             Createhh_graduation_assessment(dbCon);
         }
 
+
+        public static void RescheduleHatUpload(DBConnection dbCon)
+        {
+            string strSQL = string.Empty;
+            strSQL = "UPDATE hh_household_assessment SET swk_id = '' WHERE swk_id IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_household_assessment SET usr_id_create = '1' WHERE usr_id_create IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_household_assessment SET usr_id_update = '1' WHERE usr_id_update IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_household_assessment SET hha_id = LOWER(hha_id)";
+            dbCon.ExecuteNonQuery(strSQL);
+        }
         public static void NewCso(DBConnection dbCon)
         {
             string strSQL = string.Empty;
@@ -30802,6 +30899,16 @@ namespace SOCY_MIS.DataAccessLayer
             strSQL = "DELETE FROM [dbo].[lst_cso]";
             dbCon.ExecuteNonQuery(strSQL);
 
+            //strSQL = @"UPDATE hh_graduation_assessment_final SET gat_id = LOWER(gat_id)";
+            //dbCon.ExecuteNonQuery(strSQL);
+
+            //strSQL = "UPDATE hh_household_home_visit_v_2 SET hhv_id = LOWER(hhv_id) WHERE usr_date_create between '2019-08-01' AND GETDATE()"; // remove tomorrow evening
+            //dbCon.ExecuteNonQuery(strSQL);
+
+            //strSQL = "UPDATE hh_household_home_visit_member_v_2 SET hhv_id = LOWER(hhv_id) WHERE usr_date_create between '2019-08-01' AND GETDATE()"; // remove tomorrow evening
+            //dbCon.ExecuteNonQuery(strSQL);
+
+   
             InsertLstCSO(dbCon);
 
             InsertTempCSOs(dbCon);
@@ -30817,6 +30924,7 @@ namespace SOCY_MIS.DataAccessLayer
                     "BEGIN " +
                         "ALTER TABLE hh_household_member ADD hst_id_new Nvarchar(50) NULL " +
                     "END";
+
             dbCon.ExecuteNonQuery(strSQL);
 
             strSQL = "IF NOT EXISTS(SELECT * FROM sys.columns " +
@@ -30824,6 +30932,22 @@ namespace SOCY_MIS.DataAccessLayer
                    "BEGIN " +
                        "ALTER TABLE hh_household_member_upload ADD hst_id_new Nvarchar(50) NULL " +
                    "END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "IF NOT EXISTS(SELECT * FROM sys.columns " +
+                           "WHERE[name] = N'hhm_status' AND[object_id] = OBJECT_ID(N'hh_household_member')) " +
+                   "BEGIN " +
+                       "ALTER TABLE hh_household_member ADD hhm_status Nvarchar(10) NULL " +
+                   "END";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "IF NOT EXISTS(SELECT * FROM sys.columns " +
+                          "WHERE[name] = N'hhm_status' AND[object_id] = OBJECT_ID(N'hh_household_member_upload')) " +
+                  "BEGIN " +
+                      "ALTER TABLE hh_household_member_upload ADD hhm_status Nvarchar(10) NULL " +
+                  "END";
+
             dbCon.ExecuteNonQuery(strSQL);
             #endregion NewColum
 
@@ -30836,9 +30960,9 @@ namespace SOCY_MIS.DataAccessLayer
                 BEGIN
 	                INSERT INTO [dbo].[hh_household_member_upload]
                         ([hhm_id], [hhm_first_name], [hhm_last_name], [hhm_number], [hhm_year_of_birth], [dtp_id], [edu_id], [gnd_id], [hh_id], [hst_id], [mst_id], [prf_id], [prt_id], [yn_id_art], [yn_id_birth_registration], [yn_id_caregiver], [yn_id_disability], [yn_id_given_birth], [yn_id_hoh], [yn_id_immun], [yn_id_pregnant], [yn_id_school], 
-		                [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], [trg_action],[district_id],hst_id_new)
+		                [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], [trg_action],[district_id],hst_id_new,hhm_status)
 	                SELECT [hhm_id], [hhm_first_name], [hhm_last_name], [hhm_number], [hhm_year_of_birth], [dtp_id], [edu_id], [gnd_id], [hh_id], [hst_id], [mst_id], [prf_id], [prt_id], [yn_id_art], [yn_id_birth_registration], [yn_id_caregiver], [yn_id_disability], [yn_id_given_birth], [yn_id_hoh], [yn_id_immun], [yn_id_pregnant], [yn_id_school], 
-		                [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], 1,[district_id],hst_id_new
+		                [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], 1,[district_id],hst_id_new,hhm_status
                   FROM inserted
                 END";
             dbCon.ExecuteNonQuery(strSQL);
@@ -30849,13 +30973,13 @@ namespace SOCY_MIS.DataAccessLayer
             strSQL = @"CREATE TRIGGER [dbo].[hh_household_member_update] ON [dbo].[hh_household_member] FOR UPDATE
                 AS
                 BEGIN
-	                IF (UPDATE(hhm_id) OR UPDATE(hhm_first_name) OR UPDATE(hhm_last_name) OR UPDATE(hhm_number) OR UPDATE(hhm_year_of_birth) OR UPDATE(dtp_id) OR UPDATE(edu_id) OR UPDATE(gnd_id) OR UPDATE(hh_id) OR UPDATE(hst_id) OR UPDATE(mst_id) OR UPDATE(prf_id) OR UPDATE(prt_id) OR UPDATE(yn_id_art) OR UPDATE(yn_id_birth_registration) OR UPDATE(yn_id_caregiver) OR UPDATE(yn_id_disability) OR UPDATE(yn_id_given_birth) OR UPDATE(yn_id_hoh) OR UPDATE(yn_id_immun) OR UPDATE(yn_id_pregnant) OR UPDATE(yn_id_school) OR UPDATE(hst_id_new))
+	                IF (UPDATE(hhm_id) OR UPDATE(hhm_first_name) OR UPDATE(hhm_last_name) OR UPDATE(hhm_number) OR UPDATE(hhm_year_of_birth) OR UPDATE(dtp_id) OR UPDATE(edu_id) OR UPDATE(gnd_id) OR UPDATE(hh_id) OR UPDATE(hst_id) OR UPDATE(mst_id) OR UPDATE(prf_id) OR UPDATE(prt_id) OR UPDATE(yn_id_art) OR UPDATE(yn_id_birth_registration) OR UPDATE(yn_id_caregiver) OR UPDATE(yn_id_disability) OR UPDATE(yn_id_given_birth) OR UPDATE(yn_id_hoh) OR UPDATE(yn_id_immun) OR UPDATE(yn_id_pregnant) OR UPDATE(yn_id_school) OR UPDATE(hst_id_new) OR UPDATE(hhm_status))
 	                BEGIN
 		                INSERT INTO [dbo].[hh_household_member_upload]
 							([hhm_id], [hhm_first_name], [hhm_last_name], [hhm_number], [hhm_year_of_birth], [dtp_id], [edu_id], [gnd_id], [hh_id], [hst_id], [mst_id], [prf_id], [prt_id], [yn_id_art], [yn_id_birth_registration], [yn_id_caregiver], [yn_id_disability], [yn_id_given_birth], [yn_id_hoh], [yn_id_immun], [yn_id_pregnant], [yn_id_school], 
-							[usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], [trg_action],[district_id],hst_id_new)
+							[usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], [trg_action],[district_id],hst_id_new,hhm_status)
 						SELECT [hhm_id], [hhm_first_name], [hhm_last_name], [hhm_number], [hhm_year_of_birth], [dtp_id], [edu_id], [gnd_id], [hh_id], [hst_id], [mst_id], [prf_id], [prt_id], [yn_id_art], [yn_id_birth_registration], [yn_id_caregiver], [yn_id_disability], [yn_id_given_birth], [yn_id_hoh], [yn_id_immun], [yn_id_pregnant], [yn_id_school], 
-							[usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], 2,[district_id],hst_id_new
+							[usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], 2,[district_id],hst_id_new,hhm_status
 	                  FROM inserted
 	                END
                 END";
@@ -30869,9 +30993,9 @@ namespace SOCY_MIS.DataAccessLayer
                 BEGIN
 	                INSERT INTO [dbo].[hh_household_member_upload]
                         ([hhm_id], [hhm_first_name], [hhm_last_name], [hhm_number], [hhm_year_of_birth], [dtp_id], [edu_id], [gnd_id], [hh_id], [hst_id], [mst_id], [prf_id], [prt_id], [yn_id_art], [yn_id_birth_registration], [yn_id_caregiver], [yn_id_disability], [yn_id_given_birth], [yn_id_hoh], [yn_id_immun], [yn_id_pregnant], [yn_id_school], 
-		                [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], [trg_action],[district_id],hst_id_new)
+		                [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], [trg_action],[district_id],hst_id_new,hhm_status)
 	                SELECT [hhm_id], [hhm_first_name], [hhm_last_name], [hhm_number], [hhm_year_of_birth], [dtp_id], [edu_id], [gnd_id], [hh_id], [hst_id], [mst_id], [prf_id], [prt_id], [yn_id_art], [yn_id_birth_registration], [yn_id_caregiver], [yn_id_disability], [yn_id_given_birth], [yn_id_hoh], [yn_id_immun], [yn_id_pregnant], [yn_id_school], 
-		                [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], 3,[district_id],hst_id_new
+		                [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], 3,[district_id],hst_id_new,hhm_status
                   FROM deleted
                 END";
             dbCon.ExecuteNonQuery(strSQL);
@@ -30891,6 +31015,13 @@ namespace SOCY_MIS.DataAccessLayer
             dbCon.ExecuteNonQuery(strSQL);
 
             strSQL = "UPDATE hh_household_member_upload SET hst_id_new = '' WHERE hst_id_new IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_household_member SET hhm_status = '1' WHERE hhm_status IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+
+            strSQL = "UPDATE hh_household_member_upload SET hhm_status = '1' WHERE hhm_status IS NULL";
             dbCon.ExecuteNonQuery(strSQL);
 
             strSQL = "ALTER TABLE hh_household_member ENABLE TRIGGER hh_household_member_insert";

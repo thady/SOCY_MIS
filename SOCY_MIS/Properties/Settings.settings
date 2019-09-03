@@ -3,10 +3,13 @@
   <Profiles />
   <Settings>
     <Setting Name="SOCY_MIS" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://localhost:61866/SOCY_WS.asmx</Value>
+      <Value Profile="(Default)">https://esocy.crs.org/SOCY_WS.asmx</Value>
+    </Setting>
+    <Setting Name="SOCY_MIS_SOCYMIS_WS_SOCYMIS_WS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:53694/SOCYMIS_WS.asmx</Value>
     </Setting>
     <Setting Name="SOCY_MIS_SOCY_WS_SOCY_WS" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://localhost:61866/SOCY_WS.asmx</Value>
+      <Value Profile="(Default)">http://localhost:53694/SOCY_WS.asmx</Value>
     </Setting>
   </Settings>
 </SettingsFile>

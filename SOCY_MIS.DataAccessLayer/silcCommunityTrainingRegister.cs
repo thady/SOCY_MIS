@@ -148,7 +148,7 @@ namespace SOCY_MIS.DataAccessLayer
                     case "hhm_codes_communityTrainingRegister":
                         SQL = @"SELECT (H.hh_code + '-' + HHM.hhm_number) AS hhm_code,hhm_id  FROM hh_household_member HHM
                                 LEFT JOIN hh_household H ON HHM.hh_id = H.hh_id
-                                WHERE H.hh_id = '{0}'";
+                                WHERE H.hh_id = '{0}' AND (YEAR(GETDATE()) - HHM.hhm_year_of_birth) >= 15";
                         SQL = string.Format(SQL, id);
                         break;
 

@@ -193,6 +193,7 @@
             this.rbtn_BenchMark05Yes = new System.Windows.Forms.RadioButton();
             this.rbtn_BenchMark05No = new System.Windows.Forms.RadioButton();
             this.panel051 = new System.Windows.Forms.Panel();
+            this.yn_pay_feesNA = new System.Windows.Forms.RadioButton();
             this.yn_pay_feesYes = new System.Windows.Forms.RadioButton();
             this.yn_pay_feesNo = new System.Windows.Forms.RadioButton();
             this.label36 = new System.Windows.Forms.Label();
@@ -208,6 +209,7 @@
             this.yn_pay_fees_no_sell_assetYes = new System.Windows.Forms.RadioButton();
             this.yn_pay_fees_no_sell_assetNo = new System.Windows.Forms.RadioButton();
             this.panel054 = new System.Windows.Forms.Panel();
+            this.yn_pay_medical_feesNA = new System.Windows.Forms.RadioButton();
             this.yn_pay_medical_feesYes = new System.Windows.Forms.RadioButton();
             this.yn_pay_medical_feesNo = new System.Windows.Forms.RadioButton();
             this.label35 = new System.Windows.Forms.Label();
@@ -283,8 +285,10 @@
             this.label59 = new System.Windows.Forms.Label();
             this.label60 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
-            this.yn_pay_feesNA = new System.Windows.Forms.RadioButton();
-            this.yn_pay_medical_feesNA = new System.Windows.Forms.RadioButton();
+            this.lblgatfinal02 = new System.Windows.Forms.Label();
+            this.lblgatfinal03 = new System.Windows.Forms.Label();
+            this.lblgatfinal04 = new System.Windows.Forms.Label();
+            this.lblgatfinal08 = new System.Windows.Forms.Label();
             this.tabControl01.SuspendLayout();
             this.tab01.SuspendLayout();
             this.panelInstructions.SuspendLayout();
@@ -393,7 +397,7 @@
             this.tab01.Controls.Add(this.tlpDisplay01);
             this.tab01.Location = new System.Drawing.Point(4, 22);
             this.tab01.Name = "tab01";
-            this.tab01.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tab01.Padding = new System.Windows.Forms.Padding(3);
             this.tab01.Size = new System.Drawing.Size(893, 500);
             this.tab01.TabIndex = 0;
             this.tab01.Text = "Basic Information";
@@ -406,7 +410,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelInstructions.Controls.Add(this.txtHelp);
             this.panelInstructions.Location = new System.Drawing.Point(6, 274);
-            this.panelInstructions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelInstructions.Margin = new System.Windows.Forms.Padding(2);
             this.panelInstructions.Name = "panelInstructions";
             this.panelInstructions.Size = new System.Drawing.Size(884, 225);
             this.panelInstructions.TabIndex = 185;
@@ -420,7 +424,7 @@
             this.txtHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHelp.ForeColor = System.Drawing.Color.White;
             this.txtHelp.Location = new System.Drawing.Point(6, 8);
-            this.txtHelp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtHelp.Margin = new System.Windows.Forms.Padding(2);
             this.txtHelp.Name = "txtHelp";
             this.txtHelp.ReadOnly = true;
             this.txtHelp.Size = new System.Drawing.Size(876, 217);
@@ -446,7 +450,7 @@
             this.tableLayoutPanel34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 210F));
+            this.tableLayoutPanel34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 211F));
             this.tableLayoutPanel34.Controls.Add(this.btnsave, 1, 0);
             this.tableLayoutPanel34.Controls.Add(this.lblBack, 4, 0);
             this.tableLayoutPanel34.Controls.Add(this.btnCancel, 3, 0);
@@ -461,7 +465,7 @@
             // btnsave
             // 
             this.btnsave.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnsave.Location = new System.Drawing.Point(272, 8);
+            this.btnsave.Location = new System.Drawing.Point(271, 8);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(75, 23);
             this.btnsave.TabIndex = 14;
@@ -485,7 +489,7 @@
             // btnCancel
             // 
             this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnCancel.Location = new System.Drawing.Point(387, 8);
+            this.btnCancel.Location = new System.Drawing.Point(386, 8);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 15;
@@ -516,7 +520,7 @@
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.174613F));
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0019F));
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.44543F));
-            this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47F));
             this.tlpDisplay01.Controls.Add(this.cboDistrict, 4, 1);
             this.tlpDisplay01.Controls.Add(this.cboCso, 1, 1);
             this.tlpDisplay01.Controls.Add(this.lblDistrict, 0, 0);
@@ -560,9 +564,9 @@
             this.cboDistrict.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboDistrict.Enabled = false;
             this.cboDistrict.FormattingEnabled = true;
-            this.cboDistrict.Location = new System.Drawing.Point(669, 39);
+            this.cboDistrict.Location = new System.Drawing.Point(668, 39);
             this.cboDistrict.Name = "cboDistrict";
-            this.cboDistrict.Size = new System.Drawing.Size(164, 21);
+            this.cboDistrict.Size = new System.Drawing.Size(163, 21);
             this.cboDistrict.TabIndex = 59;
             this.cboDistrict.SelectedIndexChanged += new System.EventHandler(this.cboDistrict_SelectedIndexChanged);
             // 
@@ -573,7 +577,7 @@
             this.cboCso.FormattingEnabled = true;
             this.cboCso.Location = new System.Drawing.Point(171, 39);
             this.cboCso.Name = "cboCso";
-            this.cboCso.Size = new System.Drawing.Size(305, 21);
+            this.cboCso.Size = new System.Drawing.Size(304, 21);
             this.cboCso.TabIndex = 65;
             // 
             // lblDistrict
@@ -590,7 +594,7 @@
             // 
             this.lblMemberNumber.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMemberNumber.AutoSize = true;
-            this.lblMemberNumber.Location = new System.Drawing.Point(502, 43);
+            this.lblMemberNumber.Location = new System.Drawing.Point(501, 43);
             this.lblMemberNumber.Name = "lblMemberNumber";
             this.lblMemberNumber.Size = new System.Drawing.Size(42, 13);
             this.lblMemberNumber.TabIndex = 4;
@@ -600,7 +604,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(502, 10);
+            this.label4.Location = new System.Drawing.Point(501, 10);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 13);
             this.label4.TabIndex = 60;
@@ -611,9 +615,9 @@
             this.cboIP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboIP.Enabled = false;
             this.cboIP.FormattingEnabled = true;
-            this.cboIP.Location = new System.Drawing.Point(669, 6);
+            this.cboIP.Location = new System.Drawing.Point(668, 6);
             this.cboIP.Name = "cboIP";
-            this.cboIP.Size = new System.Drawing.Size(164, 21);
+            this.cboIP.Size = new System.Drawing.Size(163, 21);
             this.cboIP.TabIndex = 61;
             // 
             // lblHHMemberVal
@@ -622,7 +626,7 @@
             this.lblHHMemberVal.AutoSize = true;
             this.lblHHMemberVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHHMemberVal.ForeColor = System.Drawing.Color.Red;
-            this.lblHHMemberVal.Location = new System.Drawing.Point(840, 109);
+            this.lblHHMemberVal.Location = new System.Drawing.Point(838, 109);
             this.lblHHMemberVal.Name = "lblHHMemberVal";
             this.lblHHMemberVal.Size = new System.Drawing.Size(11, 13);
             this.lblHHMemberVal.TabIndex = 48;
@@ -633,7 +637,7 @@
             this.dtGatDate.Checked = false;
             this.dtGatDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtGatDate.Location = new System.Drawing.Point(170, 3);
-            this.dtGatDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtGatDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtGatDate.Name = "dtGatDate";
             this.dtGatDate.ShowCheckBox = true;
             this.dtGatDate.Size = new System.Drawing.Size(104, 20);
@@ -655,7 +659,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Red;
-            this.label19.Location = new System.Drawing.Point(483, 10);
+            this.label19.Location = new System.Drawing.Point(482, 10);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(11, 13);
             this.label19.TabIndex = 70;
@@ -667,7 +671,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(840, 142);
+            this.label7.Location = new System.Drawing.Point(838, 142);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(11, 13);
             this.label7.TabIndex = 87;
@@ -690,7 +694,7 @@
             this.cboSubCounty.FormattingEnabled = true;
             this.cboSubCounty.Location = new System.Drawing.Point(171, 72);
             this.cboSubCounty.Name = "cboSubCounty";
-            this.cboSubCounty.Size = new System.Drawing.Size(305, 21);
+            this.cboSubCounty.Size = new System.Drawing.Size(304, 21);
             this.cboSubCounty.TabIndex = 89;
             // 
             // cboParish
@@ -698,9 +702,9 @@
             this.cboParish.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboParish.Enabled = false;
             this.cboParish.FormattingEnabled = true;
-            this.cboParish.Location = new System.Drawing.Point(669, 72);
+            this.cboParish.Location = new System.Drawing.Point(668, 72);
             this.cboParish.Name = "cboParish";
-            this.cboParish.Size = new System.Drawing.Size(164, 21);
+            this.cboParish.Size = new System.Drawing.Size(163, 21);
             this.cboParish.TabIndex = 47;
             this.cboParish.SelectedIndexChanged += new System.EventHandler(this.cboParish_SelectedIndexChanged);
             // 
@@ -708,7 +712,7 @@
             // 
             this.lblGender.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblGender.AutoSize = true;
-            this.lblGender.Location = new System.Drawing.Point(502, 76);
+            this.lblGender.Location = new System.Drawing.Point(501, 76);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(39, 13);
             this.lblGender.TabIndex = 12;
@@ -729,26 +733,26 @@
             this.txtVilage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtVilage.Enabled = false;
             this.txtVilage.Location = new System.Drawing.Point(170, 106);
-            this.txtVilage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtVilage.Margin = new System.Windows.Forms.Padding(2);
             this.txtVilage.Name = "txtVilage";
-            this.txtVilage.Size = new System.Drawing.Size(307, 20);
+            this.txtVilage.Size = new System.Drawing.Size(306, 20);
             this.txtVilage.TabIndex = 62;
             // 
             // txtHHCode
             // 
             this.txtHHCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtHHCode.Enabled = false;
-            this.txtHHCode.Location = new System.Drawing.Point(668, 106);
-            this.txtHHCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtHHCode.Location = new System.Drawing.Point(667, 106);
+            this.txtHHCode.Margin = new System.Windows.Forms.Padding(2);
             this.txtHHCode.Name = "txtHHCode";
-            this.txtHHCode.Size = new System.Drawing.Size(166, 20);
+            this.txtHHCode.Size = new System.Drawing.Size(165, 20);
             this.txtHHCode.TabIndex = 64;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(502, 109);
+            this.label1.Location = new System.Drawing.Point(501, 109);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 13);
             this.label1.TabIndex = 71;
@@ -770,7 +774,7 @@
             this.cboSocialWorker.FormattingEnabled = true;
             this.cboSocialWorker.Location = new System.Drawing.Point(171, 138);
             this.cboSocialWorker.Name = "cboSocialWorker";
-            this.cboSocialWorker.Size = new System.Drawing.Size(305, 21);
+            this.cboSocialWorker.Size = new System.Drawing.Size(304, 21);
             this.cboSocialWorker.TabIndex = 82;
             this.cboSocialWorker.SelectionChangeCommitted += new System.EventHandler(this.cboSocialWorker_SelectionChangeCommitted);
             // 
@@ -778,17 +782,17 @@
             // 
             this.txtSocialWorkerPhone.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtSocialWorkerPhone.Enabled = false;
-            this.txtSocialWorkerPhone.Location = new System.Drawing.Point(668, 139);
-            this.txtSocialWorkerPhone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSocialWorkerPhone.Location = new System.Drawing.Point(667, 139);
+            this.txtSocialWorkerPhone.Margin = new System.Windows.Forms.Padding(2);
             this.txtSocialWorkerPhone.Name = "txtSocialWorkerPhone";
-            this.txtSocialWorkerPhone.Size = new System.Drawing.Size(166, 20);
+            this.txtSocialWorkerPhone.Size = new System.Drawing.Size(165, 20);
             this.txtSocialWorkerPhone.TabIndex = 78;
             // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(502, 142);
+            this.label3.Location = new System.Drawing.Point(501, 142);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 13);
             this.label3.TabIndex = 75;
@@ -810,7 +814,7 @@
             this.cboCaregiver.FormattingEnabled = true;
             this.cboCaregiver.Location = new System.Drawing.Point(171, 172);
             this.cboCaregiver.Name = "cboCaregiver";
-            this.cboCaregiver.Size = new System.Drawing.Size(305, 21);
+            this.cboCaregiver.Size = new System.Drawing.Size(304, 21);
             this.cboCaregiver.TabIndex = 67;
             // 
             // tab02
@@ -821,7 +825,7 @@
             this.tab02.Controls.Add(this.label8);
             this.tab02.Location = new System.Drawing.Point(4, 22);
             this.tab02.Name = "tab02";
-            this.tab02.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tab02.Padding = new System.Windows.Forms.Padding(3);
             this.tab02.Size = new System.Drawing.Size(893, 500);
             this.tab02.TabIndex = 1;
             this.tab02.Text = "BenchMark-01";
@@ -886,7 +890,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.27294F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.72706F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.tableLayoutPanel1.Controls.Add(this.label12, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.label11, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 2);
@@ -911,7 +915,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(845, 42);
+            this.label12.Location = new System.Drawing.Point(843, 42);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(11, 13);
             this.label12.TabIndex = 57;
@@ -923,7 +927,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(845, 11);
+            this.label11.Location = new System.Drawing.Point(843, 11);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(11, 13);
             this.label11.TabIndex = 57;
@@ -935,7 +939,7 @@
             this.panel1.Controls.Add(this.rbtn_BenchMark01Yes);
             this.panel1.Controls.Add(this.rbtn_BenchMark01No);
             this.panel1.Enabled = false;
-            this.panel1.Location = new System.Drawing.Point(553, 74);
+            this.panel1.Location = new System.Drawing.Point(551, 74);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(181, 23);
             this.panel1.TabIndex = 129;
@@ -968,7 +972,7 @@
             this.panelResponse01.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panelResponse01.Controls.Add(this.rbtn_yn_hiv_statusYes);
             this.panelResponse01.Controls.Add(this.rbtn_yn_hiv_statusNo);
-            this.panelResponse01.Location = new System.Drawing.Point(553, 38);
+            this.panelResponse01.Location = new System.Drawing.Point(551, 38);
             this.panelResponse01.Name = "panelResponse01";
             this.panelResponse01.Size = new System.Drawing.Size(181, 22);
             this.panelResponse01.TabIndex = 128;
@@ -1012,7 +1016,7 @@
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(4, 36);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(541, 26);
+            this.label14.Size = new System.Drawing.Size(538, 26);
             this.label14.TabIndex = 57;
             this.label14.Text = "Has this beneficiary been documented as “HIV status positive,” “HIV status negati" +
     "ve,” or “test not required based on risk?";
@@ -1032,7 +1036,7 @@
             // 
             this.cbo_hhm_01.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbo_hhm_01.FormattingEnabled = true;
-            this.cbo_hhm_01.Location = new System.Drawing.Point(553, 7);
+            this.cbo_hhm_01.Location = new System.Drawing.Point(551, 7);
             this.cbo_hhm_01.Name = "cbo_hhm_01";
             this.cbo_hhm_01.Size = new System.Drawing.Size(262, 21);
             this.cbo_hhm_01.TabIndex = 65;
@@ -1047,7 +1051,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 211F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 212F));
             this.tableLayoutPanel2.Controls.Add(this.btnSaveBenchMark01, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnCancelBenchMark01, 3, 0);
             this.tableLayoutPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1061,7 +1065,7 @@
             // btnSaveBenchMark01
             // 
             this.btnSaveBenchMark01.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnSaveBenchMark01.Location = new System.Drawing.Point(269, 8);
+            this.btnSaveBenchMark01.Location = new System.Drawing.Point(268, 8);
             this.btnSaveBenchMark01.Name = "btnSaveBenchMark01";
             this.btnSaveBenchMark01.Size = new System.Drawing.Size(75, 23);
             this.btnSaveBenchMark01.TabIndex = 14;
@@ -1072,7 +1076,7 @@
             // btnCancelBenchMark01
             // 
             this.btnCancelBenchMark01.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnCancelBenchMark01.Location = new System.Drawing.Point(384, 8);
+            this.btnCancelBenchMark01.Location = new System.Drawing.Point(383, 8);
             this.btnCancelBenchMark01.Name = "btnCancelBenchMark01";
             this.btnCancelBenchMark01.Size = new System.Drawing.Size(75, 23);
             this.btnCancelBenchMark01.TabIndex = 15;
@@ -1105,6 +1109,7 @@
             // 
             // tab03
             // 
+            this.tab03.Controls.Add(this.lblgatfinal02);
             this.tab03.Controls.Add(this.lblID02);
             this.tab03.Controls.Add(this.panelBenchMark02);
             this.tab03.Controls.Add(this.label22);
@@ -1177,7 +1182,7 @@
             this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.27294F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.72706F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.tableLayoutPanel3.Controls.Add(this.panelAppointment, 1, 3);
             this.tableLayoutPanel3.Controls.Add(this.panelART, 1, 2);
             this.tableLayoutPanel3.Controls.Add(this.panel2, 1, 4);
@@ -1205,7 +1210,7 @@
             this.panelAppointment.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panelAppointment.Controls.Add(this.yn_appointmentYes);
             this.panelAppointment.Controls.Add(this.yn_appointmentNo);
-            this.panelAppointment.Location = new System.Drawing.Point(551, 108);
+            this.panelAppointment.Location = new System.Drawing.Point(550, 108);
             this.panelAppointment.Name = "panelAppointment";
             this.panelAppointment.Size = new System.Drawing.Size(181, 23);
             this.panelAppointment.TabIndex = 130;
@@ -1238,7 +1243,7 @@
             this.panelART.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panelART.Controls.Add(this.yn_prescribedYes);
             this.panelART.Controls.Add(this.yn_prescribedNo);
-            this.panelART.Location = new System.Drawing.Point(551, 72);
+            this.panelART.Location = new System.Drawing.Point(550, 72);
             this.panelART.Name = "panelART";
             this.panelART.Size = new System.Drawing.Size(181, 27);
             this.panelART.TabIndex = 129;
@@ -1273,7 +1278,7 @@
             this.panel2.Controls.Add(this.rbtn_BenchMark02Yes);
             this.panel2.Controls.Add(this.rbtn_BenchMark02No);
             this.panel2.Enabled = false;
-            this.panel2.Location = new System.Drawing.Point(551, 141);
+            this.panel2.Location = new System.Drawing.Point(550, 141);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(262, 23);
             this.panel2.TabIndex = 129;
@@ -1317,7 +1322,7 @@
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel3.Controls.Add(this.yn_supressYes);
             this.panel3.Controls.Add(this.yn_supressNo);
-            this.panel3.Location = new System.Drawing.Point(551, 40);
+            this.panel3.Location = new System.Drawing.Point(550, 40);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(181, 22);
             this.panel3.TabIndex = 128;
@@ -1383,7 +1388,7 @@
             // 
             this.cbo_hhm_02.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbo_hhm_02.FormattingEnabled = true;
-            this.cbo_hhm_02.Location = new System.Drawing.Point(551, 6);
+            this.cbo_hhm_02.Location = new System.Drawing.Point(550, 6);
             this.cbo_hhm_02.Name = "cbo_hhm_02";
             this.cbo_hhm_02.Size = new System.Drawing.Size(262, 21);
             this.cbo_hhm_02.TabIndex = 65;
@@ -1432,7 +1437,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 211F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 212F));
             this.tableLayoutPanel4.Controls.Add(this.btnSaveBenchMark02, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.btnCancelBenchMark02, 3, 0);
             this.tableLayoutPanel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1446,7 +1451,7 @@
             // btnSaveBenchMark02
             // 
             this.btnSaveBenchMark02.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnSaveBenchMark02.Location = new System.Drawing.Point(268, 8);
+            this.btnSaveBenchMark02.Location = new System.Drawing.Point(267, 8);
             this.btnSaveBenchMark02.Name = "btnSaveBenchMark02";
             this.btnSaveBenchMark02.Size = new System.Drawing.Size(75, 23);
             this.btnSaveBenchMark02.TabIndex = 14;
@@ -1457,7 +1462,7 @@
             // btnCancelBenchMark02
             // 
             this.btnCancelBenchMark02.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnCancelBenchMark02.Location = new System.Drawing.Point(383, 8);
+            this.btnCancelBenchMark02.Location = new System.Drawing.Point(382, 8);
             this.btnCancelBenchMark02.Name = "btnCancelBenchMark02";
             this.btnCancelBenchMark02.Size = new System.Drawing.Size(75, 23);
             this.btnCancelBenchMark02.TabIndex = 15;
@@ -1490,6 +1495,7 @@
             // 
             // tab04
             // 
+            this.tab04.Controls.Add(this.lblgatfinal03);
             this.tab04.Controls.Add(this.lblID03);
             this.tab04.Controls.Add(this.panelBenchMark03);
             this.tab04.Controls.Add(this.label16);
@@ -1561,7 +1567,7 @@
             this.tableLayoutPanel5.ColumnCount = 3;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.27294F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.72706F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.tableLayoutPanel5.Controls.Add(this.panel7, 1, 2);
             this.tableLayoutPanel5.Controls.Add(this.panel8, 1, 3);
             this.tableLayoutPanel5.Controls.Add(this.panel9, 1, 1);
@@ -1586,7 +1592,7 @@
             this.panel7.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel7.Controls.Add(this.yn_hiv_preventionYes);
             this.panel7.Controls.Add(this.yn_hiv_preventionNo);
-            this.panel7.Location = new System.Drawing.Point(552, 70);
+            this.panel7.Location = new System.Drawing.Point(551, 70);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(181, 27);
             this.panel7.TabIndex = 129;
@@ -1621,7 +1627,7 @@
             this.panel8.Controls.Add(this.rbtn_BenchMark03Yes);
             this.panel8.Controls.Add(this.rbtn_BenchMark03No);
             this.panel8.Enabled = false;
-            this.panel8.Location = new System.Drawing.Point(552, 106);
+            this.panel8.Location = new System.Drawing.Point(551, 106);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(262, 23);
             this.panel8.TabIndex = 129;
@@ -1665,7 +1671,7 @@
             this.panel9.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel9.Controls.Add(this.yn_risks_identifiedYes);
             this.panel9.Controls.Add(this.yn_risks_identifiedNo);
-            this.panel9.Location = new System.Drawing.Point(552, 38);
+            this.panel9.Location = new System.Drawing.Point(551, 38);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(181, 22);
             this.panel9.TabIndex = 128;
@@ -1728,7 +1734,7 @@
             // 
             this.cbo_hhm_03.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbo_hhm_03.FormattingEnabled = true;
-            this.cbo_hhm_03.Location = new System.Drawing.Point(552, 6);
+            this.cbo_hhm_03.Location = new System.Drawing.Point(551, 6);
             this.cbo_hhm_03.Name = "cbo_hhm_03";
             this.cbo_hhm_03.Size = new System.Drawing.Size(262, 21);
             this.cbo_hhm_03.TabIndex = 65;
@@ -1765,7 +1771,7 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 211F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 212F));
             this.tableLayoutPanel6.Controls.Add(this.btnSaveBenchMark03, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.btnCancelBenchMark03, 3, 0);
             this.tableLayoutPanel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1779,7 +1785,7 @@
             // btnSaveBenchMark03
             // 
             this.btnSaveBenchMark03.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnSaveBenchMark03.Location = new System.Drawing.Point(268, 8);
+            this.btnSaveBenchMark03.Location = new System.Drawing.Point(267, 8);
             this.btnSaveBenchMark03.Name = "btnSaveBenchMark03";
             this.btnSaveBenchMark03.Size = new System.Drawing.Size(75, 23);
             this.btnSaveBenchMark03.TabIndex = 14;
@@ -1790,7 +1796,7 @@
             // btnCancelBenchMark03
             // 
             this.btnCancelBenchMark03.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnCancelBenchMark03.Location = new System.Drawing.Point(383, 8);
+            this.btnCancelBenchMark03.Location = new System.Drawing.Point(382, 8);
             this.btnCancelBenchMark03.Name = "btnCancelBenchMark03";
             this.btnCancelBenchMark03.Size = new System.Drawing.Size(75, 23);
             this.btnCancelBenchMark03.TabIndex = 15;
@@ -1823,6 +1829,7 @@
             // 
             // tab05
             // 
+            this.tab05.Controls.Add(this.lblgatfinal04);
             this.tab05.Controls.Add(this.panel1BenchMark04);
             this.tab05.Controls.Add(this.lblID04);
             this.tab05.Controls.Add(this.tableLayoutPanel8);
@@ -1883,7 +1890,7 @@
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 210F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 211F));
             this.tableLayoutPanel8.Controls.Add(this.btnSaveBenchMark04, 1, 0);
             this.tableLayoutPanel8.Controls.Add(this.btnCancelBenchMark04, 3, 0);
             this.tableLayoutPanel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1897,7 +1904,7 @@
             // btnSaveBenchMark04
             // 
             this.btnSaveBenchMark04.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnSaveBenchMark04.Location = new System.Drawing.Point(272, 8);
+            this.btnSaveBenchMark04.Location = new System.Drawing.Point(271, 8);
             this.btnSaveBenchMark04.Name = "btnSaveBenchMark04";
             this.btnSaveBenchMark04.Size = new System.Drawing.Size(75, 23);
             this.btnSaveBenchMark04.TabIndex = 14;
@@ -1908,7 +1915,7 @@
             // btnCancelBenchMark04
             // 
             this.btnCancelBenchMark04.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnCancelBenchMark04.Location = new System.Drawing.Point(387, 8);
+            this.btnCancelBenchMark04.Location = new System.Drawing.Point(386, 8);
             this.btnCancelBenchMark04.Name = "btnCancelBenchMark04";
             this.btnCancelBenchMark04.Size = new System.Drawing.Size(75, 23);
             this.btnCancelBenchMark04.TabIndex = 15;
@@ -1924,7 +1931,7 @@
             this.tableLayoutPanel7.ColumnCount = 3;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.27294F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.72706F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.tableLayoutPanel7.Controls.Add(this.panel6, 1, 2);
             this.tableLayoutPanel7.Controls.Add(this.panel10, 1, 3);
             this.tableLayoutPanel7.Controls.Add(this.panel11, 1, 1);
@@ -1949,7 +1956,7 @@
             this.panel6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel6.Controls.Add(this.yn_edema_freeYes);
             this.panel6.Controls.Add(this.yn_edema_freeNo);
-            this.panel6.Location = new System.Drawing.Point(556, 70);
+            this.panel6.Location = new System.Drawing.Point(555, 70);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(181, 27);
             this.panel6.TabIndex = 129;
@@ -1984,7 +1991,7 @@
             this.panel10.Controls.Add(this.rbtn_BenchMark04Yes);
             this.panel10.Controls.Add(this.rbtn_BenchMark04No);
             this.panel10.Enabled = false;
-            this.panel10.Location = new System.Drawing.Point(556, 106);
+            this.panel10.Location = new System.Drawing.Point(555, 106);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(262, 23);
             this.panel10.TabIndex = 129;
@@ -2028,7 +2035,7 @@
             this.panel11.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel11.Controls.Add(this.yn_muac_normalYes);
             this.panel11.Controls.Add(this.yn_muac_normalNo);
-            this.panel11.Location = new System.Drawing.Point(556, 38);
+            this.panel11.Location = new System.Drawing.Point(555, 38);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(181, 22);
             this.panel11.TabIndex = 128;
@@ -2091,7 +2098,7 @@
             // 
             this.cbo_hhm_04.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbo_hhm_04.FormattingEnabled = true;
-            this.cbo_hhm_04.Location = new System.Drawing.Point(556, 6);
+            this.cbo_hhm_04.Location = new System.Drawing.Point(555, 6);
             this.cbo_hhm_04.Name = "cbo_hhm_04";
             this.cbo_hhm_04.Size = new System.Drawing.Size(262, 21);
             this.cbo_hhm_04.TabIndex = 65;
@@ -2204,7 +2211,7 @@
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 210F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 211F));
             this.tableLayoutPanel10.Controls.Add(this.btnSaveBenchMark05, 1, 0);
             this.tableLayoutPanel10.Controls.Add(this.btnCancelBenchMark05, 3, 0);
             this.tableLayoutPanel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2218,7 +2225,7 @@
             // btnSaveBenchMark05
             // 
             this.btnSaveBenchMark05.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnSaveBenchMark05.Location = new System.Drawing.Point(272, 8);
+            this.btnSaveBenchMark05.Location = new System.Drawing.Point(271, 8);
             this.btnSaveBenchMark05.Name = "btnSaveBenchMark05";
             this.btnSaveBenchMark05.Size = new System.Drawing.Size(75, 23);
             this.btnSaveBenchMark05.TabIndex = 14;
@@ -2229,7 +2236,7 @@
             // btnCancelBenchMark05
             // 
             this.btnCancelBenchMark05.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnCancelBenchMark05.Location = new System.Drawing.Point(387, 8);
+            this.btnCancelBenchMark05.Location = new System.Drawing.Point(386, 8);
             this.btnCancelBenchMark05.Name = "btnCancelBenchMark05";
             this.btnCancelBenchMark05.Size = new System.Drawing.Size(75, 23);
             this.btnCancelBenchMark05.TabIndex = 15;
@@ -2245,7 +2252,7 @@
             this.tableLayoutPanel9.ColumnCount = 3;
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.27294F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.72706F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.tableLayoutPanel9.Controls.Add(this.panel056, 1, 6);
             this.tableLayoutPanel9.Controls.Add(this.panel055, 1, 5);
             this.tableLayoutPanel9.Controls.Add(this.panel052, 1, 2);
@@ -2282,7 +2289,7 @@
             this.panel056.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel056.Controls.Add(this.yn_pay_medical_fees_no_sell_assetYes);
             this.panel056.Controls.Add(this.yn_pay_medical_fees_no_sell_assetNo);
-            this.panel056.Location = new System.Drawing.Point(556, 208);
+            this.panel056.Location = new System.Drawing.Point(555, 208);
             this.panel056.Name = "panel056";
             this.panel056.Size = new System.Drawing.Size(262, 27);
             this.panel056.TabIndex = 132;
@@ -2317,7 +2324,7 @@
             this.panel055.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel055.Controls.Add(this.yn_pay_medical_fees_no_grantYes);
             this.panel055.Controls.Add(this.yn_pay_medical_fees_no_grantNo);
-            this.panel055.Location = new System.Drawing.Point(556, 174);
+            this.panel055.Location = new System.Drawing.Point(555, 174);
             this.panel055.Name = "panel055";
             this.panel055.Size = new System.Drawing.Size(262, 27);
             this.panel055.TabIndex = 131;
@@ -2352,7 +2359,7 @@
             this.panel052.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel052.Controls.Add(this.yn_pay_fees_no_grantYes);
             this.panel052.Controls.Add(this.yn_pay_fees_no_grantNo);
-            this.panel052.Location = new System.Drawing.Point(556, 72);
+            this.panel052.Location = new System.Drawing.Point(555, 72);
             this.panel052.Name = "panel052";
             this.panel052.Size = new System.Drawing.Size(262, 27);
             this.panel052.TabIndex = 129;
@@ -2388,7 +2395,7 @@
             this.panel13.Controls.Add(this.rbtn_BenchMark05Yes);
             this.panel13.Controls.Add(this.rbtn_BenchMark05No);
             this.panel13.Enabled = false;
-            this.panel13.Location = new System.Drawing.Point(556, 244);
+            this.panel13.Location = new System.Drawing.Point(555, 244);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(262, 23);
             this.panel13.TabIndex = 129;
@@ -2422,10 +2429,22 @@
             this.panel051.Controls.Add(this.yn_pay_feesNA);
             this.panel051.Controls.Add(this.yn_pay_feesYes);
             this.panel051.Controls.Add(this.yn_pay_feesNo);
-            this.panel051.Location = new System.Drawing.Point(556, 40);
+            this.panel051.Location = new System.Drawing.Point(555, 40);
             this.panel051.Name = "panel051";
             this.panel051.Size = new System.Drawing.Size(262, 22);
             this.panel051.TabIndex = 128;
+            // 
+            // yn_pay_feesNA
+            // 
+            this.yn_pay_feesNA.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.yn_pay_feesNA.AutoSize = true;
+            this.yn_pay_feesNA.Location = new System.Drawing.Point(176, 1);
+            this.yn_pay_feesNA.Name = "yn_pay_feesNA";
+            this.yn_pay_feesNA.Size = new System.Drawing.Size(40, 17);
+            this.yn_pay_feesNA.TabIndex = 3;
+            this.yn_pay_feesNA.Text = "NA";
+            this.yn_pay_feesNA.UseVisualStyleBackColor = true;
+            this.yn_pay_feesNA.CheckedChanged += new System.EventHandler(this.yn_pay_feesNA_CheckedChanged);
             // 
             // yn_pay_feesYes
             // 
@@ -2488,7 +2507,7 @@
             // 
             this.cbo_hhm_05.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbo_hhm_05.FormattingEnabled = true;
-            this.cbo_hhm_05.Location = new System.Drawing.Point(556, 7);
+            this.cbo_hhm_05.Location = new System.Drawing.Point(555, 7);
             this.cbo_hhm_05.Name = "cbo_hhm_05";
             this.cbo_hhm_05.Size = new System.Drawing.Size(262, 21);
             this.cbo_hhm_05.TabIndex = 65;
@@ -2522,7 +2541,7 @@
             this.label41.AutoSize = true;
             this.label41.Location = new System.Drawing.Point(4, 140);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(545, 26);
+            this.label41.Size = new System.Drawing.Size(508, 26);
             this.label41.TabIndex = 132;
             this.label41.Text = "Were you (or another caregiver in the household) able to pay all medical costs in" +
     " the past 12 months for all children in your household under the age of 18? ";
@@ -2555,7 +2574,7 @@
             this.panel053.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel053.Controls.Add(this.yn_pay_fees_no_sell_assetYes);
             this.panel053.Controls.Add(this.yn_pay_fees_no_sell_assetNo);
-            this.panel053.Location = new System.Drawing.Point(556, 106);
+            this.panel053.Location = new System.Drawing.Point(555, 106);
             this.panel053.Name = "panel053";
             this.panel053.Size = new System.Drawing.Size(262, 27);
             this.panel053.TabIndex = 135;
@@ -2591,10 +2610,22 @@
             this.panel054.Controls.Add(this.yn_pay_medical_feesNA);
             this.panel054.Controls.Add(this.yn_pay_medical_feesYes);
             this.panel054.Controls.Add(this.yn_pay_medical_feesNo);
-            this.panel054.Location = new System.Drawing.Point(556, 140);
+            this.panel054.Location = new System.Drawing.Point(555, 140);
             this.panel054.Name = "panel054";
             this.panel054.Size = new System.Drawing.Size(262, 27);
             this.panel054.TabIndex = 130;
+            // 
+            // yn_pay_medical_feesNA
+            // 
+            this.yn_pay_medical_feesNA.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.yn_pay_medical_feesNA.AutoSize = true;
+            this.yn_pay_medical_feesNA.Location = new System.Drawing.Point(176, 3);
+            this.yn_pay_medical_feesNA.Name = "yn_pay_medical_feesNA";
+            this.yn_pay_medical_feesNA.Size = new System.Drawing.Size(40, 17);
+            this.yn_pay_medical_feesNA.TabIndex = 3;
+            this.yn_pay_medical_feesNA.Text = "NA";
+            this.yn_pay_medical_feesNA.UseVisualStyleBackColor = true;
+            this.yn_pay_medical_feesNA.CheckedChanged += new System.EventHandler(this.yn_pay_medical_feesNA_CheckedChanged);
             // 
             // yn_pay_medical_feesYes
             // 
@@ -2695,7 +2726,7 @@
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 210F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 211F));
             this.tableLayoutPanel12.Controls.Add(this.btnSaveBenchMark06, 1, 0);
             this.tableLayoutPanel12.Controls.Add(this.btnCancelBenchMark06, 3, 0);
             this.tableLayoutPanel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2709,7 +2740,7 @@
             // btnSaveBenchMark06
             // 
             this.btnSaveBenchMark06.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnSaveBenchMark06.Location = new System.Drawing.Point(272, 8);
+            this.btnSaveBenchMark06.Location = new System.Drawing.Point(271, 8);
             this.btnSaveBenchMark06.Name = "btnSaveBenchMark06";
             this.btnSaveBenchMark06.Size = new System.Drawing.Size(75, 23);
             this.btnSaveBenchMark06.TabIndex = 14;
@@ -2720,7 +2751,7 @@
             // btnCancelBenchMark06
             // 
             this.btnCancelBenchMark06.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnCancelBenchMark06.Location = new System.Drawing.Point(387, 8);
+            this.btnCancelBenchMark06.Location = new System.Drawing.Point(386, 8);
             this.btnCancelBenchMark06.Name = "btnCancelBenchMark06";
             this.btnCancelBenchMark06.Size = new System.Drawing.Size(75, 23);
             this.btnCancelBenchMark06.TabIndex = 15;
@@ -2736,7 +2767,7 @@
             this.tableLayoutPanel11.ColumnCount = 3;
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.27294F));
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.72706F));
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.tableLayoutPanel11.Controls.Add(this.panel03, 1, 3);
             this.tableLayoutPanel11.Controls.Add(this.panel20, 1, 4);
             this.tableLayoutPanel11.Controls.Add(this.panel02, 1, 2);
@@ -2764,7 +2795,7 @@
             this.panel03.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel03.Controls.Add(this.yn_child_violenceYes);
             this.panel03.Controls.Add(this.yn_child_violenceNo);
-            this.panel03.Location = new System.Drawing.Point(556, 94);
+            this.panel03.Location = new System.Drawing.Point(555, 94);
             this.panel03.Name = "panel03";
             this.panel03.Size = new System.Drawing.Size(181, 23);
             this.panel03.TabIndex = 130;
@@ -2798,7 +2829,7 @@
             this.panel20.Controls.Add(this.rbtn_BenchMark06Yes);
             this.panel20.Controls.Add(this.rbtn_BenchMark06No);
             this.panel20.Enabled = false;
-            this.panel20.Location = new System.Drawing.Point(556, 124);
+            this.panel20.Location = new System.Drawing.Point(555, 124);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(181, 23);
             this.panel20.TabIndex = 130;
@@ -2831,7 +2862,7 @@
             this.panel02.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel02.Controls.Add(this.yn_child_abuse_awareYes);
             this.panel02.Controls.Add(this.yn_child_abuse_awareNo);
-            this.panel02.Location = new System.Drawing.Point(556, 64);
+            this.panel02.Location = new System.Drawing.Point(555, 64);
             this.panel02.Name = "panel02";
             this.panel02.Size = new System.Drawing.Size(181, 23);
             this.panel02.TabIndex = 129;
@@ -2864,7 +2895,7 @@
             this.panel01.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel01.Controls.Add(this.yn_adult_kickedYes);
             this.panel01.Controls.Add(this.yn_adult_kickedNo);
-            this.panel01.Location = new System.Drawing.Point(556, 34);
+            this.panel01.Location = new System.Drawing.Point(555, 34);
             this.panel01.Name = "panel01";
             this.panel01.Size = new System.Drawing.Size(181, 22);
             this.panel01.TabIndex = 128;
@@ -2928,7 +2959,7 @@
             // 
             this.cbo_hhm_06.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbo_hhm_06.FormattingEnabled = true;
-            this.cbo_hhm_06.Location = new System.Drawing.Point(556, 5);
+            this.cbo_hhm_06.Location = new System.Drawing.Point(555, 5);
             this.cbo_hhm_06.Name = "cbo_hhm_06";
             this.cbo_hhm_06.Size = new System.Drawing.Size(262, 21);
             this.cbo_hhm_06.TabIndex = 65;
@@ -3041,7 +3072,7 @@
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 210F));
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 211F));
             this.tableLayoutPanel14.Controls.Add(this.btnSaveBenchMark07, 1, 0);
             this.tableLayoutPanel14.Controls.Add(this.btnCancelBenchMark07, 3, 0);
             this.tableLayoutPanel14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3055,7 +3086,7 @@
             // btnSaveBenchMark07
             // 
             this.btnSaveBenchMark07.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnSaveBenchMark07.Location = new System.Drawing.Point(272, 8);
+            this.btnSaveBenchMark07.Location = new System.Drawing.Point(271, 8);
             this.btnSaveBenchMark07.Name = "btnSaveBenchMark07";
             this.btnSaveBenchMark07.Size = new System.Drawing.Size(75, 23);
             this.btnSaveBenchMark07.TabIndex = 14;
@@ -3066,7 +3097,7 @@
             // btnCancelBenchMark07
             // 
             this.btnCancelBenchMark07.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnCancelBenchMark07.Location = new System.Drawing.Point(387, 8);
+            this.btnCancelBenchMark07.Location = new System.Drawing.Point(386, 8);
             this.btnCancelBenchMark07.Name = "btnCancelBenchMark07";
             this.btnCancelBenchMark07.Size = new System.Drawing.Size(75, 23);
             this.btnCancelBenchMark07.TabIndex = 15;
@@ -3082,7 +3113,7 @@
             this.tableLayoutPanel13.ColumnCount = 3;
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.27294F));
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.72706F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.tableLayoutPanel13.Controls.Add(this.panel24, 1, 1);
             this.tableLayoutPanel13.Controls.Add(this.panel26, 1, 0);
             this.tableLayoutPanel13.Controls.Add(this.label54, 0, 0);
@@ -3102,7 +3133,7 @@
             this.panel24.Controls.Add(this.rbtn_BenchMark07Yes);
             this.panel24.Controls.Add(this.rbtn_BenchMark07No);
             this.panel24.Enabled = false;
-            this.panel24.Location = new System.Drawing.Point(556, 43);
+            this.panel24.Location = new System.Drawing.Point(555, 43);
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(181, 23);
             this.panel24.TabIndex = 130;
@@ -3135,7 +3166,7 @@
             this.panel26.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel26.Controls.Add(this.yn_stableCaregiverYes);
             this.panel26.Controls.Add(this.yn_stableCaregiverNo);
-            this.panel26.Location = new System.Drawing.Point(556, 7);
+            this.panel26.Location = new System.Drawing.Point(555, 7);
             this.panel26.Name = "panel26";
             this.panel26.Size = new System.Drawing.Size(181, 22);
             this.panel26.TabIndex = 128;
@@ -3199,6 +3230,7 @@
             // 
             // tab09
             // 
+            this.tab09.Controls.Add(this.lblgatfinal08);
             this.tab09.Controls.Add(this.lblMessage08);
             this.tab09.Controls.Add(this.panel1BenchMark08);
             this.tab09.Controls.Add(this.lblID08);
@@ -3271,7 +3303,7 @@
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 210F));
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 211F));
             this.tableLayoutPanel16.Controls.Add(this.btnSaveBenchMark08, 1, 0);
             this.tableLayoutPanel16.Controls.Add(this.btnCancelBenchMark08, 3, 0);
             this.tableLayoutPanel16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3285,7 +3317,7 @@
             // btnSaveBenchMark08
             // 
             this.btnSaveBenchMark08.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnSaveBenchMark08.Location = new System.Drawing.Point(272, 8);
+            this.btnSaveBenchMark08.Location = new System.Drawing.Point(271, 8);
             this.btnSaveBenchMark08.Name = "btnSaveBenchMark08";
             this.btnSaveBenchMark08.Size = new System.Drawing.Size(75, 23);
             this.btnSaveBenchMark08.TabIndex = 14;
@@ -3296,7 +3328,7 @@
             // btnCancelBenchMark08
             // 
             this.btnCancelBenchMark08.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnCancelBenchMark08.Location = new System.Drawing.Point(387, 8);
+            this.btnCancelBenchMark08.Location = new System.Drawing.Point(386, 8);
             this.btnCancelBenchMark08.Name = "btnCancelBenchMark08";
             this.btnCancelBenchMark08.Size = new System.Drawing.Size(75, 23);
             this.btnCancelBenchMark08.TabIndex = 15;
@@ -3312,7 +3344,7 @@
             this.tableLayoutPanel15.ColumnCount = 3;
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.27294F));
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.72706F));
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.tableLayoutPanel15.Controls.Add(this.panel23, 1, 2);
             this.tableLayoutPanel15.Controls.Add(this.panel25, 1, 3);
             this.tableLayoutPanel15.Controls.Add(this.panel27, 1, 1);
@@ -3337,7 +3369,7 @@
             this.panel23.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel23.Controls.Add(this.yn_edu_progressYes);
             this.panel23.Controls.Add(this.yn_edu_progressNo);
-            this.panel23.Location = new System.Drawing.Point(556, 74);
+            this.panel23.Location = new System.Drawing.Point(555, 74);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(181, 23);
             this.panel23.TabIndex = 130;
@@ -3372,7 +3404,7 @@
             this.panel25.Controls.Add(this.rbtn_BenchMark08Yes);
             this.panel25.Controls.Add(this.rbtn_BenchMark08No);
             this.panel25.Enabled = false;
-            this.panel25.Location = new System.Drawing.Point(556, 108);
+            this.panel25.Location = new System.Drawing.Point(555, 108);
             this.panel25.Name = "panel25";
             this.panel25.Size = new System.Drawing.Size(260, 23);
             this.panel25.TabIndex = 130;
@@ -3416,7 +3448,7 @@
             this.panel27.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel27.Controls.Add(this.yn_edu_attend_tegularlayYes);
             this.panel27.Controls.Add(this.yn_edu_attend_tegularlayNo);
-            this.panel27.Location = new System.Drawing.Point(556, 40);
+            this.panel27.Location = new System.Drawing.Point(555, 40);
             this.panel27.Name = "panel27";
             this.panel27.Size = new System.Drawing.Size(181, 23);
             this.panel27.TabIndex = 129;
@@ -3449,7 +3481,7 @@
             this.panel28.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel28.Controls.Add(this.yn_edu_enrolledYes);
             this.panel28.Controls.Add(this.yn_edu_enrolledNo);
-            this.panel28.Location = new System.Drawing.Point(556, 6);
+            this.panel28.Location = new System.Drawing.Point(555, 6);
             this.panel28.Name = "panel28";
             this.panel28.Size = new System.Drawing.Size(181, 22);
             this.panel28.TabIndex = 128;
@@ -3532,29 +3564,41 @@
             this.label53.TabIndex = 64;
             this.label53.Text = "BenchMark-08:Children in school";
             // 
-            // yn_pay_feesNA
+            // lblgatfinal02
             // 
-            this.yn_pay_feesNA.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.yn_pay_feesNA.AutoSize = true;
-            this.yn_pay_feesNA.Location = new System.Drawing.Point(176, 1);
-            this.yn_pay_feesNA.Name = "yn_pay_feesNA";
-            this.yn_pay_feesNA.Size = new System.Drawing.Size(40, 17);
-            this.yn_pay_feesNA.TabIndex = 3;
-            this.yn_pay_feesNA.Text = "NA";
-            this.yn_pay_feesNA.UseVisualStyleBackColor = true;
-            this.yn_pay_feesNA.CheckedChanged += new System.EventHandler(this.yn_pay_feesNA_CheckedChanged);
+            this.lblgatfinal02.AutoSize = true;
+            this.lblgatfinal02.Location = new System.Drawing.Point(697, 3);
+            this.lblgatfinal02.Name = "lblgatfinal02";
+            this.lblgatfinal02.Size = new System.Drawing.Size(13, 13);
+            this.lblgatfinal02.TabIndex = 191;
+            this.lblgatfinal02.Text = "--";
             // 
-            // yn_pay_medical_feesNA
+            // lblgatfinal03
             // 
-            this.yn_pay_medical_feesNA.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.yn_pay_medical_feesNA.AutoSize = true;
-            this.yn_pay_medical_feesNA.Location = new System.Drawing.Point(176, 3);
-            this.yn_pay_medical_feesNA.Name = "yn_pay_medical_feesNA";
-            this.yn_pay_medical_feesNA.Size = new System.Drawing.Size(40, 17);
-            this.yn_pay_medical_feesNA.TabIndex = 3;
-            this.yn_pay_medical_feesNA.Text = "NA";
-            this.yn_pay_medical_feesNA.UseVisualStyleBackColor = true;
-            this.yn_pay_medical_feesNA.CheckedChanged += new System.EventHandler(this.yn_pay_medical_feesNA_CheckedChanged);
+            this.lblgatfinal03.AutoSize = true;
+            this.lblgatfinal03.Location = new System.Drawing.Point(772, 5);
+            this.lblgatfinal03.Name = "lblgatfinal03";
+            this.lblgatfinal03.Size = new System.Drawing.Size(13, 13);
+            this.lblgatfinal03.TabIndex = 192;
+            this.lblgatfinal03.Text = "--";
+            // 
+            // lblgatfinal04
+            // 
+            this.lblgatfinal04.AutoSize = true;
+            this.lblgatfinal04.Location = new System.Drawing.Point(705, 6);
+            this.lblgatfinal04.Name = "lblgatfinal04";
+            this.lblgatfinal04.Size = new System.Drawing.Size(13, 13);
+            this.lblgatfinal04.TabIndex = 192;
+            this.lblgatfinal04.Text = "--";
+            // 
+            // lblgatfinal08
+            // 
+            this.lblgatfinal08.AutoSize = true;
+            this.lblgatfinal08.Location = new System.Drawing.Point(627, 4);
+            this.lblgatfinal08.Name = "lblgatfinal08";
+            this.lblgatfinal08.Size = new System.Drawing.Size(13, 13);
+            this.lblgatfinal08.TabIndex = 192;
+            this.lblgatfinal08.Text = "--";
             // 
             // frmHouseholdGraduationAssessment
             // 
@@ -3953,5 +3997,9 @@
         private System.Windows.Forms.RichTextBox txtHelp;
         private System.Windows.Forms.RadioButton yn_pay_feesNA;
         private System.Windows.Forms.RadioButton yn_pay_medical_feesNA;
+        private System.Windows.Forms.Label lblgatfinal02;
+        private System.Windows.Forms.Label lblgatfinal03;
+        private System.Windows.Forms.Label lblgatfinal04;
+        private System.Windows.Forms.Label lblgatfinal08;
     }
 }

@@ -151,7 +151,7 @@ namespace SOCY_MIS.DataAccessLayer
             SqlDataAdapter Adapt;
             string swk_phone = string.Empty;
 
-            string strSQL = "SELECT UPPER(hhm_first_name + ' ' + hhm_last_name ) + '-' + hhm_number AS hhm_name,hhm_id FROM hh_household_member WHERE hh_id = '{0}' ORDER BY hhm_number ASC";
+            string strSQL = "SELECT UPPER(hhm_first_name + ' ' + hhm_last_name ) + '-' + hhm_number AS hhm_name,hhm_id FROM hh_household_member WHERE hh_id = '{0}' AND hhm_status = '1' ORDER BY hhm_number ASC";
             strSQL = string.Format(strSQL, hh_id);
             try
             {
@@ -200,7 +200,7 @@ namespace SOCY_MIS.DataAccessLayer
             string swk_phone = string.Empty;
 
             string strSQL = @";With CteHouseholdMembers AS(
-                                SELECT UPPER(hhm_first_name + ' ' + hhm_last_name) + '-' + hhm_number AS hhm_name, hhm_id, hhm_number FROM hh_household_member WHERE hh_id = '{0}'
+                                SELECT UPPER(hhm_first_name + ' ' + hhm_last_name) + '-' + hhm_number AS hhm_name, hhm_id, hhm_number FROM hh_household_member WHERE hh_id = '{0}' AND hhm_status = '1'
                                 ),
                                 CteHouseholdMembersGatJoin AS(
                                 SELECT hhm.hhm_name, hhm.hhm_id, dt.hhm_id AS _hhm_id, hhm_number FROM CteHouseholdMembers hhm
@@ -256,7 +256,7 @@ namespace SOCY_MIS.DataAccessLayer
             string swk_phone = string.Empty;
 
             string strSQL = @";With CteHouseholdMembers AS(
-                                SELECT UPPER(hhm_first_name + ' ' + hhm_last_name ) + '-' + hhm_number AS hhm_name,hhm_id,hhm_number FROM hh_household_member WHERE (hst_id_new = '1' OR hst_id = '1') AND hh_id ='{0}'
+                                SELECT UPPER(hhm_first_name + ' ' + hhm_last_name ) + '-' + hhm_number AS hhm_name,hhm_id,hhm_number FROM hh_household_member WHERE (hst_id_new = '1' OR hst_id = '1') AND hh_id ='{0}' AND hhm_status = '1'
                                 ),
                                 CteHouseholdMembersGatJoin AS(
                                 SELECT hhm.hhm_name,hhm.hhm_id,dt.hhm_id AS _hhm_id,hhm_number FROM CteHouseholdMembers hhm
@@ -312,7 +312,7 @@ namespace SOCY_MIS.DataAccessLayer
             string swk_phone = string.Empty;
 
             string strSQL = @";With CteHouseholdMembers AS(
-                                SELECT UPPER(hhm_first_name + ' ' + hhm_last_name ) + '-' + hhm_number AS hhm_name,hhm_id,hhm_number FROM hh_household_member WHERE (YEAR(GETDATE()) - hhm_year_of_birth) >=10 AND (YEAR(GETDATE()) - hhm_year_of_birth) <= 17 AND hh_id ='{0}'
+                                SELECT UPPER(hhm_first_name + ' ' + hhm_last_name ) + '-' + hhm_number AS hhm_name,hhm_id,hhm_number FROM hh_household_member WHERE (YEAR(GETDATE()) - hhm_year_of_birth) >=10 AND (YEAR(GETDATE()) - hhm_year_of_birth) <= 17 AND hh_id ='{0}' AND hhm_status = '1'
                                 ),
                                 CteHouseholdMembersGatJoin AS(
                                 SELECT hhm.hhm_name,hhm.hhm_id,dt.hhm_id AS _hhm_id,hhm_number FROM CteHouseholdMembers hhm
@@ -368,7 +368,7 @@ namespace SOCY_MIS.DataAccessLayer
             string swk_phone = string.Empty;
 
             string strSQL = @";With CteHouseholdMembers AS(
-                                SELECT UPPER(hhm_first_name + ' ' + hhm_last_name ) + '-' + hhm_number AS hhm_name,hhm_id,hhm_number FROM hh_household_member WHERE (YEAR(GETDATE()) - hhm_year_of_birth) < 5 AND hh_id ='{0}'
+                                SELECT UPPER(hhm_first_name + ' ' + hhm_last_name ) + '-' + hhm_number AS hhm_name,hhm_id,hhm_number FROM hh_household_member WHERE (YEAR(GETDATE()) - hhm_year_of_birth) < 5 AND hh_id ='{0}' AND hhm_status = '1'
                                 ),
                                 CteHouseholdMembersGatJoin AS(
                                 SELECT hhm.hhm_name,hhm.hhm_id,dt.hhm_id AS _hhm_id,hhm_number FROM CteHouseholdMembers hhm
@@ -424,7 +424,7 @@ namespace SOCY_MIS.DataAccessLayer
             string swk_phone = string.Empty;
 
             string strSQL = @";With CteHouseholdMembers AS(
-                            SELECT UPPER(hhm_first_name + ' ' + hhm_last_name ) + '-' + hhm_number AS hhm_name,hhm_id,hhm_number FROM hh_household_member WHERE (YEAR(GETDATE()) - hhm_year_of_birth) >= 15 AND  hh_id ='{0}'
+                            SELECT UPPER(hhm_first_name + ' ' + hhm_last_name ) + '-' + hhm_number AS hhm_name,hhm_id,hhm_number FROM hh_household_member WHERE (YEAR(GETDATE()) - hhm_year_of_birth) >= 15 AND  hh_id ='{0}' AND hhm_status = '1'
                             ),
                             CteHouseholdMembersGatJoin AS(
                             SELECT hhm.hhm_name,hhm.hhm_id,dt.hhm_id AS _hhm_id,hhm_number FROM CteHouseholdMembers hhm
@@ -481,7 +481,7 @@ namespace SOCY_MIS.DataAccessLayer
             string swk_phone = string.Empty;
 
             string strSQL = @";With CteHouseholdMembers AS(
-                            SELECT UPPER(hhm_first_name + ' ' + hhm_last_name ) + '-' + hhm_number AS hhm_name,hhm_id,hhm_number FROM hh_household_member WHERE (YEAR(GETDATE()) - hhm_year_of_birth) >= 12 AND  hh_id ='{0}'
+                            SELECT UPPER(hhm_first_name + ' ' + hhm_last_name ) + '-' + hhm_number AS hhm_name,hhm_id,hhm_number FROM hh_household_member WHERE (YEAR(GETDATE()) - hhm_year_of_birth) >= 12 AND  hh_id ='{0}' AND hhm_status = '1'
                             ),
                             CteHouseholdMembersGatJoin AS(
                             SELECT hhm.hhm_name,hhm.hhm_id,dt.hhm_id AS _hhm_id,hhm_number FROM CteHouseholdMembers hhm
@@ -959,6 +959,61 @@ namespace SOCY_MIS.DataAccessLayer
             return str_id;
         }
 
+
+
+        public static string LoadGatFinalID(string gat_id)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter Adapt;
+            string str_id = string.Empty;
+
+            string strSQL = @"  SELECT gat_id FROM hh_graduation_assessment_final WHERE gat_id = '{0}'";
+
+            strSQL = string.Format(strSQL, gat_id);
+            try
+            {
+                string strConn = dbCon.ToString();
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(strSQL, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    Adapt = new SqlDataAdapter(cmd);
+                    Adapt.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        DataRow dtRow = dt.Rows[0];
+                        str_id = dtRow["gat_id"].ToString();
+                    }
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            finally
+            {
+                if (conn.State == ConnectionState.Open) { conn.Close(); }
+            }
+
+            return str_id;
+        }
+
+
         public static string LoadBenchMark8ID(string gat_id)
         {
             DataTable dt = new DataTable();
@@ -1162,7 +1217,7 @@ namespace SOCY_MIS.DataAccessLayer
             int count = 0;
             string strSQL = string.Empty;
 
-            strSQL = "SELECT COUNT(*) FROM hh_household_member WHERE (hst_id = '1' OR hst_id_new = '1') AND hh_id = '{0}'";
+            strSQL = "SELECT COUNT(*) FROM hh_household_member WHERE (hst_id = '1' OR hst_id_new = '1') AND hh_id = '{0}' AND hhm_status = '1'";
 
             strSQL = string.Format(strSQL, hh_id);
             try
@@ -1210,7 +1265,7 @@ namespace SOCY_MIS.DataAccessLayer
             int count = 0;
             string strSQL = string.Empty;
 
-            strSQL = "SELECT COUNT(*) FROM hh_household_member WHERE (YEAR(GETDATE()) - hhm_year_of_birth) >=10 AND (YEAR(GETDATE()) - hhm_year_of_birth) <= 17 AND hh_id = '{0}'";
+            strSQL = "SELECT COUNT(*) FROM hh_household_member WHERE (YEAR(GETDATE()) - hhm_year_of_birth) >=10 AND (YEAR(GETDATE()) - hhm_year_of_birth) <= 17 AND hh_id = '{0}' AND hhm_status = '1'";
 
             strSQL = string.Format(strSQL, hh_id);
             try
@@ -1258,7 +1313,7 @@ namespace SOCY_MIS.DataAccessLayer
             int count = 0;
             string strSQL = string.Empty;
 
-            strSQL = "SELECT COUNT(*) FROM hh_household_member WHERE (YEAR(GETDATE()) - hhm_year_of_birth) < 5 AND hh_id = '{0}'";
+            strSQL = "SELECT COUNT(*) FROM hh_household_member WHERE (YEAR(GETDATE()) - hhm_year_of_birth) < 5 AND hh_id = '{0}' AND hhm_status = '1'";
 
             strSQL = string.Format(strSQL, hh_id);
             try
@@ -1305,7 +1360,7 @@ namespace SOCY_MIS.DataAccessLayer
             int count = 0;
             string strSQL = string.Empty;
 
-            strSQL = "SELECT COUNT(*) FROM hh_household_member WHERE (YEAR(GETDATE()) - hhm_year_of_birth) >= 6 AND (YEAR(GETDATE()) - hhm_year_of_birth) <= 17 AND hh_id = '{0}'";
+            strSQL = "SELECT COUNT(*) FROM hh_household_member WHERE (YEAR(GETDATE()) - hhm_year_of_birth) >= 6 AND (YEAR(GETDATE()) - hhm_year_of_birth) <= 17 AND hh_id = '{0}' AND hhm_status = '1'";
 
             strSQL = string.Format(strSQL, hh_id);
             try
@@ -2029,5 +2084,82 @@ namespace SOCY_MIS.DataAccessLayer
             }
         }
         #endregion Save
+
+        public static string Check_if_prev_benchmark_saved(string gat_id,string benchMark)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter Adapt;
+            string str_id = string.Empty;
+
+            string strSQL = @"SELECT* FROM hh_graduation_assessment_final WHERE gat_id = '{0}'";
+
+            strSQL = string.Format(strSQL, gat_id);
+            try
+            {
+                string strConn = dbCon.ToString();
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(strSQL, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    Adapt = new SqlDataAdapter(cmd);
+                    Adapt.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        DataRow dtRow = dt.Rows[0];
+                        switch (benchMark)
+                        {
+                            case "yn_met_benchmark02":
+                                str_id = dtRow["yn_met_benchmark01"].ToString();
+                                break;
+                            case "yn_met_benchmark03":
+                                str_id = dtRow["yn_met_benchmark02"].ToString();
+                                break;
+                            case "yn_met_benchmark04":
+                                str_id = dtRow["yn_met_benchmark03"].ToString();
+                                break;
+                            case "yn_met_benchmark05":
+                                str_id = dtRow["yn_met_benchmark04"].ToString();
+                                break;
+                            case "yn_met_benchmark06":
+                                str_id = dtRow["yn_met_benchmark05"].ToString();
+                                break;
+                            case "yn_met_benchmark07":
+                                str_id = dtRow["yn_met_benchmark06"].ToString();
+                                break;
+                            case "yn_met_benchmark08":
+                                str_id = dtRow["yn_met_benchmark07"].ToString();
+                                break;
+                        }
+                        
+                    }
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            finally
+            {
+                if (conn.State == ConnectionState.Open) { conn.Close(); }
+            }
+
+            return str_id;
+        }
+
     }
 }
