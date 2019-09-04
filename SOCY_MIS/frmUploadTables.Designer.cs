@@ -50,30 +50,26 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lblofficestatus = new System.Windows.Forms.Label();
-            this.gdvTest = new System.Windows.Forms.DataGridView();
             this.gpboxDownload.SuspendLayout();
             this.panelDates.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gdvTest)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCount
             // 
             this.lblCount.AutoSize = true;
             this.lblCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCount.Location = new System.Drawing.Point(683, 279);
-            this.lblCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCount.Location = new System.Drawing.Point(512, 227);
             this.lblCount.Name = "lblCount";
-            this.lblCount.Size = new System.Drawing.Size(17, 18);
+            this.lblCount.Size = new System.Drawing.Size(15, 15);
             this.lblCount.TabIndex = 1;
             this.lblCount.Text = "0";
             // 
             // btnSync
             // 
             this.btnSync.ForeColor = System.Drawing.Color.Blue;
-            this.btnSync.Location = new System.Drawing.Point(16, 196);
-            this.btnSync.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSync.Location = new System.Drawing.Point(12, 159);
             this.btnSync.Name = "btnSync";
-            this.btnSync.Size = new System.Drawing.Size(129, 39);
+            this.btnSync.Size = new System.Drawing.Size(97, 32);
             this.btnSync.TabIndex = 2;
             this.btnSync.Text = "Download Data";
             this.btnSync.UseVisualStyleBackColor = true;
@@ -88,10 +84,9 @@
             // 
             // PBarDownload
             // 
-            this.PBarDownload.Location = new System.Drawing.Point(16, 258);
-            this.PBarDownload.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PBarDownload.Location = new System.Drawing.Point(12, 210);
             this.PBarDownload.Name = "PBarDownload";
-            this.PBarDownload.Size = new System.Drawing.Size(659, 39);
+            this.PBarDownload.Size = new System.Drawing.Size(494, 32);
             this.PBarDownload.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.PBarDownload.TabIndex = 3;
             // 
@@ -99,10 +94,9 @@
             // 
             this.lblstatus.AutoSize = true;
             this.lblstatus.ForeColor = System.Drawing.Color.Red;
-            this.lblstatus.Location = new System.Drawing.Point(16, 239);
-            this.lblstatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblstatus.Location = new System.Drawing.Point(12, 194);
             this.lblstatus.Name = "lblstatus";
-            this.lblstatus.Size = new System.Drawing.Size(177, 17);
+            this.lblstatus.Size = new System.Drawing.Size(136, 13);
             this.lblstatus.TabIndex = 4;
             this.lblstatus.Text = "Download Waiting..............";
             // 
@@ -113,11 +107,9 @@
             this.gpboxDownload.Controls.Add(this.cboDistrict);
             this.gpboxDownload.Controls.Add(this.label2);
             this.gpboxDownload.Controls.Add(this.cboDownloadList);
-            this.gpboxDownload.Location = new System.Drawing.Point(16, 15);
-            this.gpboxDownload.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpboxDownload.Location = new System.Drawing.Point(12, 12);
             this.gpboxDownload.Name = "gpboxDownload";
-            this.gpboxDownload.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gpboxDownload.Size = new System.Drawing.Size(773, 174);
+            this.gpboxDownload.Size = new System.Drawing.Size(580, 141);
             this.gpboxDownload.TabIndex = 5;
             this.gpboxDownload.TabStop = false;
             this.gpboxDownload.Text = "Click on a dataset to start download";
@@ -129,28 +121,30 @@
             this.panelDates.Controls.Add(this.label6);
             this.panelDates.Controls.Add(this.dtdatefrom);
             this.panelDates.Controls.Add(this.dtdateTo);
-            this.panelDates.Location = new System.Drawing.Point(11, 79);
-            this.panelDates.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelDates.Location = new System.Drawing.Point(8, 64);
+            this.panelDates.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelDates.Name = "panelDates";
-            this.panelDates.Size = new System.Drawing.Size(755, 87);
+            this.panelDates.Size = new System.Drawing.Size(566, 71);
             this.panelDates.TabIndex = 13;
             this.panelDates.Visible = false;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(209, 16);
+            this.label7.Location = new System.Drawing.Point(157, 13);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 17);
+            this.label7.Size = new System.Drawing.Size(55, 13);
             this.label7.TabIndex = 14;
             this.label7.Text = "End Date:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 16);
+            this.label6.Location = new System.Drawing.Point(2, 13);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 17);
+            this.label6.Size = new System.Drawing.Size(58, 13);
             this.label6.TabIndex = 13;
             this.label6.Text = "Start Date:";
             // 
@@ -158,32 +152,31 @@
             // 
             this.dtdatefrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtdatefrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtdatefrom.Location = new System.Drawing.Point(3, 36);
-            this.dtdatefrom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtdatefrom.Location = new System.Drawing.Point(2, 29);
+            this.dtdatefrom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtdatefrom.Name = "dtdatefrom";
             this.dtdatefrom.ShowCheckBox = true;
-            this.dtdatefrom.Size = new System.Drawing.Size(200, 27);
+            this.dtdatefrom.Size = new System.Drawing.Size(151, 23);
             this.dtdatefrom.TabIndex = 11;
             // 
             // dtdateTo
             // 
             this.dtdateTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtdateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtdateTo.Location = new System.Drawing.Point(209, 36);
-            this.dtdateTo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtdateTo.Location = new System.Drawing.Point(157, 29);
+            this.dtdateTo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtdateTo.Name = "dtdateTo";
             this.dtdateTo.ShowCheckBox = true;
-            this.dtdateTo.Size = new System.Drawing.Size(200, 27);
+            this.dtdateTo.Size = new System.Drawing.Size(151, 23);
             this.dtdateTo.TabIndex = 12;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(476, 20);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(357, 16);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 17);
+            this.label5.Size = new System.Drawing.Size(39, 13);
             this.label5.TabIndex = 10;
             this.label5.Text = "District";
             // 
@@ -193,20 +186,18 @@
             this.cboDistrict.Enabled = false;
             this.cboDistrict.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboDistrict.FormattingEnabled = true;
-            this.cboDistrict.Location = new System.Drawing.Point(480, 39);
-            this.cboDistrict.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboDistrict.Location = new System.Drawing.Point(360, 32);
             this.cboDistrict.Name = "cboDistrict";
-            this.cboDistrict.Size = new System.Drawing.Size(284, 33);
+            this.cboDistrict.Size = new System.Drawing.Size(214, 28);
             this.cboDistrict.TabIndex = 9;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(8, 20);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(6, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 17);
+            this.label2.Size = new System.Drawing.Size(84, 13);
             this.label2.TabIndex = 8;
             this.label2.Text = "Select a dataset";
             // 
@@ -215,20 +206,18 @@
             this.cboDownloadList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDownloadList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboDownloadList.FormattingEnabled = true;
-            this.cboDownloadList.Location = new System.Drawing.Point(8, 39);
-            this.cboDownloadList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboDownloadList.Location = new System.Drawing.Point(6, 32);
             this.cboDownloadList.Name = "cboDownloadList";
-            this.cboDownloadList.Size = new System.Drawing.Size(468, 33);
+            this.cboDownloadList.Size = new System.Drawing.Size(352, 28);
             this.cboDownloadList.TabIndex = 0;
             this.cboDownloadList.SelectedIndexChanged += new System.EventHandler(this.cboDownloadList_SelectedIndexChanged);
             // 
             // btnCancel
             // 
             this.btnCancel.ForeColor = System.Drawing.Color.Blue;
-            this.btnCancel.Location = new System.Drawing.Point(155, 196);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancel.Location = new System.Drawing.Point(116, 159);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(139, 39);
+            this.btnCancel.Size = new System.Drawing.Size(104, 32);
             this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel Download";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -237,10 +226,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(673, 239);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(505, 194);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 17);
+            this.label1.Size = new System.Drawing.Size(87, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Download Timer ";
             // 
@@ -248,10 +236,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(1, 375);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(1, 305);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 17);
+            this.label3.Size = new System.Drawing.Size(36, 13);
             this.label3.TabIndex = 9;
             this.label3.Text = "Note: ";
             // 
@@ -259,10 +246,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Blue;
-            this.label4.Location = new System.Drawing.Point(49, 375);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(37, 305);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(618, 17);
+            this.label4.Size = new System.Drawing.Size(460, 13);
             this.label4.TabIndex = 10;
             this.label4.Text = "You can minimise this form and continue using other system modules as the downloa" +
     "d processes";
@@ -270,9 +256,10 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(324, 207);
+            this.label8.Location = new System.Drawing.Point(243, 168);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(93, 17);
+            this.label8.Size = new System.Drawing.Size(71, 13);
             this.label8.TabIndex = 11;
             this.label8.Text = "Office Status:";
             // 
@@ -280,27 +267,18 @@
             // 
             this.lblofficestatus.AutoSize = true;
             this.lblofficestatus.ForeColor = System.Drawing.Color.Blue;
-            this.lblofficestatus.Location = new System.Drawing.Point(423, 207);
+            this.lblofficestatus.Location = new System.Drawing.Point(317, 168);
+            this.lblofficestatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblofficestatus.Name = "lblofficestatus";
-            this.lblofficestatus.Size = new System.Drawing.Size(36, 17);
+            this.lblofficestatus.Size = new System.Drawing.Size(28, 13);
             this.lblofficestatus.TabIndex = 12;
             this.lblofficestatus.Text = ".......";
             // 
-            // gdvTest
-            // 
-            this.gdvTest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gdvTest.Location = new System.Drawing.Point(19, 304);
-            this.gdvTest.Name = "gdvTest";
-            this.gdvTest.RowTemplate.Height = 24;
-            this.gdvTest.Size = new System.Drawing.Size(656, 55);
-            this.gdvTest.TabIndex = 13;
-            // 
             // frmUploadTables
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(805, 407);
-            this.Controls.Add(this.gdvTest);
+            this.ClientSize = new System.Drawing.Size(604, 331);
             this.Controls.Add(this.lblofficestatus);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label4);
@@ -314,7 +292,7 @@
             this.Controls.Add(this.lblCount);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "frmUploadTables";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -324,7 +302,6 @@
             this.gpboxDownload.PerformLayout();
             this.panelDates.ResumeLayout(false);
             this.panelDates.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gdvTest)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,6 +329,5 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblofficestatus;
-        private System.Windows.Forms.DataGridView gdvTest;
     }
 }

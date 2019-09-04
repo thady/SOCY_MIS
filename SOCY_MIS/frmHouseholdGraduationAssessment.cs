@@ -88,6 +88,13 @@ namespace SOCY_MIS
                 CheckNumber10To17();
                 CheckNumberUnder5Years();
                 CheckNumberSchoolAge();
+
+                LoadHouseholdMembersBenchMark01(str_id);
+                LoadHouseholdMembersBenchMark02(str_id);
+                LoadHouseholdMembersBenchMark03(str_id);
+                LoadHouseholdMembersBenchMark04(str_id);
+                LoadHouseholdMembersBenchMark05(str_id);
+                LoadHouseholdMembersBenchMark06(str_id);
             }
         }
 
@@ -1021,7 +1028,7 @@ namespace SOCY_MIS
         {
             if (ValidateInputBenchMark04())
             {
-                if (lblID04.Text == "lblID04")
+                if (lblID04.Text == "lblID04" )
                 {
                     hhgraduation_assessment.gat_b_id = Guid.NewGuid().ToString();
                     hhgraduation_assessment.hhm_id = cbo_hhm_04.SelectedValue.ToString();
