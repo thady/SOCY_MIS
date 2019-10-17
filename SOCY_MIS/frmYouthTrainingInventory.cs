@@ -335,7 +335,7 @@ namespace SOCY_MIS
             benYouthTrainingInventory.dst_id = cboDistrict.SelectedValue.ToString();
             benYouthTrainingInventory.sct_id = cboSubCounty.SelectedValue.ToString();
             benYouthTrainingInventory.wrd_id = cboParish.SelectedValue.ToString();
-            benYouthTrainingInventory.begin_date = dtbeginDate.Value.Date;
+            benYouthTrainingInventory.begin_date = dtbeginDate.Value;
             benYouthTrainingInventory.hhm_code = cbohhmcode.Text;
             benYouthTrainingInventory.hhm_name = txtYouthname.Text;
             benYouthTrainingInventory.grp_name = txtgroupname.Text;

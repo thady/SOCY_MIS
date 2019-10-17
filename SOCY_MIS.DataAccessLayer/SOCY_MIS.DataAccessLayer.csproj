@@ -70,6 +70,7 @@
     <Compile Include="benYouthTracer.cs" />
     <Compile Include="benYouthTrainingInventory.cs" />
     <Compile Include="ben_youth_training_completion.cs" />
+    <Compile Include="ClearHouseholdMemberData.cs" />
     <Compile Include="DBAlteration .cs" />
     <Compile Include="drmEnrollment.cs" />
     <Compile Include="drmEnrollmentMember.cs" />

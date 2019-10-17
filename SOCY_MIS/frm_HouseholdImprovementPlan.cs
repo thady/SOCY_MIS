@@ -200,7 +200,7 @@ namespace SOCY_MIS
             hh_household_improvement_plan.hh_code = txtHHCode.Text;
             hh_household_improvement_plan.hh_id = SystemConstants.hh_record_guid;
             hh_household_improvement_plan.initial_hip_date = dtInitialHip.Value.Date;
-            hh_household_improvement_plan.visit_date = dtTimeVisistDate.Value.Date;
+            hh_household_improvement_plan.visit_date = dtTimeVisistDate.Value;
             hh_household_improvement_plan.qm_id = cboQuarter.SelectedValue.ToString();
             hh_household_improvement_plan.ov_below_seventeen_yrs_male = Convert.ToInt32(txtmalebelowseventeen.Text);
             hh_household_improvement_plan.ov_below_seventeen_yrs_female = Convert.ToInt32(txtFemalebelowseventeen.Text);

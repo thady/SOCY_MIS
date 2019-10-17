@@ -481,7 +481,7 @@ namespace SOCY_MIS.DataAccessLayer
             string swk_phone = string.Empty;
 
             string strSQL = @";With CteHouseholdMembers AS(
-                            SELECT UPPER(hhm_first_name + ' ' + hhm_last_name ) + '-' + hhm_number AS hhm_name,hhm_id,hhm_number FROM hh_household_member WHERE (YEAR(GETDATE()) - hhm_year_of_birth) >= 12 AND  hh_id ='{0}' AND hhm_status = '1'
+                            SELECT UPPER(hhm_first_name + ' ' + hhm_last_name ) + '-' + hhm_number AS hhm_name,hhm_id,hhm_number FROM hh_household_member WHERE (YEAR(GETDATE()) - hhm_year_of_birth) >= 10 AND  hh_id ='{0}' AND hhm_status = '1'
                             ),
                             CteHouseholdMembersGatJoin AS(
                             SELECT hhm.hhm_name,hhm.hhm_id,dt.hhm_id AS _hhm_id,hhm_number FROM CteHouseholdMembers hhm
@@ -1784,7 +1784,7 @@ namespace SOCY_MIS.DataAccessLayer
                               ,[usr_id_update] = '{4}'
                               ,[usr_date_update] = ''
                          WHERE [gat_b_id] = '{0}'";
-                strSQL = string.Format(strSQL, gat_b_id, yn_pay_fees, yn_pay_fees_no_pepfar_grant, yn_pay_fees_no_sell_asset, yn_pay_medical_costs, yn_pay_medical_costs_no_pepfar_grant, yn_pay_medical_costs_no_sell_asset, usr_id_update, usr_date_update);
+                strSQL = string.Format(strSQL, gat_b_id, yn_kicked, yn_child_kicked, yn_child_violence,usr_id_update, usr_date_update);
             }
 
             try

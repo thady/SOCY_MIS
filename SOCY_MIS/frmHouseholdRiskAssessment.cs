@@ -197,7 +197,7 @@ namespace SOCY_MIS
         {
             #region set variables
             hhHouseholdRiskAssessment.hh_id = HouseholdId;
-            hhHouseholdRiskAssessment.scr_date = dtscreenDate.Value.Date;
+            hhHouseholdRiskAssessment.scr_date = dtscreenDate.Value;
             hhHouseholdRiskAssessment.hhm_id = cboHHMemberName.SelectedValue.ToString();
             hhHouseholdRiskAssessment.usr_id_create = SystemConstants.user_id;
             hhHouseholdRiskAssessment.usr_id_update = SystemConstants.user_id;

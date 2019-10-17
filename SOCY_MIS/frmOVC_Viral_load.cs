@@ -379,6 +379,7 @@ namespace SOCY_MIS
                 {
                     if (ValidateQuarters())
                     {
+
                         save();
                         MessageBox.Show("Success", "SOCY MIS Message Center", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Clear();
@@ -423,7 +424,8 @@ namespace SOCY_MIS
             benOvcViralLoad.art_number = txtARTNumber.Text;
             benOvcViralLoad.vl_eligible = utilControls.RadioButtonGetSelection(rdnVLYes, rdnVLNo);
             benOvcViralLoad.vl_done = utilControls.RadioButtonGetSelection(rdnVLDoneYes, rdnVLDoneNo);
-            benOvcViralLoad.vl_date = dtVLDone.Checked == true ? dtVLDone.Value.ToShortDateString() : string.Empty;
+
+            benOvcViralLoad.vl_date = dtVLDone.Checked == true ? dtVLDone.Value : Convert.ToDateTime("2000-01-01");
             benOvcViralLoad.vl_nextdate = dtVLNext.Value;
             benOvcViralLoad.suppressed = utilControls.RadioButtonGetSelection(rdnSuppresedYes, rdnSuppresedNo);
 
@@ -622,7 +624,7 @@ namespace SOCY_MIS
             benOvcViralLoad.art_number = string.Empty;
             benOvcViralLoad.vl_eligible = string.Empty;
             benOvcViralLoad.vl_done = string.Empty;
-            benOvcViralLoad.vl_date = string.Empty;
+            benOvcViralLoad.vl_date = DateTime.Today;
             benOvcViralLoad.vl_nextdate = DateTime.Now;
             benOvcViralLoad.suppressed = string.Empty;
         }

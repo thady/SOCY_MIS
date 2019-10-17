@@ -338,7 +338,7 @@
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 93F));
+            this.tlpDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95F));
             this.tlpDisplay01.Controls.Add(this.label33, 0, 7);
             this.tlpDisplay01.Controls.Add(this.label1, 0, 4);
             this.tlpDisplay01.Controls.Add(this.lblGender, 3, 2);
@@ -413,7 +413,7 @@
             // 
             this.lblGender.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblGender.AutoSize = true;
-            this.lblGender.Location = new System.Drawing.Point(407, 71);
+            this.lblGender.Location = new System.Drawing.Point(406, 71);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(89, 13);
             this.lblGender.TabIndex = 12;
@@ -422,8 +422,8 @@
             // dtTimeVisistDate
             // 
             this.dtTimeVisistDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtTimeVisistDate.Location = new System.Drawing.Point(607, 175);
-            this.dtTimeVisistDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtTimeVisistDate.Location = new System.Drawing.Point(606, 175);
+            this.dtTimeVisistDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtTimeVisistDate.Name = "dtTimeVisistDate";
             this.dtTimeVisistDate.ShowCheckBox = true;
             this.dtTimeVisistDate.Size = new System.Drawing.Size(104, 20);
@@ -433,7 +433,7 @@
             // 
             this.lblMemberNumber.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMemberNumber.AutoSize = true;
-            this.lblMemberNumber.Location = new System.Drawing.Point(407, 40);
+            this.lblMemberNumber.Location = new System.Drawing.Point(406, 40);
             this.lblMemberNumber.Name = "lblMemberNumber";
             this.lblMemberNumber.Size = new System.Drawing.Size(41, 13);
             this.lblMemberNumber.TabIndex = 4;
@@ -445,7 +445,7 @@
             this.lblYearOfBirth.AutoSize = true;
             this.lblYearOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblYearOfBirth.ForeColor = System.Drawing.Color.Red;
-            this.lblYearOfBirth.Location = new System.Drawing.Point(407, 179);
+            this.lblYearOfBirth.Location = new System.Drawing.Point(406, 179);
             this.lblYearOfBirth.Name = "lblYearOfBirth";
             this.lblYearOfBirth.Size = new System.Drawing.Size(66, 13);
             this.lblYearOfBirth.TabIndex = 10;
@@ -478,7 +478,7 @@
             this.cboParish.FormattingEnabled = true;
             this.cboParish.Location = new System.Drawing.Point(205, 36);
             this.cboParish.Name = "cboParish";
-            this.cboParish.Size = new System.Drawing.Size(154, 21);
+            this.cboParish.Size = new System.Drawing.Size(153, 21);
             this.cboParish.TabIndex = 47;
             // 
             // cboDistrict
@@ -488,14 +488,14 @@
             this.cboDistrict.FormattingEnabled = true;
             this.cboDistrict.Location = new System.Drawing.Point(205, 5);
             this.cboDistrict.Name = "cboDistrict";
-            this.cboDistrict.Size = new System.Drawing.Size(154, 21);
+            this.cboDistrict.Size = new System.Drawing.Size(153, 21);
             this.cboDistrict.TabIndex = 59;
             // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(407, 9);
+            this.label4.Location = new System.Drawing.Point(406, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 13);
             this.label4.TabIndex = 60;
@@ -506,29 +506,29 @@
             this.cboSubCounty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboSubCounty.Enabled = false;
             this.cboSubCounty.FormattingEnabled = true;
-            this.cboSubCounty.Location = new System.Drawing.Point(608, 5);
+            this.cboSubCounty.Location = new System.Drawing.Point(607, 5);
             this.cboSubCounty.Name = "cboSubCounty";
-            this.cboSubCounty.Size = new System.Drawing.Size(154, 21);
+            this.cboSubCounty.Size = new System.Drawing.Size(153, 21);
             this.cboSubCounty.TabIndex = 61;
             // 
             // txtVilage
             // 
             this.txtVilage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtVilage.Enabled = false;
-            this.txtVilage.Location = new System.Drawing.Point(607, 36);
-            this.txtVilage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtVilage.Location = new System.Drawing.Point(606, 36);
+            this.txtVilage.Margin = new System.Windows.Forms.Padding(2);
             this.txtVilage.Name = "txtVilage";
-            this.txtVilage.Size = new System.Drawing.Size(156, 20);
+            this.txtVilage.Size = new System.Drawing.Size(155, 20);
             this.txtVilage.TabIndex = 62;
             // 
             // txtHHCode
             // 
             this.txtHHCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtHHCode.Enabled = false;
-            this.txtHHCode.Location = new System.Drawing.Point(607, 68);
-            this.txtHHCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtHHCode.Location = new System.Drawing.Point(606, 68);
+            this.txtHHCode.Margin = new System.Windows.Forms.Padding(2);
             this.txtHHCode.Name = "txtHHCode";
-            this.txtHHCode.Size = new System.Drawing.Size(156, 20);
+            this.txtHHCode.Size = new System.Drawing.Size(155, 20);
             this.txtHHCode.TabIndex = 64;
             // 
             // lblHHMemberVal
@@ -537,7 +537,7 @@
             this.lblHHMemberVal.AutoSize = true;
             this.lblHHMemberVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHHMemberVal.ForeColor = System.Drawing.Color.Red;
-            this.lblHHMemberVal.Location = new System.Drawing.Point(769, 102);
+            this.lblHHMemberVal.Location = new System.Drawing.Point(767, 102);
             this.lblHHMemberVal.Name = "lblHHMemberVal";
             this.lblHHMemberVal.Size = new System.Drawing.Size(11, 13);
             this.lblHHMemberVal.TabIndex = 48;
@@ -549,7 +549,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Red;
-            this.label19.Location = new System.Drawing.Point(366, 71);
+            this.label19.Location = new System.Drawing.Point(365, 71);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(11, 13);
             this.label19.TabIndex = 70;
@@ -560,7 +560,7 @@
             this.txtmalebelowseventeen.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtmalebelowseventeen.Enabled = false;
             this.txtmalebelowseventeen.Location = new System.Drawing.Point(204, 127);
-            this.txtmalebelowseventeen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtmalebelowseventeen.Margin = new System.Windows.Forms.Padding(2);
             this.txtmalebelowseventeen.Name = "txtmalebelowseventeen";
             this.txtmalebelowseventeen.Size = new System.Drawing.Size(88, 20);
             this.txtmalebelowseventeen.TabIndex = 74;
@@ -582,7 +582,7 @@
             this.cboCso.FormattingEnabled = true;
             this.cboCso.Location = new System.Drawing.Point(205, 67);
             this.cboCso.Name = "cboCso";
-            this.cboCso.Size = new System.Drawing.Size(154, 21);
+            this.cboCso.Size = new System.Drawing.Size(153, 21);
             this.cboCso.TabIndex = 65;
             // 
             // label5
@@ -604,14 +604,14 @@
             this.cboCaregiver.FormattingEnabled = true;
             this.cboCaregiver.Location = new System.Drawing.Point(205, 98);
             this.cboCaregiver.Name = "cboCaregiver";
-            this.cboCaregiver.Size = new System.Drawing.Size(154, 21);
+            this.cboCaregiver.Size = new System.Drawing.Size(153, 21);
             this.cboCaregiver.TabIndex = 67;
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(407, 102);
+            this.label2.Location = new System.Drawing.Point(406, 102);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(122, 13);
             this.label2.TabIndex = 73;
@@ -621,8 +621,8 @@
             // 
             this.txtFemalebelowseventeen.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtFemalebelowseventeen.Enabled = false;
-            this.txtFemalebelowseventeen.Location = new System.Drawing.Point(607, 99);
-            this.txtFemalebelowseventeen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFemalebelowseventeen.Location = new System.Drawing.Point(606, 99);
+            this.txtFemalebelowseventeen.Margin = new System.Windows.Forms.Padding(2);
             this.txtFemalebelowseventeen.Name = "txtFemalebelowseventeen";
             this.txtFemalebelowseventeen.Size = new System.Drawing.Size(88, 20);
             this.txtFemalebelowseventeen.TabIndex = 72;
@@ -631,8 +631,8 @@
             // 
             this.txtmaleboveseventeen.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtmaleboveseventeen.Enabled = false;
-            this.txtmaleboveseventeen.Location = new System.Drawing.Point(607, 127);
-            this.txtmaleboveseventeen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtmaleboveseventeen.Location = new System.Drawing.Point(606, 127);
+            this.txtmaleboveseventeen.Margin = new System.Windows.Forms.Padding(2);
             this.txtmaleboveseventeen.Name = "txtmaleboveseventeen";
             this.txtmaleboveseventeen.Size = new System.Drawing.Size(88, 20);
             this.txtmaleboveseventeen.TabIndex = 78;
@@ -641,7 +641,7 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(407, 130);
+            this.label6.Location = new System.Drawing.Point(406, 130);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(121, 13);
             this.label6.TabIndex = 76;
@@ -662,7 +662,7 @@
             this.txtFemaleboveseventeen.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtFemaleboveseventeen.Enabled = false;
             this.txtFemaleboveseventeen.Location = new System.Drawing.Point(204, 151);
-            this.txtFemaleboveseventeen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFemaleboveseventeen.Margin = new System.Windows.Forms.Padding(2);
             this.txtFemaleboveseventeen.Name = "txtFemaleboveseventeen";
             this.txtFemaleboveseventeen.Size = new System.Drawing.Size(88, 20);
             this.txtFemaleboveseventeen.TabIndex = 77;
@@ -671,9 +671,9 @@
             // 
             this.cboQuarter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboQuarter.FormattingEnabled = true;
-            this.cboQuarter.Location = new System.Drawing.Point(608, 152);
+            this.cboQuarter.Location = new System.Drawing.Point(607, 152);
             this.cboQuarter.Name = "cboQuarter";
-            this.cboQuarter.Size = new System.Drawing.Size(154, 21);
+            this.cboQuarter.Size = new System.Drawing.Size(153, 21);
             this.cboQuarter.TabIndex = 82;
             // 
             // label31
@@ -682,7 +682,7 @@
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.Color.Red;
-            this.label31.Location = new System.Drawing.Point(407, 154);
+            this.label31.Location = new System.Drawing.Point(406, 154);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(49, 13);
             this.label31.TabIndex = 83;
@@ -692,7 +692,7 @@
             // 
             this.dtInitialHip.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtInitialHip.Location = new System.Drawing.Point(204, 175);
-            this.dtInitialHip.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtInitialHip.Margin = new System.Windows.Forms.Padding(2);
             this.dtInitialHip.Name = "dtInitialHip";
             this.dtInitialHip.ShowCheckBox = true;
             this.dtInitialHip.Size = new System.Drawing.Size(104, 20);
@@ -721,7 +721,7 @@
             "Others"});
             this.cbovisitReason.Location = new System.Drawing.Point(205, 202);
             this.cbovisitReason.Name = "cbovisitReason";
-            this.cbovisitReason.Size = new System.Drawing.Size(154, 21);
+            this.cbovisitReason.Size = new System.Drawing.Size(153, 21);
             this.cbovisitReason.TabIndex = 85;
             // 
             // chkOutCome
@@ -729,7 +729,7 @@
             this.chkOutCome.AutoSize = true;
             this.chkOutCome.BackColor = System.Drawing.Color.Yellow;
             this.chkOutCome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkOutCome.Location = new System.Drawing.Point(407, 202);
+            this.chkOutCome.Location = new System.Drawing.Point(406, 202);
             this.chkOutCome.Name = "chkOutCome";
             this.chkOutCome.Size = new System.Drawing.Size(189, 17);
             this.chkOutCome.TabIndex = 86;
@@ -777,8 +777,8 @@
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 102F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 102F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 103F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 103F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(252, 79);
             this.tableLayoutPanel2.TabIndex = 82;
             // 
@@ -786,7 +786,7 @@
             // 
             this.lblhiv_status.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblhiv_status.AutoSize = true;
-            this.lblhiv_status.Location = new System.Drawing.Point(4, 32);
+            this.lblhiv_status.Location = new System.Drawing.Point(4, 33);
             this.lblhiv_status.Name = "lblhiv_status";
             this.lblhiv_status.Size = new System.Drawing.Size(242, 39);
             this.lblhiv_status.TabIndex = 74;
@@ -1260,7 +1260,7 @@
             this.tableLayoutPanel33.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel33.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tableLayoutPanel33.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel33.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
+            this.tableLayoutPanel33.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97F));
             this.tableLayoutPanel33.Controls.Add(this.dtOutComeDate, 1, 2);
             this.tableLayoutPanel33.Controls.Add(this.lblOutComeDate, 0, 2);
             this.tableLayoutPanel33.Controls.Add(this.label32, 3, 1);
@@ -1285,7 +1285,7 @@
             // 
             this.dtOutComeDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtOutComeDate.Location = new System.Drawing.Point(216, 81);
-            this.dtOutComeDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtOutComeDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtOutComeDate.Name = "dtOutComeDate";
             this.dtOutComeDate.ShowCheckBox = true;
             this.dtOutComeDate.Size = new System.Drawing.Size(104, 20);
@@ -1305,7 +1305,7 @@
             // 
             this.label32.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(412, 52);
+            this.label32.Location = new System.Drawing.Point(411, 52);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(104, 13);
             this.label32.TabIndex = 4;
@@ -1337,14 +1337,14 @@
             this.cboSocialWorker.FormattingEnabled = true;
             this.cboSocialWorker.Location = new System.Drawing.Point(217, 9);
             this.cboSocialWorker.Name = "cboSocialWorker";
-            this.cboSocialWorker.Size = new System.Drawing.Size(147, 21);
+            this.cboSocialWorker.Size = new System.Drawing.Size(146, 21);
             this.cboSocialWorker.TabIndex = 59;
             // 
             // label36
             // 
             this.label36.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(412, 13);
+            this.label36.Location = new System.Drawing.Point(411, 13);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(121, 13);
             this.label36.TabIndex = 60;
@@ -1353,28 +1353,28 @@
             // txtSupervisorComment
             // 
             this.txtSupervisorComment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSupervisorComment.Location = new System.Drawing.Point(612, 49);
-            this.txtSupervisorComment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSupervisorComment.Location = new System.Drawing.Point(611, 49);
+            this.txtSupervisorComment.Margin = new System.Windows.Forms.Padding(2);
             this.txtSupervisorComment.Name = "txtSupervisorComment";
-            this.txtSupervisorComment.Size = new System.Drawing.Size(149, 20);
+            this.txtSupervisorComment.Size = new System.Drawing.Size(148, 20);
             this.txtSupervisorComment.TabIndex = 62;
             // 
             // txtSupervisor
             // 
             this.txtSupervisor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSupervisor.Location = new System.Drawing.Point(216, 49);
-            this.txtSupervisor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSupervisor.Margin = new System.Windows.Forms.Padding(2);
             this.txtSupervisor.Name = "txtSupervisor";
-            this.txtSupervisor.Size = new System.Drawing.Size(149, 20);
+            this.txtSupervisor.Size = new System.Drawing.Size(148, 20);
             this.txtSupervisor.TabIndex = 74;
             // 
             // txtSocialWorkerComment
             // 
             this.txtSocialWorkerComment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSocialWorkerComment.Location = new System.Drawing.Point(612, 10);
-            this.txtSocialWorkerComment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSocialWorkerComment.Location = new System.Drawing.Point(611, 10);
+            this.txtSocialWorkerComment.Margin = new System.Windows.Forms.Padding(2);
             this.txtSocialWorkerComment.Name = "txtSocialWorkerComment";
-            this.txtSocialWorkerComment.Size = new System.Drawing.Size(149, 20);
+            this.txtSocialWorkerComment.Size = new System.Drawing.Size(148, 20);
             this.txtSocialWorkerComment.TabIndex = 116;
             // 
             // tableLayoutPanel34
@@ -1387,7 +1387,7 @@
             this.tableLayoutPanel34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 205F));
+            this.tableLayoutPanel34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 206F));
             this.tableLayoutPanel34.Controls.Add(this.btnsave, 1, 0);
             this.tableLayoutPanel34.Controls.Add(this.lblBack, 4, 0);
             this.tableLayoutPanel34.Controls.Add(this.btnCancel, 3, 0);
@@ -1403,7 +1403,7 @@
             // btnsave
             // 
             this.btnsave.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnsave.Location = new System.Drawing.Point(249, 8);
+            this.btnsave.Location = new System.Drawing.Point(248, 8);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(75, 23);
             this.btnsave.TabIndex = 14;
@@ -1427,7 +1427,7 @@
             // btnCancel
             // 
             this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnCancel.Location = new System.Drawing.Point(392, 8);
+            this.btnCancel.Location = new System.Drawing.Point(391, 8);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 15;
@@ -1445,7 +1445,7 @@
             this.tableLayoutPanel35.Controls.Add(this.PanelDisplay01, 1, 0);
             this.tableLayoutPanel35.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel35.Location = new System.Drawing.Point(5, 245);
-            this.tableLayoutPanel35.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel35.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel35.Name = "tableLayoutPanel35";
             this.tableLayoutPanel35.RowCount = 1;
             this.tableLayoutPanel35.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -1472,7 +1472,7 @@
             this.PanelDisplay01.Controls.Add(this.dtyn_knows_status_of_children_followup_date, 2, 1);
             this.PanelDisplay01.Controls.Add(this.label9, 0, 0);
             this.PanelDisplay01.Location = new System.Drawing.Point(260, 2);
-            this.PanelDisplay01.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PanelDisplay01.Margin = new System.Windows.Forms.Padding(2);
             this.PanelDisplay01.Name = "PanelDisplay01";
             this.PanelDisplay01.RowCount = 2;
             this.PanelDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -1488,7 +1488,7 @@
             this.txtyn_knows_status_of_children_out_come.BackColor = System.Drawing.Color.Black;
             this.txtyn_knows_status_of_children_out_come.ForeColor = System.Drawing.Color.White;
             this.txtyn_knows_status_of_children_out_come.Location = new System.Drawing.Point(438, 24);
-            this.txtyn_knows_status_of_children_out_come.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtyn_knows_status_of_children_out_come.Margin = new System.Windows.Forms.Padding(2);
             this.txtyn_knows_status_of_children_out_come.MaxLength = 1000;
             this.txtyn_knows_status_of_children_out_come.Name = "txtyn_knows_status_of_children_out_come";
             this.txtyn_knows_status_of_children_out_come.Size = new System.Drawing.Size(157, 54);
@@ -1503,7 +1503,7 @@
             this.txtyn_knows_status_of_children_action.BackColor = System.Drawing.Color.Black;
             this.txtyn_knows_status_of_children_action.ForeColor = System.Drawing.Color.White;
             this.txtyn_knows_status_of_children_action.Location = new System.Drawing.Point(96, 24);
-            this.txtyn_knows_status_of_children_action.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtyn_knows_status_of_children_action.Margin = new System.Windows.Forms.Padding(2);
             this.txtyn_knows_status_of_children_action.MaxLength = 1000;
             this.txtyn_knows_status_of_children_action.Name = "txtyn_knows_status_of_children_action";
             this.txtyn_knows_status_of_children_action.Size = new System.Drawing.Size(155, 54);
@@ -1583,7 +1583,7 @@
             this.dtyn_knows_status_of_children_followup_date.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtyn_knows_status_of_children_followup_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtyn_knows_status_of_children_followup_date.Location = new System.Drawing.Point(292, 41);
-            this.dtyn_knows_status_of_children_followup_date.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtyn_knows_status_of_children_followup_date.Margin = new System.Windows.Forms.Padding(2);
             this.dtyn_knows_status_of_children_followup_date.Name = "dtyn_knows_status_of_children_followup_date";
             this.dtyn_knows_status_of_children_followup_date.ShowCheckBox = true;
             this.dtyn_knows_status_of_children_followup_date.Size = new System.Drawing.Size(104, 20);
@@ -1611,7 +1611,7 @@
             this.tableLayoutPanel36.Controls.Add(this.tableLayoutPanel1, 0, 0);
             this.tableLayoutPanel36.Controls.Add(this.tableLayoutPanel38, 1, 0);
             this.tableLayoutPanel36.Location = new System.Drawing.Point(5, 334);
-            this.tableLayoutPanel36.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel36.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel36.Name = "tableLayoutPanel36";
             this.tableLayoutPanel36.RowCount = 1;
             this.tableLayoutPanel36.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -1634,7 +1634,7 @@
             this.tableLayoutPanel38.Controls.Add(this.dtyn_positive_enrolled_on_art_followup_date, 2, 0);
             this.tableLayoutPanel38.Controls.Add(this.txtyn_positive_enrolled_on_art_out_come, 3, 0);
             this.tableLayoutPanel38.Location = new System.Drawing.Point(260, 2);
-            this.tableLayoutPanel38.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel38.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel38.Name = "tableLayoutPanel38";
             this.tableLayoutPanel38.RowCount = 1;
             this.tableLayoutPanel38.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -1649,7 +1649,7 @@
             this.txtyn_positive_enrolled_on_art_action.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.txtyn_positive_enrolled_on_art_action.ForeColor = System.Drawing.Color.White;
             this.txtyn_positive_enrolled_on_art_action.Location = new System.Drawing.Point(96, 3);
-            this.txtyn_positive_enrolled_on_art_action.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtyn_positive_enrolled_on_art_action.Margin = new System.Windows.Forms.Padding(2);
             this.txtyn_positive_enrolled_on_art_action.MaxLength = 1000;
             this.txtyn_positive_enrolled_on_art_action.Name = "txtyn_positive_enrolled_on_art_action";
             this.txtyn_positive_enrolled_on_art_action.Size = new System.Drawing.Size(155, 72);
@@ -1709,7 +1709,7 @@
             this.dtyn_positive_enrolled_on_art_followup_date.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtyn_positive_enrolled_on_art_followup_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtyn_positive_enrolled_on_art_followup_date.Location = new System.Drawing.Point(292, 29);
-            this.dtyn_positive_enrolled_on_art_followup_date.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtyn_positive_enrolled_on_art_followup_date.Margin = new System.Windows.Forms.Padding(2);
             this.dtyn_positive_enrolled_on_art_followup_date.Name = "dtyn_positive_enrolled_on_art_followup_date";
             this.dtyn_positive_enrolled_on_art_followup_date.ShowCheckBox = true;
             this.dtyn_positive_enrolled_on_art_followup_date.Size = new System.Drawing.Size(104, 20);
@@ -1723,7 +1723,7 @@
             this.txtyn_positive_enrolled_on_art_out_come.BackColor = System.Drawing.Color.Black;
             this.txtyn_positive_enrolled_on_art_out_come.ForeColor = System.Drawing.Color.White;
             this.txtyn_positive_enrolled_on_art_out_come.Location = new System.Drawing.Point(438, 3);
-            this.txtyn_positive_enrolled_on_art_out_come.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtyn_positive_enrolled_on_art_out_come.Margin = new System.Windows.Forms.Padding(2);
             this.txtyn_positive_enrolled_on_art_out_come.MaxLength = 1000;
             this.txtyn_positive_enrolled_on_art_out_come.Name = "txtyn_positive_enrolled_on_art_out_come";
             this.txtyn_positive_enrolled_on_art_out_come.Size = new System.Drawing.Size(157, 72);
@@ -1741,7 +1741,7 @@
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel37, 1, 0);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(5, 420);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -1764,7 +1764,7 @@
             this.tableLayoutPanel37.Controls.Add(this.panelResponse03, 0, 0);
             this.tableLayoutPanel37.Controls.Add(this.dtyn_positive_supressing_followup_date, 2, 0);
             this.tableLayoutPanel37.Location = new System.Drawing.Point(260, 2);
-            this.tableLayoutPanel37.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel37.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel37.Name = "tableLayoutPanel37";
             this.tableLayoutPanel37.RowCount = 1;
             this.tableLayoutPanel37.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -1779,7 +1779,7 @@
             this.txtyn_positive_supressing_out_come.BackColor = System.Drawing.Color.Black;
             this.txtyn_positive_supressing_out_come.ForeColor = System.Drawing.Color.White;
             this.txtyn_positive_supressing_out_come.Location = new System.Drawing.Point(438, 3);
-            this.txtyn_positive_supressing_out_come.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtyn_positive_supressing_out_come.Margin = new System.Windows.Forms.Padding(2);
             this.txtyn_positive_supressing_out_come.MaxLength = 1000;
             this.txtyn_positive_supressing_out_come.Name = "txtyn_positive_supressing_out_come";
             this.txtyn_positive_supressing_out_come.Size = new System.Drawing.Size(157, 72);
@@ -1794,7 +1794,7 @@
             this.txtyn_positive_supressing_action.BackColor = System.Drawing.Color.Black;
             this.txtyn_positive_supressing_action.ForeColor = System.Drawing.Color.White;
             this.txtyn_positive_supressing_action.Location = new System.Drawing.Point(96, 3);
-            this.txtyn_positive_supressing_action.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtyn_positive_supressing_action.Margin = new System.Windows.Forms.Padding(2);
             this.txtyn_positive_supressing_action.MaxLength = 1000;
             this.txtyn_positive_supressing_action.Name = "txtyn_positive_supressing_action";
             this.txtyn_positive_supressing_action.Size = new System.Drawing.Size(155, 72);
@@ -1854,7 +1854,7 @@
             this.dtyn_positive_supressing_followup_date.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtyn_positive_supressing_followup_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtyn_positive_supressing_followup_date.Location = new System.Drawing.Point(292, 29);
-            this.dtyn_positive_supressing_followup_date.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtyn_positive_supressing_followup_date.Margin = new System.Windows.Forms.Padding(2);
             this.dtyn_positive_supressing_followup_date.Name = "dtyn_positive_supressing_followup_date";
             this.dtyn_positive_supressing_followup_date.ShowCheckBox = true;
             this.dtyn_positive_supressing_followup_date.Size = new System.Drawing.Size(104, 20);
@@ -1871,7 +1871,7 @@
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel7, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel39, 1, 0);
             this.tableLayoutPanel6.Location = new System.Drawing.Point(5, 506);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -1894,7 +1894,7 @@
             this.tableLayoutPanel39.Controls.Add(this.dtyn_positive_adhering_followup_date, 2, 0);
             this.tableLayoutPanel39.Controls.Add(this.txtyn_positive_adhering_out_come, 3, 0);
             this.tableLayoutPanel39.Location = new System.Drawing.Point(260, 2);
-            this.tableLayoutPanel39.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel39.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel39.Name = "tableLayoutPanel39";
             this.tableLayoutPanel39.RowCount = 1;
             this.tableLayoutPanel39.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -1909,7 +1909,7 @@
             this.txtyn_positive_adhering_action.BackColor = System.Drawing.Color.Black;
             this.txtyn_positive_adhering_action.ForeColor = System.Drawing.Color.White;
             this.txtyn_positive_adhering_action.Location = new System.Drawing.Point(96, 3);
-            this.txtyn_positive_adhering_action.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtyn_positive_adhering_action.Margin = new System.Windows.Forms.Padding(2);
             this.txtyn_positive_adhering_action.MaxLength = 1000;
             this.txtyn_positive_adhering_action.Name = "txtyn_positive_adhering_action";
             this.txtyn_positive_adhering_action.Size = new System.Drawing.Size(155, 72);
@@ -1969,7 +1969,7 @@
             this.dtyn_positive_adhering_followup_date.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtyn_positive_adhering_followup_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtyn_positive_adhering_followup_date.Location = new System.Drawing.Point(292, 29);
-            this.dtyn_positive_adhering_followup_date.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtyn_positive_adhering_followup_date.Margin = new System.Windows.Forms.Padding(2);
             this.dtyn_positive_adhering_followup_date.Name = "dtyn_positive_adhering_followup_date";
             this.dtyn_positive_adhering_followup_date.ShowCheckBox = true;
             this.dtyn_positive_adhering_followup_date.Size = new System.Drawing.Size(104, 20);
@@ -1983,7 +1983,7 @@
             this.txtyn_positive_adhering_out_come.BackColor = System.Drawing.Color.Black;
             this.txtyn_positive_adhering_out_come.ForeColor = System.Drawing.Color.White;
             this.txtyn_positive_adhering_out_come.Location = new System.Drawing.Point(438, 3);
-            this.txtyn_positive_adhering_out_come.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtyn_positive_adhering_out_come.Margin = new System.Windows.Forms.Padding(2);
             this.txtyn_positive_adhering_out_come.MaxLength = 1000;
             this.txtyn_positive_adhering_out_come.Name = "txtyn_positive_adhering_out_come";
             this.txtyn_positive_adhering_out_come.Size = new System.Drawing.Size(157, 72);
@@ -2001,7 +2001,7 @@
             this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel9, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel40, 1, 0);
             this.tableLayoutPanel8.Location = new System.Drawing.Point(6, 590);
-            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -2024,7 +2024,7 @@
             this.tableLayoutPanel40.Controls.Add(this.dtyn_adolescent_hiv_prevention_followup_date, 2, 0);
             this.tableLayoutPanel40.Controls.Add(this.txtyn_adolescent_hiv_prevention_out_come, 3, 0);
             this.tableLayoutPanel40.Location = new System.Drawing.Point(260, 2);
-            this.tableLayoutPanel40.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel40.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel40.Name = "tableLayoutPanel40";
             this.tableLayoutPanel40.RowCount = 1;
             this.tableLayoutPanel40.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -2039,7 +2039,7 @@
             this.txtyn_adolescent_hiv_prevention_action.BackColor = System.Drawing.Color.Black;
             this.txtyn_adolescent_hiv_prevention_action.ForeColor = System.Drawing.Color.White;
             this.txtyn_adolescent_hiv_prevention_action.Location = new System.Drawing.Point(96, 3);
-            this.txtyn_adolescent_hiv_prevention_action.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtyn_adolescent_hiv_prevention_action.Margin = new System.Windows.Forms.Padding(2);
             this.txtyn_adolescent_hiv_prevention_action.MaxLength = 1000;
             this.txtyn_adolescent_hiv_prevention_action.Name = "txtyn_adolescent_hiv_prevention_action";
             this.txtyn_adolescent_hiv_prevention_action.Size = new System.Drawing.Size(155, 72);
@@ -2099,7 +2099,7 @@
             this.dtyn_adolescent_hiv_prevention_followup_date.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtyn_adolescent_hiv_prevention_followup_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtyn_adolescent_hiv_prevention_followup_date.Location = new System.Drawing.Point(292, 29);
-            this.dtyn_adolescent_hiv_prevention_followup_date.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtyn_adolescent_hiv_prevention_followup_date.Margin = new System.Windows.Forms.Padding(2);
             this.dtyn_adolescent_hiv_prevention_followup_date.Name = "dtyn_adolescent_hiv_prevention_followup_date";
             this.dtyn_adolescent_hiv_prevention_followup_date.ShowCheckBox = true;
             this.dtyn_adolescent_hiv_prevention_followup_date.Size = new System.Drawing.Size(104, 20);
@@ -2113,7 +2113,7 @@
             this.txtyn_adolescent_hiv_prevention_out_come.BackColor = System.Drawing.Color.Black;
             this.txtyn_adolescent_hiv_prevention_out_come.ForeColor = System.Drawing.Color.White;
             this.txtyn_adolescent_hiv_prevention_out_come.Location = new System.Drawing.Point(438, 3);
-            this.txtyn_adolescent_hiv_prevention_out_come.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtyn_adolescent_hiv_prevention_out_come.Margin = new System.Windows.Forms.Padding(2);
             this.txtyn_adolescent_hiv_prevention_out_come.MaxLength = 1000;
             this.txtyn_adolescent_hiv_prevention_out_come.Name = "txtyn_adolescent_hiv_prevention_out_come";
             this.txtyn_adolescent_hiv_prevention_out_come.Size = new System.Drawing.Size(157, 72);
@@ -2131,7 +2131,7 @@
             this.tableLayoutPanel10.Controls.Add(this.tableLayoutPanel11, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.tableLayoutPanel41, 1, 0);
             this.tableLayoutPanel10.Location = new System.Drawing.Point(6, 676);
-            this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -2154,7 +2154,7 @@
             this.tableLayoutPanel41.Controls.Add(this.panelResponse06, 0, 0);
             this.tableLayoutPanel41.Controls.Add(this.txtyn_child_undernourished_action, 1, 0);
             this.tableLayoutPanel41.Location = new System.Drawing.Point(260, 2);
-            this.tableLayoutPanel41.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel41.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel41.Name = "tableLayoutPanel41";
             this.tableLayoutPanel41.RowCount = 1;
             this.tableLayoutPanel41.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -2166,7 +2166,7 @@
             this.dtyn_child_undernourished_followup_date.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtyn_child_undernourished_followup_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtyn_child_undernourished_followup_date.Location = new System.Drawing.Point(292, 29);
-            this.dtyn_child_undernourished_followup_date.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtyn_child_undernourished_followup_date.Margin = new System.Windows.Forms.Padding(2);
             this.dtyn_child_undernourished_followup_date.Name = "dtyn_child_undernourished_followup_date";
             this.dtyn_child_undernourished_followup_date.ShowCheckBox = true;
             this.dtyn_child_undernourished_followup_date.Size = new System.Drawing.Size(104, 20);
@@ -2180,7 +2180,7 @@
             this.txtyn_child_undernourished_out_come.BackColor = System.Drawing.Color.Black;
             this.txtyn_child_undernourished_out_come.ForeColor = System.Drawing.Color.White;
             this.txtyn_child_undernourished_out_come.Location = new System.Drawing.Point(438, 3);
-            this.txtyn_child_undernourished_out_come.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtyn_child_undernourished_out_come.Margin = new System.Windows.Forms.Padding(2);
             this.txtyn_child_undernourished_out_come.MaxLength = 1000;
             this.txtyn_child_undernourished_out_come.Name = "txtyn_child_undernourished_out_come";
             this.txtyn_child_undernourished_out_come.Size = new System.Drawing.Size(157, 72);
@@ -2243,7 +2243,7 @@
             this.txtyn_child_undernourished_action.BackColor = System.Drawing.Color.Black;
             this.txtyn_child_undernourished_action.ForeColor = System.Drawing.Color.White;
             this.txtyn_child_undernourished_action.Location = new System.Drawing.Point(96, 3);
-            this.txtyn_child_undernourished_action.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtyn_child_undernourished_action.Margin = new System.Windows.Forms.Padding(2);
             this.txtyn_child_undernourished_action.MaxLength = 1000;
             this.txtyn_child_undernourished_action.Name = "txtyn_child_undernourished_action";
             this.txtyn_child_undernourished_action.Size = new System.Drawing.Size(155, 72);
@@ -2261,7 +2261,7 @@
             this.tableLayoutPanel12.Controls.Add(this.tableLayoutPanel13, 0, 0);
             this.tableLayoutPanel12.Controls.Add(this.tableLayoutPanel42, 1, 0);
             this.tableLayoutPanel12.Location = new System.Drawing.Point(6, 762);
-            this.tableLayoutPanel12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel12.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 1;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -2285,7 +2285,7 @@
             this.tableLayoutPanel42.Controls.Add(this.dtother_health_issues_action_followup_date, 2, 0);
             this.tableLayoutPanel42.Controls.Add(this.txtother_health_issues_out_come, 3, 0);
             this.tableLayoutPanel42.Location = new System.Drawing.Point(260, 2);
-            this.tableLayoutPanel42.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel42.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel42.Name = "tableLayoutPanel42";
             this.tableLayoutPanel42.RowCount = 1;
             this.tableLayoutPanel42.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -2300,7 +2300,7 @@
             this.txtother_health_issues_action.BackColor = System.Drawing.Color.Black;
             this.txtother_health_issues_action.ForeColor = System.Drawing.Color.White;
             this.txtother_health_issues_action.Location = new System.Drawing.Point(96, 3);
-            this.txtother_health_issues_action.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtother_health_issues_action.Margin = new System.Windows.Forms.Padding(2);
             this.txtother_health_issues_action.MaxLength = 1000;
             this.txtother_health_issues_action.Name = "txtother_health_issues_action";
             this.txtother_health_issues_action.Size = new System.Drawing.Size(155, 72);
@@ -2315,7 +2315,7 @@
             this.txtother_health_issues.BackColor = System.Drawing.Color.Black;
             this.txtother_health_issues.ForeColor = System.Drawing.Color.White;
             this.txtother_health_issues.Location = new System.Drawing.Point(3, 3);
-            this.txtother_health_issues.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtother_health_issues.Margin = new System.Windows.Forms.Padding(2);
             this.txtother_health_issues.MaxLength = 1000;
             this.txtother_health_issues.Name = "txtother_health_issues";
             this.txtother_health_issues.Size = new System.Drawing.Size(88, 72);
@@ -2328,7 +2328,7 @@
             this.dtother_health_issues_action_followup_date.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtother_health_issues_action_followup_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtother_health_issues_action_followup_date.Location = new System.Drawing.Point(292, 29);
-            this.dtother_health_issues_action_followup_date.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtother_health_issues_action_followup_date.Margin = new System.Windows.Forms.Padding(2);
             this.dtother_health_issues_action_followup_date.Name = "dtother_health_issues_action_followup_date";
             this.dtother_health_issues_action_followup_date.ShowCheckBox = true;
             this.dtother_health_issues_action_followup_date.Size = new System.Drawing.Size(104, 20);
@@ -2342,7 +2342,7 @@
             this.txtother_health_issues_out_come.BackColor = System.Drawing.Color.Black;
             this.txtother_health_issues_out_come.ForeColor = System.Drawing.Color.White;
             this.txtother_health_issues_out_come.Location = new System.Drawing.Point(438, 3);
-            this.txtother_health_issues_out_come.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtother_health_issues_out_come.Margin = new System.Windows.Forms.Padding(2);
             this.txtother_health_issues_out_come.MaxLength = 1000;
             this.txtother_health_issues_out_come.Name = "txtother_health_issues_out_come";
             this.txtother_health_issues_out_come.Size = new System.Drawing.Size(157, 72);
@@ -2360,7 +2360,7 @@
             this.tableLayoutPanel14.Controls.Add(this.tableLayoutPanel15, 0, 0);
             this.tableLayoutPanel14.Controls.Add(this.tableLayoutPanel43, 1, 0);
             this.tableLayoutPanel14.Location = new System.Drawing.Point(6, 848);
-            this.tableLayoutPanel14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel14.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             this.tableLayoutPanel14.RowCount = 1;
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -2384,7 +2384,7 @@
             this.tableLayoutPanel43.Controls.Add(this.dtyn_no_violence_action_followup_date, 2, 0);
             this.tableLayoutPanel43.Controls.Add(this.txtyn_no_violence_out_come, 3, 0);
             this.tableLayoutPanel43.Location = new System.Drawing.Point(260, 2);
-            this.tableLayoutPanel43.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel43.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel43.Name = "tableLayoutPanel43";
             this.tableLayoutPanel43.RowCount = 1;
             this.tableLayoutPanel43.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -2399,7 +2399,7 @@
             this.txtyn_no_violence_action.BackColor = System.Drawing.Color.Black;
             this.txtyn_no_violence_action.ForeColor = System.Drawing.Color.White;
             this.txtyn_no_violence_action.Location = new System.Drawing.Point(96, 3);
-            this.txtyn_no_violence_action.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtyn_no_violence_action.Margin = new System.Windows.Forms.Padding(2);
             this.txtyn_no_violence_action.MaxLength = 1000;
             this.txtyn_no_violence_action.Name = "txtyn_no_violence_action";
             this.txtyn_no_violence_action.Size = new System.Drawing.Size(155, 78);
@@ -2446,7 +2446,7 @@
             this.dtyn_no_violence_action_followup_date.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtyn_no_violence_action_followup_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtyn_no_violence_action_followup_date.Location = new System.Drawing.Point(292, 32);
-            this.dtyn_no_violence_action_followup_date.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtyn_no_violence_action_followup_date.Margin = new System.Windows.Forms.Padding(2);
             this.dtyn_no_violence_action_followup_date.Name = "dtyn_no_violence_action_followup_date";
             this.dtyn_no_violence_action_followup_date.ShowCheckBox = true;
             this.dtyn_no_violence_action_followup_date.Size = new System.Drawing.Size(104, 20);
@@ -2460,7 +2460,7 @@
             this.txtyn_no_violence_out_come.BackColor = System.Drawing.Color.Black;
             this.txtyn_no_violence_out_come.ForeColor = System.Drawing.Color.White;
             this.txtyn_no_violence_out_come.Location = new System.Drawing.Point(438, 3);
-            this.txtyn_no_violence_out_come.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtyn_no_violence_out_come.Margin = new System.Windows.Forms.Padding(2);
             this.txtyn_no_violence_out_come.MaxLength = 1000;
             this.txtyn_no_violence_out_come.Name = "txtyn_no_violence_out_come";
             this.txtyn_no_violence_out_come.Size = new System.Drawing.Size(157, 78);
@@ -2493,7 +2493,7 @@
             this.tableLayoutPanel16.Controls.Add(this.tableLayoutPanel17, 0, 0);
             this.tableLayoutPanel16.Controls.Add(this.tableLayoutPanel44, 1, 0);
             this.tableLayoutPanel16.Location = new System.Drawing.Point(6, 940);
-            this.tableLayoutPanel16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel16.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
             this.tableLayoutPanel16.RowCount = 1;
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -2517,7 +2517,7 @@
             this.tableLayoutPanel44.Controls.Add(this.dtyn_stable_care_giver_followup_date, 2, 0);
             this.tableLayoutPanel44.Controls.Add(this.txtyn_stable_care_giver_out_come, 3, 0);
             this.tableLayoutPanel44.Location = new System.Drawing.Point(260, 2);
-            this.tableLayoutPanel44.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel44.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel44.Name = "tableLayoutPanel44";
             this.tableLayoutPanel44.RowCount = 1;
             this.tableLayoutPanel44.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -2532,7 +2532,7 @@
             this.txtyn_stable_care_giver_action.BackColor = System.Drawing.Color.Black;
             this.txtyn_stable_care_giver_action.ForeColor = System.Drawing.Color.White;
             this.txtyn_stable_care_giver_action.Location = new System.Drawing.Point(96, 3);
-            this.txtyn_stable_care_giver_action.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtyn_stable_care_giver_action.Margin = new System.Windows.Forms.Padding(2);
             this.txtyn_stable_care_giver_action.MaxLength = 1000;
             this.txtyn_stable_care_giver_action.Name = "txtyn_stable_care_giver_action";
             this.txtyn_stable_care_giver_action.Size = new System.Drawing.Size(155, 74);
@@ -2579,7 +2579,7 @@
             this.dtyn_stable_care_giver_followup_date.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtyn_stable_care_giver_followup_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtyn_stable_care_giver_followup_date.Location = new System.Drawing.Point(292, 30);
-            this.dtyn_stable_care_giver_followup_date.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtyn_stable_care_giver_followup_date.Margin = new System.Windows.Forms.Padding(2);
             this.dtyn_stable_care_giver_followup_date.Name = "dtyn_stable_care_giver_followup_date";
             this.dtyn_stable_care_giver_followup_date.ShowCheckBox = true;
             this.dtyn_stable_care_giver_followup_date.Size = new System.Drawing.Size(104, 20);
@@ -2593,7 +2593,7 @@
             this.txtyn_stable_care_giver_out_come.BackColor = System.Drawing.Color.Black;
             this.txtyn_stable_care_giver_out_come.ForeColor = System.Drawing.Color.White;
             this.txtyn_stable_care_giver_out_come.Location = new System.Drawing.Point(438, 3);
-            this.txtyn_stable_care_giver_out_come.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtyn_stable_care_giver_out_come.Margin = new System.Windows.Forms.Padding(2);
             this.txtyn_stable_care_giver_out_come.MaxLength = 1000;
             this.txtyn_stable_care_giver_out_come.Name = "txtyn_stable_care_giver_out_come";
             this.txtyn_stable_care_giver_out_come.Size = new System.Drawing.Size(157, 74);
@@ -2611,7 +2611,7 @@
             this.tableLayoutPanel18.Controls.Add(this.tableLayoutPanel19, 0, 0);
             this.tableLayoutPanel18.Controls.Add(this.tableLayoutPanel45, 1, 0);
             this.tableLayoutPanel18.Location = new System.Drawing.Point(5, 1119);
-            this.tableLayoutPanel18.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel18.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel18.Name = "tableLayoutPanel18";
             this.tableLayoutPanel18.RowCount = 1;
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -2635,7 +2635,7 @@
             this.tableLayoutPanel45.Controls.Add(this.dtother_safe_issues_followup_date, 2, 0);
             this.tableLayoutPanel45.Controls.Add(this.txtother_safe_issues_action_out_come, 3, 0);
             this.tableLayoutPanel45.Location = new System.Drawing.Point(260, 2);
-            this.tableLayoutPanel45.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel45.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel45.Name = "tableLayoutPanel45";
             this.tableLayoutPanel45.RowCount = 1;
             this.tableLayoutPanel45.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -2650,7 +2650,7 @@
             this.txtother_safe_issues_action.BackColor = System.Drawing.Color.Black;
             this.txtother_safe_issues_action.ForeColor = System.Drawing.Color.White;
             this.txtother_safe_issues_action.Location = new System.Drawing.Point(96, 3);
-            this.txtother_safe_issues_action.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtother_safe_issues_action.Margin = new System.Windows.Forms.Padding(2);
             this.txtother_safe_issues_action.MaxLength = 1000;
             this.txtother_safe_issues_action.Name = "txtother_safe_issues_action";
             this.txtother_safe_issues_action.Size = new System.Drawing.Size(155, 77);
@@ -2665,7 +2665,7 @@
             this.txtother_safe_issues.BackColor = System.Drawing.Color.Black;
             this.txtother_safe_issues.ForeColor = System.Drawing.Color.White;
             this.txtother_safe_issues.Location = new System.Drawing.Point(3, 3);
-            this.txtother_safe_issues.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtother_safe_issues.Margin = new System.Windows.Forms.Padding(2);
             this.txtother_safe_issues.MaxLength = 1000;
             this.txtother_safe_issues.Name = "txtother_safe_issues";
             this.txtother_safe_issues.Size = new System.Drawing.Size(88, 77);
@@ -2678,7 +2678,7 @@
             this.dtother_safe_issues_followup_date.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtother_safe_issues_followup_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtother_safe_issues_followup_date.Location = new System.Drawing.Point(292, 31);
-            this.dtother_safe_issues_followup_date.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtother_safe_issues_followup_date.Margin = new System.Windows.Forms.Padding(2);
             this.dtother_safe_issues_followup_date.Name = "dtother_safe_issues_followup_date";
             this.dtother_safe_issues_followup_date.ShowCheckBox = true;
             this.dtother_safe_issues_followup_date.Size = new System.Drawing.Size(104, 20);
@@ -2692,7 +2692,7 @@
             this.txtother_safe_issues_action_out_come.BackColor = System.Drawing.Color.Black;
             this.txtother_safe_issues_action_out_come.ForeColor = System.Drawing.Color.White;
             this.txtother_safe_issues_action_out_come.Location = new System.Drawing.Point(438, 3);
-            this.txtother_safe_issues_action_out_come.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtother_safe_issues_action_out_come.Margin = new System.Windows.Forms.Padding(2);
             this.txtother_safe_issues_action_out_come.MaxLength = 1000;
             this.txtother_safe_issues_action_out_come.Name = "txtother_safe_issues_action_out_come";
             this.txtother_safe_issues_action_out_come.Size = new System.Drawing.Size(157, 77);
@@ -2710,7 +2710,7 @@
             this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel21, 0, 0);
             this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel46, 1, 0);
             this.tableLayoutPanel20.Location = new System.Drawing.Point(5, 1210);
-            this.tableLayoutPanel20.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel20.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel20.Name = "tableLayoutPanel20";
             this.tableLayoutPanel20.RowCount = 1;
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -2734,7 +2734,7 @@
             this.tableLayoutPanel46.Controls.Add(this.dtyn_stable_access_money_followup_date, 2, 0);
             this.tableLayoutPanel46.Controls.Add(this.yn_stable_access_money_out_come, 3, 0);
             this.tableLayoutPanel46.Location = new System.Drawing.Point(260, 2);
-            this.tableLayoutPanel46.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel46.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel46.Name = "tableLayoutPanel46";
             this.tableLayoutPanel46.RowCount = 1;
             this.tableLayoutPanel46.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -2749,7 +2749,7 @@
             this.txtyn_stable_access_money_action.BackColor = System.Drawing.Color.Black;
             this.txtyn_stable_access_money_action.ForeColor = System.Drawing.Color.White;
             this.txtyn_stable_access_money_action.Location = new System.Drawing.Point(96, 3);
-            this.txtyn_stable_access_money_action.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtyn_stable_access_money_action.Margin = new System.Windows.Forms.Padding(2);
             this.txtyn_stable_access_money_action.MaxLength = 1000;
             this.txtyn_stable_access_money_action.Name = "txtyn_stable_access_money_action";
             this.txtyn_stable_access_money_action.Size = new System.Drawing.Size(155, 72);
@@ -2796,7 +2796,7 @@
             this.dtyn_stable_access_money_followup_date.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtyn_stable_access_money_followup_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtyn_stable_access_money_followup_date.Location = new System.Drawing.Point(292, 29);
-            this.dtyn_stable_access_money_followup_date.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtyn_stable_access_money_followup_date.Margin = new System.Windows.Forms.Padding(2);
             this.dtyn_stable_access_money_followup_date.Name = "dtyn_stable_access_money_followup_date";
             this.dtyn_stable_access_money_followup_date.ShowCheckBox = true;
             this.dtyn_stable_access_money_followup_date.Size = new System.Drawing.Size(104, 20);
@@ -2810,7 +2810,7 @@
             this.yn_stable_access_money_out_come.BackColor = System.Drawing.Color.Black;
             this.yn_stable_access_money_out_come.ForeColor = System.Drawing.Color.White;
             this.yn_stable_access_money_out_come.Location = new System.Drawing.Point(438, 3);
-            this.yn_stable_access_money_out_come.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.yn_stable_access_money_out_come.Margin = new System.Windows.Forms.Padding(2);
             this.yn_stable_access_money_out_come.MaxLength = 1000;
             this.yn_stable_access_money_out_come.Name = "yn_stable_access_money_out_come";
             this.yn_stable_access_money_out_come.Size = new System.Drawing.Size(157, 72);
@@ -2828,7 +2828,7 @@
             this.tableLayoutPanel22.Controls.Add(this.tableLayoutPanel23, 0, 0);
             this.tableLayoutPanel22.Controls.Add(this.tableLayoutPanel47, 1, 0);
             this.tableLayoutPanel22.Location = new System.Drawing.Point(5, 1296);
-            this.tableLayoutPanel22.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel22.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel22.Name = "tableLayoutPanel22";
             this.tableLayoutPanel22.RowCount = 1;
             this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -2852,11 +2852,11 @@
             this.tableLayoutPanel47.Controls.Add(this.txtyn_stable_income_source_out_come, 3, 0);
             this.tableLayoutPanel47.Controls.Add(this.panelResponse10, 0, 0);
             this.tableLayoutPanel47.Location = new System.Drawing.Point(260, 2);
-            this.tableLayoutPanel47.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel47.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel47.Name = "tableLayoutPanel47";
             this.tableLayoutPanel47.RowCount = 1;
             this.tableLayoutPanel47.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel47.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 83F));
+            this.tableLayoutPanel47.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 82F));
             this.tableLayoutPanel47.Size = new System.Drawing.Size(598, 83);
             this.tableLayoutPanel47.TabIndex = 83;
             // 
@@ -2868,7 +2868,7 @@
             this.txt_yn_stable_income_source_action.BackColor = System.Drawing.Color.Black;
             this.txt_yn_stable_income_source_action.ForeColor = System.Drawing.Color.White;
             this.txt_yn_stable_income_source_action.Location = new System.Drawing.Point(96, 3);
-            this.txt_yn_stable_income_source_action.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_yn_stable_income_source_action.Margin = new System.Windows.Forms.Padding(2);
             this.txt_yn_stable_income_source_action.MaxLength = 1000;
             this.txt_yn_stable_income_source_action.Name = "txt_yn_stable_income_source_action";
             this.txt_yn_stable_income_source_action.Size = new System.Drawing.Size(155, 77);
@@ -2880,7 +2880,7 @@
             this.dtyn_stable_income_source_followup_date.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtyn_stable_income_source_followup_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtyn_stable_income_source_followup_date.Location = new System.Drawing.Point(292, 31);
-            this.dtyn_stable_income_source_followup_date.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtyn_stable_income_source_followup_date.Margin = new System.Windows.Forms.Padding(2);
             this.dtyn_stable_income_source_followup_date.Name = "dtyn_stable_income_source_followup_date";
             this.dtyn_stable_income_source_followup_date.ShowCheckBox = true;
             this.dtyn_stable_income_source_followup_date.Size = new System.Drawing.Size(104, 20);
@@ -2894,7 +2894,7 @@
             this.txtyn_stable_income_source_out_come.BackColor = System.Drawing.Color.Black;
             this.txtyn_stable_income_source_out_come.ForeColor = System.Drawing.Color.White;
             this.txtyn_stable_income_source_out_come.Location = new System.Drawing.Point(438, 3);
-            this.txtyn_stable_income_source_out_come.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtyn_stable_income_source_out_come.Margin = new System.Windows.Forms.Padding(2);
             this.txtyn_stable_income_source_out_come.MaxLength = 1000;
             this.txtyn_stable_income_source_out_come.Name = "txtyn_stable_income_source_out_come";
             this.txtyn_stable_income_source_out_come.Size = new System.Drawing.Size(157, 77);
@@ -2962,7 +2962,7 @@
             this.tableLayoutPanel24.Controls.Add(this.tableLayoutPanel25, 0, 0);
             this.tableLayoutPanel24.Controls.Add(this.tableLayoutPanel48, 1, 0);
             this.tableLayoutPanel24.Location = new System.Drawing.Point(3, 1387);
-            this.tableLayoutPanel24.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel24.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel24.Name = "tableLayoutPanel24";
             this.tableLayoutPanel24.RowCount = 1;
             this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -2986,7 +2986,7 @@
             this.tableLayoutPanel48.Controls.Add(this.dtother_hes_issues_followup_date, 2, 0);
             this.tableLayoutPanel48.Controls.Add(this.txtother_hes_issues_out_come, 3, 0);
             this.tableLayoutPanel48.Location = new System.Drawing.Point(260, 2);
-            this.tableLayoutPanel48.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel48.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel48.Name = "tableLayoutPanel48";
             this.tableLayoutPanel48.RowCount = 1;
             this.tableLayoutPanel48.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -3001,7 +3001,7 @@
             this.txtother_hes_issues_action.BackColor = System.Drawing.Color.Black;
             this.txtother_hes_issues_action.ForeColor = System.Drawing.Color.White;
             this.txtother_hes_issues_action.Location = new System.Drawing.Point(96, 3);
-            this.txtother_hes_issues_action.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtother_hes_issues_action.Margin = new System.Windows.Forms.Padding(2);
             this.txtother_hes_issues_action.MaxLength = 1000;
             this.txtother_hes_issues_action.Name = "txtother_hes_issues_action";
             this.txtother_hes_issues_action.Size = new System.Drawing.Size(155, 69);
@@ -3016,7 +3016,7 @@
             this.txtother_hes_issues.BackColor = System.Drawing.Color.Black;
             this.txtother_hes_issues.ForeColor = System.Drawing.Color.White;
             this.txtother_hes_issues.Location = new System.Drawing.Point(3, 3);
-            this.txtother_hes_issues.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtother_hes_issues.Margin = new System.Windows.Forms.Padding(2);
             this.txtother_hes_issues.MaxLength = 1000;
             this.txtother_hes_issues.Name = "txtother_hes_issues";
             this.txtother_hes_issues.Size = new System.Drawing.Size(88, 69);
@@ -3029,7 +3029,7 @@
             this.dtother_hes_issues_followup_date.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtother_hes_issues_followup_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtother_hes_issues_followup_date.Location = new System.Drawing.Point(292, 27);
-            this.dtother_hes_issues_followup_date.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtother_hes_issues_followup_date.Margin = new System.Windows.Forms.Padding(2);
             this.dtother_hes_issues_followup_date.Name = "dtother_hes_issues_followup_date";
             this.dtother_hes_issues_followup_date.ShowCheckBox = true;
             this.dtother_hes_issues_followup_date.Size = new System.Drawing.Size(104, 20);
@@ -3043,7 +3043,7 @@
             this.txtother_hes_issues_out_come.BackColor = System.Drawing.Color.Black;
             this.txtother_hes_issues_out_come.ForeColor = System.Drawing.Color.White;
             this.txtother_hes_issues_out_come.Location = new System.Drawing.Point(438, 3);
-            this.txtother_hes_issues_out_come.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtother_hes_issues_out_come.Margin = new System.Windows.Forms.Padding(2);
             this.txtother_hes_issues_out_come.MaxLength = 1000;
             this.txtother_hes_issues_out_come.Name = "txtother_hes_issues_out_come";
             this.txtother_hes_issues_out_come.Size = new System.Drawing.Size(157, 69);
@@ -3061,7 +3061,7 @@
             this.tableLayoutPanel26.Controls.Add(this.tableLayoutPanel27, 0, 0);
             this.tableLayoutPanel26.Controls.Add(this.tableLayoutPanel49, 1, 0);
             this.tableLayoutPanel26.Location = new System.Drawing.Point(3, 1470);
-            this.tableLayoutPanel26.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel26.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel26.Name = "tableLayoutPanel26";
             this.tableLayoutPanel26.RowCount = 1;
             this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -3085,7 +3085,7 @@
             this.tableLayoutPanel49.Controls.Add(this.dtyn_ovc_regularly_attend_school_followup_date, 2, 0);
             this.tableLayoutPanel49.Controls.Add(this.txtyn_ovc_regularly_attend_school_out_come, 3, 0);
             this.tableLayoutPanel49.Location = new System.Drawing.Point(260, 2);
-            this.tableLayoutPanel49.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel49.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel49.Name = "tableLayoutPanel49";
             this.tableLayoutPanel49.RowCount = 1;
             this.tableLayoutPanel49.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -3100,7 +3100,7 @@
             this.txtyn_ovc_regularly_attend_school_action.BackColor = System.Drawing.Color.Black;
             this.txtyn_ovc_regularly_attend_school_action.ForeColor = System.Drawing.Color.White;
             this.txtyn_ovc_regularly_attend_school_action.Location = new System.Drawing.Point(96, 3);
-            this.txtyn_ovc_regularly_attend_school_action.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtyn_ovc_regularly_attend_school_action.Margin = new System.Windows.Forms.Padding(2);
             this.txtyn_ovc_regularly_attend_school_action.MaxLength = 1000;
             this.txtyn_ovc_regularly_attend_school_action.Name = "txtyn_ovc_regularly_attend_school_action";
             this.txtyn_ovc_regularly_attend_school_action.Size = new System.Drawing.Size(155, 71);
@@ -3160,7 +3160,7 @@
             this.dtyn_ovc_regularly_attend_school_followup_date.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtyn_ovc_regularly_attend_school_followup_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtyn_ovc_regularly_attend_school_followup_date.Location = new System.Drawing.Point(292, 28);
-            this.dtyn_ovc_regularly_attend_school_followup_date.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtyn_ovc_regularly_attend_school_followup_date.Margin = new System.Windows.Forms.Padding(2);
             this.dtyn_ovc_regularly_attend_school_followup_date.Name = "dtyn_ovc_regularly_attend_school_followup_date";
             this.dtyn_ovc_regularly_attend_school_followup_date.ShowCheckBox = true;
             this.dtyn_ovc_regularly_attend_school_followup_date.Size = new System.Drawing.Size(104, 20);
@@ -3174,7 +3174,7 @@
             this.txtyn_ovc_regularly_attend_school_out_come.BackColor = System.Drawing.Color.Black;
             this.txtyn_ovc_regularly_attend_school_out_come.ForeColor = System.Drawing.Color.White;
             this.txtyn_ovc_regularly_attend_school_out_come.Location = new System.Drawing.Point(438, 3);
-            this.txtyn_ovc_regularly_attend_school_out_come.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtyn_ovc_regularly_attend_school_out_come.Margin = new System.Windows.Forms.Padding(2);
             this.txtyn_ovc_regularly_attend_school_out_come.MaxLength = 1000;
             this.txtyn_ovc_regularly_attend_school_out_come.Name = "txtyn_ovc_regularly_attend_school_out_come";
             this.txtyn_ovc_regularly_attend_school_out_come.Size = new System.Drawing.Size(157, 71);
@@ -3192,7 +3192,7 @@
             this.tableLayoutPanel28.Controls.Add(this.tableLayoutPanel29, 0, 0);
             this.tableLayoutPanel28.Controls.Add(this.tableLayoutPanel50, 1, 0);
             this.tableLayoutPanel28.Location = new System.Drawing.Point(3, 1555);
-            this.tableLayoutPanel28.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel28.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel28.Name = "tableLayoutPanel28";
             this.tableLayoutPanel28.RowCount = 1;
             this.tableLayoutPanel28.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -3216,7 +3216,7 @@
             this.tableLayoutPanel50.Controls.Add(this.dtyn_attained_tech_skill_followup_date, 2, 0);
             this.tableLayoutPanel50.Controls.Add(this.txtyn_attained_tech_skill_out_come, 3, 0);
             this.tableLayoutPanel50.Location = new System.Drawing.Point(260, 2);
-            this.tableLayoutPanel50.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel50.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel50.Name = "tableLayoutPanel50";
             this.tableLayoutPanel50.RowCount = 1;
             this.tableLayoutPanel50.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -3231,7 +3231,7 @@
             this.txtyn_attained_tech_skill_action_plan.BackColor = System.Drawing.Color.Black;
             this.txtyn_attained_tech_skill_action_plan.ForeColor = System.Drawing.Color.White;
             this.txtyn_attained_tech_skill_action_plan.Location = new System.Drawing.Point(96, 3);
-            this.txtyn_attained_tech_skill_action_plan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtyn_attained_tech_skill_action_plan.Margin = new System.Windows.Forms.Padding(2);
             this.txtyn_attained_tech_skill_action_plan.MaxLength = 1000;
             this.txtyn_attained_tech_skill_action_plan.Name = "txtyn_attained_tech_skill_action_plan";
             this.txtyn_attained_tech_skill_action_plan.Size = new System.Drawing.Size(155, 67);
@@ -3291,7 +3291,7 @@
             this.dtyn_attained_tech_skill_followup_date.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtyn_attained_tech_skill_followup_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtyn_attained_tech_skill_followup_date.Location = new System.Drawing.Point(292, 26);
-            this.dtyn_attained_tech_skill_followup_date.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtyn_attained_tech_skill_followup_date.Margin = new System.Windows.Forms.Padding(2);
             this.dtyn_attained_tech_skill_followup_date.Name = "dtyn_attained_tech_skill_followup_date";
             this.dtyn_attained_tech_skill_followup_date.ShowCheckBox = true;
             this.dtyn_attained_tech_skill_followup_date.Size = new System.Drawing.Size(104, 20);
@@ -3305,7 +3305,7 @@
             this.txtyn_attained_tech_skill_out_come.BackColor = System.Drawing.Color.Black;
             this.txtyn_attained_tech_skill_out_come.ForeColor = System.Drawing.Color.White;
             this.txtyn_attained_tech_skill_out_come.Location = new System.Drawing.Point(438, 3);
-            this.txtyn_attained_tech_skill_out_come.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtyn_attained_tech_skill_out_come.Margin = new System.Windows.Forms.Padding(2);
             this.txtyn_attained_tech_skill_out_come.MaxLength = 1000;
             this.txtyn_attained_tech_skill_out_come.Name = "txtyn_attained_tech_skill_out_come";
             this.txtyn_attained_tech_skill_out_come.Size = new System.Drawing.Size(157, 67);
@@ -3323,7 +3323,7 @@
             this.tableLayoutPanel30.Controls.Add(this.tableLayoutPanel31, 0, 0);
             this.tableLayoutPanel30.Controls.Add(this.tableLayoutPanel51, 1, 0);
             this.tableLayoutPanel30.Location = new System.Drawing.Point(3, 1636);
-            this.tableLayoutPanel30.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel30.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel30.Name = "tableLayoutPanel30";
             this.tableLayoutPanel30.RowCount = 1;
             this.tableLayoutPanel30.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -3347,7 +3347,7 @@
             this.tableLayoutPanel51.Controls.Add(this.dtother_edu_issues_followup_date, 2, 0);
             this.tableLayoutPanel51.Controls.Add(this.txtother_edu_issues_out_come, 3, 0);
             this.tableLayoutPanel51.Location = new System.Drawing.Point(260, 2);
-            this.tableLayoutPanel51.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel51.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel51.Name = "tableLayoutPanel51";
             this.tableLayoutPanel51.RowCount = 1;
             this.tableLayoutPanel51.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -3362,7 +3362,7 @@
             this.txtother_edu_issues_action.BackColor = System.Drawing.Color.Black;
             this.txtother_edu_issues_action.ForeColor = System.Drawing.Color.White;
             this.txtother_edu_issues_action.Location = new System.Drawing.Point(96, 3);
-            this.txtother_edu_issues_action.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtother_edu_issues_action.Margin = new System.Windows.Forms.Padding(2);
             this.txtother_edu_issues_action.MaxLength = 1000;
             this.txtother_edu_issues_action.Name = "txtother_edu_issues_action";
             this.txtother_edu_issues_action.Size = new System.Drawing.Size(155, 88);
@@ -3377,7 +3377,7 @@
             this.txtother_edu_issues.BackColor = System.Drawing.Color.Black;
             this.txtother_edu_issues.ForeColor = System.Drawing.Color.White;
             this.txtother_edu_issues.Location = new System.Drawing.Point(3, 3);
-            this.txtother_edu_issues.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtother_edu_issues.Margin = new System.Windows.Forms.Padding(2);
             this.txtother_edu_issues.MaxLength = 1000;
             this.txtother_edu_issues.Name = "txtother_edu_issues";
             this.txtother_edu_issues.Size = new System.Drawing.Size(88, 88);
@@ -3390,7 +3390,7 @@
             this.dtother_edu_issues_followup_date.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtother_edu_issues_followup_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtother_edu_issues_followup_date.Location = new System.Drawing.Point(292, 37);
-            this.dtother_edu_issues_followup_date.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtother_edu_issues_followup_date.Margin = new System.Windows.Forms.Padding(2);
             this.dtother_edu_issues_followup_date.Name = "dtother_edu_issues_followup_date";
             this.dtother_edu_issues_followup_date.ShowCheckBox = true;
             this.dtother_edu_issues_followup_date.Size = new System.Drawing.Size(104, 20);
@@ -3404,7 +3404,7 @@
             this.txtother_edu_issues_out_come.BackColor = System.Drawing.Color.Black;
             this.txtother_edu_issues_out_come.ForeColor = System.Drawing.Color.White;
             this.txtother_edu_issues_out_come.Location = new System.Drawing.Point(438, 3);
-            this.txtother_edu_issues_out_come.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtother_edu_issues_out_come.Margin = new System.Windows.Forms.Padding(2);
             this.txtother_edu_issues_out_come.MaxLength = 1000;
             this.txtother_edu_issues_out_come.Name = "txtother_edu_issues_out_come";
             this.txtother_edu_issues_out_come.Size = new System.Drawing.Size(157, 88);
@@ -3434,7 +3434,7 @@
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel32, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel52, 1, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(6, 1028);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -3488,7 +3488,7 @@
             this.tableLayoutPanel52.Controls.Add(this.dt_yn_birth_certificates_followup_date, 2, 0);
             this.tableLayoutPanel52.Controls.Add(this.txt_yn_birth_certificate_out_come, 3, 0);
             this.tableLayoutPanel52.Location = new System.Drawing.Point(260, 2);
-            this.tableLayoutPanel52.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel52.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel52.Name = "tableLayoutPanel52";
             this.tableLayoutPanel52.RowCount = 1;
             this.tableLayoutPanel52.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -3503,7 +3503,7 @@
             this.txt_yn_birth_certificate_action.BackColor = System.Drawing.Color.Black;
             this.txt_yn_birth_certificate_action.ForeColor = System.Drawing.Color.White;
             this.txt_yn_birth_certificate_action.Location = new System.Drawing.Point(96, 3);
-            this.txt_yn_birth_certificate_action.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_yn_birth_certificate_action.Margin = new System.Windows.Forms.Padding(2);
             this.txt_yn_birth_certificate_action.MaxLength = 1000;
             this.txt_yn_birth_certificate_action.Name = "txt_yn_birth_certificate_action";
             this.txt_yn_birth_certificate_action.Size = new System.Drawing.Size(155, 77);
@@ -3560,7 +3560,7 @@
             this.dt_yn_birth_certificates_followup_date.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dt_yn_birth_certificates_followup_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dt_yn_birth_certificates_followup_date.Location = new System.Drawing.Point(292, 31);
-            this.dt_yn_birth_certificates_followup_date.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dt_yn_birth_certificates_followup_date.Margin = new System.Windows.Forms.Padding(2);
             this.dt_yn_birth_certificates_followup_date.Name = "dt_yn_birth_certificates_followup_date";
             this.dt_yn_birth_certificates_followup_date.ShowCheckBox = true;
             this.dt_yn_birth_certificates_followup_date.Size = new System.Drawing.Size(104, 20);
@@ -3574,7 +3574,7 @@
             this.txt_yn_birth_certificate_out_come.BackColor = System.Drawing.Color.Black;
             this.txt_yn_birth_certificate_out_come.ForeColor = System.Drawing.Color.White;
             this.txt_yn_birth_certificate_out_come.Location = new System.Drawing.Point(438, 3);
-            this.txt_yn_birth_certificate_out_come.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_yn_birth_certificate_out_come.Margin = new System.Windows.Forms.Padding(2);
             this.txt_yn_birth_certificate_out_come.MaxLength = 1000;
             this.txt_yn_birth_certificate_out_come.Name = "txt_yn_birth_certificate_out_come";
             this.txt_yn_birth_certificate_out_come.Size = new System.Drawing.Size(157, 77);
@@ -3608,7 +3608,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.tlpDisplay01);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_HouseholdImprovementPlan";
             this.Size = new System.Drawing.Size(871, 2044);
             this.Load += new System.EventHandler(this.frm_HouseholdImprovementPlan_Load);

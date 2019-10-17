@@ -352,8 +352,8 @@ namespace SOCY_MIS
             #region Set Variables
             benApprenticeshipskillAquisitionTracking.wrd_id = cboParish.SelectedValue.ToString();
             benApprenticeshipskillAquisitionTracking.hhm_id = cboHHMemberName.SelectedValue.ToString();
-            benApprenticeshipskillAquisitionTracking.review_date_from = dtReviewDatefrom.Value.Date;
-            benApprenticeshipskillAquisitionTracking.review_date_to = dtReviewDateTo.Value.Date;
+            benApprenticeshipskillAquisitionTracking.review_date_from = dtReviewDatefrom.Value;
+            benApprenticeshipskillAquisitionTracking.review_date_to = dtReviewDateTo.Value;
             benApprenticeshipskillAquisitionTracking.trade_id = cboTrade.SelectedValue.ToString();
             benApprenticeshipskillAquisitionTracking.module_id = cboModule.SelectedValue.ToString();
             benApprenticeshipskillAquisitionTracking.youth_acquire_not_acquire_skill_reason = txtnotAcquireReason.Text;

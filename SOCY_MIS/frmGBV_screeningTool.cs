@@ -85,7 +85,7 @@ namespace SOCY_MIS
                 GBV_screeningTool.wrd_id = cboParish.SelectedValue.ToString();
                 GBV_screeningTool.hhm_id = cboHHMemberName.SelectedValue.ToString();
                 GBV_screeningTool.gbv_screen_officer = cboSocialWorker.SelectedValue.ToString();
-                GBV_screeningTool.gbv_screen_date = dtscreenDate.Value.Date;
+                GBV_screeningTool.gbv_screen_date = dtscreenDate.Value;
                 GBV_screeningTool.hh_tel = txtPhone.Text;
                 GBV_screeningTool.yn_sexual_rape = utilControls.RadioButtonGetSelection(rdnyn_sexual_rapeYes, rdnyn_sexual_rapeNo);
                 GBV_screeningTool.yn_sexual_defilement = utilControls.RadioButtonGetSelection(rdnyn_sexual_defilementYes, rdnyn_sexual_defilementNo);

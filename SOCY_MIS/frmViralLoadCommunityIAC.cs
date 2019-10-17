@@ -518,7 +518,7 @@ namespace SOCY_MIS
             benOvcNonSuppressionAdherenceCounselling.hhm_id = cboHHMemberName.SelectedValue.ToString();
             benOvcNonSuppressionAdherenceCounselling.health_fac_name = txtHealthFacility.Text;
             benOvcNonSuppressionAdherenceCounselling.art_number = txtARTNumber.Text;
-            benOvcNonSuppressionAdherenceCounselling.visit_date = dtDate.Value.Date;
+            benOvcNonSuppressionAdherenceCounselling.visit_date = dtDate.Value;
             benOvcNonSuppressionAdherenceCounselling.swk_id = cboSocialWorker.SelectedValue.ToString();
             benOvcNonSuppressionAdherenceCounselling.lnk_id = cboLinkagesOfficer.SelectedValue.ToString();
             benOvcNonSuppressionAdherenceCounselling.visit_name = cboVisit.Text;

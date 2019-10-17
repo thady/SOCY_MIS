@@ -16403,17 +16403,17 @@ namespace SOCY_MIS.DataAccessLayer
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('4','Namanya Gift',4,'783909146','giftnamanya@gmail.com','CSO002',1,'5','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('5','AKAMPA VICTOR',5,'0785001371','akamvic@gmail.com','CSO006',1,'7','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('6','Byamugisha Tanazio',6,'782294914','Byamugishat.kcson@gmail.com','CSO004',0,'9','1','1','2018-07-19','2018-07-19')
-            INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('7','Twinomujuni Aaron',7,'774113257','twinoaron@gmail.com','CSO002',1,'10','1','1','2018-07-19','2018-07-19')
+            INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('7','Philibert Nuwahereza',7,'0781503404','twinoaron@gmail.com','CSO002',1,'10','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('8','Maimuna Naluyima',8,'777059680','maimunanarwima@gmail.com','CSO004',1,'11','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('9','Ayanga Tana',9,'0781001868','','CSO001',1,'13','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('10','Oshabahebwa Opherous',10,'787788963','opherousone@gmail.com','CSO001',1,'15','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('12','Mwongyera Varias',12,'783660718','Mwongyerav@gmail.com','CSO002',1,'16','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('13','Omony Emmanuel',13,'772359672','Lamobrf2016@gmail.com','CSO001',1,'17','1','1','2018-07-19','2018-07-19')
-            INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('14','Nyesigamukama Alex',14,'784020702','nyejigamulkamaalexa@gmail.com','CSO019',1,'14','1','1','2018-07-19','2018-07-19')
+            INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('14','TINDYEBWA MOSES',14,'0703522348','','CSO019',1,'14','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('15','KUKUNDA ELIZABETH',15,'783915182','','CSO016',1,'19','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('16','Kasule Fredrick',16,'0774547072','kirumirafrederick@gmail.com','CSO017',1,'12','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('17','Nakigudde Alice',17,'700233149','Alice2009@gmail.com','CSO018',1,'21','1','1','2018-07-19','2018-07-19')
-            INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('18','Kobushinge Annet',18,'89860951','kobzannet@yahoo.com','CSO018',1,'20','1','1','2018-07-19','2018-07-19')
+            INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('18','Kembabazi Evelin',18,'0775703910','','CSO018',1,'20','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('19','NATWIJUKA DIID',19,'774895026','natwijukadiidi@gmail.com','CSO004',1,'18','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('20','IGURU DANIEL',20,'782711572','','CSO004',1,'3','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('21','IGURU DANIEL',21,'782711572','','CSO004',1,'22','1','1','2018-07-19','2018-07-19')
@@ -20519,7 +20519,8 @@ namespace SOCY_MIS.DataAccessLayer
                     INSERT [dbo].[lst_apprenticeship_trade] ([trd_sid], [trd_id], [trd_name], [trd_order], [trd_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (10, N'10', N'Crafts', 10, 1, N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_apprenticeship_trade] ([trd_sid], [trd_id], [trd_name], [trd_order], [trd_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (11, N'11', N'Baking', 11, 1, N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_apprenticeship_trade] ([trd_sid], [trd_id], [trd_name], [trd_order], [trd_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (12, N'12', N'Cottage', 12, 1, N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_apprenticeship_trade] ([trd_sid], [trd_id], [trd_name], [trd_order], [trd_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (13, N'13', N'Back Yard Gardening', 13, 1, N'EN', N'1', N'1', GETDATE(), GETDATE())";
+                    INSERT [dbo].[lst_apprenticeship_trade] ([trd_sid], [trd_id], [trd_name], [trd_order], [trd_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (13, N'13', N'Back Yard Gardening', 13, 1, N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_apprenticeship_trade] ([trd_sid], [trd_id], [trd_name], [trd_order], [trd_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (14, N'14', N'Electronics', 14, 1, N'EN', N'1', N'1', GETDATE(), GETDATE())";
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
         }
@@ -30531,6 +30532,12 @@ namespace SOCY_MIS.DataAccessLayer
      VALUES (153,'153','4','Electrical Installation',153,1 ,'EN',1,1,GETDATE(),GETDATE())";
             dbCon.ExecuteNonQuery(strSQL);
 
+            strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 154)
+	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update])
+     VALUES (154,'154','9','Fish Farming',154,1 ,'EN',1,1,GETDATE(),GETDATE())";
+            dbCon.ExecuteNonQuery(strSQL);
+
 
             strSQL = @"IF NOT EXISTS(SELECT* FROM lst_es_training_type_session WHERE ttps_order = 100)
 	 INSERT INTO [dbo].[lst_es_training_type_session]([ttps_sid],[ttps_id],[ttp_id],[ttps_name],[ttps_order] ,[ttps_active],[lng_id],[usr_id_create],[usr_id_update]
@@ -30874,6 +30881,8 @@ namespace SOCY_MIS.DataAccessLayer
             Insertlst_non_supress_household(dbCon);
             HomeVisitMERUpdate(dbCon);
             Createhh_graduation_assessment(dbCon);
+
+            ActivateHouseholdMembersToserve(dbCon);
         }
 
 
@@ -30892,6 +30901,136 @@ namespace SOCY_MIS.DataAccessLayer
             strSQL = "UPDATE hh_household_assessment SET hha_id = LOWER(hha_id)";
             dbCon.ExecuteNonQuery(strSQL);
         }
+
+        public static void ActivateHouseholdMembersToserve(DBConnection dbCon)
+        {
+            
+            string strSQL = string.Empty;
+            string strKagambaMembers = @"'35a9e5ac-e074-47c6-bc11-b4026c4a964b',
+                                        '9b6b0c1f-a988-455d-ab6d-422178adae9c',
+                                        '9dbf30fa-bcd7-448f-9358-8b3b400a7d88',
+                                        '3a8ce2f6-9fb0-49b8-9996-af41c9488562',
+                                        'bae25d83-9f26-4ad9-9a72-6b0402370e20',
+                                        '26aa8b95-7427-42c9-a90a-db56b375eb68',
+                                        'b12aea59-33d8-4825-ad1f-bd84a651d498',
+                                        '25c2d077-1a87-472a-b9dd-93dc83fb444f',
+                                        '85358344-0fd2-4fbe-ad62-1b0d7bb1cc65',
+                                        'aa5d8d3b-22c9-439a-a1ac-d154a9eb3421',
+                                        '50401871-1aec-4e9b-9a82-d5a5423d2b9d',
+                                        '6e45eb71-3475-486f-b782-59a233233c64',
+                                        'd69351ce-c18a-4dea-9b3c-51df6484bd86',
+                                        '74734247-660f-4de1-b8eb-a27d4919573d',
+                                        '6e7d7fa1-60c4-421e-941a-b39e6d3bd888',
+                                        '9487e9d1-58bb-4811-bfd4-a2867a2f0589',
+                                        '2a6c388c-4d4b-42eb-a8da-140f302da4f4',
+                                        '4190a398-f67d-430f-b6de-e41ec29e83cb',
+                                        '27f230be-a5d6-42ef-a3ea-9fb6ed0bb033',
+                                        'b09d7a6b-b9d9-4dda-a3c6-7429f8e387f5',
+                                        '79014c65-c513-407e-9072-8c099820bb91',
+                                        '387ffafc-f34e-49f2-a41c-cce9c48ad7c5',
+                                        '53e47170-435e-41a8-bf29-cac3fbb5945f',
+                                        'c4479ec5-599f-4067-b534-1066d0707d91',
+                                        '23a02687-a546-41ce-a022-56354fd8038a',
+                                        '413575f0-69ea-4d20-a6f2-0e08d8426bd8',
+                                        '581f9c09-a1ca-4564-8481-0ff8866f38b8',
+                                        '62c8048c-8401-4a28-b768-26f715200fec',
+                                        '70dd59e0-24f5-4c36-a399-cfb94f7679ee',
+                                        'a22065e8-e2c0-4d06-8450-ca5aa29dd81d',
+                                        '4a4ca076-4950-487e-8cd2-ae0475ee0d6a',
+                                        'd516aa72-96c3-45f1-8686-6affe69af453',
+                                        '5775be12-8afa-4821-bd3e-689fcd7eeab9',
+                                        'cb6cf158-ec17-4dc3-a158-a8b3d592cd2b',
+                                        'e19cad66-32ab-4dd2-883e-df561b574d6e',
+                                        '0ab4b915-32c3-4c3b-8051-3ced8f047f9b',
+                                        '86292cc0-efa1-455f-a1c2-8604e47948b6',
+                                        '10493957-eb2e-48ce-b739-eeb71965a615',
+                                        '1f1ba216-ecfa-415a-add3-377819704ab9',
+                                        '90efebeb-da6a-44a9-9b08-d6da38f6e9a7',
+                                        'e95f75fa-91a7-431a-a890-acfaa74432e0',
+                                        '72a99628-a661-4ba8-9771-f4f564d7e030',
+                                        '47ec8e31-a1e7-46be-9d7b-3e98a7f48214',
+                                        '486e1eb0-dae2-4b8b-ad36-15418ac77658',
+                                        'f65d3626-87a4-47d4-a68a-686e22d0d9db',
+                                        '0705058c-5101-4966-a2b2-846110741988',
+                                        '54ec05ab-649d-4e07-a3a9-c9a7367756ec',
+                                        '8c9356b2-14dd-4e3c-b6b5-13ac369a78a3',
+                                        '97a8a1db-fcf9-43a2-b37e-372b56e97ef2',
+                                        'b722e8e9-10a3-4314-9cbb-21679034a8d8',
+                                        '07368055-8755-4b76-8e9c-234b3e772ab1',
+                                        '1b70ea66-17d4-48a0-a9f2-7f3fd965ebb7',
+                                        '2dd46eab-a141-4237-b5de-03b9dd269f9a',
+                                        '44a81b28-d040-497f-a546-fdf1615e4df5',
+                                        '37d57d39-5b06-40c6-8670-c7edc50ccf13',
+                                        '5cda759f-f662-48ef-97ba-ae501b22f4ce',
+                                        '7c6d5da8-94e5-4369-a3cf-7e4588aa16b4',
+                                        'f62c45e3-a78c-450c-8b57-99b1921e02cc',
+                                        '1044319d-bdf0-452f-ab5c-aaa58cb2b10f',
+                                        '1931a81f-733a-4d1f-8636-e6ae6289b3b7',
+                                        '41e21180-efc8-4dff-8eef-0915701901f9',
+                                        'b855883f-623a-46ef-9f32-ed4eebb8dd81',
+                                        'bb466c2a-d63f-41f6-ba9e-1f3cdb227e1a',
+                                        'd92ba1cc-0f37-466d-843a-4b844c23db3d',
+                                        'f741db94-d1ea-4630-82bf-561dedb60bcb',
+                                        '4a2f4d7d-7ea2-4fe1-ab18-3f1296c675d7',
+                                        'b6b88edd-73cc-4719-8b98-4f968d3bfd05',
+                                        '405bb28a-5a07-4fc5-b45d-52fdf37d56d2',
+                                        '4de823a2-e814-44ac-baa0-5ba6fcdf4ffd',
+                                        '970c44cd-7821-4bd8-b835-a7f34ec794f6',
+                                        '09db0b1e-3d21-4346-8274-ef41409c88f0',
+                                        '59a0f178-9b18-468f-b4fd-124a3ef02e7a',
+                                        '59cdf128-6750-408b-94b0-06d1d5241430',
+                                        '7028730f-fc93-48c0-a38f-c3c014dbed75',
+                                        'd7e5e6e8-b1dd-4e23-bad6-34893a57aac5',
+                                        'deb262b6-a09f-404a-bd13-d3fa3ad0fb3f',
+                                        '0abca586-a0a2-4516-b2d3-8c38b00d629a',
+                                        'd97f2272-6a96-452a-b8a6-13296f02e0ae'";
+
+
+            ClearHouseholdMemberData.CreateDataCleanerTable(); 
+
+            if (ClearHouseholdMemberData.BenToServCleaned() == false)
+            {
+                strSQL = "DELETE FROM hh_household_member";
+                dbCon.ExecuteNonQuery(strSQL);
+
+                strSQL = "DELETE FROM hh_household";
+                dbCon.ExecuteNonQuery(strSQL);
+
+                strSQL = "DELETE FROM hh_household_member_upload";
+                dbCon.ExecuteNonQuery(strSQL);
+
+                strSQL = "DELETE FROM hh_household_upload";
+                dbCon.ExecuteNonQuery(strSQL);
+
+                #region SheemaKagamabaRemove
+                strSQL = "DELETE FROM hh_household_member WHERE hh_id IN({0})";
+                strSQL = string.Format(strSQL,strKagambaMembers);
+                dbCon.ExecuteNonQuery(strSQL);
+
+                strSQL = "DELETE FROM hh_household WHERE hh_id IN({0})";
+                strSQL = string.Format(strSQL, strKagambaMembers);
+                dbCon.ExecuteNonQuery(strSQL);
+
+                strSQL = "DELETE FROM hh_household_member_upload WHERE hh_id IN({0})";
+                strSQL = string.Format(strSQL, strKagambaMembers);
+                dbCon.ExecuteNonQuery(strSQL);
+
+                strSQL = "DELETE FROM hh_household_upload WHERE hh_id IN({0})";
+                strSQL = string.Format(strSQL, strKagambaMembers);
+                dbCon.ExecuteNonQuery(strSQL);
+                #endregion
+
+                strSQL = "INSERT INTO um_data_cleaner(record_guid,prev_qtr_data_cleaned) VALUES('{0}','{1}')";
+                strSQL = string.Format(strSQL,Guid.NewGuid().ToString(),true);
+                dbCon.ExecuteNonQuery(strSQL);
+            }
+            else
+            {
+                //continue to login
+            } 
+        }
+
+
         public static void NewCso(DBConnection dbCon)
         {
             string strSQL = string.Empty;
@@ -30899,6 +31038,19 @@ namespace SOCY_MIS.DataAccessLayer
             strSQL = "DELETE FROM [dbo].[lst_cso]";
             dbCon.ExecuteNonQuery(strSQL);
 
+            strSQL = "UPDATE hh_household_member SET district_id = '{0}' WHERE district_id IS NULL";
+            strSQL = string.Format(strSQL, SystemConstants.Return_office_district());
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_household_member_upload SET district_id = '{0}' WHERE district_id IS NULL";
+            strSQL = string.Format(strSQL, SystemConstants.Return_office_district());
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "DELETE FROM hh_household_home_visit_member_upload";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "DELETE FROM hh_household_home_visit_upload";
+            dbCon.ExecuteNonQuery(strSQL);
             //strSQL = @"UPDATE hh_graduation_assessment_final SET gat_id = LOWER(gat_id)";
             //dbCon.ExecuteNonQuery(strSQL);
 
@@ -30908,7 +31060,7 @@ namespace SOCY_MIS.DataAccessLayer
             //strSQL = "UPDATE hh_household_home_visit_member_v_2 SET hhv_id = LOWER(hhv_id) WHERE usr_date_create between '2019-08-01' AND GETDATE()"; // remove tomorrow evening
             //dbCon.ExecuteNonQuery(strSQL);
 
-   
+
             InsertLstCSO(dbCon);
 
             InsertTempCSOs(dbCon);

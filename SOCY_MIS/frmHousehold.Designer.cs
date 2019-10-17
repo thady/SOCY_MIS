@@ -339,7 +339,7 @@
             this.tlpDisplay04.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tlpDisplay04.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tlpDisplay04.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDisplay04.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tlpDisplay04.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 42F));
             this.tlpDisplay04.Controls.Add(this.lblRecordType, 0, 0);
             this.tlpDisplay04.Controls.Add(this.cbRecordType, 1, 0);
             this.tlpDisplay04.Location = new System.Drawing.Point(32, 67);
@@ -571,7 +571,6 @@
             // 
             this.llblHomeVisit.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.llblHomeVisit.AutoSize = true;
-            this.llblHomeVisit.Enabled = false;
             this.llblHomeVisit.Location = new System.Drawing.Point(4, 244);
             this.llblHomeVisit.Name = "llblHomeVisit";
             this.llblHomeVisit.Size = new System.Drawing.Size(96, 13);

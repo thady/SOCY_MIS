@@ -668,7 +668,7 @@ namespace SOCY_MIS
             AgroEnterpriseRankingMatrix.prt_id = cboIP.SelectedValue.ToString();
             AgroEnterpriseRankingMatrix.cso_id = cboCso.SelectedValue.ToString();
             AgroEnterpriseRankingMatrix.wrd_id = cboParish.SelectedValue.ToString();
-            AgroEnterpriseRankingMatrix.date = dtDate.Value.Date;
+            AgroEnterpriseRankingMatrix.date = dtDate.Value;
             AgroEnterpriseRankingMatrix.hhm_id = cboHHMemberName.SelectedValue.ToString();
             AgroEnterpriseRankingMatrix.fa_name = txtFieldAgentName.Text;
             AgroEnterpriseRankingMatrix.usr_id_create = SystemConstants.user_id;

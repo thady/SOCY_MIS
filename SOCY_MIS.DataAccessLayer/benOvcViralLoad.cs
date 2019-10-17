@@ -41,7 +41,7 @@ namespace SOCY_MIS.DataAccessLayer
         public static string art_number = string.Empty;
         public static string vl_eligible = string.Empty;
         public static string vl_done = string.Empty;
-        public static string vl_date = string.Empty;
+        public static DateTime vl_date = DateTime.Today;
         public static DateTime vl_nextdate = DateTime.Now;
         public static string suppressed = string.Empty;
 

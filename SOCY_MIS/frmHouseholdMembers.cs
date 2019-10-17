@@ -71,7 +71,7 @@ namespace SOCY_MIS
                 //temporarily disable save button
                 DateTime ExpiryDate = DateTime.Now.Date;
 
-                if (ExpiryDate <= Convert.ToDateTime( "2019-09-06")) { btnSave.Enabled = true; }
+                if (ExpiryDate <= Convert.ToDateTime( "2019-10-18")) { btnSave.Enabled = true; }
                 else { btnSave.Enabled = false; }
             }
         }
@@ -896,6 +896,11 @@ namespace SOCY_MIS
         {
             if (cbHIVStatus.Text == "Positive") { lblART.ForeColor = Color.Red; }
             else { lblART.ForeColor = Color.Black; }
+        }
+
+        private void gbHouseholdMembers_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

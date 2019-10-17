@@ -529,11 +529,11 @@ namespace SOCY_MIS
                                                ,[ynna_initiate_art_refferal] ,[ynna_complete_art_refferal],[ynna_initiate_immunize_refferal] ,[ynna_complete_immunize_refferal] ,[ynna_tb_screen],[ynna_initiate_tb_refferal],[ynna_complete_tb_refferal]
                                                ,[ynna_initiate_perinatal_care_refferal],[ynna_complete_perinatal_care_refferal],[ynna_initiate_post_violence_refferal] ,[ynna_complete_post_violence_refferal],[ynna_ovc_has_birth_certificate] ,[ynna_initiate_birth_reg_refferal]
                                                ,[ynna_complete_birth_reg_refferal],[ynna_pss_family_group_discussion],[ynna_reported_to_police],[ynna_violence_evidence_based_intervention],[usr_id_create],[usr_id_update],[usr_date_create]
-                                               ,[usr_date_update],[ofc_id] ,[district_id])
+                                               ,[usr_date_update],[ofc_id] ,[district_id],hhm_inactive_reason)
                                             VALUES ('{0}' ,'{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}' ,'{16}','{17}'
                                                ,'{18}' ,'{19}','{20}' ,'{21}' ,'{22}' ,'{23}' ,'{24}' ,'{25}','{26}','{27}','{28}','{29}','{30}','{31}' ,'{32}','{33}'
                                                ,'{34}','{35}','{36}','{37}' ,'{38}' ,'{39}','{40}' ,'{41}','{42}','{43}' ,'{44}' ,'{45}','{46}' ,'{47}','{48}','{49}'
-                                               ,'{50}' ,'{51}' ,'{52}' ,'{53}' ,'{54}','{55}','{56}','{57}')";
+                                               ,'{50}' ,'{51}' ,'{52}' ,'{53}' ,'{54}','{55}','{56}','{57}','{58}')";
 
                                 strSQLInsert = string.Format(strSQLInsert, dtRow["hhvm_id"].ToString(), dtRow["hhm_id"].ToString(), dtRow["hhv_id"].ToString(), dtRow["hhm_name"].ToString(), dtRow["hmm_age"].ToString(), dtRow["gnd_name"].ToString(), dtRow["yn_id_hhm_active"].ToString()
                                             , dtRow["ynna_stb_id_SILC"].ToString(), dtRow["ynna_stb_id_other_saving_grp"].ToString(), dtRow["ynna_stb_caregiver_services"].ToString(), dtRow["ynna_stb_contributes_edu_fund"].ToString()
@@ -544,7 +544,7 @@ namespace SOCY_MIS
                                           , dtRow["ynna_initiate_art_refferal"].ToString(), dtRow["ynna_complete_art_refferal"].ToString(), dtRow["ynna_initiate_immunize_refferal"].ToString(), dtRow["ynna_complete_immunize_refferal"].ToString(), dtRow["ynna_tb_screen"].ToString(), dtRow["ynna_initiate_tb_refferal"].ToString(), dtRow["ynna_complete_tb_refferal"].ToString()
                                           , dtRow["ynna_initiate_perinatal_care_refferal"].ToString(), dtRow["ynna_complete_perinatal_care_refferal"].ToString(), dtRow["ynna_initiate_post_violence_refferal"].ToString(), dtRow["ynna_complete_post_violence_refferal"].ToString(), dtRow["ynna_ovc_has_birth_certificate"].ToString(), dtRow["ynna_initiate_birth_reg_refferal"].ToString()
                                           , dtRow["ynna_complete_birth_reg_refferal"].ToString(), dtRow["ynna_pss_family_group_discussion"].ToString(), dtRow["ynna_reported_to_police"].ToString(), dtRow["ynna_violence_evidence_based_intervention"].ToString(), dtRow["usr_id_create"].ToString(), dtRow["usr_id_update"].ToString(), Convert.ToDateTime(dtRow["usr_date_create"]), Convert.ToDateTime(dtRow["usr_date_update"]), dtRow["ofc_id"].ToString(),
-                                          dtRow["district_id"].ToString());
+                                          dtRow["district_id"].ToString(), dtRow["hhm_inactive_reason"].ToString());
 
                                 break;
                             #endregion hh_household_home_visit_member_v_2  

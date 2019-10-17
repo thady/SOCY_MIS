@@ -58,6 +58,7 @@ namespace SOCY_MIS
         {
             Return_lookups();
             display_hh_details();
+            Return_paraSocialWorkers();
             LoadHouseholdMembers();
 
             lblID.Text = ObjectId != string.Empty ? ObjectId : "lblID";
@@ -68,7 +69,6 @@ namespace SOCY_MIS
             lblgatfinal03.Text = hhgraduation_assessment.LoadGatFinalID(str_id) != string.Empty ? hhgraduation_assessment.LoadGatFinalID(str_id) : "--";
             lblgatfinal04.Text = hhgraduation_assessment.LoadGatFinalID(str_id) != string.Empty ? hhgraduation_assessment.LoadGatFinalID(str_id) : "--";
             lblgatfinal08.Text = hhgraduation_assessment.LoadGatFinalID(str_id) != string.Empty ? hhgraduation_assessment.LoadGatFinalID(str_id) : "--";
-            ValidateBenchMarks();
 
             LoadMemberLists(str_id, "01", gdv01);
             LoadMemberLists(str_id, "02", gdv02);
@@ -81,6 +81,8 @@ namespace SOCY_MIS
 
             LoadHouseholdBenchMarks(str_id);//load benchamrks final 
             LoadGatDetails(str_id);
+
+            ValidateBenchMarks();
 
             if (str_id != string.Empty)
             {
@@ -639,7 +641,7 @@ namespace SOCY_MIS
 
         private void cboDistrict_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Return_paraSocialWorkers();
+            
         }
 
         private void cboSocialWorker_SelectionChangeCommitted(object sender, EventArgs e)
@@ -665,7 +667,7 @@ namespace SOCY_MIS
                     hhgraduation_assessment.hh_id = HouseholdId;
                     hhgraduation_assessment.swk_id = cboSocialWorker.SelectedValue.ToString();
                     hhgraduation_assessment.hhm_head_id = cboCaregiver.SelectedValue.ToString();
-                    hhgraduation_assessment.gat_date = dtGatDate.Value.Date;
+                    hhgraduation_assessment.gat_date = dtGatDate.Value;
                     hhgraduation_assessment.usr_id_create = SystemConstants.user_id;
                     hhgraduation_assessment.usr_id_update = SystemConstants.user_id;
                     hhgraduation_assessment.usr_date_create = DateTime.Today;
@@ -992,7 +994,6 @@ namespace SOCY_MIS
                     }
                     else
                     {
-                        hhgraduation_assessment.saveBenchMark03(string.Empty);
 
                         int count = hhgraduation_assessment.ValidateBenchMarks(hhgraduation_assessment.gat_id, "03");
                         if (count == 0)
@@ -1095,8 +1096,6 @@ namespace SOCY_MIS
                     }
                     else
                     {
-                        hhgraduation_assessment.saveBenchMark04(string.Empty);
-
                         int count = hhgraduation_assessment.ValidateBenchMarks(hhgraduation_assessment.gat_id, "04");
                         if (count == 0)
                         {
@@ -1255,7 +1254,7 @@ namespace SOCY_MIS
                 }
                 else
                 {
-                    hhgraduation_assessment.gat_b_id = lblID05.Text;
+                    hhgraduation_assessment.gat_b_id = lblID06.Text;
                     //hhgraduation_assessment.hhm_id = cbo_hhm_06.SelectedValue.ToString();
 
                     hhgraduation_assessment.yn_kicked = utilControls.RadioButtonGetSelection(yn_adult_kickedYes, yn_adult_kickedNo);
@@ -1537,8 +1536,8 @@ namespace SOCY_MIS
         {
             bool isValid = false;
 
-            if ((cbo_hhm_04.Text == "Select One" || cbo_hhm_04.Text == string.Empty) & hhgraduation_assessment.LoadHouseholdMembersBenchMark04(HouseholdId, hhgraduation_assessment.gat_id).Rows.Count > 0 &
-                (!yn_muac_normalYes.Checked & !yn_muac_normalNo.Checked) || (!yn_edema_freeYes.Checked & !yn_edema_freeNo.Checked))
+            if ((cbo_hhm_04.Text == "Select One" || cbo_hhm_04.Text == string.Empty) & (hhgraduation_assessment.LoadHouseholdMembersBenchMark04(HouseholdId, hhgraduation_assessment.gat_id).Rows.Count > 0 &
+                ((!yn_muac_normalYes.Checked & !yn_muac_normalNo.Checked) || (!yn_edema_freeYes.Checked & !yn_edema_freeNo.Checked))))
             {
                 isValid = false;
             }
@@ -1682,7 +1681,7 @@ namespace SOCY_MIS
                 btnCancelBenchMark05.Enabled = true;
             }
 
-            if (lblID05.Text == "lblID05")
+            if (gdv05.Rows.Count == 0)
             {
                 btnSaveBenchMark06.Enabled = false;
                 btnCancelBenchMark06.Enabled = false;
@@ -1803,7 +1802,7 @@ namespace SOCY_MIS
 
         private void btnSaveBenchMark06_Click(object sender, EventArgs e)
         {
-            if (hhgraduation_assessment.Check_if_prev_benchmark_saved(hhgraduation_assessment.gat_id, "yn_met_benchmark06") == string.Empty)
+            if (gdv05.Rows.Count == 0)
             {
                 MessageBox.Show("Please save BenchMark05 first before saving to benchmark06,save failed", "SOCYMIS Message Center", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

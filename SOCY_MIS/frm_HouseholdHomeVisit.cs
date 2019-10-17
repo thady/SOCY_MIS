@@ -494,7 +494,7 @@ namespace SOCY_MIS
             DataAccessLayer.DBConnection dbCon = new DataAccessLayer.DBConnection(utilConstants.cACKConnection);
             #region set variables
            
-            hhHouseholdHomeVisit_v2.hhv_date = dtpDateOfVisit.Value.Date;
+            hhHouseholdHomeVisit_v2.hhv_date = dtpDateOfVisit.Value;
             hhHouseholdHomeVisit_v2.hhv_date_next_visit = dtpNextVisitDate.Value;
             hhHouseholdHomeVisit_v2.hhv_comments = txtComments.Text;
             hhHouseholdHomeVisit_v2.hhv_next_steps = txtNextSteps.Text;
