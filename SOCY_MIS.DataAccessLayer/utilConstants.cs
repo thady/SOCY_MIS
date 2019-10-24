@@ -211,8 +211,9 @@ namespace SOCY_MIS.DataAccessLayer
         public const string cSSDCDO = "1";
         public const string cSSSPSWO = "2";
         public const string cSSCDO = "3";
-        public const string cSSPCDO = "4";
-        public const string cSSSCDO = "5";
+        public const string cSSACDO= "4";  //archived
+        public const string cSSPCDO = "8";
+        public const string cSSSCDO = "7";
         public const string cSSPSWO = "6";
         #endregion Staff Structure
 

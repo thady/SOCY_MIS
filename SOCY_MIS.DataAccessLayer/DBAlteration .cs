@@ -17451,13 +17451,18 @@ namespace SOCY_MIS.DataAccessLayer
             string strSQL = string.Empty;
             #endregion Variables
 
+            strSQL = "DELETE FROM [dbo].[lst_staff_structure]";
+            dbCon.ExecuteNonQuery(strSQL);
             #region SQL
             strSQL = @"SET IDENTITY_INSERT [dbo].[lst_staff_structure] ON 
-                    INSERT [dbo].[lst_staff_structure] ([ss_sid], [ss_id], [ss_name], [ss_order], [ss_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1, N'1', N'DCDO', 1, 1, N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_staff_structure] ([ss_sid], [ss_id], [ss_name], [ss_order], [ss_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2, N'2', N'SPSWO', 2, 1, N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_staff_structure] ([ss_sid], [ss_id], [ss_name], [ss_order], [ss_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (3, N'3', N'CDO', 3, 1, N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_staff_structure] ([ss_sid], [ss_id], [ss_name], [ss_order], [ss_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (4, N'4', N'ACDO', 4, 1, N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_staff_structure] ([ss_sid], [ss_id], [ss_name], [ss_order], [ss_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (5, N'5', N'ACDO', 5, 1, N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_staff_structure] ([ss_sid], [ss_id], [ss_name], [ss_order], [ss_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1, N'1', N'DCDO', 1, 1, N'EN', N'1', N'1', CAST(N'2017-03-13T02:35:05.603' AS DateTime), CAST(N'2017-03-13T02:35:05.603' AS DateTime))
+                    INSERT [dbo].[lst_staff_structure] ([ss_sid], [ss_id], [ss_name], [ss_order], [ss_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2, N'2', N'SPSWO', 2, 1, N'EN', N'1', N'1', CAST(N'2017-03-13T02:35:05.603' AS DateTime), CAST(N'2017-03-13T02:35:05.603' AS DateTime))
+                    INSERT [dbo].[lst_staff_structure] ([ss_sid], [ss_id], [ss_name], [ss_order], [ss_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (3, N'3', N'CDO', 3, 1, N'EN', N'1', N'1', CAST(N'2017-03-13T02:35:05.603' AS DateTime), CAST(N'2017-03-13T02:35:05.603' AS DateTime))
+                    INSERT [dbo].[lst_staff_structure] ([ss_sid], [ss_id], [ss_name], [ss_order], [ss_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (4, N'4', N'ACDO', 4, 0, N'EN', N'1', N'1', CAST(N'2017-03-13T02:35:05.603' AS DateTime), CAST(N'2017-03-13T02:35:05.603' AS DateTime))
+                    INSERT [dbo].[lst_staff_structure] ([ss_sid], [ss_id], [ss_name], [ss_order], [ss_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (5, N'5', N'ACDO', 5, 0, N'EN', N'1', N'1', CAST(N'2017-03-13T02:35:05.603' AS DateTime), CAST(N'2017-03-13T02:35:05.603' AS DateTime))
+                    INSERT [dbo].[lst_staff_structure] ([ss_sid], [ss_id], [ss_name], [ss_order], [ss_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (7, N'6', N'PSWO', 6, 1, N'EN', N'1', N'1', CAST(N'2019-10-22T00:00:00.000' AS DateTime), CAST(N'2019-10-22T00:00:00.000' AS DateTime))
+                    INSERT [dbo].[lst_staff_structure] ([ss_sid], [ss_id], [ss_name], [ss_order], [ss_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (8, N'7', N'SCDO', 7, 1, N'EN', N'1', N'1', CAST(N'2019-10-22T00:00:00.000' AS DateTime), CAST(N'2019-10-22T00:00:00.000' AS DateTime))
+                    INSERT [dbo].[lst_staff_structure] ([ss_sid], [ss_id], [ss_name], [ss_order], [ss_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (9, N'8', N'PCDO', 8, 1, N'EN', N'1', N'1', CAST(N'2019-10-22T00:00:00.000' AS DateTime), CAST(N'2019-10-22T00:00:00.000' AS DateTime))
                     SET IDENTITY_INSERT [dbo].[lst_staff_structure] OFF ";
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
@@ -17821,6 +17826,19 @@ namespace SOCY_MIS.DataAccessLayer
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (346, N'346', N'MPARO TOWN COUNCIL', 346, 1, N'24', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (347, N'347', N'MUHANGA TOWN COUNCIL', 347, 1, N'24', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (348, N'348', N'BWANSWA SUB COUNTY', 348, 1, N'26', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (349, N'349', N'Namayumba  Town council', 349, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (350, N'350', N'Namayumba sub county', 350, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (351, N'351', N'Mende sub county', 351, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (352, N'352', N'Masulita Town council', 352, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (353, N'353', N'Masulita sub county', 353, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (354, N'354', N'Hamurwa Sub County', 354, 1, N'27', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (355, N'355', N'Nyamweru Sub County', 355, 1, N'27', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (356, N'356', N'Hamurwa Town Council', 356, 1, N'27', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (357, N'357', N'Ikumba Sub County', 357, 1, N'27', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (358, N'358', N'Muko Sub County', 358, 1, N'27', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (359, N'359', N'Burundi Sub County', 359, 1, N'27', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (360, N'360', N'Rubanda Town Council', 360, 1, N'27', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (361, N'361', N'Ruhija Sub County', 361, 1, N'27', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         SET IDENTITY_INSERT [dbo].[lst_sub_county] OFF ";
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
@@ -30883,6 +30901,7 @@ namespace SOCY_MIS.DataAccessLayer
             Createhh_graduation_assessment(dbCon);
 
             ActivateHouseholdMembersToserve(dbCon);
+            InsertLstStaffStructure(dbCon);
         }
 
 
@@ -30984,6 +31003,18 @@ namespace SOCY_MIS.DataAccessLayer
                                         'deb262b6-a09f-404a-bd13-d3fa3ad0fb3f',
                                         '0abca586-a0a2-4516-b2d3-8c38b00d629a',
                                         'd97f2272-6a96-452a-b8a6-13296f02e0ae'";
+
+            strSQL = "DELETE FROM hh_household WHERE hh_id IN('8652b03a-a230-4e14-8663-a84ea90a6c23','456efe1f-3407-44c3-b560-22091df0bff9','16115','537fe971-fbbf-4d65-ae77-4efc4de7c6d1','2e225c94-2d5a-4125-922d-e388333a320a')";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "DELETE FROM hh_household_upload WHERE  hh_id IN('8652b03a-a230-4e14-8663-a84ea90a6c23','456efe1f-3407-44c3-b560-22091df0bff9','16115','537fe971-fbbf-4d65-ae77-4efc4de7c6d1','2e225c94-2d5a-4125-922d-e388333a320a')";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "DELETE FROM hh_household_member WHERE hh_id IN('8652b03a-a230-4e14-8663-a84ea90a6c23','456efe1f-3407-44c3-b560-22091df0bff9','16115','537fe971-fbbf-4d65-ae77-4efc4de7c6d1','2e225c94-2d5a-4125-922d-e388333a320a')";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "DELETE FROM hh_household_member_upload WHERE hh_id IN('8652b03a-a230-4e14-8663-a84ea90a6c23','456efe1f-3407-44c3-b560-22091df0bff9','16115','537fe971-fbbf-4d65-ae77-4efc4de7c6d1','2e225c94-2d5a-4125-922d-e388333a320a')";
+            dbCon.ExecuteNonQuery(strSQL);
 
 
             ClearHouseholdMemberData.CreateDataCleanerTable(); 

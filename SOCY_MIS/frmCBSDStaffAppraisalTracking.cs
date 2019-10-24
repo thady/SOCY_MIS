@@ -714,14 +714,14 @@ namespace SOCY_MIS
 
                         dalCSATL.csat_id = ObjectId;
 
-                        if (txtPostsApprovedSPSWO.Text.Trim().Length == 0)
+                        if (txtPostsApprovedPSWO.Text.Trim().Length == 0)
                             dalCSATL.csatl_posts_approved = 0;
                         else
-                            dalCSATL.csatl_posts_approved = Convert.ToInt32(txtPostsApprovedSPSWO.Text.Trim());
-                        if (txtPostsFilledSPSWO.Text.Trim().Length == 0)
+                            dalCSATL.csatl_posts_approved = Convert.ToInt32(txtPostsApprovedPSWO.Text.Trim());
+                        if (txtPostsApprovedPSWO.Text.Trim().Length == 0)
                             dalCSATL.csatl_posts_filled = 0;
                         else
-                            dalCSATL.csatl_posts_filled = Convert.ToInt32(txtPostsFilledSPSWO.Text.Trim());
+                            dalCSATL.csatl_posts_filled = Convert.ToInt32(txtPostsApprovedPSWO.Text.Trim());
 
                         dalCSATL.ss_id = utilConstants.cSSPSWO;
                         dalCSATL.yn_id_conducted = Convert.ToInt32(nudAppraisedPSWO.Value).ToString();
