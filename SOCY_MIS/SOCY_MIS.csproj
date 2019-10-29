@@ -154,6 +154,18 @@
     <Compile Include="frmAutoUpdate.Designer.cs">
       <DependentUpon>frmAutoUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBeneficairyIndexRegister.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmBeneficairyIndexRegister.Designer.cs">
+      <DependentUpon>frmBeneficairyIndexRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBeneficairyIndexRegisterSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmBeneficairyIndexRegisterSearch.Designer.cs">
+      <DependentUpon>frmBeneficairyIndexRegisterSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBenSchoolReadinessTool.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -867,6 +879,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAutoUpdate.resx">
       <DependentUpon>frmAutoUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBeneficairyIndexRegister.resx">
+      <DependentUpon>frmBeneficairyIndexRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBeneficairyIndexRegisterSearch.resx">
+      <DependentUpon>frmBeneficairyIndexRegisterSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBenSchoolReadinessTool.resx">
       <DependentUpon>frmBenSchoolReadinessTool.cs</DependentUpon>

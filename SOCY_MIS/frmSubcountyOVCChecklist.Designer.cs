@@ -149,9 +149,9 @@
             this.pnlDOVCCMinutes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pnlDOVCCMinutes.Controls.Add(this.rbtnSOVCCMinutesNo);
             this.pnlDOVCCMinutes.Controls.Add(this.rbtnSOVCCMinutesYes);
-            this.pnlDOVCCMinutes.Location = new System.Drawing.Point(437, 108);
+            this.pnlDOVCCMinutes.Location = new System.Drawing.Point(436, 108);
             this.pnlDOVCCMinutes.Name = "pnlDOVCCMinutes";
-            this.pnlDOVCCMinutes.Size = new System.Drawing.Size(166, 19);
+            this.pnlDOVCCMinutes.Size = new System.Drawing.Size(165, 19);
             this.pnlDOVCCMinutes.TabIndex = 89;
             // 
             // rbtnSOVCCMinutesNo
@@ -202,7 +202,7 @@
             this.pnlDOVCCMinutesAvailable.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pnlDOVCCMinutesAvailable.Controls.Add(this.rbtnSOVCCMinutesAvailableNo);
             this.pnlDOVCCMinutesAvailable.Controls.Add(this.rbtnSOVCCMinutesAvailableYes);
-            this.pnlDOVCCMinutesAvailable.Location = new System.Drawing.Point(437, 142);
+            this.pnlDOVCCMinutesAvailable.Location = new System.Drawing.Point(436, 142);
             this.pnlDOVCCMinutesAvailable.Name = "pnlDOVCCMinutesAvailable";
             this.pnlDOVCCMinutesAvailable.Size = new System.Drawing.Size(165, 19);
             this.pnlDOVCCMinutesAvailable.TabIndex = 100;
@@ -235,9 +235,9 @@
             this.pnlSupervisionReports.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pnlSupervisionReports.Controls.Add(this.rbtnSupervisionReportsNo);
             this.pnlSupervisionReports.Controls.Add(this.rbtnSupervisionReportsYes);
-            this.pnlSupervisionReports.Location = new System.Drawing.Point(437, 77);
+            this.pnlSupervisionReports.Location = new System.Drawing.Point(436, 77);
             this.pnlSupervisionReports.Name = "pnlSupervisionReports";
-            this.pnlSupervisionReports.Size = new System.Drawing.Size(166, 19);
+            this.pnlSupervisionReports.Size = new System.Drawing.Size(165, 19);
             this.pnlSupervisionReports.TabIndex = 100;
             // 
             // llblBackTop
@@ -459,7 +459,7 @@
             this.cbosubcounty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbosubcounty.FormattingEnabled = true;
             this.cbosubcounty.Location = new System.Drawing.Point(479, 5);
-            this.cbosubcounty.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbosubcounty.Margin = new System.Windows.Forms.Padding(2);
             this.cbosubcounty.Name = "cbosubcounty";
             this.cbosubcounty.Size = new System.Drawing.Size(153, 21);
             this.cbosubcounty.TabIndex = 58;
@@ -533,7 +533,7 @@
             this.tlpDisplay04.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tlpDisplay04.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tlpDisplay04.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tlpDisplay04.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.tlpDisplay04.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tlpDisplay04.Controls.Add(this.nudCSOTotal, 2, 0);
             this.tlpDisplay04.Controls.Add(this.nudCSOReport, 2, 1);
             this.tlpDisplay04.Controls.Add(this.lbl07, 0, 2);
@@ -560,7 +560,7 @@
             // nudCSOTotal
             // 
             this.nudCSOTotal.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.nudCSOTotal.Location = new System.Drawing.Point(450, 4);
+            this.nudCSOTotal.Location = new System.Drawing.Point(449, 4);
             this.nudCSOTotal.Name = "nudCSOTotal";
             this.nudCSOTotal.Size = new System.Drawing.Size(75, 20);
             this.nudCSOTotal.TabIndex = 83;
@@ -568,7 +568,7 @@
             // nudCSOReport
             // 
             this.nudCSOReport.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.nudCSOReport.Location = new System.Drawing.Point(450, 31);
+            this.nudCSOReport.Location = new System.Drawing.Point(449, 31);
             this.nudCSOReport.Name = "nudCSOReport";
             this.nudCSOReport.Size = new System.Drawing.Size(75, 20);
             this.nudCSOReport.TabIndex = 82;
@@ -626,7 +626,7 @@
             // nudActionPointsTotal
             // 
             this.nudActionPointsTotal.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.nudActionPointsTotal.Location = new System.Drawing.Point(450, 56);
+            this.nudActionPointsTotal.Location = new System.Drawing.Point(449, 56);
             this.nudActionPointsTotal.Name = "nudActionPointsTotal";
             this.nudActionPointsTotal.Size = new System.Drawing.Size(75, 20);
             this.nudActionPointsTotal.TabIndex = 112;
@@ -634,7 +634,7 @@
             // nudActionPointsImplemented
             // 
             this.nudActionPointsImplemented.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.nudActionPointsImplemented.Location = new System.Drawing.Point(450, 83);
+            this.nudActionPointsImplemented.Location = new System.Drawing.Point(449, 83);
             this.nudActionPointsImplemented.Name = "nudActionPointsImplemented";
             this.nudActionPointsImplemented.Size = new System.Drawing.Size(75, 20);
             this.nudActionPointsImplemented.TabIndex = 113;
@@ -678,7 +678,7 @@
             this.tlpDisplay02.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tlpDisplay02.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tlpDisplay02.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tlpDisplay02.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tlpDisplay02.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47F));
             this.tlpDisplay02.Controls.Add(this.label3, 0, 6);
             this.tlpDisplay02.Controls.Add(this.lblOVCMISDistrict, 1, 6);
             this.tlpDisplay02.Controls.Add(this.lblDOVCCMinutes, 1, 4);
@@ -757,7 +757,7 @@
             this.pnlOVCMISDistrict.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pnlOVCMISDistrict.Controls.Add(this.rbtnOVCMISSubcountyNo);
             this.pnlOVCMISDistrict.Controls.Add(this.rbtnOVCMISSubcountyYes);
-            this.pnlOVCMISDistrict.Location = new System.Drawing.Point(437, 179);
+            this.pnlOVCMISDistrict.Location = new System.Drawing.Point(436, 179);
             this.pnlOVCMISDistrict.Name = "pnlOVCMISDistrict";
             this.pnlOVCMISDistrict.Size = new System.Drawing.Size(165, 19);
             this.pnlOVCMISDistrict.TabIndex = 100;
@@ -860,9 +860,9 @@
             this.pnlMeetingsHeld.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pnlMeetingsHeld.Controls.Add(this.rbtnMeetingsHeldNo);
             this.pnlMeetingsHeld.Controls.Add(this.rbtnMeetingsHeldYes);
-            this.pnlMeetingsHeld.Location = new System.Drawing.Point(437, 21);
+            this.pnlMeetingsHeld.Location = new System.Drawing.Point(436, 21);
             this.pnlMeetingsHeld.Name = "pnlMeetingsHeld";
-            this.pnlMeetingsHeld.Size = new System.Drawing.Size(166, 19);
+            this.pnlMeetingsHeld.Size = new System.Drawing.Size(165, 19);
             this.pnlMeetingsHeld.TabIndex = 98;
             // 
             // rbtnMeetingsHeldNo
@@ -893,9 +893,9 @@
             this.pnlMembershipConstituted.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pnlMembershipConstituted.Controls.Add(this.rbtnMembershipConstitutedNo);
             this.pnlMembershipConstituted.Controls.Add(this.rbtnMembershipConstitutedYes);
-            this.pnlMembershipConstituted.Location = new System.Drawing.Point(437, 50);
+            this.pnlMembershipConstituted.Location = new System.Drawing.Point(436, 50);
             this.pnlMembershipConstituted.Name = "pnlMembershipConstituted";
-            this.pnlMembershipConstituted.Size = new System.Drawing.Size(166, 19);
+            this.pnlMembershipConstituted.Size = new System.Drawing.Size(165, 19);
             this.pnlMembershipConstituted.TabIndex = 99;
             // 
             // rbtnMembershipConstitutedYes

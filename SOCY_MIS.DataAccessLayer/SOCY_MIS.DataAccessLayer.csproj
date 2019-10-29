@@ -58,6 +58,7 @@
     <Compile Include="benEducationSubsidy.cs" />
     <Compile Include="benGirlEducationRegister.cs" />
     <Compile Include="benGirlEducationRegisterChild.cs" />
+    <Compile Include="benIndexRegistration.cs" />
     <Compile Include="benOvcNonSuppressionAdherenceCounselling.cs" />
     <Compile Include="benOvcViralLoad.cs" />
     <Compile Include="benSchoolReadinessTool.cs" />

@@ -369,5 +369,15 @@ namespace SOCY_MIS
             frmUploadTables table = new frmUploadTables();
             table.Show();
         }
+
+        private void llblINewIndexBeneficiary_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            #region Set Selected
+            frmBeneficairyIndexRegisterSearch frmNew = new frmBeneficairyIndexRegisterSearch();
+            frmNew.FormCallingNew = this;
+            frmNew.FormMaster = FormMaster;
+            FormMaster.LoadControl(frmNew, this.Name, false);
+            #endregion
+        }
     }
 }

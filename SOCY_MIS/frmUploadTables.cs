@@ -180,7 +180,7 @@ namespace SOCY_MIS
                                "'{9}', '{10}','{10}', GETDATE(), GETDATE(), '{11}','{12}') ";
 
                                 strSQLInsert = string.Format(strSQLInsert, DownLoadTable, dtRow["hh_id"].ToString(), dtRow["hh_code"].ToString(),
-                                dtRow["hh_status_reason"].ToString(), dtRow["hh_tel"].ToString(), dtRow["hh_village"].ToString(),
+                                utilFormatting.StringForSQL(dtRow["hh_status_reason"].ToString()),utilFormatting.StringForSQL( dtRow["hh_tel"].ToString()),utilFormatting.StringForSQL(dtRow["hh_village"].ToString()),
                                 dtRow["hhs_id"].ToString(), dtRow["hhsr_id"].ToString(), dtRow["swk_id"].ToString(), dtRow["wrd_id"].ToString(),
                                 dtRow["usr_id_create"].ToString(), dtRow["ofc_id"].ToString(), dtRow["dst_id"].ToString());
                                 break;
@@ -219,8 +219,8 @@ namespace SOCY_MIS
                                          "'{22}', '{23}','{23}', GETDATE(), GETDATE(), '{24}','{25}','{26}','{27}') ";
 
                                 strSQLInsert = string.Format(strSQLInsert, DownLoadTable, dtRow["hhm_id"].ToString(),
-                                    dtRow["hhm_first_name"].ToString(), dtRow["hhm_last_name"].ToString(),
-                                     dtRow["hhm_number"].ToString(), dtRow["hhm_year_of_birth"].ToString(),
+                                    utilFormatting.StringForSQL(dtRow["hhm_first_name"].ToString()), utilFormatting.StringForSQL(dtRow["hhm_last_name"].ToString()),
+                                     utilFormatting.StringForSQL(dtRow["hhm_number"].ToString()), dtRow["hhm_year_of_birth"].ToString(),
                                     dtRow["dtp_id"].ToString(), dtRow["edu_id"].ToString(), dtRow["gnd_id"].ToString(),
                                     dtRow["hh_id"].ToString(), dtRow["hst_id"].ToString(), dtRow["mst_id"].ToString(),
                                     dtRow["prf_id"].ToString(), dtRow["prt_id"].ToString(),

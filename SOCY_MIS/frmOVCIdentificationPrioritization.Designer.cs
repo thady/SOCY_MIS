@@ -390,11 +390,9 @@
             this.gbOVCIdentificationPrioritizationTitle.Controls.Add(this.llblBackTop);
             this.gbOVCIdentificationPrioritizationTitle.Controls.Add(this.tplButton01);
             this.gbOVCIdentificationPrioritizationTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbOVCIdentificationPrioritizationTitle.Location = new System.Drawing.Point(4, 7);
-            this.gbOVCIdentificationPrioritizationTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbOVCIdentificationPrioritizationTitle.Location = new System.Drawing.Point(3, 6);
             this.gbOVCIdentificationPrioritizationTitle.Name = "gbOVCIdentificationPrioritizationTitle";
-            this.gbOVCIdentificationPrioritizationTitle.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gbOVCIdentificationPrioritizationTitle.Size = new System.Drawing.Size(952, 2610);
+            this.gbOVCIdentificationPrioritizationTitle.Size = new System.Drawing.Size(714, 2121);
             this.gbOVCIdentificationPrioritizationTitle.TabIndex = 6;
             this.gbOVCIdentificationPrioritizationTitle.TabStop = false;
             this.gbOVCIdentificationPrioritizationTitle.Text = "OVC Identification and Prioritization";
@@ -406,22 +404,21 @@
             this.tableLayoutPanel3.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanel3.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel3.ColumnCount = 5;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 173F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 221F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168F));
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.lbl10, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.pnlHWSSHIVPositive, 3, 0);
             this.tableLayoutPanel3.Controls.Add(this.lblHWSSHIVPositive, 1, 0);
             this.tableLayoutPanel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(40, 1644);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(30, 1336);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(872, 111);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(654, 90);
             this.tableLayoutPanel3.TabIndex = 91;
             // 
             // tableLayoutPanel4
@@ -436,23 +433,21 @@
             this.tableLayoutPanel4.Controls.Add(this.nudHWSSHIVPositiveChildren, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.nudHWSSHIVPositiveAdult, 1, 1);
             this.tableLayoutPanel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(279, 5);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(206, 4);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(165, 101);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(124, 82);
             this.tableLayoutPanel4.TabIndex = 91;
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 67);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(11, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 17);
+            this.label2.Size = new System.Drawing.Size(46, 13);
             this.label2.TabIndex = 45;
             this.label2.Text = "# Adults";
             // 
@@ -460,39 +455,35 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 16);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(6, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 17);
+            this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 44;
             this.label1.Text = "# Children";
             // 
             // nudHWSSHIVPositiveChildren
             // 
             this.nudHWSSHIVPositiveChildren.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.nudHWSSHIVPositiveChildren.Location = new System.Drawing.Point(94, 13);
-            this.nudHWSSHIVPositiveChildren.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nudHWSSHIVPositiveChildren.Location = new System.Drawing.Point(71, 10);
             this.nudHWSSHIVPositiveChildren.Name = "nudHWSSHIVPositiveChildren";
-            this.nudHWSSHIVPositiveChildren.Size = new System.Drawing.Size(67, 23);
+            this.nudHWSSHIVPositiveChildren.Size = new System.Drawing.Size(50, 20);
             this.nudHWSSHIVPositiveChildren.TabIndex = 85;
             // 
             // nudHWSSHIVPositiveAdult
             // 
             this.nudHWSSHIVPositiveAdult.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.nudHWSSHIVPositiveAdult.Location = new System.Drawing.Point(94, 64);
-            this.nudHWSSHIVPositiveAdult.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nudHWSSHIVPositiveAdult.Location = new System.Drawing.Point(71, 51);
             this.nudHWSSHIVPositiveAdult.Name = "nudHWSSHIVPositiveAdult";
-            this.nudHWSSHIVPositiveAdult.Size = new System.Drawing.Size(67, 23);
+            this.nudHWSSHIVPositiveAdult.Size = new System.Drawing.Size(50, 20);
             this.nudHWSSHIVPositiveAdult.TabIndex = 86;
             // 
             // lbl10
             // 
             this.lbl10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl10.AutoSize = true;
-            this.lbl10.Location = new System.Drawing.Point(13, 47);
-            this.lbl10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl10.Location = new System.Drawing.Point(10, 38);
             this.lbl10.Name = "lbl10";
-            this.lbl10.Size = new System.Drawing.Size(28, 17);
+            this.lbl10.Size = new System.Drawing.Size(22, 13);
             this.lbl10.TabIndex = 43;
             this.lbl10.Text = "10.";
             // 
@@ -501,19 +492,17 @@
             this.pnlHWSSHIVPositive.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlHWSSHIVPositive.Controls.Add(this.rbtnHWSSHIVPositiveNo);
             this.pnlHWSSHIVPositive.Controls.Add(this.rbtnHWSSHIVPositiveYes);
-            this.pnlHWSSHIVPositive.Location = new System.Drawing.Point(473, 44);
-            this.pnlHWSSHIVPositive.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlHWSSHIVPositive.Location = new System.Drawing.Point(352, 35);
             this.pnlHWSSHIVPositive.Name = "pnlHWSSHIVPositive";
-            this.pnlHWSSHIVPositive.Size = new System.Drawing.Size(152, 23);
+            this.pnlHWSSHIVPositive.Size = new System.Drawing.Size(114, 19);
             this.pnlHWSSHIVPositive.TabIndex = 45;
             // 
             // rbtnHWSSHIVPositiveNo
             // 
             this.rbtnHWSSHIVPositiveNo.AutoSize = true;
-            this.rbtnHWSSHIVPositiveNo.Location = new System.Drawing.Point(69, 1);
-            this.rbtnHWSSHIVPositiveNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnHWSSHIVPositiveNo.Location = new System.Drawing.Point(52, 1);
             this.rbtnHWSSHIVPositiveNo.Name = "rbtnHWSSHIVPositiveNo";
-            this.rbtnHWSSHIVPositiveNo.Size = new System.Drawing.Size(47, 21);
+            this.rbtnHWSSHIVPositiveNo.Size = new System.Drawing.Size(39, 17);
             this.rbtnHWSSHIVPositiveNo.TabIndex = 2;
             this.rbtnHWSSHIVPositiveNo.TabStop = true;
             this.rbtnHWSSHIVPositiveNo.Text = "No";
@@ -523,10 +512,9 @@
             // 
             this.rbtnHWSSHIVPositiveYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtnHWSSHIVPositiveYes.AutoSize = true;
-            this.rbtnHWSSHIVPositiveYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnHWSSHIVPositiveYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnHWSSHIVPositiveYes.Location = new System.Drawing.Point(3, 1);
             this.rbtnHWSSHIVPositiveYes.Name = "rbtnHWSSHIVPositiveYes";
-            this.rbtnHWSSHIVPositiveYes.Size = new System.Drawing.Size(53, 21);
+            this.rbtnHWSSHIVPositiveYes.Size = new System.Drawing.Size(43, 17);
             this.rbtnHWSSHIVPositiveYes.TabIndex = 0;
             this.rbtnHWSSHIVPositiveYes.TabStop = true;
             this.rbtnHWSSHIVPositiveYes.Text = "Yes";
@@ -539,10 +527,9 @@
             this.lblHWSSHIVPositive.AutoSize = true;
             this.lblHWSSHIVPositive.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHWSSHIVPositive.ForeColor = System.Drawing.Color.Black;
-            this.lblHWSSHIVPositive.Location = new System.Drawing.Point(59, 4);
-            this.lblHWSSHIVPositive.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHWSSHIVPositive.Location = new System.Drawing.Point(45, 1);
             this.lblHWSSHIVPositive.Name = "lblHWSSHIVPositive";
-            this.lblHWSSHIVPositive.Size = new System.Drawing.Size(207, 102);
+            this.lblHWSSHIVPositive.Size = new System.Drawing.Size(149, 88);
             this.lblHWSSHIVPositive.TabIndex = 44;
             this.lblHWSSHIVPositive.Text = "Is there anyone in this household who is HIV positive? \r\n(please indicate  number" +
     "  HIV positive members disaggregated by child(ren) or an adult(s))";
@@ -553,28 +540,26 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpDisplay36.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpDisplay36.ColumnCount = 2;
-            this.tlpDisplay36.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tlpDisplay36.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tlpDisplay36.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay36.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tlpDisplay36.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpDisplay36.Controls.Add(this.lblComments, 0, 0);
             this.tlpDisplay36.Controls.Add(this.txtComments, 1, 0);
             this.tlpDisplay36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tlpDisplay36.Location = new System.Drawing.Point(40, 2491);
-            this.tlpDisplay36.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay36.Location = new System.Drawing.Point(30, 2024);
             this.tlpDisplay36.Name = "tlpDisplay36";
             this.tlpDisplay36.RowCount = 1;
             this.tlpDisplay36.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay36.Size = new System.Drawing.Size(872, 62);
+            this.tlpDisplay36.Size = new System.Drawing.Size(654, 50);
             this.tlpDisplay36.TabIndex = 53;
             // 
             // lblComments
             // 
             this.lblComments.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblComments.AutoSize = true;
-            this.lblComments.Location = new System.Drawing.Point(5, 22);
-            this.lblComments.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblComments.Location = new System.Drawing.Point(4, 18);
             this.lblComments.Name = "lblComments";
-            this.lblComments.Size = new System.Drawing.Size(147, 17);
+            this.lblComments.Size = new System.Drawing.Size(110, 13);
             this.lblComments.TabIndex = 9;
             this.lblComments.Text = "Assessor’s Comment: ";
             // 
@@ -583,10 +568,9 @@
             this.txtComments.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtComments.Location = new System.Drawing.Point(206, 5);
-            this.txtComments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtComments.Location = new System.Drawing.Point(155, 4);
             this.txtComments.Name = "txtComments";
-            this.txtComments.Size = new System.Drawing.Size(661, 52);
+            this.txtComments.Size = new System.Drawing.Size(495, 42);
             this.txtComments.TabIndex = 10;
             this.txtComments.Text = "";
             // 
@@ -597,15 +581,14 @@
             this.tlpDisplay33.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpDisplay33.ColumnCount = 2;
             this.tlpDisplay33.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay33.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 221F));
+            this.tlpDisplay33.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168F));
             this.tlpDisplay33.Controls.Add(this.pnlCPAbuse, 0, 0);
             this.tlpDisplay33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tlpDisplay33.Location = new System.Drawing.Point(529, 2169);
-            this.tlpDisplay33.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay33.Location = new System.Drawing.Point(397, 1762);
             this.tlpDisplay33.Name = "tlpDisplay33";
             this.tlpDisplay33.RowCount = 1;
             this.tlpDisplay33.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay33.Size = new System.Drawing.Size(383, 178);
+            this.tlpDisplay33.Size = new System.Drawing.Size(287, 145);
             this.tlpDisplay33.TabIndex = 90;
             // 
             // pnlCPAbuse
@@ -613,19 +596,17 @@
             this.pnlCPAbuse.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlCPAbuse.Controls.Add(this.rbtnCPAbuseNo);
             this.pnlCPAbuse.Controls.Add(this.rbtnCPAbuseYes);
-            this.pnlCPAbuse.Location = new System.Drawing.Point(5, 77);
-            this.pnlCPAbuse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlCPAbuse.Location = new System.Drawing.Point(4, 63);
             this.pnlCPAbuse.Name = "pnlCPAbuse";
-            this.pnlCPAbuse.Size = new System.Drawing.Size(151, 23);
+            this.pnlCPAbuse.Size = new System.Drawing.Size(110, 19);
             this.pnlCPAbuse.TabIndex = 35;
             // 
             // rbtnCPAbuseNo
             // 
             this.rbtnCPAbuseNo.AutoSize = true;
-            this.rbtnCPAbuseNo.Location = new System.Drawing.Point(69, 1);
-            this.rbtnCPAbuseNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnCPAbuseNo.Location = new System.Drawing.Point(52, 1);
             this.rbtnCPAbuseNo.Name = "rbtnCPAbuseNo";
-            this.rbtnCPAbuseNo.Size = new System.Drawing.Size(47, 21);
+            this.rbtnCPAbuseNo.Size = new System.Drawing.Size(39, 17);
             this.rbtnCPAbuseNo.TabIndex = 2;
             this.rbtnCPAbuseNo.TabStop = true;
             this.rbtnCPAbuseNo.Text = "No";
@@ -635,10 +616,9 @@
             // 
             this.rbtnCPAbuseYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtnCPAbuseYes.AutoSize = true;
-            this.rbtnCPAbuseYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnCPAbuseYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnCPAbuseYes.Location = new System.Drawing.Point(3, 1);
             this.rbtnCPAbuseYes.Name = "rbtnCPAbuseYes";
-            this.rbtnCPAbuseYes.Size = new System.Drawing.Size(53, 21);
+            this.rbtnCPAbuseYes.Size = new System.Drawing.Size(43, 17);
             this.rbtnCPAbuseYes.TabIndex = 0;
             this.rbtnCPAbuseYes.TabStop = true;
             this.rbtnCPAbuseYes.Text = "Yes";
@@ -652,37 +632,34 @@
             this.tlpDisplay29.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpDisplay29.ColumnCount = 3;
             this.tlpDisplay29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tlpDisplay29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 221F));
+            this.tlpDisplay29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tlpDisplay29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168F));
             this.tlpDisplay29.Controls.Add(this.cbCPMonth, 1, 0);
             this.tlpDisplay29.Controls.Add(this.lblCPMonth, 0, 0);
             this.tlpDisplay29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tlpDisplay29.Location = new System.Drawing.Point(321, 2132);
-            this.tlpDisplay29.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay29.Location = new System.Drawing.Point(241, 1732);
             this.tlpDisplay29.Name = "tlpDisplay29";
             this.tlpDisplay29.RowCount = 1;
             this.tlpDisplay29.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay29.Size = new System.Drawing.Size(591, 38);
+            this.tlpDisplay29.Size = new System.Drawing.Size(443, 31);
             this.tlpDisplay29.TabIndex = 90;
             // 
             // cbCPMonth
             // 
             this.cbCPMonth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbCPMonth.FormattingEnabled = true;
-            this.cbCPMonth.Location = new System.Drawing.Point(172, 6);
-            this.cbCPMonth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbCPMonth.Location = new System.Drawing.Point(126, 5);
             this.cbCPMonth.Name = "cbCPMonth";
-            this.cbCPMonth.Size = new System.Drawing.Size(192, 25);
+            this.cbCPMonth.Size = new System.Drawing.Size(144, 21);
             this.cbCPMonth.TabIndex = 86;
             // 
             // lblCPMonth
             // 
             this.lblCPMonth.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblCPMonth.AutoSize = true;
-            this.lblCPMonth.Location = new System.Drawing.Point(5, 10);
-            this.lblCPMonth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCPMonth.Location = new System.Drawing.Point(4, 9);
             this.lblCPMonth.Name = "lblCPMonth";
-            this.lblCPMonth.Size = new System.Drawing.Size(133, 17);
+            this.lblCPMonth.Size = new System.Drawing.Size(100, 13);
             this.lblCPMonth.TabIndex = 32;
             this.lblCPMonth.Text = "Please state month:";
             // 
@@ -699,8 +676,7 @@
             this.tlpDisplay31.Controls.Add(this.chkCPAbusePhysical, 0, 0);
             this.tlpDisplay31.Controls.Add(this.chkCPPregnancy, 0, 2);
             this.tlpDisplay31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tlpDisplay31.Location = new System.Drawing.Point(321, 2169);
-            this.tlpDisplay31.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay31.Location = new System.Drawing.Point(241, 1762);
             this.tlpDisplay31.Name = "tlpDisplay31";
             this.tlpDisplay31.RowCount = 5;
             this.tlpDisplay31.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.18442F));
@@ -708,17 +684,16 @@
             this.tlpDisplay31.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.18124F));
             this.tlpDisplay31.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.18124F));
             this.tlpDisplay31.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.18124F));
-            this.tlpDisplay31.Size = new System.Drawing.Size(213, 178);
+            this.tlpDisplay31.Size = new System.Drawing.Size(160, 145);
             this.tlpDisplay31.TabIndex = 89;
             // 
             // chkCPAbuseSexual
             // 
             this.chkCPAbuseSexual.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.chkCPAbuseSexual.AutoSize = true;
-            this.chkCPAbuseSexual.Location = new System.Drawing.Point(5, 150);
-            this.chkCPAbuseSexual.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkCPAbuseSexual.Location = new System.Drawing.Point(4, 122);
             this.chkCPAbuseSexual.Name = "chkCPAbuseSexual";
-            this.chkCPAbuseSexual.Size = new System.Drawing.Size(133, 21);
+            this.chkCPAbuseSexual.Size = new System.Drawing.Size(103, 17);
             this.chkCPAbuseSexual.TabIndex = 4;
             this.chkCPAbuseSexual.Text = "Sexually abused";
             this.chkCPAbuseSexual.UseVisualStyleBackColor = true;
@@ -728,10 +703,9 @@
             // 
             this.chkCPNeglected.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.chkCPNeglected.AutoSize = true;
-            this.chkCPNeglected.Location = new System.Drawing.Point(5, 117);
-            this.chkCPNeglected.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkCPNeglected.Location = new System.Drawing.Point(4, 95);
             this.chkCPNeglected.Name = "chkCPNeglected";
-            this.chkCPNeglected.Size = new System.Drawing.Size(94, 21);
+            this.chkCPNeglected.Size = new System.Drawing.Size(75, 17);
             this.chkCPNeglected.TabIndex = 1;
             this.chkCPNeglected.Text = "Neglected";
             this.chkCPNeglected.UseVisualStyleBackColor = true;
@@ -741,10 +715,9 @@
             // 
             this.chkCPMarriageTeenParent.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.chkCPMarriageTeenParent.AutoSize = true;
-            this.chkCPMarriageTeenParent.Location = new System.Drawing.Point(5, 37);
-            this.chkCPMarriageTeenParent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkCPMarriageTeenParent.Location = new System.Drawing.Point(4, 30);
             this.chkCPMarriageTeenParent.Name = "chkCPMarriageTeenParent";
-            this.chkCPMarriageTeenParent.Size = new System.Drawing.Size(198, 38);
+            this.chkCPMarriageTeenParent.Size = new System.Drawing.Size(149, 30);
             this.chkCPMarriageTeenParent.TabIndex = 0;
             this.chkCPMarriageTeenParent.Text = "Child marriage or teenage \r\nmother/father ";
             this.chkCPMarriageTeenParent.UseVisualStyleBackColor = true;
@@ -754,10 +727,9 @@
             // 
             this.chkCPAbusePhysical.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.chkCPAbusePhysical.AutoSize = true;
-            this.chkCPAbusePhysical.Location = new System.Drawing.Point(5, 6);
-            this.chkCPAbusePhysical.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkCPAbusePhysical.Location = new System.Drawing.Point(4, 5);
             this.chkCPAbusePhysical.Name = "chkCPAbusePhysical";
-            this.chkCPAbusePhysical.Size = new System.Drawing.Size(190, 21);
+            this.chkCPAbusePhysical.Size = new System.Drawing.Size(146, 17);
             this.chkCPAbusePhysical.TabIndex = 2;
             this.chkCPAbusePhysical.Text = "Repeated physical abuse";
             this.chkCPAbusePhysical.UseVisualStyleBackColor = true;
@@ -767,10 +739,9 @@
             // 
             this.chkCPPregnancy.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.chkCPPregnancy.AutoSize = true;
-            this.chkCPPregnancy.Location = new System.Drawing.Point(5, 85);
-            this.chkCPPregnancy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkCPPregnancy.Location = new System.Drawing.Point(4, 69);
             this.chkCPPregnancy.Name = "chkCPPregnancy";
-            this.chkCPPregnancy.Size = new System.Drawing.Size(158, 21);
+            this.chkCPPregnancy.Size = new System.Drawing.Size(122, 17);
             this.chkCPPregnancy.TabIndex = 3;
             this.chkCPPregnancy.Text = "Teenage pregnancy";
             this.chkCPPregnancy.UseVisualStyleBackColor = true;
@@ -783,28 +754,26 @@
             this.tlpDisplay30.BackColor = System.Drawing.Color.White;
             this.tlpDisplay30.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpDisplay30.ColumnCount = 2;
-            this.tlpDisplay30.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tlpDisplay30.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tlpDisplay30.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay30.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 361F));
+            this.tlpDisplay30.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 271F));
             this.tlpDisplay30.Controls.Add(this.lbl14, 0, 0);
             this.tlpDisplay30.Controls.Add(this.lblCPAbuse, 1, 0);
             this.tlpDisplay30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tlpDisplay30.Location = new System.Drawing.Point(40, 2132);
-            this.tlpDisplay30.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay30.Location = new System.Drawing.Point(30, 1732);
             this.tlpDisplay30.Name = "tlpDisplay30";
             this.tlpDisplay30.RowCount = 1;
             this.tlpDisplay30.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay30.Size = new System.Drawing.Size(283, 215);
+            this.tlpDisplay30.Size = new System.Drawing.Size(212, 175);
             this.tlpDisplay30.TabIndex = 88;
             // 
             // lbl14
             // 
             this.lbl14.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl14.AutoSize = true;
-            this.lbl14.Location = new System.Drawing.Point(13, 99);
-            this.lbl14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl14.Location = new System.Drawing.Point(10, 81);
             this.lbl14.Name = "lbl14";
-            this.lbl14.Size = new System.Drawing.Size(28, 17);
+            this.lbl14.Size = new System.Drawing.Size(22, 13);
             this.lbl14.TabIndex = 32;
             this.lbl14.Text = "14.";
             // 
@@ -814,10 +783,9 @@
             this.lblCPAbuse.AutoSize = true;
             this.lblCPAbuse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCPAbuse.ForeColor = System.Drawing.Color.Black;
-            this.lblCPAbuse.Location = new System.Drawing.Point(59, 31);
-            this.lblCPAbuse.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCPAbuse.Location = new System.Drawing.Point(45, 29);
             this.lblCPAbuse.Name = "lblCPAbuse";
-            this.lblCPAbuse.Size = new System.Drawing.Size(217, 153);
+            this.lblCPAbuse.Size = new System.Drawing.Size(162, 117);
             this.lblCPAbuse.TabIndex = 1;
             this.lblCPAbuse.Text = resources.GetString("lblCPAbuse.Text");
             // 
@@ -828,10 +796,10 @@
             this.tlpDisplay34.BackColor = System.Drawing.Color.White;
             this.tlpDisplay34.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpDisplay34.ColumnCount = 4;
-            this.tlpDisplay34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tlpDisplay34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tlpDisplay34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tlpDisplay34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 221F));
+            this.tlpDisplay34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tlpDisplay34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168F));
             this.tlpDisplay34.Controls.Add(this.pnlCPNoBirthRegister, 2, 1);
             this.tlpDisplay34.Controls.Add(this.lbl15, 0, 0);
             this.tlpDisplay34.Controls.Add(this.lblCPOrphan, 1, 0);
@@ -839,14 +807,13 @@
             this.tlpDisplay34.Controls.Add(this.lbl16, 0, 1);
             this.tlpDisplay34.Controls.Add(this.lblCPNoBirthRegister, 1, 1);
             this.tlpDisplay34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tlpDisplay34.Location = new System.Drawing.Point(40, 2346);
-            this.tlpDisplay34.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay34.Location = new System.Drawing.Point(30, 1906);
             this.tlpDisplay34.Name = "tlpDisplay34";
             this.tlpDisplay34.RowCount = 2;
             this.tlpDisplay34.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tlpDisplay34.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tlpDisplay34.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpDisplay34.Size = new System.Drawing.Size(872, 111);
+            this.tlpDisplay34.Size = new System.Drawing.Size(654, 90);
             this.tlpDisplay34.TabIndex = 87;
             // 
             // pnlCPNoBirthRegister
@@ -854,19 +821,17 @@
             this.pnlCPNoBirthRegister.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlCPNoBirthRegister.Controls.Add(this.rbtnCPNoBirthRegisterNo);
             this.pnlCPNoBirthRegister.Controls.Add(this.rbtnCPNoBirthRegisterYes);
-            this.pnlCPNoBirthRegister.Location = new System.Drawing.Point(473, 71);
-            this.pnlCPNoBirthRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlCPNoBirthRegister.Location = new System.Drawing.Point(352, 57);
             this.pnlCPNoBirthRegister.Name = "pnlCPNoBirthRegister";
-            this.pnlCPNoBirthRegister.Size = new System.Drawing.Size(152, 23);
+            this.pnlCPNoBirthRegister.Size = new System.Drawing.Size(114, 19);
             this.pnlCPNoBirthRegister.TabIndex = 35;
             // 
             // rbtnCPNoBirthRegisterNo
             // 
             this.rbtnCPNoBirthRegisterNo.AutoSize = true;
-            this.rbtnCPNoBirthRegisterNo.Location = new System.Drawing.Point(69, 1);
-            this.rbtnCPNoBirthRegisterNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnCPNoBirthRegisterNo.Location = new System.Drawing.Point(52, 1);
             this.rbtnCPNoBirthRegisterNo.Name = "rbtnCPNoBirthRegisterNo";
-            this.rbtnCPNoBirthRegisterNo.Size = new System.Drawing.Size(47, 21);
+            this.rbtnCPNoBirthRegisterNo.Size = new System.Drawing.Size(39, 17);
             this.rbtnCPNoBirthRegisterNo.TabIndex = 2;
             this.rbtnCPNoBirthRegisterNo.TabStop = true;
             this.rbtnCPNoBirthRegisterNo.Text = "No";
@@ -876,10 +841,9 @@
             // 
             this.rbtnCPNoBirthRegisterYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtnCPNoBirthRegisterYes.AutoSize = true;
-            this.rbtnCPNoBirthRegisterYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnCPNoBirthRegisterYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnCPNoBirthRegisterYes.Location = new System.Drawing.Point(3, 1);
             this.rbtnCPNoBirthRegisterYes.Name = "rbtnCPNoBirthRegisterYes";
-            this.rbtnCPNoBirthRegisterYes.Size = new System.Drawing.Size(53, 21);
+            this.rbtnCPNoBirthRegisterYes.Size = new System.Drawing.Size(43, 17);
             this.rbtnCPNoBirthRegisterYes.TabIndex = 0;
             this.rbtnCPNoBirthRegisterYes.TabStop = true;
             this.rbtnCPNoBirthRegisterYes.Text = "Yes";
@@ -890,10 +854,9 @@
             // 
             this.lbl15.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl15.AutoSize = true;
-            this.lbl15.Location = new System.Drawing.Point(13, 19);
-            this.lbl15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl15.Location = new System.Drawing.Point(10, 16);
             this.lbl15.Name = "lbl15";
-            this.lbl15.Size = new System.Drawing.Size(28, 17);
+            this.lbl15.Size = new System.Drawing.Size(22, 13);
             this.lbl15.TabIndex = 32;
             this.lbl15.Text = "15.";
             // 
@@ -903,10 +866,9 @@
             this.lblCPOrphan.AutoSize = true;
             this.lblCPOrphan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCPOrphan.ForeColor = System.Drawing.Color.Black;
-            this.lblCPOrphan.Location = new System.Drawing.Point(59, 19);
-            this.lblCPOrphan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCPOrphan.Location = new System.Drawing.Point(45, 16);
             this.lblCPOrphan.Name = "lblCPOrphan";
-            this.lblCPOrphan.Size = new System.Drawing.Size(250, 17);
+            this.lblCPOrphan.Size = new System.Drawing.Size(186, 13);
             this.lblCPOrphan.TabIndex = 1;
             this.lblCPOrphan.Text = "Is there any orphan in this household?";
             // 
@@ -915,19 +877,17 @@
             this.pnlCPOrphan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlCPOrphan.Controls.Add(this.rbtnCPOrphanNo);
             this.pnlCPOrphan.Controls.Add(this.rbtnCPOrphanYes);
-            this.pnlCPOrphan.Location = new System.Drawing.Point(473, 16);
-            this.pnlCPOrphan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlCPOrphan.Location = new System.Drawing.Point(352, 13);
             this.pnlCPOrphan.Name = "pnlCPOrphan";
-            this.pnlCPOrphan.Size = new System.Drawing.Size(152, 23);
+            this.pnlCPOrphan.Size = new System.Drawing.Size(114, 19);
             this.pnlCPOrphan.TabIndex = 34;
             // 
             // rbtnCPOrphanNo
             // 
             this.rbtnCPOrphanNo.AutoSize = true;
-            this.rbtnCPOrphanNo.Location = new System.Drawing.Point(69, 1);
-            this.rbtnCPOrphanNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnCPOrphanNo.Location = new System.Drawing.Point(52, 1);
             this.rbtnCPOrphanNo.Name = "rbtnCPOrphanNo";
-            this.rbtnCPOrphanNo.Size = new System.Drawing.Size(47, 21);
+            this.rbtnCPOrphanNo.Size = new System.Drawing.Size(39, 17);
             this.rbtnCPOrphanNo.TabIndex = 2;
             this.rbtnCPOrphanNo.TabStop = true;
             this.rbtnCPOrphanNo.Text = "No";
@@ -937,10 +897,9 @@
             // 
             this.rbtnCPOrphanYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtnCPOrphanYes.AutoSize = true;
-            this.rbtnCPOrphanYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnCPOrphanYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnCPOrphanYes.Location = new System.Drawing.Point(3, 1);
             this.rbtnCPOrphanYes.Name = "rbtnCPOrphanYes";
-            this.rbtnCPOrphanYes.Size = new System.Drawing.Size(53, 21);
+            this.rbtnCPOrphanYes.Size = new System.Drawing.Size(43, 17);
             this.rbtnCPOrphanYes.TabIndex = 0;
             this.rbtnCPOrphanYes.TabStop = true;
             this.rbtnCPOrphanYes.Text = "Yes";
@@ -951,10 +910,9 @@
             // 
             this.lbl16.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl16.AutoSize = true;
-            this.lbl16.Location = new System.Drawing.Point(13, 74);
-            this.lbl16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl16.Location = new System.Drawing.Point(10, 60);
             this.lbl16.Name = "lbl16";
-            this.lbl16.Size = new System.Drawing.Size(28, 17);
+            this.lbl16.Size = new System.Drawing.Size(22, 13);
             this.lbl16.TabIndex = 35;
             this.lbl16.Text = "16.";
             // 
@@ -964,10 +922,9 @@
             this.lblCPNoBirthRegister.AutoSize = true;
             this.lblCPNoBirthRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCPNoBirthRegister.ForeColor = System.Drawing.Color.Black;
-            this.lblCPNoBirthRegister.Location = new System.Drawing.Point(59, 66);
-            this.lblCPNoBirthRegister.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCPNoBirthRegister.Location = new System.Drawing.Point(45, 54);
             this.lblCPNoBirthRegister.Name = "lblCPNoBirthRegister";
-            this.lblCPNoBirthRegister.Size = new System.Drawing.Size(367, 34);
+            this.lblCPNoBirthRegister.Size = new System.Drawing.Size(275, 26);
             this.lblCPNoBirthRegister.TabIndex = 39;
             this.lblCPNoBirthRegister.Text = "Is there any child in this household who; 1) has not been registered at birth or " +
     "2) does not have a birth certificate?";
@@ -980,18 +937,17 @@
             this.tlpDisplay35.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpDisplay35.ColumnCount = 3;
             this.tlpDisplay35.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay35.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tlpDisplay35.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 221F));
+            this.tlpDisplay35.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tlpDisplay35.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168F));
             this.tlpDisplay35.Controls.Add(this.lblCPVulnerable, 0, 0);
             this.tlpDisplay35.Controls.Add(this.pnlCPVulnerable, 1, 0);
             this.tlpDisplay35.Controls.Add(this.pnlCPReferred, 2, 0);
             this.tlpDisplay35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tlpDisplay35.Location = new System.Drawing.Point(40, 2455);
-            this.tlpDisplay35.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay35.Location = new System.Drawing.Point(30, 1995);
             this.tlpDisplay35.Name = "tlpDisplay35";
             this.tlpDisplay35.RowCount = 1;
             this.tlpDisplay35.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay35.Size = new System.Drawing.Size(872, 37);
+            this.tlpDisplay35.Size = new System.Drawing.Size(654, 30);
             this.tlpDisplay35.TabIndex = 86;
             // 
             // lblCPVulnerable
@@ -1000,10 +956,9 @@
             this.lblCPVulnerable.AutoSize = true;
             this.lblCPVulnerable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCPVulnerable.ForeColor = System.Drawing.Color.Black;
-            this.lblCPVulnerable.Location = new System.Drawing.Point(5, 1);
-            this.lblCPVulnerable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCPVulnerable.Location = new System.Drawing.Point(4, 2);
             this.lblCPVulnerable.Name = "lblCPVulnerable";
-            this.lblCPVulnerable.Size = new System.Drawing.Size(433, 34);
+            this.lblCPVulnerable.Size = new System.Drawing.Size(324, 26);
             this.lblCPVulnerable.TabIndex = 1;
             this.lblCPVulnerable.Text = "Child Protection? (if any of the  responses to #14, #15, or #16  is “yes”, check " +
     "“yes”)";
@@ -1014,19 +969,17 @@
             this.pnlCPVulnerable.Controls.Add(this.rbtnCPVulnerableNo);
             this.pnlCPVulnerable.Controls.Add(this.rbtnCPVulnerableYes);
             this.pnlCPVulnerable.Enabled = false;
-            this.pnlCPVulnerable.Location = new System.Drawing.Point(473, 7);
-            this.pnlCPVulnerable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlCPVulnerable.Location = new System.Drawing.Point(352, 5);
             this.pnlCPVulnerable.Name = "pnlCPVulnerable";
-            this.pnlCPVulnerable.Size = new System.Drawing.Size(152, 23);
+            this.pnlCPVulnerable.Size = new System.Drawing.Size(114, 19);
             this.pnlCPVulnerable.TabIndex = 34;
             // 
             // rbtnCPVulnerableNo
             // 
             this.rbtnCPVulnerableNo.AutoSize = true;
-            this.rbtnCPVulnerableNo.Location = new System.Drawing.Point(69, 1);
-            this.rbtnCPVulnerableNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnCPVulnerableNo.Location = new System.Drawing.Point(52, 1);
             this.rbtnCPVulnerableNo.Name = "rbtnCPVulnerableNo";
-            this.rbtnCPVulnerableNo.Size = new System.Drawing.Size(49, 21);
+            this.rbtnCPVulnerableNo.Size = new System.Drawing.Size(41, 17);
             this.rbtnCPVulnerableNo.TabIndex = 2;
             this.rbtnCPVulnerableNo.TabStop = true;
             this.rbtnCPVulnerableNo.Text = "No";
@@ -1036,10 +989,9 @@
             // 
             this.rbtnCPVulnerableYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtnCPVulnerableYes.AutoSize = true;
-            this.rbtnCPVulnerableYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnCPVulnerableYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnCPVulnerableYes.Location = new System.Drawing.Point(3, 1);
             this.rbtnCPVulnerableYes.Name = "rbtnCPVulnerableYes";
-            this.rbtnCPVulnerableYes.Size = new System.Drawing.Size(56, 21);
+            this.rbtnCPVulnerableYes.Size = new System.Drawing.Size(46, 17);
             this.rbtnCPVulnerableYes.TabIndex = 0;
             this.rbtnCPVulnerableYes.TabStop = true;
             this.rbtnCPVulnerableYes.Text = "Yes";
@@ -1050,19 +1002,17 @@
             this.pnlCPReferred.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlCPReferred.Controls.Add(this.rbtnCPReferredNo);
             this.pnlCPReferred.Controls.Add(this.rbtnCPReferredYes);
-            this.pnlCPReferred.Location = new System.Drawing.Point(684, 7);
-            this.pnlCPReferred.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlCPReferred.Location = new System.Drawing.Point(512, 5);
             this.pnlCPReferred.Name = "pnlCPReferred";
-            this.pnlCPReferred.Size = new System.Drawing.Size(152, 23);
+            this.pnlCPReferred.Size = new System.Drawing.Size(114, 19);
             this.pnlCPReferred.TabIndex = 35;
             // 
             // rbtnCPReferredNo
             // 
             this.rbtnCPReferredNo.AutoSize = true;
-            this.rbtnCPReferredNo.Location = new System.Drawing.Point(69, 1);
-            this.rbtnCPReferredNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnCPReferredNo.Location = new System.Drawing.Point(52, 1);
             this.rbtnCPReferredNo.Name = "rbtnCPReferredNo";
-            this.rbtnCPReferredNo.Size = new System.Drawing.Size(49, 21);
+            this.rbtnCPReferredNo.Size = new System.Drawing.Size(41, 17);
             this.rbtnCPReferredNo.TabIndex = 2;
             this.rbtnCPReferredNo.TabStop = true;
             this.rbtnCPReferredNo.Text = "No";
@@ -1073,10 +1023,9 @@
             // 
             this.rbtnCPReferredYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtnCPReferredYes.AutoSize = true;
-            this.rbtnCPReferredYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnCPReferredYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnCPReferredYes.Location = new System.Drawing.Point(3, 1);
             this.rbtnCPReferredYes.Name = "rbtnCPReferredYes";
-            this.rbtnCPReferredYes.Size = new System.Drawing.Size(56, 21);
+            this.rbtnCPReferredYes.Size = new System.Drawing.Size(46, 17);
             this.rbtnCPReferredYes.TabIndex = 0;
             this.rbtnCPReferredYes.TabStop = true;
             this.rbtnCPReferredYes.Text = "Yes";
@@ -1091,14 +1040,13 @@
             this.tlpDisplay28.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpDisplay28.ColumnCount = 1;
             this.tlpDisplay28.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay28.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tlpDisplay28.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpDisplay28.Controls.Add(this.lblChildProtectionTitle, 0, 0);
-            this.tlpDisplay28.Location = new System.Drawing.Point(40, 2096);
-            this.tlpDisplay28.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay28.Location = new System.Drawing.Point(30, 1703);
             this.tlpDisplay28.Name = "tlpDisplay28";
             this.tlpDisplay28.RowCount = 1;
             this.tlpDisplay28.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay28.Size = new System.Drawing.Size(872, 37);
+            this.tlpDisplay28.Size = new System.Drawing.Size(654, 30);
             this.tlpDisplay28.TabIndex = 85;
             // 
             // lblChildProtectionTitle
@@ -1107,10 +1055,9 @@
             this.lblChildProtectionTitle.AutoSize = true;
             this.lblChildProtectionTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChildProtectionTitle.ForeColor = System.Drawing.Color.White;
-            this.lblChildProtectionTitle.Location = new System.Drawing.Point(5, 10);
-            this.lblChildProtectionTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblChildProtectionTitle.Location = new System.Drawing.Point(4, 8);
             this.lblChildProtectionTitle.Name = "lblChildProtectionTitle";
-            this.lblChildProtectionTitle.Size = new System.Drawing.Size(158, 17);
+            this.lblChildProtectionTitle.Size = new System.Drawing.Size(128, 13);
             this.lblChildProtectionTitle.TabIndex = 1;
             this.lblChildProtectionTitle.Text = "CHILD PROTECTION";
             // 
@@ -1121,30 +1068,28 @@
             this.tlpDisplay26.BackColor = System.Drawing.Color.White;
             this.tlpDisplay26.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpDisplay26.ColumnCount = 4;
-            this.tlpDisplay26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tlpDisplay26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tlpDisplay26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tlpDisplay26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 221F));
+            this.tlpDisplay26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tlpDisplay26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168F));
             this.tlpDisplay26.Controls.Add(this.lbl13, 0, 0);
             this.tlpDisplay26.Controls.Add(this.lblPSBCStigmatized, 1, 0);
             this.tlpDisplay26.Controls.Add(this.pnlPSBCStigmatized, 2, 0);
             this.tlpDisplay26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tlpDisplay26.Location = new System.Drawing.Point(40, 2006);
-            this.tlpDisplay26.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay26.Location = new System.Drawing.Point(30, 1630);
             this.tlpDisplay26.Name = "tlpDisplay26";
             this.tlpDisplay26.RowCount = 1;
             this.tlpDisplay26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay26.Size = new System.Drawing.Size(872, 55);
+            this.tlpDisplay26.Size = new System.Drawing.Size(654, 45);
             this.tlpDisplay26.TabIndex = 84;
             // 
             // lbl13
             // 
             this.lbl13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl13.AutoSize = true;
-            this.lbl13.Location = new System.Drawing.Point(13, 19);
-            this.lbl13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl13.Location = new System.Drawing.Point(10, 16);
             this.lbl13.Name = "lbl13";
-            this.lbl13.Size = new System.Drawing.Size(28, 17);
+            this.lbl13.Size = new System.Drawing.Size(22, 13);
             this.lbl13.TabIndex = 32;
             this.lbl13.Text = "13.";
             // 
@@ -1154,10 +1099,9 @@
             this.lblPSBCStigmatized.AutoSize = true;
             this.lblPSBCStigmatized.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPSBCStigmatized.ForeColor = System.Drawing.Color.Black;
-            this.lblPSBCStigmatized.Location = new System.Drawing.Point(59, 1);
-            this.lblPSBCStigmatized.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPSBCStigmatized.Location = new System.Drawing.Point(45, 1);
             this.lblPSBCStigmatized.Name = "lblPSBCStigmatized";
-            this.lblPSBCStigmatized.Size = new System.Drawing.Size(383, 53);
+            this.lblPSBCStigmatized.Size = new System.Drawing.Size(284, 43);
             this.lblPSBCStigmatized.TabIndex = 1;
             this.lblPSBCStigmatized.Text = "Are there any children in this household who are withdrawn or consistently sad, u" +
     "nhappy or depressed, not able to participate in daily activities including playi" +
@@ -1168,19 +1112,17 @@
             this.pnlPSBCStigmatized.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlPSBCStigmatized.Controls.Add(this.rbtnPSBCStigmatizedNo);
             this.pnlPSBCStigmatized.Controls.Add(this.rbtnPSBCStigmatizedYes);
-            this.pnlPSBCStigmatized.Location = new System.Drawing.Point(473, 16);
-            this.pnlPSBCStigmatized.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlPSBCStigmatized.Location = new System.Drawing.Point(352, 13);
             this.pnlPSBCStigmatized.Name = "pnlPSBCStigmatized";
-            this.pnlPSBCStigmatized.Size = new System.Drawing.Size(152, 23);
+            this.pnlPSBCStigmatized.Size = new System.Drawing.Size(114, 19);
             this.pnlPSBCStigmatized.TabIndex = 34;
             // 
             // rbtnPSBCStigmatizedNo
             // 
             this.rbtnPSBCStigmatizedNo.AutoSize = true;
-            this.rbtnPSBCStigmatizedNo.Location = new System.Drawing.Point(69, 1);
-            this.rbtnPSBCStigmatizedNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnPSBCStigmatizedNo.Location = new System.Drawing.Point(52, 1);
             this.rbtnPSBCStigmatizedNo.Name = "rbtnPSBCStigmatizedNo";
-            this.rbtnPSBCStigmatizedNo.Size = new System.Drawing.Size(47, 21);
+            this.rbtnPSBCStigmatizedNo.Size = new System.Drawing.Size(39, 17);
             this.rbtnPSBCStigmatizedNo.TabIndex = 2;
             this.rbtnPSBCStigmatizedNo.TabStop = true;
             this.rbtnPSBCStigmatizedNo.Text = "No";
@@ -1190,10 +1132,9 @@
             // 
             this.rbtnPSBCStigmatizedYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtnPSBCStigmatizedYes.AutoSize = true;
-            this.rbtnPSBCStigmatizedYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnPSBCStigmatizedYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnPSBCStigmatizedYes.Location = new System.Drawing.Point(3, 1);
             this.rbtnPSBCStigmatizedYes.Name = "rbtnPSBCStigmatizedYes";
-            this.rbtnPSBCStigmatizedYes.Size = new System.Drawing.Size(53, 21);
+            this.rbtnPSBCStigmatizedYes.Size = new System.Drawing.Size(43, 17);
             this.rbtnPSBCStigmatizedYes.TabIndex = 0;
             this.rbtnPSBCStigmatizedYes.TabStop = true;
             this.rbtnPSBCStigmatizedYes.Text = "Yes";
@@ -1208,18 +1149,17 @@
             this.tlpDisplay27.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpDisplay27.ColumnCount = 3;
             this.tlpDisplay27.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay27.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tlpDisplay27.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 221F));
+            this.tlpDisplay27.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tlpDisplay27.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168F));
             this.tlpDisplay27.Controls.Add(this.lblPSBCVulnerable, 0, 0);
             this.tlpDisplay27.Controls.Add(this.pnlPSBCVulnerable, 1, 0);
             this.tlpDisplay27.Controls.Add(this.pnlPSBCReferred, 2, 0);
             this.tlpDisplay27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tlpDisplay27.Location = new System.Drawing.Point(40, 2060);
-            this.tlpDisplay27.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay27.Location = new System.Drawing.Point(30, 1674);
             this.tlpDisplay27.Name = "tlpDisplay27";
             this.tlpDisplay27.RowCount = 1;
             this.tlpDisplay27.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay27.Size = new System.Drawing.Size(872, 37);
+            this.tlpDisplay27.Size = new System.Drawing.Size(654, 30);
             this.tlpDisplay27.TabIndex = 83;
             // 
             // lblPSBCVulnerable
@@ -1228,10 +1168,9 @@
             this.lblPSBCVulnerable.AutoSize = true;
             this.lblPSBCVulnerable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPSBCVulnerable.ForeColor = System.Drawing.Color.Black;
-            this.lblPSBCVulnerable.Location = new System.Drawing.Point(5, 1);
-            this.lblPSBCVulnerable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPSBCVulnerable.Location = new System.Drawing.Point(4, 2);
             this.lblPSBCVulnerable.Name = "lblPSBCVulnerable";
-            this.lblPSBCVulnerable.Size = new System.Drawing.Size(435, 34);
+            this.lblPSBCVulnerable.Size = new System.Drawing.Size(309, 26);
             this.lblPSBCVulnerable.TabIndex = 1;
             this.lblPSBCVulnerable.Text = "CPA Psychosocial support and basic care  (if #13  is “yes”, check “yes”)";
             // 
@@ -1241,19 +1180,17 @@
             this.pnlPSBCVulnerable.Controls.Add(this.rbtnPSBCVulnerableNo);
             this.pnlPSBCVulnerable.Controls.Add(this.rbtnPSBCVulnerableYes);
             this.pnlPSBCVulnerable.Enabled = false;
-            this.pnlPSBCVulnerable.Location = new System.Drawing.Point(473, 7);
-            this.pnlPSBCVulnerable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlPSBCVulnerable.Location = new System.Drawing.Point(352, 5);
             this.pnlPSBCVulnerable.Name = "pnlPSBCVulnerable";
-            this.pnlPSBCVulnerable.Size = new System.Drawing.Size(152, 23);
+            this.pnlPSBCVulnerable.Size = new System.Drawing.Size(114, 19);
             this.pnlPSBCVulnerable.TabIndex = 34;
             // 
             // rbtnPSBCVulnerableNo
             // 
             this.rbtnPSBCVulnerableNo.AutoSize = true;
-            this.rbtnPSBCVulnerableNo.Location = new System.Drawing.Point(69, 1);
-            this.rbtnPSBCVulnerableNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnPSBCVulnerableNo.Location = new System.Drawing.Point(52, 1);
             this.rbtnPSBCVulnerableNo.Name = "rbtnPSBCVulnerableNo";
-            this.rbtnPSBCVulnerableNo.Size = new System.Drawing.Size(49, 21);
+            this.rbtnPSBCVulnerableNo.Size = new System.Drawing.Size(41, 17);
             this.rbtnPSBCVulnerableNo.TabIndex = 2;
             this.rbtnPSBCVulnerableNo.TabStop = true;
             this.rbtnPSBCVulnerableNo.Text = "No";
@@ -1263,10 +1200,9 @@
             // 
             this.rbtnPSBCVulnerableYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtnPSBCVulnerableYes.AutoSize = true;
-            this.rbtnPSBCVulnerableYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnPSBCVulnerableYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnPSBCVulnerableYes.Location = new System.Drawing.Point(3, 1);
             this.rbtnPSBCVulnerableYes.Name = "rbtnPSBCVulnerableYes";
-            this.rbtnPSBCVulnerableYes.Size = new System.Drawing.Size(56, 21);
+            this.rbtnPSBCVulnerableYes.Size = new System.Drawing.Size(46, 17);
             this.rbtnPSBCVulnerableYes.TabIndex = 0;
             this.rbtnPSBCVulnerableYes.TabStop = true;
             this.rbtnPSBCVulnerableYes.Text = "Yes";
@@ -1277,19 +1213,17 @@
             this.pnlPSBCReferred.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlPSBCReferred.Controls.Add(this.rbtnPSBCReferredNo);
             this.pnlPSBCReferred.Controls.Add(this.rbtnPSBCReferredYes);
-            this.pnlPSBCReferred.Location = new System.Drawing.Point(684, 7);
-            this.pnlPSBCReferred.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlPSBCReferred.Location = new System.Drawing.Point(512, 5);
             this.pnlPSBCReferred.Name = "pnlPSBCReferred";
-            this.pnlPSBCReferred.Size = new System.Drawing.Size(152, 23);
+            this.pnlPSBCReferred.Size = new System.Drawing.Size(114, 19);
             this.pnlPSBCReferred.TabIndex = 35;
             // 
             // rbtnPSBCReferredNo
             // 
             this.rbtnPSBCReferredNo.AutoSize = true;
-            this.rbtnPSBCReferredNo.Location = new System.Drawing.Point(69, 1);
-            this.rbtnPSBCReferredNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnPSBCReferredNo.Location = new System.Drawing.Point(52, 1);
             this.rbtnPSBCReferredNo.Name = "rbtnPSBCReferredNo";
-            this.rbtnPSBCReferredNo.Size = new System.Drawing.Size(49, 21);
+            this.rbtnPSBCReferredNo.Size = new System.Drawing.Size(41, 17);
             this.rbtnPSBCReferredNo.TabIndex = 2;
             this.rbtnPSBCReferredNo.TabStop = true;
             this.rbtnPSBCReferredNo.Text = "No";
@@ -1300,10 +1234,9 @@
             // 
             this.rbtnPSBCReferredYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtnPSBCReferredYes.AutoSize = true;
-            this.rbtnPSBCReferredYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnPSBCReferredYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnPSBCReferredYes.Location = new System.Drawing.Point(3, 1);
             this.rbtnPSBCReferredYes.Name = "rbtnPSBCReferredYes";
-            this.rbtnPSBCReferredYes.Size = new System.Drawing.Size(56, 21);
+            this.rbtnPSBCReferredYes.Size = new System.Drawing.Size(46, 17);
             this.rbtnPSBCReferredYes.TabIndex = 0;
             this.rbtnPSBCReferredYes.TabStop = true;
             this.rbtnPSBCReferredYes.Text = "Yes";
@@ -1318,14 +1251,13 @@
             this.tlpDisplay25.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpDisplay25.ColumnCount = 1;
             this.tlpDisplay25.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay25.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tlpDisplay25.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpDisplay25.Controls.Add(this.lblPsychosocialSupportBasicCareTitle, 0, 0);
-            this.tlpDisplay25.Location = new System.Drawing.Point(40, 1970);
-            this.tlpDisplay25.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay25.Location = new System.Drawing.Point(30, 1601);
             this.tlpDisplay25.Name = "tlpDisplay25";
             this.tlpDisplay25.RowCount = 1;
             this.tlpDisplay25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay25.Size = new System.Drawing.Size(872, 37);
+            this.tlpDisplay25.Size = new System.Drawing.Size(654, 30);
             this.tlpDisplay25.TabIndex = 82;
             // 
             // lblPsychosocialSupportBasicCareTitle
@@ -1334,10 +1266,9 @@
             this.lblPsychosocialSupportBasicCareTitle.AutoSize = true;
             this.lblPsychosocialSupportBasicCareTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPsychosocialSupportBasicCareTitle.ForeColor = System.Drawing.Color.White;
-            this.lblPsychosocialSupportBasicCareTitle.Location = new System.Drawing.Point(5, 10);
-            this.lblPsychosocialSupportBasicCareTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPsychosocialSupportBasicCareTitle.Location = new System.Drawing.Point(4, 8);
             this.lblPsychosocialSupportBasicCareTitle.Name = "lblPsychosocialSupportBasicCareTitle";
-            this.lblPsychosocialSupportBasicCareTitle.Size = new System.Drawing.Size(337, 17);
+            this.lblPsychosocialSupportBasicCareTitle.Size = new System.Drawing.Size(271, 13);
             this.lblPsychosocialSupportBasicCareTitle.TabIndex = 1;
             this.lblPsychosocialSupportBasicCareTitle.Text = "PSYCHOSOCIAL SUPPORT AND BASIC CARE";
             // 
@@ -1348,10 +1279,10 @@
             this.tlpDisplay23.BackColor = System.Drawing.Color.White;
             this.tlpDisplay23.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpDisplay23.ColumnCount = 4;
-            this.tlpDisplay23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tlpDisplay23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tlpDisplay23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tlpDisplay23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 221F));
+            this.tlpDisplay23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tlpDisplay23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168F));
             this.tlpDisplay23.Controls.Add(this.lbl11, 0, 0);
             this.tlpDisplay23.Controls.Add(this.lblEDUNotEnrolled, 1, 0);
             this.tlpDisplay23.Controls.Add(this.lbl12, 0, 1);
@@ -1359,23 +1290,21 @@
             this.tlpDisplay23.Controls.Add(this.pnlEDUNotEnrolled, 2, 0);
             this.tlpDisplay23.Controls.Add(this.pnlEDUMissedSchool, 2, 1);
             this.tlpDisplay23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tlpDisplay23.Location = new System.Drawing.Point(40, 1825);
-            this.tlpDisplay23.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay23.Location = new System.Drawing.Point(30, 1483);
             this.tlpDisplay23.Name = "tlpDisplay23";
             this.tlpDisplay23.RowCount = 2;
             this.tlpDisplay23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpDisplay23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDisplay23.Size = new System.Drawing.Size(872, 111);
+            this.tlpDisplay23.Size = new System.Drawing.Size(654, 90);
             this.tlpDisplay23.TabIndex = 81;
             // 
             // lbl11
             // 
             this.lbl11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl11.AutoSize = true;
-            this.lbl11.Location = new System.Drawing.Point(13, 19);
-            this.lbl11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl11.Location = new System.Drawing.Point(10, 16);
             this.lbl11.Name = "lbl11";
-            this.lbl11.Size = new System.Drawing.Size(28, 17);
+            this.lbl11.Size = new System.Drawing.Size(22, 13);
             this.lbl11.TabIndex = 32;
             this.lbl11.Text = "11.";
             // 
@@ -1385,10 +1314,9 @@
             this.lblEDUNotEnrolled.AutoSize = true;
             this.lblEDUNotEnrolled.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEDUNotEnrolled.ForeColor = System.Drawing.Color.Black;
-            this.lblEDUNotEnrolled.Location = new System.Drawing.Point(59, 11);
-            this.lblEDUNotEnrolled.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEDUNotEnrolled.Location = new System.Drawing.Point(45, 9);
             this.lblEDUNotEnrolled.Name = "lblEDUNotEnrolled";
-            this.lblEDUNotEnrolled.Size = new System.Drawing.Size(382, 34);
+            this.lblEDUNotEnrolled.Size = new System.Drawing.Size(283, 26);
             this.lblEDUNotEnrolled.TabIndex = 1;
             this.lblEDUNotEnrolled.Text = "Are there any children aged 5 to 17 years in this household who are not enrolled " +
     "in school?";
@@ -1397,10 +1325,9 @@
             // 
             this.lbl12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl12.AutoSize = true;
-            this.lbl12.Location = new System.Drawing.Point(13, 74);
-            this.lbl12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl12.Location = new System.Drawing.Point(10, 60);
             this.lbl12.Name = "lbl12";
-            this.lbl12.Size = new System.Drawing.Size(28, 17);
+            this.lbl12.Size = new System.Drawing.Size(22, 13);
             this.lbl12.TabIndex = 35;
             this.lbl12.Text = "12.";
             // 
@@ -1410,10 +1337,9 @@
             this.lblEDUMissedSchool.AutoSize = true;
             this.lblEDUMissedSchool.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEDUMissedSchool.ForeColor = System.Drawing.Color.Black;
-            this.lblEDUMissedSchool.Location = new System.Drawing.Point(59, 57);
-            this.lblEDUMissedSchool.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEDUMissedSchool.Location = new System.Drawing.Point(45, 47);
             this.lblEDUMissedSchool.Name = "lblEDUMissedSchool";
-            this.lblEDUMissedSchool.Size = new System.Drawing.Size(382, 51);
+            this.lblEDUMissedSchool.Size = new System.Drawing.Size(283, 39);
             this.lblEDUMissedSchool.TabIndex = 39;
             this.lblEDUMissedSchool.Text = "Are there any children aged 5 to 17 years in this household who are enrolled in s" +
     "chool and have missed school for about 30 days in the last school term?";
@@ -1424,19 +1350,17 @@
             this.pnlEDUNotEnrolled.Controls.Add(this.rbtnEDUNotEnrolledNA);
             this.pnlEDUNotEnrolled.Controls.Add(this.rbtnEDUNotEnrolledNo);
             this.pnlEDUNotEnrolled.Controls.Add(this.rbtnEDUNotEnrolledYes);
-            this.pnlEDUNotEnrolled.Location = new System.Drawing.Point(453, 16);
-            this.pnlEDUNotEnrolled.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlEDUNotEnrolled.Location = new System.Drawing.Point(337, 13);
             this.pnlEDUNotEnrolled.Name = "pnlEDUNotEnrolled";
-            this.pnlEDUNotEnrolled.Size = new System.Drawing.Size(191, 23);
+            this.pnlEDUNotEnrolled.Size = new System.Drawing.Size(143, 19);
             this.pnlEDUNotEnrolled.TabIndex = 46;
             // 
             // rbtnEDUNotEnrolledNA
             // 
             this.rbtnEDUNotEnrolledNA.AutoSize = true;
-            this.rbtnEDUNotEnrolledNA.Location = new System.Drawing.Point(132, 1);
-            this.rbtnEDUNotEnrolledNA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnEDUNotEnrolledNA.Location = new System.Drawing.Point(99, 1);
             this.rbtnEDUNotEnrolledNA.Name = "rbtnEDUNotEnrolledNA";
-            this.rbtnEDUNotEnrolledNA.Size = new System.Drawing.Size(48, 21);
+            this.rbtnEDUNotEnrolledNA.Size = new System.Drawing.Size(40, 17);
             this.rbtnEDUNotEnrolledNA.TabIndex = 3;
             this.rbtnEDUNotEnrolledNA.TabStop = true;
             this.rbtnEDUNotEnrolledNA.Text = "NA";
@@ -1446,10 +1370,9 @@
             // rbtnEDUNotEnrolledNo
             // 
             this.rbtnEDUNotEnrolledNo.AutoSize = true;
-            this.rbtnEDUNotEnrolledNo.Location = new System.Drawing.Point(68, 1);
-            this.rbtnEDUNotEnrolledNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnEDUNotEnrolledNo.Location = new System.Drawing.Point(51, 1);
             this.rbtnEDUNotEnrolledNo.Name = "rbtnEDUNotEnrolledNo";
-            this.rbtnEDUNotEnrolledNo.Size = new System.Drawing.Size(47, 21);
+            this.rbtnEDUNotEnrolledNo.Size = new System.Drawing.Size(39, 17);
             this.rbtnEDUNotEnrolledNo.TabIndex = 2;
             this.rbtnEDUNotEnrolledNo.TabStop = true;
             this.rbtnEDUNotEnrolledNo.Text = "No";
@@ -1459,10 +1382,9 @@
             // 
             this.rbtnEDUNotEnrolledYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtnEDUNotEnrolledYes.AutoSize = true;
-            this.rbtnEDUNotEnrolledYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnEDUNotEnrolledYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnEDUNotEnrolledYes.Location = new System.Drawing.Point(3, 1);
             this.rbtnEDUNotEnrolledYes.Name = "rbtnEDUNotEnrolledYes";
-            this.rbtnEDUNotEnrolledYes.Size = new System.Drawing.Size(53, 21);
+            this.rbtnEDUNotEnrolledYes.Size = new System.Drawing.Size(43, 17);
             this.rbtnEDUNotEnrolledYes.TabIndex = 0;
             this.rbtnEDUNotEnrolledYes.TabStop = true;
             this.rbtnEDUNotEnrolledYes.Text = "Yes";
@@ -1475,19 +1397,17 @@
             this.pnlEDUMissedSchool.Controls.Add(this.rbtnEDUMissedSchoolNA);
             this.pnlEDUMissedSchool.Controls.Add(this.rbtnEDUMissedSchoolNo);
             this.pnlEDUMissedSchool.Controls.Add(this.rbtnEDUMissedSchoolYes);
-            this.pnlEDUMissedSchool.Location = new System.Drawing.Point(453, 71);
-            this.pnlEDUMissedSchool.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlEDUMissedSchool.Location = new System.Drawing.Point(337, 57);
             this.pnlEDUMissedSchool.Name = "pnlEDUMissedSchool";
-            this.pnlEDUMissedSchool.Size = new System.Drawing.Size(191, 23);
+            this.pnlEDUMissedSchool.Size = new System.Drawing.Size(143, 19);
             this.pnlEDUMissedSchool.TabIndex = 47;
             // 
             // rbtnEDUMissedSchoolNA
             // 
             this.rbtnEDUMissedSchoolNA.AutoSize = true;
-            this.rbtnEDUMissedSchoolNA.Location = new System.Drawing.Point(132, 1);
-            this.rbtnEDUMissedSchoolNA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnEDUMissedSchoolNA.Location = new System.Drawing.Point(99, 1);
             this.rbtnEDUMissedSchoolNA.Name = "rbtnEDUMissedSchoolNA";
-            this.rbtnEDUMissedSchoolNA.Size = new System.Drawing.Size(48, 21);
+            this.rbtnEDUMissedSchoolNA.Size = new System.Drawing.Size(40, 17);
             this.rbtnEDUMissedSchoolNA.TabIndex = 3;
             this.rbtnEDUMissedSchoolNA.TabStop = true;
             this.rbtnEDUMissedSchoolNA.Text = "NA";
@@ -1497,10 +1417,9 @@
             // rbtnEDUMissedSchoolNo
             // 
             this.rbtnEDUMissedSchoolNo.AutoSize = true;
-            this.rbtnEDUMissedSchoolNo.Location = new System.Drawing.Point(68, 1);
-            this.rbtnEDUMissedSchoolNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnEDUMissedSchoolNo.Location = new System.Drawing.Point(51, 1);
             this.rbtnEDUMissedSchoolNo.Name = "rbtnEDUMissedSchoolNo";
-            this.rbtnEDUMissedSchoolNo.Size = new System.Drawing.Size(47, 21);
+            this.rbtnEDUMissedSchoolNo.Size = new System.Drawing.Size(39, 17);
             this.rbtnEDUMissedSchoolNo.TabIndex = 2;
             this.rbtnEDUMissedSchoolNo.TabStop = true;
             this.rbtnEDUMissedSchoolNo.Text = "No";
@@ -1510,10 +1429,9 @@
             // 
             this.rbtnEDUMissedSchoolYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtnEDUMissedSchoolYes.AutoSize = true;
-            this.rbtnEDUMissedSchoolYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnEDUMissedSchoolYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnEDUMissedSchoolYes.Location = new System.Drawing.Point(3, 1);
             this.rbtnEDUMissedSchoolYes.Name = "rbtnEDUMissedSchoolYes";
-            this.rbtnEDUMissedSchoolYes.Size = new System.Drawing.Size(53, 21);
+            this.rbtnEDUMissedSchoolYes.Size = new System.Drawing.Size(43, 17);
             this.rbtnEDUMissedSchoolYes.TabIndex = 0;
             this.rbtnEDUMissedSchoolYes.TabStop = true;
             this.rbtnEDUMissedSchoolYes.Text = "Yes";
@@ -1528,18 +1446,17 @@
             this.tlpDisplay24.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpDisplay24.ColumnCount = 3;
             this.tlpDisplay24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tlpDisplay24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 221F));
+            this.tlpDisplay24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tlpDisplay24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168F));
             this.tlpDisplay24.Controls.Add(this.pnlEDUVulnerable, 0, 0);
             this.tlpDisplay24.Controls.Add(this.lblEDUVulnerable, 0, 0);
             this.tlpDisplay24.Controls.Add(this.pnlEDUReferred, 2, 0);
             this.tlpDisplay24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tlpDisplay24.Location = new System.Drawing.Point(40, 1935);
-            this.tlpDisplay24.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay24.Location = new System.Drawing.Point(30, 1572);
             this.tlpDisplay24.Name = "tlpDisplay24";
             this.tlpDisplay24.RowCount = 1;
             this.tlpDisplay24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay24.Size = new System.Drawing.Size(872, 37);
+            this.tlpDisplay24.Size = new System.Drawing.Size(654, 30);
             this.tlpDisplay24.TabIndex = 80;
             // 
             // pnlEDUVulnerable
@@ -1549,19 +1466,17 @@
             this.pnlEDUVulnerable.Controls.Add(this.rbtnEDUVulnerableNo);
             this.pnlEDUVulnerable.Controls.Add(this.rbtnEDUVulnerableYes);
             this.pnlEDUVulnerable.Enabled = false;
-            this.pnlEDUVulnerable.Location = new System.Drawing.Point(453, 7);
-            this.pnlEDUVulnerable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlEDUVulnerable.Location = new System.Drawing.Point(337, 5);
             this.pnlEDUVulnerable.Name = "pnlEDUVulnerable";
-            this.pnlEDUVulnerable.Size = new System.Drawing.Size(191, 23);
+            this.pnlEDUVulnerable.Size = new System.Drawing.Size(143, 19);
             this.pnlEDUVulnerable.TabIndex = 47;
             // 
             // rbtnEDUVulnerableNA
             // 
             this.rbtnEDUVulnerableNA.AutoSize = true;
-            this.rbtnEDUVulnerableNA.Location = new System.Drawing.Point(132, 1);
-            this.rbtnEDUVulnerableNA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnEDUVulnerableNA.Location = new System.Drawing.Point(99, 1);
             this.rbtnEDUVulnerableNA.Name = "rbtnEDUVulnerableNA";
-            this.rbtnEDUVulnerableNA.Size = new System.Drawing.Size(50, 21);
+            this.rbtnEDUVulnerableNA.Size = new System.Drawing.Size(42, 17);
             this.rbtnEDUVulnerableNA.TabIndex = 3;
             this.rbtnEDUVulnerableNA.TabStop = true;
             this.rbtnEDUVulnerableNA.Text = "NA";
@@ -1570,10 +1485,9 @@
             // rbtnEDUVulnerableNo
             // 
             this.rbtnEDUVulnerableNo.AutoSize = true;
-            this.rbtnEDUVulnerableNo.Location = new System.Drawing.Point(68, 1);
-            this.rbtnEDUVulnerableNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnEDUVulnerableNo.Location = new System.Drawing.Point(51, 1);
             this.rbtnEDUVulnerableNo.Name = "rbtnEDUVulnerableNo";
-            this.rbtnEDUVulnerableNo.Size = new System.Drawing.Size(49, 21);
+            this.rbtnEDUVulnerableNo.Size = new System.Drawing.Size(41, 17);
             this.rbtnEDUVulnerableNo.TabIndex = 2;
             this.rbtnEDUVulnerableNo.TabStop = true;
             this.rbtnEDUVulnerableNo.Text = "No";
@@ -1583,10 +1497,9 @@
             // 
             this.rbtnEDUVulnerableYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtnEDUVulnerableYes.AutoSize = true;
-            this.rbtnEDUVulnerableYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnEDUVulnerableYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnEDUVulnerableYes.Location = new System.Drawing.Point(3, 1);
             this.rbtnEDUVulnerableYes.Name = "rbtnEDUVulnerableYes";
-            this.rbtnEDUVulnerableYes.Size = new System.Drawing.Size(56, 21);
+            this.rbtnEDUVulnerableYes.Size = new System.Drawing.Size(46, 17);
             this.rbtnEDUVulnerableYes.TabIndex = 0;
             this.rbtnEDUVulnerableYes.TabStop = true;
             this.rbtnEDUVulnerableYes.Text = "Yes";
@@ -1598,10 +1511,9 @@
             this.lblEDUVulnerable.AutoSize = true;
             this.lblEDUVulnerable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEDUVulnerable.ForeColor = System.Drawing.Color.Black;
-            this.lblEDUVulnerable.Location = new System.Drawing.Point(5, 10);
-            this.lblEDUVulnerable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEDUVulnerable.Location = new System.Drawing.Point(4, 8);
             this.lblEDUVulnerable.Name = "lblEDUVulnerable";
-            this.lblEDUVulnerable.Size = new System.Drawing.Size(352, 17);
+            this.lblEDUVulnerable.Size = new System.Drawing.Size(279, 13);
             this.lblEDUVulnerable.TabIndex = 1;
             this.lblEDUVulnerable.Text = "Education? (if #11 or #12 is “yes”, check “yes”)";
             // 
@@ -1610,19 +1522,17 @@
             this.pnlEDUReferred.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlEDUReferred.Controls.Add(this.rbtnEDUReferredNo);
             this.pnlEDUReferred.Controls.Add(this.rbtnEDUReferredYes);
-            this.pnlEDUReferred.Location = new System.Drawing.Point(684, 7);
-            this.pnlEDUReferred.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlEDUReferred.Location = new System.Drawing.Point(512, 5);
             this.pnlEDUReferred.Name = "pnlEDUReferred";
-            this.pnlEDUReferred.Size = new System.Drawing.Size(152, 23);
+            this.pnlEDUReferred.Size = new System.Drawing.Size(114, 19);
             this.pnlEDUReferred.TabIndex = 35;
             // 
             // rbtnEDUReferredNo
             // 
             this.rbtnEDUReferredNo.AutoSize = true;
-            this.rbtnEDUReferredNo.Location = new System.Drawing.Point(69, 1);
-            this.rbtnEDUReferredNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnEDUReferredNo.Location = new System.Drawing.Point(52, 1);
             this.rbtnEDUReferredNo.Name = "rbtnEDUReferredNo";
-            this.rbtnEDUReferredNo.Size = new System.Drawing.Size(49, 21);
+            this.rbtnEDUReferredNo.Size = new System.Drawing.Size(41, 17);
             this.rbtnEDUReferredNo.TabIndex = 2;
             this.rbtnEDUReferredNo.TabStop = true;
             this.rbtnEDUReferredNo.Text = "No";
@@ -1633,10 +1543,9 @@
             // 
             this.rbtnEDUReferredYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtnEDUReferredYes.AutoSize = true;
-            this.rbtnEDUReferredYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnEDUReferredYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnEDUReferredYes.Location = new System.Drawing.Point(3, 1);
             this.rbtnEDUReferredYes.Name = "rbtnEDUReferredYes";
-            this.rbtnEDUReferredYes.Size = new System.Drawing.Size(56, 21);
+            this.rbtnEDUReferredYes.Size = new System.Drawing.Size(46, 17);
             this.rbtnEDUReferredYes.TabIndex = 0;
             this.rbtnEDUReferredYes.TabStop = true;
             this.rbtnEDUReferredYes.Text = "Yes";
@@ -1651,14 +1560,13 @@
             this.tlpDisplay22.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpDisplay22.ColumnCount = 1;
             this.tlpDisplay22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tlpDisplay22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpDisplay22.Controls.Add(this.lblEducationTitle, 0, 0);
-            this.tlpDisplay22.Location = new System.Drawing.Point(40, 1790);
-            this.tlpDisplay22.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay22.Location = new System.Drawing.Point(30, 1454);
             this.tlpDisplay22.Name = "tlpDisplay22";
             this.tlpDisplay22.RowCount = 1;
             this.tlpDisplay22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay22.Size = new System.Drawing.Size(872, 37);
+            this.tlpDisplay22.Size = new System.Drawing.Size(654, 30);
             this.tlpDisplay22.TabIndex = 79;
             // 
             // lblEducationTitle
@@ -1667,10 +1575,9 @@
             this.lblEducationTitle.AutoSize = true;
             this.lblEducationTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEducationTitle.ForeColor = System.Drawing.Color.White;
-            this.lblEducationTitle.Location = new System.Drawing.Point(5, 10);
-            this.lblEducationTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEducationTitle.Location = new System.Drawing.Point(4, 8);
             this.lblEducationTitle.Name = "lblEducationTitle";
-            this.lblEducationTitle.Size = new System.Drawing.Size(97, 17);
+            this.lblEducationTitle.Size = new System.Drawing.Size(79, 13);
             this.lblEducationTitle.TabIndex = 1;
             this.lblEducationTitle.Text = "EDUCATION";
             // 
@@ -1682,18 +1589,17 @@
             this.tlpDisplay21.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpDisplay21.ColumnCount = 3;
             this.tlpDisplay21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tlpDisplay21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 221F));
+            this.tlpDisplay21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tlpDisplay21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168F));
             this.tlpDisplay21.Controls.Add(this.lblHWSSVulnerable, 0, 0);
             this.tlpDisplay21.Controls.Add(this.pnlHWSSVulnerable, 1, 0);
             this.tlpDisplay21.Controls.Add(this.pnlHWSSReferred, 2, 0);
             this.tlpDisplay21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tlpDisplay21.Location = new System.Drawing.Point(40, 1754);
-            this.tlpDisplay21.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay21.Location = new System.Drawing.Point(30, 1425);
             this.tlpDisplay21.Name = "tlpDisplay21";
             this.tlpDisplay21.RowCount = 1;
             this.tlpDisplay21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay21.Size = new System.Drawing.Size(872, 37);
+            this.tlpDisplay21.Size = new System.Drawing.Size(654, 30);
             this.tlpDisplay21.TabIndex = 78;
             // 
             // lblHWSSVulnerable
@@ -1702,10 +1608,9 @@
             this.lblHWSSVulnerable.AutoSize = true;
             this.lblHWSSVulnerable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHWSSVulnerable.ForeColor = System.Drawing.Color.Black;
-            this.lblHWSSVulnerable.Location = new System.Drawing.Point(5, 1);
-            this.lblHWSSVulnerable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHWSSVulnerable.Location = new System.Drawing.Point(4, 2);
             this.lblHWSSVulnerable.Name = "lblHWSSVulnerable";
-            this.lblHWSSVulnerable.Size = new System.Drawing.Size(428, 34);
+            this.lblHWSSVulnerable.Size = new System.Drawing.Size(315, 26);
             this.lblHWSSVulnerable.TabIndex = 1;
             this.lblHWSSVulnerable.Text = "Health, Water, Sanitation, and Shelter? (if #7 , #8, or #9  is “no”, or #10 is “y" +
     "es”, check “yes”)";
@@ -1716,19 +1621,17 @@
             this.pnlHWSSVulnerable.Controls.Add(this.rbtnHWSSVulnerableNo);
             this.pnlHWSSVulnerable.Controls.Add(this.rbtnHWSSVulnerableYes);
             this.pnlHWSSVulnerable.Enabled = false;
-            this.pnlHWSSVulnerable.Location = new System.Drawing.Point(473, 7);
-            this.pnlHWSSVulnerable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlHWSSVulnerable.Location = new System.Drawing.Point(352, 5);
             this.pnlHWSSVulnerable.Name = "pnlHWSSVulnerable";
-            this.pnlHWSSVulnerable.Size = new System.Drawing.Size(152, 23);
+            this.pnlHWSSVulnerable.Size = new System.Drawing.Size(114, 19);
             this.pnlHWSSVulnerable.TabIndex = 34;
             // 
             // rbtnHWSSVulnerableNo
             // 
             this.rbtnHWSSVulnerableNo.AutoSize = true;
-            this.rbtnHWSSVulnerableNo.Location = new System.Drawing.Point(69, 1);
-            this.rbtnHWSSVulnerableNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnHWSSVulnerableNo.Location = new System.Drawing.Point(52, 1);
             this.rbtnHWSSVulnerableNo.Name = "rbtnHWSSVulnerableNo";
-            this.rbtnHWSSVulnerableNo.Size = new System.Drawing.Size(49, 21);
+            this.rbtnHWSSVulnerableNo.Size = new System.Drawing.Size(41, 17);
             this.rbtnHWSSVulnerableNo.TabIndex = 2;
             this.rbtnHWSSVulnerableNo.TabStop = true;
             this.rbtnHWSSVulnerableNo.Text = "No";
@@ -1738,10 +1641,9 @@
             // 
             this.rbtnHWSSVulnerableYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtnHWSSVulnerableYes.AutoSize = true;
-            this.rbtnHWSSVulnerableYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnHWSSVulnerableYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnHWSSVulnerableYes.Location = new System.Drawing.Point(3, 1);
             this.rbtnHWSSVulnerableYes.Name = "rbtnHWSSVulnerableYes";
-            this.rbtnHWSSVulnerableYes.Size = new System.Drawing.Size(56, 21);
+            this.rbtnHWSSVulnerableYes.Size = new System.Drawing.Size(46, 17);
             this.rbtnHWSSVulnerableYes.TabIndex = 0;
             this.rbtnHWSSVulnerableYes.TabStop = true;
             this.rbtnHWSSVulnerableYes.Text = "Yes";
@@ -1752,19 +1654,17 @@
             this.pnlHWSSReferred.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlHWSSReferred.Controls.Add(this.rbtnHWSSReferredNo);
             this.pnlHWSSReferred.Controls.Add(this.rbtnHWSSReferredYes);
-            this.pnlHWSSReferred.Location = new System.Drawing.Point(684, 7);
-            this.pnlHWSSReferred.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlHWSSReferred.Location = new System.Drawing.Point(512, 5);
             this.pnlHWSSReferred.Name = "pnlHWSSReferred";
-            this.pnlHWSSReferred.Size = new System.Drawing.Size(152, 23);
+            this.pnlHWSSReferred.Size = new System.Drawing.Size(114, 19);
             this.pnlHWSSReferred.TabIndex = 35;
             // 
             // rbtnHWSSReferredNo
             // 
             this.rbtnHWSSReferredNo.AutoSize = true;
-            this.rbtnHWSSReferredNo.Location = new System.Drawing.Point(69, 1);
-            this.rbtnHWSSReferredNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnHWSSReferredNo.Location = new System.Drawing.Point(52, 1);
             this.rbtnHWSSReferredNo.Name = "rbtnHWSSReferredNo";
-            this.rbtnHWSSReferredNo.Size = new System.Drawing.Size(49, 21);
+            this.rbtnHWSSReferredNo.Size = new System.Drawing.Size(41, 17);
             this.rbtnHWSSReferredNo.TabIndex = 2;
             this.rbtnHWSSReferredNo.TabStop = true;
             this.rbtnHWSSReferredNo.Text = "No";
@@ -1775,10 +1675,9 @@
             // 
             this.rbtnHWSSReferredYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtnHWSSReferredYes.AutoSize = true;
-            this.rbtnHWSSReferredYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnHWSSReferredYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnHWSSReferredYes.Location = new System.Drawing.Point(3, 1);
             this.rbtnHWSSReferredYes.Name = "rbtnHWSSReferredYes";
-            this.rbtnHWSSReferredYes.Size = new System.Drawing.Size(56, 21);
+            this.rbtnHWSSReferredYes.Size = new System.Drawing.Size(46, 17);
             this.rbtnHWSSReferredYes.TabIndex = 0;
             this.rbtnHWSSReferredYes.TabStop = true;
             this.rbtnHWSSReferredYes.Text = "Yes";
@@ -1793,14 +1692,13 @@
             this.tlpDisplay19.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpDisplay19.ColumnCount = 1;
             this.tlpDisplay19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tlpDisplay19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpDisplay19.Controls.Add(this.lblHealthWaterSanitationShelterTitle, 0, 0);
-            this.tlpDisplay19.Location = new System.Drawing.Point(40, 1462);
-            this.tlpDisplay19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay19.Location = new System.Drawing.Point(30, 1188);
             this.tlpDisplay19.Name = "tlpDisplay19";
             this.tlpDisplay19.RowCount = 1;
             this.tlpDisplay19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay19.Size = new System.Drawing.Size(872, 37);
+            this.tlpDisplay19.Size = new System.Drawing.Size(654, 30);
             this.tlpDisplay19.TabIndex = 77;
             // 
             // lblHealthWaterSanitationShelterTitle
@@ -1809,10 +1707,9 @@
             this.lblHealthWaterSanitationShelterTitle.AutoSize = true;
             this.lblHealthWaterSanitationShelterTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHealthWaterSanitationShelterTitle.ForeColor = System.Drawing.Color.White;
-            this.lblHealthWaterSanitationShelterTitle.Location = new System.Drawing.Point(5, 10);
-            this.lblHealthWaterSanitationShelterTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHealthWaterSanitationShelterTitle.Location = new System.Drawing.Point(4, 8);
             this.lblHealthWaterSanitationShelterTitle.Name = "lblHealthWaterSanitationShelterTitle";
-            this.lblHealthWaterSanitationShelterTitle.Size = new System.Drawing.Size(349, 17);
+            this.lblHealthWaterSanitationShelterTitle.Size = new System.Drawing.Size(283, 13);
             this.lblHealthWaterSanitationShelterTitle.TabIndex = 1;
             this.lblHealthWaterSanitationShelterTitle.Text = "HEALTH, WATER, SANITATION AND SHELTER";
             // 
@@ -1823,10 +1720,10 @@
             this.tlpDisplay20.BackColor = System.Drawing.Color.White;
             this.tlpDisplay20.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpDisplay20.ColumnCount = 4;
-            this.tlpDisplay20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tlpDisplay20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tlpDisplay20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tlpDisplay20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 221F));
+            this.tlpDisplay20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tlpDisplay20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168F));
             this.tlpDisplay20.Controls.Add(this.pnlHWSSShelter, 2, 1);
             this.tlpDisplay20.Controls.Add(this.lbl09, 0, 2);
             this.tlpDisplay20.Controls.Add(this.lblHWSSWater, 1, 0);
@@ -1837,15 +1734,14 @@
             this.tlpDisplay20.Controls.Add(this.lbl07, 0, 0);
             this.tlpDisplay20.Controls.Add(this.lbl08, 0, 1);
             this.tlpDisplay20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tlpDisplay20.Location = new System.Drawing.Point(40, 1498);
-            this.tlpDisplay20.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay20.Location = new System.Drawing.Point(30, 1217);
             this.tlpDisplay20.Name = "tlpDisplay20";
             this.tlpDisplay20.RowCount = 3;
             this.tlpDisplay20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22F));
             this.tlpDisplay20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22F));
             this.tlpDisplay20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22F));
             this.tlpDisplay20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.99999F));
-            this.tlpDisplay20.Size = new System.Drawing.Size(872, 148);
+            this.tlpDisplay20.Size = new System.Drawing.Size(654, 120);
             this.tlpDisplay20.TabIndex = 76;
             // 
             // pnlHWSSShelter
@@ -1853,19 +1749,17 @@
             this.pnlHWSSShelter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlHWSSShelter.Controls.Add(this.rbtnHWSSShelterNo);
             this.pnlHWSSShelter.Controls.Add(this.rbtnHWSSShelterYes);
-            this.pnlHWSSShelter.Location = new System.Drawing.Point(473, 62);
-            this.pnlHWSSShelter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlHWSSShelter.Location = new System.Drawing.Point(352, 49);
             this.pnlHWSSShelter.Name = "pnlHWSSShelter";
-            this.pnlHWSSShelter.Size = new System.Drawing.Size(152, 23);
+            this.pnlHWSSShelter.Size = new System.Drawing.Size(114, 19);
             this.pnlHWSSShelter.TabIndex = 35;
             // 
             // rbtnHWSSShelterNo
             // 
             this.rbtnHWSSShelterNo.AutoSize = true;
-            this.rbtnHWSSShelterNo.Location = new System.Drawing.Point(69, 1);
-            this.rbtnHWSSShelterNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnHWSSShelterNo.Location = new System.Drawing.Point(52, 1);
             this.rbtnHWSSShelterNo.Name = "rbtnHWSSShelterNo";
-            this.rbtnHWSSShelterNo.Size = new System.Drawing.Size(47, 21);
+            this.rbtnHWSSShelterNo.Size = new System.Drawing.Size(39, 17);
             this.rbtnHWSSShelterNo.TabIndex = 2;
             this.rbtnHWSSShelterNo.TabStop = true;
             this.rbtnHWSSShelterNo.Text = "No";
@@ -1876,10 +1770,9 @@
             // 
             this.rbtnHWSSShelterYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtnHWSSShelterYes.AutoSize = true;
-            this.rbtnHWSSShelterYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnHWSSShelterYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnHWSSShelterYes.Location = new System.Drawing.Point(3, 1);
             this.rbtnHWSSShelterYes.Name = "rbtnHWSSShelterYes";
-            this.rbtnHWSSShelterYes.Size = new System.Drawing.Size(53, 21);
+            this.rbtnHWSSShelterYes.Size = new System.Drawing.Size(43, 17);
             this.rbtnHWSSShelterYes.TabIndex = 0;
             this.rbtnHWSSShelterYes.TabStop = true;
             this.rbtnHWSSShelterYes.Text = "Yes";
@@ -1889,10 +1782,9 @@
             // 
             this.lbl09.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl09.AutoSize = true;
-            this.lbl09.Location = new System.Drawing.Point(17, 114);
-            this.lbl09.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl09.Location = new System.Drawing.Point(13, 92);
             this.lbl09.Name = "lbl09";
-            this.lbl09.Size = new System.Drawing.Size(20, 17);
+            this.lbl09.Size = new System.Drawing.Size(16, 13);
             this.lbl09.TabIndex = 38;
             this.lbl09.Text = "9.";
             // 
@@ -1902,10 +1794,9 @@
             this.lblHWSSWater.AutoSize = true;
             this.lblHWSSWater.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHWSSWater.ForeColor = System.Drawing.Color.Black;
-            this.lblHWSSWater.Location = new System.Drawing.Point(59, 8);
-            this.lblHWSSWater.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHWSSWater.Location = new System.Drawing.Point(45, 7);
             this.lblHWSSWater.Name = "lblHWSSWater";
-            this.lblHWSSWater.Size = new System.Drawing.Size(368, 34);
+            this.lblHWSSWater.Size = new System.Drawing.Size(277, 26);
             this.lblHWSSWater.TabIndex = 1;
             this.lblHWSSWater.Text = "Does the household have a source of water for domestic use where they can fetch i" +
     "t to/from within half an hour?";
@@ -1915,19 +1806,17 @@
             this.pnlHWSSWater.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlHWSSWater.Controls.Add(this.rbtnHWSSWaterNo);
             this.pnlHWSSWater.Controls.Add(this.rbtnHWSSWaterYes);
-            this.pnlHWSSWater.Location = new System.Drawing.Point(473, 13);
-            this.pnlHWSSWater.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlHWSSWater.Location = new System.Drawing.Point(352, 10);
             this.pnlHWSSWater.Name = "pnlHWSSWater";
-            this.pnlHWSSWater.Size = new System.Drawing.Size(152, 23);
+            this.pnlHWSSWater.Size = new System.Drawing.Size(114, 19);
             this.pnlHWSSWater.TabIndex = 34;
             // 
             // rbtnHWSSWaterNo
             // 
             this.rbtnHWSSWaterNo.AutoSize = true;
-            this.rbtnHWSSWaterNo.Location = new System.Drawing.Point(69, 1);
-            this.rbtnHWSSWaterNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnHWSSWaterNo.Location = new System.Drawing.Point(52, 1);
             this.rbtnHWSSWaterNo.Name = "rbtnHWSSWaterNo";
-            this.rbtnHWSSWaterNo.Size = new System.Drawing.Size(47, 21);
+            this.rbtnHWSSWaterNo.Size = new System.Drawing.Size(39, 17);
             this.rbtnHWSSWaterNo.TabIndex = 2;
             this.rbtnHWSSWaterNo.TabStop = true;
             this.rbtnHWSSWaterNo.Text = "No";
@@ -1938,10 +1827,9 @@
             // 
             this.rbtnHWSSWaterYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtnHWSSWaterYes.AutoSize = true;
-            this.rbtnHWSSWaterYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnHWSSWaterYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnHWSSWaterYes.Location = new System.Drawing.Point(3, 1);
             this.rbtnHWSSWaterYes.Name = "rbtnHWSSWaterYes";
-            this.rbtnHWSSWaterYes.Size = new System.Drawing.Size(53, 21);
+            this.rbtnHWSSWaterYes.Size = new System.Drawing.Size(43, 17);
             this.rbtnHWSSWaterYes.TabIndex = 0;
             this.rbtnHWSSWaterYes.TabStop = true;
             this.rbtnHWSSWaterYes.Text = "Yes";
@@ -1953,10 +1841,9 @@
             this.lblHWSSShelter.AutoSize = true;
             this.lblHWSSShelter.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHWSSShelter.ForeColor = System.Drawing.Color.Black;
-            this.lblHWSSShelter.Location = new System.Drawing.Point(59, 57);
-            this.lblHWSSShelter.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHWSSShelter.Location = new System.Drawing.Point(45, 46);
             this.lblHWSSShelter.Name = "lblHWSSShelter";
-            this.lblHWSSShelter.Size = new System.Drawing.Size(385, 34);
+            this.lblHWSSShelter.Size = new System.Drawing.Size(285, 26);
             this.lblHWSSShelter.TabIndex = 39;
             this.lblHWSSShelter.Text = "Does the household have a stable shelter that is adequate, safe, and dry?  [pleas" +
     "e observe]";
@@ -1967,10 +1854,9 @@
             this.lblHWSSHIVStatus.AutoSize = true;
             this.lblHWSSHIVStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHWSSHIVStatus.ForeColor = System.Drawing.Color.Black;
-            this.lblHWSSHIVStatus.Location = new System.Drawing.Point(59, 106);
-            this.lblHWSSHIVStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHWSSHIVStatus.Location = new System.Drawing.Point(45, 86);
             this.lblHWSSHIVStatus.Name = "lblHWSSHIVStatus";
-            this.lblHWSSHIVStatus.Size = new System.Drawing.Size(379, 34);
+            this.lblHWSSHIVStatus.Size = new System.Drawing.Size(284, 26);
             this.lblHWSSHIVStatus.TabIndex = 41;
             this.lblHWSSHIVStatus.Text = "Does the caregiver know the HIV status for ALL children in the household?";
             // 
@@ -1979,19 +1865,17 @@
             this.pnlHWSSHIVStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlHWSSHIVStatus.Controls.Add(this.rbtnHWSSHIVStatusNo);
             this.pnlHWSSHIVStatus.Controls.Add(this.rbtnHWSSHIVStatusYes);
-            this.pnlHWSSHIVStatus.Location = new System.Drawing.Point(473, 111);
-            this.pnlHWSSHIVStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlHWSSHIVStatus.Location = new System.Drawing.Point(352, 89);
             this.pnlHWSSHIVStatus.Name = "pnlHWSSHIVStatus";
-            this.pnlHWSSHIVStatus.Size = new System.Drawing.Size(152, 23);
+            this.pnlHWSSHIVStatus.Size = new System.Drawing.Size(114, 19);
             this.pnlHWSSHIVStatus.TabIndex = 33;
             // 
             // rbtnHWSSHIVStatusNo
             // 
             this.rbtnHWSSHIVStatusNo.AutoSize = true;
-            this.rbtnHWSSHIVStatusNo.Location = new System.Drawing.Point(69, 1);
-            this.rbtnHWSSHIVStatusNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnHWSSHIVStatusNo.Location = new System.Drawing.Point(52, 1);
             this.rbtnHWSSHIVStatusNo.Name = "rbtnHWSSHIVStatusNo";
-            this.rbtnHWSSHIVStatusNo.Size = new System.Drawing.Size(47, 21);
+            this.rbtnHWSSHIVStatusNo.Size = new System.Drawing.Size(39, 17);
             this.rbtnHWSSHIVStatusNo.TabIndex = 2;
             this.rbtnHWSSHIVStatusNo.TabStop = true;
             this.rbtnHWSSHIVStatusNo.Text = "No";
@@ -2002,10 +1886,9 @@
             // 
             this.rbtnHWSSHIVStatusYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtnHWSSHIVStatusYes.AutoSize = true;
-            this.rbtnHWSSHIVStatusYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnHWSSHIVStatusYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnHWSSHIVStatusYes.Location = new System.Drawing.Point(3, 1);
             this.rbtnHWSSHIVStatusYes.Name = "rbtnHWSSHIVStatusYes";
-            this.rbtnHWSSHIVStatusYes.Size = new System.Drawing.Size(53, 21);
+            this.rbtnHWSSHIVStatusYes.Size = new System.Drawing.Size(43, 17);
             this.rbtnHWSSHIVStatusYes.TabIndex = 0;
             this.rbtnHWSSHIVStatusYes.TabStop = true;
             this.rbtnHWSSHIVStatusYes.Text = "Yes";
@@ -2015,10 +1898,9 @@
             // 
             this.lbl07.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl07.AutoSize = true;
-            this.lbl07.Location = new System.Drawing.Point(17, 16);
-            this.lbl07.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl07.Location = new System.Drawing.Point(13, 13);
             this.lbl07.Name = "lbl07";
-            this.lbl07.Size = new System.Drawing.Size(20, 17);
+            this.lbl07.Size = new System.Drawing.Size(16, 13);
             this.lbl07.TabIndex = 35;
             this.lbl07.Text = "7.";
             // 
@@ -2026,10 +1908,9 @@
             // 
             this.lbl08.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl08.AutoSize = true;
-            this.lbl08.Location = new System.Drawing.Point(17, 65);
-            this.lbl08.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl08.Location = new System.Drawing.Point(13, 52);
             this.lbl08.Name = "lbl08";
-            this.lbl08.Size = new System.Drawing.Size(20, 17);
+            this.lbl08.Size = new System.Drawing.Size(16, 13);
             this.lbl08.TabIndex = 37;
             this.lbl08.Text = "8.";
             // 
@@ -2041,18 +1922,17 @@
             this.tlpDisplay18.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpDisplay18.ColumnCount = 3;
             this.tlpDisplay18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tlpDisplay18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 221F));
+            this.tlpDisplay18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tlpDisplay18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168F));
             this.tlpDisplay18.Controls.Add(this.lblFSNVulnerable, 0, 0);
             this.tlpDisplay18.Controls.Add(this.pnlFSNVulnerable, 1, 0);
             this.tlpDisplay18.Controls.Add(this.pnlFSNReferred, 2, 0);
             this.tlpDisplay18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tlpDisplay18.Location = new System.Drawing.Point(40, 1426);
-            this.tlpDisplay18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay18.Location = new System.Drawing.Point(30, 1159);
             this.tlpDisplay18.Name = "tlpDisplay18";
             this.tlpDisplay18.RowCount = 1;
             this.tlpDisplay18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay18.Size = new System.Drawing.Size(872, 37);
+            this.tlpDisplay18.Size = new System.Drawing.Size(654, 30);
             this.tlpDisplay18.TabIndex = 75;
             // 
             // lblFSNVulnerable
@@ -2061,10 +1941,9 @@
             this.lblFSNVulnerable.AutoSize = true;
             this.lblFSNVulnerable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFSNVulnerable.ForeColor = System.Drawing.Color.Black;
-            this.lblFSNVulnerable.Location = new System.Drawing.Point(5, 1);
-            this.lblFSNVulnerable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFSNVulnerable.Location = new System.Drawing.Point(4, 2);
             this.lblFSNVulnerable.Name = "lblFSNVulnerable";
-            this.lblFSNVulnerable.Size = new System.Drawing.Size(412, 34);
+            this.lblFSNVulnerable.Size = new System.Drawing.Size(323, 26);
             this.lblFSNVulnerable.TabIndex = 1;
             this.lblFSNVulnerable.Text = "Food Security Vulnerable? (if  #5  is “no”or  #6 is “yes” check “yes”)";
             // 
@@ -2074,19 +1953,17 @@
             this.pnlFSNVulnerable.Controls.Add(this.rbtnFSNVulnerableNo);
             this.pnlFSNVulnerable.Controls.Add(this.rbtnFSNVulnerableYes);
             this.pnlFSNVulnerable.Enabled = false;
-            this.pnlFSNVulnerable.Location = new System.Drawing.Point(473, 7);
-            this.pnlFSNVulnerable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlFSNVulnerable.Location = new System.Drawing.Point(352, 5);
             this.pnlFSNVulnerable.Name = "pnlFSNVulnerable";
-            this.pnlFSNVulnerable.Size = new System.Drawing.Size(152, 23);
+            this.pnlFSNVulnerable.Size = new System.Drawing.Size(114, 19);
             this.pnlFSNVulnerable.TabIndex = 34;
             // 
             // rbtnFSNVulnerableNo
             // 
             this.rbtnFSNVulnerableNo.AutoSize = true;
-            this.rbtnFSNVulnerableNo.Location = new System.Drawing.Point(69, 1);
-            this.rbtnFSNVulnerableNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnFSNVulnerableNo.Location = new System.Drawing.Point(52, 1);
             this.rbtnFSNVulnerableNo.Name = "rbtnFSNVulnerableNo";
-            this.rbtnFSNVulnerableNo.Size = new System.Drawing.Size(49, 21);
+            this.rbtnFSNVulnerableNo.Size = new System.Drawing.Size(41, 17);
             this.rbtnFSNVulnerableNo.TabIndex = 2;
             this.rbtnFSNVulnerableNo.TabStop = true;
             this.rbtnFSNVulnerableNo.Text = "No";
@@ -2096,10 +1973,9 @@
             // 
             this.rbtnFSNVulnerableYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtnFSNVulnerableYes.AutoSize = true;
-            this.rbtnFSNVulnerableYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnFSNVulnerableYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnFSNVulnerableYes.Location = new System.Drawing.Point(3, 1);
             this.rbtnFSNVulnerableYes.Name = "rbtnFSNVulnerableYes";
-            this.rbtnFSNVulnerableYes.Size = new System.Drawing.Size(56, 21);
+            this.rbtnFSNVulnerableYes.Size = new System.Drawing.Size(46, 17);
             this.rbtnFSNVulnerableYes.TabIndex = 0;
             this.rbtnFSNVulnerableYes.TabStop = true;
             this.rbtnFSNVulnerableYes.Text = "Yes";
@@ -2110,19 +1986,17 @@
             this.pnlFSNReferred.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlFSNReferred.Controls.Add(this.rbtnFSNReferredNo);
             this.pnlFSNReferred.Controls.Add(this.rbtnFSNReferredYes);
-            this.pnlFSNReferred.Location = new System.Drawing.Point(684, 7);
-            this.pnlFSNReferred.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlFSNReferred.Location = new System.Drawing.Point(512, 5);
             this.pnlFSNReferred.Name = "pnlFSNReferred";
-            this.pnlFSNReferred.Size = new System.Drawing.Size(152, 23);
+            this.pnlFSNReferred.Size = new System.Drawing.Size(114, 19);
             this.pnlFSNReferred.TabIndex = 35;
             // 
             // rbtnFSNReferredNo
             // 
             this.rbtnFSNReferredNo.AutoSize = true;
-            this.rbtnFSNReferredNo.Location = new System.Drawing.Point(69, 1);
-            this.rbtnFSNReferredNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnFSNReferredNo.Location = new System.Drawing.Point(52, 1);
             this.rbtnFSNReferredNo.Name = "rbtnFSNReferredNo";
-            this.rbtnFSNReferredNo.Size = new System.Drawing.Size(49, 21);
+            this.rbtnFSNReferredNo.Size = new System.Drawing.Size(41, 17);
             this.rbtnFSNReferredNo.TabIndex = 2;
             this.rbtnFSNReferredNo.TabStop = true;
             this.rbtnFSNReferredNo.Text = "No";
@@ -2133,10 +2007,9 @@
             // 
             this.rbtnFSNReferredYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtnFSNReferredYes.AutoSize = true;
-            this.rbtnFSNReferredYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnFSNReferredYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnFSNReferredYes.Location = new System.Drawing.Point(3, 1);
             this.rbtnFSNReferredYes.Name = "rbtnFSNReferredYes";
-            this.rbtnFSNReferredYes.Size = new System.Drawing.Size(56, 21);
+            this.rbtnFSNReferredYes.Size = new System.Drawing.Size(46, 17);
             this.rbtnFSNReferredYes.TabIndex = 0;
             this.rbtnFSNReferredYes.TabStop = true;
             this.rbtnFSNReferredYes.Text = "Yes";
@@ -2150,10 +2023,10 @@
             this.tlpDisplay17.BackColor = System.Drawing.Color.White;
             this.tlpDisplay17.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpDisplay17.ColumnCount = 4;
-            this.tlpDisplay17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tlpDisplay17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tlpDisplay17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tlpDisplay17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 221F));
+            this.tlpDisplay17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tlpDisplay17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168F));
             this.tlpDisplay17.Controls.Add(this.lbl05, 0, 0);
             this.tlpDisplay17.Controls.Add(this.lblFSNMeals, 1, 0);
             this.tlpDisplay17.Controls.Add(this.pnlFSNMeals, 2, 0);
@@ -2161,23 +2034,21 @@
             this.tlpDisplay17.Controls.Add(this.lblFSNMalnourished, 1, 1);
             this.tlpDisplay17.Controls.Add(this.pnlFSNMalnourished, 2, 1);
             this.tlpDisplay17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tlpDisplay17.Location = new System.Drawing.Point(40, 1298);
-            this.tlpDisplay17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay17.Location = new System.Drawing.Point(30, 1055);
             this.tlpDisplay17.Name = "tlpDisplay17";
             this.tlpDisplay17.RowCount = 2;
             this.tlpDisplay17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tlpDisplay17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tlpDisplay17.Size = new System.Drawing.Size(872, 129);
+            this.tlpDisplay17.Size = new System.Drawing.Size(654, 105);
             this.tlpDisplay17.TabIndex = 74;
             // 
             // lbl05
             // 
             this.lbl05.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl05.AutoSize = true;
-            this.lbl05.Location = new System.Drawing.Point(17, 17);
-            this.lbl05.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl05.Location = new System.Drawing.Point(13, 14);
             this.lbl05.Name = "lbl05";
-            this.lbl05.Size = new System.Drawing.Size(20, 17);
+            this.lbl05.Size = new System.Drawing.Size(16, 13);
             this.lbl05.TabIndex = 32;
             this.lbl05.Text = "5.";
             // 
@@ -2187,10 +2058,9 @@
             this.lblFSNMeals.AutoSize = true;
             this.lblFSNMeals.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFSNMeals.ForeColor = System.Drawing.Color.Black;
-            this.lblFSNMeals.Location = new System.Drawing.Point(59, 9);
-            this.lblFSNMeals.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFSNMeals.Location = new System.Drawing.Point(45, 8);
             this.lblFSNMeals.Name = "lblFSNMeals";
-            this.lblFSNMeals.Size = new System.Drawing.Size(383, 34);
+            this.lblFSNMeals.Size = new System.Drawing.Size(266, 26);
             this.lblFSNMeals.TabIndex = 1;
             this.lblFSNMeals.Text = "Has the household eaten at least 2 meals a day, every day, for the last month?";
             // 
@@ -2199,19 +2069,17 @@
             this.pnlFSNMeals.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlFSNMeals.Controls.Add(this.rbtnFSNMealsNo);
             this.pnlFSNMeals.Controls.Add(this.rbtnFSNMealsYes);
-            this.pnlFSNMeals.Location = new System.Drawing.Point(473, 14);
-            this.pnlFSNMeals.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlFSNMeals.Location = new System.Drawing.Point(352, 11);
             this.pnlFSNMeals.Name = "pnlFSNMeals";
-            this.pnlFSNMeals.Size = new System.Drawing.Size(152, 23);
+            this.pnlFSNMeals.Size = new System.Drawing.Size(114, 19);
             this.pnlFSNMeals.TabIndex = 34;
             // 
             // rbtnFSNMealsNo
             // 
             this.rbtnFSNMealsNo.AutoSize = true;
-            this.rbtnFSNMealsNo.Location = new System.Drawing.Point(69, 1);
-            this.rbtnFSNMealsNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnFSNMealsNo.Location = new System.Drawing.Point(52, 1);
             this.rbtnFSNMealsNo.Name = "rbtnFSNMealsNo";
-            this.rbtnFSNMealsNo.Size = new System.Drawing.Size(47, 21);
+            this.rbtnFSNMealsNo.Size = new System.Drawing.Size(39, 17);
             this.rbtnFSNMealsNo.TabIndex = 2;
             this.rbtnFSNMealsNo.TabStop = true;
             this.rbtnFSNMealsNo.Text = "No";
@@ -2222,10 +2090,9 @@
             // 
             this.rbtnFSNMealsYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtnFSNMealsYes.AutoSize = true;
-            this.rbtnFSNMealsYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnFSNMealsYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnFSNMealsYes.Location = new System.Drawing.Point(3, 1);
             this.rbtnFSNMealsYes.Name = "rbtnFSNMealsYes";
-            this.rbtnFSNMealsYes.Size = new System.Drawing.Size(53, 21);
+            this.rbtnFSNMealsYes.Size = new System.Drawing.Size(43, 17);
             this.rbtnFSNMealsYes.TabIndex = 0;
             this.rbtnFSNMealsYes.TabStop = true;
             this.rbtnFSNMealsYes.Text = "Yes";
@@ -2235,10 +2102,9 @@
             // 
             this.lbl06.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl06.AutoSize = true;
-            this.lbl06.Location = new System.Drawing.Point(17, 81);
-            this.lbl06.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl06.Location = new System.Drawing.Point(13, 66);
             this.lbl06.Name = "lbl06";
-            this.lbl06.Size = new System.Drawing.Size(20, 17);
+            this.lbl06.Size = new System.Drawing.Size(16, 13);
             this.lbl06.TabIndex = 32;
             this.lbl06.Text = "6.";
             // 
@@ -2248,10 +2114,9 @@
             this.lblFSNMalnourished.AutoSize = true;
             this.lblFSNMalnourished.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFSNMalnourished.ForeColor = System.Drawing.Color.Black;
-            this.lblFSNMalnourished.Location = new System.Drawing.Point(59, 56);
-            this.lblFSNMalnourished.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFSNMalnourished.Location = new System.Drawing.Point(45, 47);
             this.lblFSNMalnourished.Name = "lblFSNMalnourished";
-            this.lblFSNMalnourished.Size = new System.Drawing.Size(385, 68);
+            this.lblFSNMalnourished.Size = new System.Drawing.Size(285, 52);
             this.lblFSNMalnourished.TabIndex = 40;
             this.lblFSNMalnourished.Text = "In the last month, did any child in the household go a whole day and night withou" +
     "t eating anything because there wasn’t enough to eat? [In case of visibly malnou" +
@@ -2262,19 +2127,17 @@
             this.pnlFSNMalnourished.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlFSNMalnourished.Controls.Add(this.rbtnFSNMalnourishedNo);
             this.pnlFSNMalnourished.Controls.Add(this.rbtnFSNMalnourishedYes);
-            this.pnlFSNMalnourished.Location = new System.Drawing.Point(473, 78);
-            this.pnlFSNMalnourished.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlFSNMalnourished.Location = new System.Drawing.Point(352, 63);
             this.pnlFSNMalnourished.Name = "pnlFSNMalnourished";
-            this.pnlFSNMalnourished.Size = new System.Drawing.Size(152, 23);
+            this.pnlFSNMalnourished.Size = new System.Drawing.Size(114, 19);
             this.pnlFSNMalnourished.TabIndex = 42;
             // 
             // rbtnFSNMalnourishedNo
             // 
             this.rbtnFSNMalnourishedNo.AutoSize = true;
-            this.rbtnFSNMalnourishedNo.Location = new System.Drawing.Point(69, 1);
-            this.rbtnFSNMalnourishedNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnFSNMalnourishedNo.Location = new System.Drawing.Point(52, 1);
             this.rbtnFSNMalnourishedNo.Name = "rbtnFSNMalnourishedNo";
-            this.rbtnFSNMalnourishedNo.Size = new System.Drawing.Size(47, 21);
+            this.rbtnFSNMalnourishedNo.Size = new System.Drawing.Size(39, 17);
             this.rbtnFSNMalnourishedNo.TabIndex = 2;
             this.rbtnFSNMalnourishedNo.TabStop = true;
             this.rbtnFSNMalnourishedNo.Text = "No";
@@ -2284,10 +2147,9 @@
             // 
             this.rbtnFSNMalnourishedYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtnFSNMalnourishedYes.AutoSize = true;
-            this.rbtnFSNMalnourishedYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnFSNMalnourishedYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnFSNMalnourishedYes.Location = new System.Drawing.Point(3, 1);
             this.rbtnFSNMalnourishedYes.Name = "rbtnFSNMalnourishedYes";
-            this.rbtnFSNMalnourishedYes.Size = new System.Drawing.Size(53, 21);
+            this.rbtnFSNMalnourishedYes.Size = new System.Drawing.Size(43, 17);
             this.rbtnFSNMalnourishedYes.TabIndex = 0;
             this.rbtnFSNMalnourishedYes.TabStop = true;
             this.rbtnFSNMalnourishedYes.Text = "Yes";
@@ -2302,14 +2164,13 @@
             this.tlpDisplay16.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpDisplay16.ColumnCount = 1;
             this.tlpDisplay16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tlpDisplay16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpDisplay16.Controls.Add(this.lblFoodSecurityAndNutritionTitle, 0, 0);
-            this.tlpDisplay16.Location = new System.Drawing.Point(40, 1263);
-            this.tlpDisplay16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay16.Location = new System.Drawing.Point(30, 1026);
             this.tlpDisplay16.Name = "tlpDisplay16";
             this.tlpDisplay16.RowCount = 1;
             this.tlpDisplay16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay16.Size = new System.Drawing.Size(872, 37);
+            this.tlpDisplay16.Size = new System.Drawing.Size(654, 30);
             this.tlpDisplay16.TabIndex = 73;
             // 
             // lblFoodSecurityAndNutritionTitle
@@ -2318,10 +2179,9 @@
             this.lblFoodSecurityAndNutritionTitle.AutoSize = true;
             this.lblFoodSecurityAndNutritionTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFoodSecurityAndNutritionTitle.ForeColor = System.Drawing.Color.White;
-            this.lblFoodSecurityAndNutritionTitle.Location = new System.Drawing.Point(5, 10);
-            this.lblFoodSecurityAndNutritionTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFoodSecurityAndNutritionTitle.Location = new System.Drawing.Point(4, 8);
             this.lblFoodSecurityAndNutritionTitle.Name = "lblFoodSecurityAndNutritionTitle";
-            this.lblFoodSecurityAndNutritionTitle.Size = new System.Drawing.Size(259, 17);
+            this.lblFoodSecurityAndNutritionTitle.Size = new System.Drawing.Size(210, 13);
             this.lblFoodSecurityAndNutritionTitle.TabIndex = 1;
             this.lblFoodSecurityAndNutritionTitle.Text = "FOOD SECURITY AND NUTRITION";
             // 
@@ -2333,18 +2193,17 @@
             this.tlpDisplay15.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpDisplay15.ColumnCount = 3;
             this.tlpDisplay15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tlpDisplay15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 221F));
+            this.tlpDisplay15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tlpDisplay15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168F));
             this.tlpDisplay15.Controls.Add(this.lblESVulnerable, 0, 0);
             this.tlpDisplay15.Controls.Add(this.pnlESVulnerable, 1, 0);
             this.tlpDisplay15.Controls.Add(this.pnlESReferred, 2, 0);
             this.tlpDisplay15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tlpDisplay15.Location = new System.Drawing.Point(40, 1227);
-            this.tlpDisplay15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay15.Location = new System.Drawing.Point(30, 997);
             this.tlpDisplay15.Name = "tlpDisplay15";
             this.tlpDisplay15.RowCount = 1;
             this.tlpDisplay15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay15.Size = new System.Drawing.Size(872, 37);
+            this.tlpDisplay15.Size = new System.Drawing.Size(654, 30);
             this.tlpDisplay15.TabIndex = 72;
             // 
             // lblESVulnerable
@@ -2353,10 +2212,9 @@
             this.lblESVulnerable.AutoSize = true;
             this.lblESVulnerable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblESVulnerable.ForeColor = System.Drawing.Color.Black;
-            this.lblESVulnerable.Location = new System.Drawing.Point(5, 1);
-            this.lblESVulnerable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblESVulnerable.Location = new System.Drawing.Point(4, 2);
             this.lblESVulnerable.Name = "lblESVulnerable";
-            this.lblESVulnerable.Size = new System.Drawing.Size(432, 34);
+            this.lblESVulnerable.Size = new System.Drawing.Size(301, 26);
             this.lblESVulnerable.TabIndex = 1;
             this.lblESVulnerable.Text = "ES Vulnerable? (if #1 or 4 is yes, or #2 or #3 is no, check yes)";
             // 
@@ -2366,19 +2224,17 @@
             this.pnlESVulnerable.Controls.Add(this.rbtnESVulnerableNo);
             this.pnlESVulnerable.Controls.Add(this.rbtnESVulnerableYes);
             this.pnlESVulnerable.Enabled = false;
-            this.pnlESVulnerable.Location = new System.Drawing.Point(473, 7);
-            this.pnlESVulnerable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlESVulnerable.Location = new System.Drawing.Point(352, 5);
             this.pnlESVulnerable.Name = "pnlESVulnerable";
-            this.pnlESVulnerable.Size = new System.Drawing.Size(152, 23);
+            this.pnlESVulnerable.Size = new System.Drawing.Size(114, 19);
             this.pnlESVulnerable.TabIndex = 34;
             // 
             // rbtnESVulnerableNo
             // 
             this.rbtnESVulnerableNo.AutoSize = true;
-            this.rbtnESVulnerableNo.Location = new System.Drawing.Point(69, 1);
-            this.rbtnESVulnerableNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnESVulnerableNo.Location = new System.Drawing.Point(52, 1);
             this.rbtnESVulnerableNo.Name = "rbtnESVulnerableNo";
-            this.rbtnESVulnerableNo.Size = new System.Drawing.Size(49, 21);
+            this.rbtnESVulnerableNo.Size = new System.Drawing.Size(41, 17);
             this.rbtnESVulnerableNo.TabIndex = 2;
             this.rbtnESVulnerableNo.TabStop = true;
             this.rbtnESVulnerableNo.Text = "No";
@@ -2388,10 +2244,9 @@
             // 
             this.rbtnESVulnerableYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtnESVulnerableYes.AutoSize = true;
-            this.rbtnESVulnerableYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnESVulnerableYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnESVulnerableYes.Location = new System.Drawing.Point(3, 1);
             this.rbtnESVulnerableYes.Name = "rbtnESVulnerableYes";
-            this.rbtnESVulnerableYes.Size = new System.Drawing.Size(56, 21);
+            this.rbtnESVulnerableYes.Size = new System.Drawing.Size(46, 17);
             this.rbtnESVulnerableYes.TabIndex = 0;
             this.rbtnESVulnerableYes.TabStop = true;
             this.rbtnESVulnerableYes.Text = "Yes";
@@ -2402,19 +2257,17 @@
             this.pnlESReferred.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlESReferred.Controls.Add(this.rbtnESReferredNo);
             this.pnlESReferred.Controls.Add(this.rbtnESReferredYes);
-            this.pnlESReferred.Location = new System.Drawing.Point(684, 7);
-            this.pnlESReferred.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlESReferred.Location = new System.Drawing.Point(512, 5);
             this.pnlESReferred.Name = "pnlESReferred";
-            this.pnlESReferred.Size = new System.Drawing.Size(152, 23);
+            this.pnlESReferred.Size = new System.Drawing.Size(114, 19);
             this.pnlESReferred.TabIndex = 35;
             // 
             // rbtnESReferredNo
             // 
             this.rbtnESReferredNo.AutoSize = true;
-            this.rbtnESReferredNo.Location = new System.Drawing.Point(69, 1);
-            this.rbtnESReferredNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnESReferredNo.Location = new System.Drawing.Point(52, 1);
             this.rbtnESReferredNo.Name = "rbtnESReferredNo";
-            this.rbtnESReferredNo.Size = new System.Drawing.Size(49, 21);
+            this.rbtnESReferredNo.Size = new System.Drawing.Size(41, 17);
             this.rbtnESReferredNo.TabIndex = 2;
             this.rbtnESReferredNo.TabStop = true;
             this.rbtnESReferredNo.Text = "No";
@@ -2425,10 +2278,9 @@
             // 
             this.rbtnESReferredYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtnESReferredYes.AutoSize = true;
-            this.rbtnESReferredYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnESReferredYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnESReferredYes.Location = new System.Drawing.Point(3, 1);
             this.rbtnESReferredYes.Name = "rbtnESReferredYes";
-            this.rbtnESReferredYes.Size = new System.Drawing.Size(56, 21);
+            this.rbtnESReferredYes.Size = new System.Drawing.Size(46, 17);
             this.rbtnESReferredYes.TabIndex = 0;
             this.rbtnESReferredYes.TabStop = true;
             this.rbtnESReferredYes.Text = "Yes";
@@ -2442,10 +2294,10 @@
             this.tlpDisplay14.BackColor = System.Drawing.Color.White;
             this.tlpDisplay14.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpDisplay14.ColumnCount = 4;
-            this.tlpDisplay14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tlpDisplay14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tlpDisplay14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tlpDisplay14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 221F));
+            this.tlpDisplay14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tlpDisplay14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168F));
             this.tlpDisplay14.Controls.Add(this.pnlESEmployment, 2, 1);
             this.tlpDisplay14.Controls.Add(this.lbl04, 0, 3);
             this.tlpDisplay14.Controls.Add(this.lbl01, 0, 0);
@@ -2459,15 +2311,14 @@
             this.tlpDisplay14.Controls.Add(this.pnlESExpense, 2, 2);
             this.tlpDisplay14.Controls.Add(this.pnlESDisability, 2, 3);
             this.tlpDisplay14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tlpDisplay14.Location = new System.Drawing.Point(40, 933);
-            this.tlpDisplay14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay14.Location = new System.Drawing.Point(30, 758);
             this.tlpDisplay14.Name = "tlpDisplay14";
             this.tlpDisplay14.RowCount = 4;
             this.tlpDisplay14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tlpDisplay14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tlpDisplay14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpDisplay14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tlpDisplay14.Size = new System.Drawing.Size(872, 295);
+            this.tlpDisplay14.Size = new System.Drawing.Size(654, 240);
             this.tlpDisplay14.TabIndex = 71;
             // 
             // pnlESEmployment
@@ -2475,19 +2326,17 @@
             this.pnlESEmployment.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlESEmployment.Controls.Add(this.rbtnESEmploymentNo);
             this.pnlESEmployment.Controls.Add(this.rbtnESEmploymentYes);
-            this.pnlESEmployment.Location = new System.Drawing.Point(473, 77);
-            this.pnlESEmployment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlESEmployment.Location = new System.Drawing.Point(352, 62);
             this.pnlESEmployment.Name = "pnlESEmployment";
-            this.pnlESEmployment.Size = new System.Drawing.Size(152, 23);
+            this.pnlESEmployment.Size = new System.Drawing.Size(114, 19);
             this.pnlESEmployment.TabIndex = 35;
             // 
             // rbtnESEmploymentNo
             // 
             this.rbtnESEmploymentNo.AutoSize = true;
-            this.rbtnESEmploymentNo.Location = new System.Drawing.Point(69, 1);
-            this.rbtnESEmploymentNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnESEmploymentNo.Location = new System.Drawing.Point(52, 1);
             this.rbtnESEmploymentNo.Name = "rbtnESEmploymentNo";
-            this.rbtnESEmploymentNo.Size = new System.Drawing.Size(47, 21);
+            this.rbtnESEmploymentNo.Size = new System.Drawing.Size(39, 17);
             this.rbtnESEmploymentNo.TabIndex = 2;
             this.rbtnESEmploymentNo.TabStop = true;
             this.rbtnESEmploymentNo.Text = "No";
@@ -2498,10 +2347,9 @@
             // 
             this.rbtnESEmploymentYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtnESEmploymentYes.AutoSize = true;
-            this.rbtnESEmploymentYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnESEmploymentYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnESEmploymentYes.Location = new System.Drawing.Point(3, 1);
             this.rbtnESEmploymentYes.Name = "rbtnESEmploymentYes";
-            this.rbtnESEmploymentYes.Size = new System.Drawing.Size(53, 21);
+            this.rbtnESEmploymentYes.Size = new System.Drawing.Size(43, 17);
             this.rbtnESEmploymentYes.TabIndex = 0;
             this.rbtnESEmploymentYes.TabStop = true;
             this.rbtnESEmploymentYes.Text = "Yes";
@@ -2511,10 +2359,9 @@
             // 
             this.lbl04.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl04.AutoSize = true;
-            this.lbl04.Location = new System.Drawing.Point(17, 241);
-            this.lbl04.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl04.Location = new System.Drawing.Point(13, 196);
             this.lbl04.Name = "lbl04";
-            this.lbl04.Size = new System.Drawing.Size(20, 17);
+            this.lbl04.Size = new System.Drawing.Size(16, 13);
             this.lbl04.TabIndex = 38;
             this.lbl04.Text = "4.";
             // 
@@ -2522,10 +2369,9 @@
             // 
             this.lbl01.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl01.AutoSize = true;
-            this.lbl01.Location = new System.Drawing.Point(17, 14);
-            this.lbl01.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl01.Location = new System.Drawing.Point(13, 12);
             this.lbl01.Name = "lbl01";
-            this.lbl01.Size = new System.Drawing.Size(20, 17);
+            this.lbl01.Size = new System.Drawing.Size(16, 13);
             this.lbl01.TabIndex = 32;
             this.lbl01.Text = "1.";
             // 
@@ -2535,10 +2381,9 @@
             this.lblESChildHeaded.AutoSize = true;
             this.lblESChildHeaded.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblESChildHeaded.ForeColor = System.Drawing.Color.Black;
-            this.lblESChildHeaded.Location = new System.Drawing.Point(59, 14);
-            this.lblESChildHeaded.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblESChildHeaded.Location = new System.Drawing.Point(45, 12);
             this.lblESChildHeaded.Name = "lblESChildHeaded";
-            this.lblESChildHeaded.Size = new System.Drawing.Size(219, 17);
+            this.lblESChildHeaded.Size = new System.Drawing.Size(165, 13);
             this.lblESChildHeaded.TabIndex = 1;
             this.lblESChildHeaded.Text = "Is this a child headed household?";
             // 
@@ -2547,19 +2392,17 @@
             this.pnlESChildHeaded.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlESChildHeaded.Controls.Add(this.rbtnESChildHeadedNo);
             this.pnlESChildHeaded.Controls.Add(this.rbtnESChildHeadedYes);
-            this.pnlESChildHeaded.Location = new System.Drawing.Point(473, 11);
-            this.pnlESChildHeaded.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlESChildHeaded.Location = new System.Drawing.Point(352, 9);
             this.pnlESChildHeaded.Name = "pnlESChildHeaded";
-            this.pnlESChildHeaded.Size = new System.Drawing.Size(152, 23);
+            this.pnlESChildHeaded.Size = new System.Drawing.Size(114, 19);
             this.pnlESChildHeaded.TabIndex = 34;
             // 
             // rbtnESChildHeadedNo
             // 
             this.rbtnESChildHeadedNo.AutoSize = true;
-            this.rbtnESChildHeadedNo.Location = new System.Drawing.Point(69, 1);
-            this.rbtnESChildHeadedNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnESChildHeadedNo.Location = new System.Drawing.Point(52, 1);
             this.rbtnESChildHeadedNo.Name = "rbtnESChildHeadedNo";
-            this.rbtnESChildHeadedNo.Size = new System.Drawing.Size(47, 21);
+            this.rbtnESChildHeadedNo.Size = new System.Drawing.Size(39, 17);
             this.rbtnESChildHeadedNo.TabIndex = 2;
             this.rbtnESChildHeadedNo.TabStop = true;
             this.rbtnESChildHeadedNo.Text = "No";
@@ -2569,10 +2412,9 @@
             // 
             this.rbtnESChildHeadedYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtnESChildHeadedYes.AutoSize = true;
-            this.rbtnESChildHeadedYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnESChildHeadedYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnESChildHeadedYes.Location = new System.Drawing.Point(3, 1);
             this.rbtnESChildHeadedYes.Name = "rbtnESChildHeadedYes";
-            this.rbtnESChildHeadedYes.Size = new System.Drawing.Size(53, 21);
+            this.rbtnESChildHeadedYes.Size = new System.Drawing.Size(43, 17);
             this.rbtnESChildHeadedYes.TabIndex = 0;
             this.rbtnESChildHeadedYes.TabStop = true;
             this.rbtnESChildHeadedYes.Text = "Yes";
@@ -2583,10 +2425,9 @@
             // 
             this.lbl02.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl02.AutoSize = true;
-            this.lbl02.Location = new System.Drawing.Point(17, 80);
-            this.lbl02.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl02.Location = new System.Drawing.Point(13, 65);
             this.lbl02.Name = "lbl02";
-            this.lbl02.Size = new System.Drawing.Size(20, 17);
+            this.lbl02.Size = new System.Drawing.Size(16, 13);
             this.lbl02.TabIndex = 35;
             this.lbl02.Text = "2.";
             // 
@@ -2594,10 +2435,9 @@
             // 
             this.lbl03.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl03.AutoSize = true;
-            this.lbl03.Location = new System.Drawing.Point(17, 160);
-            this.lbl03.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl03.Location = new System.Drawing.Point(13, 130);
             this.lbl03.Name = "lbl03";
-            this.lbl03.Size = new System.Drawing.Size(20, 17);
+            this.lbl03.Size = new System.Drawing.Size(16, 13);
             this.lbl03.TabIndex = 37;
             this.lbl03.Text = "3.";
             // 
@@ -2607,10 +2447,9 @@
             this.lblESEmployment.AutoSize = true;
             this.lblESEmployment.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblESEmployment.ForeColor = System.Drawing.Color.Black;
-            this.lblESEmployment.Location = new System.Drawing.Point(59, 54);
-            this.lblESEmployment.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblESEmployment.Location = new System.Drawing.Point(45, 46);
             this.lblESEmployment.Name = "lblESEmployment";
-            this.lblESEmployment.Size = new System.Drawing.Size(384, 68);
+            this.lblESEmployment.Size = new System.Drawing.Size(283, 52);
             this.lblESEmployment.TabIndex = 39;
             this.lblESEmployment.Text = resources.GetString("lblESEmployment.Text");
             // 
@@ -2620,10 +2459,9 @@
             this.lblESExpense.AutoSize = true;
             this.lblESExpense.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblESExpense.ForeColor = System.Drawing.Color.Black;
-            this.lblESExpense.Location = new System.Drawing.Point(59, 135);
-            this.lblESExpense.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblESExpense.Location = new System.Drawing.Point(45, 111);
             this.lblESExpense.Name = "lblESExpense";
-            this.lblESExpense.Size = new System.Drawing.Size(380, 68);
+            this.lblESExpense.Size = new System.Drawing.Size(282, 52);
             this.lblESExpense.TabIndex = 40;
             this.lblESExpense.Text = "The last time there was an unexpected urgent household expense (e.g. emergency me" +
     "dical expense or house repair), was someone in the household able to pay for tha" +
@@ -2635,10 +2473,9 @@
             this.lblESDisability.AutoSize = true;
             this.lblESDisability.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblESDisability.ForeColor = System.Drawing.Color.Black;
-            this.lblESDisability.Location = new System.Drawing.Point(59, 216);
-            this.lblESDisability.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblESDisability.Location = new System.Drawing.Point(45, 177);
             this.lblESDisability.Name = "lblESDisability";
-            this.lblESDisability.Size = new System.Drawing.Size(368, 68);
+            this.lblESDisability.Size = new System.Drawing.Size(275, 52);
             this.lblESDisability.TabIndex = 41;
             this.lblESDisability.Text = resources.GetString("lblESDisability.Text");
             // 
@@ -2647,19 +2484,17 @@
             this.pnlESExpense.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlESExpense.Controls.Add(this.rbtnESExpenseNo);
             this.pnlESExpense.Controls.Add(this.rbtnESExpenseYes);
-            this.pnlESExpense.Location = new System.Drawing.Point(473, 157);
-            this.pnlESExpense.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlESExpense.Location = new System.Drawing.Point(352, 127);
             this.pnlESExpense.Name = "pnlESExpense";
-            this.pnlESExpense.Size = new System.Drawing.Size(152, 23);
+            this.pnlESExpense.Size = new System.Drawing.Size(114, 19);
             this.pnlESExpense.TabIndex = 42;
             // 
             // rbtnESExpenseNo
             // 
             this.rbtnESExpenseNo.AutoSize = true;
-            this.rbtnESExpenseNo.Location = new System.Drawing.Point(69, 1);
-            this.rbtnESExpenseNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnESExpenseNo.Location = new System.Drawing.Point(52, 1);
             this.rbtnESExpenseNo.Name = "rbtnESExpenseNo";
-            this.rbtnESExpenseNo.Size = new System.Drawing.Size(47, 21);
+            this.rbtnESExpenseNo.Size = new System.Drawing.Size(39, 17);
             this.rbtnESExpenseNo.TabIndex = 2;
             this.rbtnESExpenseNo.TabStop = true;
             this.rbtnESExpenseNo.Text = "No";
@@ -2670,10 +2505,9 @@
             // 
             this.rbtnESExpenseYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtnESExpenseYes.AutoSize = true;
-            this.rbtnESExpenseYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnESExpenseYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnESExpenseYes.Location = new System.Drawing.Point(3, 1);
             this.rbtnESExpenseYes.Name = "rbtnESExpenseYes";
-            this.rbtnESExpenseYes.Size = new System.Drawing.Size(53, 21);
+            this.rbtnESExpenseYes.Size = new System.Drawing.Size(43, 17);
             this.rbtnESExpenseYes.TabIndex = 0;
             this.rbtnESExpenseYes.TabStop = true;
             this.rbtnESExpenseYes.Text = "Yes";
@@ -2684,19 +2518,17 @@
             this.pnlESDisability.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlESDisability.Controls.Add(this.rbtnESDisabilityNo);
             this.pnlESDisability.Controls.Add(this.rbtnESDisabilityYes);
-            this.pnlESDisability.Location = new System.Drawing.Point(473, 238);
-            this.pnlESDisability.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlESDisability.Location = new System.Drawing.Point(352, 193);
             this.pnlESDisability.Name = "pnlESDisability";
-            this.pnlESDisability.Size = new System.Drawing.Size(152, 23);
+            this.pnlESDisability.Size = new System.Drawing.Size(114, 19);
             this.pnlESDisability.TabIndex = 33;
             // 
             // rbtnESDisabilityNo
             // 
             this.rbtnESDisabilityNo.AutoSize = true;
-            this.rbtnESDisabilityNo.Location = new System.Drawing.Point(69, 1);
-            this.rbtnESDisabilityNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnESDisabilityNo.Location = new System.Drawing.Point(52, 1);
             this.rbtnESDisabilityNo.Name = "rbtnESDisabilityNo";
-            this.rbtnESDisabilityNo.Size = new System.Drawing.Size(47, 21);
+            this.rbtnESDisabilityNo.Size = new System.Drawing.Size(39, 17);
             this.rbtnESDisabilityNo.TabIndex = 2;
             this.rbtnESDisabilityNo.TabStop = true;
             this.rbtnESDisabilityNo.Text = "No";
@@ -2706,10 +2538,9 @@
             // 
             this.rbtnESDisabilityYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtnESDisabilityYes.AutoSize = true;
-            this.rbtnESDisabilityYes.Location = new System.Drawing.Point(4, 1);
-            this.rbtnESDisabilityYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnESDisabilityYes.Location = new System.Drawing.Point(3, 1);
             this.rbtnESDisabilityYes.Name = "rbtnESDisabilityYes";
-            this.rbtnESDisabilityYes.Size = new System.Drawing.Size(53, 21);
+            this.rbtnESDisabilityYes.Size = new System.Drawing.Size(43, 17);
             this.rbtnESDisabilityYes.TabIndex = 0;
             this.rbtnESDisabilityYes.TabStop = true;
             this.rbtnESDisabilityYes.Text = "Yes";
@@ -2724,14 +2555,13 @@
             this.tlpDisplay13.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpDisplay13.ColumnCount = 1;
             this.tlpDisplay13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tlpDisplay13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpDisplay13.Controls.Add(this.lblEconomicStrengthTitle, 0, 0);
-            this.tlpDisplay13.Location = new System.Drawing.Point(40, 897);
-            this.tlpDisplay13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay13.Location = new System.Drawing.Point(30, 729);
             this.tlpDisplay13.Name = "tlpDisplay13";
             this.tlpDisplay13.RowCount = 1;
             this.tlpDisplay13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay13.Size = new System.Drawing.Size(872, 37);
+            this.tlpDisplay13.Size = new System.Drawing.Size(654, 30);
             this.tlpDisplay13.TabIndex = 70;
             // 
             // lblEconomicStrengthTitle
@@ -2740,10 +2570,9 @@
             this.lblEconomicStrengthTitle.AutoSize = true;
             this.lblEconomicStrengthTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEconomicStrengthTitle.ForeColor = System.Drawing.Color.White;
-            this.lblEconomicStrengthTitle.Location = new System.Drawing.Point(5, 10);
-            this.lblEconomicStrengthTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEconomicStrengthTitle.Location = new System.Drawing.Point(4, 8);
             this.lblEconomicStrengthTitle.Name = "lblEconomicStrengthTitle";
-            this.lblEconomicStrengthTitle.Size = new System.Drawing.Size(227, 17);
+            this.lblEconomicStrengthTitle.Size = new System.Drawing.Size(183, 13);
             this.lblEconomicStrengthTitle.TabIndex = 1;
             this.lblEconomicStrengthTitle.Text = "ECONOMIC STRENGTHENING";
             // 
@@ -2755,27 +2584,25 @@
             this.tlpDisplay12.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpDisplay12.ColumnCount = 3;
             this.tlpDisplay12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tlpDisplay12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 221F));
+            this.tlpDisplay12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tlpDisplay12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168F));
             this.tlpDisplay12.Controls.Add(this.lblReferredTitle, 0, 0);
             this.tlpDisplay12.Controls.Add(this.lblResponseTitle, 0, 0);
             this.tlpDisplay12.Controls.Add(this.lblThematicAreasTitle, 0, 0);
-            this.tlpDisplay12.Location = new System.Drawing.Point(40, 862);
-            this.tlpDisplay12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay12.Location = new System.Drawing.Point(30, 700);
             this.tlpDisplay12.Name = "tlpDisplay12";
             this.tlpDisplay12.RowCount = 1;
             this.tlpDisplay12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay12.Size = new System.Drawing.Size(872, 37);
+            this.tlpDisplay12.Size = new System.Drawing.Size(654, 30);
             this.tlpDisplay12.TabIndex = 69;
             // 
             // lblReferredTitle
             // 
             this.lblReferredTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblReferredTitle.AutoSize = true;
-            this.lblReferredTitle.Location = new System.Drawing.Point(724, 10);
-            this.lblReferredTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblReferredTitle.Location = new System.Drawing.Point(541, 8);
             this.lblReferredTitle.Name = "lblReferredTitle";
-            this.lblReferredTitle.Size = new System.Drawing.Size(72, 17);
+            this.lblReferredTitle.Size = new System.Drawing.Size(56, 13);
             this.lblReferredTitle.TabIndex = 40;
             this.lblReferredTitle.Text = "Referred";
             // 
@@ -2783,10 +2610,9 @@
             // 
             this.lblResponseTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblResponseTitle.AutoSize = true;
-            this.lblResponseTitle.Location = new System.Drawing.Point(509, 10);
-            this.lblResponseTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblResponseTitle.Location = new System.Drawing.Point(377, 8);
             this.lblResponseTitle.Name = "lblResponseTitle";
-            this.lblResponseTitle.Size = new System.Drawing.Size(80, 17);
+            this.lblResponseTitle.Size = new System.Drawing.Size(63, 13);
             this.lblResponseTitle.TabIndex = 39;
             this.lblResponseTitle.Text = "Response";
             // 
@@ -2796,10 +2622,9 @@
             this.lblThematicAreasTitle.AutoSize = true;
             this.lblThematicAreasTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblThematicAreasTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblThematicAreasTitle.Location = new System.Drawing.Point(5, 10);
-            this.lblThematicAreasTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblThematicAreasTitle.Location = new System.Drawing.Point(4, 8);
             this.lblThematicAreasTitle.Name = "lblThematicAreasTitle";
-            this.lblThematicAreasTitle.Size = new System.Drawing.Size(120, 17);
+            this.lblThematicAreasTitle.Size = new System.Drawing.Size(94, 13);
             this.lblThematicAreasTitle.TabIndex = 1;
             this.lblThematicAreasTitle.Text = "Thematic areas";
             // 
@@ -2809,10 +2634,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpDisplay11.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpDisplay11.ColumnCount = 4;
-            this.tlpDisplay11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tlpDisplay11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tlpDisplay11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tlpDisplay11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tlpDisplay11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 139F));
+            this.tlpDisplay11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 109F));
             this.tlpDisplay11.Controls.Add(this.cbCSO, 2, 3);
             this.tlpDisplay11.Controls.Add(this.cbPartner, 2, 2);
             this.tlpDisplay11.Controls.Add(this.lblCSOVal, 3, 3);
@@ -2867,12 +2692,11 @@
             this.tlpDisplay11.Controls.Add(this.label6, 1, 1);
             this.tlpDisplay11.Controls.Add(this.cboHHEnrollReason, 2, 1);
             this.tlpDisplay11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tlpDisplay11.Location = new System.Drawing.Point(40, 111);
-            this.tlpDisplay11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay11.Location = new System.Drawing.Point(30, 90);
             this.tlpDisplay11.Name = "tlpDisplay11";
             this.tlpDisplay11.RowCount = 15;
-            this.tlpDisplay11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
-            this.tlpDisplay11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tlpDisplay11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tlpDisplay11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.tlpDisplay11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6F));
             this.tlpDisplay11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.69145F));
             this.tlpDisplay11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.204461F));
@@ -2886,17 +2710,16 @@
             this.tlpDisplay11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24F));
             this.tlpDisplay11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8F));
             this.tlpDisplay11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8F));
-            this.tlpDisplay11.Size = new System.Drawing.Size(872, 738);
+            this.tlpDisplay11.Size = new System.Drawing.Size(654, 600);
             this.tlpDisplay11.TabIndex = 68;
             // 
             // cbCSO
             // 
             this.cbCSO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbCSO.FormattingEnabled = true;
-            this.cbCSO.Location = new System.Drawing.Point(330, 138);
-            this.cbCSO.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbCSO.Location = new System.Drawing.Point(246, 111);
             this.cbCSO.Name = "cbCSO";
-            this.cbCSO.Size = new System.Drawing.Size(397, 25);
+            this.cbCSO.Size = new System.Drawing.Size(294, 21);
             this.cbCSO.TabIndex = 106;
             this.cbCSO.SelectionChangeCommitted += new System.EventHandler(this.cbCSO_SelectionChangeCommitted);
             // 
@@ -2904,10 +2727,9 @@
             // 
             this.cbPartner.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbPartner.FormattingEnabled = true;
-            this.cbPartner.Location = new System.Drawing.Point(330, 97);
-            this.cbPartner.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbPartner.Location = new System.Drawing.Point(246, 78);
             this.cbPartner.Name = "cbPartner";
-            this.cbPartner.Size = new System.Drawing.Size(397, 25);
+            this.cbPartner.Size = new System.Drawing.Size(294, 21);
             this.cbPartner.TabIndex = 105;
             this.cbPartner.SelectionChangeCommitted += new System.EventHandler(this.cbPartner_SelectionChangeCommitted);
             // 
@@ -2916,10 +2738,9 @@
             this.lblCSOVal.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblCSOVal.AutoSize = true;
             this.lblCSOVal.ForeColor = System.Drawing.Color.Red;
-            this.lblCSOVal.Location = new System.Drawing.Point(736, 142);
-            this.lblCSOVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCSOVal.Location = new System.Drawing.Point(547, 115);
             this.lblCSOVal.Name = "lblCSOVal";
-            this.lblCSOVal.Size = new System.Drawing.Size(13, 17);
+            this.lblCSOVal.Size = new System.Drawing.Size(11, 13);
             this.lblCSOVal.TabIndex = 102;
             this.lblCSOVal.Text = "*";
             // 
@@ -2927,10 +2748,9 @@
             // 
             this.lblM.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblM.AutoSize = true;
-            this.lblM.Location = new System.Drawing.Point(16, 701);
-            this.lblM.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblM.Location = new System.Drawing.Point(11, 568);
             this.lblM.Name = "lblM";
-            this.lblM.Size = new System.Drawing.Size(23, 17);
+            this.lblM.Size = new System.Drawing.Size(19, 13);
             this.lblM.TabIndex = 104;
             this.lblM.Text = "M.";
             // 
@@ -2939,10 +2759,9 @@
             this.lblPartnerVal.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblPartnerVal.AutoSize = true;
             this.lblPartnerVal.ForeColor = System.Drawing.Color.Red;
-            this.lblPartnerVal.Location = new System.Drawing.Point(736, 101);
-            this.lblPartnerVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPartnerVal.Location = new System.Drawing.Point(547, 82);
             this.lblPartnerVal.Name = "lblPartnerVal";
-            this.lblPartnerVal.Size = new System.Drawing.Size(13, 17);
+            this.lblPartnerVal.Size = new System.Drawing.Size(11, 13);
             this.lblPartnerVal.TabIndex = 101;
             this.lblPartnerVal.Text = "*";
             // 
@@ -2950,10 +2769,9 @@
             // 
             this.lblK.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblK.AutoSize = true;
-            this.lblK.Location = new System.Drawing.Point(17, 546);
-            this.lblK.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblK.Location = new System.Drawing.Point(12, 439);
             this.lblK.Name = "lblK";
-            this.lblK.Size = new System.Drawing.Size(21, 17);
+            this.lblK.Size = new System.Drawing.Size(17, 13);
             this.lblK.TabIndex = 31;
             this.lblK.Text = "K.";
             // 
@@ -2961,10 +2779,9 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(59, 134);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(45, 109);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(211, 34);
+            this.label4.Size = new System.Drawing.Size(166, 26);
             this.label4.TabIndex = 104;
             this.label4.Text = "NAME OF COMMUNITY BASED ORGANISATION:";
             // 
@@ -2972,10 +2789,9 @@
             // 
             this.lblPartner.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblPartner.AutoSize = true;
-            this.lblPartner.Location = new System.Drawing.Point(59, 101);
-            this.lblPartner.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPartner.Location = new System.Drawing.Point(45, 76);
             this.lblPartner.Name = "lblPartner";
-            this.lblPartner.Size = new System.Drawing.Size(251, 17);
+            this.lblPartner.Size = new System.Drawing.Size(143, 26);
             this.lblPartner.TabIndex = 103;
             this.lblPartner.Text = "NAME OF IMPLEMENTING PARTNER:";
             // 
@@ -2983,10 +2799,9 @@
             // 
             this.lblA.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblA.AutoSize = true;
-            this.lblA.Location = new System.Drawing.Point(17, 101);
-            this.lblA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblA.Location = new System.Drawing.Point(12, 82);
             this.lblA.Name = "lblA";
-            this.lblA.Size = new System.Drawing.Size(21, 17);
+            this.lblA.Size = new System.Drawing.Size(17, 13);
             this.lblA.TabIndex = 14;
             this.lblA.Text = "A.";
             // 
@@ -2994,10 +2809,9 @@
             // 
             this.lblB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblB.AutoSize = true;
-            this.lblB.Location = new System.Drawing.Point(17, 142);
-            this.lblB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblB.Location = new System.Drawing.Point(12, 115);
             this.lblB.Name = "lblB";
-            this.lblB.Size = new System.Drawing.Size(21, 17);
+            this.lblB.Size = new System.Drawing.Size(17, 13);
             this.lblB.TabIndex = 24;
             this.lblB.Text = "B.";
             // 
@@ -3005,10 +2819,9 @@
             // 
             this.lblC.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblC.AutoSize = true;
-            this.lblC.Location = new System.Drawing.Point(17, 181);
-            this.lblC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblC.Location = new System.Drawing.Point(12, 146);
             this.lblC.Name = "lblC";
-            this.lblC.Size = new System.Drawing.Size(21, 17);
+            this.lblC.Size = new System.Drawing.Size(17, 13);
             this.lblC.TabIndex = 22;
             this.lblC.Text = "C.";
             // 
@@ -3016,10 +2829,9 @@
             // 
             this.lblD.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblD.AutoSize = true;
-            this.lblD.Location = new System.Drawing.Point(16, 218);
-            this.lblD.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblD.Location = new System.Drawing.Point(12, 176);
             this.lblD.Name = "lblD";
-            this.lblD.Size = new System.Drawing.Size(22, 17);
+            this.lblD.Size = new System.Drawing.Size(18, 13);
             this.lblD.TabIndex = 23;
             this.lblD.Text = "D.";
             // 
@@ -3027,10 +2839,9 @@
             // 
             this.lblE.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblE.AutoSize = true;
-            this.lblE.Location = new System.Drawing.Point(17, 256);
-            this.lblE.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblE.Location = new System.Drawing.Point(12, 207);
             this.lblE.Name = "lblE";
-            this.lblE.Size = new System.Drawing.Size(21, 17);
+            this.lblE.Size = new System.Drawing.Size(17, 13);
             this.lblE.TabIndex = 25;
             this.lblE.Text = "E.";
             // 
@@ -3038,10 +2849,9 @@
             // 
             this.lblF.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblF.AutoSize = true;
-            this.lblF.Location = new System.Drawing.Point(17, 294);
-            this.lblF.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblF.Location = new System.Drawing.Point(13, 237);
             this.lblF.Name = "lblF";
-            this.lblF.Size = new System.Drawing.Size(20, 17);
+            this.lblF.Size = new System.Drawing.Size(16, 13);
             this.lblF.TabIndex = 26;
             this.lblF.Text = "F.";
             // 
@@ -3049,10 +2859,9 @@
             // 
             this.lblG.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblG.AutoSize = true;
-            this.lblG.Location = new System.Drawing.Point(16, 333);
-            this.lblG.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblG.Location = new System.Drawing.Point(12, 268);
             this.lblG.Name = "lblG";
-            this.lblG.Size = new System.Drawing.Size(23, 17);
+            this.lblG.Size = new System.Drawing.Size(18, 13);
             this.lblG.TabIndex = 27;
             this.lblG.Text = "G.";
             // 
@@ -3060,10 +2869,9 @@
             // 
             this.lblH.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblH.AutoSize = true;
-            this.lblH.Location = new System.Drawing.Point(16, 372);
-            this.lblH.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblH.Location = new System.Drawing.Point(12, 299);
             this.lblH.Name = "lblH";
-            this.lblH.Size = new System.Drawing.Size(22, 17);
+            this.lblH.Size = new System.Drawing.Size(18, 13);
             this.lblH.TabIndex = 28;
             this.lblH.Text = "H.";
             // 
@@ -3071,10 +2879,9 @@
             // 
             this.lblI.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblI.AutoSize = true;
-            this.lblI.Location = new System.Drawing.Point(20, 411);
-            this.lblI.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblI.Location = new System.Drawing.Point(14, 330);
             this.lblI.Name = "lblI";
-            this.lblI.Size = new System.Drawing.Size(15, 17);
+            this.lblI.Size = new System.Drawing.Size(13, 13);
             this.lblI.TabIndex = 29;
             this.lblI.Text = "I.";
             // 
@@ -3082,10 +2889,9 @@
             // 
             this.lblJ.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblJ.AutoSize = true;
-            this.lblJ.Location = new System.Drawing.Point(18, 450);
-            this.lblJ.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblJ.Location = new System.Drawing.Point(13, 361);
             this.lblJ.Name = "lblJ";
-            this.lblJ.Size = new System.Drawing.Size(19, 17);
+            this.lblJ.Size = new System.Drawing.Size(15, 13);
             this.lblJ.TabIndex = 30;
             this.lblJ.Text = "J.";
             // 
@@ -3093,10 +2899,9 @@
             // 
             this.lblL.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblL.AutoSize = true;
-            this.lblL.Location = new System.Drawing.Point(17, 648);
-            this.lblL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblL.Location = new System.Drawing.Point(13, 522);
             this.lblL.Name = "lblL";
-            this.lblL.Size = new System.Drawing.Size(20, 17);
+            this.lblL.Size = new System.Drawing.Size(16, 13);
             this.lblL.TabIndex = 103;
             this.lblL.Text = "L.";
             // 
@@ -3104,10 +2909,9 @@
             // 
             this.lbl18Below.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl18Below.AutoSize = true;
-            this.lbl18Below.Location = new System.Drawing.Point(59, 684);
-            this.lbl18Below.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl18Below.Location = new System.Drawing.Point(45, 555);
             this.lbl18Below.Name = "lbl18Below";
-            this.lbl18Below.Size = new System.Drawing.Size(250, 51);
+            this.lbl18Below.Size = new System.Drawing.Size(192, 39);
             this.lbl18Below.TabIndex = 41;
             this.lbl18Below.Text = "TOTAL OF CHILDREN BELOW 18 YEARS OF AGE CURRENTLY LIVING IN HOUSEHOLD:";
             // 
@@ -3115,10 +2919,9 @@
             // 
             this.lbl18Above.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl18Above.AutoSize = true;
-            this.lbl18Above.Location = new System.Drawing.Point(59, 632);
-            this.lbl18Above.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl18Above.Location = new System.Drawing.Point(45, 509);
             this.lbl18Above.Name = "lbl18Above";
-            this.lbl18Above.Size = new System.Drawing.Size(262, 50);
+            this.lbl18Above.Size = new System.Drawing.Size(183, 39);
             this.lbl18Above.TabIndex = 40;
             this.lbl18Above.Text = "NUMBER OF PEOPLE AGED 18 YEARS  AND ABOVE CURRENTLY LIVING IN HOUSEHOLD:";
             // 
@@ -3126,10 +2929,9 @@
             // 
             this.lblInterviewee.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblInterviewee.AutoSize = true;
-            this.lblInterviewee.Location = new System.Drawing.Point(59, 529);
-            this.lblInterviewee.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblInterviewee.Location = new System.Drawing.Point(45, 426);
             this.lblInterviewee.Name = "lblInterviewee";
-            this.lblInterviewee.Size = new System.Drawing.Size(242, 51);
+            this.lblInterviewee.Size = new System.Drawing.Size(187, 39);
             this.lblInterviewee.TabIndex = 39;
             this.lblInterviewee.Text = "NAME, SEX, AGE & TELEPHONE  OF INTERVIEWEE {HH Head or Primary Caregiver}";
             // 
@@ -3152,8 +2954,7 @@
             this.tlpDisplay39.Controls.Add(this.cbHHMGender, 1, 2);
             this.tlpDisplay39.Controls.Add(this.txtHHTel, 1, 4);
             this.tlpDisplay39.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tlpDisplay39.Location = new System.Drawing.Point(330, 483);
-            this.tlpDisplay39.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay39.Location = new System.Drawing.Point(246, 387);
             this.tlpDisplay39.Name = "tlpDisplay39";
             this.tlpDisplay39.RowCount = 5;
             this.tlpDisplay39.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -3161,17 +2962,16 @@
             this.tlpDisplay39.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpDisplay39.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpDisplay39.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpDisplay39.Size = new System.Drawing.Size(397, 144);
+            this.tlpDisplay39.Size = new System.Drawing.Size(294, 117);
             this.tlpDisplay39.TabIndex = 102;
             // 
             // lblHHMTel
             // 
             this.lblHHMTel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblHHMTel.AutoSize = true;
-            this.lblHHMTel.Location = new System.Drawing.Point(4, 119);
-            this.lblHHMTel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHHMTel.Location = new System.Drawing.Point(3, 98);
             this.lblHHMTel.Name = "lblHHMTel";
-            this.lblHHMTel.Size = new System.Drawing.Size(80, 17);
+            this.lblHHMTel.Size = new System.Drawing.Size(61, 13);
             this.lblHHMTel.TabIndex = 109;
             this.lblHHMTel.Text = "Telephone:";
             // 
@@ -3179,10 +2979,9 @@
             // 
             this.lblHHMFirstName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblHHMFirstName.AutoSize = true;
-            this.lblHHMFirstName.Location = new System.Drawing.Point(4, 5);
-            this.lblHHMFirstName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHHMFirstName.Location = new System.Drawing.Point(3, 5);
             this.lblHHMFirstName.Name = "lblHHMFirstName";
-            this.lblHHMFirstName.Size = new System.Drawing.Size(80, 17);
+            this.lblHHMFirstName.Size = new System.Drawing.Size(60, 13);
             this.lblHHMFirstName.TabIndex = 103;
             this.lblHHMFirstName.Text = "First Name:";
             // 
@@ -3190,39 +2989,35 @@
             // 
             this.lblHHMLastName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblHHMLastName.AutoSize = true;
-            this.lblHHMLastName.Location = new System.Drawing.Point(4, 33);
-            this.lblHHMLastName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHHMLastName.Location = new System.Drawing.Point(3, 28);
             this.lblHHMLastName.Name = "lblHHMLastName";
-            this.lblHHMLastName.Size = new System.Drawing.Size(80, 17);
+            this.lblHHMLastName.Size = new System.Drawing.Size(61, 13);
             this.lblHHMLastName.TabIndex = 104;
             this.lblHHMLastName.Text = "Last Name:";
             // 
             // txtHHMFirstName
             // 
             this.txtHHMFirstName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtHHMFirstName.Location = new System.Drawing.Point(142, 4);
-            this.txtHHMFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtHHMFirstName.Location = new System.Drawing.Point(105, 3);
             this.txtHHMFirstName.Name = "txtHHMFirstName";
-            this.txtHHMFirstName.Size = new System.Drawing.Size(251, 23);
+            this.txtHHMFirstName.Size = new System.Drawing.Size(186, 20);
             this.txtHHMFirstName.TabIndex = 105;
             // 
             // txtHHMLastName
             // 
             this.txtHHMLastName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtHHMLastName.Location = new System.Drawing.Point(142, 32);
-            this.txtHHMLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtHHMLastName.Location = new System.Drawing.Point(105, 26);
             this.txtHHMLastName.Name = "txtHHMLastName";
-            this.txtHHMLastName.Size = new System.Drawing.Size(251, 23);
+            this.txtHHMLastName.Size = new System.Drawing.Size(186, 20);
             this.txtHHMLastName.TabIndex = 106;
             // 
             // lblHHMGender
             // 
             this.lblHHMGender.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblHHMGender.AutoSize = true;
-            this.lblHHMGender.Location = new System.Drawing.Point(4, 61);
-            this.lblHHMGender.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHHMGender.Location = new System.Drawing.Point(3, 51);
             this.lblHHMGender.Name = "lblHHMGender";
-            this.lblHHMGender.Size = new System.Drawing.Size(35, 17);
+            this.lblHHMGender.Size = new System.Drawing.Size(28, 13);
             this.lblHHMGender.TabIndex = 107;
             this.lblHHMGender.Text = "Sex:";
             // 
@@ -3230,39 +3025,35 @@
             // 
             this.lblHHMAge.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblHHMAge.AutoSize = true;
-            this.lblHHMAge.Location = new System.Drawing.Point(4, 89);
-            this.lblHHMAge.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHHMAge.Location = new System.Drawing.Point(3, 74);
             this.lblHHMAge.Name = "lblHHMAge";
-            this.lblHHMAge.Size = new System.Drawing.Size(37, 17);
+            this.lblHHMAge.Size = new System.Drawing.Size(29, 13);
             this.lblHHMAge.TabIndex = 108;
             this.lblHHMAge.Text = "Age:";
             // 
             // nudHHMAge
             // 
             this.nudHHMAge.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.nudHHMAge.Location = new System.Drawing.Point(142, 88);
-            this.nudHHMAge.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nudHHMAge.Location = new System.Drawing.Point(105, 72);
             this.nudHHMAge.Name = "nudHHMAge";
-            this.nudHHMAge.Size = new System.Drawing.Size(100, 23);
+            this.nudHHMAge.Size = new System.Drawing.Size(75, 20);
             this.nudHHMAge.TabIndex = 110;
             // 
             // cbHHMGender
             // 
             this.cbHHMGender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbHHMGender.FormattingEnabled = true;
-            this.cbHHMGender.Location = new System.Drawing.Point(142, 60);
-            this.cbHHMGender.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbHHMGender.Location = new System.Drawing.Point(105, 49);
             this.cbHHMGender.Name = "cbHHMGender";
-            this.cbHHMGender.Size = new System.Drawing.Size(251, 25);
+            this.cbHHMGender.Size = new System.Drawing.Size(186, 21);
             this.cbHHMGender.TabIndex = 111;
             // 
             // txtHHTel
             // 
             this.txtHHTel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtHHTel.Location = new System.Drawing.Point(142, 116);
-            this.txtHHTel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtHHTel.Location = new System.Drawing.Point(105, 95);
             this.txtHHTel.Name = "txtHHTel";
-            this.txtHHTel.Size = new System.Drawing.Size(251, 23);
+            this.txtHHTel.Size = new System.Drawing.Size(186, 20);
             this.txtHHTel.TabIndex = 112;
             this.txtHHTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHHTel_KeyPress);
             // 
@@ -3270,10 +3061,9 @@
             // 
             this.lblDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(59, 450);
-            this.lblDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDate.Location = new System.Drawing.Point(45, 361);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(151, 17);
+            this.lblDate.Size = new System.Drawing.Size(120, 13);
             this.lblDate.TabIndex = 38;
             this.lblDate.Text = "DATE OF INTERVIEW:";
             // 
@@ -3281,10 +3071,9 @@
             // 
             this.lblSocialWorkerTel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblSocialWorkerTel.AutoSize = true;
-            this.lblSocialWorkerTel.Location = new System.Drawing.Point(59, 403);
-            this.lblSocialWorkerTel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSocialWorkerTel.Location = new System.Drawing.Point(45, 324);
             this.lblSocialWorkerTel.Name = "lblSocialWorkerTel";
-            this.lblSocialWorkerTel.Size = new System.Drawing.Size(209, 34);
+            this.lblSocialWorkerTel.Size = new System.Drawing.Size(163, 26);
             this.lblSocialWorkerTel.TabIndex = 37;
             this.lblSocialWorkerTel.Text = "PHONE NUMBER OF PERSON ADMINISTERING:";
             // 
@@ -3293,10 +3082,9 @@
             this.lblIntervieweeVal.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblIntervieweeVal.AutoSize = true;
             this.lblIntervieweeVal.ForeColor = System.Drawing.Color.Red;
-            this.lblIntervieweeVal.Location = new System.Drawing.Point(736, 546);
-            this.lblIntervieweeVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblIntervieweeVal.Location = new System.Drawing.Point(547, 439);
             this.lblIntervieweeVal.Name = "lblIntervieweeVal";
-            this.lblIntervieweeVal.Size = new System.Drawing.Size(13, 17);
+            this.lblIntervieweeVal.Size = new System.Drawing.Size(11, 13);
             this.lblIntervieweeVal.TabIndex = 100;
             this.lblIntervieweeVal.Text = "*";
             // 
@@ -3305,10 +3093,9 @@
             this.lblDateVal.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblDateVal.AutoSize = true;
             this.lblDateVal.ForeColor = System.Drawing.Color.Red;
-            this.lblDateVal.Location = new System.Drawing.Point(736, 450);
-            this.lblDateVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDateVal.Location = new System.Drawing.Point(547, 361);
             this.lblDateVal.Name = "lblDateVal";
-            this.lblDateVal.Size = new System.Drawing.Size(13, 17);
+            this.lblDateVal.Size = new System.Drawing.Size(11, 13);
             this.lblDateVal.TabIndex = 99;
             this.lblDateVal.Text = "*";
             // 
@@ -3316,20 +3103,18 @@
             // 
             this.dtpDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDate.Location = new System.Drawing.Point(330, 447);
-            this.dtpDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpDate.Location = new System.Drawing.Point(246, 358);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.ShowCheckBox = true;
-            this.dtpDate.Size = new System.Drawing.Size(164, 23);
+            this.dtpDate.Size = new System.Drawing.Size(124, 20);
             this.dtpDate.TabIndex = 53;
             // 
             // txtSocialWorkerTel
             // 
             this.txtSocialWorkerTel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSocialWorkerTel.Location = new System.Drawing.Point(330, 408);
-            this.txtSocialWorkerTel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSocialWorkerTel.Location = new System.Drawing.Point(246, 327);
             this.txtSocialWorkerTel.Name = "txtSocialWorkerTel";
-            this.txtSocialWorkerTel.Size = new System.Drawing.Size(397, 23);
+            this.txtSocialWorkerTel.Size = new System.Drawing.Size(294, 20);
             this.txtSocialWorkerTel.TabIndex = 89;
             this.txtSocialWorkerTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSocialWorkerTel_KeyPress);
             // 
@@ -3337,10 +3122,9 @@
             // 
             this.lblSocialWorker.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblSocialWorker.AutoSize = true;
-            this.lblSocialWorker.Location = new System.Drawing.Point(59, 372);
-            this.lblSocialWorker.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSocialWorker.Location = new System.Drawing.Point(45, 293);
             this.lblSocialWorker.Name = "lblSocialWorker";
-            this.lblSocialWorker.Size = new System.Drawing.Size(251, 17);
+            this.lblSocialWorker.Size = new System.Drawing.Size(109, 26);
             this.lblSocialWorker.TabIndex = 36;
             this.lblSocialWorker.Text = "NAME  OF PERSON ADMINISTERING:";
             // 
@@ -3348,20 +3132,18 @@
             // 
             this.cbSocialWorker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbSocialWorker.FormattingEnabled = true;
-            this.cbSocialWorker.Location = new System.Drawing.Point(330, 368);
-            this.cbSocialWorker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbSocialWorker.Location = new System.Drawing.Point(246, 295);
             this.cbSocialWorker.Name = "cbSocialWorker";
-            this.cbSocialWorker.Size = new System.Drawing.Size(397, 25);
+            this.cbSocialWorker.Size = new System.Drawing.Size(294, 21);
             this.cbSocialWorker.TabIndex = 101;
             // 
             // lblHHCode
             // 
             this.lblHHCode.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblHHCode.AutoSize = true;
-            this.lblHHCode.Location = new System.Drawing.Point(59, 333);
-            this.lblHHCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHHCode.Location = new System.Drawing.Point(45, 268);
             this.lblHHCode.Name = "lblHHCode";
-            this.lblHHCode.Size = new System.Drawing.Size(163, 17);
+            this.lblHHCode.Size = new System.Drawing.Size(128, 13);
             this.lblHHCode.TabIndex = 35;
             this.lblHHCode.Text = "HOUSEHOLD NUMBER:";
             // 
@@ -3369,10 +3151,9 @@
             // 
             this.lblVillage.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblVillage.AutoSize = true;
-            this.lblVillage.Location = new System.Drawing.Point(59, 294);
-            this.lblVillage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblVillage.Location = new System.Drawing.Point(45, 237);
             this.lblVillage.Name = "lblVillage";
-            this.lblVillage.Size = new System.Drawing.Size(69, 17);
+            this.lblVillage.Size = new System.Drawing.Size(54, 13);
             this.lblVillage.TabIndex = 34;
             this.lblVillage.Text = "VILLAGE:";
             // 
@@ -3380,10 +3161,9 @@
             // 
             this.lblWard.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblWard.AutoSize = true;
-            this.lblWard.Location = new System.Drawing.Point(59, 256);
-            this.lblWard.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWard.Location = new System.Drawing.Point(45, 207);
             this.lblWard.Name = "lblWard";
-            this.lblWard.Size = new System.Drawing.Size(62, 17);
+            this.lblWard.Size = new System.Drawing.Size(50, 13);
             this.lblWard.TabIndex = 32;
             this.lblWard.Text = "PARISH:";
             // 
@@ -3391,10 +3171,9 @@
             // 
             this.lblSubCounty.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblSubCounty.AutoSize = true;
-            this.lblSubCounty.Location = new System.Drawing.Point(59, 218);
-            this.lblSubCounty.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSubCounty.Location = new System.Drawing.Point(45, 176);
             this.lblSubCounty.Name = "lblSubCounty";
-            this.lblSubCounty.Size = new System.Drawing.Size(98, 17);
+            this.lblSubCounty.Size = new System.Drawing.Size(77, 13);
             this.lblSubCounty.TabIndex = 33;
             this.lblSubCounty.Text = "SUBCOUNTY:";
             // 
@@ -3402,39 +3181,35 @@
             // 
             this.lblDistrict.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblDistrict.AutoSize = true;
-            this.lblDistrict.Location = new System.Drawing.Point(59, 181);
-            this.lblDistrict.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDistrict.Location = new System.Drawing.Point(45, 146);
             this.lblDistrict.Name = "lblDistrict";
-            this.lblDistrict.Size = new System.Drawing.Size(74, 17);
+            this.lblDistrict.Size = new System.Drawing.Size(60, 13);
             this.lblDistrict.TabIndex = 12;
             this.lblDistrict.Text = "DISTRICT:";
             // 
             // txtHHCode
             // 
             this.txtHHCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtHHCode.Location = new System.Drawing.Point(330, 330);
-            this.txtHHCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtHHCode.Location = new System.Drawing.Point(246, 265);
             this.txtHHCode.Name = "txtHHCode";
-            this.txtHHCode.Size = new System.Drawing.Size(397, 23);
+            this.txtHHCode.Size = new System.Drawing.Size(294, 20);
             this.txtHHCode.TabIndex = 91;
             // 
             // txtVillage
             // 
             this.txtVillage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtVillage.Location = new System.Drawing.Point(330, 291);
-            this.txtVillage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtVillage.Location = new System.Drawing.Point(246, 234);
             this.txtVillage.Name = "txtVillage";
-            this.txtVillage.Size = new System.Drawing.Size(397, 23);
+            this.txtVillage.Size = new System.Drawing.Size(294, 20);
             this.txtVillage.TabIndex = 88;
             // 
             // cbWard
             // 
             this.cbWard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbWard.FormattingEnabled = true;
-            this.cbWard.Location = new System.Drawing.Point(330, 252);
-            this.cbWard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbWard.Location = new System.Drawing.Point(246, 203);
             this.cbWard.Name = "cbWard";
-            this.cbWard.Size = new System.Drawing.Size(397, 25);
+            this.cbWard.Size = new System.Drawing.Size(294, 21);
             this.cbWard.TabIndex = 87;
             this.cbWard.SelectionChangeCommitted += new System.EventHandler(this.cbWard_SelectionChangeCommitted);
             // 
@@ -3442,10 +3217,9 @@
             // 
             this.cbSubCounty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbSubCounty.FormattingEnabled = true;
-            this.cbSubCounty.Location = new System.Drawing.Point(330, 214);
-            this.cbSubCounty.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbSubCounty.Location = new System.Drawing.Point(246, 172);
             this.cbSubCounty.Name = "cbSubCounty";
-            this.cbSubCounty.Size = new System.Drawing.Size(397, 25);
+            this.cbSubCounty.Size = new System.Drawing.Size(294, 21);
             this.cbSubCounty.TabIndex = 86;
             this.cbSubCounty.SelectionChangeCommitted += new System.EventHandler(this.cbSubCounty_SelectionChangeCommitted);
             // 
@@ -3453,10 +3227,9 @@
             // 
             this.cbDistrict.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbDistrict.FormattingEnabled = true;
-            this.cbDistrict.Location = new System.Drawing.Point(330, 177);
-            this.cbDistrict.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbDistrict.Location = new System.Drawing.Point(246, 143);
             this.cbDistrict.Name = "cbDistrict";
-            this.cbDistrict.Size = new System.Drawing.Size(397, 25);
+            this.cbDistrict.Size = new System.Drawing.Size(294, 21);
             this.cbDistrict.TabIndex = 85;
             this.cbDistrict.SelectionChangeCommitted += new System.EventHandler(this.cbDistrict_SelectionChangeCommitted);
             // 
@@ -3465,10 +3238,9 @@
             this.lblHHCodeVal.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblHHCodeVal.AutoSize = true;
             this.lblHHCodeVal.ForeColor = System.Drawing.Color.Red;
-            this.lblHHCodeVal.Location = new System.Drawing.Point(736, 333);
-            this.lblHHCodeVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHHCodeVal.Location = new System.Drawing.Point(547, 268);
             this.lblHHCodeVal.Name = "lblHHCodeVal";
-            this.lblHHCodeVal.Size = new System.Drawing.Size(13, 17);
+            this.lblHHCodeVal.Size = new System.Drawing.Size(11, 13);
             this.lblHHCodeVal.TabIndex = 96;
             this.lblHHCodeVal.Text = "*";
             // 
@@ -3477,10 +3249,9 @@
             this.lblVillageVal.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblVillageVal.AutoSize = true;
             this.lblVillageVal.ForeColor = System.Drawing.Color.Red;
-            this.lblVillageVal.Location = new System.Drawing.Point(736, 294);
-            this.lblVillageVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblVillageVal.Location = new System.Drawing.Point(547, 237);
             this.lblVillageVal.Name = "lblVillageVal";
-            this.lblVillageVal.Size = new System.Drawing.Size(13, 17);
+            this.lblVillageVal.Size = new System.Drawing.Size(11, 13);
             this.lblVillageVal.TabIndex = 95;
             this.lblVillageVal.Text = "*";
             // 
@@ -3489,10 +3260,9 @@
             this.lblWardVal.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblWardVal.AutoSize = true;
             this.lblWardVal.ForeColor = System.Drawing.Color.Red;
-            this.lblWardVal.Location = new System.Drawing.Point(736, 256);
-            this.lblWardVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWardVal.Location = new System.Drawing.Point(547, 207);
             this.lblWardVal.Name = "lblWardVal";
-            this.lblWardVal.Size = new System.Drawing.Size(13, 17);
+            this.lblWardVal.Size = new System.Drawing.Size(11, 13);
             this.lblWardVal.TabIndex = 94;
             this.lblWardVal.Text = "*";
             // 
@@ -3501,10 +3271,9 @@
             this.lblSubCountyVal.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblSubCountyVal.AutoSize = true;
             this.lblSubCountyVal.ForeColor = System.Drawing.Color.Red;
-            this.lblSubCountyVal.Location = new System.Drawing.Point(736, 218);
-            this.lblSubCountyVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSubCountyVal.Location = new System.Drawing.Point(547, 176);
             this.lblSubCountyVal.Name = "lblSubCountyVal";
-            this.lblSubCountyVal.Size = new System.Drawing.Size(13, 17);
+            this.lblSubCountyVal.Size = new System.Drawing.Size(11, 13);
             this.lblSubCountyVal.TabIndex = 93;
             this.lblSubCountyVal.Text = "*";
             // 
@@ -3513,10 +3282,9 @@
             this.lblDistrictVal.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblDistrictVal.AutoSize = true;
             this.lblDistrictVal.ForeColor = System.Drawing.Color.Red;
-            this.lblDistrictVal.Location = new System.Drawing.Point(736, 181);
-            this.lblDistrictVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDistrictVal.Location = new System.Drawing.Point(547, 146);
             this.lblDistrictVal.Name = "lblDistrictVal";
-            this.lblDistrictVal.Size = new System.Drawing.Size(13, 17);
+            this.lblDistrictVal.Size = new System.Drawing.Size(11, 13);
             this.lblDistrictVal.TabIndex = 42;
             this.lblDistrictVal.Text = "*";
             // 
@@ -3534,52 +3302,47 @@
             this.tableLayoutPanel1.Controls.Add(this.nud18BelowM, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.lbl18BelowF, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.nud18BelowF, 3, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(330, 687);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(246, 553);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(397, 46);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(294, 43);
             this.tableLayoutPanel1.TabIndex = 107;
             // 
             // lbl18BelowM
             // 
             this.lbl18BelowM.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl18BelowM.AutoSize = true;
-            this.lbl18BelowM.Location = new System.Drawing.Point(4, 14);
-            this.lbl18BelowM.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl18BelowM.Location = new System.Drawing.Point(3, 15);
             this.lbl18BelowM.Name = "lbl18BelowM";
-            this.lbl18BelowM.Size = new System.Drawing.Size(38, 17);
+            this.lbl18BelowM.Size = new System.Drawing.Size(30, 13);
             this.lbl18BelowM.TabIndex = 85;
             this.lbl18BelowM.Text = "Male";
             // 
             // nud18BelowM
             // 
             this.nud18BelowM.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.nud18BelowM.Location = new System.Drawing.Point(103, 11);
-            this.nud18BelowM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nud18BelowM.Location = new System.Drawing.Point(76, 11);
             this.nud18BelowM.Name = "nud18BelowM";
-            this.nud18BelowM.Size = new System.Drawing.Size(91, 23);
+            this.nud18BelowM.Size = new System.Drawing.Size(67, 20);
             this.nud18BelowM.TabIndex = 84;
             // 
             // lbl18BelowF
             // 
             this.lbl18BelowF.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl18BelowF.AutoSize = true;
-            this.lbl18BelowF.Location = new System.Drawing.Point(202, 14);
-            this.lbl18BelowF.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl18BelowF.Location = new System.Drawing.Point(149, 15);
             this.lbl18BelowF.Name = "lbl18BelowF";
-            this.lbl18BelowF.Size = new System.Drawing.Size(54, 17);
+            this.lbl18BelowF.Size = new System.Drawing.Size(41, 13);
             this.lbl18BelowF.TabIndex = 86;
             this.lbl18BelowF.Text = "Female";
             // 
             // nud18BelowF
             // 
             this.nud18BelowF.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.nud18BelowF.Location = new System.Drawing.Point(301, 11);
-            this.nud18BelowF.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nud18BelowF.Location = new System.Drawing.Point(222, 11);
             this.nud18BelowF.Name = "nud18BelowF";
-            this.nud18BelowF.Size = new System.Drawing.Size(92, 23);
+            this.nud18BelowF.Size = new System.Drawing.Size(68, 20);
             this.nud18BelowF.TabIndex = 83;
             // 
             // tableLayoutPanel2
@@ -3596,52 +3359,47 @@
             this.tableLayoutPanel2.Controls.Add(this.nud18AboveM, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.lbl18AboveF, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.nud18AboveF, 3, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(330, 636);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(246, 511);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(397, 42);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(294, 35);
             this.tableLayoutPanel2.TabIndex = 108;
             // 
             // lbl18AboveM
             // 
             this.lbl18AboveM.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl18AboveM.AutoSize = true;
-            this.lbl18AboveM.Location = new System.Drawing.Point(4, 12);
-            this.lbl18AboveM.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl18AboveM.Location = new System.Drawing.Point(3, 11);
             this.lbl18AboveM.Name = "lbl18AboveM";
-            this.lbl18AboveM.Size = new System.Drawing.Size(38, 17);
+            this.lbl18AboveM.Size = new System.Drawing.Size(30, 13);
             this.lbl18AboveM.TabIndex = 85;
             this.lbl18AboveM.Text = "Male";
             // 
             // nud18AboveM
             // 
             this.nud18AboveM.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.nud18AboveM.Location = new System.Drawing.Point(103, 9);
-            this.nud18AboveM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nud18AboveM.Location = new System.Drawing.Point(76, 7);
             this.nud18AboveM.Name = "nud18AboveM";
-            this.nud18AboveM.Size = new System.Drawing.Size(91, 23);
+            this.nud18AboveM.Size = new System.Drawing.Size(67, 20);
             this.nud18AboveM.TabIndex = 84;
             // 
             // lbl18AboveF
             // 
             this.lbl18AboveF.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl18AboveF.AutoSize = true;
-            this.lbl18AboveF.Location = new System.Drawing.Point(202, 12);
-            this.lbl18AboveF.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl18AboveF.Location = new System.Drawing.Point(149, 11);
             this.lbl18AboveF.Name = "lbl18AboveF";
-            this.lbl18AboveF.Size = new System.Drawing.Size(54, 17);
+            this.lbl18AboveF.Size = new System.Drawing.Size(41, 13);
             this.lbl18AboveF.TabIndex = 86;
             this.lbl18AboveF.Text = "Female";
             // 
             // nud18AboveF
             // 
             this.nud18AboveF.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.nud18AboveF.Location = new System.Drawing.Point(301, 9);
-            this.nud18AboveF.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nud18AboveF.Location = new System.Drawing.Point(222, 7);
             this.nud18AboveF.Name = "nud18AboveF";
-            this.nud18AboveF.Size = new System.Drawing.Size(92, 23);
+            this.nud18AboveF.Size = new System.Drawing.Size(68, 20);
             this.nud18AboveF.TabIndex = 84;
             // 
             // label3
@@ -3649,10 +3407,9 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(59, 16);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(45, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(199, 17);
+            this.label3.Size = new System.Drawing.Size(157, 13);
             this.label3.TabIndex = 109;
             this.label3.Text = "SOURCE OF IDENTIFICATION";
             // 
@@ -3661,10 +3418,9 @@
             this.cboIdentification_source.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboIdentification_source.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboIdentification_source.FormattingEnabled = true;
-            this.cboIdentification_source.Location = new System.Drawing.Point(330, 12);
-            this.cboIdentification_source.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboIdentification_source.Location = new System.Drawing.Point(246, 9);
             this.cboIdentification_source.Name = "cboIdentification_source";
-            this.cboIdentification_source.Size = new System.Drawing.Size(397, 25);
+            this.cboIdentification_source.Size = new System.Drawing.Size(294, 21);
             this.cboIdentification_source.TabIndex = 110;
             // 
             // label5
@@ -3672,10 +3428,9 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(736, 16);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(547, 13);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(13, 17);
+            this.label5.Size = new System.Drawing.Size(11, 13);
             this.label5.TabIndex = 111;
             this.label5.Text = "*";
             // 
@@ -3685,10 +3440,9 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(59, 52);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(45, 43);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(240, 34);
+            this.label6.Size = new System.Drawing.Size(182, 26);
             this.label6.TabIndex = 112;
             this.label6.Text = "Why was the household selected for SOCY support? ";
             // 
@@ -3706,10 +3460,9 @@
             "Has children of female of sexual workers (FSW)",
             "Has sexually abused child or children",
             "Has a pregnant adolescent girl (10-19)"});
-            this.cboHHEnrollReason.Location = new System.Drawing.Point(330, 57);
-            this.cboHHEnrollReason.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboHHEnrollReason.Location = new System.Drawing.Point(246, 46);
             this.cboHHEnrollReason.Name = "cboHHEnrollReason";
-            this.cboHHEnrollReason.Size = new System.Drawing.Size(397, 25);
+            this.cboHHEnrollReason.Size = new System.Drawing.Size(294, 21);
             this.cboHHEnrollReason.TabIndex = 113;
             // 
             // tlpDisplay09
@@ -3720,16 +3473,15 @@
             this.tlpDisplay09.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpDisplay09.ColumnCount = 1;
             this.tlpDisplay09.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay09.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tlpDisplay09.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tlpDisplay09.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpDisplay09.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpDisplay09.Controls.Add(this.tlpDisplay10, 0, 0);
             this.tlpDisplay09.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tlpDisplay09.Location = new System.Drawing.Point(40, 37);
-            this.tlpDisplay09.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay09.Location = new System.Drawing.Point(30, 30);
             this.tlpDisplay09.Name = "tlpDisplay09";
             this.tlpDisplay09.RowCount = 1;
             this.tlpDisplay09.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay09.Size = new System.Drawing.Size(872, 62);
+            this.tlpDisplay09.Size = new System.Drawing.Size(654, 50);
             this.tlpDisplay09.TabIndex = 67;
             // 
             // tlpDisplay10
@@ -3739,28 +3491,26 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpDisplay10.BackColor = System.Drawing.Color.White;
             this.tlpDisplay10.ColumnCount = 2;
-            this.tlpDisplay10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tlpDisplay10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tlpDisplay10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tlpDisplay10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpDisplay10.Controls.Add(this.lblChildren, 1, 0);
             this.tlpDisplay10.Controls.Add(this.chkChildren, 0, 0);
             this.tlpDisplay10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tlpDisplay10.Location = new System.Drawing.Point(5, 5);
-            this.tlpDisplay10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpDisplay10.Location = new System.Drawing.Point(4, 4);
             this.tlpDisplay10.Name = "tlpDisplay10";
             this.tlpDisplay10.RowCount = 1;
             this.tlpDisplay10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay10.Size = new System.Drawing.Size(862, 52);
+            this.tlpDisplay10.Size = new System.Drawing.Size(646, 42);
             this.tlpDisplay10.TabIndex = 66;
             // 
             // lblChildren
             // 
             this.lblChildren.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblChildren.AutoSize = true;
-            this.lblChildren.Location = new System.Drawing.Point(57, 9);
-            this.lblChildren.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblChildren.Location = new System.Drawing.Point(43, 8);
             this.lblChildren.Name = "lblChildren";
-            this.lblChildren.Size = new System.Drawing.Size(746, 34);
+            this.lblChildren.Size = new System.Drawing.Size(600, 26);
             this.lblChildren.TabIndex = 12;
             this.lblChildren.Text = resources.GetString("lblChildren.Text");
             // 
@@ -3768,10 +3518,9 @@
             // 
             this.chkChildren.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chkChildren.AutoSize = true;
-            this.chkChildren.Location = new System.Drawing.Point(17, 17);
-            this.chkChildren.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkChildren.Location = new System.Drawing.Point(12, 14);
             this.chkChildren.Name = "chkChildren";
-            this.chkChildren.Size = new System.Drawing.Size(18, 17);
+            this.chkChildren.Size = new System.Drawing.Size(15, 14);
             this.chkChildren.TabIndex = 15;
             this.chkChildren.UseVisualStyleBackColor = true;
             // 
@@ -3780,10 +3529,9 @@
             this.llblBackTop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.llblBackTop.AutoSize = true;
             this.llblBackTop.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblBackTop.Location = new System.Drawing.Point(901, 20);
-            this.llblBackTop.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.llblBackTop.Location = new System.Drawing.Point(676, 16);
             this.llblBackTop.Name = "llblBackTop";
-            this.llblBackTop.Size = new System.Drawing.Size(39, 17);
+            this.llblBackTop.Size = new System.Drawing.Size(32, 13);
             this.llblBackTop.TabIndex = 54;
             this.llblBackTop.TabStop = true;
             this.llblBackTop.Text = "Back";
@@ -3794,30 +3542,28 @@
             this.tplButton01.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tplButton01.ColumnCount = 5;
-            this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tplButton01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tplButton01.Controls.Add(this.btnCancel, 3, 0);
             this.tplButton01.Controls.Add(this.btnSave, 1, 0);
             this.tplButton01.Controls.Add(this.llblBackBottom, 4, 0);
             this.tplButton01.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tplButton01.Location = new System.Drawing.Point(40, 2551);
-            this.tplButton01.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tplButton01.Location = new System.Drawing.Point(30, 2073);
             this.tplButton01.Name = "tplButton01";
             this.tplButton01.RowCount = 1;
             this.tplButton01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tplButton01.Size = new System.Drawing.Size(872, 49);
+            this.tplButton01.Size = new System.Drawing.Size(654, 40);
             this.tplButton01.TabIndex = 52;
             // 
             // btnCancel
             // 
             this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnCancel.Location = new System.Drawing.Point(480, 10);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancel.Location = new System.Drawing.Point(360, 8);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(100, 28);
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 15;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -3826,10 +3572,9 @@
             // btnSave
             // 
             this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnSave.Location = new System.Drawing.Point(292, 10);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSave.Location = new System.Drawing.Point(219, 8);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(100, 28);
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 14;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -3840,10 +3585,9 @@
             this.llblBackBottom.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.llblBackBottom.AutoSize = true;
             this.llblBackBottom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblBackBottom.Location = new System.Drawing.Point(829, 16);
-            this.llblBackBottom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.llblBackBottom.Location = new System.Drawing.Point(619, 13);
             this.llblBackBottom.Name = "llblBackBottom";
-            this.llblBackBottom.Size = new System.Drawing.Size(39, 17);
+            this.llblBackBottom.Size = new System.Drawing.Size(32, 13);
             this.llblBackBottom.TabIndex = 25;
             this.llblBackBottom.TabStop = true;
             this.llblBackBottom.Text = "Back";
@@ -3851,13 +3595,12 @@
             // 
             // frmOVCIdentificationPrioritization
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.gbOVCIdentificationPrioritizationTitle);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmOVCIdentificationPrioritization";
-            this.Size = new System.Drawing.Size(960, 2622);
+            this.Size = new System.Drawing.Size(720, 2130);
             this.Load += new System.EventHandler(this.frmOVCIdentificationPrioritization_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmOVCIdentificationPrioritization_Paint);
             this.gbOVCIdentificationPrioritizationTitle.ResumeLayout(false);

@@ -17044,7 +17044,10 @@ namespace SOCY_MIS.DataAccessLayer
                 INSERT [dbo].[lst_institution] ([ins_id], [ins_name], [ins_order], [ins_active], [dst_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'177', N'Peace Transitional Home', 177, 1, N'12', N'1', N'1', GETDATE(), GETDATE())
                 INSERT [dbo].[lst_institution] ([ins_id], [ins_name], [ins_order], [ins_active], [dst_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'178', N'Ibanda Babies Home', 178, 1, N'18', N'1', N'1', GETDATE(), GETDATE())
                 INSERT [dbo].[lst_institution] ([ins_id], [ins_name], [ins_order], [ins_active], [dst_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'179', N'Bright Future Transitional Home', 179, 1, N'19', N'1', N'1', GETDATE(), GETDATE())
-                INSERT [dbo].[lst_institution] ([ins_id], [ins_name], [ins_order], [ins_active], [dst_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'180', N'100% HOPE Uganda', 180, 1, N'13', N'1', N'1', GETDATE(), GETDATE())";
+                INSERT [dbo].[lst_institution] ([ins_id], [ins_name], [ins_order], [ins_active], [dst_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'180', N'100% HOPE Uganda', 180, 1, N'13', N'1', N'1', GETDATE(), GETDATE())
+                INSERT [dbo].[lst_institution] ([ins_id], [ins_name], [ins_order], [ins_active], [dst_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'181', N'Agandi foundation', 181, 1, N'19', N'1', N'1', GETDATE(), GETDATE())
+                INSERT [dbo].[lst_institution] ([ins_id], [ins_name], [ins_order], [ins_active], [dst_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'182', N'MIFUMI', 182, 1, N'19', N'1', N'1', GETDATE(), GETDATE())
+                INSERT [dbo].[lst_institution] ([ins_id], [ins_name], [ins_order], [ins_active], [dst_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'183', N'Divine Mercy Foundation', 183, 1, N'19', N'1', N'1', GETDATE(), GETDATE())";
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
         }
