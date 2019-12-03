@@ -438,7 +438,7 @@ namespace SOCY_MIS
             else if (!rbtn_yn_child_undernourished_Yes.Checked  & !rbtn_yn_child_undernourished_NA.Checked & (txtyn_child_undernourished_action.Text == string.Empty || !dtyn_child_undernourished_followup_date.Checked)) { isValid = false; }
             else if (txtother_health_issues.Text != string.Empty &(txtother_health_issues_action.Text == string.Empty || !dtother_health_issues_action_followup_date.Checked)) { isValid = false; }
             else if (!rbtn_yn_no_violence_Yes.Checked & (txtyn_no_violence_action.Text == string.Empty || !dtyn_no_violence_action_followup_date.Checked)) { isValid = false; }
-           /// else if (!rbtn_yn_birth_certificateYes.Checked & !rbtn_yn_birth_certificateNA.Checked & (txt_yn_birth_certificate_action.Text == string.Empty || !dt_yn_birth_certificates_followup_date.Checked)) { isValid = false; }
+            else if (!rbtn_yn_birth_certificateYes.Checked & !rbtn_yn_birth_certificateNA.Checked & (txt_yn_birth_certificate_action.Text == string.Empty || !dt_yn_birth_certificates_followup_date.Checked)) { isValid = false; }
             else if (!rbtn_yn_stable_care_giver_Yes.Checked & (txtyn_stable_care_giver_action.Text == string.Empty || !dtyn_stable_care_giver_followup_date.Checked)) { isValid = false; }
             else if (txtother_safe_issues.Text != string.Empty & (txtother_safe_issues_action.Text == string.Empty || !dtother_safe_issues_followup_date.Checked)) { isValid = false; }
             else if (!yn_stable_access_money_Yes.Checked & (txtyn_stable_access_money_action.Text == string.Empty || !dtyn_stable_access_money_followup_date.Checked)) { isValid = false; }
@@ -902,6 +902,17 @@ namespace SOCY_MIS
         private void rbtn_yn_positive_adhering_NA_CheckedChanged(object sender, EventArgs e)
         {
             rbtn_yn_positive_adhering_Yes_CheckedChanged(rbtn_yn_positive_adhering_Yes, null);
+        }
+
+        private void rbtn_yn_birth_certificateYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!rbtn_yn_birth_certificateYes.Checked) { lblBirthCertificates.ForeColor = Color.Red; }
+            else { lblBirthCertificates.ForeColor = Color.Black; }
+        }
+
+        private void rbtn_yn_birth_certificateNo_CheckedChanged(object sender, EventArgs e)
+        {
+            rbtn_yn_birth_certificateYes_CheckedChanged(rbtn_yn_birth_certificateYes,null);
         }
     }
 }

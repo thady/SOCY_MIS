@@ -106,6 +106,7 @@ namespace SOCY_MIS.DataAccessLayer
         public string hhcs_id_other = string.Empty;
         public string hhcs_id_none = string.Empty;
         public string hh_child_abuse_action = string.Empty;
+        public string member_count = string.Empty;
 
         #endregion Public
 
@@ -228,11 +229,11 @@ namespace SOCY_MIS.DataAccessLayer
                       ,[hhs_id_early_child_dev],[hhs_id_health_hygiene],[hhs_id_hiv_gbv_prevention],[hhs_id_nutrition_counsiling],[hhs_id_pre_post_partum],[hhs_id_hiv_testing]
                       ,[hhs_id_couples_counsiling] ,[hhs_id_birth_certificate],[hhs_id_child_protection],[hhs_id_psychosocial],[hhs_id_food_security],[hhs_id_other] ,[hhs_id_none]
                       ,[hhcs_id_savings_groups],[hhcs_id_parenting_program],[hhcs_id_govt_sage_program],[hhcs_id_other_cash_transfer],[hhcs_id_voluntary_hiv_testing],[hhcs_id_food_security_nutrition]
-                      ,[hhcs_id_skills_employ_training],[hhcs_id_entrepreneurship_training],[hhcs_id_other],[hhcs_id_none],[hh_child_abuse_action],[yn_cp_conflict_with_law],[yn_cp_withheld_meal],[yn_cp_abusive_language])
+                      ,[hhcs_id_skills_employ_training],[hhcs_id_entrepreneurship_training],[hhcs_id_other],[hhcs_id_none],[hh_child_abuse_action],[yn_cp_conflict_with_law],[yn_cp_withheld_meal],[yn_cp_abusive_language],member_count)
                        VALUES('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}','{16}','{17}','{18}','{19}','{20}','{21}','{21}',
                         GETDATE(),GETDATE(),'{22}','{23}','{24}','{25}','{26}','{27}','{28}','{29}','{30}','{31}','{32}','{33}','{34}','{35}','{36}','{37}','{38}','{39}','{40}','{41}',
                         '{42}','{43}','{44}','{45}','{46}','{47}','{48}','{49}','{50}','{51}','{52}','{53}','{54}','{55}','{56}','{57}','{58}','{59}','{60}','{61}','{62}','{63}','{64}','{65}','{66}','{67}','{68}',
-                        '{69}','{70}','{71}','{72}','{73}','{74}','{75}','{76}','{77}','{78}','{79}','{80}','{81}','{82}','{83}','{84}','{85}','{86}','{87}','{88}','{89}','{90}','{91}')";
+                        '{69}','{70}','{71}','{72}','{73}','{74}','{75}','{76}','{77}','{78}','{79}','{80}','{81}','{82}','{83}','{84}','{85}','{86}','{87}','{88}','{89}','{90}','{91}','{92}')";
 
             strSQL = string.Format(strSQL, hha_id, utilFormatting.StringForSQL(hha_comments), hha_date.ToString("dd MMM yyyy HH:mm:ss"),
                 hha_num_of_meals.ToString(),
@@ -250,7 +251,7 @@ namespace SOCY_MIS.DataAccessLayer
                 hhs_id_nutrition_counsiling, hhs_id_pre_post_partum, hhs_id_hiv_testing, hhs_id_couples_counsiling, hhs_id_birth_certificate, hhs_id_child_protection,
                 hhs_id_psychosocial, hhs_id_food_security, hhs_id_other, hhs_id_none, hhcs_id_savings_groups, hhcs_id_parenting_program, hhcs_id_govt_sage_program,
                 hhcs_id_other_cash_transfer, hhcs_id_voluntary_hiv_testing, hhcs_id_food_security_nutrition, hhcs_id_skills_employ_training, hhcs_id_entrepreneurship_training,
-                hhcs_id_other, hhcs_id_none, hh_child_abuse_action, yn_cp_conflict_with_law, yn_cp_withheld_meal, yn_cp_abusive_language);
+                hhcs_id_other, hhcs_id_none, hh_child_abuse_action, yn_cp_conflict_with_law, yn_cp_withheld_meal, yn_cp_abusive_language, member_count);
 
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
@@ -362,6 +363,7 @@ namespace SOCY_MIS.DataAccessLayer
                 hhcs_id_none = dr["hhcs_id_none"].ToString();
                 hh_child_abuse_action = dr["hh_child_abuse_action"].ToString();
                 hhm_go_hungry_past_month = dr["hhm_go_hungry_past_month"].ToString();
+                member_count = dr["member_count"].ToString();
                 #endregion Load Values
             }
         }
@@ -392,7 +394,7 @@ namespace SOCY_MIS.DataAccessLayer
               ",[hhs_id_nutrition_counsiling] = '{66}',[hhs_id_pre_post_partum] = '{67}' ,[hhs_id_hiv_testing] = '{68}' ,[hhs_id_couples_counsiling] = '{69}',[hhs_id_birth_certificate] = '{70}',[hhs_id_child_protection] = '{71}'" +
               ",[hhs_id_psychosocial] = '{72}',[hhs_id_food_security] = '{73}',[hhs_id_other] = '{74}',[hhs_id_none] = '{75}',[hhcs_id_savings_groups] = '{76}' ,[hhcs_id_parenting_program] = '{77}',[hhcs_id_govt_sage_program] = '{78}' " +
               ",[hhcs_id_other_cash_transfer] = '{79}' ,[hhcs_id_voluntary_hiv_testing] = '{80}' ,[hhcs_id_food_security_nutrition] = '{81}',[hhcs_id_skills_employ_training] = '{82}',[hhcs_id_entrepreneurship_training] = '{83}'"  +
-              ",[hhcs_id_other] = '{84}',[hhcs_id_none] = '{85}',[hh_child_abuse_action] = '{86}',hhm_go_hungry_past_month = '{87}',yn_cp_conflict_with_law = '{88}',yn_cp_withheld_meal = '{89}',yn_cp_abusive_language = '{90}' " +
+              ",[hhcs_id_other] = '{84}',[hhcs_id_none] = '{85}',[hh_child_abuse_action] = '{86}',hhm_go_hungry_past_month = '{87}',yn_cp_conflict_with_law = '{88}',yn_cp_withheld_meal = '{89}',yn_cp_abusive_language = '{90}',member_count = '{91}' " +
                "WHERE hha_id = '{0}' ";
             strSQL = string.Format(strSQL, hha_id, utilFormatting.StringForSQL(hha_comments), hha_date.ToString("dd MMM yyyy HH:mm:ss"),
                 hha_num_of_meals.ToString(),
@@ -410,7 +412,7 @@ namespace SOCY_MIS.DataAccessLayer
                 hhs_id_nutrition_counsiling, hhs_id_pre_post_partum, hhs_id_hiv_testing, hhs_id_couples_counsiling, hhs_id_birth_certificate, hhs_id_child_protection,
                 hhs_id_psychosocial, hhs_id_food_security, hhs_id_other, hhs_id_none, hhcs_id_savings_groups, hhcs_id_parenting_program, hhcs_id_govt_sage_program,
                 hhcs_id_other_cash_transfer, hhcs_id_voluntary_hiv_testing, hhcs_id_food_security_nutrition, hhcs_id_skills_employ_training, hhcs_id_entrepreneurship_training,
-                hhcs_id_other, hhcs_id_none, hh_child_abuse_action, hhm_go_hungry_past_month, yn_cp_conflict_with_law, yn_cp_withheld_meal, yn_cp_abusive_language);
+                hhcs_id_other, hhcs_id_none, hh_child_abuse_action, hhm_go_hungry_past_month, yn_cp_conflict_with_law, yn_cp_withheld_meal, yn_cp_abusive_language, member_count);
 
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
@@ -498,6 +500,52 @@ namespace SOCY_MIS.DataAccessLayer
             }
 
             return dt;
+        }
+
+        public  int CountHouseholdMemberCount(string hh_id)
+        {
+            int count = 0;
+            string SQL = string.Empty;
+
+            SQL = "SELECT COUNT(hhm_id) FROM hh_household_member WHERE hh_id = '{0}'";
+            SQL = string.Format(SQL,hh_id);
+
+            try
+            {
+                string strConn = dbCon.ToString();
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(SQL, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            finally
+            {
+                if (conn.State == ConnectionState.Open) { conn.Close(); }
+            }
+
+            return count;
         }
 
         public static DataTable Return_Lookups(string lookupType,string id)

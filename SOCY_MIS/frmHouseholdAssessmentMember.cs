@@ -67,6 +67,9 @@ namespace SOCY_MIS
                 SetPermissions();
                 LoadHousehold();
                 LoadDisplay("");
+                //ShowIndexUpdateLink();
+
+                LoadAdditionSchoolInfoPopup();
             }
         }
 
@@ -110,7 +113,7 @@ namespace SOCY_MIS
             {
                 MessageBox.Show("No district set for this office,please set the office district under office information screen", "SOCY MIS Message Centre", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           
+
         }
 
         private void cbDisability_SelectionChangeCommitted(object sender, EventArgs e)
@@ -450,7 +453,7 @@ namespace SOCY_MIS
             dbCon = new DataAccessLayer.DBConnection(utilConstants.cACKConnection);
             try
             {
-                LoadLists("", "", "", "", "", "", "", "", "", "", "", "", "", "", "","", dbCon);
+                LoadLists("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", dbCon);
             }
             finally
             {
@@ -458,10 +461,10 @@ namespace SOCY_MIS
             }
         }
 
-        private void LoadLists(string strYoB, string strDtpId, string strEduId, string strGndId, 
+        private void LoadLists(string strYoB, string strDtpId, string strEduId, string strGndId,
             string strHstId, string strMstId, string strPrfId, string strPrt_id,
             string strYnIdArt, string strYnIdBirthRegistration, string strYnIdDisability,
-            string strYnIdGivenBirth, string strYnIdImmun, string strYnIdPregnant, 
+            string strYnIdGivenBirth, string strYnIdImmun, string strYnIdPregnant,
             string strYnIdSchool, string strYnVocationalSkill, DataAccessLayer.DBConnection dbCon)
         {
             try
@@ -781,6 +784,8 @@ namespace SOCY_MIS
                         }
 
                         dalHHM.Save(dbCon);
+                        //return current count of members after saving
+
                         #endregion Household Member
 
                         #region Household Assessment Member
@@ -818,7 +823,7 @@ namespace SOCY_MIS
                         dalHAM.usr_id_update = FormMaster.UserId;
                         dalHAM.yn_attained_vocational_skill = cbAttainedVocationalSkill.SelectedValue.ToString();
                         dalHAM.district_id = SystemConstants.Return_office_district();
-                        
+
                         dalHAM.Save(dbCon);
                         #endregion Household Assessment Member
 
@@ -826,6 +831,15 @@ namespace SOCY_MIS
                         Clear();
                         LoadListsMember(HouseholdId, "", dbCon);
                         LoadMembers(dbCon);
+
+                        //Toggle visibility of update link for index beneficiary
+                        //ShowIndexUpdateLink();
+
+                        //Check if there is school going child in household
+                        LoadAdditionSchoolInfoPopup();
+
+                        //Load index registration tool
+                        LoadIndexBeneficiairyPopup(dalHHA);
 
                         if (FormCalling.ObjectId.Length == 0)
                             FormCalling.ObjectId = ObjectId;
@@ -853,6 +867,27 @@ namespace SOCY_MIS
             {
                 FormMaster.ShowMessage(utilConstants.cPTError, this.Name, "Save", exc);
             }
+        }
+
+        protected void LoadIndexBeneficiairyPopup(hhHouseholdAssessment dalHHA)
+        {
+            if (dalHHA.CountHouseholdMemberCount(HouseholdId) == Convert.ToInt32(SystemConstants.HATMemberCount) & benIndexRegistration.ReturnIndexCount(HouseholdId) == 0)
+            {
+                benIndexRegistration.hh_id = HouseholdId;
+                frm_BeneficairyIndexRegister frmNew = new frm_BeneficairyIndexRegister();
+                frmNew.ShowDialog();
+            }
+        }
+
+        protected void LoadAdditionSchoolInfoPopup()
+        {
+            DataTable dt = benAdolescentSchoolAssessment.LoadMembers(HouseholdId);
+            if (dt.Rows.Count > 0)
+            {
+                btnAdolescentData.Visible = true;
+            }
+            else
+                btnAdolescentData.Visible = false;
         }
 
         private string ValidateInput()
@@ -937,7 +972,7 @@ namespace SOCY_MIS
 
         private void cbDisability_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbDisability.Text =="Yes") { lblDisabilityType.ForeColor = Color.Red; }
+            if (cbDisability.Text == "Yes") { lblDisabilityType.ForeColor = Color.Red; }
             else { lblDisabilityType.ForeColor = Color.Black; }
         }
 
@@ -945,6 +980,48 @@ namespace SOCY_MIS
         {
             if (cbHIVStatus.Text == "Positive") { lblART.ForeColor = Color.Red; }
             else { lblART.ForeColor = Color.Black; }
+        }
+
+        private void btnPopup_Click(object sender, EventArgs e)
+        {
+            frm_BeneficairyIndexRegister frmNew = new frm_BeneficairyIndexRegister();
+            frmNew.ShowDialog();
+        }
+
+        private void lnkIndex_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            benIndexRegistration.hh_id = HouseholdId;
+            frm_BeneficairyIndexRegister frmNew = new frm_BeneficairyIndexRegister();
+            frmNew.ShowDialog();
+        }
+
+        protected void ShowIndexUpdateLink()
+        {
+            if (benIndexRegistration.ReturnIndexCount(HouseholdId) > 0)
+            {
+                lnkIndex.Visible = true;
+            }
+            else
+            {
+                lnkIndex.Visible = false;
+            }
+        }
+
+        private void frmHouseholdAssessmentMember_MouseEnter(object sender, EventArgs e)
+        {
+            //ShowIndexUpdateLink();
+        }
+
+        private void tlpDisplay01_MouseEnter(object sender, EventArgs e)
+        {
+            //ShowIndexUpdateLink();
+        }
+
+        private void btnAdolescentData_Click(object sender, EventArgs e)
+        {
+            benAdolescentSchoolAssessment.hh_id = HouseholdId;
+            frmBeneficiaryschoolAssessment frmNew = new frmBeneficiaryschoolAssessment();
+            frmNew.ShowDialog();
         }
     }
 }

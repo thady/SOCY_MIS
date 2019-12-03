@@ -166,6 +166,12 @@
     <Compile Include="frmBeneficairyIndexRegisterSearch.Designer.cs">
       <DependentUpon>frmBeneficairyIndexRegisterSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBeneficiaryschoolAssessment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBeneficiaryschoolAssessment.Designer.cs">
+      <DependentUpon>frmBeneficiaryschoolAssessment.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBenSchoolReadinessTool.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -484,6 +490,12 @@
     <Compile Include="frmHouseholdRiskAssessmentMain.Designer.cs">
       <DependentUpon>frmHouseholdRiskAssessmentMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHouseholdRiskAssessmentPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHouseholdRiskAssessmentPopup.Designer.cs">
+      <DependentUpon>frmHouseholdRiskAssessmentPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHouseholdRiskAssessmentRegister.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -772,6 +784,12 @@
     <Compile Include="frm_apprenticeship_skill_acquision_tracking_search.Designer.cs">
       <DependentUpon>frm_apprenticeship_skill_acquision_tracking_search.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_BeneficairyIndexRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_BeneficairyIndexRegister.Designer.cs">
+      <DependentUpon>frm_BeneficairyIndexRegister.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_hh_household_improvement_plan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -840,6 +858,12 @@
     <Compile Include="frmResultArea01.Designer.cs">
       <DependentUpon>frmResultArea01.cs</DependentUpon>
     </Compile>
+    <Compile Include="TempForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TempForm.Designer.cs">
+      <DependentUpon>TempForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Web References\SOCYMIS_WS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -885,6 +909,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBeneficairyIndexRegisterSearch.resx">
       <DependentUpon>frmBeneficairyIndexRegisterSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBeneficiaryschoolAssessment.resx">
+      <DependentUpon>frmBeneficiaryschoolAssessment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBenSchoolReadinessTool.resx">
       <DependentUpon>frmBenSchoolReadinessTool.cs</DependentUpon>
@@ -1042,6 +1069,9 @@
     <EmbeddedResource Include="frmHouseholdRiskAssessmentMain.resx">
       <DependentUpon>frmHouseholdRiskAssessmentMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmHouseholdRiskAssessmentPopup.resx">
+      <DependentUpon>frmHouseholdRiskAssessmentPopup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmHouseholdRiskAssessmentRegister.resx">
       <DependentUpon>frmHouseholdRiskAssessmentRegister.cs</DependentUpon>
     </EmbeddedResource>
@@ -1186,6 +1216,9 @@
     <EmbeddedResource Include="frm_apprenticeship_skill_acquision_tracking_search.resx">
       <DependentUpon>frm_apprenticeship_skill_acquision_tracking_search.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_BeneficairyIndexRegister.resx">
+      <DependentUpon>frm_BeneficairyIndexRegister.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_hh_household_improvement_plan.resx">
       <DependentUpon>frm_hh_household_improvement_plan.cs</DependentUpon>
     </EmbeddedResource>
@@ -1229,6 +1262,9 @@
     </Compile>
     <EmbeddedResource Include="frmResultArea01.resx">
       <DependentUpon>frmResultArea01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TempForm.resx">
+      <DependentUpon>TempForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config">
       <SubType>Designer</SubType>

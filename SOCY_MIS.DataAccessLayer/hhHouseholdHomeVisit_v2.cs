@@ -40,6 +40,8 @@ namespace SOCY_MIS.DataAccessLayer
         public static string ofc_id = string.Empty;
         public static string district_id = string.Empty;
 
+        public static string previous_hiv_status = string.Empty;
+
         #region dbconnection
         static DataAccessLayer.DBConnection dbCon = new DataAccessLayer.DBConnection(utilConstants.cACKConnection);
         static string SQLConnection = dbCon.SQLDBConnection(utilConstants.cACKConnection);
@@ -785,6 +787,60 @@ namespace SOCY_MIS.DataAccessLayer
             }
 
             return dt;
+        }
+
+        public static string LoadPrevHIVStatus(string hhm_id)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter Adapt;
+            string strSQL = string.Empty;
+            string hst_id = string.Empty;
+
+            strSQL = @"SELECT hst_id_new FROM hh_household_member WHERE hhm_id = '{0}'";
+            strSQL = string.Format(strSQL, hhm_id);
+            try
+            {
+                string strConn = dbCon.ToString();
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(strSQL, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    Adapt = new SqlDataAdapter(cmd);
+                    Adapt.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        DataRow dtRow = dt.Rows[0];
+                        hst_id = dtRow["hst_id_new"].ToString();
+
+                    }
+
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            finally
+            {
+                if (conn.State == ConnectionState.Open) { conn.Close(); }
+            }
+
+            return hst_id;
         }
 
     }

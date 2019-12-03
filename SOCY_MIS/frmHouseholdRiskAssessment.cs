@@ -78,6 +78,22 @@ namespace SOCY_MIS
                     txtVillage.Text = dtRow["hh_village"].ToString();
                 }
             }
+            else if (SystemConstants.isRiskAssessmentPopup == true)
+            {
+                dt = hhHouseholdRiskAssessment.ReturnHHDetails(SystemConstants.HouseholdId);
+                if (dt.Rows.Count > 0)
+                {
+                    DataRow dtRow = dt.Rows[0];
+
+                    cboDistrict.SelectedValue = dtRow["dst_id"].ToString();
+                    cboSubCounty.SelectedValue = dtRow["sct_id"].ToString();
+                    cboParish.SelectedValue = dtRow["wrd_id"].ToString();
+                    cboHHCode.SelectedValue = SystemConstants.HouseholdId;
+                    txtVillage.Text = dtRow["hh_village"].ToString();
+                }
+
+                lblBack.Visible = false;
+            }
         }
 
         protected void Return_lookups()
@@ -116,16 +132,31 @@ namespace SOCY_MIS
             cboParish.ValueMember = "wrd_id";
 
             #region hhm
+            if (!SystemConstants.isRiskAssessmentPopup == true)
+            {
+                dt = GBV_screeningTool.ReturnLists("hhm", HouseholdId);
+                DataRow hhm_emptyRow = dt.NewRow();
+                hhm_emptyRow["hhm_id"] = "-1";
+                hhm_emptyRow["hhm_name"] = "Select one";
+                dt.Rows.InsertAt(hhm_emptyRow, 0);
 
-            dt = GBV_screeningTool.ReturnLists("hhm", HouseholdId);
-            DataRow hhm_emptyRow = dt.NewRow();
-            hhm_emptyRow["hhm_id"] = "-1";
-            hhm_emptyRow["hhm_name"] = "Select one";
-            dt.Rows.InsertAt(hhm_emptyRow, 0);
+                cboHHMemberName.DataSource = dt;
+                cboHHMemberName.DisplayMember = "hhm_name";
+                cboHHMemberName.ValueMember = "hhm_id";
+            }
+            else
+            {
+                dt = GBV_screeningTool.ReturnLists("hhm", SystemConstants.HouseholdId);
+                DataRow hhm_emptyRow = dt.NewRow();
+                hhm_emptyRow["hhm_id"] = "-1";
+                hhm_emptyRow["hhm_name"] = "Select one";
+                dt.Rows.InsertAt(hhm_emptyRow, 0);
 
-            cboHHMemberName.DataSource = dt;
-            cboHHMemberName.DisplayMember = "hhm_name";
-            cboHHMemberName.ValueMember = "hhm_id";
+                cboHHMemberName.DataSource = dt;
+                cboHHMemberName.DisplayMember = "hhm_name";
+                cboHHMemberName.ValueMember = "hhm_id";
+            }
+            
             #endregion hhm_name
 
         }

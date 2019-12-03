@@ -679,6 +679,7 @@ namespace SOCY_MIS
             frmNew.HouseholdId = ObjectId;
             frmNewChild.HouseholdId = ObjectId;
             frmNewAdult.HouseholdId = ObjectId;
+            SystemConstants.isRiskAssessmentPopup = false;
             frmNew.ObjectId = string.Empty;
             frmNew.FormCalling = this;
             frmNew.FormMaster = FormMaster;

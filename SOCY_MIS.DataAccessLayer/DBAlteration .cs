@@ -535,8 +535,10 @@ namespace SOCY_MIS.DataAccessLayer
                     }
                    
                 }
-
-                Version36(dbCon);
+                else
+                {
+                    Version36(dbCon);
+                }
 
                 dbCon.TransactionCommit();
             }
@@ -15783,6 +15785,327 @@ namespace SOCY_MIS.DataAccessLayer
             #endregion SQL
         }
 
+
+
+        private static void Createben_ovc_index_register(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            #region SQL
+            #region Tables
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'ben_ovc_index_register')
+                      CREATE TABLE [dbo].[ben_ovc_index_register](
+	                    [ibr_id] [varchar](50) NOT NULL,
+	                    [hhm_id] [varchar](50) NULL,
+	                    [dst_id] [varchar](50) NOT NULL,
+	                    [sct_id] [varchar](50) NOT NULL,
+	                    [index_wrd_id] [varchar](50) NOT NULL,
+	                    [ibr_date] [date] NOT NULL,
+	                    [entry_point] [varchar](50) NOT NULL,
+	                    [incharge_name] [varchar](50) NOT NULL,
+	                    [other_entry_point] [varchar](50) NOT NULL,
+	                    [category_id] [varchar](3) NOT NULL,
+	                    [index_name] [varchar](50) NOT NULL,
+	                    [dob] [int] NOT NULL,
+	                    [gnd_id] [varchar](50) NOT NULL,
+	                    [unique_id] [varchar](50) NOT NULL,
+	                    [yn_id_suppress] [varchar](2) NOT NULL,
+	                    [art_date] [date] NOT NULL,
+	                    [hhm_id_caregiver] [varchar](50) NOT NULL,
+	                    [village] [varchar](100) NOT NULL,
+	                    [chbc_name] [varchar](100) NOT NULL,
+	                    [chbc_contact] [varchar](50) NOT NULL,
+	                    [swk_id] [varchar](50) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [district_id] [nvarchar](50) NOT NULL,
+                     CONSTRAINT [PK_ben_ovc_index_register] PRIMARY KEY CLUSTERED 
+                    (
+	                    [ibr_id] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'ben_ovc_index_register_upload')
+                        CREATE TABLE [dbo].[ben_ovc_index_register_upload](
+	                    [ibr_sid] [int] IDENTITY(1,1) NOT NULL,
+	                    [ibr_id] [varchar](50) NOT NULL,
+	                    [hhm_id] [varchar](50) NOT NULL,
+	                    [dst_id] [varchar](50) NOT NULL,
+	                    [sct_id] [varchar](50) NOT NULL,
+	                    [index_wrd_id] [varchar](50) NOT NULL,
+	                    [ibr_date] [date] NOT NULL,
+	                    [entry_point] [varchar](50) NOT NULL,
+	                    [incharge_name] [varchar](50) NOT NULL,
+	                    [other_entry_point] [varchar](50) NOT NULL,
+	                    [category_id] [varchar](3) NOT NULL,
+	                    [index_name] [varchar](50) NOT NULL,
+	                    [dob] [int] NOT NULL,
+	                    [gnd_id] [varchar](50) NOT NULL,
+	                    [unique_id] [varchar](50) NOT NULL,
+	                    [yn_id_suppress] [varchar](2) NOT NULL,
+	                    [art_date] [date] NOT NULL,
+	                    [hhm_id_caregiver] [varchar](50) NOT NULL,
+	                    [village] [varchar](100) NOT NULL,
+	                    [chbc_name] [varchar](100) NOT NULL,
+	                    [chbc_contact] [varchar](50) NOT NULL,
+	                    [swk_id] [varchar](50) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [trg_action] [int] NOT NULL,
+	                    [district_id] [nvarchar](50) NOT NULL,
+                     CONSTRAINT [PK_ben_ovc_index_register_upload] PRIMARY KEY CLUSTERED 
+                    (
+	                    [ibr_sid] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion Tables
+
+            #region Triggers
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_ovc_index_register_insert' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_ovc_index_register_insert] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_ovc_index_register_insert] ON [dbo].[ben_ovc_index_register] FOR INSERT
+                        AS
+                        BEGIN
+                        INSERT INTO [dbo].[ben_ovc_index_register_upload]
+						([ibr_id],[hhm_id],[dst_id] ,[sct_id],[index_wrd_id] ,[ibr_date],[entry_point] ,[incharge_name],[other_entry_point],[category_id] ,[index_name],[dob] ,[gnd_id] ,[unique_id]
+						,[yn_id_suppress] ,[art_date],[hhm_id_caregiver] ,[village] ,[chbc_name] ,[chbc_contact] ,[swk_id] ,[usr_id_create] ,[usr_id_update],[usr_date_create],[usr_date_update],[ofc_id]
+						,[trg_action],[district_id])
+                        SELECT [ibr_id],[hhm_id],[dst_id] ,[sct_id],[index_wrd_id] ,[ibr_date],[entry_point] ,[incharge_name],[other_entry_point],[category_id] ,[index_name],[dob] ,[gnd_id] ,[unique_id]
+						,[yn_id_suppress] ,[art_date],[hhm_id_caregiver] ,[village] ,[chbc_name] ,[chbc_contact] ,[swk_id] ,[usr_id_create] ,[usr_id_update],[usr_date_create],[usr_date_update],[ofc_id]
+						,1,[district_id]
+                     FROM inserted
+                        END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_ovc_index_register_update' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_ovc_index_register_update] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_ovc_index_register_update] ON [dbo].[ben_ovc_index_register] FOR UPDATE
+                        AS
+                        BEGIN
+                        INSERT INTO [dbo].[ben_ovc_index_register_upload]
+						([ibr_id],[hhm_id],[dst_id] ,[sct_id],[index_wrd_id] ,[ibr_date],[entry_point] ,[incharge_name],[other_entry_point],[category_id] ,[index_name],[dob] ,[gnd_id] ,[unique_id]
+						,[yn_id_suppress] ,[art_date],[hhm_id_caregiver] ,[village] ,[chbc_name] ,[chbc_contact] ,[swk_id] ,[usr_id_create] ,[usr_id_update],[usr_date_create],[usr_date_update],[ofc_id]
+						,[trg_action],[district_id])
+                        SELECT [ibr_id],[hhm_id],[dst_id] ,[sct_id],[index_wrd_id] ,[ibr_date],[entry_point] ,[incharge_name],[other_entry_point],[category_id] ,[index_name],[dob] ,[gnd_id] ,[unique_id]
+						,[yn_id_suppress] ,[art_date],[hhm_id_caregiver] ,[village] ,[chbc_name] ,[chbc_contact] ,[swk_id] ,[usr_id_create] ,[usr_id_update],[usr_date_create],[usr_date_update],[ofc_id]
+						,2,[district_id]
+                    FROM inserted
+                        END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_ovc_index_register_delete' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_ovc_index_register_delete] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_ovc_index_register_delete] ON [dbo].[ben_ovc_index_register] FOR DELETE
+                        AS
+                        BEGIN
+                        INSERT INTO [dbo].[ben_ovc_index_register_upload]
+						([ibr_id],[hhm_id],[dst_id] ,[sct_id],[index_wrd_id] ,[ibr_date],[entry_point] ,[incharge_name],[other_entry_point],[category_id] ,[index_name],[dob] ,[gnd_id] ,[unique_id]
+						,[yn_id_suppress] ,[art_date],[hhm_id_caregiver] ,[village] ,[chbc_name] ,[chbc_contact] ,[swk_id] ,[usr_id_create] ,[usr_id_update],[usr_date_create],[usr_date_update],[ofc_id]
+						,[trg_action],[district_id])
+                        SELECT [ibr_id],[hhm_id],[dst_id] ,[sct_id],[index_wrd_id] ,[ibr_date],[entry_point] ,[incharge_name],[other_entry_point],[category_id] ,[index_name],[dob] ,[gnd_id] ,[unique_id]
+						,[yn_id_suppress] ,[art_date],[hhm_id_caregiver] ,[village] ,[chbc_name] ,[chbc_contact] ,[swk_id] ,[usr_id_create] ,[usr_id_update],[usr_date_create],[usr_date_update],[ofc_id]
+						,3,[district_id]
+                FROM inserted
+                        END  ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            #endregion Triggers
+            #endregion SQL
+        }
+
+
+        private static void Createlst_index_beneficiary_category(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            #region SQL
+            #region Tables
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'lst_index_beneficiary_category')
+                      CREATE TABLE [dbo].[lst_index_beneficiary_category](
+	                    [cat_sid] [int] NOT NULL,
+	                    [cat_id] [varchar](50) NOT NULL,
+	                    [cat_name] [varchar](500) NOT NULL,
+	                    [cat_order] [int] NOT NULL,
+	                    [cat_active] [bit] NOT NULL,
+	                    [lng_id] [char](2) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+                     CONSTRAINT [PK_lst_index_beneficiary_category] PRIMARY KEY CLUSTERED 
+                    (
+	                    [cat_sid] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            #endregion Tables
+            #endregion SQL
+        }
+
+        private static void AlterHatTable(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            #region SQL
+            #region Tables
+            strSQL = @"IF NOT EXISTS (SELECT * FROM syscolumns
+                      WHERE ID=OBJECT_ID('[dbo].[hh_household_assessment]') AND NAME='member_count')
+                      ALTER TABLE [dbo].[hh_household_assessment]
+                      ADD [member_count] VARCHAR(2) DEFAULT ''";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "ALTER TABLE hh_household_assessment DISABLE TRIGGER hh_household_assessment_update";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_household_assessment SET member_count = '' WHERE member_count IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "ALTER TABLE hh_household_assessment ENABLE TRIGGER hh_household_assessment_update";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            #endregion Tables
+            #endregion SQL
+        }
+
+
+
+        private static void Createben_ovc_school_eligibility_assessment(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            #region SQL
+            #region Tables
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'ben_ovc_school_eligibility_assessment')
+                      CREATE TABLE [dbo].[ben_ovc_school_eligibility_assessment](
+	                    [record_id] [varchar](50) NOT NULL,
+	                    [hhm_id] [varchar](50) NOT NULL,
+	                    [yn_hhm_in_school] [varchar](1) NOT NULL,
+	                    [yn_current_school] [varchar](50) NOT NULL,
+	                    [current_class] [varchar](50) NULL,
+	                    [total_days_missed_school_last_term] [varchar](50) NOT NULL,
+	                    [reason_for_missing_sch] [varchar](50) NOT NULL,
+	                    [prev_school_attended] [varchar](50) NOT NULL,
+	                    [class_at_dropout] [varchar](50) NULL,
+	                    [dropout_reason] [varchar](50) NOT NULL,
+	                    [yn_school_or_vocational] [varchar](50) NOT NULL,
+	                    [school_term_start] [varchar](50) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [district_id] [nvarchar](50) NOT NULL,
+                     CONSTRAINT [PK_ben_ovc_school_eligibility_assessment] PRIMARY KEY CLUSTERED 
+                    (
+	                    [record_id] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'ben_ovc_school_eligibility_assessment_upload')
+                        CREATE TABLE [dbo].[ben_ovc_school_eligibility_assessment_upload](
+	                    [record_sid] [int] IDENTITY(1,1) NOT NULL,
+	                    [record_id] [varchar](50) NOT NULL,
+	                    [hhm_id] [varchar](50) NOT NULL,
+	                    [yn_hhm_in_school] [varchar](1) NOT NULL,
+	                    [yn_current_school] [varchar](50) NOT NULL,
+	                    [current_class] [varchar](50) NOT NULL,
+	                    [total_days_missed_school_last_term] [varchar](50) NOT NULL,
+	                    [reason_for_missing_sch] [varchar](50) NOT NULL,
+	                    [prev_school_attended] [varchar](50) NOT NULL,
+	                    [class_at_dropout] [varchar](50) NOT NULL,
+	                    [dropout_reason] [varchar](50) NOT NULL,
+	                    [yn_school_or_vocational] [varchar](50) NOT NULL,
+	                    [school_term_start] [varchar](50) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [trg_action] [int] NOT NULL,
+	                    [district_id] [nvarchar](50) NOT NULL,
+                     CONSTRAINT [PK_ben_ovc_school_eligibility_assessment_upload] PRIMARY KEY CLUSTERED 
+                    (
+	                    [record_sid] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion Tables
+
+            #region Triggers
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_ovc_school_eligibility_assessment_insert' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_ovc_school_eligibility_assessment_insert] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_ovc_school_eligibility_assessment_insert] ON [dbo].[ben_ovc_school_eligibility_assessment] FOR INSERT
+                        AS
+                        BEGIN
+                       INSERT INTO [dbo].[ben_ovc_school_eligibility_assessment_upload]
+                     ([record_id] ,[hhm_id] ,[yn_hhm_in_school] ,[yn_current_school] ,[current_class] ,[total_days_missed_school_last_term]  ,[reason_for_missing_sch] ,[prev_school_attended]
+                        ,[class_at_dropout] ,[dropout_reason] ,[yn_school_or_vocational] ,[school_term_start] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update]  ,[ofc_id]  ,[trg_action] ,[district_id])
+                        SELECT [record_id] ,[hhm_id] ,[yn_hhm_in_school] ,[yn_current_school] ,[current_class] ,[total_days_missed_school_last_term]  ,[reason_for_missing_sch] ,[prev_school_attended]
+                     ,[class_at_dropout] ,[dropout_reason] ,[yn_school_or_vocational] ,[school_term_start] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update]  ,[ofc_id]  ,1 ,[district_id]
+                     FROM inserted
+                        END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_ovc_school_eligibility_assessment_update' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_ovc_school_eligibility_assessment_update] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_ovc_school_eligibility_assessment_update] ON [dbo].[ben_ovc_school_eligibility_assessment] FOR UPDATE
+                        AS
+                        BEGIN
+                       INSERT INTO [dbo].[ben_ovc_school_eligibility_assessment_upload]
+                    ([record_id] ,[hhm_id] ,[yn_hhm_in_school] ,[yn_current_school] ,[current_class] ,[total_days_missed_school_last_term]  ,[reason_for_missing_sch] ,[prev_school_attended]
+                    ,[class_at_dropout] ,[dropout_reason] ,[yn_school_or_vocational] ,[school_term_start] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update]  ,[ofc_id]  ,[trg_action] ,[district_id])
+                        SELECT [record_id] ,[hhm_id] ,[yn_hhm_in_school] ,[yn_current_school] ,[current_class] ,[total_days_missed_school_last_term]  ,[reason_for_missing_sch] ,[prev_school_attended]
+                    ,[class_at_dropout] ,[dropout_reason] ,[yn_school_or_vocational] ,[school_term_start] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update]  ,[ofc_id]  ,2 ,[district_id]
+                     FROM inserted
+                        END  ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_ovc_school_eligibility_assessment_delete' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_ovc_school_eligibility_assessment_delete] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_ovc_school_eligibility_assessment_delete] ON [dbo].[ben_ovc_school_eligibility_assessment] FOR DELETE
+                        AS
+                        BEGIN
+                       INSERT INTO [dbo].[ben_ovc_school_eligibility_assessment_upload]
+                    ([record_id] ,[hhm_id] ,[yn_hhm_in_school] ,[yn_current_school] ,[current_class] ,[total_days_missed_school_last_term]  ,[reason_for_missing_sch] ,[prev_school_attended]
+                    ,[class_at_dropout] ,[dropout_reason] ,[yn_school_or_vocational] ,[school_term_start] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update]  ,[ofc_id]  ,[trg_action] ,[district_id])
+                        SELECT [record_id] ,[hhm_id] ,[yn_hhm_in_school] ,[yn_current_school] ,[current_class] ,[total_days_missed_school_last_term]  ,[reason_for_missing_sch] ,[prev_school_attended]
+                     ,[class_at_dropout] ,[dropout_reason] ,[yn_school_or_vocational] ,[school_term_start] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update]  ,[ofc_id]  ,3 ,[district_id]
+                     FROM inserted
+                        END   ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            #endregion Triggers
+            #endregion SQL
+        }
+
         #endregion Create Tables
 
         #region Insert Data
@@ -16278,6 +16601,27 @@ namespace SOCY_MIS.DataAccessLayer
         }
 
 
+        private static void Insertlst_index_beneficiary_category(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            strSQL = "DELETE FROM lst_index_beneficiary_category";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            #region SQL
+            strSQL = @"INSERT [dbo].[lst_index_beneficiary_category] ([cat_sid], [cat_id], [cat_name], [cat_order], [cat_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1, N'1', N'Exposed Infant', 1, 1, N'EN', N'1', N'1', CAST(N'2019-10-29T00:00:00.000' AS DateTime), CAST(N'2019-10-29T00:00:00.000' AS DateTime))
+            INSERT [dbo].[lst_index_beneficiary_category] ([cat_sid], [cat_id], [cat_name], [cat_order], [cat_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2, N'2', N'HIV+ Child', 2, 1, N'EN', N'1', N'1', CAST(N'2019-10-29T00:00:00.000' AS DateTime), CAST(N'2019-10-29T00:00:00.000' AS DateTime))
+            INSERT [dbo].[lst_index_beneficiary_category] ([cat_sid], [cat_id], [cat_name], [cat_order], [cat_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (3, N'3', N'HIV+ Adult', 3, 1, N'EN', N'1', N'1', CAST(N'2019-10-29T00:00:00.000' AS DateTime), CAST(N'2019-10-29T00:00:00.000' AS DateTime))
+            INSERT [dbo].[lst_index_beneficiary_category] ([cat_sid], [cat_id], [cat_name], [cat_order], [cat_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (4, N'4', N'Pregnant Adolescent girl', 4, 1, N'EN', N'1', N'1', CAST(N'2019-10-29T00:00:00.000' AS DateTime), CAST(N'2019-10-29T00:00:00.000' AS DateTime))
+            INSERT [dbo].[lst_index_beneficiary_category] ([cat_sid], [cat_id], [cat_name], [cat_order], [cat_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (5, N'5', N'Sexually Abused', 5, 1, N'EN', N'1', N'1', CAST(N'2019-10-29T00:00:00.000' AS DateTime), CAST(N'2019-10-29T00:00:00.000' AS DateTime))
+            INSERT [dbo].[lst_index_beneficiary_category] ([cat_sid], [cat_id], [cat_name], [cat_order], [cat_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (6, N'6', N'Female Sex Worker(FSW)', 6, 1, N'EN', N'1', N'1', CAST(N'2019-10-29T00:00:00.000' AS DateTime), CAST(N'2019-10-29T00:00:00.000' AS DateTime))";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion SQL
+        }
+
+
         private static void Insertlst_risk_assessment_criteria(DBConnection dbCon)
         {
             #region Variables
@@ -16411,7 +16755,7 @@ namespace SOCY_MIS.DataAccessLayer
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('13','Omony Emmanuel',13,'772359672','Lamobrf2016@gmail.com','CSO001',1,'17','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('14','TINDYEBWA MOSES',14,'0703522348','','CSO019',1,'14','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('15','KUKUNDA ELIZABETH',15,'783915182','','CSO016',1,'19','1','1','2018-07-19','2018-07-19')
-            INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('16','Kasule Fredrick',16,'0774547072','kirumirafrederick@gmail.com','CSO017',1,'12','1','1','2018-07-19','2018-07-19')
+            INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('16','KENETH MUSASIIZI MIKE',16,'0783239693','','CSO017',1,'12','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('17','Nakigudde Alice',17,'700233149','Alice2009@gmail.com','CSO018',1,'21','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('18','Kembabazi Evelin',18,'0775703910','','CSO018',1,'20','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('19','NATWIJUKA DIID',19,'774895026','natwijukadiidi@gmail.com','CSO004',1,'18','1','1','2018-07-19','2018-07-19')
@@ -17531,8 +17875,6 @@ namespace SOCY_MIS.DataAccessLayer
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (47, N'47', N'DDWANIRO', 47, 1, N'15', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (48, N'48', N'EASTERN DIVISION ', 48, 1, N'14', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (49, N'49', N'EASTERN DIVISION ', 49, 1, N'16', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
-                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (50, N'50', N'EASTERN DIVISION ', 50, 1, N'16', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
-                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (51, N'51', N'EASTERN DIVISION OR WESTERN DIVISION ', 51, 1, N'16', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (52, N'52', N'ENDINZI', 52, 1, N'4', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (53, N'53', N'ENTEBBE DIVISION A', 53, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (54, N'54', N'ENTEBBE DIVISION B', 54, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
@@ -17557,7 +17899,7 @@ namespace SOCY_MIS.DataAccessLayer
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (73, N'73', N'KABULASOKE', 73, 1, N'2', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (74, N'74', N'KABUYANDA SUBCOUNTY', 74, 1, N'4', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (75, N'75', N'KABUYANDA TOWN COUNCIL ', 75, 1, N'4', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
-                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (76, N'76', N'KABWOYA', 76, 1, N'3', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (76, N'76', N'KABWOYA', 76, 1, N'22', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (77, N'77', N'KACHEERA', 77, 1, N'15', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (78, N'78', N'KAGADI SUBCOUNTY', 78, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (79, N'79', N'KAGADI TOWN COUNCIL ', 79, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
@@ -17572,8 +17914,8 @@ namespace SOCY_MIS.DataAccessLayer
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (88, N'88', N'KAKIRI TOWN COUNCIL', 88, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (89, N'89', N'KAKUUTO', 89, 1, N'23', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (90, N'90', N'KALAGALA', 90, 1, N'12', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
-                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (91, N'91', N'KALISIZO RURAL', 91, 1, N'15', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
-                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (92, N'92', N'KALISIZO TOWN COUNCIL', 92, 1, N'15', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (91, N'91', N'KALISIZO RURAL', 91, 1, N'23', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (92, N'92', N'KALISIZO TOWN COUNCIL', 92, 1, N'23', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (93, N'93', N'KAMBUGA', 93, 1, N'7', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (94, N'94', N'KAMIRA', 94, 1, N'12', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (95, N'95', N'KAMUGANGUZI', 95, 1, N'5', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
@@ -17588,7 +17930,7 @@ namespace SOCY_MIS.DataAccessLayer
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (104, N'104', N'KANYARYERU', 104, 1, N'10', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (105, N'105', N'KARAMBI', 105, 1, N'8', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (106, N'106', N'KARUSANDARA', 106, 1, N'8', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
-                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (107, N'107', N'KASAALI', 107, 1, N'15', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (107, N'107', N'KASAALI', 107, 1, N'23', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (108, N'108', N'KASAMBYA', 108, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (109, N'109', N'KASANJE', 109, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (110, N'110', N'KASASA', 110, 1, N'23', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
@@ -17650,7 +17992,7 @@ namespace SOCY_MIS.DataAccessLayer
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (166, N'166', N'KYARUSOZI SUB COUNTY', 166, 1, N'11', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (167, N'167', N'KYARUSOZI TOWN COUNCIL', 167, 1, N'11', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (168, N'168', N'KYEBANDO', 168, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
-                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (169, N'169', N'KYEBE', 169, 1, N'15', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (169, N'169', N'KYEBE', 169, 1, N'23', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (170, N'170', N'KYEGONZA', 170, 1, N'2', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (171, N'171', N'KYEIZOOBA', 171, 1, N'1', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (172, N'172', N'KYENJOJO TOWN COUNCIL', 172, 1, N'11', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
@@ -17742,8 +18084,6 @@ namespace SOCY_MIS.DataAccessLayer
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (258, N'258', N'RWEMIKOMA', 258, 1, N'10', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (259, N'259', N'SANGA', 259, 1, N'10', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (260, N'260', N'SOUTHERN DIVISION ', 260, 1, N'16', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
-                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (261, N'261', N'SOUTHERN DIVISION ', 261, 1, N'16', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
-                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (262, N'262', N'SOUTHERN DIVISION', 262, 1, N'16', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (263, N'263', N'SSABAGABO-MAKINDYE', 263, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (264, N'264', N'SSEKANYONYI', 264, 1, N'13', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (265, N'265', N'KAJJANSI TOWN COUNCIL', 265, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
@@ -17751,8 +18091,6 @@ namespace SOCY_MIS.DataAccessLayer
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (267, N'267', N'WAKISO TOWN COUNCIL', 267, 1, N'17', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (268, N'268', N'WESTERN DIVISION ', 268, 1, N'14', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (269, N'269', N'WESTERN DIVISION ', 269, 1, N'16', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
-                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (270, N'270', N'WESTERN DIVISION ', 270, 1, N'16', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
-                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (271, N'271', N'WESTERN DIVISION', 271, 1, N'16', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (272, N'272', N'WOBULENZI  TOWN COUNCIL', 272, 1, N'12', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (273, N'273', N'ZIROBWE', 273, 1, N'12', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (274, N'274', N'BUBANGO', 274, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
@@ -17766,7 +18104,7 @@ namespace SOCY_MIS.DataAccessLayer
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (282, N'282', N'RUKIRI ', 282, 1, N'18', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (283, N'283', N'ISHONGORORO', 283, 1, N'18', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (284, N'284', N'KIJOGO ', 284, 1, N'18', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
-                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (285, N'285', N'KIKYENKYE', 285, 1, N'18', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (285, N'285', N'NYABUHIKYE', 285, 1, N'18', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (286, N'286', N'KEIHANGARA', 286, 1, N'18', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (287, N'287', N'BISHESHE', 287, 1, N'18', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (288, N'288', N'KAKINDO TOWN COUNCIL', 288, 1, N'20', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
@@ -17800,7 +18138,7 @@ namespace SOCY_MIS.DataAccessLayer
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (316, N'316', N'NDEIJA', 316, 1, N'19', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (317, N'317', N'MWIZI', 317, 1, N'19', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (318, N'318', N'BUGAMBA', 318, 1, N'19', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
-                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (319, N'319', N' RUGANDO', 319, 1, N'19', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (319, N'319', N'RUGANDO', 319, 1, N'19', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (320, N'320', N'BITEREKO', 320, 1, N'21', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (321, N'321', N'KABIRA', 321, 1, N'21', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (322, N'322', N'KANYABWANGA', 322, 1, N'21', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
@@ -17842,6 +18180,9 @@ namespace SOCY_MIS.DataAccessLayer
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (359, N'359', N'Burundi Sub County', 359, 1, N'27', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (360, N'360', N'Rubanda Town Council', 360, 1, N'27', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (361, N'361', N'Ruhija Sub County', 361, 1, N'27', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (362, N'362', N'Kisiita Sub County', 362, 1, N'26', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (363, N'363', N'Kakindo Sub County', 363, 1, N'26', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (364, N'364', N'KAMBUGA TOWN COUNCIL', 364, 1, N'7', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         SET IDENTITY_INSERT [dbo].[lst_sub_county] OFF ";
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
@@ -18198,7 +18539,7 @@ namespace SOCY_MIS.DataAccessLayer
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (232, N'232', N'IRYANGO Ward (formerly Iryango Parish)', 232, 1, N'75', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (233, N'233', N'ISANDARA', 233, 1, N'32', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (234, N'234', N'ISULE', 234, 1, N'188', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (235, N'235', N'ITERERO', 235, 1, N'219', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (235, N'235', N'ITERERO', 235, 1, N'43', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (236, N'236', N'Itojo', 236, 1, N'65', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (237, N'237', N'JJUNGO', 237, 1, N'109', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (238, N'238', N'KAARA', 238, 1, N'203', N'EN', N'1', N'1', GETDATE(), GETDATE())
@@ -18308,7 +18649,7 @@ namespace SOCY_MIS.DataAccessLayer
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (342, N'342', N'Kakanju', 342, 1, N'84', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (343, N'343', N'KAKASI', 343, 1, N'13', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (344, N'344', N'Kakayo', 344, 1, N'108', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (345, N'345', N'KAKIIKA', 345, 1, N'219', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (345, N'345', N'KAKIIKA', 345, 1, N'43', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (346, N'346', N'KAKINDO', 346, 1, N'11', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (347, N'347', N'Kakindu Town Board', 347, 1, N'86', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (348, N'348', N'KAKINGA', 348, 1, N'96', N'EN', N'1', N'1', GETDATE(), GETDATE())
@@ -18475,7 +18816,7 @@ namespace SOCY_MIS.DataAccessLayer
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (509, N'509', N'KATOOKE', 509, 1, N'119', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (510, N'510', N'KATOOKE (formerly in Bugoye S/C)', 510, 1, N'232', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (511, N'511', N'KATOOMA', 511, 1, N'122', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (512, N'512', N'KATOOMI', 512, 1, N'219', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (512, N'512', N'KATOOMI', 512, 1, N'43', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (513, N'513', N'KATOVU', 513, 1, N'89', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (514, N'514', N'KATUGO', 514, 1, N'176', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (515, N'515', N'Katunga', 515, 1, N'84', N'EN', N'1', N'1', GETDATE(), GETDATE())
@@ -18631,7 +18972,7 @@ namespace SOCY_MIS.DataAccessLayer
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (665, N'665', N'KINOGERO', 665, 1, N'117', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (666, N'666', N'KINOGOZI', 666, 1, N'16', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (667, N'667', N'KINONI', 667, 1, N'28', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (668, N'668', N'KINONI', 668, 1, N'43', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (668, N'668', N'KINONI', 668, 1, N'219', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (669, N'669', N'KINYAMASEKE', 669, 1, N'204', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (670, N'670', N'KINYAMASEKE T.C', 670, 1, N'204', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (671, N'671', N'KINYANSANO WARD (formerly in Rukungiri T/C)', 671, 1, N'271', N'EN', N'1', N'1', GETDATE(), GETDATE())
@@ -18716,7 +19057,7 @@ namespace SOCY_MIS.DataAccessLayer
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (750, N'750', N'KITOHWA', 750, 1, N'81', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (751, N'751', N'KITOJO', 751, 1, N'62', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (752, N'752', N'Kitojo', 752, 1, N'84', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (753, N'753', N'KITOJO', 753, 1, N'219', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (753, N'753', N'KITOJO', 753, 1, N'43', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (754, N'754', N'KITOJO', 754, 1, N'246', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (755, N'755', N'KITOJO', 755, 1, N'248', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (756, N'756', N'KITOJO', 756, 1, N'252', N'EN', N'1', N'1', GETDATE(), GETDATE())
@@ -18748,7 +19089,7 @@ namespace SOCY_MIS.DataAccessLayer
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (782, N'782', N'KIWENDA', 782, 1, N'29', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (783, N'783', N'KIWOGOZI', 783, 1, N'177', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (784, N'784', N'Kiyaga', 784, 1, N'22', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (785, N'785', N'KIYAGA', 785, 1, N'43', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (785, N'785', N'KIYAGA', 785, 1, N'219', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (786, N'786', N'KIYAGARA', 786, 1, N'83', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (787, N'787', N'KIYANDA', 787, 1, N'238', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (788, N'788', N'KIYANJA', 788, 1, N'212', N'EN', N'1', N'1', GETDATE(), GETDATE())
@@ -18774,7 +19115,7 @@ namespace SOCY_MIS.DataAccessLayer
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (808, N'808', N'KYABANDARA', 808, 1, N'96', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (809, N'809', N'KYABARANGA', 809, 1, N'9', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (810, N'810', N'KYABARUNGIRA', 810, 1, N'157', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (811, N'811', N'KYABASHENYI', 811, 1, N'219', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (811, N'811', N'KYABASHENYI', 811, 1, N'43', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (812, N'812', N'KYABATALYA', 812, 1, N'16', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (813, N'813', N'Kyabeya', 813, 1, N'207', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (814, N'814', N'Kyabigondo', 814, 1, N'178', N'EN', N'1', N'1', GETDATE(), GETDATE())
@@ -18830,7 +19171,7 @@ namespace SOCY_MIS.DataAccessLayer
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (864, N'864', N'KYANYABONGO', 864, 1, N'119', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (865, N'865', N'KYARUBAMBURA', 865, 1, N'243', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (866, N'866', N'KYARUGAJU', 866, 1, N'71', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (867, N'867', N'KYARUHUGA', 867, 1, N'219', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (867, N'867', N'KYARUHUGA', 867, 1, N'43', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (868, N'868', N'KYARUKARA', 868, 1, N'120', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (869, N'869', N'KYARUSOZI WARD', 869, 1, N'167', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (870, N'870', N'KYARUYENJE', 870, 1, N'17', N'EN', N'1', N'1', GETDATE(), GETDATE())
@@ -19103,7 +19444,7 @@ namespace SOCY_MIS.DataAccessLayer
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1137, N'1137', N'NKOMA', 1137, 1, N'213', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1138, N'1138', N'Nkondo', 1138, 1, N'38', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1139, N'1139', N'NKONDO', 1139, 1, N'76', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1140, N'1140', N'NKONGORO', 1140, 1, N'43', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1140, N'1140', N'NKONGORO', 1140, 1, N'219', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1141, N'1141', N'NKONGORO', 1141, 1, N'96', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1142, N'1142', N'NKUMBA', 1142, 1, N'115', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1143, N'1143', N'NKUNDA', 1143, 1, N'134', N'EN', N'1', N'1', GETDATE(), GETDATE())
@@ -19153,7 +19494,7 @@ namespace SOCY_MIS.DataAccessLayer
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1187, N'1187', N'NYABISUSI', 1187, 1, N'188', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1188, N'1188', N'NYABITEETE', 1188, 1, N'11', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1189, N'1189', N'NYABITEETE', 1189, 1, N'35', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1190, N'1190', N'NYABUBAARE', 1190, 1, N'219', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1190, N'1190', N'NYABUBAARE', 1190, 1, N'43', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1191, N'1191', N'NYABUBARE', 1191, 1, N'36', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1192, N'1192', N'Nyabubare', 1192, 1, N'220', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1193, N'1193', N'NYABUBARE', 1193, 1, N'243', N'EN', N'1', N'1', GETDATE(), GETDATE())
@@ -19162,7 +19503,7 @@ namespace SOCY_MIS.DataAccessLayer
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1196, N'1196', N'Nyabuhike', 1196, 1, N'162', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1197, N'1197', N'NYABURIZA', 1197, 1, N'217', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1198, N'1198', N'NYABUSHABI', 1198, 1, N'163', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1199, N'1199', N'NYABUSHENYI', 1199, 1, N'43', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1199, N'1199', N'NYABUSHENYI', 1199, 1, N'219', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1200, N'1200', N'NYABUSHENYI', 1200, 1, N'137', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1201, N'1201', N'NYABUSHENYI', 1201, 1, N'237', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1202, N'1202', N'NYABYONDO', 1202, 1, N'52', N'EN', N'1', N'1', GETDATE(), GETDATE())
@@ -19259,7 +19600,7 @@ namespace SOCY_MIS.DataAccessLayer
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1293, N'1293', N'NYARWANYA', 1293, 1, N'240', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1294, N'1294', N'NYARWIMUKA / KANYAMISEKURU', 1294, 1, N'249', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1295, N'1295', N'NYEIBINGO', 1295, 1, N'124', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1296, N'1296', N'Nyeibingo', 1296, 1, N'159', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1296, N'1296', N'Kitwe', 1296, 1, N'159', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1297, N'1297', N'Nyongozi', 1297, 1, N'65', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1298, N'1298', N'OBWENGARA/ IBAARE', 1298, 1, N'123', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1299, N'1299', N'OMUNGYENYI', 1299, 1, N'240', N'EN', N'1', N'1', GETDATE(), GETDATE())
@@ -19297,7 +19638,7 @@ namespace SOCY_MIS.DataAccessLayer
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1331, N'1331', N'Ruhumuro', 1331, 1, N'250', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1332, N'1332', N'RUHUNGA', 1332, 1, N'16', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1333, N'1333', N'RUHUNGA', 1333, 1, N'129', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1334, N'1334', N'RUKANGA', 1334, 1, N'43', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1334, N'1334', N'RUKANGA', 1334, 1, N'219', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1335, N'1335', N'RUKARANGO', 1335, 1, N'128', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1336, N'1336', N'RUKIRI', 1336, 1, N'240', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1337, N'1337', N'RUKOKI (formetrly in Rukoki S/C)', 1337, 1, N'232', N'EN', N'1', N'1', GETDATE(), GETDATE())
@@ -19342,7 +19683,7 @@ namespace SOCY_MIS.DataAccessLayer
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1376, N'1376', N'RWAMURANGA', 1376, 1, N'123', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1377, N'1377', N'RWAMWIJUKA', 1377, 1, N'137', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1378, N'1378', N'RWAMWIRE', 1378, 1, N'247', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1379, N'1379', N'RWANDA', 1379, 1, N'219', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1379, N'1379', N'RWANDA', 1379, 1, N'43', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1380, N'1380', N'RWANGA', 1380, 1, N'135', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1381, N'1381', N'RWANGABO', 1381, 1, N'243', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1382, N'1382', N'RWANGUNGA', 1382, 1, N'242', N'EN', N'1', N'1', GETDATE(), GETDATE())
@@ -19351,7 +19692,7 @@ namespace SOCY_MIS.DataAccessLayer
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1385, N'1385', N'RWANYANGWE', 1385, 1, N'113', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1386, N'1386', N'RWANYENA', 1386, 1, N'241', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1387, N'1387', N'RWANYUNDO', 1387, 1, N'226', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1388, N'1388', N'RWASHAMAIRE', 1388, 1, N'43', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1388, N'1388', N'RWASHAMAIRE', 1388, 1, N'219', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1389, N'1389', N'Rweega', 1389, 1, N'37', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1390, N'1390', N'RWEMAMBA', 1390, 1, N'113', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1391, N'1391', N'RWEMENGO', 1391, 1, N'100', N'EN', N'1', N'1', GETDATE(), GETDATE())
@@ -19544,10 +19885,9 @@ namespace SOCY_MIS.DataAccessLayer
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1588, N'1588', N'Rwenkobwa', 1588, 1, N'284', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1589, N'1589', N'Kamwiri', 1589, 1, N'284', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1590, N'1590', N'Kijongo', 1590, 1, N'284', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1591, N'1591', N'Kihani', 1591, 1, N'285', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1592, N'1592', N'Irwaniro', 1592, 1, N'285', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1593, N'1593', N'Rwengwe', 1593, 1, N'285', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1594, N'1594', N'Katongore', 1594, 1, N'285', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1591, N'1591', N'BWAHWA', 1591, 1, N'285', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1592, N'1592', N'RUGOBA', 1592, 1, N'285', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1593, N'1593', N'KYENTAMA', 1593, 1, N'285', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1595, N'1595', N'Keihangara', 1595, 1, N'286', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1596, N'1596', N'Rugaaga', 1596, 1, N'286', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1597, N'1597', N'Rwenshambya', 1597, 1, N'286', N'EN', N'1', N'1', GETDATE(), GETDATE())
@@ -19725,11 +20065,7 @@ namespace SOCY_MIS.DataAccessLayer
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1766, N'1766', N'Kati', 1766, 1, N'322', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1767, N'1767', N'Rucence', 1767, 1, N'322', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1768, N'1768', N'Bwera', 1768, 1, N'322', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1769, N'1769', N'Bukari', 1769, 1, N'323', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1770, N'1770', N'Bukuba', 1770, 1, N'323', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1771, N'1771', N'kirera', 1771, 1, N'323', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1772, N'1772', N'Kyanziri', 1772, 1, N'323', N'EN', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1773, N'1773', N'Nyakatooma', 1773, 1, N'323', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                   
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1774, N'1774', N'Kyanga', 1774, 1, N'324', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1775, N'1775', N'Kiraramira', 1775, 1, N'324', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1776, N'1776', N'Rwoburunga', 1776, 1, N'324', N'EN', N'1', N'1', GETDATE(), GETDATE())
@@ -19916,6 +20252,69 @@ namespace SOCY_MIS.DataAccessLayer
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES ( 1565, N'1565', N'NDEEBA', 1565, 1, N'245', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES ( 1566, N'1566', N'YORODAN', 1566, 1, N'245', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES ( 1567, N'1567', N'RUTI', 1567, 1, N'303', N'EN', N'1', N'1', GETDATE(), GETDATE())
+
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1946, N'1946', N'NYARUHANGA', 1946, 1, N'357', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1947, N'1947', N'NYAMABALE', 1947, 1, N'357', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1948, N'1948', N'MUSHANJE', 1948, 1, N'357', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1949, N'1949', N'KASHASHA', 1949, 1, N'357', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1950, N'1950', N'BUREMBA', 1950, 1, N'357', N'EN', N'1', N'1', GETDATE(), GETDATE())
+
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1951, N'1951', N'KARORE', 1951, 1, N'354', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1952, N'1952', N'SHEBEYA', 1952, 1, N'354', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1953, N'1953', N'MPUNGU', 1953, 1, N'354', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1954, N'1954', N'IGOMANDA', 1954, 1, N'354', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1955, N'1955', N'RUHONWA', 1955, 1, N'354', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1956, N'1956', N'KANYABITARA', 1956, 1, N'354', N'EN', N'1', N'1', GETDATE(), GETDATE())
+
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1957, N'1957', N'BUTARE', 1957, 1, N'358', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1958, N'1958', N'KARENGYERE', 1958, 1, N'358', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1959, N'1959', N'KAARA', 1959, 1, N'358', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1960, N'1960', N'IKAMIRO', 1960, 1, N'358', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1961, N'1961', N'KYEENYI', 1961, 1, N'358', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1962, N'1962', N'KABERE', 1962, 1, N'358', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1963, N'1963', N'NYARURAMBI', 1963, 1, N'358', N'EN', N'1', N'1', GETDATE(), GETDATE())
+
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1964, N'1964', N'KIJUBWE', 1964, 1, N'240', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1965, N'1965', N'KAMURASI', 1965, 1, N'126', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1966, N'1966', N'RUSENKE', 1966, 1, N'168', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1967, N'1967', N'Nyabirungi', 1967, 1, N'362', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1968, N'1968', N'Kyabalitwa', 1968, 1, N'362', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1969, N'1969', N'Bwikaragye', 1969, 1, N'362', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1970, N'1970', N'Kisiita central ward', 1970, 1, N'362', N'EN', N'1', N'1', GETDATE(), GETDATE())
+
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1971, N'1971', N'Kikwaya', 1971, 1, N'363', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1972, N'1972', N'Rwembuba', 1972, 1, N'363', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1973, N'1973', N'Katatemwa', 1973, 1, N'363', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1974, N'1974', N'Rukunyu', 1974, 1, N'363', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1975, N'1975', N'Igayaza', 1975, 1, N'363', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1976, N'1976', N'Kijaigi', 1976, 1, N'363', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1977, N'1977', N'Kiwuuna', 1977, 1, N'363', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1978, N'1978', N'Kijanji', 1978, 1, N'363', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1979, N'1979', N'Kamuli', 1979, 1, N'363', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1980, N'1980', N'Kikoora', 1980, 1, N'363', N'EN', N'1', N'1', GETDATE(), GETDATE())
+
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1981, N'1981', N'Kagashe ward', 1981, 1, N'49', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1982, N'1982', N'Karangaro ward', 1982, 1, N'49', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1983, N'1983', N'Kakabada ward', 1983, 1, N'49', N'EN', N'1', N'1', GETDATE(), GETDATE())
+
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1984, N'1984', N'Kigaga ward', 1984, 1, N'260', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1985, N'1985', N'Rwakabengo ward', 1985, 1, N'260', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1986, N'1986', N'Northern B Ward', 1986, 1, N'49', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1987, N'1987', N'KANYAMPUMO', 1987, 1, N'219', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1988, N'1988', N'SOUTHERN WARD', 1988, 1, N'364', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1989, N'1989', N'NORTHERN WARD', 1989, 1, N'364', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1990, N'1990', N'EASTERN WARD', 1990, 1, N'364', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1991, N'1991', N'CENTRAL WARD', 1991, 1, N'364', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1992, N'1992', N'RWEKUBO', 1992, 1, N'64', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1993, N'1993', N'KAHARO', 1993, 1, N'64', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1994, N'1994', N'Bukari', 1994, 1, N'323', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1995, N'1995', N'Bukuba', 1995, 1, N'323', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1996, N'1996', N'Kirera', 1996, 1, N'323', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1997, N'1997', N'Kyanziri', 1997, 1, N'323', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1998, N'1998', N'Nyakatooma', 1998, 1, N'323', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2004, N'2004', N'NYAKABUNGO', 2004, 1, N'358', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2005, N'2005', N'Kajunju', 2005, 1, N'159', N'EN', N'1', N'1', GETDATE(), GETDATE())
+
                     SET IDENTITY_INSERT [dbo].[lst_ward] OFF ";
             dbCon.ExecuteNonQuery(strSQL);
 
@@ -30905,6 +31304,12 @@ namespace SOCY_MIS.DataAccessLayer
 
             ActivateHouseholdMembersToserve(dbCon);
             InsertLstStaffStructure(dbCon);
+
+            Createlst_index_beneficiary_category(dbCon);
+            Createben_ovc_index_register(dbCon);
+            Insertlst_index_beneficiary_category(dbCon);
+            AlterHatTable(dbCon);
+            Createben_ovc_school_eligibility_assessment(dbCon);
         }
 
 
@@ -31549,6 +31954,20 @@ namespace SOCY_MIS.DataAccessLayer
                     BEGIN
                     INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
                     VALUES('108','hh_graduation_assessment_benchmark08_upload','gat_b_id',108,1,1,1,GETDATE(),GETDATE())
+                    END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT sul_name FROM lst_sync_upload WHERE sul_name = 'ben_ovc_index_register_upload')
+                    BEGIN
+                    INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
+                    VALUES('109','ben_ovc_index_register_upload','ibr_id',109,1,1,1,GETDATE(),GETDATE())
+                    END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT sul_name FROM lst_sync_upload WHERE sul_name = 'ben_ovc_school_eligibility_assessment_upload')
+                    BEGIN
+                    INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
+                    VALUES('110','ben_ovc_school_eligibility_assessment_upload','record_id',110,1,1,1,GETDATE(),GETDATE())
                     END";
             dbCon.ExecuteNonQuery(strSQL);
         }

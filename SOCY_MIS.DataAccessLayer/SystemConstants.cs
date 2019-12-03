@@ -19,6 +19,9 @@ namespace SOCY_MIS.DataAccessLayer
         public static string household_status = string.Empty;
         public static string _household_status = string.Empty; 
         public static string object_id = string.Empty;
+        public static string HATMemberCount = string.Empty;
+        public static bool isRiskAssessmentPopup = false;
+        public static string HouseholdId = string.Empty;
 
         static DataAccessLayer.DBConnection dbCon = new DataAccessLayer.DBConnection(utilConstants.cACKConnection);
        static string SQLConnection = dbCon.SQLDBConnection(utilConstants.cACKConnection);

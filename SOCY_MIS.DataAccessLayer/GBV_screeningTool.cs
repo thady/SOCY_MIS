@@ -231,12 +231,22 @@ namespace SOCY_MIS.DataAccessLayer
             string SQL = string.Empty;
             try
             {
-
-                SQL = @"SELECT swk_first_name + ' ' + swk_last_name AS swk_name,swk_id FROM swm_social_worker S
+                if (dst_id == "15" || dst_id == "23")
+                {
+                    SQL = @"SELECT swk_first_name + ' ' + swk_last_name AS swk_name,swk_id FROM swm_social_worker S
+                        INNER JOIN lst_ward W ON S.wrd_id = W.wrd_id
+                        INNER JOIN lst_sub_county sct ON W.sct_id = sct.sct_id
+                        INNER JOIN lst_district dst ON sct.dst_id = dst.dst_id
+                        WHERE (dst.dst_id = '15' OR dst.dst_id = '23') AND swt_id = '1'";
+                }
+                else
+                {
+                    SQL = @"SELECT swk_first_name + ' ' + swk_last_name AS swk_name,swk_id FROM swm_social_worker S
                         INNER JOIN lst_ward W ON S.wrd_id = W.wrd_id
                         INNER JOIN lst_sub_county sct ON W.sct_id = sct.sct_id
                         INNER JOIN lst_district dst ON sct.dst_id = dst.dst_id
                         WHERE dst.dst_id = '{0}' AND swt_id = '1'";
+                }
 
                 SQL = string.Format(SQL, dst_id);
 

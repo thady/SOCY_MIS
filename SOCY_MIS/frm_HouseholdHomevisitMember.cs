@@ -9,6 +9,8 @@ using System.Windows.Forms;
 
 using SOCY_MIS.DataAccessLayer;
 using PSAUtilsWin32;
+using System.Threading.Tasks;
+using System.Resources;
 
 namespace SOCY_MIS
 {
@@ -813,6 +815,20 @@ namespace SOCY_MIS
                 lblguid.Text = hhHouseholdHomeVisit_v2.hhvm_id;
                 LoadMembers();
                 LoadHomevisitMembers();
+
+               // Clear();
+
+                #region RiskAssessmentPopup
+                if (lblHIVRISK.Text != "--")
+                {
+                    frmHouseholdRiskAssessmentMain frmRiskMain = new frmHouseholdRiskAssessmentMain();
+                    SystemConstants.isRiskAssessmentPopup = true;
+                    SystemConstants.HouseholdId = HouseholdId;
+                    frmHouseholdRiskAssessmentPopup frmNew = new frmHouseholdRiskAssessmentPopup();
+                    frmNew.ShowDialog();
+                }
+                #endregion RiskAssessmentPopup
+
                 Clear();
             }
             else
@@ -831,11 +847,24 @@ namespace SOCY_MIS
                 MessageBox.Show("Sucess", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadMembers();
                 LoadHomevisitMembers();
+               
+
+                #region RiskAssessmentPopup
+                if (lblHIVRISK.Text != "--")
+                {
+                    frmHouseholdRiskAssessmentMain frmRiskMain = new frmHouseholdRiskAssessmentMain();
+                    SystemConstants.isRiskAssessmentPopup = true;
+                    SystemConstants.HouseholdId = HouseholdId;
+                    frmHouseholdRiskAssessmentPopup frmNew = new frmHouseholdRiskAssessmentPopup();
+                    frmNew.ShowDialog();
+                }
+                #endregion RiskAssessmentPopup
+
                 Clear();
             }
-           
 
-           
+
+
             #endregion save
         }
         #endregion save
@@ -1692,6 +1721,18 @@ namespace SOCY_MIS
             }
 
             //SetServicesByAgeGroup(Age);
+            if (cboHivstatus.SelectedValue.ToString() == "2" & hhHouseholdHomeVisit_v2.LoadPrevHIVStatus(cbHHMember.SelectedValue.ToString()) == "3")
+            {
+                lblHIVRISK.Text = "HIV Risk Assessment is required for " + cbHHMember.Text + "." + "Previous HIV Status is Unknown,New HIV Status is Negative!Please enter a risk assessment tool for this beneficiary";
+            }
+            else if (cboHivstatus.SelectedValue.ToString() == "3" & hhHouseholdHomeVisit_v2.LoadPrevHIVStatus(cbHHMember.SelectedValue.ToString()) == "2")
+            {
+                lblHIVRISK.Text = "HIV Risk Assessment is required for " + cbHHMember.Text + "." + "Previous HIV Status is Negative,New HIV Status is Unknown!Please enter a risk assessment tool for this beneficiary";
+            }
+            else
+            {
+                lblHIVRISK.Text = "--";
+            }
         }
 
         private void Back()
@@ -1907,6 +1948,16 @@ namespace SOCY_MIS
         private void rbtnESSilcNA_CheckedChanged(object sender, EventArgs e)
         {
             rbtnESSilcYes_CheckedChanged(rbtnESSilcYes, null);
+        }
+
+        private void btnRisktest_Click(object sender, EventArgs e)
+        {
+            frmHouseholdRiskAssessmentMain frmRiskMain = new frmHouseholdRiskAssessmentMain();
+            SystemConstants.isRiskAssessmentPopup = true;
+            SystemConstants.HouseholdId = HouseholdId;
+            frmHouseholdRiskAssessmentPopup frmNew = new frmHouseholdRiskAssessmentPopup();
+            frmNew.ShowDialog();
+            
         }
     }
 }

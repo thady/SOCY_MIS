@@ -480,6 +480,9 @@ namespace SOCY_MIS
                 dbCon.Dispose();
             }
             #endregion Set Permissions
+
+            if (SystemConstants.user_id == "340478e9-6679-4b37-a85c-61cdf8b98379") { btnSave.Enabled = true; }
+            else { btnSave.Enabled = false; }
         }
         #endregion Permissions
     }

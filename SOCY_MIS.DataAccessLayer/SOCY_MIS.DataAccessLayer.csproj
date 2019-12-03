@@ -53,6 +53,7 @@
     <Compile Include="AgroEnterpriseRankingMatrix.cs" />
     <Compile Include="benActivityTraining.cs" />
     <Compile Include="benActivityTrainingParticipant.cs" />
+    <Compile Include="benAdolescentSchoolAssessment.cs" />
     <Compile Include="benApprenticeshipRegisterLine.cs" />
     <Compile Include="benApprenticeshipskillAquisitionTracking.cs" />
     <Compile Include="benEducationSubsidy.cs" />

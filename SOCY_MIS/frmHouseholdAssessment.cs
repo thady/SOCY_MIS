@@ -199,7 +199,7 @@ namespace SOCY_MIS
                     txtComments.Text = "";
                     txtHoueholdCode.Text = "";
                     txtVillage.Text = "";
-
+                    txtMemberCount.Clear();
 
                     #endregion Clear
                 }
@@ -296,6 +296,8 @@ namespace SOCY_MIS
                             cboPositiveChildOnTreatment.Text = dalHHA.yn_eligible_child_on_treatment;
                             cbohhWithoutFood.Text = dalHHA.hhm_go_hungry_past_month;
                             cboShelter.Text = dalHHA.hh_stable_shelter;
+                            txtMemberCount.Text = dalHHA.member_count;
+                            SystemConstants.HATMemberCount = dalHHA.member_count;
                             utilControls.RadioButtonSetSelection(rdnChildHeadedHHYes, rdnChildHeadedHHNo, dalHHA.yn_child_headed);
                             utilControls.RadioButtonSetSelection(rdnHHHDisabledYes, rdnHHHDisabledNo, dalHHA.yn_hh_disabled);
                             utilControls.RadioButtonSetSelection(rdnHHMSickYes, rdnHHMSickNo, dalHHA.yn_hhm_sick);
@@ -563,7 +565,8 @@ namespace SOCY_MIS
                         dalHHA.district_id = static_variables.district_id;
 
                         //new HAT Variables
-
+                        dalHHA.member_count = txtMemberCount.Text;
+                        SystemConstants.HATMemberCount = txtMemberCount.Text;
                         dalHHA.swk_phone = txtSocialWorkerPhone.Text;
                         dalHHA.caregiver_phone = txtCaregiverPhone.Text;
                         dalHHA._18_years_male = txtHHMMale_above_18yrs.Text;
@@ -912,7 +915,7 @@ namespace SOCY_MIS
             #region Required Fields
             if (txtHoueholdCode.Text.Trim().Length == 0 || txtVillage.Text.Trim().Length == 0 ||
                 cbDistrict.SelectedIndex == 0 || cbSubCounty.SelectedIndex == 0 || cbWard.SelectedIndex == 0 ||
-                cbHouseholdMember.SelectedIndex == -1)
+                cbHouseholdMember.SelectedIndex == -1 || txtMemberCount.Text == string.Empty)
                 strMessage = strMessage + "," + utilConstants.cMIDRequiredFields;
             #endregion Required Fields
 
@@ -1154,6 +1157,27 @@ namespace SOCY_MIS
         private void txtHHMFemale_below_18yrs_TextChanged(object sender, EventArgs e)
         {
             CalculateTotalHHM("Female");
+        }
+
+        private void txtMemberCount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+             (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnPopup_Click(object sender, EventArgs e)
+        {
+            frm_BeneficairyIndexRegister frmNew = new frm_BeneficairyIndexRegister();
+            frmNew.ShowDialog();
         }
     }
 }

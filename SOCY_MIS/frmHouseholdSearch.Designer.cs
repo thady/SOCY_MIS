@@ -78,19 +78,20 @@
             // 
             this.llblINewIndexBeneficiary.AutoSize = true;
             this.llblINewIndexBeneficiary.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblINewIndexBeneficiary.Location = new System.Drawing.Point(33, 24);
+            this.llblINewIndexBeneficiary.Location = new System.Drawing.Point(290, 18);
             this.llblINewIndexBeneficiary.Name = "llblINewIndexBeneficiary";
             this.llblINewIndexBeneficiary.Size = new System.Drawing.Size(172, 13);
             this.llblINewIndexBeneficiary.TabIndex = 36;
             this.llblINewIndexBeneficiary.TabStop = true;
             this.llblINewIndexBeneficiary.Text = "New Index Beneficiary Registration";
+            this.llblINewIndexBeneficiary.Visible = false;
             this.llblINewIndexBeneficiary.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblINewIndexBeneficiary_LinkClicked);
             // 
             // llblNewHousehold
             // 
             this.llblNewHousehold.AutoSize = true;
             this.llblNewHousehold.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblNewHousehold.Location = new System.Drawing.Point(211, 24);
+            this.llblNewHousehold.Location = new System.Drawing.Point(33, 18);
             this.llblNewHousehold.Name = "llblNewHousehold";
             this.llblNewHousehold.Size = new System.Drawing.Size(251, 13);
             this.llblNewHousehold.TabIndex = 35;

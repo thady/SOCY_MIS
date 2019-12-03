@@ -124,9 +124,17 @@ namespace SOCY_MIS
                 }
                 else
                 {
+                    uLT = new utilListTable();
+
+                    dt = uLT.GetData("lst_honorific", true, "", false, FormMaster.LanguageId, dbCon.dbCon);
+                    dt = utilCollections.AddEmptyItemFront(dt, "lt_id", "lt_name", utilConstants.cDFEmptyListValue, strEmptySingleSelect);
+                    utilControls.ComboBoxFill(cbTitle, dt, "lt_id", "lt_name");
+
                     dalUsr = new umUser();
                     dt = dalUsr.GetList(strUsrId, dbCon);
                     utilControls.ComboBoxFill(cbUser, dt, "usr_id", "usr_name");
+
+
                     //get office district
                     string district_id = SystemConstants.Return_office_district();
                     if (district_id != String.Empty && district_id != "-999")
@@ -153,6 +161,7 @@ namespace SOCY_MIS
                 #region Variables
                 DataAccessLayer.DBConnection dbCon = null;
                 umOffice dalOfc = null;
+                umUser dalUser = null;
                 #endregion Variables
 
                 #region Load Office
@@ -160,10 +169,11 @@ namespace SOCY_MIS
                 try
                 {
                     dalOfc = new umOffice(dbCon);
+                   
                     if (dalOfc.ofc_id.Length == 0)
                     {
                         pblnNew = true;
-                        gbNewContact.Location = new Point(gbNewContact.Location.X, gbOffice.Location.Y + gbOffice.Height + pintYOffset);
+                        //gbNewContact.Location = new Point(gbNewContact.Location.X, gbOffice.Location.Y + gbOffice.Height + pintYOffset);
                         gbNewContact.Visible = true;
                         gbCurrentContact.Visible = false;
                         LoadLists(dbCon);
@@ -172,10 +182,11 @@ namespace SOCY_MIS
                     {
                         pblnNew = false;
                         pdalOfc = dalOfc;
-                        gbCurrentContact.Location = new Point(gbCurrentContact.Location.X, gbOffice.Location.Y + gbOffice.Height + pintYOffset);
+                        //gbCurrentContact.Location = new Point(gbCurrentContact.Location.X, gbOffice.Location.Y + gbOffice.Height + pintYOffset);
                         gbCurrentContact.Visible = true;
-                        gbNewContact.Visible = false;
+                        gbNewContact.Visible = true;
                         LoadLists(pdalOfc.usr_id_contact, dbCon);
+                        LoadLists(dbCon);
                         SetOffice();
                     }
                     this.ActiveControl = txtName;
@@ -276,6 +287,17 @@ namespace SOCY_MIS
                         }
                         else
                         {
+                            dalUser = new umUser();
+                            dalUser.usr_id = cbUser.SelectedValue.ToString();
+                            
+                            dalUser.usr_first_name = txtFirstName.Text;
+                            dalUser.usr_last_name = txtLastName.Text;
+                            dalUser.usr_email = txtEmail.Text;
+                            dalUser.usr_phone = txtPhone.Text;
+                            dalUser.hnr_id = cbTitle.SelectedValue.ToString();
+                            dalUser.ofc_id = pdalOfc.ofc_id;
+                            dalUser.Save(dbCon);
+
                             pdalOfc.ofc_name = txtName.Text;
                             pdalOfc.ofc_phone = txtPhone.Text;
                             pdalOfc.ofc_email = txtEmail.Text;
@@ -328,12 +350,19 @@ namespace SOCY_MIS
         {
             try
             {
+                DataAccessLayer.DBConnection dbCon = null;
+                dbCon = new DataAccessLayer.DBConnection(utilConstants.cACKConnection);
                 #region Set Fields
                 txtName.Text = pdalOfc.ofc_name;
                 txtPhone.Text = pdalOfc.ofc_phone;
                 txtEmail.Text = pdalOfc.ofc_email;
                 txtAddress.Text = pdalOfc.ofc_address;
                 cbUser.SelectedValue = pdalOfc.usr_id_contact;
+                umUser dalUser = null;
+                dalUser = new umUser(cbUser.SelectedValue.ToString(), dbCon);
+                cbTitle.SelectedValue = dalUser.hnr_id;
+                txtFirstName.Text = dalUser.usr_first_name;
+                txtLastName.Text = dalUser.usr_last_name;
                 #endregion Set Fields
             }
             catch (Exception exc)

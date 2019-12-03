@@ -71,8 +71,8 @@ namespace SOCY_MIS
                 //temporarily disable save button
                 DateTime ExpiryDate = DateTime.Now.Date;
 
-                if (ExpiryDate <= Convert.ToDateTime( "2019-10-31")) { btnSave.Enabled = true; }
-                else { btnSave.Enabled = false; }
+                //if (ExpiryDate <= Convert.ToDateTime( "2019-10-31")) { btnSave.Enabled = true; }
+                //else { btnSave.Enabled = false; }
             }
         }
 

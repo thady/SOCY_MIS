@@ -23,6 +23,7 @@ namespace SOCY_MIS
         int Age = 0;
         DataTable dt = null;
         string errorMessage = string.Empty;
+        public frmHouseholdRiskAssessmentPopup frmPopup = new frmHouseholdRiskAssessmentPopup();
         #endregion Variables
 
         #region Property
@@ -93,16 +94,36 @@ namespace SOCY_MIS
 
         protected void LoadMembers()
         {
-            dt = hhHouseholdRiskAssessment.ReturnMembers("adult", hhHouseholdRiskAssessment.ra_id, HouseholdId);
+            if (SystemConstants.isRiskAssessmentPopup == false)
+            {
+                btnsave.Text = "Save";
+                dt = hhHouseholdRiskAssessment.ReturnMembers("adult", hhHouseholdRiskAssessment.ra_id, HouseholdId);
 
-            DataRow sctemptyRow = dt.NewRow();
-            sctemptyRow["hhm_id"] = "-1";
-            sctemptyRow["hhm_name"] = "Select one";
-            dt.Rows.InsertAt(sctemptyRow, 0);
+                DataRow sctemptyRow = dt.NewRow();
+                sctemptyRow["hhm_id"] = "-1";
+                sctemptyRow["hhm_name"] = "Select one";
+                dt.Rows.InsertAt(sctemptyRow, 0);
 
-            cboHouseholdMember.DataSource = dt;
-            cboHouseholdMember.DisplayMember = "hhm_name";
-            cboHouseholdMember.ValueMember = "hhm_id";
+                cboHouseholdMember.DataSource = dt;
+                cboHouseholdMember.DisplayMember = "hhm_name";
+                cboHouseholdMember.ValueMember = "hhm_id";
+            }
+            else
+            {
+                btnsave.Text = "Save and Close";
+                lblBack.Visible = false;
+                dt = hhHouseholdRiskAssessment.ReturnMembers("adult", hhHouseholdRiskAssessment.ra_id, SystemConstants.HouseholdId);
+
+                DataRow sctemptyRow = dt.NewRow();
+                sctemptyRow["hhm_id"] = "-1";
+                sctemptyRow["hhm_name"] = "Select one";
+                dt.Rows.InsertAt(sctemptyRow, 0);
+
+                cboHouseholdMember.DataSource = dt;
+                cboHouseholdMember.DisplayMember = "hhm_name";
+                cboHouseholdMember.ValueMember = "hhm_id";
+            }
+            
         }
 
         private void btnsave_Click(object sender, EventArgs e)
@@ -110,7 +131,21 @@ namespace SOCY_MIS
 
             if (ValidateInput())
             {
-                save();
+                if (SystemConstants.isRiskAssessmentPopup == true)
+                {
+                    save();
+
+                    Application.OpenForms
+                    .OfType<Form>()
+                    .Where(form => String.Equals(form.Name, "frmHouseholdRiskAssessmentPopup"))
+                    .ToList()
+                    .ForEach(form => form.Close());
+                }
+                else
+                {
+                    save();
+                }
+                
             }
             else
             {

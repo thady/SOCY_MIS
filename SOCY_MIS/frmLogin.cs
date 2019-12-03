@@ -53,7 +53,8 @@ namespace SOCY_MIS
                 #endregion Variables
 
                 #region Version
-                lblVersionNumber.Text = ConfigurationManager.AppSettings[utilConstants.cACKVersion].ToString();
+                //lblVersionNumber.Text = ConfigurationManager.AppSettings[utilConstants.cACKVersion].ToString();
+                lblVersionNumber.Text = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
                 #endregion Version
 
                 if (!NoDatabase)
