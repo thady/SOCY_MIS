@@ -542,6 +542,65 @@ namespace SOCY_MIS.DataAccessLayer
         }
 
 
+        public static bool LoadMemberHATBaselineDetails(string hhm_id)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter Adapt;
+            string strSQL = string.Empty;
+            bool HasBaselineData = false;
+
+            strSQL = @"SELECT* FROM hh_household_member WHERE (hst_id = '' OR hst_id = '-1') AND hhm_id = '{0}'";
+
+            strSQL = string.Format(strSQL, hhm_id);
+
+            try
+            {
+                string strConn = dbCon.ToString();
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(strSQL, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    Adapt = new SqlDataAdapter(cmd);
+                    Adapt.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        HasBaselineData = false;
+                    }
+                    else
+                    {
+                        HasBaselineData = true;
+                    }
+
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            finally
+            {
+                if (conn.State == ConnectionState.Open) { conn.Close(); }
+            }
+
+            return HasBaselineData;
+        }
+
+
         public static DataTable LoadHomeVisitMembers(string hhv_id)
         {
             DataTable dt = new DataTable();

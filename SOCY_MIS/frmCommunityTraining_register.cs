@@ -791,31 +791,7 @@ namespace SOCY_MIS
             panel01.Enabled = true;
         }
 
-        private void cboTrainingType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            #region Training Type
-            dt = silcCommunityTrainingRegister.Return_lookups("TrainingTypeSession", cboTrainingType.SelectedValue.ToString());
-            DataRow ttp_emptyRow = dt.NewRow();
-            ttp_emptyRow["ttps_id"] = "-1";
-            ttp_emptyRow["ttps_name"] = "Select session";
-            dt.Rows.InsertAt(ttp_emptyRow, 0);
-
-            cboTrainigSession.DataSource = dt;
-            cboTrainigSession.DisplayMember = "ttps_name";
-            cboTrainigSession.ValueMember = "ttps_id";
-            #endregion Training Type
-
-            if (cboTrainingType.SelectedValue.ToString() == "8" || cboTrainingType.SelectedValue.ToString() == "5")
-            {
-                rdnIndirectBen.Enabled = true;
-            }
-            else
-            {
-                rdnIndirectBen.Enabled = false;
-                rdnIndirectBen.Checked = false;
-            }
-
-        }
+       
 
         private void btnNewP_Click(object sender, EventArgs e)
         {
@@ -948,6 +924,37 @@ namespace SOCY_MIS
         private void cboParish_SelectedIndexChanged(object sender, EventArgs e)
         {
             //returnHHCodesByLocation();
+        }
+
+        private void cboTrainingType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            #region Training Type
+            dt = silcCommunityTrainingRegister.Return_lookups("TrainingTypeSession", cboTrainingType.SelectedValue.ToString());
+            DataRow ttp_emptyRow = dt.NewRow();
+            ttp_emptyRow["ttps_id"] = "-1";
+            ttp_emptyRow["ttps_name"] = "Select session";
+            dt.Rows.InsertAt(ttp_emptyRow, 0);
+
+            cboTrainigSession.DataSource = dt;
+            cboTrainigSession.DisplayMember = "ttps_name";
+            cboTrainigSession.ValueMember = "ttps_id";
+            #endregion Training Type
+
+            if (cboTrainingType.SelectedValue.ToString() == "8" || cboTrainingType.SelectedValue.ToString() == "5" || cboTrainingType.SelectedValue.ToString() == "16")
+            {
+                rdnIndirectBen.Enabled = true;
+            }
+            else
+            {
+                rdnIndirectBen.Enabled = false;
+                rdnIndirectBen.Checked = false;
+            }
+
+        }
+
+        private void cboTrainingType_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+           
         }
     }
 }

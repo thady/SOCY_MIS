@@ -157,7 +157,18 @@ namespace SOCY_MIS
             if (cbHHMember.SelectedValue.ToString() != "-1")
             {
                 ClearMember();
-                LoadMemberDetails(cbHHMember.SelectedValue.ToString());
+
+                if (hhHouseholdHomeVisit_v2.LoadMemberHATBaselineDetails(cbHHMember.SelectedValue.ToString())) //check if beneficiary has baseline HAT info
+                {
+                    LoadMemberDetails(cbHHMember.SelectedValue.ToString());
+                    btnSave.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("Beneficiary has no baseline information on HAT!!Please update his/her HAT details including HIV status before entering home visit data","No HAT Info",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    btnSave.Enabled = false;
+                }
+                
             }
         }
 
@@ -570,7 +581,7 @@ namespace SOCY_MIS
             #region Safe
             if (Age > 17)
             {
-                rbtnInnitiatePostViolenceReferalYes.Checked = false;
+                rbtnInnitiatePostViolenceReferalYes.Checked = false; 
                 rbtnInnitiatePostViolenceReferalNo.Checked = false;
                 rbtnInnitiatePostViolenceReferalNA.Checked = true;
 
@@ -643,22 +654,14 @@ namespace SOCY_MIS
                 rdnSessionCDONo.Checked = false;
                 rdnSessionCDONA.Checked = false;
 
-                pnlPostViolenceInnitiateReferal.Enabled = true;
-                pnlPostViolenceCompletedReferal.Enabled = true;
-                pnlBirthCertificate.Enabled = true;
-                pnlBirthRegInnitiateReferal.Enabled = true;
-                pnlBirthRegCompleteReferal.Enabled = true;
+                //pnlPostViolenceInnitiateReferal.Enabled = true; All temporarily due to Covid19
+                //pnlPostViolenceCompletedReferal.Enabled = true;
+                //pnlBirthCertificate.Enabled = true;
+                //pnlBirthRegInnitiateReferal.Enabled = true;
+                //pnlBirthRegCompleteReferal.Enabled = true;
+                //pnlReportChildAbuse.Enabled = true;
                 pnlFamilyGroupDiscussion.Enabled = true;
-                pnlReportChildAbuse.Enabled = true;
                 pnlSessionCDO.Enabled = true;
-
-                //rbtnInnitiatePostViolenceReferalNA.Enabled = false;
-                //rbtnCompletedPostViolenceReferalNA.Enabled = false;
-                //rbtnInniateBirthRegReferalNA.Enabled = false;
-                //rbtnCompleteBirthRegReferalNA.Enabled = false;
-                //rbtnFamilygrpDiscusionNA.Enabled = false;
-                //rbtnReportchildAbuseNA.Enabled = false;
-                //rdnSessionCDONA.Enabled = false;
             }
             #endregion Safe
         }
@@ -1259,12 +1262,14 @@ namespace SOCY_MIS
                 hhHouseholdHomeVisit_v2.hhv_id = dtRow["hhv_id"].ToString();
                 hhHouseholdHomeVisit_v2.hhm_id = dtRow["hhm_id"].ToString();
                 lblguid.Text = dtRow["hhvm_id"].ToString();
+                string hhm_id = dtRow["hhm_id"].ToString();
 
                 #region MemberHeaderDetails
                 DataTable _dt = hhHouseholdHomeVisit_v2.LoadMemberDetails(dtRow["hhm_id"].ToString());
                 if (_dt.Rows.Count > 0)
                 {
                     DataRow _dtRow = _dt.Rows[0];
+                    cbHHMember.Text = dtRow["hhm_name"].ToString();
                     lblYearOfBirthDisplay.Text = _dtRow["hhm_year_of_birth"].ToString();
                     lblGenderDisplay.Text = _dtRow["gnd_name"].ToString();
                     lblMemberNumberDisplay.Text = _dtRow["hhm_number"].ToString();
@@ -1277,7 +1282,6 @@ namespace SOCY_MIS
                 #endregion
 
                 hhHouseholdHomeVisit_v2.hhm_name = dtRow["hhm_name"].ToString();
-                cbHHMember.Text = dtRow["hhm_name"].ToString();
                 cbHHMember.Enabled = false;
                 lblhhm_id.Text = dtRow["hhm_id"].ToString();
                 cboInactiveReason.Text = dtRow["hhm_inactive_reason"].ToString();
@@ -1549,8 +1553,8 @@ namespace SOCY_MIS
                 }
                 else
                 {
-                    tlpDisplay02.Enabled = true;
-                    tlpDisplay03.Enabled = true;
+                    //tlpDisplay02.Enabled = true;  temporarily disabled due to Covid19
+                    //tlpDisplay03.Enabled = true; temporarily disabled due to Covid19
                     tlpDisplay04.Enabled = true;
                     tlpDisplay05.Enabled = true;
 

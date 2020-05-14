@@ -84,5 +84,23 @@ namespace SOCY_MIS
             }
         }
         #endregion Public Methods
+
+        private void llblArtRefill_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            #region Set Selected
+            frmArtRefillSearch frmNew = new frmArtRefillSearch();
+            frmNew.FormParent = this;
+            LoadControl(frmNew, this.Name);
+            #endregion
+        }
+
+        private void llblCovid19DataCollection_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            #region Set Selected
+            frmCovid19DataCollectionSearch frmNew = new frmCovid19DataCollectionSearch();
+            frmNew.FormParent = this;
+            LoadControl(frmNew, this.Name);
+            #endregion
+        }
     }
 }

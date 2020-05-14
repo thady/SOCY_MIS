@@ -462,6 +462,10 @@ namespace SOCY_MIS
                 {
                     isValid = false;
                 }
+                else if (dtpDateOfVisit.Value > DateTime.Today)
+                {
+                    isValid = false;
+                }
                 else
                 {
                     isValid = true;
@@ -469,10 +473,16 @@ namespace SOCY_MIS
             }
             else
             {
+               // || (!rbtnRiskAssYes.Checked & !rbtnRiskAssNo.Checked & !rbtnRiskAssNA.Checked) ||
+               //(!rbtnOldReferalYes.Checked & !rbtnOldReferalNo.Checked & !rbtnOldReferalNA.Checked) || (!rbtnReferalMadeYes.Checked & !rbtnReferalMadeNo.Checked & !rbtnReferalMadeNA.Checked) ||
+               //(!rbtnHipYes.Checked & !rbtnHipNo.Checked) Temporarily removed this validation block due to Covid19
+
                 if ((cbHHMember.SelectedValue.ToString() == "-1" && (cbHomeVisitHouseholdStatus.SelectedValue.ToString() == "1" || cbHomeVisitHouseholdStatus.SelectedValue.ToString() == "2")) || cbSocialWorker.SelectedValue.ToString() == "-1" || cbHomeVisitReason.SelectedValue.ToString() == "-1" ||
-               dtpDateOfVisit.Checked == false || cbHomeVisitHouseholdStatus.SelectedValue.ToString() == "-1" || (!rbtnRiskAssYes.Checked & !rbtnRiskAssNo.Checked & !rbtnRiskAssNA.Checked) ||
-               (!rbtnOldReferalYes.Checked & !rbtnOldReferalNo.Checked & !rbtnOldReferalNA.Checked) || (!rbtnReferalMadeYes.Checked & !rbtnReferalMadeNo.Checked & !rbtnReferalMadeNA.Checked) ||
-               (!rbtnHipYes.Checked & !rbtnHipNo.Checked) || cbHomeVisitor.SelectedValue.ToString() == "-1" || !dtpNextVisitDate.Checked)
+                dtpDateOfVisit.Checked == false || cbHomeVisitHouseholdStatus.SelectedValue.ToString() == "-1" || cbHomeVisitor.SelectedValue.ToString() == "-1" || !dtpNextVisitDate.Checked)
+                {
+                    isValid = false;
+                }
+                else if (dtpDateOfVisit.Value > DateTime.Today)
                 {
                     isValid = false;
                 }

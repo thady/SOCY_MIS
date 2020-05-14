@@ -148,6 +148,18 @@
     <Compile Include="frmApprenticeshipSearch.Designer.cs">
       <DependentUpon>frmApprenticeshipSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmARTRefill.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmARTRefill.Designer.cs">
+      <DependentUpon>frmARTRefill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmArtRefillSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmArtRefillSearch.Designer.cs">
+      <DependentUpon>frmArtRefillSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAutoUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +237,18 @@
     </Compile>
     <Compile Include="frmCommunityTraining_registerSearch.Designer.cs">
       <DependentUpon>frmCommunityTraining_registerSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCovid19DataCollection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmCovid19DataCollection.Designer.cs">
+      <DependentUpon>frmCovid19DataCollection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCovid19DataCollectionD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmCovid19DataCollectionD.Designer.cs">
+      <DependentUpon>frmCovid19DataCollectionD.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDataTransfer.cs">
       <SubType>UserControl</SubType>
@@ -519,6 +543,42 @@
     </Compile>
     <Compile Include="frmInstitutionalCareSummarySearch.Designer.cs">
       <DependentUpon>frmInstitutionalCareSummarySearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNoMeansNoAttendance.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmNoMeansNoAttendance.Designer.cs">
+      <DependentUpon>frmNoMeansNoAttendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNoMeansNoAttendanceSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmNoMeansNoAttendanceSearch.Designer.cs">
+      <DependentUpon>frmNoMeansNoAttendanceSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNoMeansNoBoys.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmNoMeansNoBoys.Designer.cs">
+      <DependentUpon>frmNoMeansNoBoys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNoMeansNoGirls.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmNoMeansNoGirls.Designer.cs">
+      <DependentUpon>frmNoMeansNoGirls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNoMeansNoMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmNoMeansNoMain.Designer.cs">
+      <DependentUpon>frmNoMeansNoMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNoMeansNoSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmNoMeansNoSearch.Designer.cs">
+      <DependentUpon>frmNoMeansNoSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="frmOffice.cs">
       <SubType>UserControl</SubType>
@@ -901,6 +961,12 @@
     <EmbeddedResource Include="frmApprenticeshipSearch.resx">
       <DependentUpon>frmApprenticeshipSearch.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmARTRefill.resx">
+      <DependentUpon>frmARTRefill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmArtRefillSearch.resx">
+      <DependentUpon>frmArtRefillSearch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAutoUpdate.resx">
       <DependentUpon>frmAutoUpdate.cs</DependentUpon>
     </EmbeddedResource>
@@ -939,6 +1005,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCommunityTraining_registerSearch.resx">
       <DependentUpon>frmCommunityTraining_registerSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCovid19DataCollection.resx">
+      <DependentUpon>frmCovid19DataCollection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCovid19DataCollectionD.resx">
+      <DependentUpon>frmCovid19DataCollectionD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDataTransfer.resx">
       <DependentUpon>frmDataTransfer.cs</DependentUpon>
@@ -1083,6 +1155,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmInstitutionalCareSummarySearch.resx">
       <DependentUpon>frmInstitutionalCareSummarySearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNoMeansNoAttendance.resx">
+      <DependentUpon>frmNoMeansNoAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNoMeansNoAttendanceSearch.resx">
+      <DependentUpon>frmNoMeansNoAttendanceSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNoMeansNoBoys.resx">
+      <DependentUpon>frmNoMeansNoBoys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNoMeansNoGirls.resx">
+      <DependentUpon>frmNoMeansNoGirls.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNoMeansNoMain.resx">
+      <DependentUpon>frmNoMeansNoMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNoMeansNoSearch.resx">
+      <DependentUpon>frmNoMeansNoSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmOffice.resx">
       <DependentUpon>frmOffice.cs</DependentUpon>

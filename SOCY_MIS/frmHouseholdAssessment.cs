@@ -915,8 +915,11 @@ namespace SOCY_MIS
             #region Required Fields
             if (txtHoueholdCode.Text.Trim().Length == 0 || txtVillage.Text.Trim().Length == 0 ||
                 cbDistrict.SelectedIndex == 0 || cbSubCounty.SelectedIndex == 0 || cbWard.SelectedIndex == 0 ||
-                cbHouseholdMember.SelectedIndex == -1 || txtMemberCount.Text == string.Empty)
+                cbHouseholdMember.SelectedIndex == -1 || txtMemberCount.Text == string.Empty || dtpDateOfInterview.Checked == false)
                 strMessage = strMessage + "," + utilConstants.cMIDRequiredFields;
+
+            if (dtpDateOfInterview.Value > DateTime.Now)
+                strMessage = "Date of interview cannot be greater than current date";
             #endregion Required Fields
 
             #region Get Messages

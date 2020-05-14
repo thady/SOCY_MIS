@@ -287,16 +287,16 @@ namespace SOCY_MIS
                         }
                         else
                         {
-                            dalUser = new umUser();
-                            dalUser.usr_id = cbUser.SelectedValue.ToString();
+                            //dalUser = new umUser();
+                            //dalUser.usr_id = cbUser.SelectedValue.ToString();
                             
-                            dalUser.usr_first_name = txtFirstName.Text;
-                            dalUser.usr_last_name = txtLastName.Text;
-                            dalUser.usr_email = txtEmail.Text;
-                            dalUser.usr_phone = txtPhone.Text;
-                            dalUser.hnr_id = cbTitle.SelectedValue.ToString();
-                            dalUser.ofc_id = pdalOfc.ofc_id;
-                            dalUser.Save(dbCon);
+                            //dalUser.usr_first_name = txtFirstName.Text;
+                            //dalUser.usr_last_name = txtLastName.Text;
+                            //dalUser.usr_email = txtEmail.Text;
+                            //dalUser.usr_phone = txtPhone.Text;
+                            //dalUser.hnr_id = cbTitle.SelectedValue.ToString();
+                            //dalUser.ofc_id = pdalOfc.ofc_id;
+                            //dalUser.Save(dbCon);
 
                             pdalOfc.ofc_name = txtName.Text;
                             pdalOfc.ofc_phone = txtPhone.Text;

@@ -21,6 +21,7 @@ namespace SOCY_MIS
         private string strId = string.Empty;
         private frmHousehold frmCll = null;
         private Master frmMST = null;
+        int age = 0;
         #endregion Variables
 
         #region Property
@@ -84,6 +85,7 @@ namespace SOCY_MIS
             cbDisability.SelectionLength = 0;
             cbDisabilityType.SelectionLength = 0;
             cbEducation.SelectionLength = 0;
+            cbYearOfBirth.SelectionLength = 0;
             cbGender.SelectionLength = 0;
             cbGivenBirth.SelectionLength = 0;
             cbHIVStatus.SelectionLength = 0;
@@ -93,7 +95,6 @@ namespace SOCY_MIS
             cbProfession.SelectionLength = 0;
             cbProtection.SelectionLength = 0;
             cbSchool.SelectionLength = 0;
-            cbYearOfBirth.SelectionLength = 0;
             #endregion UnHighlight Comboboxes
         }
         #endregion Form Methods
@@ -148,6 +149,30 @@ namespace SOCY_MIS
                 cbGivenBirth.SelectedIndex = 0;
                 cbPregnant.Enabled = false;
                 cbPregnant.SelectedIndex = 0;
+            }
+
+            if (cbGender.Text == "Female")
+            {
+                lblGivenBirth.ForeColor = Color.Red;
+            }
+
+            else
+            {
+                lblGivenBirth.ForeColor = Color.Black;
+
+            }
+
+
+            if (cbGender.Text == "Female" & age >= 10 & age <= 17)
+            {
+                pnlDREAMS.Enabled = true;
+                rbtndreamsNA.Checked = false;
+                rbtndreamsNA.Enabled = false;
+            }
+            else
+            {
+                pnlDREAMS.Enabled = false;
+                rbtndreamsNA.Checked = true;
             }
         }
 
@@ -276,6 +301,7 @@ namespace SOCY_MIS
             cbDisability.SelectedIndex = 0;
             cbDisabilityType.SelectedIndex = 0;
             cbEducation.SelectedIndex = 0;
+            cbYearOfBirth.SelectedIndex = 0;
             cbGender.SelectedIndex = 0;
             cbGivenBirth.SelectedIndex = 0;
             cbHIVStatus.SelectedIndex = 0;
@@ -285,8 +311,7 @@ namespace SOCY_MIS
             cbProfession.SelectedIndex = 0;
             cbProtection.SelectedIndex = 0;
             cbSchool.SelectedIndex = 0;
-            cbYearOfBirth.SelectedIndex = 0;
-
+            
             cbART.Enabled = true;
             cbGivenBirth.Enabled = true;
             cbPregnant.Enabled = true;
@@ -294,6 +319,12 @@ namespace SOCY_MIS
 
             chkCaregiver.Checked = false;
             chkHeadOfHousehold.Checked = false;
+            rbtnInactive.Checked = false;
+            rbtndreamsNA.Checked = false;
+            rbtndreamsNo.Checked = false;
+            rbtndreamsYes.Checked = false;
+            dtdreamsEnrollmentDate.Value = DateTime.Today;
+            dtdreamsEnrollmentDate.Checked = false;
             btnSave.Enabled = pblnManage;
 
             dalHHM = new hhHouseholdMember();
@@ -436,6 +467,9 @@ namespace SOCY_MIS
                         cbDisabilityType.Enabled = dalHHM.yn_id_disability.Equals(utilConstants.cDFListValueYes);
                         cbGivenBirth.Enabled = !dalHHM.gnd_id.Equals(utilConstants.cGNDMale);
                         cbPregnant.Enabled = !dalHHM.gnd_id.Equals(utilConstants.cGNDMale);
+                        utilControls.RadioButtonSetSelection(rbtndreamsYes, rbtndreamsNo, rbtndreamsNA, dalHHM.yn_dreams);
+                        dtdreamsEnrollmentDate.Value = Convert.ToDateTime(dalHHM.dreams_enroll_date);
+                        age = dalHHM.Age;
                         //btnSave.Enabled = pblnManage && (FormMaster.OfficeId.Equals(dalHHM.ofc_id) || utilConstants.cDFImportOffice.Equals(dalHHM.ofc_id) || SystemConstants.Validate_Office_group_access(FormMaster.OfficeId, dalHHM.ofc_id));
                         #endregion Household Member
 
@@ -772,6 +806,8 @@ namespace SOCY_MIS
                         dalHHM.yn_id_school = cbSchool.SelectedValue.ToString();
                         dalHHM.usr_id_update = FormMaster.UserId;
                         dalHHM.district_id = SystemConstants.Return_office_district();
+                        dalHHM.yn_dreams = utilControls.RadioButtonGetSelection(rbtndreamsYes, rbtndreamsNo, rbtndreamsNA);
+                        dalHHM.dreams_enroll_date = dtdreamsEnrollmentDate.Value;
                         if (rbtnActive.Checked)
                         {
                             dalHHM.hhm_status = utilConstants.cDFActive.ToString();
@@ -849,6 +885,26 @@ namespace SOCY_MIS
             }
             #endregion Get Messages
 
+            if (pnlDREAMS.Enabled == true)
+            {
+                if (rbtndreamsYes.Checked == false & rbtndreamsNo.Checked == false)
+                {
+                    strMessage = "Please indicate if the girl is in DREAMS or not";
+                }
+                else if(dtdreamsEnrollmentDate.Checked == false || dtdreamsEnrollmentDate.Value.Date.ToString() == "1900-01-01")
+                {
+                    strMessage = "Please select the DREAMS enrollment date";
+                }
+                else
+                {
+                    strMessage = string.Empty;
+                }
+            }
+            else
+            {
+                strMessage = string.Empty;
+            }
+
             return strMessage;
         }
         #endregion Private Methods
@@ -882,8 +938,30 @@ namespace SOCY_MIS
 
         private void cbGender_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbGender.Text == "Female") { lblGivenBirth.ForeColor = Color.Red; }
-            else { lblGivenBirth.ForeColor = Color.Black; }
+            //age = DateTime.Now.Year - Convert.ToInt32(cbYearOfBirth.SelectedValue.ToString());
+
+            if (cbGender.SelectedValue.ToString() == "f05d3f3c-9aac-4f12-b0cd-1c4ae9294da3")
+            {
+                lblGivenBirth.ForeColor = Color.Red;
+            }
+
+            else
+            {
+                lblGivenBirth.ForeColor = Color.Black;
+
+            }
+
+            if (cbGender.SelectedValue.ToString() == "f05d3f3c-9aac-4f12-b0cd-1c4ae9294da3" & age >= 10 & age <= 17)
+            {
+                pnlDREAMS.Enabled = true;
+                rbtndreamsNA.Checked = false;
+                rbtndreamsNA.Enabled = false;
+            }
+            else
+            {
+                pnlDREAMS.Enabled = false;
+                rbtndreamsNA.Checked = true;
+            }
         }
 
         private void cbDisability_SelectedIndexChanged(object sender, EventArgs e)
@@ -901,6 +979,33 @@ namespace SOCY_MIS
         private void gbHouseholdMembers_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void rbtndreamsYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtndreamsYes.Checked == true)
+            {
+                dtdreamsEnrollmentDate.Enabled = true;
+            }
+            else
+            {
+                dtdreamsEnrollmentDate.Enabled = false;
+            }
+        }
+
+        private void dgvMembers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cbYearOfBirth_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //age = DateTime.Now.Year - Convert.ToInt32(cbYearOfBirth.SelectedValue.ToString());
+        }
+
+        private void cbYearOfBirth_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            age = DateTime.Now.Year - Convert.ToInt32(cbYearOfBirth.SelectedValue.ToString());
         }
     }
 }

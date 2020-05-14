@@ -16106,6 +16106,782 @@ namespace SOCY_MIS.DataAccessLayer
             #endregion SQL
         }
 
+
+        private static void Createben_ben_NoMeansNo_pre_post_Boys(DBConnection dbCon) 
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            #region SQL
+            #region Tables
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'ben_NoMeansNo_pre_post_Boys')
+                      CREATE TABLE [dbo].[ben_NoMeansNo_pre_post_Boys](
+	                    [record_id] [varchar](50) NOT NULL,
+	                    [nmn_auto_id] [int] IDENTITY(50,2) NOT NULL,
+	                    [nmn_id]  AS ((('NMN-'+upper(left([usr_id_create],(2))))+'-')+CONVERT([varchar](10),[nmn_auto_id],0)),
+                        [nmn_id_pre] [varchar](50) NOT NULL,
+	                    [yn_direct_ben] [varchar](50) NULL,
+	                    [hh_id] [varchar](50) NULL,
+	                    [hhm_id] [varchar](50) NOT NULL,
+	                    [hhm_code] [varchar](50) NOT NULL,
+	                    [date] [date] NOT NULL,
+	                    [pre_post] [varchar](50) NOT NULL,
+	                    [grp_name] [varchar](50) NOT NULL,
+	                    [instructor_name] [varchar](100) NOT NULL,
+	                    [age] [varchar](50) NOT NULL,
+	                    [lead_with_heart] [varchar](50) NOT NULL,
+	                    [desc_life_worth_living] [varchar](50) NOT NULL,
+	                    [cycle_of_force] [varchar](50) NOT NULL,
+	                    [tell_at_stake] [varchar](50) NOT NULL,
+	                    [men_not_emortion] [varchar](50) NOT NULL,
+	                    [report_rape] [varchar](50) NOT NULL,
+	                    [feel_courageous] [varchar](50) NOT NULL,
+	                    [intervene_conflit] [varchar](50) NOT NULL,
+	                    [rape_sex_consent] [varchar](50) NOT NULL,
+	                    [boys_ready_want_sex] [varchar](50) NOT NULL,
+	                    [men_women_equal] [varchar](50) NOT NULL,
+	                    [strength_source] [varchar](50) NOT NULL,
+	                    [adolescent_desc] [varchar](50) NOT NULL,
+	                    [moment_truth] [varchar](50) NOT NULL,
+	                    [consent_desc] [varchar](50) NOT NULL,
+	                    [violence_desc] [varchar](50) NOT NULL,
+	                    [boy_attack_response] [varchar](50) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [district_id] [nvarchar](50) NOT NULL,
+                     CONSTRAINT [PK_ben_NoMeansNo_Boys] PRIMARY KEY CLUSTERED 
+                    (
+	                    [record_id] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "IF NOT EXISTS(SELECT * FROM sys.columns " +
+                    "WHERE[name] = N'nmn_id_pre' AND [object_id] = OBJECT_ID(N'ben_NoMeansNo_pre_post_Boys')) " +
+                     "BEGIN " +
+                        "ALTER TABLE ben_NoMeansNo_pre_post_Boys ADD nmn_id_pre varchar(50) NULL " +
+                     "END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'ben_NoMeansNo_pre_post_Boys_upload')
+                        CREATE TABLE [dbo].[ben_NoMeansNo_pre_post_Boys_upload](
+	                    [record_sid] [int] IDENTITY(1,1) NOT NULL,
+	                    [record_id] [varchar](50) NOT NULL,
+	                    [nmn_id] [varchar](50) NOT NULL,
+                        [nmn_id_pre] [varchar](50) NOT NULL,
+	                    [yn_direct_ben] [varchar](50) NOT NULL,
+	                    [hh_id] [varchar](50) NOT NULL,
+	                    [hhm_id] [varchar](50) NOT NULL,
+	                    [hhm_code] [varchar](50) NOT NULL,
+	                    [date] [date] NOT NULL,
+	                    [pre_post] [varchar](50) NOT NULL,
+	                    [grp_name] [varchar](50) NOT NULL,
+	                    [instructor_name] [varchar](100) NOT NULL,
+	                    [age] [varchar](50) NOT NULL,
+	                    [lead_with_heart] [varchar](50) NOT NULL,
+	                    [desc_life_worth_living] [varchar](50) NOT NULL,
+	                    [cycle_of_force] [varchar](50) NOT NULL,
+	                    [tell_at_stake] [varchar](50) NOT NULL,
+	                    [men_not_emortion] [varchar](50) NOT NULL,
+	                    [report_rape] [varchar](50) NOT NULL,
+	                    [feel_courageous] [varchar](50) NOT NULL,
+	                    [intervene_conflit] [varchar](50) NOT NULL,
+	                    [rape_sex_consent] [varchar](50) NOT NULL,
+	                    [boys_ready_want_sex] [varchar](50) NOT NULL,
+	                    [men_women_equal] [varchar](50) NOT NULL,
+	                    [strength_source] [varchar](50) NOT NULL,
+	                    [adolescent_desc] [varchar](50) NOT NULL,
+	                    [moment_truth] [varchar](50) NOT NULL,
+	                    [consent_desc] [varchar](50) NOT NULL,
+	                    [violence_desc] [varchar](50) NOT NULL,
+	                    [boy_attack_response] [varchar](50) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [trg_action] [int] NOT NULL,
+	                    [district_id] [nvarchar](50) NOT NULL,
+                     CONSTRAINT [PK_ben_NoMeansNo_pre_post_Boys_upload] PRIMARY KEY CLUSTERED 
+                    (
+	                    [record_sid] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion Tables
+
+            strSQL = "IF NOT EXISTS(SELECT * FROM sys.columns " +
+                   "WHERE[name] = N'nmn_id_pre' AND [object_id] = OBJECT_ID(N'ben_NoMeansNo_pre_post_Boys_upload')) " +
+                    "BEGIN " +
+                       "ALTER TABLE ben_NoMeansNo_pre_post_Boys_upload ADD nmn_id_pre varchar(50) NULL " +
+                    "END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            #region Triggers
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_NoMeansNo_pre_post_Boys_insert' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_NoMeansNo_pre_post_Boys_insert] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_NoMeansNo_pre_post_Boys_insert] ON [dbo].[ben_NoMeansNo_pre_post_Boys] FOR INSERT
+                        AS
+                        BEGIN
+	                       INSERT INTO [dbo].[ben_NoMeansNo_pre_post_Boys_upload]
+                   ([record_id] ,[nmn_id],nmn_id_pre,[yn_direct_ben] ,[hh_id],[hhm_id] ,[hhm_code] ,[date],[pre_post],[grp_name],[instructor_name] ,[age] ,[lead_with_heart] ,[desc_life_worth_living]
+                   ,[cycle_of_force] ,[tell_at_stake]  ,[men_not_emortion] ,[report_rape] ,[feel_courageous]  ,[intervene_conflit] ,[rape_sex_consent],[boys_ready_want_sex]
+                   ,[men_women_equal] ,[strength_source] ,[adolescent_desc] ,[moment_truth] ,[consent_desc] ,[violence_desc] ,[boy_attack_response] ,[usr_id_create] ,[usr_id_update]
+                   ,[usr_date_create] ,[usr_date_update]  ,[ofc_id],[trg_action],[district_id])
+	                        SELECT [record_id] ,[nmn_id],nmn_id_pre,[yn_direct_ben] ,[hh_id],[hhm_id] ,[hhm_code] ,[date],[pre_post],[grp_name],[instructor_name] ,[age] ,[lead_with_heart] ,[desc_life_worth_living]
+                   ,[cycle_of_force] ,[tell_at_stake]  ,[men_not_emortion] ,[report_rape] ,[feel_courageous]  ,[intervene_conflit] ,[rape_sex_consent],[boys_ready_want_sex]
+                   ,[men_women_equal] ,[strength_source] ,[adolescent_desc] ,[moment_truth] ,[consent_desc] ,[violence_desc] ,[boy_attack_response] ,[usr_id_create] ,[usr_id_update]
+                   ,[usr_date_create] ,[usr_date_update]  ,[ofc_id],1,[district_id]
+                          FROM inserted
+                        END  ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_NoMeansNo_pre_post_Boys_update' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_NoMeansNo_pre_post_Boys_update] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_NoMeansNo_pre_post_Boys_update] ON [dbo].[ben_NoMeansNo_pre_post_Boys] FOR UPDATE
+                AS
+                BEGIN
+	               INSERT INTO [dbo].[ben_NoMeansNo_pre_post_Boys_upload]
+           ([record_id] ,[nmn_id],nmn_id_pre,[yn_direct_ben] ,[hh_id],[hhm_id] ,[hhm_code] ,[date],[pre_post],[grp_name],[instructor_name] ,[age] ,[lead_with_heart] ,[desc_life_worth_living]
+           ,[cycle_of_force] ,[tell_at_stake]  ,[men_not_emortion] ,[report_rape] ,[feel_courageous]  ,[intervene_conflit] ,[rape_sex_consent],[boys_ready_want_sex]
+           ,[men_women_equal] ,[strength_source] ,[adolescent_desc] ,[moment_truth] ,[consent_desc] ,[violence_desc] ,[boy_attack_response] ,[usr_id_create] ,[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update]  ,[ofc_id],[trg_action],[district_id])
+	                SELECT [record_id] ,[nmn_id],nmn_id_pre,[yn_direct_ben] ,[hh_id],[hhm_id] ,[hhm_code] ,[date],[pre_post],[grp_name],[instructor_name] ,[age] ,[lead_with_heart] ,[desc_life_worth_living]
+           ,[cycle_of_force] ,[tell_at_stake]  ,[men_not_emortion] ,[report_rape] ,[feel_courageous]  ,[intervene_conflit] ,[rape_sex_consent],[boys_ready_want_sex]
+           ,[men_women_equal] ,[strength_source] ,[adolescent_desc] ,[moment_truth] ,[consent_desc] ,[violence_desc] ,[boy_attack_response] ,[usr_id_create] ,[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update]  ,[ofc_id],2,[district_id]
+                  FROM inserted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_NoMeansNo_pre_post_Boys_delete' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_NoMeansNo_pre_post_Boys_delete] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_NoMeansNo_pre_post_Boys_delete] ON [dbo].[ben_NoMeansNo_pre_post_Boys] FOR DELETE
+                AS
+                BEGIN
+	               INSERT INTO [dbo].[ben_NoMeansNo_pre_post_Boys_upload]
+           ([record_id] ,[nmn_id],nmn_id_pre,[yn_direct_ben] ,[hh_id],[hhm_id] ,[hhm_code] ,[date],[pre_post],[grp_name],[instructor_name] ,[age] ,[lead_with_heart] ,[desc_life_worth_living]
+           ,[cycle_of_force] ,[tell_at_stake]  ,[men_not_emortion] ,[report_rape] ,[feel_courageous]  ,[intervene_conflit] ,[rape_sex_consent],[boys_ready_want_sex]
+           ,[men_women_equal] ,[strength_source] ,[adolescent_desc] ,[moment_truth] ,[consent_desc] ,[violence_desc] ,[boy_attack_response] ,[usr_id_create] ,[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update]  ,[ofc_id],[trg_action],[district_id])
+	                SELECT [record_id] ,[nmn_id],nmn_id_pre,[yn_direct_ben] ,[hh_id],[hhm_id] ,[hhm_code] ,[date],[pre_post],[grp_name],[instructor_name] ,[age] ,[lead_with_heart] ,[desc_life_worth_living]
+           ,[cycle_of_force] ,[tell_at_stake]  ,[men_not_emortion] ,[report_rape] ,[feel_courageous]  ,[intervene_conflit] ,[rape_sex_consent],[boys_ready_want_sex]
+           ,[men_women_equal] ,[strength_source] ,[adolescent_desc] ,[moment_truth] ,[consent_desc] ,[violence_desc] ,[boy_attack_response] ,[usr_id_create] ,[usr_id_update]
+           ,[usr_date_create] ,[usr_date_update]  ,[ofc_id],3,[district_id]
+                  FROM deleted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            #endregion Triggers
+            #endregion SQL
+        }
+
+
+        private static void Createben_ben_NoMeansNo_pre_post_Girls(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            #region SQL
+            #region Tables
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'ben_NoMeansNo_pre_post_Girls')
+                        CREATE TABLE [dbo].[ben_NoMeansNo_pre_post_Girls](
+	                    [record_id] [varchar](50) NOT NULL,
+	                    [nmn_auto_id] [int] IDENTITY(100,1) NOT NULL,
+	                    [nmn_id]  AS ((('NMN-'+upper(left([usr_id_create],(2))))+'-')+CONVERT([varchar](10),[nmn_auto_id],0)),
+                        [nmn_id_pre] [varchar](50) NOT NULL,
+	                    [yn_direct_ben] [varchar](50) NOT NULL,
+	                    [hh_id] [varchar](50) NOT NULL,
+	                    [hhm_id] [varchar](50) NOT NULL,
+	                    [hhm_code] [varchar](50) NOT NULL,
+	                    [date] [date] NOT NULL,
+	                    [pre_post] [varchar](50) NOT NULL,
+	                    [grp_name] [varchar](50) NOT NULL,
+	                    [instructor_name] [varchar](100) NOT NULL,
+	                    [age] [varchar](50) NOT NULL,
+	                    [cant_escape_attacker] [varchar](50) NOT NULL,
+	                    [can_defend_myself_act_crazy] [varchar](50) NOT NULL,
+	                    [intimidation_not_assault] [varchar](50) NOT NULL,
+	                    [can_fight_dirty] [varchar](50) NOT NULL,
+	                    [report_rape_to_adult] [varchar](50) NOT NULL,
+	                    [prepared_to_deffend_myself] [varchar](50) NOT NULL,
+	                    [worth_defending] [varchar](50) NOT NULL,
+	                    [can_strike_first] [varchar](50) NOT NULL,
+	                    [know_assertive] [varchar](50) NOT NULL,
+	                    [voice_weapon_to_assault] [varchar](50) NOT NULL,
+	                    [use_self_defence_skills] [varchar](50) NOT NULL,
+	                    [main_safety_goal] [varchar](200) NOT NULL,
+	                    [girl_attack_response] [varchar](200) NOT NULL,
+	                    [attack_girl_fault_desc] [varchar](200) NOT NULL,
+	                    [self_defence_desc] [varchar](200) NOT NULL,
+	                    [girl_response_if_eyes_covered] [varchar](200) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [district_id] [nvarchar](50) NOT NULL,
+                     CONSTRAINT [PK_ben_NoMeansNo_pre_post_Girls] PRIMARY KEY CLUSTERED 
+                    (
+	                    [record_id] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "IF NOT EXISTS(SELECT * FROM sys.columns " +
+                 "WHERE[name] = N'nmn_id_pre' AND [object_id] = OBJECT_ID(N'ben_NoMeansNo_pre_post_Girls')) " +
+                  "BEGIN " +
+                     "ALTER TABLE ben_NoMeansNo_pre_post_Girls ADD nmn_id_pre varchar(50) NULL " +
+                  "END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'ben_NoMeansNo_pre_post_Girls_upload')
+                        CREATE TABLE [dbo].[ben_NoMeansNo_pre_post_Girls_upload](
+	                    [record_sid] [int] IDENTITY(1,1) NOT NULL,
+	                    [record_id] [varchar](50) NOT NULL,
+	                    [nmn_id] [varchar](50) NOT NULL,
+                        [nmn_id_pre] [varchar](50) NOT NULL,
+	                    [yn_direct_ben] [varchar](50) NOT NULL,
+	                    [hh_id] [varchar](50) NOT NULL,
+	                    [hhm_id] [varchar](50) NOT NULL,
+	                    [hhm_code] [varchar](50) NOT NULL,
+	                    [date] [date] NOT NULL,
+	                    [pre_post] [varchar](50) NOT NULL,
+	                    [grp_name] [varchar](50) NOT NULL,
+	                    [instructor_name] [varchar](100) NOT NULL,
+	                    [age] [varchar](50) NOT NULL,
+	                    [cant_escape_attacker] [varchar](50) NOT NULL,
+	                    [can_defend_myself_act_crazy] [varchar](50) NOT NULL,
+	                    [intimidation_not_assault] [varchar](50) NOT NULL,
+	                    [can_fight_dirty] [varchar](50) NOT NULL,
+	                    [report_rape_to_adult] [varchar](50) NOT NULL,
+	                    [prepared_to_deffend_myself] [varchar](50) NOT NULL,
+	                    [worth_defending] [varchar](50) NOT NULL,
+	                    [can_strike_first] [varchar](50) NOT NULL,
+	                    [know_assertive] [varchar](50) NOT NULL,
+	                    [voice_weapon_to_assault] [varchar](50) NOT NULL,
+	                    [use_self_defence_skills] [varchar](50) NOT NULL,
+	                    [main_safety_goal] [varchar](200) NOT NULL,
+	                    [girl_attack_response] [varchar](200) NOT NULL,
+	                    [attack_girl_fault_desc] [varchar](200) NOT NULL,
+	                    [self_defence_desc] [varchar](200) NOT NULL,
+	                    [girl_response_if_eyes_covered] [varchar](200) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [trg_action] [int] NOT NULL,
+	                    [district_id] [nvarchar](50) NOT NULL,
+                     CONSTRAINT [PK_ben_NoMeansNo_pre_post_Girls_upload] PRIMARY KEY CLUSTERED 
+                    (
+	                    [record_sid] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "IF NOT EXISTS(SELECT * FROM sys.columns " +
+                "WHERE[name] = N'nmn_id_pre' AND [object_id] = OBJECT_ID(N'ben_NoMeansNo_pre_post_Girls_upload')) " +
+                 "BEGIN " +
+                    "ALTER TABLE ben_NoMeansNo_pre_post_Girls_upload ADD nmn_id_pre varchar(50) NULL " +
+                 "END";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion Tables
+
+            #region Triggers
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_NoMeansNo_pre_post_Girls_insert' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_NoMeansNo_pre_post_Girls_insert] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_NoMeansNo_pre_post_Girls_insert] ON [dbo].[ben_NoMeansNo_pre_post_Girls] FOR INSERT
+                AS
+                BEGIN
+	               INSERT INTO [dbo].[ben_NoMeansNo_pre_post_Girls_upload]
+           ([record_id] ,[nmn_id],nmn_id_pre ,[yn_direct_ben],[hh_id],[hhm_id],[hhm_code]  ,[date] ,[pre_post] ,[grp_name],[instructor_name],[age],[cant_escape_attacker]
+                        ,[can_defend_myself_act_crazy],[intimidation_not_assault],[can_fight_dirty],[report_rape_to_adult] ,[prepared_to_deffend_myself] ,[worth_defending]
+                        ,[can_strike_first] ,[know_assertive] ,[voice_weapon_to_assault] ,[use_self_defence_skills] ,[main_safety_goal] ,[girl_attack_response]  ,[attack_girl_fault_desc]
+                        ,[self_defence_desc] ,[girl_response_if_eyes_covered] ,[usr_id_create],[usr_id_update] ,[usr_date_create]  ,[usr_date_update],[ofc_id],[trg_action] ,[district_id])
+	                SELECT [record_id] ,[nmn_id],nmn_id_pre ,[yn_direct_ben],[hh_id],[hhm_id],[hhm_code]  ,[date] ,[pre_post] ,[grp_name],[instructor_name],[age],[cant_escape_attacker]
+                        ,[can_defend_myself_act_crazy],[intimidation_not_assault],[can_fight_dirty],[report_rape_to_adult] ,[prepared_to_deffend_myself] ,[worth_defending]
+                        ,[can_strike_first] ,[know_assertive] ,[voice_weapon_to_assault] ,[use_self_defence_skills] ,[main_safety_goal] ,[girl_attack_response]  ,[attack_girl_fault_desc]
+                        ,[self_defence_desc] ,[girl_response_if_eyes_covered] ,[usr_id_create],[usr_id_update] ,[usr_date_create]  ,[usr_date_update],[ofc_id],1 ,[district_id]
+                  FROM inserted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_NoMeansNo_pre_post_Girls_update' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_NoMeansNo_pre_post_Girls_update] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_NoMeansNo_pre_post_Girls_update] ON [dbo].[ben_NoMeansNo_pre_post_Girls] FOR UPDATE
+                AS
+                BEGIN
+	               INSERT INTO [dbo].[ben_NoMeansNo_pre_post_Girls_upload]
+           ([record_id] ,[nmn_id],nmn_id_pre ,[yn_direct_ben],[hh_id],[hhm_id],[hhm_code]  ,[date] ,[pre_post] ,[grp_name],[instructor_name],[age],[cant_escape_attacker]
+                        ,[can_defend_myself_act_crazy],[intimidation_not_assault],[can_fight_dirty],[report_rape_to_adult] ,[prepared_to_deffend_myself] ,[worth_defending]
+                        ,[can_strike_first] ,[know_assertive] ,[voice_weapon_to_assault] ,[use_self_defence_skills] ,[main_safety_goal] ,[girl_attack_response]  ,[attack_girl_fault_desc]
+                        ,[self_defence_desc] ,[girl_response_if_eyes_covered] ,[usr_id_create],[usr_id_update] ,[usr_date_create]  ,[usr_date_update],[ofc_id],[trg_action] ,[district_id])
+	                SELECT [record_id] ,[nmn_id],nmn_id_pre ,[yn_direct_ben],[hh_id],[hhm_id],[hhm_code]  ,[date] ,[pre_post] ,[grp_name],[instructor_name],[age],[cant_escape_attacker]
+                        ,[can_defend_myself_act_crazy],[intimidation_not_assault],[can_fight_dirty],[report_rape_to_adult] ,[prepared_to_deffend_myself] ,[worth_defending]
+                        ,[can_strike_first] ,[know_assertive] ,[voice_weapon_to_assault] ,[use_self_defence_skills] ,[main_safety_goal] ,[girl_attack_response]  ,[attack_girl_fault_desc]
+                        ,[self_defence_desc] ,[girl_response_if_eyes_covered] ,[usr_id_create],[usr_id_update] ,[usr_date_create]  ,[usr_date_update],[ofc_id],2,[district_id]
+                  FROM inserted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_NoMeansNo_pre_post_Girls_delete' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_NoMeansNo_pre_post_Girls_delete] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_NoMeansNo_pre_post_Girls_delete] ON [dbo].[ben_NoMeansNo_pre_post_Girls] FOR DELETE
+                AS
+                BEGIN
+	               INSERT INTO [dbo].[ben_NoMeansNo_pre_post_Girls_upload]
+           ([record_id] ,[nmn_id],nmn_id_pre ,[yn_direct_ben],[hh_id],[hhm_id],[hhm_code]  ,[date] ,[pre_post] ,[grp_name],[instructor_name],[age],[cant_escape_attacker]
+                        ,[can_defend_myself_act_crazy],[intimidation_not_assault],[can_fight_dirty],[report_rape_to_adult] ,[prepared_to_deffend_myself] ,[worth_defending]
+                        ,[can_strike_first] ,[know_assertive] ,[voice_weapon_to_assault] ,[use_self_defence_skills] ,[main_safety_goal] ,[girl_attack_response]  ,[attack_girl_fault_desc]
+                        ,[self_defence_desc] ,[girl_response_if_eyes_covered] ,[usr_id_create],[usr_id_update] ,[usr_date_create]  ,[usr_date_update],[ofc_id],[trg_action] ,[district_id])
+	                SELECT [record_id] ,[nmn_id],nmn_id_pre ,[yn_direct_ben],[hh_id],[hhm_id],[hhm_code]  ,[date] ,[pre_post] ,[grp_name],[instructor_name],[age],[cant_escape_attacker]
+                        ,[can_defend_myself_act_crazy],[intimidation_not_assault],[can_fight_dirty],[report_rape_to_adult] ,[prepared_to_deffend_myself] ,[worth_defending]
+                        ,[can_strike_first] ,[know_assertive] ,[voice_weapon_to_assault] ,[use_self_defence_skills] ,[main_safety_goal] ,[girl_attack_response]  ,[attack_girl_fault_desc]
+                        ,[self_defence_desc] ,[girl_response_if_eyes_covered] ,[usr_id_create],[usr_id_update] ,[usr_date_create]  ,[usr_date_update],[ofc_id],3,[district_id]
+                  FROM deleted
+                END ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            #endregion Triggers
+            #endregion SQL
+        }
+
+
+
+        private static void Createben_ben_NoMeansNo_participant_attendance(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            #region SQL
+            #region Tables
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'ben_NoMeansNo_participant_attendance')
+                        CREATE TABLE [dbo].[ben_NoMeansNo_participant_attendance](
+	                    [roster_id] [varchar](50) NOT NULL,
+	                    [int_type] [varchar](50) NOT NULL,
+	                    [start_date] [date] NOT NULL,
+	                    [end_date] [date] NOT NULL,
+	                    [sup_name] [varchar](50) NOT NULL,
+	                    [imp_partner] [varchar](50) NOT NULL,
+	                    [dst_id] [varchar](50) NOT NULL,
+	                    [sct_id] [varchar](50) NOT NULL,
+	                    [wrd_id] [varchar](50) NOT NULL,
+	                    [venue] [varchar](50) NOT NULL,
+	                    [instructor_names] [varchar](150) NOT NULL,
+	                    [delivery_method] [varchar](50) NOT NULL,
+	                    [class1_tr_date] [date] NOT NULL,
+	                    [class1_tr_hrs] [varchar](4) NOT NULL,
+	                    [class2_tr_date] [date] NOT NULL,
+	                    [class2_tr_hrs] [varchar](4) NOT NULL,
+	                    [class3_tr_date] [date] NOT NULL,
+	                    [class3_tr_hrs] [varchar](4) NOT NULL,
+	                    [class4_tr_date] [date] NOT NULL,
+	                    [class4_tr_hrs] [varchar](4) NOT NULL,
+	                    [class5_tr_date] [date] NOT NULL,
+	                    [class5_tr_hrs] [varchar](4) NOT NULL,
+	                    [class6_tr_date] [date] NOT NULL,
+	                    [class6_tr_hrs] [varchar](4) NOT NULL,
+	                    [class7_tr_date] [date] NOT NULL,
+	                    [class7_tr_hrs] [varchar](4) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [district_id] [nvarchar](50) NOT NULL,
+                     CONSTRAINT [PK_ben_NoMeansNo_participant_attendance] PRIMARY KEY CLUSTERED 
+                    (
+	                    [roster_id] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'ben_NoMeansNo_participant_attendance_upload')
+                        CREATE TABLE [dbo].[ben_NoMeansNo_participant_attendance_upload](
+	                    [roster_sid] [int] IDENTITY(1,1) NOT NULL,
+	                    [roster_id] [varchar](50) NOT NULL,
+	                    [int_type] [varchar](50) NOT NULL,
+	                    [start_date] [date] NOT NULL,
+	                    [end_date] [date] NOT NULL,
+	                    [sup_name] [varchar](50) NOT NULL,
+	                    [imp_partner] [varchar](50) NOT NULL,
+	                    [dst_id] [varchar](50) NOT NULL,
+	                    [sct_id] [varchar](50) NOT NULL,
+	                    [wrd_id] [varchar](50) NOT NULL,
+	                    [venue] [varchar](50) NOT NULL,
+	                    [instructor_names] [varchar](150) NOT NULL,
+	                    [delivery_method] [varchar](50) NOT NULL,
+	                    [class1_tr_date] [date] NOT NULL,
+	                    [class1_tr_hrs] [varchar](4) NOT NULL,
+	                    [class2_tr_date] [date] NOT NULL,
+	                    [class2_tr_hrs] [varchar](4) NOT NULL,
+	                    [class3_tr_date] [date] NOT NULL,
+	                    [class3_tr_hrs] [varchar](4) NOT NULL,
+	                    [class4_tr_date] [date] NOT NULL,
+	                    [class4_tr_hrs] [varchar](4) NOT NULL,
+	                    [class5_tr_date] [date] NOT NULL,
+	                    [class5_tr_hrs] [varchar](4) NOT NULL,
+	                    [class6_tr_date] [date] NOT NULL,
+	                    [class6_tr_hrs] [varchar](4) NOT NULL,
+	                    [class7_tr_date] [date] NOT NULL,
+	                    [class7_tr_hrs] [varchar](4) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [trg_action] [int] NOT NULL,
+	                    [district_id] [nvarchar](50) NOT NULL,
+                     CONSTRAINT [PK_ben_NoMeansNo_participant_attendance_upload] PRIMARY KEY CLUSTERED 
+                    (
+	                    [roster_sid] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion Tables
+
+            #region Triggers
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_NoMeansNo_participant_attendance_insert' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_NoMeansNo_participant_attendance_insert] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_NoMeansNo_participant_attendance_insert] ON [dbo].[ben_NoMeansNo_participant_attendance] FOR INSERT
+                        AS
+                        BEGIN
+	                       INSERT INTO [dbo].[ben_NoMeansNo_participant_attendance_upload]
+						   ([roster_id],[int_type] ,[start_date] ,[end_date] ,[sup_name] ,[imp_partner] ,[dst_id] ,[sct_id] ,[wrd_id] ,[venue],[instructor_names],[delivery_method]
+						   ,[class1_tr_date] ,[class1_tr_hrs] ,[class2_tr_date] ,[class2_tr_hrs] ,[class3_tr_date] ,[class3_tr_hrs] ,[class4_tr_date] ,[class4_tr_hrs] ,[class5_tr_date]
+						   ,[class5_tr_hrs] ,[class6_tr_date] ,[class6_tr_hrs],[class7_tr_date] ,[class7_tr_hrs] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update] ,[ofc_id]
+						   ,trg_action,[district_id])
+	                        SELECT [roster_id],[int_type] ,[start_date] ,[end_date] ,[sup_name] ,[imp_partner] ,[dst_id] ,[sct_id] ,[wrd_id] ,[venue],[instructor_names],[delivery_method]
+						   ,[class1_tr_date] ,[class1_tr_hrs] ,[class2_tr_date] ,[class2_tr_hrs] ,[class3_tr_date] ,[class3_tr_hrs] ,[class4_tr_date] ,[class4_tr_hrs] ,[class5_tr_date]
+						   ,[class5_tr_hrs] ,[class6_tr_date] ,[class6_tr_hrs],[class7_tr_date] ,[class7_tr_hrs] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update] ,[ofc_id]
+						   ,1,[district_id]
+                          FROM inserted
+                        END  ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_NoMeansNo_participant_attendance_update' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_NoMeansNo_participant_attendance_update] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_NoMeansNo_participant_attendance_update] ON [dbo].[ben_NoMeansNo_participant_attendance] FOR UPDATE
+                        AS
+                        BEGIN
+	                       INSERT INTO [dbo].[ben_NoMeansNo_participant_attendance_upload]
+						   ([roster_id],[int_type] ,[start_date] ,[end_date] ,[sup_name] ,[imp_partner] ,[dst_id] ,[sct_id] ,[wrd_id] ,[venue],[instructor_names],[delivery_method]
+						   ,[class1_tr_date] ,[class1_tr_hrs] ,[class2_tr_date] ,[class2_tr_hrs] ,[class3_tr_date] ,[class3_tr_hrs] ,[class4_tr_date] ,[class4_tr_hrs] ,[class5_tr_date]
+						   ,[class5_tr_hrs] ,[class6_tr_date] ,[class6_tr_hrs],[class7_tr_date] ,[class7_tr_hrs] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update] ,[ofc_id]
+						   ,trg_action,[district_id])
+	                        SELECT [roster_id],[int_type] ,[start_date] ,[end_date] ,[sup_name] ,[imp_partner] ,[dst_id] ,[sct_id] ,[wrd_id] ,[venue],[instructor_names],[delivery_method]
+						   ,[class1_tr_date] ,[class1_tr_hrs] ,[class2_tr_date] ,[class2_tr_hrs] ,[class3_tr_date] ,[class3_tr_hrs] ,[class4_tr_date] ,[class4_tr_hrs] ,[class5_tr_date]
+						   ,[class5_tr_hrs] ,[class6_tr_date] ,[class6_tr_hrs],[class7_tr_date] ,[class7_tr_hrs] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update] ,[ofc_id]
+						   ,2,[district_id]
+                          FROM inserted
+                        END  ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_NoMeansNo_participant_attendance_delete' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_NoMeansNo_participant_attendance_delete] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_NoMeansNo_participant_attendance_delete] ON [dbo].[ben_NoMeansNo_participant_attendance] FOR DELETE
+                        AS
+                        BEGIN
+	                       INSERT INTO [dbo].[ben_NoMeansNo_participant_attendance_upload]
+						   ([roster_id],[int_type] ,[start_date] ,[end_date] ,[sup_name] ,[imp_partner] ,[dst_id] ,[sct_id] ,[wrd_id] ,[venue],[instructor_names],[delivery_method]
+						   ,[class1_tr_date] ,[class1_tr_hrs] ,[class2_tr_date] ,[class2_tr_hrs] ,[class3_tr_date] ,[class3_tr_hrs] ,[class4_tr_date] ,[class4_tr_hrs] ,[class5_tr_date]
+						   ,[class5_tr_hrs] ,[class6_tr_date] ,[class6_tr_hrs],[class7_tr_date] ,[class7_tr_hrs] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update] ,[ofc_id]
+						   ,trg_action,[district_id])
+	                        SELECT [roster_id],[int_type] ,[start_date] ,[end_date] ,[sup_name] ,[imp_partner] ,[dst_id] ,[sct_id] ,[wrd_id] ,[venue],[instructor_names],[delivery_method]
+						   ,[class1_tr_date] ,[class1_tr_hrs] ,[class2_tr_date] ,[class2_tr_hrs] ,[class3_tr_date] ,[class3_tr_hrs] ,[class4_tr_date] ,[class4_tr_hrs] ,[class5_tr_date]
+						   ,[class5_tr_hrs] ,[class6_tr_date] ,[class6_tr_hrs],[class7_tr_date] ,[class7_tr_hrs] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update] ,[ofc_id]
+						   ,3,[district_id]
+                          FROM deleted
+                        END  ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            #endregion Triggers
+            #endregion SQL
+        }
+
+
+
+        private static void Createben_ben_NoMeansNo_participant_attendance_member(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            #region SQL
+            #region Tables
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'ben_NoMeansNo_participant_attendance_member')
+                        CREATE TABLE [dbo].[ben_NoMeansNo_participant_attendance_member](
+	                    [roster_member_id] [varchar](50) NOT NULL,
+	                    [roster_id] [varchar](50) NOT NULL,
+	                    [yn_direct_ben] [varchar](50) NOT NULL,
+	                    [hhm_id] [varchar](50) NOT NULL,
+	                    [nmn_id] [varchar](50) NOT NULL,
+	                    [first_name] [varchar](50) NOT NULL,
+	                    [last_name] [varchar](50) NOT NULL,
+	                    [age] [varchar](2) NOT NULL,
+	                    [class1_attended] [varchar](20) NOT NULL,
+	                    [class2_attended] [varchar](20) NOT NULL,
+	                    [class3_attended] [varchar](20) NOT NULL,
+	                    [class4_attended] [varchar](20) NOT NULL,
+	                    [class5_attended] [varchar](20) NOT NULL,
+	                    [class6_attended] [varchar](20) NOT NULL,
+	                    [class7_attended] [varchar](20) NOT NULL,
+	                    [graduated] [varchar](20) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [district_id] [nvarchar](50) NOT NULL,
+                     CONSTRAINT [PK_ben_NoMeansNo_participant_attendance_member] PRIMARY KEY CLUSTERED 
+                    (
+	                    [roster_member_id] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'ben_NoMeansNo_participant_attendance_member_upload')
+                    CREATE TABLE [dbo].[ben_NoMeansNo_participant_attendance_member_upload](
+	                [roster_member_sid] [int] IDENTITY(1,1) NOT NULL,
+	                [roster_member_id] [varchar](50) NOT NULL,
+	                [roster_id] [varchar](50) NOT NULL,
+	                [yn_direct_ben] [varchar](50) NOT NULL,
+	                [hhm_id] [varchar](50) NOT NULL,
+	                [nmn_id] [varchar](50) NOT NULL,
+	                [first_name] [varchar](50) NOT NULL,
+	                [last_name] [varchar](50) NOT NULL,
+	                [age] [varchar](2) NOT NULL,
+	                [class1_attended] [varchar](20) NOT NULL,
+	                [class2_attended] [varchar](20) NOT NULL,
+	                [class3_attended] [varchar](20) NOT NULL,
+	                [class4_attended] [varchar](20) NOT NULL,
+	                [class5_attended] [varchar](20) NOT NULL,
+	                [class6_attended] [varchar](20) NOT NULL,
+	                [class7_attended] [varchar](20) NOT NULL,
+	                [graduated] [varchar](20) NOT NULL,
+	                [usr_id_create] [varchar](50) NOT NULL,
+	                [usr_id_update] [varchar](50) NOT NULL,
+	                [usr_date_create] [datetime] NOT NULL,
+	                [usr_date_update] [datetime] NOT NULL,
+	                [ofc_id] [varchar](50) NOT NULL,
+	                [trg_action] [int] NOT NULL,
+	                [district_id] [nvarchar](50) NOT NULL,
+                 CONSTRAINT [PK_ben_NoMeansNo_participant_attendance_member_upload] PRIMARY KEY CLUSTERED 
+                (
+	                [roster_member_sid] ASC
+                )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                ) ON [PRIMARY]";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion Tables
+
+            #region Triggers
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_NoMeansNo_participant_attendance_member_insert' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_NoMeansNo_participant_attendance_member_insert] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_NoMeansNo_participant_attendance_member_insert] ON [dbo].[ben_NoMeansNo_participant_attendance_member] FOR INSERT
+                        AS
+                        BEGIN
+	                       INSERT INTO [dbo].[ben_NoMeansNo_participant_attendance_member_upload]
+                           ([roster_member_id] ,[roster_id],[yn_direct_ben] ,[hhm_id] ,[nmn_id] ,[first_name],[last_name] ,[age] ,[class1_attended] ,[class2_attended]
+                           ,[class3_attended] ,[class4_attended],[class5_attended] ,[class6_attended] ,[class7_attended] ,[graduated] ,[usr_id_create] ,[usr_id_update]
+                           ,[usr_date_create] ,[usr_date_update] ,[ofc_id],trg_action ,[district_id])
+	                        SELECT [roster_member_id] ,[roster_id],[yn_direct_ben] ,[hhm_id] ,[nmn_id] ,[first_name],[last_name] ,[age] ,[class1_attended] ,[class2_attended]
+                           ,[class3_attended] ,[class4_attended],[class5_attended] ,[class6_attended] ,[class7_attended] ,[graduated] ,[usr_id_create] ,[usr_id_update]
+                           ,[usr_date_create] ,[usr_date_update] ,[ofc_id],1 ,[district_id]
+                          FROM inserted
+                        END  ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_NoMeansNo_participant_attendance_member_update' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_NoMeansNo_participant_attendance_member_update] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_NoMeansNo_participant_attendance_member_update] ON [dbo].[ben_NoMeansNo_participant_attendance_member] FOR UPDATE
+                        AS
+                        BEGIN
+	                       INSERT INTO [dbo].[ben_NoMeansNo_participant_attendance_member_upload]
+                           ([roster_member_id] ,[roster_id],[yn_direct_ben] ,[hhm_id] ,[nmn_id] ,[first_name],[last_name] ,[age] ,[class1_attended] ,[class2_attended]
+                           ,[class3_attended] ,[class4_attended],[class5_attended] ,[class6_attended] ,[class7_attended] ,[graduated] ,[usr_id_create] ,[usr_id_update]
+                           ,[usr_date_create] ,[usr_date_update] ,[ofc_id],trg_action ,[district_id])
+	                        SELECT [roster_member_id] ,[roster_id],[yn_direct_ben] ,[hhm_id] ,[nmn_id] ,[first_name],[last_name] ,[age] ,[class1_attended] ,[class2_attended]
+                           ,[class3_attended] ,[class4_attended],[class5_attended] ,[class6_attended] ,[class7_attended] ,[graduated] ,[usr_id_create] ,[usr_id_update]
+                           ,[usr_date_create] ,[usr_date_update] ,[ofc_id],2 ,[district_id]
+                          FROM inserted
+                        END  ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_NoMeansNo_participant_attendance_member_delete' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_NoMeansNo_participant_attendance_member_delete] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_NoMeansNo_participant_attendance_member_delete] ON [dbo].[ben_NoMeansNo_participant_attendance_member] FOR DELETE
+                        AS
+                        BEGIN
+	                       INSERT INTO [dbo].[ben_NoMeansNo_participant_attendance_member_upload]
+                           ([roster_member_id] ,[roster_id],[yn_direct_ben] ,[hhm_id] ,[nmn_id] ,[first_name],[last_name] ,[age] ,[class1_attended] ,[class2_attended]
+                           ,[class3_attended] ,[class4_attended],[class5_attended] ,[class6_attended] ,[class7_attended] ,[graduated] ,[usr_id_create] ,[usr_id_update]
+                           ,[usr_date_create] ,[usr_date_update] ,[ofc_id],trg_action ,[district_id])
+	                        SELECT [roster_member_id] ,[roster_id],[yn_direct_ben] ,[hhm_id] ,[nmn_id] ,[first_name],[last_name] ,[age] ,[class1_attended] ,[class2_attended]
+                           ,[class3_attended] ,[class4_attended],[class5_attended] ,[class6_attended] ,[class7_attended] ,[graduated] ,[usr_id_create] ,[usr_id_update]
+                           ,[usr_date_create] ,[usr_date_update] ,[ofc_id],3 ,[district_id]
+                          FROM deleted
+                        END  ";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            #endregion Triggers
+            #endregion SQL
+        }
+
+
+        private static void Create_ben_art_refill(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            #region SQL
+            #region Tables
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'ben_art_refill')
+                        CREATE TABLE [dbo].[ben_art_refill](
+	                    [artr_id] [varchar](50) NOT NULL,
+	                    [ip_id] [varchar](50) NOT NULL,
+	                    [cso_id] [varchar](50) NOT NULL,
+	                    [sct_id] [varchar](50) NOT NULL,
+	                    [refill_date] [date] NOT NULL,
+	                    [yn_direct_beneficiary] [varchar](10) NOT NULL,
+	                    [hh_id] [varchar](50) NOT NULL,
+	                    [hhm_id] [varchar](50) NOT NULL,
+	                    [hhm_name] [varchar](50) NOT NULL,
+	                    [hhm_age] [varchar](50) NOT NULL,
+	                    [gnd_id] [varchar](50) NOT NULL,
+	                    [attached_health_facility] [varchar](100) NOT NULL,
+	                    [art_number] [varchar](50) NOT NULL,
+	                    [period_refill_taken] [varchar](50) NOT NULL,
+	                    [beneficiary_contact] [varchar](50) NOT NULL,
+	                    [swk_id] [varchar](50) NOT NULL,
+	                    [swk_phone] [varchar](50) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [district_id] [nvarchar](50) NOT NULL,
+                     CONSTRAINT [PK_ben_art_refill] PRIMARY KEY CLUSTERED 
+                    (
+	                    [artr_id] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'ben_art_refill_upload')
+                        CREATE TABLE [dbo].[ben_art_refill_upload](
+                        [artr_sid] [int] IDENTITY(1,1) NOT NULL,
+                        [artr_id] [varchar](50) NOT NULL,
+                        [ip_id] [varchar](50) NOT NULL,
+                        [cso_id] [varchar](50) NOT NULL,
+                        [sct_id] [varchar](50) NOT NULL,
+                        [refill_date] [date] NOT NULL,
+                        [yn_direct_beneficiary] [varchar](10) NOT NULL,
+                        [hh_id] [varchar](50) NOT NULL,
+                        [hhm_id] [varchar](50) NOT NULL,
+                        [hhm_name] [varchar](50) NOT NULL,
+                        [hhm_age] [varchar](50) NOT NULL,
+                        [gnd_id] [varchar](50) NOT NULL,
+                        [attached_health_facility] [varchar](100) NOT NULL,
+                        [art_number] [varchar](50) NOT NULL,
+                        [period_refill_taken] [varchar](50) NOT NULL,
+                        [beneficiary_contact] [varchar](50) NOT NULL,
+                        [swk_id] [varchar](50) NOT NULL,
+                        [swk_phone] [varchar](50) NOT NULL,
+                        [usr_id_create] [varchar](50) NOT NULL,
+                        [usr_id_update] [varchar](50) NOT NULL,
+                        [usr_date_create] [datetime] NOT NULL,
+                        [usr_date_update] [datetime] NOT NULL,
+                        [ofc_id] [varchar](50) NOT NULL,
+                        [trg_action] [int] NOT NULL,
+                        [district_id] [nvarchar](50) NOT NULL,
+                        CONSTRAINT [PK_ben_art_refill_upload] PRIMARY KEY CLUSTERED 
+                        (
+                        [artr_sid] ASC
+                        )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                        ) ON [PRIMARY]";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion Tables
+
+            #region Triggers
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_art_refill_insert' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_art_refill_insert] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_art_refill_insert] ON [dbo].[ben_art_refill] FOR INSERT
+                    AS
+                    BEGIN
+	                   INSERT INTO [dbo].[ben_art_refill_upload]
+                    ([artr_id] ,[ip_id] ,[cso_id],[sct_id] ,[refill_date],[yn_direct_beneficiary] ,[hh_id] ,[hhm_id] ,[hhm_name]
+                    ,[hhm_age] ,[gnd_id] ,[attached_health_facility] ,[art_number] ,[period_refill_taken] ,[beneficiary_contact]
+                    ,[swk_id] ,[swk_phone] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update] ,[ofc_id],trg_action ,[district_id])
+	                    SELECT [artr_id] ,[ip_id] ,[cso_id],[sct_id] ,[refill_date],[yn_direct_beneficiary] ,[hh_id] ,[hhm_id] ,[hhm_name]
+                    ,[hhm_age] ,[gnd_id] ,[attached_health_facility] ,[art_number] ,[period_refill_taken] ,[beneficiary_contact]
+                    ,[swk_id] ,[swk_phone] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update] ,[ofc_id],1 ,[district_id]
+                    FROM inserted
+                        END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_art_refill_update' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_art_refill_update] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_art_refill_update] ON [dbo].[ben_art_refill] FOR UPDATE
+                    AS
+                    BEGIN
+	           INSERT INTO [dbo].[ben_art_refill_upload]
+            ([artr_id] ,[ip_id] ,[cso_id],[sct_id] ,[refill_date],[yn_direct_beneficiary] ,[hh_id] ,[hhm_id] ,[hhm_name]
+            ,[hhm_age] ,[gnd_id] ,[attached_health_facility] ,[art_number] ,[period_refill_taken] ,[beneficiary_contact]
+            ,[swk_id] ,[swk_phone] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update] ,[ofc_id],trg_action ,[district_id])
+	            SELECT [artr_id] ,[ip_id] ,[cso_id],[sct_id] ,[refill_date],[yn_direct_beneficiary] ,[hh_id] ,[hhm_id] ,[hhm_name]
+            ,[hhm_age] ,[gnd_id] ,[attached_health_facility] ,[art_number] ,[period_refill_taken] ,[beneficiary_contact]
+            ,[swk_id] ,[swk_phone] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update] ,[ofc_id],2 ,[district_id]
+            FROM inserted
+                END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_art_refill_delete' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_art_refill_delete] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_art_refill_delete] ON [dbo].[ben_art_refill] FOR DELETE
+                    AS
+                    BEGIN
+	           INSERT INTO [dbo].[ben_art_refill_upload]
+            ([artr_id] ,[ip_id] ,[cso_id],[sct_id] ,[refill_date],[yn_direct_beneficiary] ,[hh_id] ,[hhm_id] ,[hhm_name]
+            ,[hhm_age] ,[gnd_id] ,[attached_health_facility] ,[art_number] ,[period_refill_taken] ,[beneficiary_contact]
+            ,[swk_id] ,[swk_phone] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update] ,[ofc_id],trg_action ,[district_id])
+	            SELECT [artr_id] ,[ip_id] ,[cso_id],[sct_id] ,[refill_date],[yn_direct_beneficiary] ,[hh_id] ,[hhm_id] ,[hhm_name]
+            ,[hhm_age] ,[gnd_id] ,[attached_health_facility] ,[art_number] ,[period_refill_taken] ,[beneficiary_contact]
+            ,[swk_id] ,[swk_phone] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update] ,[ofc_id],3 ,[district_id]
+            FROM deleted
+                END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            #endregion Triggers
+            #endregion SQL
+        }
         #endregion Create Tables
 
         #region Insert Data
@@ -17391,7 +18167,8 @@ namespace SOCY_MIS.DataAccessLayer
                 INSERT [dbo].[lst_institution] ([ins_id], [ins_name], [ins_order], [ins_active], [dst_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'180', N'100% HOPE Uganda', 180, 1, N'13', N'1', N'1', GETDATE(), GETDATE())
                 INSERT [dbo].[lst_institution] ([ins_id], [ins_name], [ins_order], [ins_active], [dst_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'181', N'Agandi foundation', 181, 1, N'19', N'1', N'1', GETDATE(), GETDATE())
                 INSERT [dbo].[lst_institution] ([ins_id], [ins_name], [ins_order], [ins_active], [dst_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'182', N'MIFUMI', 182, 1, N'19', N'1', N'1', GETDATE(), GETDATE())
-                INSERT [dbo].[lst_institution] ([ins_id], [ins_name], [ins_order], [ins_active], [dst_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'183', N'Divine Mercy Foundation', 183, 1, N'19', N'1', N'1', GETDATE(), GETDATE())";
+                INSERT [dbo].[lst_institution] ([ins_id], [ins_name], [ins_order], [ins_active], [dst_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'183', N'Divine Mercy Foundation', 183, 1, N'19', N'1', N'1', GETDATE(), GETDATE())
+                INSERT [dbo].[lst_institution] ([ins_id], [ins_name], [ins_order], [ins_active], [dst_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'184', N'AFAAYO CHRISTIAN ACADEMY', 184, 1, N'12', N'1', N'1', GETDATE(), GETDATE())";
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
         }
@@ -18183,6 +18960,11 @@ namespace SOCY_MIS.DataAccessLayer
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (362, N'362', N'Kisiita Sub County', 362, 1, N'26', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (363, N'363', N'Kakindo Sub County', 363, 1, N'26', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (364, N'364', N'KAMBUGA TOWN COUNCIL', 364, 1, N'7', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (365, N'365', N'KITWE TOWN COUNCIL', 365, 1, N'14', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (366, N'366', N'NABIGASA SUBCOUNTY', 366, 1, N'23', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (367, N'367', N'KARAMA SUBCOUNTY', 367, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (368, N'368', N'KABASEKENDE SUBCOUNTY', 368, 1, N'9', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
+                        INSERT [dbo].[lst_sub_county] ([sct_sid], [sct_id], [sct_name], [sct_order], [sct_active], [dst_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (369, N'369', N'Bbanda SUBCOUNTY', 369, 1, N'13', N'EN', N'1', N'1', CAST(N'2019-07-30T00:00:00.000' AS DateTime), CAST(N'2019-07-30T00:00:00.000' AS DateTime))
                         SET IDENTITY_INSERT [dbo].[lst_sub_county] OFF ";
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
@@ -20314,7 +21096,50 @@ namespace SOCY_MIS.DataAccessLayer
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (1998, N'1998', N'Nyakatooma', 1998, 1, N'323', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2004, N'2004', N'NYAKABUNGO', 2004, 1, N'358', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2005, N'2005', N'Kajunju', 2005, 1, N'159', N'EN', N'1', N'1', GETDATE(), GETDATE())
-
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2006, N'2006', N'Kiribanga', 2006, 1, N'37', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2007, N'2007', N'Kikaada', 2007, 1, N'37', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2008, N'2008', N'Kahyoro', 2008, 1, N'37', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2009, N'2009', N'Kibongo', 2009, 1, N'37', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2010, N'2010', N'CENTRAL WARD', 2010, 1, N'365', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2011, N'2011', N'NSHENYI WARD', 2011, 1, N'365', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2012, N'2012', N'NYAKABALE WARD', 2012, 1, N'365', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2013, N'2013', N'RUNONI WARD', 2013, 1, N'365', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2014, N'2014', N'RWANYANGI WARD', 2014, 1, N'365', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2015, N'2015', N'KIBINGO PARISH', 2015, 1, N'334', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2016, N'2016', N'Bethlem PARISH', 2016, 1, N'366', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2017, N'2017', N'Nabigasa PARISH', 2017, 1, N'366', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2018, N'2018', N'Kijeja PARISH', 2018, 1, N'366', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2019, N'2019', N'Nakatogo PARISH', 2019, 1, N'366', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2020, N'2020', N'Kyasimbi PARISH', 2020, 1, N'366', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2021, N'2021', N'Karama PARISH', 2021, 1, N'367', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2022, N'2022', N'Kitutu PARISH', 2022, 1, N'367', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2023, N'2023', N'Nkenda PARISH', 2023, 1, N'367', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2024, N'2024', N'Kisindizi PARISH', 2024, 1, N'367', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2025, N'2025', N'Bukonda PARISH', 2025, 1, N'368', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2026, N'2026', N'Kabasekende PARISH', 2026, 1, N'368', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2027, N'2027', N'Nyamugura PARISH', 2027, 1, N'368', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2028, N'2028', N'Rwamagando PARISH', 2028, 1, N'368', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2029, N'2029', N'Bbanda PARISH', 2029, 1, N'369', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2030, N'2030', N'Buzibazzi PARISH', 2030, 1, N'369', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2031, N'2031', N'Kanyale PARISH', 2031, 1, N'369', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2032, N'2032', N'Kayanga PARISH', 2032, 1, N'369', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2033, N'2033', N'Mpongo PARISH', 2033, 1, N'369', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2034, N'2034', N'NYAMARUNGI PARISH', 2034, 1, N'64', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2035, N'2035', N'KATEMBE PARISH', 2035, 1, N'64', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2036, N'2036', N'MUREMA PARISH', 2036, 1, N'64', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2037, N'2037', N'KYABINUNGA PARISH', 2037, 1, N'64', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2038, N'2038', N'KAGARAMA PARISH', 2038, 1, N'64', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2039, N'2039', N'KASHARIRA PARISH', 2039, 1, N'193', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2040, N'2040', N'RWENGWE PARISH', 2040, 1, N'193', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2041, N'2041', N'RUTOOMA', 2041, 1, N'315', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2042, N'2042', N'RWENGIRI', 2042, 1, N'64', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2043, N'2043', N'RUHIMBO', 2043, 1, N'64', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2044, N'2044', N'RWAMUHIIGI', 2044, 1, N'310', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2045, N'2045', N'BIHARWE', 2045, 1, N'307', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2046, N'2046', N'OMUKAKO', 2046, 1, N'307', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2047, N'2047', N'Rwemirabyo ', 2047, 1, N'307', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2048, N'2048', N'Kahoma', 2048, 1, N'313', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2049, N'2049', N'Rubaya', 2049, 1, N'313', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     SET IDENTITY_INSERT [dbo].[lst_ward] OFF ";
             dbCon.ExecuteNonQuery(strSQL);
 
@@ -21029,7 +21854,7 @@ namespace SOCY_MIS.DataAccessLayer
                 INSERT [dbo].[lst_apprenticeship_trade_skills] ([trs_sid], [trs_id], [trd_id], [trs_name], [trs_order], [trs_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (71, N'71', N'12', N'Liquid Soap Making', 71, 1, N'EN', N'1', N'1', GETDATE(), GETDATE())
                 INSERT [dbo].[lst_apprenticeship_trade_skills] ([trs_sid], [trs_id], [trd_id], [trs_name], [trs_order], [trs_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (72, N'72', N'12', N'Bar Soap making', 72, 1, N'EN', N'1', N'1', GETDATE(), GETDATE())
                 INSERT [dbo].[lst_apprenticeship_trade_skills] ([trs_sid], [trs_id], [trd_id], [trs_name], [trs_order], [trs_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (73, N'73', N'12', N'Sanitary pad making', 73, 1, N'EN', N'1', N'1', GETDATE(), GETDATE())
-                INSERT [dbo].[lst_apprenticeship_trade_skills] ([trs_sid], [trs_id], [trd_id], [trs_name], [trs_order], [trs_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (74, N'74', N'12', N'Bricket making', 74, 1, N'EN', N'1', N'1', GETDATE(), GETDATE())
+                INSERT [dbo].[lst_apprenticeship_trade_skills] ([trs_sid], [trs_id], [trd_id], [trs_name], [trs_order], [trs_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (74, N'74', N'12', N'Briquettes making', 74, 1, N'EN', N'1', N'1', GETDATE(), GETDATE())
                 INSERT [dbo].[lst_apprenticeship_trade_skills] ([trs_sid], [trs_id], [trd_id], [trs_name], [trs_order], [trs_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (75, N'75', N'12', N'Book making', 75, 1, N'EN', N'1', N'1', GETDATE(), GETDATE())
                 INSERT [dbo].[lst_apprenticeship_trade_skills] ([trs_sid], [trs_id], [trd_id], [trs_name], [trs_order], [trs_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (76, N'76', N'12', N'Hand bags', 76, 1, N'EN', N'1', N'1', GETDATE(), GETDATE())
                 INSERT [dbo].[lst_apprenticeship_trade_skills] ([trs_sid], [trs_id], [trd_id], [trs_name], [trs_order], [trs_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (77, N'77', N'12', N'Crafts', 77, 1, N'EN', N'1', N'1', GETDATE(), GETDATE())
@@ -21064,7 +21889,8 @@ namespace SOCY_MIS.DataAccessLayer
                         INSERT [dbo].[lst_hh_identification_source] ([ids_sid], [ids_id], [ids_name], [ids_order], [ids_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (7, N'7', N'Hotspot ', 7, 1, N'EN', N'1', N'1', CAST(N'2018-06-14T09:35:54.547' AS DateTime), CAST(N'2018-06-14T09:35:54.547' AS DateTime))
                         INSERT [dbo].[lst_hh_identification_source] ([ids_sid], [ids_id], [ids_name], [ids_order], [ids_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (8, N'8', N'Transitioned', 8, 1, N'EN', N'1', N'1', CAST(N'2018-06-14T09:36:57.183' AS DateTime), CAST(N'2018-06-14T09:36:57.183' AS DateTime))
                         INSERT [dbo].[lst_hh_identification_source] ([ids_sid], [ids_id], [ids_name], [ids_order], [ids_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (9, N'9', N'SOCHA', 9, 1, N'EN', N'1', N'1', CAST(N'2018-06-14T10:12:18.310' AS DateTime), CAST(N'2018-06-14T10:12:18.310' AS DateTime))
-                        INSERT [dbo].[lst_hh_identification_source] ([ids_sid], [ids_id], [ids_name], [ids_order], [ids_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (10, N'10', N'Refered by Clinical Partner', 10, 1, N'EN', N'1', N'1', CAST(N'2018-06-14T10:12:18.310' AS DateTime), CAST(N'2018-06-14T10:12:18.310' AS DateTime))";
+                        INSERT [dbo].[lst_hh_identification_source] ([ids_sid], [ids_id], [ids_name], [ids_order], [ids_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (10, N'10', N'Refered by Clinical Partner', 10, 1, N'EN', N'1', N'1', CAST(N'2018-06-14T10:12:18.310' AS DateTime), CAST(N'2018-06-14T10:12:18.310' AS DateTime))
+                        INSERT [dbo].[lst_hh_identification_source] ([ids_sid], [ids_id], [ids_name], [ids_order], [ids_active], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (11, N'11', N'SAUTI', 11, 1, N'EN', N'1', N'1', CAST(N'2018-06-14T10:12:18.310' AS DateTime), CAST(N'2018-06-14T10:12:18.310' AS DateTime))";
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
 
@@ -31310,6 +32136,11 @@ namespace SOCY_MIS.DataAccessLayer
             Insertlst_index_beneficiary_category(dbCon);
             AlterHatTable(dbCon);
             Createben_ovc_school_eligibility_assessment(dbCon);
+            Createben_ben_NoMeansNo_pre_post_Boys(dbCon);
+            Createben_ben_NoMeansNo_pre_post_Girls(dbCon);
+            Createben_ben_NoMeansNo_participant_attendance_member(dbCon);
+            Createben_ben_NoMeansNo_participant_attendance(dbCon);
+            Create_ben_art_refill(dbCon);
         }
 
 
@@ -31333,97 +32164,6 @@ namespace SOCY_MIS.DataAccessLayer
         {
             
             string strSQL = string.Empty;
-            string strKagambaMembers = @"'35a9e5ac-e074-47c6-bc11-b4026c4a964b',
-                                        '9b6b0c1f-a988-455d-ab6d-422178adae9c',
-                                        '9dbf30fa-bcd7-448f-9358-8b3b400a7d88',
-                                        '3a8ce2f6-9fb0-49b8-9996-af41c9488562',
-                                        'bae25d83-9f26-4ad9-9a72-6b0402370e20',
-                                        '26aa8b95-7427-42c9-a90a-db56b375eb68',
-                                        'b12aea59-33d8-4825-ad1f-bd84a651d498',
-                                        '25c2d077-1a87-472a-b9dd-93dc83fb444f',
-                                        '85358344-0fd2-4fbe-ad62-1b0d7bb1cc65',
-                                        'aa5d8d3b-22c9-439a-a1ac-d154a9eb3421',
-                                        '50401871-1aec-4e9b-9a82-d5a5423d2b9d',
-                                        '6e45eb71-3475-486f-b782-59a233233c64',
-                                        'd69351ce-c18a-4dea-9b3c-51df6484bd86',
-                                        '74734247-660f-4de1-b8eb-a27d4919573d',
-                                        '6e7d7fa1-60c4-421e-941a-b39e6d3bd888',
-                                        '9487e9d1-58bb-4811-bfd4-a2867a2f0589',
-                                        '2a6c388c-4d4b-42eb-a8da-140f302da4f4',
-                                        '4190a398-f67d-430f-b6de-e41ec29e83cb',
-                                        '27f230be-a5d6-42ef-a3ea-9fb6ed0bb033',
-                                        'b09d7a6b-b9d9-4dda-a3c6-7429f8e387f5',
-                                        '79014c65-c513-407e-9072-8c099820bb91',
-                                        '387ffafc-f34e-49f2-a41c-cce9c48ad7c5',
-                                        '53e47170-435e-41a8-bf29-cac3fbb5945f',
-                                        'c4479ec5-599f-4067-b534-1066d0707d91',
-                                        '23a02687-a546-41ce-a022-56354fd8038a',
-                                        '413575f0-69ea-4d20-a6f2-0e08d8426bd8',
-                                        '581f9c09-a1ca-4564-8481-0ff8866f38b8',
-                                        '62c8048c-8401-4a28-b768-26f715200fec',
-                                        '70dd59e0-24f5-4c36-a399-cfb94f7679ee',
-                                        'a22065e8-e2c0-4d06-8450-ca5aa29dd81d',
-                                        '4a4ca076-4950-487e-8cd2-ae0475ee0d6a',
-                                        'd516aa72-96c3-45f1-8686-6affe69af453',
-                                        '5775be12-8afa-4821-bd3e-689fcd7eeab9',
-                                        'cb6cf158-ec17-4dc3-a158-a8b3d592cd2b',
-                                        'e19cad66-32ab-4dd2-883e-df561b574d6e',
-                                        '0ab4b915-32c3-4c3b-8051-3ced8f047f9b',
-                                        '86292cc0-efa1-455f-a1c2-8604e47948b6',
-                                        '10493957-eb2e-48ce-b739-eeb71965a615',
-                                        '1f1ba216-ecfa-415a-add3-377819704ab9',
-                                        '90efebeb-da6a-44a9-9b08-d6da38f6e9a7',
-                                        'e95f75fa-91a7-431a-a890-acfaa74432e0',
-                                        '72a99628-a661-4ba8-9771-f4f564d7e030',
-                                        '47ec8e31-a1e7-46be-9d7b-3e98a7f48214',
-                                        '486e1eb0-dae2-4b8b-ad36-15418ac77658',
-                                        'f65d3626-87a4-47d4-a68a-686e22d0d9db',
-                                        '0705058c-5101-4966-a2b2-846110741988',
-                                        '54ec05ab-649d-4e07-a3a9-c9a7367756ec',
-                                        '8c9356b2-14dd-4e3c-b6b5-13ac369a78a3',
-                                        '97a8a1db-fcf9-43a2-b37e-372b56e97ef2',
-                                        'b722e8e9-10a3-4314-9cbb-21679034a8d8',
-                                        '07368055-8755-4b76-8e9c-234b3e772ab1',
-                                        '1b70ea66-17d4-48a0-a9f2-7f3fd965ebb7',
-                                        '2dd46eab-a141-4237-b5de-03b9dd269f9a',
-                                        '44a81b28-d040-497f-a546-fdf1615e4df5',
-                                        '37d57d39-5b06-40c6-8670-c7edc50ccf13',
-                                        '5cda759f-f662-48ef-97ba-ae501b22f4ce',
-                                        '7c6d5da8-94e5-4369-a3cf-7e4588aa16b4',
-                                        'f62c45e3-a78c-450c-8b57-99b1921e02cc',
-                                        '1044319d-bdf0-452f-ab5c-aaa58cb2b10f',
-                                        '1931a81f-733a-4d1f-8636-e6ae6289b3b7',
-                                        '41e21180-efc8-4dff-8eef-0915701901f9',
-                                        'b855883f-623a-46ef-9f32-ed4eebb8dd81',
-                                        'bb466c2a-d63f-41f6-ba9e-1f3cdb227e1a',
-                                        'd92ba1cc-0f37-466d-843a-4b844c23db3d',
-                                        'f741db94-d1ea-4630-82bf-561dedb60bcb',
-                                        '4a2f4d7d-7ea2-4fe1-ab18-3f1296c675d7',
-                                        'b6b88edd-73cc-4719-8b98-4f968d3bfd05',
-                                        '405bb28a-5a07-4fc5-b45d-52fdf37d56d2',
-                                        '4de823a2-e814-44ac-baa0-5ba6fcdf4ffd',
-                                        '970c44cd-7821-4bd8-b835-a7f34ec794f6',
-                                        '09db0b1e-3d21-4346-8274-ef41409c88f0',
-                                        '59a0f178-9b18-468f-b4fd-124a3ef02e7a',
-                                        '59cdf128-6750-408b-94b0-06d1d5241430',
-                                        '7028730f-fc93-48c0-a38f-c3c014dbed75',
-                                        'd7e5e6e8-b1dd-4e23-bad6-34893a57aac5',
-                                        'deb262b6-a09f-404a-bd13-d3fa3ad0fb3f',
-                                        '0abca586-a0a2-4516-b2d3-8c38b00d629a',
-                                        'd97f2272-6a96-452a-b8a6-13296f02e0ae'";
-
-            strSQL = "DELETE FROM hh_household WHERE hh_id IN('8652b03a-a230-4e14-8663-a84ea90a6c23','456efe1f-3407-44c3-b560-22091df0bff9','16115','537fe971-fbbf-4d65-ae77-4efc4de7c6d1','2e225c94-2d5a-4125-922d-e388333a320a')";
-            dbCon.ExecuteNonQuery(strSQL);
-
-            strSQL = "DELETE FROM hh_household_upload WHERE  hh_id IN('8652b03a-a230-4e14-8663-a84ea90a6c23','456efe1f-3407-44c3-b560-22091df0bff9','16115','537fe971-fbbf-4d65-ae77-4efc4de7c6d1','2e225c94-2d5a-4125-922d-e388333a320a')";
-            dbCon.ExecuteNonQuery(strSQL);
-
-            strSQL = "DELETE FROM hh_household_member WHERE hh_id IN('8652b03a-a230-4e14-8663-a84ea90a6c23','456efe1f-3407-44c3-b560-22091df0bff9','16115','537fe971-fbbf-4d65-ae77-4efc4de7c6d1','2e225c94-2d5a-4125-922d-e388333a320a')";
-            dbCon.ExecuteNonQuery(strSQL);
-
-            strSQL = "DELETE FROM hh_household_member_upload WHERE hh_id IN('8652b03a-a230-4e14-8663-a84ea90a6c23','456efe1f-3407-44c3-b560-22091df0bff9','16115','537fe971-fbbf-4d65-ae77-4efc4de7c6d1','2e225c94-2d5a-4125-922d-e388333a320a')";
-            dbCon.ExecuteNonQuery(strSQL);
-
 
             ClearHouseholdMemberData.CreateDataCleanerTable(); 
 
@@ -31440,24 +32180,6 @@ namespace SOCY_MIS.DataAccessLayer
 
                 strSQL = "DELETE FROM hh_household_upload";
                 dbCon.ExecuteNonQuery(strSQL);
-
-                #region SheemaKagamabaRemove
-                strSQL = "DELETE FROM hh_household_member WHERE hh_id IN({0})";
-                strSQL = string.Format(strSQL,strKagambaMembers);
-                dbCon.ExecuteNonQuery(strSQL);
-
-                strSQL = "DELETE FROM hh_household WHERE hh_id IN({0})";
-                strSQL = string.Format(strSQL, strKagambaMembers);
-                dbCon.ExecuteNonQuery(strSQL);
-
-                strSQL = "DELETE FROM hh_household_member_upload WHERE hh_id IN({0})";
-                strSQL = string.Format(strSQL, strKagambaMembers);
-                dbCon.ExecuteNonQuery(strSQL);
-
-                strSQL = "DELETE FROM hh_household_upload WHERE hh_id IN({0})";
-                strSQL = string.Format(strSQL, strKagambaMembers);
-                dbCon.ExecuteNonQuery(strSQL);
-                #endregion
 
                 strSQL = "INSERT INTO um_data_cleaner(record_guid,prev_qtr_data_cleaned) VALUES('{0}','{1}')";
                 strSQL = string.Format(strSQL,Guid.NewGuid().ToString(),true);
@@ -31540,6 +32262,38 @@ namespace SOCY_MIS.DataAccessLayer
                   "END";
 
             dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "IF NOT EXISTS(SELECT * FROM sys.columns " +
+                         "WHERE[name] = N'yn_dreams' AND[object_id] = OBJECT_ID(N'hh_household_member')) " +
+                 "BEGIN " +
+                     "ALTER TABLE hh_household_member ADD yn_dreams Nvarchar(10) NULL " +
+                 "END";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "IF NOT EXISTS(SELECT * FROM sys.columns " +
+                         "WHERE[name] = N'yn_dreams' AND[object_id] = OBJECT_ID(N'hh_household_member_upload')) " +
+                 "BEGIN " +
+                     "ALTER TABLE hh_household_member_upload ADD yn_dreams Nvarchar(10) NULL " +
+                 "END";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "IF NOT EXISTS(SELECT * FROM sys.columns " +
+                        "WHERE[name] = N'dreams_enroll_date' AND[object_id] = OBJECT_ID(N'hh_household_member')) " +
+                "BEGIN " +
+                    "ALTER TABLE hh_household_member ADD dreams_enroll_date DateTime NULL " +
+                "END";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "IF NOT EXISTS(SELECT * FROM sys.columns " +
+                         "WHERE[name] = N'dreams_enroll_date' AND[object_id] = OBJECT_ID(N'hh_household_member_upload')) " +
+                 "BEGIN " +
+                     "ALTER TABLE hh_household_member_upload ADD dreams_enroll_date DateTime NULL " +
+                 "END";
+
+            dbCon.ExecuteNonQuery(strSQL);
             #endregion NewColum
 
             #region Triggers
@@ -31551,9 +32305,9 @@ namespace SOCY_MIS.DataAccessLayer
                 BEGIN
 	                INSERT INTO [dbo].[hh_household_member_upload]
                         ([hhm_id], [hhm_first_name], [hhm_last_name], [hhm_number], [hhm_year_of_birth], [dtp_id], [edu_id], [gnd_id], [hh_id], [hst_id], [mst_id], [prf_id], [prt_id], [yn_id_art], [yn_id_birth_registration], [yn_id_caregiver], [yn_id_disability], [yn_id_given_birth], [yn_id_hoh], [yn_id_immun], [yn_id_pregnant], [yn_id_school], 
-		                [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], [trg_action],[district_id],hst_id_new,hhm_status)
+		                [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], [trg_action],[district_id],hst_id_new,hhm_status,yn_dreams,dreams_enroll_date)
 	                SELECT [hhm_id], [hhm_first_name], [hhm_last_name], [hhm_number], [hhm_year_of_birth], [dtp_id], [edu_id], [gnd_id], [hh_id], [hst_id], [mst_id], [prf_id], [prt_id], [yn_id_art], [yn_id_birth_registration], [yn_id_caregiver], [yn_id_disability], [yn_id_given_birth], [yn_id_hoh], [yn_id_immun], [yn_id_pregnant], [yn_id_school], 
-		                [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], 1,[district_id],hst_id_new,hhm_status
+		                [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], 1,[district_id],hst_id_new,hhm_status,yn_dreams,dreams_enroll_date
                   FROM inserted
                 END";
             dbCon.ExecuteNonQuery(strSQL);
@@ -31568,9 +32322,9 @@ namespace SOCY_MIS.DataAccessLayer
 	                BEGIN
 		                INSERT INTO [dbo].[hh_household_member_upload]
 							([hhm_id], [hhm_first_name], [hhm_last_name], [hhm_number], [hhm_year_of_birth], [dtp_id], [edu_id], [gnd_id], [hh_id], [hst_id], [mst_id], [prf_id], [prt_id], [yn_id_art], [yn_id_birth_registration], [yn_id_caregiver], [yn_id_disability], [yn_id_given_birth], [yn_id_hoh], [yn_id_immun], [yn_id_pregnant], [yn_id_school], 
-							[usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], [trg_action],[district_id],hst_id_new,hhm_status)
+							[usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], [trg_action],[district_id],hst_id_new,hhm_status,yn_dreams,dreams_enroll_date)
 						SELECT [hhm_id], [hhm_first_name], [hhm_last_name], [hhm_number], [hhm_year_of_birth], [dtp_id], [edu_id], [gnd_id], [hh_id], [hst_id], [mst_id], [prf_id], [prt_id], [yn_id_art], [yn_id_birth_registration], [yn_id_caregiver], [yn_id_disability], [yn_id_given_birth], [yn_id_hoh], [yn_id_immun], [yn_id_pregnant], [yn_id_school], 
-							[usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], 2,[district_id],hst_id_new,hhm_status
+							[usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], 2,[district_id],hst_id_new,hhm_status,yn_dreams,dreams_enroll_date
 	                  FROM inserted
 	                END
                 END";
@@ -31584,9 +32338,9 @@ namespace SOCY_MIS.DataAccessLayer
                 BEGIN
 	                INSERT INTO [dbo].[hh_household_member_upload]
                         ([hhm_id], [hhm_first_name], [hhm_last_name], [hhm_number], [hhm_year_of_birth], [dtp_id], [edu_id], [gnd_id], [hh_id], [hst_id], [mst_id], [prf_id], [prt_id], [yn_id_art], [yn_id_birth_registration], [yn_id_caregiver], [yn_id_disability], [yn_id_given_birth], [yn_id_hoh], [yn_id_immun], [yn_id_pregnant], [yn_id_school], 
-		                [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], [trg_action],[district_id],hst_id_new,hhm_status)
+		                [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], [trg_action],[district_id],hst_id_new,hhm_status,yn_dreams,dreams_enroll_date)
 	                SELECT [hhm_id], [hhm_first_name], [hhm_last_name], [hhm_number], [hhm_year_of_birth], [dtp_id], [edu_id], [gnd_id], [hh_id], [hst_id], [mst_id], [prf_id], [prt_id], [yn_id_art], [yn_id_birth_registration], [yn_id_caregiver], [yn_id_disability], [yn_id_given_birth], [yn_id_hoh], [yn_id_immun], [yn_id_pregnant], [yn_id_school], 
-		                [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], 3,[district_id],hst_id_new,hhm_status
+		                [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update], [ofc_id], 3,[district_id],hst_id_new,hhm_status,yn_dreams,dreams_enroll_date
                   FROM deleted
                 END";
             dbCon.ExecuteNonQuery(strSQL);
@@ -31611,8 +32365,19 @@ namespace SOCY_MIS.DataAccessLayer
             strSQL = "UPDATE hh_household_member SET hhm_status = '1' WHERE hhm_status IS NULL";
             dbCon.ExecuteNonQuery(strSQL);
 
-
             strSQL = "UPDATE hh_household_member_upload SET hhm_status = '1' WHERE hhm_status IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_household_member SET yn_dreams = '' WHERE yn_dreams IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_household_member_upload SET yn_dreams = '' WHERE yn_dreams IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_household_member SET dreams_enroll_date = '1900-01-01' WHERE dreams_enroll_date IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "UPDATE hh_household_member_upload SET dreams_enroll_date = '1900-01-01' WHERE dreams_enroll_date IS NULL";
             dbCon.ExecuteNonQuery(strSQL);
 
             strSQL = "ALTER TABLE hh_household_member ENABLE TRIGGER hh_household_member_insert";
@@ -31968,6 +32733,40 @@ namespace SOCY_MIS.DataAccessLayer
                     BEGIN
                     INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
                     VALUES('110','ben_ovc_school_eligibility_assessment_upload','record_id',110,1,1,1,GETDATE(),GETDATE())
+                    END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT sul_name FROM lst_sync_upload WHERE sul_name = 'ben_NoMeansNo_pre_post_Boys_upload')
+                    BEGIN
+                    INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
+                    VALUES('111','ben_NoMeansNo_pre_post_Boys_upload','record_id',111,1,1,1,GETDATE(),GETDATE())
+                    END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT sul_name FROM lst_sync_upload WHERE sul_name = 'ben_NoMeansNo_pre_post_Girls_upload')
+                    BEGIN
+                    INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
+                    VALUES('112','ben_NoMeansNo_pre_post_Girls_upload','record_id',112,1,1,1,GETDATE(),GETDATE())
+                    END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT sul_name FROM lst_sync_upload WHERE sul_name = 'ben_NoMeansNo_participant_attendance_upload')
+                    BEGIN
+                    INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
+                    VALUES('113','ben_NoMeansNo_participant_attendance_upload','roster_id',113,1,1,1,GETDATE(),GETDATE())
+                    END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT sul_name FROM lst_sync_upload WHERE sul_name = 'ben_NoMeansNo_participant_attendance_member_upload')
+                    BEGIN
+                    INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
+                    VALUES('114','ben_NoMeansNo_participant_attendance_member_upload','roster_member_id',114,1,1,1,GETDATE(),GETDATE())
+                    END";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"IF NOT EXISTS(SELECT sul_name FROM lst_sync_upload WHERE sul_name = 'ben_art_refill_upload')
+                    BEGIN
+                    INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
+                    VALUES('115','ben_art_refill_upload','artr_id',115,1,1,1,GETDATE(),GETDATE())
                     END";
             dbCon.ExecuteNonQuery(strSQL);
         }

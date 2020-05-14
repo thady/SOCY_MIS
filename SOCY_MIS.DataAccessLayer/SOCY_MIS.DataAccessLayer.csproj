@@ -56,6 +56,7 @@
     <Compile Include="benAdolescentSchoolAssessment.cs" />
     <Compile Include="benApprenticeshipRegisterLine.cs" />
     <Compile Include="benApprenticeshipskillAquisitionTracking.cs" />
+    <Compile Include="benCovid19DataCollection.cs" />
     <Compile Include="benEducationSubsidy.cs" />
     <Compile Include="benGirlEducationRegister.cs" />
     <Compile Include="benGirlEducationRegisterChild.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="hh_household_risk_assessment_header.cs" />
     <Compile Include="hhOVCIdentificationPrioritization.cs" />
     <Compile Include="hhReferral.cs" />
+    <Compile Include="NoMeansNoWorldWide.cs" />
     <Compile Include="prtAlternativeCarePanel.cs" />
     <Compile Include="prtAlternativeCarePanelDistrict.cs" />
     <Compile Include="prtCBSDResourceAllocation.cs" />
@@ -124,6 +126,7 @@
     <Compile Include="silcGroupMember.cs" />
     <Compile Include="silcSavingsRegister.cs" />
     <Compile Include="silcSavingsRegisterMember.cs" />
+    <Compile Include="SOCYARTRefill.cs" />
     <Compile Include="ssError.cs" />
     <Compile Include="static_variables.cs" />
     <Compile Include="swmSocialWorker.cs" />

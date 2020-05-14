@@ -164,6 +164,9 @@ namespace SOCY_MIS.DataAccessLayer
                             WHERE H.hh_id = '{0}'";
                         SQL = string.Format(SQL, id);
                         break;
+                    case "parishCovid19":
+                        SQL = "SELECT wrd_id,wrd_name FROM lst_ward WHERE sct_id = '"+ sct_id +"' ORDER BY wrd_name ASC";
+                        break;
                 }
                 using (conn = new SqlConnection(SQLConnection))
                 using (SqlCommand cmd = new SqlCommand(SQL, conn))

@@ -906,7 +906,7 @@ namespace SOCY_MIS
 
         private void rbtn_yn_birth_certificateYes_CheckedChanged(object sender, EventArgs e)
         {
-            if (!rbtn_yn_birth_certificateYes.Checked) { lblBirthCertificates.ForeColor = Color.Red; }
+            if (!rbtn_yn_birth_certificateYes.Checked & !rbtn_yn_birth_certificateNA.Checked) { lblBirthCertificates.ForeColor = Color.Red; }
             else { lblBirthCertificates.ForeColor = Color.Black; }
         }
 

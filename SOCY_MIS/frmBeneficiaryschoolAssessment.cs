@@ -261,5 +261,18 @@ namespace SOCY_MIS
                 this.Visible = true;
             }
         }
+
+        private void cboDaysMissed_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboDaysMissed.Text == "None")
+            {
+                cboMissingSchoolReason.Text = "NA";
+                cboMissingSchoolReason.Enabled = false;
+            }
+            else
+            {
+                cboMissingSchoolReason.Enabled = true;
+            }
+        }
     }
 }

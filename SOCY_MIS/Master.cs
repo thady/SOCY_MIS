@@ -173,7 +173,7 @@ namespace SOCY_MIS
                 #region Load Control
                 if (pnlPlaceHolder.Controls.Count != 0)
                     pnlPlaceHolder.Controls.RemoveAt(0);
-                ctlUC.Width = pnlPlaceHolder.Width - 10;
+                ctlUC.Width = pnlPlaceHolder.Width - 10; 
                 if (blnParentForm)
                 {
                     ctlUC.Height = pnlPlaceHolder.Height - 10;
@@ -347,6 +347,15 @@ namespace SOCY_MIS
         {
             #region Set Selected
             frmEducationSubsidyMain frmNew = new frmEducationSubsidyMain();
+            frmNew.FormMaster = this;
+            LoadControl(frmNew, this.Name, true);
+            #endregion Set Selected
+        }
+
+        private void miReports_Click(object sender, EventArgs e)
+        {
+            #region Set Selected
+            frmNoMeansNoMain frmNew = new frmNoMeansNoMain();
             frmNew.FormMaster = this;
             LoadControl(frmNew, this.Name, true);
             #endregion Set Selected

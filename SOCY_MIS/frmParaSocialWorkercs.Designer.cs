@@ -85,13 +85,14 @@
             this.gbParaSocialWorkerManagement.Controls.Add(this.llblBackTop);
             this.gbParaSocialWorkerManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbParaSocialWorkerManagement.Location = new System.Drawing.Point(4, 7);
-            this.gbParaSocialWorkerManagement.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbParaSocialWorkerManagement.Margin = new System.Windows.Forms.Padding(4);
             this.gbParaSocialWorkerManagement.Name = "gbParaSocialWorkerManagement";
-            this.gbParaSocialWorkerManagement.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbParaSocialWorkerManagement.Padding = new System.Windows.Forms.Padding(4);
             this.gbParaSocialWorkerManagement.Size = new System.Drawing.Size(1205, 629);
             this.gbParaSocialWorkerManagement.TabIndex = 52;
             this.gbParaSocialWorkerManagement.TabStop = false;
             this.gbParaSocialWorkerManagement.Text = "Para Social Worker Management";
+            this.gbParaSocialWorkerManagement.Enter += new System.EventHandler(this.gbParaSocialWorkerManagement_Enter);
             // 
             // tplDisplay02
             // 
@@ -103,7 +104,7 @@
             this.tplDisplay02.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
             this.tplDisplay02.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tplDisplay02.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tplDisplay02.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tplDisplay02.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 54F));
             this.tplDisplay02.Controls.Add(this.cbStatus, 1, 1);
             this.tplDisplay02.Controls.Add(this.lblManager, 0, 0);
             this.tplDisplay02.Controls.Add(this.lblStatus, 0, 1);
@@ -113,7 +114,7 @@
             this.tplDisplay02.Controls.Add(this.label7, 0, 2);
             this.tplDisplay02.Controls.Add(this.numTarget, 1, 2);
             this.tplDisplay02.Location = new System.Drawing.Point(40, 257);
-            this.tplDisplay02.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tplDisplay02.Margin = new System.Windows.Forms.Padding(4);
             this.tplDisplay02.Name = "tplDisplay02";
             this.tplDisplay02.RowCount = 4;
             this.tplDisplay02.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -129,7 +130,7 @@
             this.cbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbStatus.FormattingEnabled = true;
             this.cbStatus.Location = new System.Drawing.Point(204, 36);
-            this.cbStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbStatus.Margin = new System.Windows.Forms.Padding(4);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(308, 25);
             this.cbStatus.TabIndex = 48;
@@ -164,7 +165,7 @@
             this.cbSocialWorker.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSocialWorker.FormattingEnabled = true;
             this.cbSocialWorker.Location = new System.Drawing.Point(204, 4);
-            this.cbSocialWorker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbSocialWorker.Margin = new System.Windows.Forms.Padding(4);
             this.cbSocialWorker.Name = "cbSocialWorker";
             this.cbSocialWorker.Size = new System.Drawing.Size(308, 25);
             this.cbSocialWorker.TabIndex = 52;
@@ -175,7 +176,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtStatusReason.Location = new System.Drawing.Point(773, 106);
-            this.txtStatusReason.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtStatusReason.Margin = new System.Windows.Forms.Padding(4);
             this.txtStatusReason.Name = "txtStatusReason";
             this.txtStatusReason.Size = new System.Drawing.Size(308, 89);
             this.txtStatusReason.TabIndex = 51;
@@ -209,7 +210,7 @@
             // numTarget
             // 
             this.numTarget.Location = new System.Drawing.Point(204, 68);
-            this.numTarget.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numTarget.Margin = new System.Windows.Forms.Padding(4);
             this.numTarget.Name = "numTarget";
             this.numTarget.Size = new System.Drawing.Size(160, 23);
             this.numTarget.TabIndex = 54;
@@ -228,7 +229,7 @@
             this.tplButton01.Controls.Add(this.btnSave, 1, 0);
             this.tplButton01.Controls.Add(this.llblBackBottom, 4, 0);
             this.tplButton01.Location = new System.Drawing.Point(40, 457);
-            this.tplButton01.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tplButton01.Margin = new System.Windows.Forms.Padding(4);
             this.tplButton01.Name = "tplButton01";
             this.tplButton01.RowCount = 1;
             this.tplButton01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -240,7 +241,7 @@
             this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(612, 10);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 28);
             this.btnCancel.TabIndex = 22;
@@ -253,7 +254,7 @@
             this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Location = new System.Drawing.Point(424, 10);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 28);
             this.btnSave.TabIndex = 21;
@@ -285,7 +286,7 @@
             this.tplDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
             this.tplDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tplDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tplDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tplDisplay01.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 54F));
             this.tplDisplay01.Controls.Add(this.lblDistrict, 0, 0);
             this.tplDisplay01.Controls.Add(this.cbDistrict, 1, 0);
             this.tplDisplay01.Controls.Add(this.cbSubCounty, 4, 0);
@@ -311,7 +312,7 @@
             this.tplDisplay01.Controls.Add(this.txtPhoneOther, 4, 5);
             this.tplDisplay01.Controls.Add(this.lblWardVal, 2, 1);
             this.tplDisplay01.Location = new System.Drawing.Point(40, 37);
-            this.tplDisplay01.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tplDisplay01.Margin = new System.Windows.Forms.Padding(4);
             this.tplDisplay01.Name = "tplDisplay01";
             this.tplDisplay01.RowCount = 6;
             this.tplDisplay01.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
@@ -341,7 +342,7 @@
             this.cbDistrict.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDistrict.FormattingEnabled = true;
             this.cbDistrict.Location = new System.Drawing.Point(204, 5);
-            this.cbDistrict.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbDistrict.Margin = new System.Windows.Forms.Padding(4);
             this.cbDistrict.Name = "cbDistrict";
             this.cbDistrict.Size = new System.Drawing.Size(308, 25);
             this.cbDistrict.TabIndex = 53;
@@ -353,7 +354,7 @@
             this.cbSubCounty.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSubCounty.FormattingEnabled = true;
             this.cbSubCounty.Location = new System.Drawing.Point(773, 5);
-            this.cbSubCounty.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbSubCounty.Margin = new System.Windows.Forms.Padding(4);
             this.cbSubCounty.Name = "cbSubCounty";
             this.cbSubCounty.Size = new System.Drawing.Size(308, 25);
             this.cbSubCounty.TabIndex = 59;
@@ -389,7 +390,7 @@
             this.cbWard.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbWard.FormattingEnabled = true;
             this.cbWard.Location = new System.Drawing.Point(204, 41);
-            this.cbWard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbWard.Margin = new System.Windows.Forms.Padding(4);
             this.cbWard.Name = "cbWard";
             this.cbWard.Size = new System.Drawing.Size(308, 25);
             this.cbWard.TabIndex = 55;
@@ -413,7 +414,7 @@
             this.cbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTitle.FormattingEnabled = true;
             this.cbTitle.Location = new System.Drawing.Point(204, 77);
-            this.cbTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbTitle.Margin = new System.Windows.Forms.Padding(4);
             this.cbTitle.Name = "cbTitle";
             this.cbTitle.Size = new System.Drawing.Size(308, 25);
             this.cbTitle.TabIndex = 27;
@@ -436,7 +437,7 @@
             this.txtFirstName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFirstName.Location = new System.Drawing.Point(204, 114);
-            this.txtFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFirstName.Margin = new System.Windows.Forms.Padding(4);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(308, 23);
             this.txtFirstName.TabIndex = 1;
@@ -470,7 +471,7 @@
             this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(204, 150);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(308, 23);
             this.txtEmail.TabIndex = 29;
@@ -492,7 +493,7 @@
             this.txtLastName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastName.Location = new System.Drawing.Point(773, 114);
-            this.txtLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLastName.Margin = new System.Windows.Forms.Padding(4);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(308, 23);
             this.txtLastName.TabIndex = 24;
@@ -527,7 +528,7 @@
             this.txtVillage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtVillage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtVillage.Location = new System.Drawing.Point(773, 42);
-            this.txtVillage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtVillage.Margin = new System.Windows.Forms.Padding(4);
             this.txtVillage.Name = "txtVillage";
             this.txtVillage.Size = new System.Drawing.Size(308, 23);
             this.txtVillage.TabIndex = 61;
@@ -549,7 +550,7 @@
             this.txtPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone.Location = new System.Drawing.Point(204, 189);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(308, 23);
             this.txtPhone.TabIndex = 32;
@@ -585,7 +586,7 @@
             this.txtPhoneOther.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPhoneOther.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhoneOther.Location = new System.Drawing.Point(773, 189);
-            this.txtPhoneOther.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPhoneOther.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhoneOther.Name = "txtPhoneOther";
             this.txtPhoneOther.Size = new System.Drawing.Size(308, 23);
             this.txtPhoneOther.TabIndex = 64;
@@ -623,7 +624,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.gbParaSocialWorkerManagement);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmParaSocialWorkercs";
             this.Size = new System.Drawing.Size(1213, 640);
             this.Load += new System.EventHandler(this.frmParaSocialWorkercs_Load);

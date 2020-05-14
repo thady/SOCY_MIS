@@ -880,7 +880,7 @@ namespace SOCY_MIS
             }
             catch (System.Net.WebException exc)
             {
-                throw exc;
+                MessageBox.Show("Could not connect to server", "SOCYMIS Data Import", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return isValidated;

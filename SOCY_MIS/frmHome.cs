@@ -67,6 +67,8 @@ namespace SOCY_MIS
                         frmNew.Show();
 
                     }
+
+                    MessageBox.Show("Always upload your data everyday after data entry!Your computer's date and time should always be up to date", "Data Entry & Upload", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 finally
                 {

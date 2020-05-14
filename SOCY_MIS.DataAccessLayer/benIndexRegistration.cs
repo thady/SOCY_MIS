@@ -216,6 +216,14 @@ namespace SOCY_MIS.DataAccessLayer
                         INNER JOIN lst_district dst ON sct.dst_id = dst.dst_id
                         WHERE swt_id = 1 AND sws_id = 1 AND (dst.dst_id = '15' OR dst.dst_id = '23')";
                 }
+                else if (dst_id == "3" || dst_id == "22")
+                {
+                    SQL = @"SELECT swk_id,swk_first_name + ' ' + swk_last_name AS swk_name FROM swm_social_worker dt
+                        INNER JOIN lst_ward W ON W.wrd_id = dt.wrd_id
+                        INNER JOIN lst_sub_county sct ON W.sct_id = sct.sct_id
+                        INNER JOIN lst_district dst ON sct.dst_id = dst.dst_id
+                        WHERE swt_id = 1 AND sws_id = 1 AND (dst.dst_id = '3' OR dst.dst_id = '22')";
+                }
                 else
                 {
                     SQL = @"SELECT swk_id,swk_first_name + ' ' + swk_last_name AS swk_name FROM swm_social_worker dt
@@ -641,7 +649,7 @@ namespace SOCY_MIS.DataAccessLayer
 
                 SQL = @"SELECT dt.hhm_first_name + ' ' + dt.hhm_last_name AS hhm_name,dt.hhm_id FROM hh_household_member dt
                         WHERE dt.hh_id = '{0}' AND YEAR(GETDATE()) - dt.hhm_year_of_birth >=10 AND YEAR(GETDATE()) - dt.hhm_year_of_birth <=20
-                        AND dt.gnd_id = '2'";
+                        AND dt.gnd_id = 'f05d3f3c-9aac-4f12-b0cd-1c4ae9294da3'";
  
                 SQL = string.Format(SQL, hh_id);
 
@@ -834,7 +842,7 @@ namespace SOCY_MIS.DataAccessLayer
             {
 
                 SQL = @"SELECT dt.hhm_first_name + ' ' + dt.hhm_last_name AS hhm_name,dt.hhm_id FROM hh_household_member dt
-                        WHERE dt.hh_id = '{0}' AND YEAR(GETDATE()) - dt.hhm_year_of_birth >10 AND dt.gnd_id = '2'";
+                        WHERE dt.hh_id = '{0}' AND YEAR(GETDATE()) - dt.hhm_year_of_birth >10 AND dt.gnd_id = 'f05d3f3c-9aac-4f12-b0cd-1c4ae9294da3'";
 
                 SQL = string.Format(SQL, hh_id);
 
