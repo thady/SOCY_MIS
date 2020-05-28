@@ -3,10 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using System.Data;
+using System.Data.SqlClient;
+
 namespace SOCY_MIS.DataAccessLayer
 {
     public static class benCovid19DataCollection
     {
+        #region dbconnection
+        static DataAccessLayer.DBConnection dbCon = new DataAccessLayer.DBConnection(utilConstants.cACKConnection);
+        static string SQLConnection = dbCon.SQLDBConnection(utilConstants.cACKConnection);
+        static SqlConnection conn = null;
+
+        #endregion dbconnection
+
         #region Variables
         public static string cdc_id = string.Empty;
         public static string wrd_id = string.Empty;
@@ -80,7 +90,7 @@ namespace SOCY_MIS.DataAccessLayer
                           ,[total_ben_hiv_unknown] = '{12}'
                           ,[total_ben_risk_assessed] = '{13}'
                           ,[total_new_referals_made] = '{14}'
-                          ,[total_old_referals_followedup] = '{51}'
+                          ,[total_old_referals_followedup] = '{15}'
                           ,[total_ben_with_vl] ='{16}'
                           ,[total_ben_not_supress] = '{17}'
                           ,[total_emergency_case_found] = '{18}'
@@ -94,6 +104,170 @@ namespace SOCY_MIS.DataAccessLayer
            , total_ben_with_vl, total_ben_not_supress, total_emergency_case_found, general_comment, usr_id_update, usr_date_update);
             dbCon.ExecuteScalar(strSQL);
             #endregion SQL
+        }
+
+        public static DataTable LoadList()
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter Adapt;
+            string SQL = string.Empty;
+            try
+            {
+
+                SQL = @"SELECT dt.cdc_id, dst.dst_name,sct.sct_name,W.wrd_name,dt.report_month,dt.week_name,swm.swk_first_name + '' + swm.swk_last_name AS swk_name,psw.swk_first_name + ' ' + psw.swk_last_name AS psw_name FROM ben_covid19_data_collection dt
+                INNER JOIN lst_ward W ON dt.wrd_id = W.wrd_id
+                INNER JOIN lst_sub_county sct ON W.sct_id = sct.sct_id
+                INNER JOIN lst_district dst ON sct.dst_id = dst.dst_id
+                INNER JOIN swm_social_worker swm ON dt.swk_id = swm.swk_id
+                INNER JOIN swm_social_worker psw ON dt.psw_id = psw.swk_id";
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(SQL, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    Adapt = new SqlDataAdapter(cmd);
+                    Adapt.Fill(dt);
+
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            finally
+            {
+                if (conn.State == ConnectionState.Open) { conn.Close(); }
+            }
+
+            return dt;
+        }
+
+        public static DataTable Search(string dst_id, string sct_id,string reportMonth)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter Adapt;
+            string SQL = string.Empty;
+            try
+            {
+                SQL = @"SELECT dt.cdc_id, dst.dst_name,sct.sct_name,W.wrd_name,dt.report_month,dt.week_name,swm.swk_first_name + '' + swm.swk_last_name AS swk_name,psw.swk_first_name + ' ' + psw.swk_last_name AS psw_name FROM ben_covid19_data_collection dt
+                INNER JOIN lst_ward W ON dt.wrd_id = W.wrd_id
+                INNER JOIN lst_sub_county sct ON W.sct_id = sct.sct_id
+                INNER JOIN lst_district dst ON sct.dst_id = dst.dst_id
+                INNER JOIN swm_social_worker swm ON dt.swk_id = swm.swk_id
+                INNER JOIN swm_social_worker psw ON dt.psw_id = psw.swk_id
+                WHERE (@sct_id = '' OR sct.sct_id =  @sct_id  )
+                AND (@dst_id = '' OR dst.dst_id = @dst_id  )
+                AND (@report_month = '' OR dt.report_month = @report_month)";
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(SQL, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    cmd.Parameters.Add("@dst_id", SqlDbType.NVarChar, 50);
+                    cmd.Parameters["@dst_id"].Value = dst_id;
+
+                    cmd.Parameters.Add("@sct_id", SqlDbType.NVarChar, 50);
+                    cmd.Parameters["@sct_id"].Value = sct_id;
+
+                    cmd.Parameters.Add("@report_month", SqlDbType.NVarChar, 50);
+                    cmd.Parameters["@report_month"].Value = reportMonth;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    Adapt = new SqlDataAdapter(cmd);
+                    Adapt.Fill(dt);
+
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            finally
+            {
+                if (conn.State == ConnectionState.Open) { conn.Close(); }
+            }
+
+            return dt;
+        }
+
+        public static DataTable LoadDetails(string id)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter Adapt;
+            string SQL = string.Empty;
+            try
+            {
+
+                SQL = @"SELECT dst.dst_id,sct.sct_id,dt.* FROM ben_covid19_data_collection dt
+                INNER JOIN lst_ward W ON dt.wrd_id = W.wrd_id
+                INNER JOIN lst_sub_county sct ON W.sct_id = sct.sct_id
+                INNER JOIN lst_district dst ON sct.dst_id = dst.dst_id
+                INNER JOIN swm_social_worker swm ON dt.swk_id = swm.swk_id
+                INNER JOIN swm_social_worker psw ON dt.psw_id = psw.swk_id
+                WHERE dt.cdc_id = '{0}'";
+
+                SQL = string.Format(SQL, id);
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(SQL, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    Adapt = new SqlDataAdapter(cmd);
+                    Adapt.Fill(dt);
+
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            finally
+            {
+                if (conn.State == ConnectionState.Open) { conn.Close(); }
+            }
+
+            return dt;
         }
     }
 }

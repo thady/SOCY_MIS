@@ -16882,6 +16882,154 @@ namespace SOCY_MIS.DataAccessLayer
             #endregion Triggers
             #endregion SQL
         }
+
+
+        private static void Create_ben_covid19_data_collection(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            #region SQL
+            #region Tables
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'ben_covid19_data_collection')
+                        CREATE TABLE [dbo].[ben_covid19_data_collection](
+	                    [cdc_id] [varchar](50) NOT NULL,
+	                    [wrd_id] [varchar](50) NOT NULL,
+	                    [report_month] [varchar](50) NOT NULL,
+	                    [week_name] [varchar](50) NOT NULL,
+	                    [swk_id] [varchar](50) NOT NULL,
+	                    [psw_id] [varchar](50) NOT NULL,
+	                    [total_hh_visited] [varchar](50) NOT NULL,
+	                    [total_hh_hip_reviewed] [varchar](50) NOT NULL,
+	                    [total_ben_served] [varchar](50) NOT NULL,
+	                    [total_ben_hiv_pos] [varchar](50) NOT NULL,
+	                    [total_ben_hiv_neg] [varchar](50) NOT NULL,
+	                    [total_ben_hiv_tnr] [varchar](50) NOT NULL,
+	                    [total_ben_hiv_unknown] [varchar](50) NOT NULL,
+	                    [total_ben_risk_assessed] [varchar](50) NOT NULL,
+	                    [total_new_referals_made] [varchar](50) NOT NULL,
+	                    [total_old_referals_followedup] [varchar](50) NOT NULL,
+	                    [total_ben_with_vl] [varchar](50) NOT NULL,
+	                    [total_ben_not_supress] [varchar](50) NOT NULL,
+	                    [total_emergency_case_found] [varchar](50) NOT NULL,
+	                    [general_comment] [varchar](2000) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [district_id] [nvarchar](50) NOT NULL,
+                     CONSTRAINT [PK_ben_covid19_data_collection] PRIMARY KEY CLUSTERED 
+                    (
+	                    [cdc_id] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'ben_covid19_data_collection_upload')
+                        CREATE TABLE [dbo].[ben_covid19_data_collection_upload](
+	                    [cdc_sid] [int] IDENTITY(1,1) NOT NULL,
+	                    [cdc_id] [varchar](50) NOT NULL,
+	                    [wrd_id] [varchar](50) NOT NULL,
+	                    [report_month] [varchar](50) NOT NULL,
+	                    [week_name] [varchar](50) NOT NULL,
+	                    [swk_id] [varchar](50) NOT NULL,
+	                    [psw_id] [varchar](50) NOT NULL,
+	                    [total_hh_visited] [varchar](50) NOT NULL,
+	                    [total_hh_hip_reviewed] [varchar](50) NOT NULL,
+	                    [total_ben_served] [varchar](50) NOT NULL,
+	                    [total_ben_hiv_pos] [varchar](50) NOT NULL,
+	                    [total_ben_hiv_neg] [varchar](50) NOT NULL,
+	                    [total_ben_hiv_tnr] [varchar](50) NOT NULL,
+	                    [total_ben_hiv_unknown] [varchar](50) NOT NULL,
+	                    [total_ben_risk_assessed] [varchar](50) NOT NULL,
+	                    [total_new_referals_made] [varchar](50) NOT NULL,
+	                    [total_old_referals_followedup] [varchar](50) NOT NULL,
+	                    [total_ben_with_vl] [varchar](50) NOT NULL,
+	                    [total_ben_not_supress] [varchar](50) NOT NULL,
+	                    [total_emergency_case_found] [varchar](50) NOT NULL,
+	                    [general_comment] [varchar](2000) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [trg_action] [int] NOT NULL,
+	                    [district_id] [nvarchar](50) NOT NULL,
+                     CONSTRAINT [PK_ben_covid19_data_collection_upload] PRIMARY KEY CLUSTERED 
+                    (
+	                    [cdc_sid] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion Tables
+
+            #region Triggers
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_covid19_data_collection_insert' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_covid19_data_collection_insert] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_covid19_data_collection_insert] ON [dbo].[ben_covid19_data_collection] FOR INSERT
+                    AS
+                    BEGIN
+	                   INSERT INTO [dbo].[ben_covid19_data_collection_upload]
+                    ([cdc_id] ,[wrd_id] ,[report_month] ,[week_name],[swk_id],[psw_id] ,[total_hh_visited],[total_hh_hip_reviewed] ,[total_ben_served] ,[total_ben_hiv_pos]
+                    ,[total_ben_hiv_neg] ,[total_ben_hiv_tnr] ,[total_ben_hiv_unknown] ,[total_ben_risk_assessed] ,[total_new_referals_made] ,[total_old_referals_followedup]
+                    ,[total_ben_with_vl] ,[total_ben_not_supress] ,[total_emergency_case_found] ,[general_comment] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update]
+                    ,[ofc_id],[trg_action] ,[district_id])
+	                 SELECT  [cdc_id] ,[wrd_id] ,[report_month] ,[week_name],[swk_id],[psw_id] ,[total_hh_visited],[total_hh_hip_reviewed] ,[total_ben_served] ,[total_ben_hiv_pos]
+                    ,[total_ben_hiv_neg] ,[total_ben_hiv_tnr] ,[total_ben_hiv_unknown] ,[total_ben_risk_assessed] ,[total_new_referals_made] ,[total_old_referals_followedup]
+                    ,[total_ben_with_vl] ,[total_ben_not_supress] ,[total_emergency_case_found] ,[general_comment] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update]
+                    ,[ofc_id],1 ,[district_id]
+                    FROM inserted
+                        END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_covid19_data_collection_update' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_covid19_data_collection_update] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_covid19_data_collection_update] ON [dbo].[ben_covid19_data_collection] FOR UPDATE
+                    AS
+                    BEGIN
+	                   INSERT INTO [dbo].[ben_covid19_data_collection_upload]
+                    ([cdc_id] ,[wrd_id] ,[report_month] ,[week_name],[swk_id],[psw_id] ,[total_hh_visited],[total_hh_hip_reviewed] ,[total_ben_served] ,[total_ben_hiv_pos]
+                    ,[total_ben_hiv_neg] ,[total_ben_hiv_tnr] ,[total_ben_hiv_unknown] ,[total_ben_risk_assessed] ,[total_new_referals_made] ,[total_old_referals_followedup]
+                    ,[total_ben_with_vl] ,[total_ben_not_supress] ,[total_emergency_case_found] ,[general_comment] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update]
+                    ,[ofc_id],[trg_action] ,[district_id])
+	                 SELECT  [cdc_id] ,[wrd_id] ,[report_month] ,[week_name],[swk_id],[psw_id] ,[total_hh_visited],[total_hh_hip_reviewed] ,[total_ben_served] ,[total_ben_hiv_pos]
+                    ,[total_ben_hiv_neg] ,[total_ben_hiv_tnr] ,[total_ben_hiv_unknown] ,[total_ben_risk_assessed] ,[total_new_referals_made] ,[total_old_referals_followedup]
+                    ,[total_ben_with_vl] ,[total_ben_not_supress] ,[total_emergency_case_found] ,[general_comment] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update]
+                    ,[ofc_id],2 ,[district_id]
+                    FROM inserted
+                        END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_covid19_data_collection_delete' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[ben_covid19_data_collection_delete] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[ben_covid19_data_collection_delete] ON [dbo].[ben_covid19_data_collection] FOR DELETE
+                    AS
+                    BEGIN
+	                   INSERT INTO [dbo].[ben_covid19_data_collection_upload]
+                    ([cdc_id] ,[wrd_id] ,[report_month] ,[week_name],[swk_id],[psw_id] ,[total_hh_visited],[total_hh_hip_reviewed] ,[total_ben_served] ,[total_ben_hiv_pos]
+                    ,[total_ben_hiv_neg] ,[total_ben_hiv_tnr] ,[total_ben_hiv_unknown] ,[total_ben_risk_assessed] ,[total_new_referals_made] ,[total_old_referals_followedup]
+                    ,[total_ben_with_vl] ,[total_ben_not_supress] ,[total_emergency_case_found] ,[general_comment] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update]
+                    ,[ofc_id],[trg_action] ,[district_id])
+	                 SELECT  [cdc_id] ,[wrd_id] ,[report_month] ,[week_name],[swk_id],[psw_id] ,[total_hh_visited],[total_hh_hip_reviewed] ,[total_ben_served] ,[total_ben_hiv_pos]
+                    ,[total_ben_hiv_neg] ,[total_ben_hiv_tnr] ,[total_ben_hiv_unknown] ,[total_ben_risk_assessed] ,[total_new_referals_made] ,[total_old_referals_followedup]
+                    ,[total_ben_with_vl] ,[total_ben_not_supress] ,[total_emergency_case_found] ,[general_comment] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update]
+                    ,[ofc_id],3 ,[district_id]
+                    FROM inserted
+                        END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            #endregion Triggers
+            #endregion SQL
+        }
+
+
+
         #endregion Create Tables
 
         #region Insert Data
@@ -32141,6 +32289,7 @@ namespace SOCY_MIS.DataAccessLayer
             Createben_ben_NoMeansNo_participant_attendance_member(dbCon);
             Createben_ben_NoMeansNo_participant_attendance(dbCon);
             Create_ben_art_refill(dbCon);
+            Create_ben_covid19_data_collection(dbCon);
         }
 
 
@@ -32767,6 +32916,13 @@ namespace SOCY_MIS.DataAccessLayer
                     BEGIN
                     INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
                     VALUES('115','ben_art_refill_upload','artr_id',115,1,1,1,GETDATE(),GETDATE())
+                    END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT sul_name FROM lst_sync_upload WHERE sul_name = 'ben_covid19_data_collection_upload')
+                    BEGIN
+                    INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
+                    VALUES('116','ben_covid19_data_collection_upload','cdc_id',116,1,1,1,GETDATE(),GETDATE())
                     END";
             dbCon.ExecuteNonQuery(strSQL);
         }

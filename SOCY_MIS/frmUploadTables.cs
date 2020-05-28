@@ -95,6 +95,8 @@ namespace SOCY_MIS
             table.Rows.Add("Community Training Register", "silc_community_training_register");
             table.Rows.Add("Community Training Register Member", "silc_community_training_register_member");
             table.Rows.Add("Community Training Register Attendance", "silc_community_training_register_member_attendance_dates");
+            table.Rows.Add("Viral Load Data", "ben_ovc_viral_load");
+            table.Rows.Add("Viral Load Member Data", "ben_ovc_viral_load_member");
 
             DataRow dstemptyRow = table.NewRow();
             dstemptyRow["table_id"] = "-1";
@@ -180,7 +182,7 @@ namespace SOCY_MIS
                                "'{9}', '{10}','{10}', GETDATE(), GETDATE(), '{11}','{12}') ";
 
                                 strSQLInsert = string.Format(strSQLInsert, DownLoadTable, dtRow["hh_id"].ToString(), dtRow["hh_code"].ToString(),
-                                utilFormatting.StringForSQL(dtRow["hh_status_reason"].ToString()),utilFormatting.StringForSQL( dtRow["hh_tel"].ToString()),utilFormatting.StringForSQL(dtRow["hh_village"].ToString()),
+                                utilFormatting.StringForSQL(dtRow["hh_status_reason"].ToString()), utilFormatting.StringForSQL(dtRow["hh_tel"].ToString()), utilFormatting.StringForSQL(dtRow["hh_village"].ToString()),
                                 dtRow["hhs_id"].ToString(), dtRow["hhsr_id"].ToString(), dtRow["swk_id"].ToString(), dtRow["wrd_id"].ToString(),
                                 dtRow["usr_id_create"].ToString(), dtRow["ofc_id"].ToString(), dtRow["dst_id"].ToString());
                                 break;
@@ -392,13 +394,13 @@ namespace SOCY_MIS
 
                             #region hh_ovc_identification_prioritization
                             case "hh_ovc_identification_prioritization":
-                               
+
                                 #region Delete
                                 strID = dtRow["oip_id"].ToString();
                                 strSQLDelete = " DELETE FROM {0} WHERE oip_id = '{1}'";
                                 strSQLDelete = string.Format(strSQLDelete, DownLoadTable, strID);
                                 #endregion Delete
-                                
+
                                 strSQLInsert = "INSERT INTO hh_ovc_identification_prioritization " +
                                                 "(oip_id, oip_comments, oip_date, " +
                                                 "oip_18_above_female, oip_18_above_male, oip_18_below_female, oip_18_below_male, oip_hiv_adult, oip_hiv_children, " +
@@ -454,7 +456,7 @@ namespace SOCY_MIS
                                 //SetText("Hello World");
 
                                 break;
-                               
+
                             #endregion hh_ovc_identification_prioritization   
 
                             #region hh_household_improvement_plan
@@ -606,7 +608,7 @@ namespace SOCY_MIS
                                 strSQLInsert = @"INSERT INTO [dbo].[hh_household_risk_assessment]([ra_id],[hh_id],[scr_date],[hhm_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update],[ofc_id],[district_id])
                         VALUES ('{0}','{1}','{2}' ,'{3}','{4}','{5}' ,'{6}' ,'{7}','{8}','{9}')";
 
-                                strSQLInsert = string.Format(strSQLInsert, dtRow["ra_id"].ToString(), dtRow["hh_id"].ToString() , Convert.ToDateTime(dtRow["scr_date"]) , dtRow["hhm_id"].ToString() , dtRow["usr_id_create"].ToString() , dtRow["usr_id_update"].ToString(), Convert.ToDateTime(dtRow["usr_date_create"]) , Convert.ToDateTime(dtRow["usr_date_update"]) , dtRow["ofc_id"].ToString(),
+                                strSQLInsert = string.Format(strSQLInsert, dtRow["ra_id"].ToString(), dtRow["hh_id"].ToString(), Convert.ToDateTime(dtRow["scr_date"]), dtRow["hhm_id"].ToString(), dtRow["usr_id_create"].ToString(), dtRow["usr_id_update"].ToString(), Convert.ToDateTime(dtRow["usr_date_create"]), Convert.ToDateTime(dtRow["usr_date_update"]), dtRow["ofc_id"].ToString(),
                                           dtRow["district_id"].ToString());
 
                                 break;
@@ -630,9 +632,9 @@ namespace SOCY_MIS
                                                ,'{16}' ,'{17}' ,'{18}' ,'{19}' ,'{20}','{21}' ,'{22}' ,'{23}' ,'{24}' ,'{25}' ,'{26}' ,'{27}','{28}'
                                                ,'{29}','{30}','{31}')";
 
-                                strSQLInsert = string.Format(strSQLInsert, dtRow["ram_id"].ToString() , dtRow["ra_id"].ToString() , dtRow["hhm_id"].ToString(), dtRow["hhm_name"].ToString(), dtRow["gnd_name"].ToString() , dtRow["gnd_age"].ToString() , dtRow["ra_criteria_id"].ToString() , dtRow["yn_hiv_test"].ToString() , dtRow["yn_unprotected_sex"].ToString() , dtRow["yn_sex_worker"].ToString() , dtRow["yn_lost_sexual_partner"].ToString() 
-                                                       , dtRow["yn_tb_disease"].ToString(), dtRow["yn_sexual_violence"].ToString() , dtRow["yn_sickly"].ToString() , dtRow["yn_pregnant_not_tested"].ToString() , dtRow["yn_breast_feeding_not_tested"].ToString() , dtRow["yn_hiv_neg_discodant_not_tested"].ToString() , dtRow["yn_sti"].ToString() , dtRow["yn_hepatitis_b"].ToString() 
-                                                       , dtRow["yn_male_female_not_tested"].ToString(), dtRow["yn_hhm_at_risk"].ToString() , dtRow["yn_hmm_test"].ToString() , dtRow["yn_hhm_accept_test"].ToString() , dtRow["yn_referal"].ToString() , dtRow["yn_referal_completed"].ToString() , dtRow["test_result"].ToString() , dtRow["usr_id_create"].ToString(), dtRow["usr_id_update"].ToString(), Convert.ToDateTime(dtRow["usr_date_create"]), Convert.ToDateTime(dtRow["usr_date_update"]), dtRow["ofc_id"].ToString(),
+                                strSQLInsert = string.Format(strSQLInsert, dtRow["ram_id"].ToString(), dtRow["ra_id"].ToString(), dtRow["hhm_id"].ToString(), dtRow["hhm_name"].ToString(), dtRow["gnd_name"].ToString(), dtRow["gnd_age"].ToString(), dtRow["ra_criteria_id"].ToString(), dtRow["yn_hiv_test"].ToString(), dtRow["yn_unprotected_sex"].ToString(), dtRow["yn_sex_worker"].ToString(), dtRow["yn_lost_sexual_partner"].ToString()
+                                                       , dtRow["yn_tb_disease"].ToString(), dtRow["yn_sexual_violence"].ToString(), dtRow["yn_sickly"].ToString(), dtRow["yn_pregnant_not_tested"].ToString(), dtRow["yn_breast_feeding_not_tested"].ToString(), dtRow["yn_hiv_neg_discodant_not_tested"].ToString(), dtRow["yn_sti"].ToString(), dtRow["yn_hepatitis_b"].ToString()
+                                                       , dtRow["yn_male_female_not_tested"].ToString(), dtRow["yn_hhm_at_risk"].ToString(), dtRow["yn_hmm_test"].ToString(), dtRow["yn_hhm_accept_test"].ToString(), dtRow["yn_referal"].ToString(), dtRow["yn_referal_completed"].ToString(), dtRow["test_result"].ToString(), dtRow["usr_id_create"].ToString(), dtRow["usr_id_update"].ToString(), Convert.ToDateTime(dtRow["usr_date_create"]), Convert.ToDateTime(dtRow["usr_date_update"]), dtRow["ofc_id"].ToString(),
                                                         dtRow["district_id"].ToString());
 
                                 break;
@@ -655,9 +657,9 @@ namespace SOCY_MIS
                                          VALUES('{0}' ,'{1}','{2}' ,'{3}' ,'{4}' ,'{5}' ,'{6}' ,'{7}','{8}' ,'{9}','{10}','{11}' ,'{12}','{13}' ,'{14}' ,'{15}','{16}'
                                                ,'{17}' ,'{18}' ,'{19}','{20}' ,'{21}' ,'{22}','{23}' ,'{24}','{25}' ,'{26}')";
 
-                                strSQLInsert = string.Format(strSQLInsert, dtRow["ram_id"].ToString(), dtRow["ra_id"].ToString() , dtRow["hhm_id"].ToString(), dtRow["hhm_name"].ToString() , dtRow["gnd_name"].ToString() , dtRow["gnd_age"].ToString() , dtRow["ra_criteria_id"].ToString() , dtRow["yn_mother_hiv_pos"].ToString() , dtRow["yn_lost_bio_parent"].ToString() , dtRow["yn_malnourished"].ToString() 
-                                                       , dtRow["yn_skin_problem"].ToString(), dtRow["yn_hospitalized"].ToString() , dtRow["yn_sexual_violence_exposed"].ToString() , dtRow["yn_acc_exposure_sharp_injury"].ToString() , dtRow["yn_drug_abuse"].ToString() , dtRow["yn_hhm_at_risk"].ToString() , dtRow["yn_hmm_test"].ToString() 
-                                                       , dtRow["yn_hhm_accept_test"].ToString(), dtRow["yn_referal"].ToString() , dtRow["yn_referal_completed"].ToString() , dtRow["test_result"].ToString() , dtRow["usr_id_create"].ToString(), dtRow["usr_id_update"].ToString(), Convert.ToDateTime(dtRow["usr_date_create"]), Convert.ToDateTime(dtRow["usr_date_update"]), dtRow["ofc_id"].ToString(),
+                                strSQLInsert = string.Format(strSQLInsert, dtRow["ram_id"].ToString(), dtRow["ra_id"].ToString(), dtRow["hhm_id"].ToString(), dtRow["hhm_name"].ToString(), dtRow["gnd_name"].ToString(), dtRow["gnd_age"].ToString(), dtRow["ra_criteria_id"].ToString(), dtRow["yn_mother_hiv_pos"].ToString(), dtRow["yn_lost_bio_parent"].ToString(), dtRow["yn_malnourished"].ToString()
+                                                       , dtRow["yn_skin_problem"].ToString(), dtRow["yn_hospitalized"].ToString(), dtRow["yn_sexual_violence_exposed"].ToString(), dtRow["yn_acc_exposure_sharp_injury"].ToString(), dtRow["yn_drug_abuse"].ToString(), dtRow["yn_hhm_at_risk"].ToString(), dtRow["yn_hmm_test"].ToString()
+                                                       , dtRow["yn_hhm_accept_test"].ToString(), dtRow["yn_referal"].ToString(), dtRow["yn_referal_completed"].ToString(), dtRow["test_result"].ToString(), dtRow["usr_id_create"].ToString(), dtRow["usr_id_update"].ToString(), Convert.ToDateTime(dtRow["usr_date_create"]), Convert.ToDateTime(dtRow["usr_date_update"]), dtRow["ofc_id"].ToString(),
                                                         dtRow["district_id"].ToString());
 
                                 break;
@@ -678,9 +680,9 @@ namespace SOCY_MIS
                                                    ,[usr_id_create] ,[usr_id_update],[usr_date_create],[usr_date_update],[ofc_id],[district_id])
                                                    VALUES('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}','{16}','{17}','{18}','{19}','{20}')";
 
-                                strSQLInsert = string.Format(strSQLInsert, dtRow["ctr_id"].ToString() , dtRow["prt_id"].ToString() , dtRow["cso_id"].ToString() , dtRow["dst_id"].ToString() , dtRow["sct_id"].ToString()  , dtRow["tr_name"].ToString()  , utilFormatting.StringForSQL(dtRow["module_name"].ToString()), utilFormatting.StringForSQL(dtRow["tr_total_days"].ToString()) , Convert.ToDateTime(dtRow["tr_date_from"]) ,
-                                Convert.ToDateTime(dtRow["tr_date_to"]) ,utilFormatting.StringForSQL(dtRow["module_desc"].ToString()), utilFormatting.StringForSQL(dtRow["tr_venue"].ToString()),
-                                dtRow["trainer_type"].ToString(), dtRow["artisan_name"].ToString() , dtRow["facilitator_trainer_name"].ToString() , dtRow["usr_id_create"].ToString() , dtRow["usr_id_update"].ToString() , Convert.ToDateTime(dtRow["usr_date_create"]), Convert.ToDateTime(dtRow["usr_date_update"]) ,dtRow["ofc_id"].ToString(),dtRow["district_id"].ToString());
+                                strSQLInsert = string.Format(strSQLInsert, dtRow["ctr_id"].ToString(), dtRow["prt_id"].ToString(), dtRow["cso_id"].ToString(), dtRow["dst_id"].ToString(), dtRow["sct_id"].ToString(), dtRow["tr_name"].ToString(), utilFormatting.StringForSQL(dtRow["module_name"].ToString()), utilFormatting.StringForSQL(dtRow["tr_total_days"].ToString()), Convert.ToDateTime(dtRow["tr_date_from"]),
+                                Convert.ToDateTime(dtRow["tr_date_to"]), utilFormatting.StringForSQL(dtRow["module_desc"].ToString()), utilFormatting.StringForSQL(dtRow["tr_venue"].ToString()),
+                                dtRow["trainer_type"].ToString(), dtRow["artisan_name"].ToString(), dtRow["facilitator_trainer_name"].ToString(), dtRow["usr_id_create"].ToString(), dtRow["usr_id_update"].ToString(), Convert.ToDateTime(dtRow["usr_date_create"]), Convert.ToDateTime(dtRow["usr_date_update"]), dtRow["ofc_id"].ToString(), dtRow["district_id"].ToString());
 
                                 break;
                             #endregion silc_community_training_register  
@@ -699,7 +701,7 @@ namespace SOCY_MIS
                                                    ,[usr_id_update] ,[usr_date_create] ,[usr_date_update],[ofc_id],[district_id])
                                                    VALUES('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}')";
 
-                                strSQLInsert = string.Format(strSQLInsert,dtRow["ctrm_id"].ToString(), dtRow["ctr_id"].ToString() , dtRow["ben_type"].ToString() , dtRow["hhm_code"].ToString() , dtRow["parcipant_name"].ToString() , dtRow["gnd_id"].ToString() ,dtRow["age"].ToString() , dtRow["usr_id_create"].ToString() , dtRow["usr_id_update"].ToString() , Convert.ToDateTime(dtRow["usr_date_create"]), Convert.ToDateTime(dtRow["usr_date_update"]), dtRow["ofc_id"].ToString(), dtRow["district_id"].ToString());
+                                strSQLInsert = string.Format(strSQLInsert, dtRow["ctrm_id"].ToString(), dtRow["ctr_id"].ToString(), dtRow["ben_type"].ToString(), dtRow["hhm_code"].ToString(), dtRow["parcipant_name"].ToString(), dtRow["gnd_id"].ToString(), dtRow["age"].ToString(), dtRow["usr_id_create"].ToString(), dtRow["usr_id_update"].ToString(), Convert.ToDateTime(dtRow["usr_date_create"]), Convert.ToDateTime(dtRow["usr_date_update"]), dtRow["ofc_id"].ToString(), dtRow["district_id"].ToString());
 
                                 break;
                             #endregion silc_community_training_register_member 
@@ -716,10 +718,50 @@ namespace SOCY_MIS
                                 strSQLInsert = @"INSERT INTO silc_community_training_register_member_attendance_dates(ctrmD_id,ctrm_id,date,ofc_id,district_id)
 	                                             VALUES('{0}','{1}','{2}','{3}','{4}')";
 
-                                strSQLInsert = string.Format(strSQLInsert, dtRow["ctrmD_id"].ToString() , dtRow["ctrm_id"].ToString() , Convert.ToDateTime(dtRow["date"]) , dtRow["ofc_id"].ToString(), dtRow["district_id"].ToString());
+                                strSQLInsert = string.Format(strSQLInsert, dtRow["ctrmD_id"].ToString(), dtRow["ctrm_id"].ToString(), Convert.ToDateTime(dtRow["date"]), dtRow["ofc_id"].ToString(), dtRow["district_id"].ToString());
 
                                 break;
-                                #endregion silc_community_training_register_member_attendance_dates 
+                            #endregion silc_community_training_register_member_attendance_dates 
+
+                            #region ben_ovc_viral_load
+                            case "ben_ovc_viral_load":
+
+                                #region Delete
+                                strID = dtRow["vl_id"].ToString();
+                                strSQLDelete = "DELETE FROM ben_ovc_viral_load WHERE vl_id = '{0}'";
+                                strSQLDelete = string.Format(strSQLDelete, DownLoadTable, strID);
+                                #endregion Delete
+
+                                strSQLInsert = @" INSERT INTO [dbo].[ben_ovc_viral_load]
+                           ([vl_id],[prt_id],[cso_id],[wrd_id],[hh_id],[qrt_start_date],[qrt_end_date],[linc_id]
+                           ,[sw_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update],[ofc_id]
+                           ,[district_id]) VALUES ('{0}' ,'{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}')";
+
+                                strSQLInsert = string.Format(strSQLInsert, dtRow["vl_id"].ToString() , dtRow["prt_id"].ToString() , dtRow["cso_id"].ToString() , dtRow["wrd_id"].ToString() , dtRow["hh_id"].ToString() , Convert.ToDateTime(dtRow["qrt_start_date"]) , Convert.ToDateTime(dtRow["qrt_end_date"]) ,
+                                dtRow["linc_id"].ToString()  , dtRow["sw_id"].ToString(), dtRow["usr_id_create"].ToString(), dtRow["usr_id_update"].ToString(), Convert.ToDateTime(dtRow["usr_date_create"]), Convert.ToDateTime(dtRow["usr_date_update"]), dtRow["ofc_id"].ToString(), dtRow["district_id"].ToString());
+
+                                break;
+                            #endregion ben_ovc_viral_load 
+
+                            #region ben_ovc_viral_load_member
+                            case "ben_ovc_viral_load_member":
+
+                                #region Delete
+                                strID = dtRow["vlm_id"].ToString();
+                                strSQLDelete = "DELETE FROM ben_ovc_viral_load_member WHERE vlm_id = '{0}'";
+                                strSQLDelete = string.Format(strSQLDelete, DownLoadTable, strID);
+                                #endregion Delete
+
+                                strSQLInsert = @" INSERT INTO [dbo].[ben_ovc_viral_load_member]
+                           ([vlm_id],[vl_id],[hhm_id],[hef_name],[art_number],[vl_eligible],[vl_done],[vl_date],[vl_nextdate]
+                           ,[suppressed],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update],[ofc_id],[district_id])
+                            VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}')";
+
+                                strSQLInsert = string.Format(strSQLInsert, dtRow["vlm_id"].ToString() , dtRow["vl_id"].ToString() , dtRow["hhm_id"].ToString() , utilFormatting.StringForSQL(dtRow["hef_name"].ToString()) , dtRow["art_number"].ToString() , dtRow["vl_eligible"].ToString()  , dtRow["vl_done"].ToString(), Convert.ToDateTime(dtRow["vl_date"]) , Convert.ToDateTime(dtRow["vl_nextdate"])  , dtRow["suppressed"].ToString() ,
+                                dtRow["usr_id_create"].ToString(), dtRow["usr_id_update"].ToString(), Convert.ToDateTime(dtRow["usr_date_create"]), Convert.ToDateTime(dtRow["usr_date_update"]), dtRow["ofc_id"].ToString(), dtRow["district_id"].ToString());
+
+                                break;
+                                #endregion ben_ovc_viral_load_member 
                         }
 
                         #endregion Switch Tables
@@ -812,7 +854,6 @@ namespace SOCY_MIS
 
 
                         #region Enable Triggers
-
                         strSQLTrigger = "ALTER TABLE {0} ENABLE TRIGGER {0}_delete";
                         strSQLTrigger = string.Format(strSQLTrigger, DownLoadTable);
                         dbCon.ExecuteNonQuery(strSQLTrigger);
@@ -822,7 +863,6 @@ namespace SOCY_MIS
                         strSQLTrigger = "ALTER TABLE {0} ENABLE TRIGGER {0}_update";
                         strSQLTrigger = string.Format(strSQLTrigger, DownLoadTable);
                         dbCon.ExecuteNonQuery(strSQLTrigger);
-
                         #endregion Enable Triggers
 
                         throw ex;
