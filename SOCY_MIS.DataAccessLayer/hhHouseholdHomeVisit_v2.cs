@@ -121,7 +121,6 @@ namespace SOCY_MIS.DataAccessLayer
            ,[swk_id_visitor] ,[usr_id_create] ,[usr_id_update],[usr_date_create] ,[usr_date_update],[ofc_id],[district_id])
             VALUES('{0}','{1}' ,'{2}' ,'{3}' ,'{4}' ,'{5}' ,'{6}','{7}' ,'{8}' ,'{9}' ,'{10}' ,'{11}','{12}','{13}' ,'{14}' ,'{15}','{16}' ,'{17}' ,'{18}' ,'{19}' , GETDATE() ,GETDATE() ,'{20}' ,'{21}')";
 
-
             strSQL = string.Format(strSQL, hhv_id,
                 hhv_date.ToString("dd MMM yyyy HH:mm:ss"), hhv_date_next_visit.ToString("dd MMM yyyy HH:mm:ss"),
                 utilFormatting.StringForSQL(hhv_comments), utilFormatting.StringForSQL(hhv_next_steps),
@@ -133,6 +132,11 @@ namespace SOCY_MIS.DataAccessLayer
             dbCon.ExecuteNonQuery(strSQL);
             update_hh_status(hh_id, hvhs_id);
             #endregion SQL
+
+            if(hvhs_id != "1" && hvhs_id != "2")
+            {
+                Deactivate_household_members(hh_id);
+            }
         }
 
 
@@ -180,7 +184,14 @@ namespace SOCY_MIS.DataAccessLayer
 
             update_hh_status(hh_id, hvhs_id);
             #endregion SQL
+
+            if (hvhs_id != "1" && hvhs_id != "2")
+            {
+                Deactivate_household_members(hh_id);
+            }
         }
+
+        
 
         public static void Insert_home_visit_member(DBConnection dbCon)
         {
@@ -351,6 +362,50 @@ namespace SOCY_MIS.DataAccessLayer
 
             string SQL = "UPDATE hh_household SET hhs_id = '{0}',district_id = '{2}' WHERE hh_id = '{1}'";
             SQL = string.Format(SQL, hhs_id, hh_id, SystemConstants.Return_office_district());
+            try
+            {
+                string strConn = dbCon.ToString();
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(SQL, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+
+                    cmd.ExecuteNonQuery();
+
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            finally
+            {
+                if (conn.State == ConnectionState.Open) { conn.Close(); }
+            }
+
+        }
+
+        public static void Deactivate_household_members(string hh_id)
+        {
+            string crop_name = string.Empty;
+
+            string SQL = "UPDATE hh_household_member SET hhm_status = '0' WHERE hh_id = '{0}'";
+            SQL = string.Format(SQL, hh_id);
             try
             {
                 string strConn = dbCon.ToString();

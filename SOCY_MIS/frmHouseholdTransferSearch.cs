@@ -11,11 +11,11 @@ using SOCY_MIS.DataAccessLayer;
 
 namespace SOCY_MIS
 {
-    public partial class frmCovid19DataCollectionSearch : UserControl
+    public partial class frmHouseholdTransferSearch : UserControl
     {
         #region Variables
+        DataTable dt = null;
         private frmResultArea03 frmPrt = null;
-        DataTable dt = new DataTable();
         #endregion Variables
 
         #region Property
@@ -25,31 +25,17 @@ namespace SOCY_MIS
             set { frmPrt = value; }
         }
         #endregion Property
-
-        public frmCovid19DataCollectionSearch()
+        public frmHouseholdTransferSearch()
         {
             InitializeComponent();
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void frmHouseholdTransferSearch_Load(object sender, EventArgs e)
         {
-            LoadList("Search");
+            Return_lookups();
+            LoadListing(string.Empty, string.Empty, string.Empty,txtHHcode.Text.Trim());
         }
 
-        private void llblNewRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-            #region Set Selected
-            benCovid19DataCollection.cdc_id = string.Empty;
-            frmCovid19DataCollection frmNew = new frmCovid19DataCollection();
-            frmNew.FormCallingSearch = this;
-            frmNew.FormParent = FormParent;
-            frmNew.FormMaster = FormParent.FormMaster;
-            FormParent.LoadControl(frmNew, this.Name);
-            #endregion
-        }
-
-        #region Lookups
         protected void Return_lookups()
         {
             #region districts
@@ -83,35 +69,22 @@ namespace SOCY_MIS
             cboSubCounty.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cboSubCounty.AutoCompleteSource = AutoCompleteSource.ListItems;
             #endregion subcounty
-
         }
-        #endregion
 
-        protected void LoadList(string action)
+        protected void LoadListing(string dst_id, string sct_id, string wrd_id,string hh_code)
         {
-            switch (action)
-            {
-                case "Load":
-                    dt = benCovid19DataCollection.LoadList();
-                    break;
-                case "Search":
-                    dt = benCovid19DataCollection.Search(cboDistrict.SelectedValue.ToString() != "-1" ? cboDistrict.SelectedValue.ToString() : string.Empty
-                        , cboSubCounty.SelectedValue.ToString() != "-1" ? cboSubCounty.SelectedValue.ToString() : string.Empty,
-                        cboReportMonth.Text != string.Empty ? cboReportMonth.Text : string.Empty);
-                    break;
-            }
-           
+            dt = HouseholdTransfer.LoadRecordListing(dst_id, sct_id, wrd_id,hh_code);
+
             gdvList.DataSource = dt;
 
-            gdvList.Columns["cdc_id"].Visible = false;
+            gdvList.Columns["hh_tr_id"].Visible = false;
 
             gdvList.Columns["dst_name"].HeaderText = "District";
             gdvList.Columns["sct_name"].HeaderText = "Sub County";
             gdvList.Columns["wrd_name"].HeaderText = "Parish";
-            gdvList.Columns["report_month"].HeaderText = "Reporting Month";
-            gdvList.Columns["week_name"].HeaderText = "Reporting Week";
-            gdvList.Columns["swk_name"].HeaderText = "Social Worker Name";
-            gdvList.Columns["psw_name"].HeaderText = "Para Social Worker Name";
+            gdvList.Columns["hh_village"].HeaderText = "Village";
+            gdvList.Columns["hh_code"].HeaderText = "Household Code";
+            gdvList.Columns["date"].HeaderText = "Date";
 
             gdvList.DefaultCellStyle.SelectionBackColor = Color.White;
             gdvList.DefaultCellStyle.SelectionForeColor = Color.Black;
@@ -134,10 +107,37 @@ namespace SOCY_MIS
             }
         }
 
-        private void frmCovid19DataCollectionSearch_Load(object sender, EventArgs e)
+        private void lblNewRecord_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Return_lookups();
-            LoadList("Load");
+            #region Set Selected
+            HouseholdTransfer.hh_tr_id = string.Empty;
+            frmHouseholdTransferTool frmNew = new frmHouseholdTransferTool();
+            frmNew.FormCallingSearch = this;
+            frmNew.FormParent = FormParent;
+            frmNew.FormMaster = FormParent.FormMaster;
+            FormParent.LoadControl(frmNew, this.Name);
+            #endregion
+        }
+
+        private void btnsearch_Click(object sender, EventArgs e)
+        {
+            LoadListing(cboDistrict.SelectedValue.ToString(), cboSubCounty.SelectedValue.ToString(), cboParish.SelectedValue.ToString(),txtHHcode.Text.Trim());
+        }
+
+        private void gdvList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (gdvList.Rows.Count > 0)
+            {
+                #region Set Selected
+                HouseholdTransfer.hh_tr_id = gdvList.CurrentRow.Cells[0].Value.ToString();
+                frmHouseholdTransferTool frmNew = new frmHouseholdTransferTool();
+                frmNew.FormCallingSearch = this;
+                frmNew.FormParent = FormParent;
+                frmNew.FormMaster = FormParent.FormMaster;
+                FormParent.LoadControl(frmNew, this.Name);
+                #endregion
+            }
+
         }
 
         private void cboDistrict_SelectedIndexChanged(object sender, EventArgs e)
@@ -159,24 +159,24 @@ namespace SOCY_MIS
             #endregion subcounty
         }
 
-        private void gdvList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void cboSubCounty_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(gdvList.Rows.Count > 0)
-            {
-                #region Set Selected
-                benCovid19DataCollection.cdc_id = gdvList.CurrentRow.Cells[0].Value.ToString();
-                frmCovid19DataCollection frmNew = new frmCovid19DataCollection();
-                frmNew.FormCallingSearch = this;
-                frmNew.FormParent = FormParent;
-                frmNew.FormMaster = FormParent.FormMaster;
-                FormParent.LoadControl(frmNew, this.Name);
-                #endregion
-            }
-        }
+            #region Parish
+            dt = silcCommunityTrainingRegister.Return_lookups("parishCovid19", string.Empty, string.Empty, cboSubCounty.SelectedValue.ToString(), string.Empty);
 
-        private void gbARTRefillSearch_Enter(object sender, EventArgs e)
-        {
+            DataRow emptyRow = dt.NewRow();
+            emptyRow["wrd_id"] = "-1";
+            emptyRow["wrd_name"] = "Select Parish";
+            dt.Rows.InsertAt(emptyRow, 0);
 
+            cboParish.DataSource = dt;
+            cboParish.DisplayMember = "wrd_name";
+            cboParish.ValueMember = "wrd_id";
+
+            cboParish.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cboParish.AutoCompleteSource = AutoCompleteSource.ListItems;
+            #endregion Parish
         }
     }
 }
+

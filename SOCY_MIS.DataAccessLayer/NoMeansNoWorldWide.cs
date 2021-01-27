@@ -517,7 +517,8 @@ namespace SOCY_MIS.DataAccessLayer
             {
                 SQL = @"SELECT record_id, nmn_id,yn_direct_ben,hhm_code,date,pre_post,grp_name,instructor_name,age FROM ben_NoMeansNo_pre_post_Boys
                         WHERE (@hhm_code = '' OR hhm_code LIKE '%' + @hhm_code + '%'  )
-                        AND (@nmn_id = '' OR nmn_id LIKE '%' + @nmn_id + '%' )";
+                        AND ((@nmn_id = '' OR nmn_id LIKE '%' + @nmn_id + '%' )
+                        OR (@nmn_id = '' OR nmn_id_pre LIKE '%' + @nmn_id + '%' ))";
 
                 using (conn = new SqlConnection(SQLConnection))
                 using (SqlCommand cmd = new SqlCommand(SQL, conn))
@@ -893,7 +894,8 @@ namespace SOCY_MIS.DataAccessLayer
             {
                 SQL = @"SELECT record_id, nmn_id,yn_direct_ben,hhm_code,date,pre_post,grp_name,instructor_name,age FROM ben_NoMeansNo_pre_post_Girls
                         WHERE (@hhm_code = '' OR hhm_code LIKE '%' + @hhm_code + '%'  )
-                        AND (@nmn_id = '' OR nmn_id LIKE '%' + @nmn_id + '%' )";
+                        AND ((@nmn_id = '' OR nmn_id LIKE '%' + @nmn_id + '%' )
+                         OR (@nmn_id = '' OR nmn_id_pre LIKE '%' + @nmn_id + '%' ))";
 
                 using (conn = new SqlConnection(SQLConnection))
                 using (SqlCommand cmd = new SqlCommand(SQL, conn))
@@ -1044,15 +1046,15 @@ namespace SOCY_MIS.DataAccessLayer
            ([roster_id],[int_type] ,[start_date] ,[end_date] ,[sup_name] ,[imp_partner] ,[dst_id] ,[sct_id] ,[wrd_id] ,[venue],[instructor_names],[delivery_method]
            ,[class1_tr_date] ,[class1_tr_hrs] ,[class2_tr_date] ,[class2_tr_hrs] ,[class3_tr_date] ,[class3_tr_hrs] ,[class4_tr_date] ,[class4_tr_hrs] ,[class5_tr_date]
            ,[class5_tr_hrs] ,[class6_tr_date] ,[class6_tr_hrs],[class7_tr_date] ,[class7_tr_hrs] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update] ,[ofc_id]
-           ,[district_id]) OUTPUT INSERTED.roster_id INTO @tempTable
+           ,[district_id],grp_name) OUTPUT INSERTED.roster_id INTO @tempTable
         VALUES('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}','{16}','{17}','{18}','{19}','{20}','{21}','{22}','{23}',
-			'{24}','{25}','{26}','{27}','{28}','{29}','{30}','{31}')
+			'{24}','{25}','{26}','{27}','{28}','{29}','{30}','{31}','{32}')
             SELECT roster_id FROM @tempTable";
 
             strSQL = string.Format(strSQL, roster_id, int_type, start_date.ToString("dd MMM yyyy HH:mm:ss"), end_date.ToString("dd MMM yyyy HH:mm:ss"), sup_name, imp_partner, dst_id, sct_id, wrd_id, venue, instructor_names, delivery_method
            , class1_tr_date.ToString("dd MMM yyyy HH:mm:ss"), class1_tr_hrs, class2_tr_date.ToString("dd MMM yyyy HH:mm:ss"), class2_tr_hrs, class3_tr_date.ToString("dd MMM yyyy HH:mm:ss"), class3_tr_hrs, class4_tr_date.ToString("dd MMM yyyy HH:mm:ss"), class4_tr_hrs, class5_tr_date.ToString("dd MMM yyyy HH:mm:ss")
            , class5_tr_hrs, class6_tr_date.ToString("dd MMM yyyy HH:mm:ss"), class6_tr_hrs, class7_tr_date.ToString("dd MMM yyyy HH:mm:ss"), class7_tr_hrs, usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id
-           , district_id);
+           , district_id,grp_name);
 
             string insertedRecordID = dbCon.ExecuteScalar(strSQL);
             #endregion SQL
@@ -1095,11 +1097,12 @@ namespace SOCY_MIS.DataAccessLayer
                           ,[class7_tr_hrs] = '{25}'
                           ,[usr_id_update] = '{26}'
                           ,[usr_date_update] = '{27}'
+                          ,grp_name = '{28}'
                      WHERE [roster_id] = '{0}'";
 
             strSQL = string.Format(strSQL, roster_id, int_type, start_date.ToString("dd MMM yyyy HH:mm:ss"), end_date.ToString("dd MMM yyyy HH:mm:ss"), sup_name, imp_partner, dst_id, sct_id, wrd_id, venue, instructor_names, delivery_method
            , class1_tr_date.ToString("dd MMM yyyy HH:mm:ss"), class1_tr_hrs, class2_tr_date.ToString("dd MMM yyyy HH:mm:ss"), class2_tr_hrs, class3_tr_date.ToString("dd MMM yyyy HH:mm:ss"), class3_tr_hrs, class4_tr_date.ToString("dd MMM yyyy HH:mm:ss"), class4_tr_hrs, class5_tr_date.ToString("dd MMM yyyy HH:mm:ss")
-           , class5_tr_hrs, class6_tr_date.ToString("dd MMM yyyy HH:mm:ss"), class6_tr_hrs, class7_tr_date.ToString("dd MMM yyyy HH:mm:ss"), class7_tr_hrs, usr_id_update, usr_date_update);
+           , class5_tr_hrs, class6_tr_date.ToString("dd MMM yyyy HH:mm:ss"), class6_tr_hrs, class7_tr_date.ToString("dd MMM yyyy HH:mm:ss"), class7_tr_hrs, usr_id_update, usr_date_update,grp_name);
          
 
             dbCon.ExecuteScalar(strSQL);
@@ -1219,14 +1222,14 @@ namespace SOCY_MIS.DataAccessLayer
             string SQL = string.Empty;
             try
             {
-                SQL = @"SELECT dst.dst_name,sct.sct_name,W.wrd_name,dt.int_type,dt.start_date,dt.end_date,dt.imp_partner AS  cso_name,dt.delivery_method,dt.roster_id FROM ben_NoMeansNo_participant_attendance dt
-                      INNER JOIN lst_district dst ON dt.dst_id = dst.dst_id
-                      INNER JOIN lst_sub_county sct ON dt.sct_id = sct.sct_id
-                      INNER JOIN lst_ward W ON dt.wrd_id = W.wrd_id
-                      WHERE (@dst_id IS NULL OR @dst_id = '' OR dst.dst_id = @dst_id)
-                      AND (@sct_id IS NULL OR @sct_id = '' OR sct.sct_id = @sct_id)
-                      AND (@wrd_id IS NULL OR @wrd_id = '' OR W.wrd_id = @wrd_id)
-                      AND (@int_type IS NULL OR @int_type = '' OR int_type = @int_type)";
+                    SQL = @"SELECT dt.roster_id, dst.dst_name,sct.sct_name,W.wrd_name,dt.int_type,dt.start_date,dt.end_date,dt.imp_partner AS  cso_name,dt.delivery_method FROM ben_NoMeansNo_participant_attendance dt
+                    INNER JOIN lst_district dst ON dt.dst_id = dst.dst_id
+                    INNER JOIN lst_sub_county sct ON dt.sct_id = sct.sct_id
+                    INNER JOIN lst_ward W ON dt.wrd_id = W.wrd_id
+                    WHERE (@dst_id IS NULL OR @dst_id = '' OR dst.dst_id = @dst_id)
+                    AND (@sct_id IS NULL OR @sct_id = '' OR sct.sct_id = @sct_id)
+                    AND (@wrd_id IS NULL OR @wrd_id = '' OR W.wrd_id = @wrd_id)
+                    AND (@int_type IS NULL OR @int_type = '' OR int_type = @int_type)";
 
                 using (conn = new SqlConnection(SQLConnection))
                 using (SqlCommand cmd = new SqlCommand(SQL, conn))

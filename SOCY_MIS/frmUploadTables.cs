@@ -24,6 +24,8 @@ namespace SOCY_MIS
         string table_id = string.Empty;
 
         #endregion dbconnection
+
+        string id = string.Empty;
         public frmUploadTables()
         {
             InitializeComponent();
@@ -219,7 +221,7 @@ namespace SOCY_MIS
                                          "'{16}', '{17}', '{18}', " +
                                          "'{19}', '{20}', '{21}', " +
                                          "'{22}', '{23}','{23}', GETDATE(), GETDATE(), '{24}','{25}','{26}','{27}') ";
-
+                                
                                 strSQLInsert = string.Format(strSQLInsert, DownLoadTable, dtRow["hhm_id"].ToString(),
                                     utilFormatting.StringForSQL(dtRow["hhm_first_name"].ToString()), utilFormatting.StringForSQL(dtRow["hhm_last_name"].ToString()),
                                      utilFormatting.StringForSQL(dtRow["hhm_number"].ToString()), dtRow["hhm_year_of_birth"].ToString(),
@@ -397,6 +399,7 @@ namespace SOCY_MIS
 
                                 #region Delete
                                 strID = dtRow["oip_id"].ToString();
+                                id = dtRow["oip_id"].ToString();
                                 strSQLDelete = " DELETE FROM {0} WHERE oip_id = '{1}'";
                                 strSQLDelete = string.Format(strSQLDelete, DownLoadTable, strID);
                                 #endregion Delete
@@ -451,9 +454,14 @@ namespace SOCY_MIS
                                             dtRow["yn_id_hwss_shelter"].ToString(), dtRow["yn_id_hwss_water"].ToString(),
                                             dtRow["yn_id_psbc_referred"].ToString(), dtRow["yn_id_psbc_stigmatized"].ToString(),
                                             dtRow["ynna_id_edu_missed_school"].ToString(), dtRow["ynna_id_edu_not_enrolled"].ToString(),
-                                            dtRow["usr_id_create"].ToString(), dtRow["usr_id_update"].ToString(), Convert.ToDateTime(dtRow["usr_date_create"]), Convert.ToDateTime(dtRow["usr_date_update"]), dtRow["ofc_id"].ToString(), dtRow["district_id"].ToString(), dtRow["ids_id"].ToString(), dtRow["hh_enroll_reason"].ToString());
+                                            dtRow["usr_id_create"].ToString(), dtRow["usr_id_update"].ToString(), Convert.ToDateTime(dtRow["usr_date_create"]), Convert.ToDateTime(dtRow["usr_date_update"]), dtRow["ofc_id"].ToString(), dtRow["district_id"].ToString(), dtRow["ids_id"].ToString(), utilFormatting.StringForSQL(dtRow["hh_enroll_reason"].ToString()));
                                 //string err = strSQLInsert;
                                 //SetText("Hello World");
+
+                                //if(oip_id == "0069b0ad-ac16-4ee1-b1d9-89da5fee4ece")
+                                //{
+                                //    string s = strSQLInsert;
+                                //}
 
                                 break;
 
@@ -572,12 +580,12 @@ namespace SOCY_MIS
                                                 ,[yn_stable_access_money_out_come],[yn_stable_income_source] ,[yn_stable_income_source_action] ,[yn_stable_income_source_followup_date] ,[yn_stable_income_source_out_come],[other_hes_issues] ,[other_hes_issues_action]
                                                 ,[other_hes_issues_followup_date] ,[other_hes_issues_out_come],[yn_ovc_regularly_attend_school] ,[yn_ovc_regularly_attend_school_action],[yn_ovc_regularly_attend_school_followup_date] ,[yn_ovc_regularly_attend_school_out_come]
                                                 ,[yn_attained_tech_skill] ,[yn_attained_tech_skill_action_plan],[yn_attained_tech_skill_followup_date] ,[yn_attained_tech_skill_out_come],[other_edu_issues],[other_edu_issues_action] ,[other_edu_issues_followup_date]
-                                                ,[other_edu_issues_out_come] ,[hip_out_come_date] ,[sw_id],[sw_comment] ,[sw_supervisor_name] ,[sw_supervisor_comment] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id] ,[district_id])
+                                                ,[other_edu_issues_out_come] ,[hip_out_come_date] ,[sw_id],[sw_comment] ,[sw_supervisor_name] ,[sw_supervisor_comment] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create],[usr_date_update] ,[ofc_id] ,[district_id],[yn_safe_birth_certificates],[yn_safe_birth_certificates_action] ,[yn_safe_birth_certificates_followup_date],[yn_safe_birth_certificates_out_come])
                                             VALUES ('{0}' ,'{1}' ,'{2}' ,'{3}' ,'{4}' ,'{5}','{6}','{7}','{8}','{9}','{10}' ,'{11}','{12}','{13}','{14}','{15}','{16}','{17}','{18}'
                                                 ,'{19}' ,'{20}','{21}','{22}','{23}','{24}','{25}','{26}','{27}','{28}','{29}','{30}','{31}','{32}','{33}','{34}','{35}','{36}','{37}'
                                                 ,'{38}','{39}','{40}','{41}' ,'{42}','{43}' ,'{44}','{45}','{46}','{47}','{48}','{49}','{50}','{51}' ,'{52}','{53}','{54}','{55}','{56}'
                                                 ,'{57}' ,'{58}' ,'{59}','{60}','{61}' ,'{62}' ,'{63}' ,'{64}' ,'{65}' ,'{66}' ,'{67}','{68}','{69}','{70}' ,'{71}','{72}' ,'{73}' ,'{74}'
-                                                ,'{75}' ,'{76}'  ,'{77}' ,'{78}' ,'{79}','{80}','{81}' ,'{82}' ,'{83}','{84}','{85}')";
+                                                ,'{75}' ,'{76}'  ,'{77}' ,'{78}' ,'{79}','{80}','{81}' ,'{82}' ,'{83}','{84}','{85}','{86}','{87}','{88}','{89}')";
 
                                 strSQLInsert = string.Format(strSQLInsert, dtRow["hip_id"].ToString(), dtRow["hh_code"].ToString(), dtRow["hh_id"].ToString(), Convert.ToDateTime(dtRow["initial_hip_date"]), Convert.ToDateTime(dtRow["visit_date"]), dtRow["qm_id"].ToString(), Convert.ToInt32(dtRow["ov_below_seventeen_yrs_male"].ToString()), Convert.ToInt32(dtRow["ov_below_seventeen_yrs_female"].ToString()), Convert.ToInt32(dtRow["ov_above_eighteen_yrs_male"].ToString())
                                         , Convert.ToInt32(dtRow["ov_above_eighteen_yrs_female"].ToString()), dtRow["hip_reason"].ToString(), dtRow["yn_knows_status_of_children"].ToString(), utilFormatting.StringForSQL(dtRow["yn_knows_status_of_children_action"].ToString()), utilFormatting.StringForSQL(dtRow["yn_knows_status_of_children_out_come"].ToString()), dtRow["yn_knows_status_of_children_followup_date"].ToString()
@@ -591,7 +599,7 @@ namespace SOCY_MIS
                                         , dtRow["other_hes_issues_followup_date"].ToString(), utilFormatting.StringForSQL(dtRow["other_hes_issues_out_come"].ToString()), dtRow["yn_ovc_regularly_attend_school"].ToString(), utilFormatting.StringForSQL(dtRow["yn_ovc_regularly_attend_school_action"].ToString()), dtRow["yn_ovc_regularly_attend_school_followup_date"].ToString(), utilFormatting.StringForSQL(dtRow["yn_ovc_regularly_attend_school_out_come"].ToString())
                                         , dtRow["yn_attained_tech_skill"].ToString(), utilFormatting.StringForSQL(dtRow["yn_attained_tech_skill_action_plan"].ToString()), dtRow["yn_attained_tech_skill_followup_date"].ToString(), utilFormatting.StringForSQL(dtRow["yn_attained_tech_skill_out_come"].ToString()), utilFormatting.StringForSQL(dtRow["other_edu_issues"].ToString()), utilFormatting.StringForSQL(dtRow["other_edu_issues_action"].ToString()), dtRow["other_edu_issues_followup_date"].ToString()
                                         , utilFormatting.StringForSQL(dtRow["other_edu_issues_out_come"].ToString()), dtRow["hip_out_come_date"].ToString(), dtRow["sw_id"].ToString(), utilFormatting.StringForSQL(dtRow["sw_comment"].ToString()), dtRow["sw_supervisor_name"].ToString(), utilFormatting.StringForSQL(dtRow["sw_supervisor_comment"].ToString()), dtRow["usr_id_create"].ToString(), dtRow["usr_id_update"].ToString(), Convert.ToDateTime(dtRow["usr_date_create"]), Convert.ToDateTime(dtRow["usr_date_update"]), dtRow["ofc_id"].ToString(),
-                                          dtRow["district_id"].ToString());
+                                          dtRow["district_id"].ToString(), dtRow["yn_safe_birth_certificates"].ToString(), utilFormatting.StringForSQL(dtRow["yn_safe_birth_certificates_action"].ToString()), dtRow["yn_safe_birth_certificates_followup_date"].ToString(), utilFormatting.StringForSQL(dtRow["yn_safe_birth_certificates_out_come"].ToString()));
 
                                 break;
                             #endregion hh_household_improvement_plan_v2  
@@ -974,7 +982,7 @@ namespace SOCY_MIS
             }
             else
             {
-                MessageBox.Show("All Imports for " + cboDownloadList.Text + " Completed Successfully", "SOCY MIS Import Wizard", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("All Imports for " + cboDownloadList.Text  + " Completed Successfully", "SOCY MIS Import Wizard", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
    
         }

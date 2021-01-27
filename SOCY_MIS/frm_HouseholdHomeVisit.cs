@@ -502,8 +502,8 @@ namespace SOCY_MIS
         private void save()
         {
             DataAccessLayer.DBConnection dbCon = new DataAccessLayer.DBConnection(utilConstants.cACKConnection);
+
             #region set variables
-           
             hhHouseholdHomeVisit_v2.hhv_date = dtpDateOfVisit.Value;
             hhHouseholdHomeVisit_v2.hhv_date_next_visit = dtpNextVisitDate.Value;
             hhHouseholdHomeVisit_v2.hhv_comments = txtComments.Text;
@@ -553,6 +553,7 @@ namespace SOCY_MIS
            
 
             #endregion set variables
+
         }
         #endregion save
 

@@ -230,6 +230,7 @@ namespace SOCY_MIS
         {
             #region Variables
             NoMeansNoWorldWide.int_type = cboIntervention.Text;
+            NoMeansNoWorldWide.grp_name = txtgrpname.Text;
             NoMeansNoWorldWide.start_date = dtStartDate.Value;
             NoMeansNoWorldWide.end_date = dtEndDate.Value;
             NoMeansNoWorldWide.sup_name = txtsupervisorname.Text;
@@ -261,6 +262,7 @@ namespace SOCY_MIS
             NoMeansNoWorldWide.ofc_id = SystemConstants.ofc_id;
             NoMeansNoWorldWide.district_id = SystemConstants.Return_office_district();
             #endregion Variables
+
             if (lblid.Text == "--")
             {
                 NoMeansNoWorldWide.roster_id = Guid.NewGuid().ToString();
@@ -279,7 +281,7 @@ namespace SOCY_MIS
         {
             bool isValid = false;
 
-            if (cboIntervention.Text == string.Empty || !dtStartDate.Checked || !dtEndDate.Checked || txtsupervisorname.Text == string.Empty ||
+            if (cboIntervention.Text == string.Empty || txtgrpname.Text == string.Empty || !dtStartDate.Checked || !dtEndDate.Checked || txtsupervisorname.Text == string.Empty ||
                 cboCSO.Text == string.Empty || cboDistrict.SelectedValue.ToString() == "-1" || cboSubCounty.SelectedValue.ToString() == "-1" ||
                 cboParish.SelectedValue.ToString() == "-1" || txtVenue.Text == string.Empty || txtInstructor.Text == string.Empty || cboDeliveryMethod.Text == string.Empty ||
                 !dtTr1.Checked || !dtTr2.Checked || !dtTr3.Checked || !dtTr4.Checked || !dtTr5.Checked || !dtTr6.Checked || txtHrs1.Text == string.Empty ||
@@ -364,6 +366,7 @@ namespace SOCY_MIS
         {
             lblid.Text = "--";
             cboIntervention.Text = string.Empty;
+            txtgrpname.Clear();
             dtStartDate.Value = DateTime.Now;
             dtStartDate.Checked = false;
             dtEndDate.Value = DateTime.Now;
@@ -430,6 +433,7 @@ namespace SOCY_MIS
 
                 lblid.Text = dtrow["roster_id"].ToString();
                 cboIntervention.Text = dtrow["int_type"].ToString();
+                txtgrpname.Text = dtrow["grp_name"].ToString();
                 dtStartDate.Value = Convert.ToDateTime(dtrow["start_date"]);
                 dtEndDate.Value = Convert.ToDateTime(dtrow["end_date"]);
                 txtsupervisorname.Text = dtrow["sup_name"].ToString();

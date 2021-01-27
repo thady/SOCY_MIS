@@ -102,5 +102,14 @@ namespace SOCY_MIS
             LoadControl(frmNew, this.Name);
             #endregion
         }
+
+        private void llblHoseholdTransfer_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            #region Set Selected
+            frmHouseholdTransferSearch frmNew = new frmHouseholdTransferSearch();
+            frmNew.FormParent = this;
+            LoadControl(frmNew, this.Name);
+            #endregion
+        }
     }
 }

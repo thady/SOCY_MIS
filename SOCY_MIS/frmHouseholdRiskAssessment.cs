@@ -18,6 +18,7 @@ namespace SOCY_MIS
         private string strHHId = string.Empty;
         private string strId = string.Empty;
         private frmHouseholdRiskAssessmentMain frmCll = null;
+        private frmHouseholdRiskAssessmentChild rasChild = new frmHouseholdRiskAssessmentChild();
         private Master frmMST = null;
         int Age = 0;
         DataTable dt = null;
@@ -29,6 +30,12 @@ namespace SOCY_MIS
         {
             get { return frmCll; }
             set { frmCll = value; }
+        }
+
+        public frmHouseholdRiskAssessmentChild FormRiskAssessmentChild
+        {
+            get { return rasChild; }
+            set { rasChild = value; }
         }
 
         public Master FormMaster
@@ -212,14 +219,22 @@ namespace SOCY_MIS
 
         private void btnsave_Click(object sender, EventArgs e)
         {
-            if (cboHHMemberName.SelectedValue.ToString() == "-1" || !dtscreenDate.Checked)
+            if (rbtnNoMeansNoYes.Checked == false)
             {
-                MessageBox.Show("Please fill in all missing values,save failed", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (cboHHMemberName.SelectedValue.ToString() == "-1" || !dtscreenDate.Checked)
+                {
+                    MessageBox.Show("Please fill in all missing values,save failed", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    save();
+                }
             }
             else
             {
                 save();
             }
+           
         }
 
 
@@ -227,15 +242,31 @@ namespace SOCY_MIS
         protected void save()
         {
             #region set variables
-            hhHouseholdRiskAssessment.hh_id = HouseholdId;
-            hhHouseholdRiskAssessment.scr_date = dtscreenDate.Value;
-            hhHouseholdRiskAssessment.hhm_id = cboHHMemberName.SelectedValue.ToString();
-            hhHouseholdRiskAssessment.usr_id_create = SystemConstants.user_id;
-            hhHouseholdRiskAssessment.usr_id_update = SystemConstants.user_id;
-            hhHouseholdRiskAssessment.usr_date_create = DateTime.Today;
-            hhHouseholdRiskAssessment.usr_date_update = DateTime.Today;
-            hhHouseholdRiskAssessment.ofc_id = SystemConstants.ofc_id;
-            hhHouseholdRiskAssessment.district_id = SystemConstants.Return_office_district();
+            if(rbtnNoMeansNoYes.Checked == false)
+            {
+                hhHouseholdRiskAssessment.hh_id = HouseholdId;
+                hhHouseholdRiskAssessment.scr_date = dtscreenDate.Value;
+                hhHouseholdRiskAssessment.hhm_id = cboHHMemberName.SelectedValue.ToString();
+                hhHouseholdRiskAssessment.usr_id_create = SystemConstants.user_id;
+                hhHouseholdRiskAssessment.usr_id_update = SystemConstants.user_id;
+                hhHouseholdRiskAssessment.usr_date_create = DateTime.Today;
+                hhHouseholdRiskAssessment.usr_date_update = DateTime.Today;
+                hhHouseholdRiskAssessment.ofc_id = SystemConstants.ofc_id;
+                hhHouseholdRiskAssessment.district_id = SystemConstants.Return_office_district();
+            }
+            else
+            {
+                hhHouseholdRiskAssessment.hh_id = "NMN";
+                hhHouseholdRiskAssessment.scr_date = dtscreenDate.Value;
+                hhHouseholdRiskAssessment.hhm_id = "NMN";
+                hhHouseholdRiskAssessment.usr_id_create = SystemConstants.user_id;
+                hhHouseholdRiskAssessment.usr_id_update = SystemConstants.user_id;
+                hhHouseholdRiskAssessment.usr_date_create = DateTime.Today;
+                hhHouseholdRiskAssessment.usr_date_update = DateTime.Today;
+                hhHouseholdRiskAssessment.ofc_id = SystemConstants.ofc_id;
+                hhHouseholdRiskAssessment.district_id = SystemConstants.Return_office_district();
+            }
+           
             #endregion set variables
 
             if (ObjectId == string.Empty)
@@ -245,6 +276,7 @@ namespace SOCY_MIS
                 hhHouseholdRiskAssessment.save_hh_household_risk_assessment("insert");
                 MessageBox.Show("save successful", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 FormCalling.MembersTab(ObjectId);
+                rasChild.EnableDisableNMNLists(rbtnNoMeansNoYes.Checked?true:false);
                
             }
             else
@@ -252,6 +284,7 @@ namespace SOCY_MIS
                 hhHouseholdRiskAssessment.save_hh_household_risk_assessment("update");
                 MessageBox.Show("update successful", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 FormCalling.MembersTab(ObjectId);
+                rasChild.EnableDisableNMNLists(rbtnNoMeansNoYes.Checked ? true : false);
             }
 
             
@@ -271,6 +304,52 @@ namespace SOCY_MIS
                     FormCalling.MembersTab(objectID);
                 }
             }
+        }
+
+        private void rbtnNoMeansNoYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnNoMeansNoYes.Checked == true)
+            {
+                cboSubCounty.Enabled = true;
+                cboParish.Enabled = true;
+                txtVillage.Enabled = true;
+                txtVillage.Clear();
+                cboHHCode.SelectedValue = "-1";
+                cboHHCode.Enabled = false;
+                cboHHMemberName.SelectedValue = "-1";
+                cboHHMemberName.Enabled = false;
+            }
+            else
+            {
+                cboSubCounty.Enabled = false;
+                cboParish.Enabled = false;
+                txtVillage.Enabled = false;
+                cboHHCode.SelectedValue = "-1";
+                cboHHCode.Enabled = true;
+                cboHHMemberName.SelectedValue = "-1";
+                cboHHMemberName.Enabled = true;
+            }
+        }
+
+        private void rbtnNoMeansNoNo_CheckedChanged(object sender, EventArgs e)
+        {
+            rbtnNoMeansNoYes_CheckedChanged(rbtnNoMeansNoYes,null);
+        }
+
+        private void cboSubCounty_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            #region Load Parishes
+            dt = benYouthTrainingInventory.Return_lookups("parish", cboSubCounty.SelectedValue.ToString(), string.Empty, string.Empty);
+
+            DataRow sctemptyRow = dt.NewRow();
+            sctemptyRow["wrd_id"] = "-1";
+            sctemptyRow["wrd_name"] = "Select Parish";
+            dt.Rows.InsertAt(sctemptyRow, 0);
+
+            cboParish.DataSource = dt;
+            cboParish.DisplayMember = "wrd_name";
+            cboParish.ValueMember = "wrd_id";
+            #endregion Load Parishes
         }
     }
 }

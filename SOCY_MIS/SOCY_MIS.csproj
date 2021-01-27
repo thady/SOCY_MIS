@@ -532,6 +532,24 @@
     <Compile Include="frmHouseholdSearch.Designer.cs">
       <DependentUpon>frmHouseholdSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHouseholdTransferIssuesRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHouseholdTransferIssuesRegister.Designer.cs">
+      <DependentUpon>frmHouseholdTransferIssuesRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHouseholdTransferSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmHouseholdTransferSearch.Designer.cs">
+      <DependentUpon>frmHouseholdTransferSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHouseholdTransferTool.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmHouseholdTransferTool.Designer.cs">
+      <DependentUpon>frmHouseholdTransferTool.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInstitutionalCareSummary.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1149,6 +1167,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmHouseholdSearch.resx">
       <DependentUpon>frmHouseholdSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHouseholdTransferIssuesRegister.resx">
+      <DependentUpon>frmHouseholdTransferIssuesRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHouseholdTransferSearch.resx">
+      <DependentUpon>frmHouseholdTransferSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHouseholdTransferTool.resx">
+      <DependentUpon>frmHouseholdTransferTool.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInstitutionalCareSummary.resx">
       <DependentUpon>frmInstitutionalCareSummary.cs</DependentUpon>

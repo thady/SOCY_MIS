@@ -167,6 +167,20 @@ namespace SOCY_MIS.DataAccessLayer
                     case "parishCovid19":
                         SQL = "SELECT wrd_id,wrd_name FROM lst_ward WHERE sct_id = '"+ sct_id +"' ORDER BY wrd_name ASC";
                         break;
+                    case "HouseHoldCode_by_parish":
+                        SQL = @"SELECT H.hh_id, H.hh_code FROM hh_household H
+                                INNER JOIN lst_ward W ON H.wrd_id = W.wrd_sid
+                                INNER JOIN lst_sub_county S ON W.sct_id = S.sct_id
+                                INNER JOIN lst_district D ON S.dst_id = D.dst_id
+                                WHERE W.wrd_id = '{0}'
+                                ORDER BY H.hh_code ASC";
+                        SQL = string.Format(SQL,wrd_id);
+                        break;
+                    case "hhm_hh_transfer_tool":
+                        SQL = @"SELECT hhm_id,hhm.hhm_first_name + ' ' + hhm.hhm_last_name AS hhm_name FROM hh_household_member hhm
+                            WHERE hhm.hh_id = '{0}'";
+                        SQL = string.Format(SQL, id);
+                        break;
                 }
                 using (conn = new SqlConnection(SQLConnection))
                 using (SqlCommand cmd = new SqlCommand(SQL, conn))

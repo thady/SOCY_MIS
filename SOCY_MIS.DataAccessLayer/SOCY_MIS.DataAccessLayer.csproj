@@ -107,6 +107,7 @@
     <Compile Include="hh_household_risk_assessment_header.cs" />
     <Compile Include="hhOVCIdentificationPrioritization.cs" />
     <Compile Include="hhReferral.cs" />
+    <Compile Include="HouseholdTransfer.cs" />
     <Compile Include="NoMeansNoWorldWide.cs" />
     <Compile Include="prtAlternativeCarePanel.cs" />
     <Compile Include="prtAlternativeCarePanelDistrict.cs" />

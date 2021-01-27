@@ -392,6 +392,52 @@ namespace SOCY_MIS.DataAccessLayer
             return dt;
         }
 
+        public static DataTable LoadNMNMemberList()
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter Adapt;
+            string SQL = string.Empty;
+            try
+            {
+
+                SQL = @"SELECT CASE WHEN hhm_id = '-1' THEN 'NMN' WHEN hhm_id <> '-1' THEN hhm_id END AS hhm_id,first_name + ' ' + last_name AS hhm_name
+                FROM ben_NoMeansNo_participant_attendance_member";
+
+                using (conn = new SqlConnection(SQLConnection))
+                using (SqlCommand cmd = new SqlCommand(SQL, conn))
+                {
+                    cmd.CommandTimeout = 3600;
+
+                    cmd.CommandType = CommandType.Text;
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    Adapt = new SqlDataAdapter(cmd);
+                    Adapt.Fill(dt);
+
+                    cmd.Parameters.Clear();
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            finally
+            {
+                if (conn.State == ConnectionState.Open) { conn.Close(); }
+            }
+
+            return dt;
+        }
+
 
         public static DataTable LoadRATDetails(string id,string returnType)
         {

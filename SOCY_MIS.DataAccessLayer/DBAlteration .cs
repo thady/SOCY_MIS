@@ -16504,6 +16504,7 @@ namespace SOCY_MIS.DataAccessLayer
 	                    [usr_date_update] [datetime] NOT NULL,
 	                    [ofc_id] [varchar](50) NOT NULL,
 	                    [district_id] [nvarchar](50) NOT NULL,
+                        [grp_name] [nvarchar](50) NOT NULL
                      CONSTRAINT [PK_ben_NoMeansNo_participant_attendance] PRIMARY KEY CLUSTERED 
                     (
 	                    [roster_id] ASC
@@ -16548,6 +16549,7 @@ namespace SOCY_MIS.DataAccessLayer
 	                    [ofc_id] [varchar](50) NOT NULL,
 	                    [trg_action] [int] NOT NULL,
 	                    [district_id] [nvarchar](50) NOT NULL,
+                        [grp_name] [nvarchar](50) NOT NULL
                      CONSTRAINT [PK_ben_NoMeansNo_participant_attendance_upload] PRIMARY KEY CLUSTERED 
                     (
 	                    [roster_sid] ASC
@@ -16555,6 +16557,22 @@ namespace SOCY_MIS.DataAccessLayer
                     ) ON [PRIMARY]";
             dbCon.ExecuteNonQuery(strSQL);
             #endregion Tables
+
+            #region AddGroupNameColumn
+            strSQL = "IF NOT EXISTS(SELECT * FROM sys.columns " +
+                    "WHERE[name] = N'grp_name' AND[object_id] = OBJECT_ID(N'ben_NoMeansNo_participant_attendance_upload')) " +
+                     "BEGIN " +
+                        "ALTER TABLE ben_NoMeansNo_participant_attendance_upload ADD grp_name varchar(1000) NULL " +
+                     "END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "IF NOT EXISTS(SELECT * FROM sys.columns " +
+                   "WHERE[name] = N'grp_name' AND[object_id] = OBJECT_ID(N'ben_NoMeansNo_participant_attendance')) " +
+                    "BEGIN " +
+                       "ALTER TABLE ben_NoMeansNo_participant_attendance ADD grp_name varchar(1000) NULL " +
+                    "END";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion
 
             #region Triggers
             strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'ben_NoMeansNo_participant_attendance_insert' AND [type] = 'TR')
@@ -16567,11 +16585,11 @@ namespace SOCY_MIS.DataAccessLayer
 						   ([roster_id],[int_type] ,[start_date] ,[end_date] ,[sup_name] ,[imp_partner] ,[dst_id] ,[sct_id] ,[wrd_id] ,[venue],[instructor_names],[delivery_method]
 						   ,[class1_tr_date] ,[class1_tr_hrs] ,[class2_tr_date] ,[class2_tr_hrs] ,[class3_tr_date] ,[class3_tr_hrs] ,[class4_tr_date] ,[class4_tr_hrs] ,[class5_tr_date]
 						   ,[class5_tr_hrs] ,[class6_tr_date] ,[class6_tr_hrs],[class7_tr_date] ,[class7_tr_hrs] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update] ,[ofc_id]
-						   ,trg_action,[district_id])
+						   ,trg_action,[district_id],grp_name)
 	                        SELECT [roster_id],[int_type] ,[start_date] ,[end_date] ,[sup_name] ,[imp_partner] ,[dst_id] ,[sct_id] ,[wrd_id] ,[venue],[instructor_names],[delivery_method]
 						   ,[class1_tr_date] ,[class1_tr_hrs] ,[class2_tr_date] ,[class2_tr_hrs] ,[class3_tr_date] ,[class3_tr_hrs] ,[class4_tr_date] ,[class4_tr_hrs] ,[class5_tr_date]
 						   ,[class5_tr_hrs] ,[class6_tr_date] ,[class6_tr_hrs],[class7_tr_date] ,[class7_tr_hrs] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update] ,[ofc_id]
-						   ,1,[district_id]
+						   ,1,[district_id],grp_name
                           FROM inserted
                         END  ";
             dbCon.ExecuteNonQuery(strSQL);
@@ -16586,11 +16604,11 @@ namespace SOCY_MIS.DataAccessLayer
 						   ([roster_id],[int_type] ,[start_date] ,[end_date] ,[sup_name] ,[imp_partner] ,[dst_id] ,[sct_id] ,[wrd_id] ,[venue],[instructor_names],[delivery_method]
 						   ,[class1_tr_date] ,[class1_tr_hrs] ,[class2_tr_date] ,[class2_tr_hrs] ,[class3_tr_date] ,[class3_tr_hrs] ,[class4_tr_date] ,[class4_tr_hrs] ,[class5_tr_date]
 						   ,[class5_tr_hrs] ,[class6_tr_date] ,[class6_tr_hrs],[class7_tr_date] ,[class7_tr_hrs] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update] ,[ofc_id]
-						   ,trg_action,[district_id])
+						   ,trg_action,[district_id],grp_name)
 	                        SELECT [roster_id],[int_type] ,[start_date] ,[end_date] ,[sup_name] ,[imp_partner] ,[dst_id] ,[sct_id] ,[wrd_id] ,[venue],[instructor_names],[delivery_method]
 						   ,[class1_tr_date] ,[class1_tr_hrs] ,[class2_tr_date] ,[class2_tr_hrs] ,[class3_tr_date] ,[class3_tr_hrs] ,[class4_tr_date] ,[class4_tr_hrs] ,[class5_tr_date]
 						   ,[class5_tr_hrs] ,[class6_tr_date] ,[class6_tr_hrs],[class7_tr_date] ,[class7_tr_hrs] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update] ,[ofc_id]
-						   ,2,[district_id]
+						   ,2,[district_id],grp_name
                           FROM inserted
                         END  ";
             dbCon.ExecuteNonQuery(strSQL);
@@ -16605,17 +16623,25 @@ namespace SOCY_MIS.DataAccessLayer
 						   ([roster_id],[int_type] ,[start_date] ,[end_date] ,[sup_name] ,[imp_partner] ,[dst_id] ,[sct_id] ,[wrd_id] ,[venue],[instructor_names],[delivery_method]
 						   ,[class1_tr_date] ,[class1_tr_hrs] ,[class2_tr_date] ,[class2_tr_hrs] ,[class3_tr_date] ,[class3_tr_hrs] ,[class4_tr_date] ,[class4_tr_hrs] ,[class5_tr_date]
 						   ,[class5_tr_hrs] ,[class6_tr_date] ,[class6_tr_hrs],[class7_tr_date] ,[class7_tr_hrs] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update] ,[ofc_id]
-						   ,trg_action,[district_id])
+						   ,trg_action,[district_id],grp_name)
 	                        SELECT [roster_id],[int_type] ,[start_date] ,[end_date] ,[sup_name] ,[imp_partner] ,[dst_id] ,[sct_id] ,[wrd_id] ,[venue],[instructor_names],[delivery_method]
 						   ,[class1_tr_date] ,[class1_tr_hrs] ,[class2_tr_date] ,[class2_tr_hrs] ,[class3_tr_date] ,[class3_tr_hrs] ,[class4_tr_date] ,[class4_tr_hrs] ,[class5_tr_date]
 						   ,[class5_tr_hrs] ,[class6_tr_date] ,[class6_tr_hrs],[class7_tr_date] ,[class7_tr_hrs] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update] ,[ofc_id]
-						   ,3,[district_id]
+						   ,3,[district_id],grp_name
                           FROM deleted
                         END  ";
             dbCon.ExecuteNonQuery(strSQL);
 
             #endregion Triggers
             #endregion SQL
+
+            #region RemoveNulls
+            strSQL = "UPDATE ben_NoMeansNo_participant_attendance SET grp_name = '' WHERE grp_name IS NULL";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = "DELETE ben_NoMeansNo_participant_attendance_upload WHERE grp_name = ''";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion
         }
 
 
@@ -17020,6 +17046,384 @@ namespace SOCY_MIS.DataAccessLayer
                     ,[total_ben_hiv_neg] ,[total_ben_hiv_tnr] ,[total_ben_hiv_unknown] ,[total_ben_risk_assessed] ,[total_new_referals_made] ,[total_old_referals_followedup]
                     ,[total_ben_with_vl] ,[total_ben_not_supress] ,[total_emergency_case_found] ,[general_comment] ,[usr_id_create] ,[usr_id_update] ,[usr_date_create] ,[usr_date_update]
                     ,[ofc_id],3 ,[district_id]
+                    FROM inserted
+                        END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            #endregion Triggers
+            #endregion SQL
+        }
+
+
+        private static void Create_hh_household_transfer(DBConnection dbCon)
+        {
+            #region Variables
+            string strSQL = string.Empty;
+            #endregion Variables
+
+            #region SQL
+            #region Tables
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_household_transfer')
+                             CREATE TABLE [dbo].[hh_household_transfer](
+	                        [hh_tr_id] [varchar](50) NOT NULL,
+	                        [hh_id] [varchar](50) NOT NULL,
+	                        [hh_code] [varchar](50) NOT NULL,
+	                        [ip_id] [varchar](50) NOT NULL,
+	                        [cso_id] [varchar](50) NOT NULL,
+	                        [wrd_id] [varchar](50) NOT NULL,
+	                        [caregiver_hhm_id] [varchar](50) NOT NULL,
+	                        [hhm_female_children_count] [varchar](2) NOT NULL,
+	                        [hhm_male_children_count] [varchar](2) NOT NULL,
+	                        [hhm_female_adult_count] [varchar](2) NOT NULL,
+	                        [hhm_male_adult_count] [varchar](2) NOT NULL,
+	                        [yn_health_child_hiv_screen] [varchar](2) NOT NULL,
+	                        [yn_health_child_hiv_screen_comment] [varchar](1000) NOT NULL,
+	                        [yn_health_child_hiv_test_reffered] [varchar](2) NOT NULL,
+	                        [yn_health_child_hiv_test_reffered_comment] [varchar](1000) NOT NULL,
+	                        [yn_health_child_known_hiv_status] [varchar](2) NOT NULL,
+	                        [yn_health_child_known_hiv_status_comment] [varchar](1000) NOT NULL,
+	                        [yn_health_child_receive_arv] [varchar](2) NOT NULL,
+	                        [yn_health_child_receive_arv_comment] [varchar](1000) NOT NULL,
+	                        [yn_health_child_receive_vl_test] [varchar](2) NOT NULL,
+	                        [yn_health_child_receive_vl_test_comment] [varchar](1000) NOT NULL,
+	                        [yn_health_child_vl_suppress] [varchar](2) NOT NULL,
+	                        [yn_health_child_vl_suppress_comment] [varchar](1000) NOT NULL,
+	                        [yn_mother_attend_hiv_clinic] [varchar](2) NOT NULL,
+	                        [yn_mother_attend_hiv_clinic_comment] [varchar](1000) NOT NULL,
+	                        [yn_caregiver_hiv_screen] [varchar](2) NOT NULL,
+	                        [yn_caregiver_hiv_screen_comment] [varchar](1000) NOT NULL,
+	                        [yn_caregiver_on_art] [varchar](2) NOT NULL,
+	                        [yn_caregiver_on_art_comment] [varchar](1000) NOT NULL,
+	                        [yn_caregiver_receive_vl_test] [varchar](2) NOT NULL,
+	                        [yn_caregiver_receive_vl_test_comment] [varchar](1000) NOT NULL,
+	                        [yn_child_undernourished] [varchar](2) NOT NULL,
+	                        [yn_child_undernourished_comment] [varchar](1000) NOT NULL,
+	                        [yn_caregiver_attend_parenting_program] [varchar](2) NOT NULL,
+	                        [yn_caregiver_attend_parenting_program_comment] [varchar](1000) NOT NULL,
+	                        [yn_adolescent_risk_avoidance_enrolled] [varchar](2) NOT NULL,
+	                        [yn_adolescent_risk_avoidance_enrolled_comment] [varchar](1000) NOT NULL,
+	                        [yn_caregiver_in_silc] [varchar](2) NOT NULL,
+	                        [yn_caregiver_in_silc_comment] [varchar](1000) NOT NULL,
+	                        [yn_IGA_support] [varchar](2) NOT NULL,
+	                        [yn_IGA_support_comment] [varchar](1000) NOT NULL,
+	                        [yn_financial_literacy] [varchar](2) NOT NULL,
+	                        [yn_financial_literacy_comment] [varchar](1000) NOT NULL,
+	                        [yn_apprenticeship] [varchar](2) NOT NULL,
+	                        [yn_apprenticeship_comment] [varchar](1000) NOT NULL,
+	                        [yn_startup_toolkit] [varchar](2) NOT NULL,
+	                        [yn_startup_toolkit_comment] [varchar](1000) NOT NULL,
+	                        [yn_hh_cater_basic_need] [varchar](2) NOT NULL,
+	                        [yn_hh_cater_basic_need_comment] [varchar](1000) NOT NULL,
+	                        [yn_violence] [varchar](2) NOT NULL,
+	                        [yn_violence_comment] [varchar](1000) NOT NULL,
+	                        [yn_refferal_child_protection] [varchar](2) NOT NULL,
+	                        [yn_refferal_child_protection_comment] [varchar](1000) NOT NULL,
+	                        [yn_case_ongoing] [varchar](2) NOT NULL,
+	                        [yn_case_ongoing_comment] [varchar](1000) NOT NULL,
+	                        [yn_birth_certificate] [varchar](2) NOT NULL,
+	                        [yn_birth_certificate_comment] [varchar](1000) NOT NULL,
+	                        [yn_sinovuyo_training] [varchar](2) NOT NULL,
+	                        [yn_sinovuyo_training_comment] [varchar](1000) NOT NULL,
+	                        [yn_vhild_hiv_violence_prevention_curriculum] [varchar](2) NOT NULL,
+	                        [yn_vhild_hiv_violence_prevention_curriculum_comment] [varchar](1000) NOT NULL,
+	                        [yn_edu_enrolled] [varchar](2) NOT NULL,
+	                        [yn_edu_enrolled_comment] [varchar](1000) NOT NULL,
+	                        [yn_edu_attending_regularly] [varchar](2) NOT NULL,
+	                        [yn_edu_attending_regularly_comment] [varchar](1000) NOT NULL,
+	                        [yn_adolesent_du_enrolled_with_edu_subsidy] [varchar](2) NOT NULL,
+	                        [yn_adolesent_du_enrolled_with_edu_subsidy_comment] [varchar](1000) NOT NULL,
+	                        [yn_child_edu_nira_registered] [varchar](2) NOT NULL,
+	                        [yn_child_edu_nira_registered_comment] [varchar](1000) NOT NULL,
+	                        [yn_18_20yrs_in_school] [varchar](2) NOT NULL,
+	                        [yn_18_20yrs_in_school_comment] [varchar](1000) NOT NULL,
+	                        [swk_id] [varchar](50) NOT NULL,
+	                        [date] [date] NOT NULL,
+	                        [usr_id_create] [varchar](50) NOT NULL,
+	                        [usr_id_update] [varchar](50) NOT NULL,
+	                        [usr_date_create] [datetime] NOT NULL,
+	                        [usr_date_update] [datetime] NOT NULL,
+	                        [ofc_id] [varchar](50) NOT NULL,
+	                        [district_id] [nvarchar](50) NOT NULL,
+                         CONSTRAINT [PK_hh_household_transfer] PRIMARY KEY CLUSTERED 
+                        (
+	                        [hh_tr_id] ASC,
+	                        [hh_id] ASC
+                        )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                        ) ON [PRIMARY]";
+
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_household_transfer_upload')
+                    CREATE TABLE [dbo].[hh_household_transfer_upload](
+                    [hh_tr_sid] [int] IDENTITY(1,1) NOT NULL,
+                    [hh_tr_id] [varchar](50) NOT NULL,
+                    [hh_id] [varchar](50) NOT NULL,
+                    [hh_code] [varchar](50) NOT NULL,
+                    [ip_id] [varchar](50) NOT NULL,
+                    [cso_id] [varchar](50) NOT NULL,
+                    [wrd_id] [varchar](50) NOT NULL,
+                    [caregiver_hhm_id] [varchar](50) NOT NULL,
+                    [hhm_female_children_count] [varchar](2) NOT NULL,
+                    [hhm_male_children_count] [varchar](2) NOT NULL,
+                    [hhm_female_adult_count] [varchar](2) NOT NULL,
+                    [hhm_male_adult_count] [varchar](2) NOT NULL,
+                    [yn_health_child_hiv_screen] [varchar](2) NOT NULL,
+                    [yn_health_child_hiv_screen_comment] [varchar](1000) NOT NULL,
+                    [yn_health_child_hiv_test_reffered] [varchar](2) NOT NULL,
+                    [yn_health_child_hiv_test_reffered_comment] [varchar](1000) NOT NULL,
+                    [yn_health_child_known_hiv_status] [varchar](2) NOT NULL,
+                    [yn_health_child_known_hiv_status_comment] [varchar](1000) NOT NULL,
+                    [yn_health_child_receive_arv] [varchar](2) NOT NULL,
+                    [yn_health_child_receive_arv_comment] [varchar](1000) NOT NULL,
+                    [yn_health_child_receive_vl_test] [varchar](2) NOT NULL,
+                    [yn_health_child_receive_vl_test_comment] [varchar](1000) NOT NULL,
+                    [yn_health_child_vl_suppress] [varchar](2) NOT NULL,
+                    [yn_health_child_vl_suppress_comment] [varchar](1000) NOT NULL,
+                    [yn_mother_attend_hiv_clinic] [varchar](2) NOT NULL,
+                    [yn_mother_attend_hiv_clinic_comment] [varchar](1000) NOT NULL,
+                    [yn_caregiver_hiv_screen] [varchar](2) NOT NULL,
+                    [yn_caregiver_hiv_screen_comment] [varchar](1000) NOT NULL,
+                    [yn_caregiver_on_art] [varchar](2) NOT NULL,
+                    [yn_caregiver_on_art_comment] [varchar](1000) NOT NULL,
+                    [yn_caregiver_receive_vl_test] [varchar](2) NOT NULL,
+                    [yn_caregiver_receive_vl_test_comment] [varchar](1000) NOT NULL,
+                    [yn_child_undernourished] [varchar](2) NOT NULL,
+                    [yn_child_undernourished_comment] [varchar](1000) NOT NULL,
+                    [yn_caregiver_attend_parenting_program] [varchar](2) NOT NULL,
+                    [yn_caregiver_attend_parenting_program_comment] [varchar](1000) NOT NULL,
+                    [yn_adolescent_risk_avoidance_enrolled] [varchar](2) NOT NULL,
+                    [yn_adolescent_risk_avoidance_enrolled_comment] [varchar](1000) NOT NULL,
+                    [yn_caregiver_in_silc] [varchar](2) NOT NULL,
+                    [yn_caregiver_in_silc_comment] [varchar](1000) NOT NULL,
+                    [yn_IGA_support] [varchar](2) NOT NULL,
+                    [yn_IGA_support_comment] [varchar](1000) NOT NULL,
+                    [yn_financial_literacy] [varchar](2) NOT NULL,
+                    [yn_financial_literacy_comment] [varchar](1000) NOT NULL,
+                    [yn_apprenticeship] [varchar](2) NOT NULL,
+                    [yn_apprenticeship_comment] [varchar](1000) NOT NULL,
+                    [yn_startup_toolkit] [varchar](2) NOT NULL,
+                    [yn_startup_toolkit_comment] [varchar](1000) NOT NULL,
+                    [yn_hh_cater_basic_need] [varchar](2) NOT NULL,
+                    [yn_hh_cater_basic_need_comment] [varchar](1000) NOT NULL,
+                    [yn_violence] [varchar](2) NOT NULL,
+                    [yn_violence_comment] [varchar](1000) NOT NULL,
+                    [yn_refferal_child_protection] [varchar](2) NOT NULL,
+                    [yn_refferal_child_protection_comment] [varchar](1000) NOT NULL,
+                    [yn_case_ongoing] [varchar](2) NOT NULL,
+                    [yn_case_ongoing_comment] [varchar](1000) NOT NULL,
+                    [yn_birth_certificate] [varchar](2) NOT NULL,
+                    [yn_birth_certificate_comment] [varchar](1000) NOT NULL,
+                    [yn_sinovuyo_training] [varchar](2) NOT NULL,
+                    [yn_sinovuyo_training_comment] [varchar](1000) NOT NULL,
+                    [yn_vhild_hiv_violence_prevention_curriculum] [varchar](2) NOT NULL,
+                    [yn_vhild_hiv_violence_prevention_curriculum_comment] [varchar](1000) NOT NULL,
+                    [yn_edu_enrolled] [varchar](2) NOT NULL,
+                    [yn_edu_enrolled_comment] [varchar](1000) NOT NULL,
+                    [yn_edu_attending_regularly] [varchar](2) NOT NULL,
+                    [yn_edu_attending_regularly_comment] [varchar](1000) NOT NULL,
+                    [yn_adolesent_du_enrolled_with_edu_subsidy] [varchar](2) NOT NULL,
+                    [yn_adolesent_du_enrolled_with_edu_subsidy_comment] [varchar](1000) NOT NULL,
+                    [yn_child_edu_nira_registered] [varchar](2) NOT NULL,
+                    [yn_child_edu_nira_registered_comment] [varchar](1000) NOT NULL,
+                    [yn_18_20yrs_in_school] [varchar](2) NOT NULL,
+                    [yn_18_20yrs_in_school_comment] [varchar](1000) NOT NULL,
+                    [swk_id] [varchar](50) NOT NULL,
+                    [date] [date] NOT NULL,
+                    [usr_id_create] [varchar](50) NOT NULL,
+                    [usr_id_update] [varchar](50) NOT NULL,
+                    [usr_date_create] [datetime] NOT NULL,
+                    [usr_date_update] [datetime] NOT NULL,
+                    [ofc_id] [varchar](50) NOT NULL,
+                    [trg_action] [int] NOT NULL,
+                    [district_id] [nvarchar](50) NOT NULL,
+                    CONSTRAINT [PK_hh_household_transfer_upload] PRIMARY KEY CLUSTERED 
+                    (
+                    [hh_tr_sid] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY]";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_household_transfer_issue')
+                        CREATE TABLE [dbo].[hh_household_transfer_issue](
+	                    [issue_id] [varchar](50) NOT NULL,
+	                    [hh_tr_id] [varchar](50) NOT NULL,
+	                    [issue_desc] [varchar](max) NOT NULL,
+	                    [issue_action_desc] [varchar](max) NOT NULL,
+	                    [issue_followup_info] [varchar](max) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [district_id] [nvarchar](50) NOT NULL,
+                     CONSTRAINT [PK_hh_household_transfer_issue] PRIMARY KEY CLUSTERED 
+                    (
+	                    [issue_id] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'hh_household_transfer_issue_upload')
+                        CREATE TABLE [dbo].[hh_household_transfer_issue_upload](
+	                    [issue_sid] [int] IDENTITY(1,1) NOT NULL,
+	                    [issue_id] [varchar](50) NOT NULL,
+	                    [hh_tr_id] [varchar](50) NOT NULL,
+	                    [issue_desc] [varchar](max) NOT NULL,
+	                    [issue_action_desc] [varchar](max) NOT NULL,
+	                    [issue_followup_info] [varchar](max) NOT NULL,
+	                    [usr_id_create] [varchar](50) NOT NULL,
+	                    [usr_id_update] [varchar](50) NOT NULL,
+	                    [usr_date_create] [datetime] NOT NULL,
+	                    [usr_date_update] [datetime] NOT NULL,
+	                    [ofc_id] [varchar](50) NOT NULL,
+	                    [trg_action] [int] NOT NULL,
+	                    [district_id] [nvarchar](50) NOT NULL,
+                     CONSTRAINT [PK_hh_household_transfer_issue_upload] PRIMARY KEY CLUSTERED 
+                    (
+	                    [issue_sid] ASC
+                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                    ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]";
+            dbCon.ExecuteNonQuery(strSQL);
+            #endregion Tables
+
+            #region Triggers
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_household_transfer_insert' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_household_transfer_insert] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_household_transfer_insert] ON [dbo].[hh_household_transfer] FOR INSERT
+                    AS
+                    BEGIN
+	                   INSERT INTO [dbo].[hh_household_transfer_upload]
+                    (hh_tr_id, hh_id, hh_code, ip_id, cso_id, wrd_id, caregiver_hhm_id, hhm_female_children_count, hhm_male_children_count, hhm_female_adult_count, hhm_male_adult_count
+           , yn_health_child_hiv_screen, yn_health_child_hiv_screen_comment, yn_health_child_hiv_test_reffered, yn_health_child_hiv_test_reffered_comment, yn_health_child_known_hiv_status
+           , yn_health_child_known_hiv_status_comment, yn_health_child_receive_arv, yn_health_child_receive_arv_comment, yn_health_child_receive_vl_test, yn_health_child_receive_vl_test_comment
+           , yn_health_child_vl_suppress, yn_health_child_vl_suppress_comment, yn_mother_attend_hiv_clinic, yn_mother_attend_hiv_clinic_comment, yn_caregiver_hiv_screen, yn_caregiver_hiv_screen_comment
+           , yn_caregiver_on_art, yn_caregiver_on_art_comment, yn_caregiver_receive_vl_test, yn_caregiver_receive_vl_test_comment, yn_child_undernourished, yn_child_undernourished_comment, yn_caregiver_attend_parenting_program
+           , yn_caregiver_attend_parenting_program_comment, yn_adolescent_risk_avoidance_enrolled, yn_adolescent_risk_avoidance_enrolled_comment, yn_caregiver_in_silc, yn_caregiver_in_silc_comment, yn_IGA_support
+           , yn_IGA_support_comment, yn_financial_literacy, yn_financial_literacy_comment, yn_apprenticeship, yn_apprenticeship_comment, yn_startup_toolkit, yn_startup_toolkit_comment, yn_hh_cater_basic_need
+           , yn_hh_cater_basic_need_comment, yn_violence, yn_violence_comment, yn_refferal_child_protection, yn_refferal_child_protection_comment, yn_case_ongoing, yn_case_ongoing_comment, yn_birth_certificate
+           , yn_birth_certificate_comment, yn_sinovuyo_training, yn_sinovuyo_training_comment, yn_vhild_hiv_violence_prevention_curriculum, yn_vhild_hiv_violence_prevention_curriculum_comment, yn_edu_enrolled
+           , yn_edu_enrolled_comment, yn_edu_attending_regularly, yn_edu_attending_regularly_comment, yn_adolesent_du_enrolled_with_edu_subsidy, yn_adolesent_du_enrolled_with_edu_subsidy_comment, yn_child_edu_nira_registered
+           , yn_child_edu_nira_registered_comment, yn_18_20yrs_in_school, yn_18_20yrs_in_school_comment, swk_id, date, usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id,trg_action, district_id)
+	                    SELECT hh_tr_id, hh_id, hh_code, ip_id, cso_id, wrd_id, caregiver_hhm_id, hhm_female_children_count, hhm_male_children_count, hhm_female_adult_count, hhm_male_adult_count
+           , yn_health_child_hiv_screen, yn_health_child_hiv_screen_comment, yn_health_child_hiv_test_reffered, yn_health_child_hiv_test_reffered_comment, yn_health_child_known_hiv_status
+           , yn_health_child_known_hiv_status_comment, yn_health_child_receive_arv, yn_health_child_receive_arv_comment, yn_health_child_receive_vl_test, yn_health_child_receive_vl_test_comment
+           , yn_health_child_vl_suppress, yn_health_child_vl_suppress_comment, yn_mother_attend_hiv_clinic, yn_mother_attend_hiv_clinic_comment, yn_caregiver_hiv_screen, yn_caregiver_hiv_screen_comment
+           , yn_caregiver_on_art, yn_caregiver_on_art_comment, yn_caregiver_receive_vl_test, yn_caregiver_receive_vl_test_comment, yn_child_undernourished, yn_child_undernourished_comment, yn_caregiver_attend_parenting_program
+           , yn_caregiver_attend_parenting_program_comment, yn_adolescent_risk_avoidance_enrolled, yn_adolescent_risk_avoidance_enrolled_comment, yn_caregiver_in_silc, yn_caregiver_in_silc_comment, yn_IGA_support
+           , yn_IGA_support_comment, yn_financial_literacy, yn_financial_literacy_comment, yn_apprenticeship, yn_apprenticeship_comment, yn_startup_toolkit, yn_startup_toolkit_comment, yn_hh_cater_basic_need
+           , yn_hh_cater_basic_need_comment, yn_violence, yn_violence_comment, yn_refferal_child_protection, yn_refferal_child_protection_comment, yn_case_ongoing, yn_case_ongoing_comment, yn_birth_certificate
+           , yn_birth_certificate_comment, yn_sinovuyo_training, yn_sinovuyo_training_comment, yn_vhild_hiv_violence_prevention_curriculum, yn_vhild_hiv_violence_prevention_curriculum_comment, yn_edu_enrolled
+           , yn_edu_enrolled_comment, yn_edu_attending_regularly, yn_edu_attending_regularly_comment, yn_adolesent_du_enrolled_with_edu_subsidy, yn_adolesent_du_enrolled_with_edu_subsidy_comment, yn_child_edu_nira_registered
+           , yn_child_edu_nira_registered_comment, yn_18_20yrs_in_school, yn_18_20yrs_in_school_comment, swk_id, date, usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id,1, district_id
+                    FROM inserted
+                        END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_household_transfer_update' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_household_transfer_update] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_household_transfer_update] ON [dbo].[hh_household_transfer] FOR UPDATE
+                    AS
+                    BEGIN
+	                   INSERT INTO [dbo].[hh_household_transfer_upload]
+                    (hh_tr_id, hh_id, hh_code, ip_id, cso_id, wrd_id, caregiver_hhm_id, hhm_female_children_count, hhm_male_children_count, hhm_female_adult_count, hhm_male_adult_count
+           , yn_health_child_hiv_screen, yn_health_child_hiv_screen_comment, yn_health_child_hiv_test_reffered, yn_health_child_hiv_test_reffered_comment, yn_health_child_known_hiv_status
+           , yn_health_child_known_hiv_status_comment, yn_health_child_receive_arv, yn_health_child_receive_arv_comment, yn_health_child_receive_vl_test, yn_health_child_receive_vl_test_comment
+           , yn_health_child_vl_suppress, yn_health_child_vl_suppress_comment, yn_mother_attend_hiv_clinic, yn_mother_attend_hiv_clinic_comment, yn_caregiver_hiv_screen, yn_caregiver_hiv_screen_comment
+           , yn_caregiver_on_art, yn_caregiver_on_art_comment, yn_caregiver_receive_vl_test, yn_caregiver_receive_vl_test_comment, yn_child_undernourished, yn_child_undernourished_comment, yn_caregiver_attend_parenting_program
+           , yn_caregiver_attend_parenting_program_comment, yn_adolescent_risk_avoidance_enrolled, yn_adolescent_risk_avoidance_enrolled_comment, yn_caregiver_in_silc, yn_caregiver_in_silc_comment, yn_IGA_support
+           , yn_IGA_support_comment, yn_financial_literacy, yn_financial_literacy_comment, yn_apprenticeship, yn_apprenticeship_comment, yn_startup_toolkit, yn_startup_toolkit_comment, yn_hh_cater_basic_need
+           , yn_hh_cater_basic_need_comment, yn_violence, yn_violence_comment, yn_refferal_child_protection, yn_refferal_child_protection_comment, yn_case_ongoing, yn_case_ongoing_comment, yn_birth_certificate
+           , yn_birth_certificate_comment, yn_sinovuyo_training, yn_sinovuyo_training_comment, yn_vhild_hiv_violence_prevention_curriculum, yn_vhild_hiv_violence_prevention_curriculum_comment, yn_edu_enrolled
+           , yn_edu_enrolled_comment, yn_edu_attending_regularly, yn_edu_attending_regularly_comment, yn_adolesent_du_enrolled_with_edu_subsidy, yn_adolesent_du_enrolled_with_edu_subsidy_comment, yn_child_edu_nira_registered
+           , yn_child_edu_nira_registered_comment, yn_18_20yrs_in_school, yn_18_20yrs_in_school_comment, swk_id, date, usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id,trg_action, district_id)
+	                    SELECT hh_tr_id, hh_id, hh_code, ip_id, cso_id, wrd_id, caregiver_hhm_id, hhm_female_children_count, hhm_male_children_count, hhm_female_adult_count, hhm_male_adult_count
+           , yn_health_child_hiv_screen, yn_health_child_hiv_screen_comment, yn_health_child_hiv_test_reffered, yn_health_child_hiv_test_reffered_comment, yn_health_child_known_hiv_status
+           , yn_health_child_known_hiv_status_comment, yn_health_child_receive_arv, yn_health_child_receive_arv_comment, yn_health_child_receive_vl_test, yn_health_child_receive_vl_test_comment
+           , yn_health_child_vl_suppress, yn_health_child_vl_suppress_comment, yn_mother_attend_hiv_clinic, yn_mother_attend_hiv_clinic_comment, yn_caregiver_hiv_screen, yn_caregiver_hiv_screen_comment
+           , yn_caregiver_on_art, yn_caregiver_on_art_comment, yn_caregiver_receive_vl_test, yn_caregiver_receive_vl_test_comment, yn_child_undernourished, yn_child_undernourished_comment, yn_caregiver_attend_parenting_program
+           , yn_caregiver_attend_parenting_program_comment, yn_adolescent_risk_avoidance_enrolled, yn_adolescent_risk_avoidance_enrolled_comment, yn_caregiver_in_silc, yn_caregiver_in_silc_comment, yn_IGA_support
+           , yn_IGA_support_comment, yn_financial_literacy, yn_financial_literacy_comment, yn_apprenticeship, yn_apprenticeship_comment, yn_startup_toolkit, yn_startup_toolkit_comment, yn_hh_cater_basic_need
+           , yn_hh_cater_basic_need_comment, yn_violence, yn_violence_comment, yn_refferal_child_protection, yn_refferal_child_protection_comment, yn_case_ongoing, yn_case_ongoing_comment, yn_birth_certificate
+           , yn_birth_certificate_comment, yn_sinovuyo_training, yn_sinovuyo_training_comment, yn_vhild_hiv_violence_prevention_curriculum, yn_vhild_hiv_violence_prevention_curriculum_comment, yn_edu_enrolled
+           , yn_edu_enrolled_comment, yn_edu_attending_regularly, yn_edu_attending_regularly_comment, yn_adolesent_du_enrolled_with_edu_subsidy, yn_adolesent_du_enrolled_with_edu_subsidy_comment, yn_child_edu_nira_registered
+           , yn_child_edu_nira_registered_comment, yn_18_20yrs_in_school, yn_18_20yrs_in_school_comment, swk_id, date, usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id,2, district_id
+                    FROM inserted
+                        END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_household_transfer_delete' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_household_transfer_delete] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_household_transfer_delete] ON [dbo].[hh_household_transfer] FOR DELETE
+                    AS
+                    BEGIN
+	                   INSERT INTO [dbo].[hh_household_transfer_upload]
+                    (hh_tr_id, hh_id, hh_code, ip_id, cso_id, wrd_id, caregiver_hhm_id, hhm_female_children_count, hhm_male_children_count, hhm_female_adult_count, hhm_male_adult_count
+           , yn_health_child_hiv_screen, yn_health_child_hiv_screen_comment, yn_health_child_hiv_test_reffered, yn_health_child_hiv_test_reffered_comment, yn_health_child_known_hiv_status
+           , yn_health_child_known_hiv_status_comment, yn_health_child_receive_arv, yn_health_child_receive_arv_comment, yn_health_child_receive_vl_test, yn_health_child_receive_vl_test_comment
+           , yn_health_child_vl_suppress, yn_health_child_vl_suppress_comment, yn_mother_attend_hiv_clinic, yn_mother_attend_hiv_clinic_comment, yn_caregiver_hiv_screen, yn_caregiver_hiv_screen_comment
+           , yn_caregiver_on_art, yn_caregiver_on_art_comment, yn_caregiver_receive_vl_test, yn_caregiver_receive_vl_test_comment, yn_child_undernourished, yn_child_undernourished_comment, yn_caregiver_attend_parenting_program
+           , yn_caregiver_attend_parenting_program_comment, yn_adolescent_risk_avoidance_enrolled, yn_adolescent_risk_avoidance_enrolled_comment, yn_caregiver_in_silc, yn_caregiver_in_silc_comment, yn_IGA_support
+           , yn_IGA_support_comment, yn_financial_literacy, yn_financial_literacy_comment, yn_apprenticeship, yn_apprenticeship_comment, yn_startup_toolkit, yn_startup_toolkit_comment, yn_hh_cater_basic_need
+           , yn_hh_cater_basic_need_comment, yn_violence, yn_violence_comment, yn_refferal_child_protection, yn_refferal_child_protection_comment, yn_case_ongoing, yn_case_ongoing_comment, yn_birth_certificate
+           , yn_birth_certificate_comment, yn_sinovuyo_training, yn_sinovuyo_training_comment, yn_vhild_hiv_violence_prevention_curriculum, yn_vhild_hiv_violence_prevention_curriculum_comment, yn_edu_enrolled
+           , yn_edu_enrolled_comment, yn_edu_attending_regularly, yn_edu_attending_regularly_comment, yn_adolesent_du_enrolled_with_edu_subsidy, yn_adolesent_du_enrolled_with_edu_subsidy_comment, yn_child_edu_nira_registered
+           , yn_child_edu_nira_registered_comment, yn_18_20yrs_in_school, yn_18_20yrs_in_school_comment, swk_id, date, usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id,trg_action, district_id)
+	                    SELECT hh_tr_id, hh_id, hh_code, ip_id, cso_id, wrd_id, caregiver_hhm_id, hhm_female_children_count, hhm_male_children_count, hhm_female_adult_count, hhm_male_adult_count
+           , yn_health_child_hiv_screen, yn_health_child_hiv_screen_comment, yn_health_child_hiv_test_reffered, yn_health_child_hiv_test_reffered_comment, yn_health_child_known_hiv_status
+           , yn_health_child_known_hiv_status_comment, yn_health_child_receive_arv, yn_health_child_receive_arv_comment, yn_health_child_receive_vl_test, yn_health_child_receive_vl_test_comment
+           , yn_health_child_vl_suppress, yn_health_child_vl_suppress_comment, yn_mother_attend_hiv_clinic, yn_mother_attend_hiv_clinic_comment, yn_caregiver_hiv_screen, yn_caregiver_hiv_screen_comment
+           , yn_caregiver_on_art, yn_caregiver_on_art_comment, yn_caregiver_receive_vl_test, yn_caregiver_receive_vl_test_comment, yn_child_undernourished, yn_child_undernourished_comment, yn_caregiver_attend_parenting_program
+           , yn_caregiver_attend_parenting_program_comment, yn_adolescent_risk_avoidance_enrolled, yn_adolescent_risk_avoidance_enrolled_comment, yn_caregiver_in_silc, yn_caregiver_in_silc_comment, yn_IGA_support
+           , yn_IGA_support_comment, yn_financial_literacy, yn_financial_literacy_comment, yn_apprenticeship, yn_apprenticeship_comment, yn_startup_toolkit, yn_startup_toolkit_comment, yn_hh_cater_basic_need
+           , yn_hh_cater_basic_need_comment, yn_violence, yn_violence_comment, yn_refferal_child_protection, yn_refferal_child_protection_comment, yn_case_ongoing, yn_case_ongoing_comment, yn_birth_certificate
+           , yn_birth_certificate_comment, yn_sinovuyo_training, yn_sinovuyo_training_comment, yn_vhild_hiv_violence_prevention_curriculum, yn_vhild_hiv_violence_prevention_curriculum_comment, yn_edu_enrolled
+           , yn_edu_enrolled_comment, yn_edu_attending_regularly, yn_edu_attending_regularly_comment, yn_adolesent_du_enrolled_with_edu_subsidy, yn_adolesent_du_enrolled_with_edu_subsidy_comment, yn_child_edu_nira_registered
+           , yn_child_edu_nira_registered_comment, yn_18_20yrs_in_school, yn_18_20yrs_in_school_comment, swk_id, date, usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id,3, district_id
+                    FROM inserted
+                        END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            #endregion Triggers
+
+            #region Triggers
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_household_transfer_issue_insert' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_household_transfer_issue_insert] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_household_transfer_issue_insert] ON [dbo].[hh_household_transfer_issue] FOR INSERT
+                    AS
+                    BEGIN
+	                   INSERT INTO [dbo].[hh_household_transfer_issue_upload]
+                    (issue_id,hh_tr_id,issue_desc,issue_action_desc,issue_followup_info,usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id,trg_action, district_id)
+	                    SELECT issue_id,hh_tr_id,issue_desc,issue_action_desc,issue_followup_info,usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id ,1, district_id
+                    FROM inserted
+                        END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_household_transfer_issue_update' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_household_transfer_issue_update] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_household_transfer_issue_update] ON [dbo].[hh_household_transfer_issue] FOR UPDATE
+                    AS
+                    BEGIN
+	                   INSERT INTO [dbo].[hh_household_transfer_issue_upload]
+                    (issue_id,hh_tr_id,issue_desc,issue_action_desc,issue_followup_info,usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id,trg_action, district_id)
+	                    SELECT issue_id,hh_tr_id,issue_desc,issue_action_desc,issue_followup_info,usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id ,2, district_id
+                    FROM inserted
+                        END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'hh_household_transfer_issue_delete' AND [type] = 'TR')
+                DROP TRIGGER [dbo].[hh_household_transfer_issue_delete] ";
+            dbCon.ExecuteNonQuery(strSQL);
+            strSQL = @"CREATE TRIGGER [dbo].[hh_household_transfer_issue_delete] ON [dbo].[hh_household_transfer_issue] FOR DELETE
+                    AS
+                    BEGIN
+	                   INSERT INTO [dbo].[hh_household_transfer_issue_upload]
+                    (issue_id,hh_tr_id,issue_desc,issue_action_desc,issue_followup_info,usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id,trg_action, district_id)
+	                    SELECT issue_id,hh_tr_id,issue_desc,issue_action_desc,issue_followup_info,usr_id_create, usr_id_update, usr_date_create, usr_date_update, ofc_id ,3, district_id
                     FROM inserted
                         END";
             dbCon.ExecuteNonQuery(strSQL);
@@ -17481,24 +17885,27 @@ namespace SOCY_MIS.DataAccessLayer
             #endregion Variables
 
             #region SQL
-            strSQL = @"INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO001', N'The AIDs Support Organisation TASO', N'TASO', 1, 1, N'PRT002', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO002', N'Intergrated community based inniative (ICOBI)', N'ICOBI', 2, 1, N'PRT003', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO003', N'Action for Behavioural Change', N'ABC', 3, 1, N'PRT002', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO004', N'Kibale District Civil Society Organisation (KDCS)', N'KDCS', 4, 1, N'PRT001', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO005', N'Friends of Christ Revival Ministry (FOCREVE)', N'FOCREVE', 5, 1, N'PRT002', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO006', N'Literacy Action and Development Agency', N'LADA', 6, 1, N'PRT003', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO007', N'Intergrated Development Options (IDO)', N'IDO', 7, 1, N'PRT003', N'1', N'1', GETDATE(), GETDATE()) 
-                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO008', N'Environmental Conversation and Agricultural Enhancemnet Uganda (ECO-AGRIC Uganda)', N'ECO-AGRIC', 8, 1, N'PRT001', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO009', N'Ankole Private Sector Promotion Center (APROCEL)', N'APROCEL', 9, 1, N'PRT003', N'1', N'1', GETDATE(), GETDATE()) 
-                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO010', N'Caritas Kasese', N'Caritas-K', 10, 1, N'PRT001', N'1', N'1', GETDATE(), GETDATE()) 
-                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO011', N'Reach the youth', N'RTY', 11, 1, N'PRT001', N'1', N'1', GETDATE(), GETDATE()) 
-                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO012', N'Send A Cow Uganda (SACU)', N'SACU', 12, 1, N'PRT002', N'1', N'1', GETDATE(), GETDATE()) 
-                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO013', N'South Eastern Private Promotion Entreprise', N'SEPSEL', 13, 1, N'PRT002', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO018', N'Community Volunteer Initiative for Development', N'COVOID', 14, 1, N'PRT001', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO019', N'Community Volunteer Initiative for Development', N'COVOID', 15, 1, N'PRT003', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO016', N'Agency for Coorperation and Research in Development', N'ACORD', 16, 1, N'PRT003', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO017', N'ROM', N'ROM', 17, 1, N'PRT001', N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO020', N'Kibale District Civil Society Organisation (KDCS)', N'Kibale District Civil Society Organisation (KDCS)', 18, 1, N'PRT003', N'1', N'1', GETDATE(), GETDATE())";
+            strSQL = @"INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO001', N'The AIDs Support Organisation TASO', N'TASO', 1, 0, N'PRT002', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO002', N'Intergrated community based inniative (ICOBI)', N'ICOBI', 2, 0, N'PRT003', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO003', N'Action for Behavioural Change', N'ABC', 3, 0, N'PRT002', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO004', N'Kibale District Civil Society Organisation (KDCS)', N'KDCS', 4, 0, N'PRT001', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO005', N'Friends of Christ Revival Ministry (FOCREVE)', N'FOCREVE', 5, 0, N'PRT002', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO006', N'Literacy Action and Development Agency', N'LADA', 6, 0, N'PRT003', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO007', N'Intergrated Development Options (IDO)', N'IDO', 7, 0, N'PRT003', N'1', N'1', GETDATE(), GETDATE()) 
+                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO008', N'Environmental Conversation and Agricultural Enhancemnet Uganda (ECO-AGRIC Uganda)', N'ECO-AGRIC', 8, 0, N'PRT001', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO009', N'Ankole Private Sector Promotion Center (APROCEL)', N'APROCEL', 9, 0, N'PRT003', N'1', N'1', GETDATE(), GETDATE()) 
+                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO010', N'Caritas Kasese', N'Caritas-K', 10, 0, N'PRT001', N'1', N'1', GETDATE(), GETDATE()) 
+                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO011', N'Reach the youth', N'RTY', 11, 0, N'PRT001', N'1', N'1', GETDATE(), GETDATE()) 
+                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO012', N'Send A Cow Uganda (SACU)', N'SACU', 12, 0, N'PRT002', N'1', N'1', GETDATE(), GETDATE()) 
+                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO013', N'South Eastern Private Promotion Entreprise', N'SEPSEL', 13, 0, N'PRT002', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO018', N'Community Volunteer Initiative for Development', N'COVOID', 14, 0, N'PRT001', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO019', N'Community Volunteer Initiative for Development', N'COVOID', 15, 0, N'PRT003', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO016', N'Agency for Coorperation and Research in Development', N'ACORD', 16, 0, N'PRT003', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO017', N'ROM', N'ROM', 17, 0, N'PRT001', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO020', N'Kibale District Civil Society Organisation (KDCS)', N'Kibale District Civil Society Organisation (KDCS)', 18, 0, N'PRT003', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO021', N'Action for Cooperation and Research in Development', N'ACORD', 19, 1, N'PRT004', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO022', N'AVSI', N'AVSI', 20, 1, N'PRT005', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_cso] ([cso_id], [cso_name], [cso_other], [cso_order], [cso_active], [prt_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'CSO023', N'Regional Psychosocial Support Initiative', N'REPSSI', 21, 1, N'PRT006', N'1', N'1', GETDATE(), GETDATE())";
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
         }
@@ -17666,7 +18073,7 @@ namespace SOCY_MIS.DataAccessLayer
 
             #region SQL
             strSQL = @"INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('1','Muhoozi Wilsi',1,'772886852','wmuhoozi@gmail.com','CSO002',1,'1','1','1','2018-07-19','2018-07-19')
-            INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('2','Chesagit Michael ',2,'772609753','chesam2014@gmail.com','CSO001',1,'2','0','1','2018-07-19','2018-07-19')
+            INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('2','Chesagit Michael ',2,'772609753','chesam2014@gmail.com','CSO001',0,'2','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('3','Katungye Dennis',3,'772945977','katungyed@yahoo.com','CSO002',1,'4','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('4','Namanya Gift',4,'783909146','giftnamanya@gmail.com','CSO002',1,'5','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('5','AKAMPA VICTOR',5,'0785001371','akamvic@gmail.com','CSO006',1,'7','1','1','2018-07-19','2018-07-19')
@@ -17690,7 +18097,8 @@ namespace SOCY_MIS.DataAccessLayer
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('24','Yoctan Friday',24,'783508428','fridayyoctan@gmail.com','CSO004',1,'9','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('25','Yoctan Friday',25,'783508428','fridayyoctan@gmail.com','CSO004',1,'26','1','1','2018-07-19','2018-07-19')
             INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('26','Namanya Gift',26,'702850352','','CSO002',1,'27','1','1','2018-07-19','2018-07-19')
-            INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('27','chesam2014@gmail.com',27,'772609753','chesam2014@gmail.com','CSO001',1,'2','1','1','2019-05-03','2019-05-03')";
+            INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('27','chesam2014@gmail.com',27,'772609753','chesam2014@gmail.com','CSO001',1,'2','1','1','2019-05-03','2019-05-03')
+            INSERT INTO [dbo].[lst_linkages_coordinator]([lc_id],[lc_name],[lc_order],[lc_phone],[lc_email],[cso_id],[lc_active],[dst_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update]) VALUES('28','HIGENYI SAMUEL',28,'0703992596','higenyisamuel2015@gmail.com','CSO001',1,'2','1','1','2020-08-18','2020-08-18')";
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
         }
@@ -18316,7 +18724,8 @@ namespace SOCY_MIS.DataAccessLayer
                 INSERT [dbo].[lst_institution] ([ins_id], [ins_name], [ins_order], [ins_active], [dst_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'181', N'Agandi foundation', 181, 1, N'19', N'1', N'1', GETDATE(), GETDATE())
                 INSERT [dbo].[lst_institution] ([ins_id], [ins_name], [ins_order], [ins_active], [dst_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'182', N'MIFUMI', 182, 1, N'19', N'1', N'1', GETDATE(), GETDATE())
                 INSERT [dbo].[lst_institution] ([ins_id], [ins_name], [ins_order], [ins_active], [dst_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'183', N'Divine Mercy Foundation', 183, 1, N'19', N'1', N'1', GETDATE(), GETDATE())
-                INSERT [dbo].[lst_institution] ([ins_id], [ins_name], [ins_order], [ins_active], [dst_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'184', N'AFAAYO CHRISTIAN ACADEMY', 184, 1, N'12', N'1', N'1', GETDATE(), GETDATE())";
+                INSERT [dbo].[lst_institution] ([ins_id], [ins_name], [ins_order], [ins_active], [dst_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'184', N'AFAAYO CHRISTIAN ACADEMY', 184, 1, N'12', N'1', N'1', GETDATE(), GETDATE())
+                INSERT [dbo].[lst_institution] ([ins_id], [ins_name], [ins_order], [ins_active], [dst_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'185', N'PEACE TRANSITIONAL HOME ', 185, 1, N'12', N'1', N'1', GETDATE(), GETDATE())";
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
         }
@@ -18430,10 +18839,17 @@ namespace SOCY_MIS.DataAccessLayer
             string strSQL = string.Empty;
             #endregion Variables
 
+            strSQL = "DELETE FROM lst_partner";
+            dbCon.ExecuteNonQuery(strSQL);
+
             #region SQL
-            strSQL = @"INSERT [dbo].[lst_partner] ([prt_id], [prt_name], [prt_other], [prt_order], [prt_active], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'PRT001', N'Action for Community Development', 'AC', 1, 1, N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_partner] ([prt_id], [prt_name], [prt_other], [prt_order], [prt_active], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'PRT002', N'African Network for Prevention and Protection against Child Abuse and Neglect', 'AN', 2, 1, N'1', N'1', GETDATE(), GETDATE())
-                    INSERT [dbo].[lst_partner] ([prt_id], [prt_name], [prt_other], [prt_order], [prt_active], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'PRT003', N'TPO UGANDA', 'TP', 3, 1, N'1', N'1', GETDATE(), GETDATE()) ";
+            strSQL = @"INSERT [dbo].[lst_partner] ([prt_id], [prt_name], [prt_other], [prt_order], [prt_active], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'PRT001', N'Action for Community Development', 'AC', 1, 0, N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_partner] ([prt_id], [prt_name], [prt_other], [prt_order], [prt_active], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'PRT002', N'African Network for Prevention and Protection against Child Abuse and Neglect', 'AN', 2, 0, N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_partner] ([prt_id], [prt_name], [prt_other], [prt_order], [prt_active], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'PRT003', N'TPO UGANDA', 'TP', 3, 1, N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_partner] ([prt_id], [prt_name], [prt_other], [prt_order], [prt_active], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'PRT004', N'Action for Cooperation and Research in Development', 'ACORD', 4, 1, N'1', N'1', GETDATE(), GETDATE()) 
+                    INSERT [dbo].[lst_partner] ([prt_id], [prt_name], [prt_other], [prt_order], [prt_active], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'PRT005', N'AVSI', 'AVSI', 5, 1, N'1', N'1', GETDATE(), GETDATE()) 
+                    INSERT [dbo].[lst_partner] ([prt_id], [prt_name], [prt_other], [prt_order], [prt_active], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (N'PRT006', N'Regional Psychosocial Support Initiative ', 'REPSSI', 6, 1, N'1', N'1', GETDATE(), GETDATE())";
+
             dbCon.ExecuteNonQuery(strSQL);
             #endregion SQL
         }
@@ -21288,6 +21704,8 @@ namespace SOCY_MIS.DataAccessLayer
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2047, N'2047', N'Rwemirabyo ', 2047, 1, N'307', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2048, N'2048', N'Kahoma', 2048, 1, N'313', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2049, N'2049', N'Rubaya', 2049, 1, N'313', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2050, N'2050', N'MUKO', 2050, 1, N'313', N'EN', N'1', N'1', GETDATE(), GETDATE())
+                    INSERT [dbo].[lst_ward] ([wrd_sid], [wrd_id], [wrd_name], [wrd_order], [wrd_active], [sct_id], [lng_id], [usr_id_create], [usr_id_update], [usr_date_create], [usr_date_update]) VALUES (2051, N'2051', N'KATUKURU', 2051, 1, N'308', N'EN', N'1', N'1', GETDATE(), GETDATE())
                     SET IDENTITY_INSERT [dbo].[lst_ward] OFF ";
             dbCon.ExecuteNonQuery(strSQL);
 
@@ -21638,7 +22056,7 @@ namespace SOCY_MIS.DataAccessLayer
                 BEGIN
                 INSERT INTO [dbo].[lst_cso]
                            ([cso_id] ,[cso_name] ,[cso_other] ,[cso_order],[cso_active],[prt_id],[usr_id_create],[usr_id_update],[usr_date_create],[usr_date_update])
-                     VALUES ('CSO014','ACODEV','ACODEV',14,1,'PRT001','1','1',GETDATE(),GETDATE())
+                     VALUES ('CSO014','ACODEV','ACODEV',14,0,'PRT001','1','1',GETDATE(),GETDATE())
                 END";
             dbCon.ExecuteNonQuery(strSQL);
 
@@ -32290,6 +32708,9 @@ namespace SOCY_MIS.DataAccessLayer
             Createben_ben_NoMeansNo_participant_attendance(dbCon);
             Create_ben_art_refill(dbCon);
             Create_ben_covid19_data_collection(dbCon);
+            Create_hh_household_transfer(dbCon);
+
+            InsertLstPartner(dbCon);
         }
 
 
@@ -32923,6 +33344,20 @@ namespace SOCY_MIS.DataAccessLayer
                     BEGIN
                     INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
                     VALUES('116','ben_covid19_data_collection_upload','cdc_id',116,1,1,1,GETDATE(),GETDATE())
+                    END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT sul_name FROM lst_sync_upload WHERE sul_name = 'hh_household_transfer_upload')
+                    BEGIN
+                    INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
+                    VALUES('117','hh_household_transfer_upload','hh_tr_id',117,1,1,1,GETDATE(),GETDATE())
+                    END";
+            dbCon.ExecuteNonQuery(strSQL);
+
+            strSQL = @"IF NOT EXISTS(SELECT sul_name FROM lst_sync_upload WHERE sul_name = 'hh_household_transfer_issue_upload')
+                    BEGIN
+                    INSERT INTO lst_sync_upload(sul_id,sul_name,sul_key,sul_order,sul_active,usr_id_create,usr_id_update,usr_date_create,usr_date_update)
+                    VALUES('118','hh_household_transfer_issue_upload','issue_id',118,1,1,1,GETDATE(),GETDATE())
                     END";
             dbCon.ExecuteNonQuery(strSQL);
         }

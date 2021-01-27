@@ -113,7 +113,23 @@ namespace SOCY_MIS
                 cboHouseholdMember.DisplayMember = "hhm_name";
                 cboHouseholdMember.ValueMember = "hhm_id";
             }
-           
+
+            #region LoadNMNMembers
+            dt = hhHouseholdRiskAssessment.LoadNMNMemberList();
+
+            DataRow sctemptyRowNMN = dt.NewRow();
+            sctemptyRowNMN["hhm_id"] = "-1";
+            sctemptyRowNMN["hhm_name"] = "Select one";
+            dt.Rows.InsertAt(sctemptyRowNMN, 0);
+
+            cboNMNList.DataSource = dt;
+            cboNMNList.DisplayMember = "hhm_name";
+            cboNMNList.ValueMember = "hhm_id";
+
+            cboNMNList.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cboNMNList.AutoCompleteSource = AutoCompleteSource.ListItems;
+            #endregion
+
         }
 
         private void lblBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -124,6 +140,21 @@ namespace SOCY_MIS
         protected void Back()
         {
             FormCalling.Back();
+        }
+
+        public void EnableDisableNMNLists(bool isNMNRecord)
+        {
+            if (isNMNRecord == true)
+            {
+                cboHouseholdMember.SelectedValue = "-1";
+                cboHouseholdMember.Enabled = false;
+                cboNMNList.Enabled = true;
+            }
+            else
+            {
+                cboHouseholdMember.Enabled = true;
+                cboNMNList.Enabled = false;
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -163,7 +194,14 @@ namespace SOCY_MIS
             #region set variables
 
             //hhHouseholdRiskAssessment.ra_id = ObjectId;
-            hhHouseholdRiskAssessment.hhm_name = cboHouseholdMember.Text;
+            if(cboNMNList.Enabled == true)
+            {
+                hhHouseholdRiskAssessment.hhm_name = cboNMNList.Text;
+            }
+            else
+            {
+                hhHouseholdRiskAssessment.hhm_name = cboHouseholdMember.Text;
+            }
 
             hhHouseholdRiskAssessment.ra_criteria_id = cboCriteria.SelectedValue.ToString();
             hhHouseholdRiskAssessment.yn_mother_hiv_pos = utilControls.RadioButtonGetSelection(rbtn_yn_mother_hiv_pos_Yes, rbtn_yn_mother_hiv_pos_No);
@@ -209,7 +247,15 @@ namespace SOCY_MIS
                 }
                 #endregion member details
 
-                hhHouseholdRiskAssessment.hhm_id = cboHouseholdMember.SelectedValue.ToString();
+                if (cboNMNList.Enabled == true)
+                {
+                    hhHouseholdRiskAssessment.hhm_id = cboNMNList.SelectedValue.ToString();
+                }
+                else
+                {
+                    hhHouseholdRiskAssessment.hhm_id = cboHouseholdMember.SelectedValue.ToString();
+                }
+
                 hhHouseholdRiskAssessment.ram_id = Guid.NewGuid().ToString();
                 hhHouseholdRiskAssessment.save_hh_household_risk_assessment_member_child("save");
                 MessageBox.Show("save successful", "SOCY MIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -248,49 +294,104 @@ namespace SOCY_MIS
 
             if (hhHouseholdRiskAssessment.ram_id == string.Empty)
             {
-                if (cboHouseholdMember.SelectedValue.ToString() == "-1" || cboCriteria.SelectedValue.ToString() == "-1" || (!rbtn_yn_mother_hiv_pos_Yes.Checked & !rbtn_yn_mother_hiv_pos_No.Checked) ||
-               (!rbtn_yn_lost_bio_parent_Yes.Checked & !rbtn_yn_lost_bio_parent_No.Checked) ||
-               (!rbtn_yn_malnourished_Yes.Checked & !rbtn_yn_malnourished_No.Checked) ||
-               (!rbtn_yn_skin_problem_Yes.Checked & !rbtn_yn_skin_problem_No.Checked) ||
-               (!rbtn_yn_hospitalized_Yes.Checked & !rbtn_yn_hospitalized_No.Checked) ||
-               (!rbtn_yn_sexual_violence_exposed_Yes.Checked & !rbtn_yn_sexual_violence_exposed_No.Checked) ||
-               (!rbtn_yn_acc_exposure_sharp_injury_Yes.Checked & !rbtn_yn_acc_exposure_sharp_injury_No.Checked) ||
-               (!rbtn_yn_drug_abuse_Yes.Checked & !rbtn_yn_drug_abuse_No.Checked) ||
-               (!rbtn_yn_hhm_at_risk_Yes.Checked & !rbtn_yn_hhm_at_risk_No.Checked) ||
-               (!rbtn_yn_hmm_test_TR.Checked & !rbtn_yn_hmm_test_TNR.Checked) ||
-               (!rbtn_yn_hhm_accept_test_Yes.Checked & !rbtn_yn_hhm_accept_test_No.Checked & !rbtn_yn_hhm_accept_test_NA.Checked) ||
-               (!rbtn_yn_referal_Yes.Checked & !rbtn_yn_referal_No.Checked & !rbtn_yn_referal_NA.Checked) ||
-               (!rbtn_yn_referal_completed_Yes.Checked & !rbtn_yn_referal_completed_No.Checked & !rbtn_yn_referal_completed_NA.Checked))
+                if (rbtnNoMeansNoYes.Checked)
                 {
-                    isValid = false;
+                    if (cboNMNList.SelectedValue.ToString() == "-1" || cboCriteria.SelectedValue.ToString() == "-1" || (!rbtn_yn_mother_hiv_pos_Yes.Checked & !rbtn_yn_mother_hiv_pos_No.Checked) ||
+              (!rbtn_yn_lost_bio_parent_Yes.Checked & !rbtn_yn_lost_bio_parent_No.Checked) ||
+              (!rbtn_yn_malnourished_Yes.Checked & !rbtn_yn_malnourished_No.Checked) ||
+              (!rbtn_yn_skin_problem_Yes.Checked & !rbtn_yn_skin_problem_No.Checked) ||
+              (!rbtn_yn_hospitalized_Yes.Checked & !rbtn_yn_hospitalized_No.Checked) ||
+              (!rbtn_yn_sexual_violence_exposed_Yes.Checked & !rbtn_yn_sexual_violence_exposed_No.Checked) ||
+              (!rbtn_yn_acc_exposure_sharp_injury_Yes.Checked & !rbtn_yn_acc_exposure_sharp_injury_No.Checked) ||
+              (!rbtn_yn_drug_abuse_Yes.Checked & !rbtn_yn_drug_abuse_No.Checked) ||
+              (!rbtn_yn_hhm_at_risk_Yes.Checked & !rbtn_yn_hhm_at_risk_No.Checked) ||
+              (!rbtn_yn_hmm_test_TR.Checked & !rbtn_yn_hmm_test_TNR.Checked) ||
+              (!rbtn_yn_hhm_accept_test_Yes.Checked & !rbtn_yn_hhm_accept_test_No.Checked & !rbtn_yn_hhm_accept_test_NA.Checked) ||
+              (!rbtn_yn_referal_Yes.Checked & !rbtn_yn_referal_No.Checked & !rbtn_yn_referal_NA.Checked) ||
+              (!rbtn_yn_referal_completed_Yes.Checked & !rbtn_yn_referal_completed_No.Checked & !rbtn_yn_referal_completed_NA.Checked))
+                    {
+                        isValid = false;
+                    }
+                    else
+                    {
+                        isValid = true;
+                    }
                 }
                 else
                 {
-                    isValid = true;
+                    if (cboHouseholdMember.SelectedValue.ToString() == "-1" || cboCriteria.SelectedValue.ToString() == "-1" || (!rbtn_yn_mother_hiv_pos_Yes.Checked & !rbtn_yn_mother_hiv_pos_No.Checked) ||
+              (!rbtn_yn_lost_bio_parent_Yes.Checked & !rbtn_yn_lost_bio_parent_No.Checked) ||
+              (!rbtn_yn_malnourished_Yes.Checked & !rbtn_yn_malnourished_No.Checked) ||
+              (!rbtn_yn_skin_problem_Yes.Checked & !rbtn_yn_skin_problem_No.Checked) ||
+              (!rbtn_yn_hospitalized_Yes.Checked & !rbtn_yn_hospitalized_No.Checked) ||
+              (!rbtn_yn_sexual_violence_exposed_Yes.Checked & !rbtn_yn_sexual_violence_exposed_No.Checked) ||
+              (!rbtn_yn_acc_exposure_sharp_injury_Yes.Checked & !rbtn_yn_acc_exposure_sharp_injury_No.Checked) ||
+              (!rbtn_yn_drug_abuse_Yes.Checked & !rbtn_yn_drug_abuse_No.Checked) ||
+              (!rbtn_yn_hhm_at_risk_Yes.Checked & !rbtn_yn_hhm_at_risk_No.Checked) ||
+              (!rbtn_yn_hmm_test_TR.Checked & !rbtn_yn_hmm_test_TNR.Checked) ||
+              (!rbtn_yn_hhm_accept_test_Yes.Checked & !rbtn_yn_hhm_accept_test_No.Checked & !rbtn_yn_hhm_accept_test_NA.Checked) ||
+              (!rbtn_yn_referal_Yes.Checked & !rbtn_yn_referal_No.Checked & !rbtn_yn_referal_NA.Checked) ||
+              (!rbtn_yn_referal_completed_Yes.Checked & !rbtn_yn_referal_completed_No.Checked & !rbtn_yn_referal_completed_NA.Checked))
+                    {
+                        isValid = false;
+                    }
+                    else
+                    {
+                        isValid = true;
+                    }
                 }
+
+               
             }
             else
             {
-                if (cboCriteria.SelectedValue.ToString() == "-1" || (!rbtn_yn_mother_hiv_pos_Yes.Checked & !rbtn_yn_mother_hiv_pos_No.Checked) ||
-               (!rbtn_yn_lost_bio_parent_Yes.Checked & !rbtn_yn_lost_bio_parent_No.Checked) ||
-               (!rbtn_yn_malnourished_Yes.Checked & !rbtn_yn_malnourished_No.Checked) ||
-               (!rbtn_yn_skin_problem_Yes.Checked & !rbtn_yn_skin_problem_No.Checked) ||
-               (!rbtn_yn_hospitalized_Yes.Checked & !rbtn_yn_hospitalized_No.Checked) ||
-               (!rbtn_yn_sexual_violence_exposed_Yes.Checked & !rbtn_yn_sexual_violence_exposed_No.Checked) ||
-               (!rbtn_yn_acc_exposure_sharp_injury_Yes.Checked & !rbtn_yn_acc_exposure_sharp_injury_No.Checked) ||
-               (!rbtn_yn_drug_abuse_Yes.Checked & !rbtn_yn_drug_abuse_No.Checked) ||
-               (!rbtn_yn_hhm_at_risk_Yes.Checked & !rbtn_yn_hhm_at_risk_No.Checked) ||
-               (!rbtn_yn_hmm_test_TR.Checked & !rbtn_yn_hmm_test_TNR.Checked) ||
-               (!rbtn_yn_hhm_accept_test_Yes.Checked & !rbtn_yn_hhm_accept_test_No.Checked & !rbtn_yn_hhm_accept_test_NA.Checked) ||
-               (!rbtn_yn_referal_Yes.Checked & !rbtn_yn_referal_No.Checked & !rbtn_yn_referal_NA.Checked) ||
-               (!rbtn_yn_referal_completed_Yes.Checked & !rbtn_yn_referal_completed_No.Checked & !rbtn_yn_referal_completed_NA.Checked))
+                if (rbtnNoMeansNoYes.Checked)
                 {
-                    isValid = false;
+                    if (cboCriteria.SelectedValue.ToString() == "-1" || (!rbtn_yn_mother_hiv_pos_Yes.Checked & !rbtn_yn_mother_hiv_pos_No.Checked) ||
+            (!rbtn_yn_lost_bio_parent_Yes.Checked & !rbtn_yn_lost_bio_parent_No.Checked) ||
+            (!rbtn_yn_malnourished_Yes.Checked & !rbtn_yn_malnourished_No.Checked) ||
+            (!rbtn_yn_skin_problem_Yes.Checked & !rbtn_yn_skin_problem_No.Checked) ||
+            (!rbtn_yn_hospitalized_Yes.Checked & !rbtn_yn_hospitalized_No.Checked) ||
+            (!rbtn_yn_sexual_violence_exposed_Yes.Checked & !rbtn_yn_sexual_violence_exposed_No.Checked) ||
+            (!rbtn_yn_acc_exposure_sharp_injury_Yes.Checked & !rbtn_yn_acc_exposure_sharp_injury_No.Checked) ||
+            (!rbtn_yn_drug_abuse_Yes.Checked & !rbtn_yn_drug_abuse_No.Checked) ||
+            (!rbtn_yn_hhm_at_risk_Yes.Checked & !rbtn_yn_hhm_at_risk_No.Checked) ||
+            (!rbtn_yn_hmm_test_TR.Checked & !rbtn_yn_hmm_test_TNR.Checked) ||
+            (!rbtn_yn_hhm_accept_test_Yes.Checked & !rbtn_yn_hhm_accept_test_No.Checked & !rbtn_yn_hhm_accept_test_NA.Checked) ||
+            (!rbtn_yn_referal_Yes.Checked & !rbtn_yn_referal_No.Checked & !rbtn_yn_referal_NA.Checked) ||
+            (!rbtn_yn_referal_completed_Yes.Checked & !rbtn_yn_referal_completed_No.Checked & !rbtn_yn_referal_completed_NA.Checked))
+                    {
+                        isValid = false;
+                    }
+                    else
+                    {
+                        isValid = true;
+                    }
                 }
                 else
                 {
-                    isValid = true;
+                    if (cboCriteria.SelectedValue.ToString() == "-1" || (!rbtn_yn_mother_hiv_pos_Yes.Checked & !rbtn_yn_mother_hiv_pos_No.Checked) ||
+            (!rbtn_yn_lost_bio_parent_Yes.Checked & !rbtn_yn_lost_bio_parent_No.Checked) ||
+            (!rbtn_yn_malnourished_Yes.Checked & !rbtn_yn_malnourished_No.Checked) ||
+            (!rbtn_yn_skin_problem_Yes.Checked & !rbtn_yn_skin_problem_No.Checked) ||
+            (!rbtn_yn_hospitalized_Yes.Checked & !rbtn_yn_hospitalized_No.Checked) ||
+            (!rbtn_yn_sexual_violence_exposed_Yes.Checked & !rbtn_yn_sexual_violence_exposed_No.Checked) ||
+            (!rbtn_yn_acc_exposure_sharp_injury_Yes.Checked & !rbtn_yn_acc_exposure_sharp_injury_No.Checked) ||
+            (!rbtn_yn_drug_abuse_Yes.Checked & !rbtn_yn_drug_abuse_No.Checked) ||
+            (!rbtn_yn_hhm_at_risk_Yes.Checked & !rbtn_yn_hhm_at_risk_No.Checked) ||
+            (!rbtn_yn_hmm_test_TR.Checked & !rbtn_yn_hmm_test_TNR.Checked) ||
+            (!rbtn_yn_hhm_accept_test_Yes.Checked & !rbtn_yn_hhm_accept_test_No.Checked & !rbtn_yn_hhm_accept_test_NA.Checked) ||
+            (!rbtn_yn_referal_Yes.Checked & !rbtn_yn_referal_No.Checked & !rbtn_yn_referal_NA.Checked) ||
+            (!rbtn_yn_referal_completed_Yes.Checked & !rbtn_yn_referal_completed_No.Checked & !rbtn_yn_referal_completed_NA.Checked))
+                    {
+                        isValid = false;
+                    }
+                    else
+                    {
+                        isValid = true;
+                    }
                 }
+             
             }
            
 
@@ -581,6 +682,27 @@ namespace SOCY_MIS
         private void lnkNew_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Clear();
+        }
+
+        private void rbtnNoMeansNoYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if(rbtnNoMeansNoYes.Checked == true)
+            {
+                cboHouseholdMember.Enabled = false;
+                cboHouseholdMember.SelectedValue = "-1";
+                cboNMNList.Enabled = true;
+            }
+            else
+            {
+                cboHouseholdMember.Enabled = true;
+                cboNMNList.Enabled = false;
+                cboNMNList.SelectedValue = "-1";
+            }
+        }
+
+        private void rbtnNoMeansNoNo_CheckedChanged(object sender, EventArgs e)
+        {
+            rbtnNoMeansNoYes_CheckedChanged(rbtnNoMeansNoYes,null);
         }
     }
 }

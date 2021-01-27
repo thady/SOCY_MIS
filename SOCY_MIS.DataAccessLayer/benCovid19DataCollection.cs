@@ -169,8 +169,8 @@ namespace SOCY_MIS.DataAccessLayer
                 INNER JOIN lst_district dst ON sct.dst_id = dst.dst_id
                 INNER JOIN swm_social_worker swm ON dt.swk_id = swm.swk_id
                 INNER JOIN swm_social_worker psw ON dt.psw_id = psw.swk_id
-                WHERE (@sct_id = '' OR sct.sct_id =  @sct_id  )
-                AND (@dst_id = '' OR dst.dst_id = @dst_id  )
+                WHERE (@sct_id = '' OR @sct_id = '-1'  OR sct.sct_id =  @sct_id  )
+                AND (@dst_id = '' OR @dst_id = '-1' OR dst.dst_id = @dst_id  )
                 AND (@report_month = '' OR dt.report_month = @report_month)";
 
                 using (conn = new SqlConnection(SQLConnection))
